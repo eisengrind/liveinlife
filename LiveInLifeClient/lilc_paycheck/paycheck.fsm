@@ -1,0 +1,95 @@
+/*%FSM<COMPILE "D:\Programs\Bohemia Interactive\Tools\FSM Editor Personal Edition\scriptedFSM.cfg, paychecl.fsm">*/
+/*%FSM<HEAD>*/
+/*
+item0[] = {"Init",0,250,-40.348839,-141.279068,49.651161,-91.279068,0.000000,"Init"};
+item1[] = {"true",4,218,-40.183960,-54.474571,49.816040,-4.474569,0.000000,"true"};
+item2[] = {"set_time_give_pa",2,250,-168.998474,29.582485,-78.998634,79.582466,0.000000,"set time" \n "give paycheck"};
+item3[] = {"wait_for_time",4,4314,-41.275528,92.898193,48.724472,142.898193,0.000000,"wait for time"};
+item4[] = {"_",2,250,72.255997,29.582489,162.256042,79.582489,0.000000,""};
+link0[] = {0,1};
+link1[] = {1,2};
+link2[] = {2,3};
+link3[] = {3,4};
+link4[] = {4,1};
+globals[] = {0.000000,0,0,0,0,640,480,2,24,6316128,1,-405.644348,469.858978,414.827026,-256.537781,626,581,1};
+window[] = {0,-1,-1,-1,-1,935,208,1348,208,1,644};
+*//*%FSM</HEAD>*/
+class FSM
+{
+  fsmName = "paychecl.fsm";
+  class States
+  {
+    /*%FSM<STATE "Init">*/
+    class Init
+    {
+      name = "Init";
+      init = /*%FSM<STATEINIT""">*/"LiveInLifeClient_PayCheckValue = 0;" \n
+       "LiveInLifeClient_PayCheckWait = 120;" \n
+       ""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "true">*/
+        class true
+        {
+          priority = 0.000000;
+          to="set_time_give_pa";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"([0] call lilc_bank_fnc_have)"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "set_time_give_pa">*/
+    class set_time_give_pa
+    {
+      name = "set_time_give_pa";
+      init = /*%FSM<STATEINIT""">*/"_time = time;" \n
+       "[(format[""Du hast dein Grundeinkommen in höhe von %1$ erhalten."", lilc_paycheck_amount]), ""systemChat""] call lilc_common_fnc_message;" \n
+       ""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "wait_for_time">*/
+        class wait_for_time
+        {
+          priority = 0.000000;
+          to="_";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"((_time + lilc_paycheck_timeout) <= time)"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "_">*/
+    class _
+    {
+      name = "_";
+      init = /*%FSM<STATEINIT""">*/"_time = 0;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "true">*/
+        class true
+        {
+          priority = 0.000000;
+          to="set_time_give_pa";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"([0] call lilc_bank_fnc_have)"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+  };
+  initState="Init";
+  finalStates[] =
+  {
+  };
+};
+/*%FSM</COMPILE>*/
