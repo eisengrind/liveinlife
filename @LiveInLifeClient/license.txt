@@ -1,0 +1,1 @@
+Licensed under CC BY-NC-SA License (https://creativecommons.org/licenses/by-nc-sa/3.0/de/deed.en)
