@@ -8,7 +8,7 @@
         Appends a custom database to extDB3
     Param(s):
         (_this select 0) : database name : <STRING>
-		(_this select 0) : protocol name (since extDB3) : <STRING>
+	(_this select 0) : protocol name (since extDB3) : <STRING>
     Result(s):
         -
 */
