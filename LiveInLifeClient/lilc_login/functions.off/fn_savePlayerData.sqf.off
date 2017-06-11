@@ -1,0 +1,41 @@
+
+_data = [];
+
+_data pushBack lilc_player_ID;
+_data pushBack lilc_player_steam64ID;
+_data pushBack lilc_player_thirst;
+_data pushBack lilc_player_hunger;
+_data pushBack lilc_player_cash;
+_data pushBack lilc_player_endurance;
+lilc_player_gear = ([player] call lilc_inventory_fnc_getInventory);
+_data pushBack lilc_player_gear;
+_data pushBack lilc_player_npcs;
+lilc_player_lastPosition = [(getPosASL player), direction player];
+_data pushBack lilc_player_lastPosition;
+_data pushBack lilc_player_charisma;
+_data pushBack lilc_bank_accounts;
+_data pushBack [lilc_player_coveredDistance_stand, lilc_player_coveredDistance_crouch, lilc_player_coveredDistance_prone, lilc_player_coveredDistance_swimming, lilc_player_coveredDistance_car, lilc_player_coveredDistance_air, lilc_player_coveredDistance_boat];
+_data pushBack lilc_player_isRespawning;
+_data pushBack lilc_virtualInventory_inventory;
+if (isNil "lilc_player_isJailed") then { lilc_player_isJailed = false; };
+_data pushBack lilc_player_isJailed;
+
+[[player, _data], "lils_login_fnc_updatePlayerData"] call lilc_common_fnc_sendToServer;
+
+/*
+0 player_ID
+1 steam64ID
+2 thirst
+3 hunger
+4 cash
+5 endurance
+6 gear
+7 npcs
+8 lastPosition
+9 charisma
+10 bankAccounts
+11 distanceCounts
+12 respawning
+13 virtualInventory
+14 jailed
+*/

@@ -18,7 +18,7 @@ try {
         private _vehicle = _x;
 
         if (_vehicle isKindOf "Man") then {
-            if (([_classname, _vehicle] call lilc_inventory_fnc_itemInInventory) > 0) then {
+            if (([_classname, _vehicle] call lilc_inventory_fnc_itemCount) > 0) then {
                 switch (_itemType select 0) do {
                     case "Weapon": {
                         _vehicle removeWeapon _classname;
@@ -56,17 +56,15 @@ try {
                 };
             };
         } else {
-            if (([_classname, _vehicle] call lilc_inventory_fnc_itemInInventory) > 0) then {
+            if (([_classname, _vehicle] call lilc_inventory_fnc_itemCount) > 0) then {
                 private _vehicleInventory = [_vehicle] call lilc_inventory_fnc_getVehicleCargo;
                 private _vehicleInventoryCopy = _vehicleInventory;
-                systemChat str _vehicleInventory;
 
                 if ((count _vehicleInventory) > 0) then {
                     {
                         if (_classname == _x) then {
                             ((_vehicleInventory select 0) select 1) set [_forEachIndex, ((((_vehicleInventory select 0) select 1) select _forEachIndex) - 1)];
                             [_vehicle, _vehicleInventory] call lilc_inventory_fnc_setVehicleCargo;
-                            systemChat str "stsrtdrt";
                             throw true;
                         };
                     } forEach ((_vehicleInventoryCopy select 0) select 0);
@@ -107,7 +105,7 @@ try {
         };
     } forEach _unit;
     
-    //if (_itemCount == ([_classname, _unit] call lilc_inventory_fnc_itemInInventory)) throw false;
+    //if (_itemCount == ([_classname, _unit] call lilc_inventory_fnc_itemCount)) throw false;
     throw false;
 } catch {
     _exception;

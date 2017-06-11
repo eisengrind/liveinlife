@@ -19,7 +19,14 @@ class lilc_RscShortcutButton;
 class lilc_RscCombo;
 class lilc_RscButton;
 
+//#include "dialogs\factionsInterface.cpp"
 #include "dialogs\dashboard.cpp"
-#include "dialogs\groups.cpp"
-#include "dialogs\players.cpp"
-#include "dialogs\ranks.cpp"
+//#include "dialogs\groups.cpp"
+//#include "dialogs\players.cpp"
+//#include "dialogs\ranks.cpp"
+
+class Extended_PreInit_EventHandlers {
+    class lilc_factionsInterface_preInit {
+        clientInit = "call compile preProcessFileLineNumbers '\x\lilc\addons\factionsInterface\XEH_preInit.sqf';";
+    };
+};

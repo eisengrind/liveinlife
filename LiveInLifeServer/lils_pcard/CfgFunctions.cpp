@@ -1,8 +1,8 @@
 
 class lils_pcard {
     class functions {
-        file = "\lils_pcard\functions";
-        class create {};
-        class return {};
+        file = "\x\lils\addons\pcard\functions";
+        class createPersonalcard {};
+        class returnPersonalcards {};
     };
 };

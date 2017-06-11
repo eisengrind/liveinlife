@@ -1,7 +1,7 @@
 
 class lilc_locker {
     class functions {
-        file = "\lilc_locker\functions";
+        file = "\x\lilc\addons\locker\functions";
         class closeMenu {};
         class create {};
         class getLockerConfig {};
@@ -11,6 +11,7 @@ class lilc_locker {
         class onInventoryClosed {};
         class onInventoryOpened {};
         class openMenu {};
+        class preInit { preInit = 1; };
         class save {};
         class setLockers {};
         class updateMenu {};

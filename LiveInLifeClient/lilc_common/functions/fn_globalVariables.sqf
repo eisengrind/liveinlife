@@ -38,7 +38,6 @@ lilc_player_earPlugsStatus = false;
 
 lilc_player_currentDeaths = 0;
 lilc_player_defaultRespawnTimeout = 120;
-lilc_player_HUDEnabled = true;
 lilc_player_statsEnabled = false;
 lilc_player_isRespawning = false;
 lilc_player_tmpWeapon = "";
@@ -118,3 +117,5 @@ lilc_flight_inTriggerArea = false;
 lilc_flight_sleeping = false;
 
 factionRanks = [];
+
+lilc_virtualInventory_inventory = [];

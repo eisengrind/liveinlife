@@ -1,2 +1,3 @@
 
-[] execFSM "\lilc_paycheck\paycheck.fsm";
+lilc_paycheck_defaultbankaccount = "tanBank";
+[] execFSM "\x\lilc\addons\paycheck\paycheck.fsm";

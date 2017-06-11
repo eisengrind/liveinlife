@@ -1,12 +1,10 @@
 
 class lils_login {
     class functions {
-        file = "\lils_login\functions";
-        class createAccountData {};
-        class returnAccountData {};
-        class returnPlayerData {};
-        class setPlayerID {};
-        class setPlayerInfo {};
+        file = "\x\lils\addons\login\functions";
+        class createProfile {};
+        class getJoinData {};
+        class getProfiles {};
         class updatePlayerData {};
         class updatePlayerDataPartial {};
     };

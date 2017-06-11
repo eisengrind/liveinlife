@@ -1,7 +1,7 @@
 
 class lilc_housing {
     class functions {
-        file = "\lilc_housing\functions";
+        file = "\x\lilc\addons\housing\functions";
         class buy {};
         class cameraFocus {};
         class inHouse {};

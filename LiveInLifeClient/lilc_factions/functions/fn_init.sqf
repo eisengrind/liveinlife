@@ -8,4 +8,6 @@ if (call lilc_factions_fnc_add) then {
     if ((_groupConfig select 5) != "") then {
         call compile preProcessFileLineNumbers (_groupConfig select 5);
     };
+} else {
+    lilc_player_respawnName = ["hospital_1"];
 };

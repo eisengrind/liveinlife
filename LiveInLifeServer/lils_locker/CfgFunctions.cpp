@@ -1,7 +1,7 @@
 
 class lils_locker {
     class functions {
-        file = "\lils_locker\functions";
+        file = "\x\lils\addons\locker\functions";
         class create {};
         class getLockers {};
         class load {};

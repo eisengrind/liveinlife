@@ -1,0 +1,18 @@
+
+<?xml version="1.0" encoding="utf-8">
+<Project name="LiveInLife">
+    <Package name="lilc_prison">
+        <Container name="ActionTitle">
+            <Key ID="STR_lilc_prison_ActionTitle_addPunishment">
+                <Original>Punish</Original>
+                <English>Punish</English>
+                <German>Bestrafen</German>
+            </Key>
+            <Key ID="STR_lilc_prison_ActionTitle_endPunishment">
+                <Original>Stop punishment</Original>
+                <English>Stop punishment</English>
+                <German>Bestrafung beenden</German>
+            </Key>
+        </Container>
+    </Package>
+</Project>

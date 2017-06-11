@@ -7,21 +7,31 @@ try {
     if (isNull _ui) throw false;
 
     private _garageConfig = ([lilc_garage_currentGarage] call lilc_garage_fnc_getGarageConfig);
-    private _uiListVehicles = (_ui displayCtrl 1266);
-    private _uiTextDescription = (_ui displayCtrl 1267);
-    private _uiButtonReveal = (_ui displayCtrl 1268);
-    private _uiButtonClose = (_ui displayCtrl 1269);
+    private _uiListVehicles = (_ui displayCtrl 1500);
+    private _uiTextDescription = (_ui displayCtrl 1100);
+    private _uiButtonReveal = (_ui displayCtrl 2400);
     
     _uiButtonReveal ctrlEnable false;
-    _uiButtonClose ctrlEnable true;
 
     private _index = (lbCurSel _uiListVehicles);
     if (_index <= -1) throw false;
 
     private _data = (call compile format["%1;", (_uiListVehicles lbData _index)]);
     private _vehicleConfig = ([(_data select 1)] call lilc_common_fnc_getClassnameConfig);
-
-    _uiTextDescription ctrlSetStructuredText parseText format["Informationen:<br /><t size='0.8'><t align='left'><t>Fahrzeugname: </t><t>%1</t></t><br /><t align='left'><t>Beschreibung: </t><t>%2</t></t><br /><t align='left'><t>Höchstgeschwindigkeit: </t><t>%3</t> km/h</t><br /><t align='left'><t>Gewicht: </t><t>%4</t> kg</t><br /><t align='left'><t>Tankfüllung: </t><t>%5</t> L</t><t align='left'><br /><t>Speicher: </t><t>%6</t></t></t>", getText(_vehicleConfig >> "displayName"), getText(_vehicleConfig >> "description"), getNumber(_vehicleConfig >> "maxSpeed"), getNumber(_vehicleConfig >> "mass"), getNumber(_vehicleConfig >> "fuelCapacity"), getNumber(_vehicleConfig >> "maximumLoad")];
+    
+    // ID, CLASSNAME, COLOR, NICKNAME, FUEL, QUOTE(PLATE)
+    _uiTextDescription ctrlSetStructuredText parseText format[
+        "<t align='left'>Informationen:<t size='0.8'><br /><t>Fahrzeugname: </t><t>%1</t><br /><t>Kennzeichen: </t><t>%2</t><br /><t>Farbe: </t><t>%3</t><br /><t>Beschreibung: </t><t>%4</t><br /><t>Höchstgeschwindigkeit: </t><t>%5</t> km/h<br /><t>Gewicht: </t><t>%6</t> kg<br /><t>Tankfüllung: </t><t>%7 / %8</t> L<br /><t>Speicher: </t><t>%9</t></t></t></t>",
+        getText(_vehicleConfig >> "displayName"),
+        (_data select 5),
+        (_data select 2),
+        getText(_vehicleConfig >> "description"),
+        getNumber(_vehicleConfig >> "maxSpeed"),
+        getNumber(_vehicleConfig >> "mass"),
+        (round ((getNumber(_vehicleConfig >> "fuelCapacity")) * (_data select 4))),
+        getNumber(_vehicleConfig >> "fuelCapacity"),
+        getNumber(_vehicleConfig >> "maximumLoad")
+    ];
 
     if !(isNull lilc_garage_currentCamera) then {
         if !(isNull lilc_garage_currentVehicle) then { deleteVehicle lilc_garage_currentVehicle; };
@@ -37,35 +47,3 @@ try {
 } catch {
     _exception;
 };
-
-/*
-disableSerialization;
-_vehicles = param [0, [], [[]]];
-
-_ui = (findDisplay 1265);
-_uiList = _ui displayCtrl 1266;
-_uiDescription = _ui displayCtrl 1267;
-_uiButtonRequest = _ui displayCtrl 1268;
-_uiButtonRequest ctrlEnable false;
-
-lbClear _uiList;
-_uiDescription ctrlSetStructuredText parseText "";
-_uiDescription ctrlCommit 0;
-
-if ((count _vehicles) <= 0) then {
-    _uiList lbAdd "Es sind keine Fahrzeuge in der Garage.";
-    _uiList lbSetData [0, "-1"];
-} else {
-    {
-        private ["_index"];
-        _vehicleConfig = (configFile >> "CfgVehicles" >> (_x select 1));
-        if !(isNull _vehicleConfig) then {
-            _index = _uiList lbAdd format["%1", getText (_vehicleConfig >> "displayName")];
-            _uiList lbSetPicture [_index, getText (_vehicleConfig >> "picture")];
-            _uiList lbSetData [_index, format["%1", _x]];
-        };
-    } forEach _vehicles;
-
-    _uiButtonRequest ctrlEnable true;
-};
-*/

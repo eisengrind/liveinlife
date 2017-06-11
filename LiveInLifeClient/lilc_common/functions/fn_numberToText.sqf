@@ -8,11 +8,11 @@
 	Description:
 	    Convert a number into string (avoiding scientific notation)
 	Params:
-	    0 - The number to convert - <INTEGER/SCALAR>
-        1 - The distance between the next split
-        2 - The char to insert as split
+	    (_this select 0) : The number to convert : <SCALAR/INT>
+        (_this select 1) : The distance between the next split
+        (_this select 2) : The char to insert as split
 	Returns:
-	    number text - Returns the a number as string (with split chars); otherwise returns "" - <STRING>
+	     the a number as string (with split chars); otherwise returns "" - <STRING>
 */
 
 params [

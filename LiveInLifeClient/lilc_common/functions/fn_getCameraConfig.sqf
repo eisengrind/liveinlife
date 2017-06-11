@@ -1,4 +1,17 @@
 
+/*
+    Filename:
+        fn_getCameraConfig.sqf
+    Author:
+        Vincent Heins
+    Description:
+        Gets the static camera coordinates from CfgStaticCameras.
+    Param(s):
+        (_this select 0) : the configName of the static camera : <STRING>
+    Result(s):
+        the produced config entry - <CONFIG>
+*/
+
 private _cameraName = param [0, "", [""]];
 
 try {

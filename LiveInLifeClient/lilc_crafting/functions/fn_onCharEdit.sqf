@@ -1,9 +1,22 @@
 
 params [
     ["_control", controlNull, [controlNull, displayNull]],
-    ["_keycode", "", ["", 0]]
+    ["_keyCode", "", ["", 0]]
 ];
 
-_keyArray = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 14, 211];
-if !(_keycode in _keyArray) exitWith {};
-call lilc_crafting_fnc_updateMenu;
+_keyArray = [101, 46, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57];
+if !(_keyCode in _keyArray) exitWith {};
+sleep 0.001;
+
+private _amount = ([(ctrlText 1401)] call lilc_common_fnc_textToNumber);
+if (_amount > 100) then
+{
+	ctrlSetText [1401, "100"];
+};
+
+if (_amount <= 0) then
+{
+	ctrlSetText [1401, "1"];
+};
+
+[(lbData [1500, (lbCurSel 1500)])] call lilc_crafting_fnc_updateMenuNeeded;

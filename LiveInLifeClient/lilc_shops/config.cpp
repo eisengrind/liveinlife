@@ -24,5 +24,6 @@ class lilc_RscButtonMenu_darkBlueBackground;
 
 #include "dialogs\buyUniforms.cpp"
 #include "dialogs\buyItems.cpp"
+#include "dialogs\sell.cpp"
 //#include "dialogs\sell.cpp"
 //#include "dialogs\vehicle.cpp"

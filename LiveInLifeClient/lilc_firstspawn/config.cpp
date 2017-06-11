@@ -6,3 +6,8 @@ class CfgPatches {
 class CfgFunctions {
     #include "CfgFunctions.cpp"
 };
+
+class CfgSounds {
+    sounds[] = {};
+    #include "CfgSounds.cpp"
+};

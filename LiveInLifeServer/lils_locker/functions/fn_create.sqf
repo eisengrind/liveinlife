@@ -13,7 +13,7 @@ try {
     if (isNull _lockerConfig) throw false;
 
     private _isLocal = getNumber(_lockerConfig >> "isLocal");
-    if (_isLocal >= 1) then {
+    if (_isLocal <= 0) then {
         _lockerName = "";
     };
 

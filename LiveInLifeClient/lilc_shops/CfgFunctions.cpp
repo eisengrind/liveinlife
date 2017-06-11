@@ -1,43 +1,29 @@
 
 class lilc_shops {
     class functions {
-        file = "\lilc_shops\functions";
+        file = "\x\lilc\addons\shops\functions";
+        class addItem {};
+        class buyClothing {};
         class buyItem {};
-        class buyUniform {};
-        class closeBuyUniformsMenu {};
+        class closeClothingMenu {};
         class getCategory {};
         class getCategoryName {};
         class getShopConfig {};
         class inCategory {};
         class isOtherItem {};
         class isUniformItem {};
-        class onBuyItemChange {};
-        class onBuyUniformChange {};
-        class openBuyItemsMenu {};
-        class openBuyUniformsMenu {};
-        class setBuyItems {};
-        class setBuyUniforms {};
-        class setBuyUniformsCamera {};
-        class updateBuyItemsMenu {};
-        class updateBuyUniformsMenu {};
-        
-        /*class buyItem {};
-        class buyVehicle {};
-        class closeVehicleMenu {};
-        class decreaseBuyAmount {};
-        class decreaseSellAmount {};
-        class getAvailableTypes {};
-        class getTypeName {};
-        class increaseBuyAmount {};
-        class increaseSellAmount {};
-        class onVehicleArrowLeft {};
-        class onVehicleArrowRight {};
-        class openBuyMenu {};
+        class onLBSelChangedClothing {};
+        class onLBSelChangedClothingCombo {};
+        class onMouseButtonDownClothing {};
+        class onMouseButtonUpClothing {};
+        class onMouseMovingClothing {};
+        class openItemsMenu {};
+        class openClothingMenu {};
         class openSellMenu {};
-        class openVehicleMenu {};
+        class removeItem {};
         class sellItem {};
-        class updateBuyMenu {};
+        class updateBuyItemsMenu {};
+        class updateClothingMenu {};
         class updateSellMenu {};
-        class updateVehicleMenu {};*/
     };
 };

@@ -1,7 +1,7 @@
 
 class lilc_farming {
     class functions {
-        file = "\lilc_farming\functions";
+        file = "\x\lilc\addons\farming\functions";
         class cocoa {};
         class coconuts {};
         class coconutsClimbDown {};

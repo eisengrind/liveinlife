@@ -13,7 +13,7 @@ class lilci_tazer_F : Pistol_Base_F {
     maxRangeProbab = 0.04;
     minRangeProbab = 0.1;
     midRangeProbab = 0.3;
-    model = "\lilc_tazer\tazer.p3d";
+    model = "\x\lilc\addons\tazer\tazer.p3d";
     reloadTime = 4;
     bullet1[] = {};
     bullet2[] = {};

@@ -1,13 +1,18 @@
 
 class lilc_pcard {
     class functions {
-        file = "\lilc_pcard\functions";
+        file = "\x\lilc\addons\pcard\functions";
+        class appendNewPersonalcard {};
+        class canCreatePersonalcard {};
+        class canShowPersonalcard {};
+        class createPersonalcard {};
+        class doCreatePersonalcard {};
+        class doShowPersonalcard {};
+        class getPersonalcards {};
+        class havePersonalcard {};
         class init {};
-        class onCreateCharEdit {};
-        class openCreateMenu {};
-        class set {};
-        class show {};
-        class showToPlayer {};
-        class updateCreateMenu {};
+        class sendPersonalcard {};
+        class showPersonalcard {};
+        class watchPersonalcard {};
     };
 };

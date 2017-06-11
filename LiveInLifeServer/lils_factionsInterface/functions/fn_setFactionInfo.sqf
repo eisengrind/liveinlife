@@ -17,6 +17,15 @@ try {
     if ((count (_result select 0)) != 1) throw false;
 
     _unit setVariable ["lilc_factionRankID", ((_result select 0) select 0), true];
+
+    private _stuff = [(format["SELECT VEHICLES, EQUIPMENT FROM FACTION_PLAYER_DATA WHERE ACCOUNTID = '%1'", _accountID])] call lils_database_fnc_fetchObjects;
+    if ((count _stuff) != 1) throw false;
+    _stuff = (_stuff select 0);
+    if ((count _stuff) != 2) throw false;
+    _stuff = [_stuff] call lils_common_fnc_arrayDecode;
+    [_stuff, "lilc_factionsInterface_fnc_setAvailables", _unit] call lilc_common_fnc_send;
+
+    throw true;
 } catch {
     _exception;
 };

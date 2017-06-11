@@ -6,10 +6,10 @@
     Description:
         Alias for remoteExec to the server
     Params:
-        0 - Parameters to send to object - <ANY>
-        1 - Function name to call - <STRING>
+        (_this select 0) : Parameters to send to object : <ANY>
+        (_this select 1) : Function name to call : <STRING>
     Returns:
-        true / false - Returns true if request was send; otherwise false - <BOOLEAN>
+        true / false : Returns true if request was send; otherwise false : <BOOL>
     License:
         @LiveInLifeClient\license.txt
 */

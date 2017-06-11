@@ -1,0 +1,13 @@
+
+<?xml version="1.0" encoding="utf-8">
+<Project name="LiveInLife">
+    <Package name="lilc_picklock">
+        <Container name="ActionTitle">
+            <Key ID="STR_lilc_actions_ActionTitle_picklock">
+                <Original>Break into</Original>
+                <English>Break into</English>
+                <German>Aufbrechen</German>
+            </Key>
+        </Container>
+    </Package>
+</Project>

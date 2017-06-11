@@ -1,7 +1,7 @@
 
 class lils_events {
     class functions {
-        file = "\lils_events\functions";
+        file = "\x\lils\addons\events\functions";
         class init {};
         class onPlayerDisconnect {};
     };

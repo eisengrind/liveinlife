@@ -16,7 +16,7 @@ try {
 
         case "Equipment": {
             switch (_itemType select 1) do {
-                case "Glassses": {
+                case "Glasses": {
                     _config = "CfgGlasses";
                 };
 

@@ -1,11 +1,25 @@
 
 params [
-    ["_date", [], [[]]],
-    ["_weather", [], [[]]]
+    ["_mapTime", [], [[]]],
+    ["_mapWeather", [], [[]]]
 ];
-if ((count _date) != 5) exitWith {};
-if ((count _weather) != 5) exitWith {};
-setDate _date;
-/*_weatherArr = [];
-{ _weatherArr pushBack [1, _x]; } forEach _weather;
-_weatherArr call LiveInLifeServer_weather_fnc_set;*/
+
+try {
+    //_weather = [fog, overcast, rain, rainbow, waves, gusts, wind];
+    //_date = [2014,10,30,2,30];
+    if ((count _mapTime) != 5) throw false;
+    if ((count _mapWeather) != 7) throw false;
+
+    setDate _mapTime;
+    1 setFog (_mapWeather select 0);
+    1 setOvercast (_mapWeather select 1);
+    1 setRain (_mapWeather select 2);
+    1 setRainbow (_mapWeather select 3);
+    1 setWaves (_mapWeather select 4);
+    1 setGusts (_mapWeather select 5);
+    setWind [((_mapWeather select 6) select 0), ((_mapWeather select 6) select 1), false];
+    forceWeatherChange;
+    throw true;
+} catch {
+    _exception;
+};

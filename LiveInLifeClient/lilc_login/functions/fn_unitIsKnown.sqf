@@ -5,12 +5,11 @@ try {
     if (isNull _unit) throw false;
     if !(isPlayer _unit) throw false;
 
-    _unitID = _unit getVariable ["lilc_accountID", 0];
-    if (_unitID <= 0) throw false;
+    private _accountID = (_unit getVariable ["lilc_accountID", 0]);
+    if (_accountID <= 0) throw false;
 
-    _currentKnows = profileNamespace getVariable ["lilc_knownUnits", []];
-    if (_unitID in _currentKnows) throw true;
-
+    if (_accountID in lilc_login_knownUnits) throw true;
+    /*if (({ _x == _accountID } count (profileNamespace getVariable ["lilc_knownUnits", []])) == 1) throw true;*/
     throw false;
 } catch {
     _exception;

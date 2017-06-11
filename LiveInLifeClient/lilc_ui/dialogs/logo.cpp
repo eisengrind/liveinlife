@@ -13,7 +13,7 @@ class lilc_ui_logo {
     class controlsBackground {
         class PictureLogo : lilc_RscPicture {
             idc = -1;
-            text = "\lilc_ui\images\logo.paa";
+            text = "\x\lilc\addons\ui\images\logo.paa";
             x = 0.381406 * safezoneW + safezoneX;
             y = 0.269 * safezoneH + safezoneY;
             w = 0.232031 * safezoneW;

@@ -1,7 +1,9 @@
 
 class lils_shops {
     class functions {
-        file = "\lils_shops\functions";
+        file = "\x\lils\addons\shops\functions";
+        class buyItem {};
+        class buyUniform {};
         class getBuyItems {};
         class getBuyUniforms {};
     };

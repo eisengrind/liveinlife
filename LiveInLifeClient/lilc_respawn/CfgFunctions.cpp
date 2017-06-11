@@ -1,8 +1,9 @@
 
 class lilc_respawn {
     class functions {
-        file = "\lilc_respawn\functions";
+        file = "\x\lilc\addons\respawn\functions";
+        class getRemotestSpawnPosition {};
+        class preInit { preInit = 1; };
         class init {};
-        class wait {};
     };
 };

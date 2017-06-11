@@ -7,41 +7,99 @@ class lilc_ui_loading {
 	fadeout = 0;
 	movingEnable = false;
 	enableSimulation = true;
-    onLoad = "uiNamespace setVariable ['lilc_ui_loading', (_this select 0)]; [] spawn lilc_ui_fnc_loadingLoop;";
-    onUnload = "lilc_ui_isLoading = false;";
+    onLoad = "uiNamespace setVariable ['lilc_ui_loading', (_this select 0)];";
     
-    class Objects {
-        class LiveInLifeIcon {
-            idc = 1502;
-            type = 82;
-            model = "\lilc_common\lilc_liveinlifeicon.p3d";
-            scale = 1;
-            direction[] = {0, 0, 0};
-            up[] = {0, 0, 0};
-
-            x = 0.5;
-            y = 0.5;
-            z = 0;
-            
-            xBack = 0.5;
-            yBack = 0.5;
-            zBack = 0.8;
-
-            inBack = 1;
-            enableZoom = 1;
-            zoomDuration = 0.001;
+    class controlsBackground {
+        class PictureBackground : lilc_RscPicture {
+            idc = 1501;
+            text = "\x\lilc\addons\ui\images\loading\loading_background.paa";
+            x = 0.9125 * safezoneW + safezoneX;
+            y = 0.852 * safezoneH + safezoneY;
+            w = 0.0721354 * safezoneW;
+            h = 0.125519 * safezoneH;
         };
     };
 
-    /*class controls {
-        class PictureLogo : lilc_RscPicture {
+    class controls {
+        class PictureLoading1 : lilc_RscPicture {
             idc = 1502;
-            text = "\lilc_ui\icons\loading.paa";
+            text = "\x\lilc\addons\ui\images\loading\loading_1.paa";
             x = 0.9125 * safezoneW + safezoneX;
             y = 0.852 * safezoneH + safezoneY;
-            w = 0.0825 * safezoneW;
-            h = 0.143 * safezoneH;
+            w = 0.0721354 * safezoneW;
+            h = 0.125519 * safezoneH;
         };
-    };*/
-};
 
+        class PictureLoading2 : lilc_RscPicture {
+            idc = 1503;
+            text = "\x\lilc\addons\ui\images\loading\loading_2.paa";
+            x = 0.9125 * safezoneW + safezoneX;
+            y = 0.852 * safezoneH + safezoneY;
+            w = 0.0721354 * safezoneW;
+            h = 0.125519 * safezoneH;
+        };
+
+        class PictureLoading3 : lilc_RscPicture {
+            idc = 1504;
+            text = "\x\lilc\addons\ui\images\loading\loading_3.paa";
+            x = 0.9125 * safezoneW + safezoneX;
+            y = 0.852 * safezoneH + safezoneY;
+            w = 0.0721354 * safezoneW;
+            h = 0.125519 * safezoneH;
+        };
+
+        class PictureLoading4 : lilc_RscPicture {
+            idc = 1505;
+            text = "\x\lilc\addons\ui\images\loading\loading_4.paa";
+            x = 0.9125 * safezoneW + safezoneX;
+            y = 0.852 * safezoneH + safezoneY;
+            w = 0.0721354 * safezoneW;
+            h = 0.125519 * safezoneH;
+        };
+
+        class PictureLoading5 : lilc_RscPicture {
+            idc = 1506;
+            text = "\x\lilc\addons\ui\images\loading\loading_5.paa";
+            x = 0.9125 * safezoneW + safezoneX;
+            y = 0.852 * safezoneH + safezoneY;
+            w = 0.0721354 * safezoneW;
+            h = 0.125519 * safezoneH;
+        };
+
+        class PictureLoading6 : lilc_RscPicture {
+            idc = 1507;
+            text = "\x\lilc\addons\ui\images\loading\loading_6.paa";
+            x = 0.9125 * safezoneW + safezoneX;
+            y = 0.852 * safezoneH + safezoneY;
+            w = 0.0721354 * safezoneW;
+            h = 0.125519 * safezoneH;
+        };
+
+        class PictureLoading7 : lilc_RscPicture {
+            idc = 1508;
+            text = "\x\lilc\addons\ui\images\loading\loading_7.paa";
+            x = 0.9125 * safezoneW + safezoneX;
+            y = 0.852 * safezoneH + safezoneY;
+            w = 0.0721354 * safezoneW;
+            h = 0.125519 * safezoneH;
+        };
+        
+        class PictureLoading8 : lilc_RscPicture {
+            idc = 1509;
+            text = "\x\lilc\addons\ui\images\loading\loading_8.paa";
+            x = 0.9125 * safezoneW + safezoneX;
+            y = 0.852 * safezoneH + safezoneY;
+            w = 0.0721354 * safezoneW;
+            h = 0.125519 * safezoneH;
+        };
+
+        class TextInfo : lilc_RscStructuredText {
+            idc = 1510;
+            text = "";
+            x = 0.29375 * safezoneW + safezoneX;
+            y = 0.72 * safezoneH + safezoneY;
+            w = 0.4125 * safezoneW;
+            h = 0.055 * safezoneH;
+        };
+    };
+};

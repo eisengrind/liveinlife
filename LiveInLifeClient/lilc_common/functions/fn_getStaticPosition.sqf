@@ -1,21 +1,26 @@
 
-private ["_name"];
+/*
+    Filename:
+        fn_getStaticPosition.sqf
+    Author:
+        Vincent Heins
+    Description:
+        Returns a static position defined in CfgStaticPositions.
+    Param(s):
+        (_this select 0) : the config name of the static position : <STRING>
+    Result(s):
+        the posDir format : <ARRAY(2)>
+*/
 
-_name = param [0, "", [""]];
-if (_name == "") exitWith { []; };
-if (isNull (missionConfigFile >> "CfgStaticPositions" >> _name)) exitWith {};
+private _name = param [0, "", [""]];
 
-_position = getArray(missionConfigFile >> "CfgStaticPositions" >> _name >> "position");
-_direction = getNumber(missionConfigFile >> "CfgStaticPositions" >> _name >> "direction");
-
-switch (_direction) do {
-    case -1: { _direction = direction player; };
-    case -2: { _direction = direction (vehicle player); };
-    case -3: {
-        if (!isNull cursorTarget) then {
-            _direction = direction cursorTarget;
-        };
-    };
+try {
+	if (_name == "") throw [];
+	
+	private _config = (missionConfigFile >> "CfgStaticPositions" >> _name);
+	if (isNull _config) throw [];
+	
+	throw [(getArray(_config >> "position")), (getNumber(_config >> "direction"))];
+} catch {
+	_exception;
 };
-
-[_position, _direction];

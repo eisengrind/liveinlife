@@ -10,114 +10,132 @@ class lilc_playerHUD {
     onLoad = "uiNamespace setVariable ['lilc_playerHUD', (_this select 0)];";
 	objects[] = {};
     
-    class controlsBackground {
-        class FrameBackgroundHealth : lilc_RscText {
-            idc = -1;
-            text = "";
-            x = 0.869792 * safezoneW + safezoneX;
-            y = 0.905556 * safezoneH + safezoneY;
-            w = 0.125625 * safezoneW;
-            h = 0.0142593 * safezoneH;
-            colorBackground[] = {(70/255), (13/255), (13/255), 0.8};
-        };
-
-        class FrameBackgroundHunger : lilc_RscText {
-            idc = -1;
-            text = "";
-            x = 0.933177 * safezoneW + safezoneX;
-            y = 0.922629 * safezoneH + safezoneY;
-            w = 0.0623958 * safezoneW;
-            h = 0.0128519 * safezoneH;
-            colorBackground[] = {(1/255), (96/255), (39/255), 0.8};
-        };
-
-        class FrameBackgroundThirst : lilc_RscText {
-            idc = -1;
-            text = "";
-            x = 0.869792 * safezoneW + safezoneX;
-            y = 0.921878 * safezoneH + safezoneY;
-            w = 0.061875 * safezoneW;
-            h = 0.0137778 * safezoneH;
-            colorBackground[] = {0, (89/255), (131/255), 0.8};
-        };
-    };
+    class controlsBackground {};
     
     class controls {
-        class ProgressHealth : lilc_RscProgress {
-            idc = 1036;
+        class FrameBackgroundBackground : lilc_RscText
+        {
+            idc = 1200;
             text = "";
-            x = 0.869792 * safezoneW + safezoneX;
-            y = 0.905556 * safezoneH + safezoneY;
-            w = 0.125625 * safezoneW;
-            h = 0.0142593 * safezoneH;
-            colorFrame[] = {0, 0, 0, 0};
-            colorBackground[] = {(158/255), (30/255), (30/255), 1};
-            colorBar[] = {(158/255), (30/255), (30/255), 1};
-        };
-
-        class ProgressHunger : lilc_RscProgress {
-            idc = 1037;
-            text = "";
-            x = 0.933177 * safezoneW + safezoneX;
-            y = 0.922629 * safezoneH + safezoneY;
-            w = 0.0623958 * safezoneW;
-            h = 0.0142593 * safezoneH;
-            colorFrame[] = {0, 0, 0, 0};
-            colorBackground[] = {(65/255), (161/255), (61/255), 1};
-            colorBar[] = {(65/255), (161/255), (61/255), 1};
-        };
-
-        class ProgressThirst : lilc_RscProgress {
-            idc = 1038;
-            text = "";
-            x = 0.869792 * safezoneW + safezoneX;
-            y = 0.921778 * safezoneH + safezoneY;
-            w = 0.061875 * safezoneW;
-            h = 0.0142593 * safezoneH;
-            colorFrame[] = {0, 0, 0, 0};
-            colorBackground[] = {0, (139/255), (205/255), 1};
-            colorBar[] = {0, (139/255), (205/255), 1};
-        };
-
-        class PictureIconHealth : lilc_RscPicture {
-            idc = -1;
-            text = "\LiveInLifeClient\src\paa\gui\hud\iconHealth.paa";
-            x = 0.869687 * safezoneW + safezoneX;
-            y = 0.905629 * safezoneH + safezoneY;
-            w = 0.00791668 * safezoneW;
-            h = 0.0151854 * safezoneH;
-        };
-
-        class PictureIconHunger : lilc_RscPicture {
-            idc = -1;
-            text = "\LiveInLifeClient\src\paa\gui\hud\iconHunger.paa";
-            x = 0.933333 * safezoneW + safezoneX;
-            y = 0.922222 * safezoneH + safezoneY;
-            w = 0.00791668 * safezoneW;
-            h = 0.0151854 * safezoneH;
-        };
-
-        class PictureIconThirst : lilc_RscPicture {
-            idc = -1;
-            text = "\LiveInLifeClient\src\paa\gui\hud\iconThirst.paa";
-            x = 0.869791 * safezoneW + safezoneX;
-            y = 0.920371 * safezoneH + safezoneY;
-            w = 0.00791668 * safezoneW;
-            h = 0.0151854 * safezoneH;
+            colorBackground[] = {0, 0, 0, 0.7};
+            x = 0.29375 * safezoneW + safezoneX;
+            y = 0.962 * safezoneH + safezoneY;
+            w = 0.4125 * safezoneW;
+            h = 0.044 * safezoneH;
         };
         
-        class TextCash : lilc_RscText {
-            idc = 1039;
-            text = "$0";
-            style = "0x01";
-            colorText[] = {(146/255), (212/255), (165/255), 1};
-            shadow = 2;
-            sizeEx = 0.1;
-            font = "PuristaLight";
-            x = "0.778958 * safezoneW + safezoneX";
-            y = "0.938148 * safezoneH + safezoneY";
-            w = "0.216563 * safezoneW";
-            h = "0.055 * safezoneH";
+        class PictureHealth : lilc_RscPicture
+        {
+            idc = 1206;
+            text = "\x\lilc\addons\ui\icons\hud\health.paa";
+            x = 0.297864 * safezoneW + safezoneX;
+            y = 0.969296 * safezoneH + safezoneY;
+            w = 0.0154688 * safezoneW;
+            h = 0.0247778 * safezoneH;
+        };
+
+        class PictureBlood : lilc_RscPicture
+        {
+            idc = 1201;
+            text = "\x\lilc\addons\ui\icons\hud\blood.paa";
+            x = 0.349271 * safezoneW + safezoneX;
+            y = 0.969296 * safezoneH + safezoneY;
+            w = 0.0154688 * safezoneW;
+            h = 0.0247778 * safezoneH;
+        };
+
+        class PictureFood : lilc_RscPicture
+        {
+            idc = 1207;
+            text = "\x\lilc\addons\ui\icons\hud\food.paa";
+            x = 0.417448 * safezoneW + safezoneX;
+            y = 0.969296 * safezoneH + safezoneY;
+            w = 0.0154688 * safezoneW;
+            h = 0.0247778 * safezoneH;
+        };
+
+        class PictureThirst : lilc_RscPicture
+        {
+            idc = 1208;
+            text = "\x\lilc\addons\ui\icons\hud\thirst.paa";
+            x = 0.473489 * safezoneW + safezoneX;
+            y = 0.969296 * safezoneH + safezoneY;
+            w = 0.0154688 * safezoneW;
+            h = 0.0247778 * safezoneH;
+        };
+
+        class PictureMoney : lilc_RscPicture
+        {
+            idc = 1209;
+            text = "\x\lilc\addons\ui\icons\hud\money.paa";
+            x = 0.530104 * safezoneW + safezoneX;
+            y = 0.969296 * safezoneH + safezoneY;
+            w = 0.0154688 * safezoneW;
+            h = 0.0247778 * safezoneH;
+        };
+
+        class PictureAdditionalCurrency : lilc_RscPicture
+        {
+            idc = 1210;
+            text = "\x\lilc\addons\ui\icons\hud\grinds.paa";
+            x = 0.625988 * safezoneW + safezoneX;
+            y = 0.969296 * safezoneH + safezoneY;
+            w = 0.0154688 * safezoneW;
+            h = 0.0247778 * safezoneH;
+        };
+        
+        class TextHealth : lilc_RscText
+        {
+            idc = 1000;
+            x = 0.315938 * safezoneW + safezoneX;
+            y = 0.971148 * safezoneH + safezoneY;
+            w = 0.0309375 * safezoneW;
+            h = 0.022 * safezoneH;
+        };
+
+        class TextBlood : lilc_RscText
+        {
+            idc = 1006;
+            x = 0.367188 * safezoneW + safezoneX;
+            y = 0.971296 * safezoneH + safezoneY;
+            w = 0.0464063 * safezoneW;
+            h = 0.022 * safezoneH;
+        };
+
+        class TextFood : lilc_RscText
+        {
+            idc = 1007;
+            x = 0.435521 * safezoneW + safezoneX;
+            y = 0.971148 * safezoneH + safezoneY;
+            w = 0.0360937 * safezoneW;
+            h = 0.022 * safezoneH;
+        };
+
+        class TextThirst : lilc_RscText
+        {
+            idc = 1008;
+            x = 0.491146 * safezoneW + safezoneX;
+            y = 0.971297 * safezoneH + safezoneY;
+            w = 0.0360937 * safezoneW;
+            h = 0.022 * safezoneH;
+        };
+
+        class TextMoney : lilc_RscText
+        {
+            idc = 1009;
+            x = 0.547969 * safezoneW + safezoneX;
+            y = 0.971259 * safezoneH + safezoneY;
+            w = 0.0763021 * safezoneW;
+            h = 0.022 * safezoneH;
+        };
+
+        class TextAdditionalCurrency : lilc_RscText
+        {
+            idc = 1010;
+            x = 0.64375 * safezoneW + safezoneX;
+            y = 0.971296 * safezoneH + safezoneY;
+            w = 0.0577604 * safezoneW;
+            h = 0.022 * safezoneH;
         };
     };
 };

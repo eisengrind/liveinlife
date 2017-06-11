@@ -1,2 +1,2 @@
 
-class lilc_crafting_sound
+//class lilc_crafting_sound

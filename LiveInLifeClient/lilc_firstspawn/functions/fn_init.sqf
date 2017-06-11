@@ -1,68 +1,14 @@
-/*
-_classname = (["rds_uniform_Woodlander4","rds_uniform_Worker1","rds_uniform_Worker4","rds_uniform_Worker3","U_I_C_Soldier_Bandit_5_F","U_I_C_Soldier_Bandit_4_F","rds_uniform_Woodlander3","rds_uniform_Woodlander2","rds_uniform_Woodlander1"] call BIS_fnc_selectRandom);
-player forceAddUniform _classname;
 
-lilc_flight_inTriggerArea = false;
-_trigger = createTrigger ["EmptyDetector", [6947.12,7409.36,0]];
-_trigger setTriggerArea [200, 100, 260.238, true, -1];
-_trigger setTriggerActivation ["CIV", "PRESENT", false];
-_trigger setTriggerStatements ["true", "lilc_flight_inTriggerArea = true;", ""];
-
-lilc_flight_sleeping = true;
-[] spawn {
-    0 fadeSound 0;
-    200 cutText ["", "BLACK", 0.01];
-
-    while {lilc_flight_sleeping} do {
-        201 cutText ["Du bist im Flugzeug, aber schläfst noch. Vermutlich wirst du bald von der durchsage des Piloten geweckt.", "BLACK", 6];
-        sleep 8;
-        201 cutText ["Du bist im Flugzeug, aber schläfst noch. Vermutlich wirst du bald von der durchsage des Piloten geweckt.", "BLACK IN", 6];
-        sleep 8;
-    };
-
-    201 cutText ["", "BLACK IN", 0.01];
-    200 cutText ["", "BLACK IN", 3];
-    3 fadeSound 1;
-};
-
-waitUntil { lilc_flight_waitingForPlayers };
-
-[[player], "LiveInLifeServer_flight_fnc_addToFlight"] call lilc_common_fnc_sendToServer;
-
-waitUntil { !lilc_flight_waitingForPlayers };
-
-lilc_flight_isReady = false;
-waitUntil { lilc_flight_isReady };
-
-lilc_flight_sleeping = false;
-
-diag_log str vehicle player;
-waitUntil { (isTouchingGround (vehicle player)) };
-
-diag_log str lilc_flight_inTriggerArea;
-waitUntil { (lilc_flight_inTriggerArea) };
-
-200 cutText ["", "BLACK", 3];
-3 fadeSound 0;
-sleep 3;
-
-["default"] call lilc_common_fnc_setStaticPosition;
-sleep 1;
-
-200 cutText ["", "BLACK IN", 2];
-2 fadeSound 0;
-*/
-
-lilc_player_HUDEnabled = false;
-disableUserInput true;
+call lilc_ui_fnc_disableHud;
 0 fadeSound 0;
 [0.01] call lilc_ui_fnc_fadeInBlack;
-["lilc_ui_loading", 0.01, 502, true] call lilc_ui_fnc_fadeInTitles;
+
+[""] call lilc_ui_fnc_setLoadingText;
 
 sleep 2;
-_classname = selectRandom ["rds_uniform_Woodlander4","rds_uniform_Worker1","rds_uniform_Worker4","rds_uniform_Worker3","U_I_C_Soldier_Bandit_5_F","U_I_C_Soldier_Bandit_4_F","rds_uniform_Woodlander3","rds_uniform_Woodlander2","rds_uniform_Woodlander1"];
-player forceAddUniform _classname;
 player allowDamage false;
+
+call lilc_ui_fnc_disableUserInput;
 
 lilc_firstspawn_queueFinished = false;
 private _handle = [] spawn {
@@ -88,17 +34,17 @@ private _handle = [] spawn {
 waitUntil { lils_firstspawn_queueOpen };
 [[player], "lils_firstspawn_fnc_addToFlight"] call lilc_common_fnc_sendToServer;
 
-
 waitUntil { !lils_firstspawn_queueOpen };
 lilc_firstspawn_queueFinished = true;
+
 waitUntil { scriptDone _handle; };
-disableUserInput false;
-[1, 502] call lilc_ui_fnc_fadeOutTitles;
+call lilc_ui_fnc_enableUserInput;
+playSound "pilot_speech_1";
+call lilc_ui_fnc_disableLoadingIcon;
 
 [4] call lilc_ui_fnc_fadeOutBlack;
 4 fadeSound 1;
 sleep 4;
-disableUserInput true;
 
 lilc_firstspawn_atAirport = false;
 private _trigger = createTrigger ["EmptyDetector", [6981.7,7369.36,0]];
@@ -110,7 +56,6 @@ waitUntil { (isTouchingGround vehicle player) };
 sleep 40;
 waitUntil { lilc_firstspawn_atAirport };
 
-disableUserInput false;
 [4] call lilc_ui_fnc_fadeInBlack;
 4 fadeSound 0;
 sleep 5;
@@ -120,13 +65,15 @@ moveOut player;
 sleep (random [0.3, 0.8, 1]);
 ["default"] call lilc_common_fnc_setStaticPosition;
 sleep 1;
-player enableSimulation true;
-player setvariable ["ace_medical_bodyPartStatus", [0,0,0,0,0,0]];
-player allowDamage true;
 
-lilc_player_HUDEnabled = true;
+lilc_player_cash = 100;
+player enableSimulation true;
+player allowDamage true;
+[player, player] call ACE_medical_fnc_treatmentAdvanced_fullHealLocal;
+
+call lilc_ui_fnc_enableHud;
 lilc_player_isNew = 0;
-[0] call lilc_login_fnc_savePlayerDataPartial;
+[0] call lilc_login_fnc_updatePlayerDataPartial;
 sleep 4;
 
 2 fadeSound 1;

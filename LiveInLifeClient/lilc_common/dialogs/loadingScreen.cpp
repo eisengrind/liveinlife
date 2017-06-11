@@ -29,7 +29,7 @@ class RscDisplayLoadMission : RscStandardDisplay {
 
         class LiveInLifeBackground : RscPicture {
             idc = -1;
-            text = "\lilc_common\lilc_loadingBackground.paa";
+            text = "\x\lilc\addons\common\lilc_loadingBackground.paa";
 			x = "safezoneXAbs";
 			y = "safezoneY";
 			w = "safezoneWAbs";

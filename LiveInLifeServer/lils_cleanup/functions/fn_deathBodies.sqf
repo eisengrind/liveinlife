@@ -4,6 +4,6 @@
     if (_timeout <= time) then {
         deleteVehicle _x;
     } else {
-        _x setVariable ["lilc_corpsseTimeout", _timeout];
+        _x setVariable ["lilc_corpseTimeout", _timeout];
     };
 } forEach allDead;

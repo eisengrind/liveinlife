@@ -1,12 +1,25 @@
 
-private ["_name", "_spawnConfig"];
-_name = param [0, "", [""]];
-if (_name == "") exitWith { false; };
+/*
+    Filename:
+        fn_setStaticPosition.sqf
+    Author:
+        Vincent Heins
+    Description:
+        Sets the player to a static position declared in CfgStaticPositions.
+    Param(s):
+        (_this select 0) : config name of the position : <STRING>
+    Result(s):
+        true = success; false != true : <BOOL>
+*/
 
-_spawnConfig = configNull;
-_spawnConfig = [_name] call lilc_common_fnc_getStaticPosition;
-if ((count _spawnConfig) <= 0) exitWith { false; };
+private _configName = param [0, "", [""]];
 
-player setPosASL (_spawnConfig select 0);
-player setDir (_spawnConfig select 1);
-true;
+try {
+	private _posDir = ([_configName] call lilc_common_fnc_getDynamicPosition);
+	if ((count _posDir) != 2) throw false;
+	
+	player setPosASL (_posDir select 0);
+	player setDir (_posDir select 1);
+} catch {
+	_exception;
+};

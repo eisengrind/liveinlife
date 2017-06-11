@@ -1,0 +1,68 @@
+
+<?xml version="1.0" encoding="utf-8">
+<Project name="LiveInLife">
+    <Package name="lilc_food">
+        <Container name="Items">
+            <Key ID="STR_lilci_emptyWaterBottle_F">
+                <Original>Leere Wasserflasche</Original>
+                <English>Leere Wasserflasche</English>
+                <German>Leere Wasserflasche</German>
+            </Key>
+            <Key ID="STR_lilci_emptyCan_F">
+                <Original>Leere Dose</Original>
+                <English>Leere Dose</English>
+                <German>Leere Dose</German>
+            </Key>
+            <Key ID="STR_lilci_emptyPlasticBottle_F">
+                <Original>Leere Plastikflasche</Original>
+                <English>Leere Plastikflasche</English>
+                <German>Leere Plastikflasche</German>
+            </Key>
+            <Key ID="STR_lilci_waterBottle_F">
+                <Original>Waterbottle</Original>
+                <English>Waterbottle</English>
+                <German>Wasserflasche</German>
+            </Key>
+            <Key ID="STR_lilci_wodka_F">
+                <Original>Wodka Tchanow</Original>
+                <English>Wodka Tchanow</English>
+                <German>Wodka Tchanow</German>
+            </Key>
+            <Key ID="STR_lilci_ramazzotti_F">
+                <Original>Ramazzotti</Original>
+                <English>Ramazzotti</English>
+                <German>Ramazzotti</German>
+            </Key>
+            <Key ID="STR_lilci_bountainMew_F">
+                <Original>Bountain Mew</Original>
+                <English>Bountain Mew</English>
+                <German>Bountain Mew</German>
+            </Key>
+            <Key ID="STR_lilci_schiffWasser_F">
+                <Original>Schiffwasser</Original>
+                <English>Schiffwasser</English>
+                <German>Schiffwasser</German>
+            </Key>
+            <Key ID="STR_lilci_bonsterMenergy_F">
+                <Original>Bonster Menergy</Original>
+                <English>Bonster Menergy</English>
+                <German>Bonster Menergy</German>
+            </Key>
+            <Key ID="STR_lilci_whiteCola_F">
+                <Original>White Cola</Original>
+                <English>White Cola</English>
+                <German>White Cola</German>
+            </Key>
+            <Key ID="STR_lilci_bebsi_F">
+                <Original>Bebsi</Original>
+                <English>Bebsi</English>
+                <German>Bebsi</German>
+            </Key>
+            <Key ID="STR_lilci_bJuice_F">
+                <Original>B-Saft</Original>
+                <English>B-Saft</English>
+                <German>B-Saft</German>
+            </Key>
+        </Container>
+    </Package>
+</Project>

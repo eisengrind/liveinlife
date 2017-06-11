@@ -1,12 +1,17 @@
 
 params [
-    ["_texturePath", "-1", [""]],
+    ["_texturePath", "", [""]],
     ["_object", ObjNull, [ObjNull]],
     ["_textureIndex", -1, [-1]]
 ];
-if (_texturePath == "-1") exitWith { false; };
-if (isNull _object) exitWith { false; };
-if (_textureIndex == -1) exitWith { false; };
 
-_object setObjectTexture [_textureIndex, _texturePath];
-true;
+try {
+    if (isNull _object) throw false;
+    if (_textureIndex <= - 1) throw false;
+
+    if (_texturePath == "#notDefined") throw false;
+    _object setObjectTexture [_textureIndex, _texturePath];
+    throw true;
+} catch {
+    _exception;
+};

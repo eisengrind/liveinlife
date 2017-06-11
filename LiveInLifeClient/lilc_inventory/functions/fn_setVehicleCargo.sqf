@@ -20,23 +20,21 @@ if ((count _gear) <= 0) exitWith {};
     _vehicle addWeaponCargoGlobal [_x, (((_gear select 2) select 1) select _forEachIndex)];
 } forEach ((_gear select 2) select 0);
 
+private _usedBackpacks = [];
 private _backpacks = (_gear select 3);
+
 {
     private _classname = (_x select 0);
     private _inventory = (_x select 1);
-    _vehicle addBackpack _classname;
+    _vehicle addBackpackCargoGlobal [(_x select 0), 1];
 
     private _addedBackpack = ObjNull;
     {
-        if ((typeOf _x) == _classname && !(_x setVariable ["lilc_inventory_tmp_isUsed", false])) exitWith {
-            _x setVariable ["lilc_inventory_tmp_isUsed", true];
+        if ((typeOf _x) == _classname && !(_x in _usedBackpacks)) exitWith {
             _addedBackpack = _x;
+            _usedBackpacks pushBack _x;
         };
-    } forEach everyBackpack _vehicle;
-
-    {
-        _x setVariable ["lilc_inventory_tmp_isUsed", nil];
-    } forEach everyBackpack _vehicle;
+    } forEach (everyBackpack _vehicle);
     
     if !(isNull _addedBackpack) then {
         {

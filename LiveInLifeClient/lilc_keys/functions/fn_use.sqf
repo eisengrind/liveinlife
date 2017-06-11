@@ -13,29 +13,75 @@
         @LiveInLifeClient\license.txt
 */
 
-try {
-    private _vehicle = param [0, ObjNull, [ObjNull]];
+private _vehicle = param [0, ObjNull, [ObjNull]];
 
-    if (isNull _vehicle || !(alive _vehicle)) throw false;
-    if !([_vehicle] call lilc_keys_fnc_have) throw false;
+try
+{
+    if (isNull _vehicle) throw false;
+    if !(alive _vehicle) throw false;
 
-    if ((locked _vehicle) == 2) then {
-        _vehicle lock false;
-        hint (["STR_lilc_keys_opened"] call lilc_common_fnc_localize);
-
-        /*if (["lilc_keys", "soundVehicleOpened"] call lilc_common_fnc_getSetting) then {*/
-            ["lilc_sounds_vehicleLock"] call lilc_sounds_fnc_playSound3D;
-        /*};*/
-    } else {
-        _vehicle lock true;
-        hint (["STR_lilc_keys_closed"] call lilc_common_fnc_localize);
-        
-        /*if (["lilc_keys", "soundVehicleClosed"] call lilc_common_fnc_getSetting) then {*/
-            ["lilc_sounds_vehicleLock"] call lilc_sounds_fnc_playSound3D;
-        /*};*/
+    private _playerFactionID = (player getVariable ["lilc_factionID", -1]);
+    private _vehicleFactionID = (_vehicle getVariable ["lilc_factionID", -1]);
+    private _isGlobalKey = false;
+    if (_vehicleFactionID > -1 && _playerFactionID == _vehicleFactionID) then
+    {
+        private _factionConfig = ([_vehicleFactionID] call lilc_factions_fnc_getFactionConfig);
+        _isGlobalKey = (
+            if (getNumber(_factionConfig >> "globalVehicleLock") == 1) then
+            {
+                true;
+            }
+            else
+            {
+                false;
+            }
+        );
     };
+    if (!([_vehicle] call lilc_keys_fnc_have) && !_isGlobalKey) throw false; 
 
+    if ((locked _vehicle) in [2, 3]) then
+    {
+        [_vehicle, 0] call lilc_vehicles_fnc_lock;
+        [(["Fahrzeug aufgeschlossen."] call lilc_common_fnc_localize)] call lilc_ui_fnc_hint;
+
+        [
+            "lilce_keys_use_opened",
+            [
+                _vehicle,
+                player,
+                _isGlobalKey
+            ]
+        ] call CBA_fnc_localEvent;
+    }
+    else
+    {
+        if ((locked _vehicle) == 0) then
+        {
+            [_vehicle, 2] call lilc_vehicles_fnc_lock;
+            [(["Fahrzeug abgeschlossen."] call lilc_common_fnc_localize), "ERROR"] call lilc_ui_fnc_hint;
+
+            [
+                "lilce_keys_use_closed",
+                [
+                    _vehicle,
+                    player,
+                    _isGlobalKey
+                ]
+            ] call CBA_fnc_localEvent;
+        };
+    };
+    
     throw true;
-} catch {
-
+}
+catch
+{
+    _exception;
 };
+
+/*if (["lilc_keys", "soundVehicleOpened"] call lilc_common_fnc_getSetting) then {
+    ["lilc_sounds_vehicleLock"] call lilc_sounds_fnc_playSound3D;
+};*/
+
+/*if (["lilc_keys", "soundVehicleClosed"] call lilc_common_fnc_getSetting) then {
+    ["lilc_sounds_vehicleLock"] call lilc_sounds_fnc_playSound3D;
+};*/

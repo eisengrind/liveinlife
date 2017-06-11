@@ -1,11 +1,14 @@
 
 class lils_common {
     class functions {
-        file = "\lils_common\functions";
+        file = "\x\lils\addons\common\functions";
         class arrayDecode {};
         class arrayEncode {};
         class getAvailableClassnames {};
         class getAvailableStaticPositions {};
-        class initMission {};
+        class restartServer {};
+        class stringDecode {};
+        class stringEncode {};
+        class waitUntilRestart {};
     };
 };

@@ -1,0 +1,9 @@
+
+virtualInventory = {
+    {
+        <itemName/string>, //configName of the item
+        [<displayName/string>, <descriptionShort/string>, <description/string>], //replaces of names
+        <data/any!{displayNull, controlNull, ...}>
+    },
+    ...
+}

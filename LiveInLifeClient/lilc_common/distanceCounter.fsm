@@ -1,0 +1,185 @@
+/*%FSM<COMPILE "D:\Programs\Bohemia Interactive\Tools\FSM Editor Personal Edition\scriptedFSM.cfg, distanceCounter.fsm">*/
+/*%FSM<HEAD>*/
+/*
+item0[] = {"Init",0,250,-40.348839,-141.279068,49.651161,-91.279068,0.000000,"Init"};
+item1[] = {"isAlive_",4,218,-40.456886,-37.781147,49.542885,12.218849,0.000000,"isAlive?"};
+item2[] = {"set_stats",2,4346,-206.462250,55.799294,-116.462227,105.799232,0.000000,"set stats"};
+item3[] = {"wait_for__enable",4,218,-31.625809,150.902710,58.374191,200.902710,0.000000,"wait for " \n "enabled"};
+item4[] = {"sleep_0_1",2,250,128.801163,59.641861,218.801178,109.641861,0.000000,"sleep 0.1"};
+item5[] = {"isDead_",4,218,307.141998,59.511711,397.141998,109.511711,1.000000,"isDead?"};
+item6[] = {"nothing",2,250,307.480347,-287.149231,397.480164,-237.149353,0.000000,"nothing"};
+item7[] = {"is_respawned",4,218,113.649300,-287.039978,203.649292,-237.040161,0.000000,"is respawned"};
+item8[] = {"set_position",2,250,114.391563,-101.745750,204.391571,-51.745750,0.000000,"set position"};
+link0[] = {0,1};
+link1[] = {1,2};
+link2[] = {2,3};
+link3[] = {3,4};
+link4[] = {4,1};
+link5[] = {4,5};
+link6[] = {5,6};
+link7[] = {6,7};
+link8[] = {7,8};
+link9[] = {8,1};
+globals[] = {0.000000,0,0,0,0,640,480,2,35,6316128,1,-513.235229,577.447632,430.956879,-478.778687,1091,910,1};
+window[] = {2,-1,-1,-1,-1,935,208,1348,208,3,1109};
+*//*%FSM</HEAD>*/
+class FSM
+{
+  fsmName = "distanceCounter.fsm";
+  class States
+  {
+    /*%FSM<STATE "Init">*/
+    class Init
+    {
+      name = "Init";
+      init = /*%FSM<STATEINIT""">*/"_oldPosition = (getPos player);"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "isAlive_">*/
+        class isAlive_
+        {
+          priority = 0.000000;
+          to="set_stats";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"(alive player)"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "set_stats">*/
+    class set_stats
+    {
+      name = "set_stats";
+      init = /*%FSM<STATEINIT""">*/"" \n
+       "_distance = (round (_oldPosition distance2D (getPos player)));" \n
+       "" \n
+       "if ((vehicle player) == player) then {" \n
+       "    private _stance = (stance player);" \n
+       "    " \n
+       "    switch (_stance) do {" \n
+       "        case ""STAND"": { lilc_player_coveredDistance_stand = lilc_player_coveredDistance_stand + _distance; };" \n
+       "        case ""CROUCH"": { lilc_player_coveredDistance_crouch = lilc_player_coveredDistance_crouch + _distance; };" \n
+       "        case ""PRONE"": { lilc_player_coveredDistance_prone = lilc_player_coveredDistance_prone + _distance; };" \n
+       "        case ""UNDEFINED"": { if (surfaceIsWater position player) then { lilc_player_coveredDistance_swimming = lilc_player_coveredDistance_swimming + _distance; }; };" \n
+       "    };" \n
+       "} else {" \n
+       "    switch (true) do {" \n
+       "        case ([(vehicle player), [""Car"", ""Truck"", ""Tank""]] call lilc_common_fnc_isKindOf): {" \n
+       "            lilc_player_coveredDistance_car = lilc_player_coveredDistance_car + _distance;" \n
+       "        };" \n
+       "" \n
+       "        case ([(vehicle player), [""Air"", ""Plane"", ""Helicopter""]] call lilc_common_fnc_isKindOf): {" \n
+       "            lilc_player_coveredDistance_air = lilc_player_coveredDistance_air + _distance;" \n
+       "        };" \n
+       "" \n
+       "        case ([(vehicle player), [""Boat"", ""Ship""]] call lilc_common_fnc_isKindOf): {" \n
+       "            lilc_player_coveredDistance_boat = lilc_player_coveredDistance_boat + _distance;" \n
+       "        };" \n
+       "    };" \n
+       "};" \n
+       "" \n
+       "_oldPosition = (getPos player);" \n
+       ""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "wait_for__enable">*/
+        class wait_for__enable
+        {
+          priority = 0.000000;
+          to="sleep_0_1";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"lilc_player_statsEnabled"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "sleep_0_1">*/
+    class sleep_0_1
+    {
+      name = "sleep_0_1";
+      init = /*%FSM<STATEINIT""">*/"_timeout = ([] spawn { sleep 0.1; });" \n
+       "scriptDone _timeout;" \n
+       "_timeout = nil;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "isDead_">*/
+        class isDead_
+        {
+          priority = 1.000000;
+          to="nothing";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"!(alive player)"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "isAlive_">*/
+        class isAlive_
+        {
+          priority = 0.000000;
+          to="set_stats";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"(alive player)"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "nothing">*/
+    class nothing
+    {
+      name = "nothing";
+      init = /*%FSM<STATEINIT""">*/"_timeout = ([] spawn { sleep 0.1; });" \n
+       "scriptDone _timeout;" \n
+       "_timeout = nil;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "is_respawned">*/
+        class is_respawned
+        {
+          priority = 0.000000;
+          to="set_position";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"!lilc_player_isRespawning"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "set_position">*/
+    class set_position
+    {
+      name = "set_position";
+      init = /*%FSM<STATEINIT""">*/"_oldPosition = (getPos player);"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "isAlive_">*/
+        class isAlive_
+        {
+          priority = 0.000000;
+          to="set_stats";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"(alive player)"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+  };
+  initState="Init";
+  finalStates[] =
+  {
+  };
+};
+/*%FSM</COMPILE>*/

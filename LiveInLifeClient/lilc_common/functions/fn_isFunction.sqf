@@ -1,4 +1,17 @@
 
+/*
+    Filename:
+        fn_isFunction.sqf
+    Author:
+        Vincent Heins
+    Description:
+        THIS FUNCTION IS OBSOLETE!
+    Param(s):
+        -
+    Result(s):
+        -
+*/
+
 private _functions = param [0, [], ["", []]];
 
 try {

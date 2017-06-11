@@ -20,7 +20,7 @@ class lilc_loadingScreen {
         class LiveInLifeIcon {
             idc = 1501;
             type = 82;
-            model = "\lilc_common\lilc_liveinlifeicon.p3d";
+            model = "\x\lilc\addons\common\lilc_liveinlifeicon.p3d";
             scale = 1;
             direction[] = {0, 0, 0};
             up[] = {0, 0, 0};

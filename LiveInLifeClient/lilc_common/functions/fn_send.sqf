@@ -6,18 +6,18 @@
     Description:
         Alias for remoteExec.
     Params:
-        0 - Parameters to send to object - <ANY>
-        1 - Function name to call - <STRING>
-        2 - Unit/Server to call the function on - <OBJECT/INTEGER/SCALAR>
-        3 - Send request to jip unit? - <BOOLEAN>
+        (_this select 0) : Parameters to send to object : <ANY>
+        (_this select 1) : Function name to call : <STRING>
+        (_this select 2) : Unit/Server to call the function on : <OBJECTNULL>, <SCALAR/INT>
+        (_this select 3) : Send request to jip unit? : <BOOL>
     Returns:
-        true / false - Returns true if request was send; otherwise false - <BOOLEAN>
+        true / false - Returns true if request was send; otherwise false - <BOOL>
     License:
         @LiveInLifeClient\license.txt
 */
 
 params [
-    ["_parameters", nil],
+    ["_parameters", []],
     ["_functionName", "", [""]],
     ["_target", ObjNull, [ObjNull, [], GrpNull, "", 0, sideUnknown]],
     ["_jip", false, [false, "", ObjNull, GrpNull]]
@@ -25,9 +25,17 @@ params [
 
 try {
     if (isNil "_functionName") throw false;
-    private _result = _parameters remoteExec [_functionName, _target, _jip];
+    private _result = "";
+    [(format["Function '%1' was called", _functionName])] call lilc_common_fnc_diag_log;
 
-    if ((typeName _result) == "") throw true;
+    if (isMultiplayer) then {
+        _result = _parameters remoteExec [_functionName, _target, _jip];
+        if ((typeName _result) == "") throw true;
+    } else {
+        private _handle = _parameters spawn compile format["_this call %1;", _functionName];
+        throw true;
+    };
+    
     throw false;
 } catch {
     _exception;

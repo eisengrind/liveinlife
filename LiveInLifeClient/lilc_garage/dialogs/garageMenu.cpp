@@ -1,93 +1,89 @@
 
-class lilc_garageMenu {
-    name = "lilc_garageMenu";
-	idd = 1265;
-	movingEnable = false;
-	enableSimulation = true;
-    
-    class controlsBackground {
-        class FrameTitleBackground : lilc_RscText_whiteBackground {
-            idc = -1;
-            x = 0.0926562 * safezoneW + safezoneX;
-            y = 0.17 * safezoneH + safezoneY;
-            w = 0.216563 * safezoneW;
-            h = 0.033 * safezoneH;
-        };
+class RscActiveText;
+class lilc_RscText;
+class lilc_RscStructuredText;
+class lilc_RscListbox;
+class lilc_RscButtonMenu;
 
-        class FrameBackground : lilc_RscText_darkBlueBackground {
-            idc = -1;
-            x = 0.0926562 * safezoneW + safezoneX;
-            y = 0.203 * safezoneH + safezoneY;
-            w = 0.216563 * safezoneW;
+class lilcm_garage
+{
+    name = "lilcm_garage";
+    idd = 1265;
+    movingEnable = false;
+    enableSimulation = true;
+
+    class controlsBackground
+    {
+        class FrameBackground : lilc_RscText
+        {
+            idc = 1000;
+            x = 0.102969 * safezoneW + safezoneX;
+            y = 0.214 * safezoneH + safezoneY;
+            w = 0.190781 * safezoneW;
             h = 0.572 * safezoneH;
+            colorBackground[] = {0, 0, 0, 0.8};
         };
 
-        class FrameFooterBackground : lilc_RscText_whiteBackground {
-            idc = -1;
-            x = 0.0926562 * safezoneW + safezoneX;
-            y = 0.775 * safezoneH + safezoneY;
-            w = 0.216563 * safezoneW;
-            h = 0.044 * safezoneH;
-        };
-
-        class TitleTitle : lilc_RscTitle_darkBlueText {
-            idc = -1;
-            text = "Garage";
-            x = 0.0958335 * safezoneW + safezoneX;
-            y = 0.175926 * safezoneH + safezoneY;
-            w = 0.210937 * safezoneW;
+        class TitleName : lilc_RscText
+        {
+            idc = 1001;
+            text = "Garagenname"; //--- ToDo: Localize;
+            x = 0.102969 * safezoneW + safezoneX;
+            y = 0.192 * safezoneH + safezoneY;
+            w = 0.190781 * safezoneW;
             h = 0.022 * safezoneH;
+            colorBackground[] = {0, 0, 0, 0.95};
         };
 
-        class TitleVehicles : lilc_RscTitle {
-            idc = -1;
-            text = "Fahrzeuge in Garage:";
-            x = 0.0978125 * safezoneW + safezoneX;
-            y = 0.214122 * safezoneH + safezoneY;
-            w = 0.20625 * safezoneW;
-            h = 0.0219906 * safezoneH;
+        class ButtonClose : RscActiveText
+        {
+            idc = 1206;
+            style = 48;
+            text = "\A3\Ui_f\data\GUI\Rsc\RscDisplayArcadeMap\icon_exit_cross_ca.paa";
+            x = 0.280364 * safezoneW + safezoneX;
+            y = 0.192 * safezoneH + safezoneY;
+            w = 0.0133855 * safezoneW;
+            h = 0.022 * safezoneH;
+            onButtonClick = "[] spawn lilc_garage_fnc_closeMenu;";
+            color[] = {1, 1, 1, 0.7};
+            colorText[] = {1, 1, 1, 0.7};
+            colorActive[] = {1, 1, 1, 1};
         };
-	};
-	
-    class controls {
-        class ListVehicles : lilc_RscListbox {
-            idc = 1266;
-            text = "";
-            sizeEx = 0.033;
+    };
+
+    class controls
+    {
+        class ListVehicles : lilc_RscListbox
+        {
+            idc = 1500;
             onLBSelChanged = "[(_this select 1)] call lilc_garage_fnc_onVehicleChange;";
-            x = 0.0978125 * safezoneW + safezoneX;
-            y = 0.236 * safezoneH + safezoneY;
-            w = 0.20625 * safezoneW;
-            h = 0.352 * safezoneH;
+            x = 0.108125 * safezoneW + safezoneX;
+            y = 0.225 * safezoneH + safezoneY;
+            w = 0.180469 * safezoneW;
+            h = 0.385 * safezoneH;
         };
 
-        class TextDescription : lilc_RscStructuredText {
-            idc = 1267;
+        class TextVehicle : lilc_RscStructuredText
+        {
+            idc = 1100;
             text = "";
-            x = 0.0978125 * safezoneW + safezoneX;
-            y = 0.599 * safezoneH + safezoneY;
-            w = 0.20625 * safezoneW;
+            x = 0.108125 * safezoneW + safezoneX;
+            y = 0.613704 * safezoneH + safezoneY;
+            w = 0.180469 * safezoneW;
             h = 0.132 * safezoneH;
+            colorBackground[] = {0, 0, 0, 0.1};
         };
 
-        class ButtonReveal : lilc_RscButtonMenu_darkBlueBackground {
-            idc = 1268;
-            text = "Ausparken";
-            onButtonClick = "call lilc_garage_fnc_reveal;";
-            x = 0.154531 * safezoneW + safezoneX;
-            y = 0.742 * safezoneH + safezoneY;
-            w = 0.0979687 * safezoneW;
+        class ButtonReveal : lilc_RscButtonMenu
+        {
+            idc = 2400;
+            text = "Ausparken"; //--- ToDo: Localize;
+            x = 0.216406 * safezoneW + safezoneX;
+            y = 0.753 * safezoneH + safezoneY;
+            w = 0.0721875 * safezoneW;
             h = 0.022 * safezoneH;
+            onButtonClick = "call lilc_garage_fnc_reveal;";
+            colorBackground[] = {0, 0, 0, 0.8};
         };
-
-        class ButtonClose : lilc_RscButtonMenu_greyBackground {
-            idc = 1269;
-            text = "Schließen";
-            onButtonClick = "call lilc_garage_fnc_closeMenu;";
-            x = 0.206094 * safezoneW + safezoneX;
-            y = 0.785878 * safezoneH + safezoneY;
-            w = 0.0979687 * safezoneW;
-            h = 0.0219906 * safezoneH;
-        };
-	};
+    };
 };

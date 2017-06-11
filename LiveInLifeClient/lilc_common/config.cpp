@@ -20,3 +20,15 @@ class CfgWeapons {
 
 #include "dialogs\RscDefines.cpp"
 //#include "dialogs\loadingScreen.cpp"
+
+class Extended_PreInit_EventHandlers {
+    class lilc_common {
+        clientInit = "call compile preprocessFileLineNumbers '\x\lilc\addons\common\XEH_preInit.sqf'";
+    };
+};
+
+class Extended_PostInit_EventHandlers {
+    class lilc_common {
+        clientInit = "call compile preprocessFileLineNumbers '\x\lilc\addons\common\XEH_postInit.sqf'";
+    };
+};

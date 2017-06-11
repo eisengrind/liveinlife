@@ -1,47 +1,36 @@
 
-class lilc_shops_buyUniformsMenu {
-    name = "lilc_shops_buyUniformsMenu";
+class RscActiveText;
+class lilcm_shops_clothing {
+    name = "lilcm_shops_clothing";
 	idd = 1201;
 	movingEnable = false;
 	enableSimulation = true;
-	onUnload = "(findDisplay 1201) displayRemoveEventHandler [""KeyDown"", lilc_shops_escapeIndex];";
-	onDestroy = "(findDisplay 1201) displayRemoveEventHandler [""KeyDown"", lilc_shops_escapeIndex];";
+    onMouseButtonDown = "_this call lilc_shops_fnc_onMouseButtonDownClothing;";
+	onMouseButtonUp = "_this call lilc_shops_fnc_onMouseButtonUpClothing;";
+    onMouseMoving = "_this call lilc_shops_fnc_onMouseMovingClothing;";
+	//onUnload = "(findDisplay 1201) displayRemoveEventHandler [""KeyDown"", lilc_shops_escapeIndex];";
     
     class controlsBackground {
-        class FrameBackgroundTitle : lilc_RscText_whiteBackground {
+        class FrameBackgroundBackground : lilc_RscText {
             idc = -1;
             text = "";
-            x = 0.242187 * safezoneW + safezoneX;
-            y = 0.291 * safezoneH + safezoneY;
-            w = 0.12375 * safezoneW;
-            h = 0.033 * safezoneH;
+            x = 0.133906 * safezoneW + safezoneX;
+            y = 0.335 * safezoneH + safezoneY;
+            w = 0.118594 * safezoneW;
+            h = 0.363 * safezoneH;
+            colorBackground[] = {0,0,0,0.8};
+			onMouseButtonDown = "true;";
+			onMouseButtonUp = "true;";
         };
 
-        class FrameBackgroundBackground : lilc_RscText_darkBlueBackground {
+        class TitleTitle : lilc_RscTitle {
             idc = -1;
-            text = "";
-            x = 0.242187 * safezoneW + safezoneX;
-            y = 0.324 * safezoneH + safezoneY;
-            w = 0.12375 * safezoneW;
-            h = 0.275 * safezoneH;
-        };
-
-        class FrameBackgroundFooter : lilc_RscText_whiteBackground {
-            idc = -1;
-            text = "";
-            x = 0.242187 * safezoneW + safezoneX;
-            y = 0.599 * safezoneH + safezoneY;
-            w = 0.12375 * safezoneW;
-            h = 0.044 * safezoneH;
-        };
-
-        class TitleTitle : lilc_RscTitle_darkBlueText {
-            idc = -1;
-            text = "Kleidung";
-            x = 0.245313 * safezoneW + safezoneX;
-            y = 0.296297 * safezoneH + safezoneY;
-            w = 0.117604 * safezoneW;
+            text = "Kleiderhändler";
+            x = 0.133905 * safezoneW + safezoneX;
+            y = 0.313 * safezoneH + safezoneY;
+            w = 0.118594 * safezoneW;
             h = 0.022 * safezoneH;
+            colorBackground[] = {0,0,0,0.95};
         };
 	};
 	
@@ -49,50 +38,56 @@ class lilc_shops_buyUniformsMenu {
         class ListItems : lilc_RscListbox {
             idc = 1202;
             text = "";
-            x = 0.247343 * safezoneW + safezoneX;
-            y = 0.368 * safezoneH + safezoneY;
-            w = 0.113437 * safezoneW;
-            h = 0.176 * safezoneH;
-            onLBSelChanged = "[(_this select 1)] call lilc_shops_fnc_onBuyUniformChange;";
+            sizeEx = 0.035;
+            x = 0.139062 * safezoneW + safezoneX;
+            y = 0.37263 * safezoneH + safezoneY;
+            w = 0.108281 * safezoneW;
+            h = 0.256593 * safezoneH;
+            onLBSelChanged = "call lilc_shops_fnc_onLBSelChangedClothing;";
         };
 
         class ComboCategories : lilc_RscCombo {
             idc = 1203;
             text = "";
-            onLBSelChanged = "call lilc_shops_fnc_updateBuyUniformsMenu;";
-            x = 0.247344 * safezoneW + safezoneX;
-            y = 0.335 * safezoneH + safezoneY;
-            w = 0.113437 * safezoneW;
-            h = 0.033 * safezoneH;
+            onLBSelChanged = "call lilc_shops_fnc_updateClothingMenu;";
+            x = 0.139062 * safezoneW + safezoneX;
+            y = 0.346 * safezoneH + safezoneY;
+            w = 0.108281 * safezoneW;
+            h = 0.022 * safezoneH;
         };
 
         class TextBalance : lilc_RscStructuredText {
             idc = 1204;
             text = "";
-            x = 0.247344 * safezoneW + safezoneX;
-            y = 0.544 * safezoneH + safezoneY;
-            w = 0.113437 * safezoneW;
+            x = 0.139578 * safezoneW + safezoneX;
+            y = 0.63662 * safezoneH + safezoneY;
+            w = 0.10776 * safezoneW;
             h = 0.022 * safezoneH;
         };
 
-        class ButtonBuy : lilc_RscButtonMenu_darkBlueBackground {
+        class ButtonBuy : lilc_RscButtonMenu {
             idc = 1205;
             text = "Kaufen";
-            onButtonClick = "[] spawn lilc_shops_fnc_buyUniform;";
-            x = 0.247343 * safezoneW + safezoneX;
-            y = 0.566 * safezoneH + safezoneY;
-            w = 0.113437 * safezoneW;
+            onButtonClick = "[] spawn lilc_shops_fnc_buyClothing;";
+            x = 0.139062 * safezoneW + safezoneX;
+            y = 0.665 * safezoneH + safezoneY;
+            w = 0.108281 * safezoneW;
             h = 0.022 * safezoneH;
+            colorBackground[] = {0,0,0,0.95};
         };
-
-        class ButtonClose : lilc_RscButtonMenu_greyBackground {
-            idc = -1;
-            text = "Schliessen";
-            onButtonClick = "[] spawn lilc_shops_fnc_closeBuyUniformsMenu;";
-            x = 0.247344 * safezoneW + safezoneX;
-            y = 0.61 * safezoneH + safezoneY;
-            w = 0.113437 * safezoneW;
-            h = 0.022 * safezoneH;
+		
+		class ButtonClose : RscActiveText {
+            idc = 1206;
+			style = 48;
+            text = "\A3\Ui_f\data\GUI\Rsc\RscDisplayArcadeMap\icon_exit_cross_ca.paa";
+            x = 0.240989 * safezoneW + safezoneX;
+            y = 0.316593 * safezoneH + safezoneY;
+            w = 0.00968748 * safezoneW;
+            h = 0.0155185 * safezoneH;
+			onButtonClick = "[] spawn lilc_shops_fnc_closeClothingMenu;";
+			color[] = {1, 1, 1, 0.7};
+            colorText[] = {1, 1, 1, 0.7};
+            colorActive[] = {1, 1, 1, 1};
         };
 	};
 };

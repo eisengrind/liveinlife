@@ -6,4 +6,5 @@ class lilc_locker
     fileName = "lilc_locker.pbo";
     author[]= {"Vincent Heins"};
     lilc_globalVariableDefines = "globalVariableDefines.sqf";
+	units[] = {};
 };

@@ -6,11 +6,11 @@ try {
 
     private _bike = ObjNull;
     {
-        if ((typeOf _x) == "dbo_CIV_ol_bike" && alive _x && !isNull _x && (_x getVariable ["lilc_bikes_isRented", false])) exitWith { _bike = _x; };
+        if ((typeOf _x) == "dbo_CIV_ol_bike" && alive _x && !isNull _x && (_x getVariable ["lilc_bikes_isRented", false]) && (getPlayerUID player) == (_x getVariable ["lilc_bikes_owner", ""])) exitWith { _bike = _x; };
     } forEach nearestObjects [_position, [], 10];
 
     if (isNull _bike) then {
-        hint "Es sind keine Mietfahrräder in der Nähe.";
+        hint "Von dir steht kein Mietfahrrad in der nähe.";
         throw false;
     };
     

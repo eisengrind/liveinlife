@@ -1,53 +1,74 @@
 
-private["_queryStmt","_queryResult","_key","_mode","_return","_loop", "_extDB2_ID"];
 params [
-    ["_queryStmt", "", [""]],
+    ["_query", "", [""]],
     ["_mode", 1, [0]],
-    ["_multiarr", false, [false]],
-	["_extDB2_ID", (uiNamespace getVariable ["extDB2_ID_1", -1]), [-1]]
+	["_protocolName", "", [""]]
 ];
 
-if (_extDB2_ID == -1) exitWith {};
-
-_key = "extDB2" callExtension format["%1:%2:%3",_mode, _extDB2_ID, _queryStmt];
-
-if(_mode == 1) exitWith {true};
-
-_key = call compile format["%1",_key];
-_key = _key select 1;
-
-_queryResult = "";
-_loop = true;
-while{_loop} do
+try
 {
-	_queryResult = "extDB2" callExtension format["4:%1", _key];
-	if (_queryResult isEqualTo "[5]") then {
-		_queryResult = "";
-		while{true} do {
-			_pipe = "extDB2" callExtension format["5:%1", _key];
-			if(_pipe == "") exitWith {_loop = false};
-			_queryResult = _queryResult + _pipe;
-		};
-	}
-	else
+	private _key = "";
+	_key = ("extDB3" callExtension format["%1:%2:%3", _mode, _protocolName, _query]);
+
+	if (_mode == 1) throw true;
+
+	_key = (call compile format["%1", _key]);
+	_key = (_key select 1);
+
+	private _queryResult = "";
+	private _isLooping = true;
+
+	while
 	{
-		if (_queryResult isEqualTo "[3]") then
+		_isLooping
+	}
+	do
+	{
+		_queryResult = ("extDB3" callExtension format["4:%1", _key]);
+		if (_queryResult isEqualTo "[5]") then
 		{
-			uisleep 0.1;
-		} else {
-			_loop = false;
+			_queryResult = "";
+			while
+			{
+				true
+			}
+			do
+			{
+				private _pipe = ("extDB3" callExtension format["5:%1", _key]);
+				if (_pipe isEqualTo "") exitWith
+				{
+					_isLooping = true;
+				};
+				_queryResult = (_queryResult + _pipe);
+			};
+		}
+		else
+		{
+			if (_queryResult isEqualTo "[3]") then
+			{
+				[(format["extDB3: uisleep [4]: %1", diag_tickTime]), "extDB3"] call lilc_common_fnc_diag_log;
+				uiSleep 0.1;
+			}
+			else
+			{
+				_isLooping = false;
+			};
 		};
 	};
+
+	[(format["extDB3: query: %1", _query]), "extDB3"] call lilc_common_fnc_debugLog;
+	[(format["extDB3: result: %1", _queryResult]), "extDB3"] call lilc_common_fnc_debugLog;
+	_queryResult = (call compile _queryResult);
+
+	if ((_queryResult select 0) isEqualTo 0) then
+	{
+		[(format["extDB3: protocol error: %1", _queryResult]), "extDB3", "ERROR"] call lilc_common_fnc_diag_log;
+		throw false;
+	};
+
+	throw (_queryResult select 1);
+}
+catch
+{
+	_exception;
 };
-
-
-_queryResult = call compile _queryResult;
-
-if ((_queryResult select 0) == 0) exitWith { [(format ["extDB2: Protocol Error: %1", _queryResult]), "lils_database"] call lilc_common_fnc_diag_log; };
-_return = (_queryResult select 1);
-
-if(!_multiarr) then {
-	_return = _return select 0;
-};
-
-_return;

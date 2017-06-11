@@ -1,13 +1,18 @@
 
 class lilc_actions {
     class functions {
-        file = "\lilc_actions\functions";
+        file = "\x\lilc\addons\actions\functions";
+        class canFlipVehicle {};
+        class canGiveMoney {};
+        class canHideCorpse {};
+        class canRevealDeadBody {};
+        class doFlipVehicle {};
+        class doGiveMoney {};
+        class doHideCorpse {};
+        class doRevealDeadBody {};
         class earPlugs {};
-        class hideCorpse {};
+        class gaveMoney {};
+        class giveMoney {};
         class holsterWeapon {};
-        class leash {};
-        class surrenderStart {};
-        class surrenderStop {};
-        class unleash {};
     };
 };

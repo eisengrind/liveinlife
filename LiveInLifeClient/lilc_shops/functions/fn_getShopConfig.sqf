@@ -4,10 +4,10 @@ params [
 ];
 
 try {
-    if (isNil "_shopName") throw ["", []];
+    if (_shopName == "") throw ["", []];
 
     private _config = configNull;
-    _config = (missionConfigFile >> "CfgShops");
+    _config = (missionConfigFile >> "CfgShops" >> _shopName);
 
     throw [(getText(_config >> "displayName")), (getArray(_config >> "groups"))];
 } catch {

@@ -1,7 +1,7 @@
 
 class lilc_firstspawn {
     class functions {
-        file = "\lilc_firstspawn\functions";
+        file = "\x\lilc\addons\firstspawn\functions";
         class init {};
     };
 };

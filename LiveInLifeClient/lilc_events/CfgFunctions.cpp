@@ -1,7 +1,7 @@
 
 class lilc_events {
     class functions {
-        file = "\lilc_events\functions";
+        file = "\x\lilc\addons\events\functions";
         class escapeInterrupt {};
         class init {};
         class onInventoryOpened {};
@@ -9,3 +9,9 @@ class lilc_events {
         class onPlayerKilled {};
     };
 };
+
+/*class A3 {
+	class GUI {
+		class initDisplay { file = "\x\lilc\addons\events\functions\replaces\BIS_initDisplay.sqf"; };
+	};
+};*/

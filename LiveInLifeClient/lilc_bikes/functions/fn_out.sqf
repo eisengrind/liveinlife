@@ -18,6 +18,7 @@ try {
         lilc_player_cash = lilc_player_cash - 100;
         _vehicle = "dbo_CIV_ol_bike" createVehicle _position;
         _vehicle setVariable ["lilc_bikes_isRented", true, true];
+        _vehicle setVariable ["lilc_bikes_owner", (getPlayerUID player), true];
         lilc_bikes_bikeRented = true;
 
         hint "Fahrrad erfolgreich gemietet.";

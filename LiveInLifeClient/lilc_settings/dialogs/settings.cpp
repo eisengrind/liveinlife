@@ -97,7 +97,7 @@ class lilc_settings_menu {
             h = 0.022 * safezoneH;
         };
 
-        class ButtonKeys : lilc_RscButtonMenu {
+        /*class ButtonKeys : lilc_RscButtonMenu {
             idc = -1;
             text = "Configure Keys";
             onButtonClick = "[] spawn { closeDialog 0; sleep 0.05; call lilc_settings_fnc_openKeyMenu; };";
@@ -105,7 +105,7 @@ class lilc_settings_menu {
             y = 0.558593 * safezoneH + safezoneY;
             w = 0.12 * safezoneW;
             h = 0.022 * safezoneH;
-        };
+        };*/
 	};
 };
 
@@ -217,7 +217,7 @@ class lilc_keySettings {
 			sizeEx = 0.03;
 			drawSideArrows = 0;
             font = "RobotoCondensed";
-            onLBDblClick = "_this call lilc_setting_fnc_onLBKeyDblClick;";
+            onLBDblClick = "_this call lilc_settings_fnc_onLBKeyDblClick;";
             x = 0.355625 * safezoneW + safezoneX;
             y = 0.357 * safezoneH + safezoneY;
             w = 0.28875 * safezoneW;
@@ -228,7 +228,7 @@ class lilc_keySettings {
             idc = 1332;
             text = "Save";
             font = "PuristaSemibold";
-            onButtonClick = "[] spawn lilc_setting_fnc_saveKeyBindings;";
+            onButtonClick = "[] spawn lilc_settings_fnc_saveKeyBindings;";
             colorBackground[] = {0.7098, 0.7098, 0.7098, 1};
             x = 0.356667 * safezoneW + safezoneX;
             y = 0.643926 * safezoneH + safezoneY;
@@ -241,7 +241,7 @@ class lilc_keySettings {
             text = "Back";
             font = "PuristaSemibold";
             colorBackground[] = {0.7098, 0.7098, 0.7098, 1};
-            onButtonClick = "[] spawn { closeDialog 0; sleep 0.05; call lilc_setting_fnc_openMenu; };";
+            onButtonClick = "[] spawn { closeDialog 0; sleep 0.05; call lilc_settings_fnc_openMenu; };";
             x = 0.444791 * safezoneW + safezoneX;
             y = 0.643519 * safezoneH + safezoneY;
             w = 0.0825 * safezoneW;
@@ -253,7 +253,7 @@ class lilc_keySettings {
             text = "Default";
             font = "PuristaSemibold";
             colorBackground[] = {0.0667, 0.1137, 0.1647,1};
-            onButtonClick = "[(lnbCurSelRow 1331)] call lilc_setting_fnc_keyDefault;";
+            onButtonClick = "[(lnbCurSelRow 1331)] call lilc_settings_fnc_keyDefault;";
             x = 0.355625 * safezoneW + safezoneX;
             y = 0.599 * safezoneH + safezoneY;
             w = 0.0670312 * safezoneW;
@@ -265,7 +265,7 @@ class lilc_keySettings {
             text = "Delete";
             font = "PuristaSemibold";
             colorBackground[] = {0.0667, 0.1137, 0.1647,1};
-            onButtonClick = "[(lnbCurSelRow 1331)] call lilc_setting_fnc_keyDelete;";
+            onButtonClick = "[(lnbCurSelRow 1331)] call lilc_settings_fnc_keyDelete;";
             x = 0.427812 * safezoneW + safezoneX;
             y = 0.599 * safezoneH + safezoneY;
             w = 0.0670312 * safezoneW;

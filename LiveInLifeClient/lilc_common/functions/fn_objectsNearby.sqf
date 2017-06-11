@@ -1,4 +1,19 @@
 
+/*
+    Filename:
+        fn_objectsNearby.sqf
+    Author:
+        Vincent Heins
+    Description:
+        Checks whether an object is nearby a given radius and position or not.
+    Param(s):
+        (_this select 0) : center position of the area circle : <OBJECTNULL>, <ARRAY(3)>
+		(_this select 1) : radius of the circle : <SCALAR/INT/FLOAT>
+		(_this select 2) : kind-of types to check for : <ARRAY> w/ <STRING>, <STRING>
+    Result(s):
+        -
+*/
+
 params [
     ["_position", ObjNull, [[], ObjNull]],
     ["_radius", 10, [-1]],

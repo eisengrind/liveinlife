@@ -1,4 +1,6 @@
 
+scriptName "lils_firstspawn_flightLoop";
+
 lils_firstspawn_plane = ObjNull;
 lils_firstspawn_queue = [];
 
@@ -7,6 +9,7 @@ lils_firstspawn_queueOpen = false;
 publicVariable "lils_firstspawn_queueOpen";
 lils_firstspawn_planeReady = false;
 publicVariable "lils_firstspawn_planeReady";
+createCenter independent;
 
 while {true} do {
     lils_firstspawn_plane = ObjNull;
@@ -27,11 +30,15 @@ while {true} do {
         throw false;
     } catch {
         if (_exception) then {
-            createCenter independent;
-            private _spawnInfo = [[-worldsize/2, worldsize/2, 600], 0, "sab_falcon", independent] call BIS_fnc_spawnVehicle;
-            lils_firstspawn_plane = _spawnInfo select 0;
-            private _crew = _spawnInfo select 1;
-            private _group = _spawnInfo select 2;
+            createCenter independent;/*insert do-228 | try it maybe :) */
+            private _plane = (createVehicle ["sab_falcon", [-(worldSize/2), (worldSize/2), 100], [], 0, "FLY"]);
+            [_plane] call lilc_inventory_fnc_clearVehicleCargo;
+            createVehicleCrew _plane;
+            lils_firstspawn_plane = _plane;
+            lils_firstspawn_plane engineOn true;
+            private _crew = (crew _plane);
+            private _group = (group driver _plane);
+            lils_firstspawn_plane setPosASl [-(worldSize/2), (worldSize/2), 1000];
 
             lils_firstspawn_plane flyInHeightASL [500, 500, 500];
             lils_firstspawn_plane allowDamage false;

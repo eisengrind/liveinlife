@@ -6,9 +6,9 @@
     Description:
         Function for receiving and displaying messages.
     Params:
-        0 - Localized Text - <STRING>
+        (_this select 0) : Localized Text : <STRING>
     Returns:
-        localized text - Returns the localized text; otherwise it return the input text - <STRING>
+        the localized text; otherwise it return the input text - <STRING>
     License:
         @LiveInLifeClient\license.txt
 */

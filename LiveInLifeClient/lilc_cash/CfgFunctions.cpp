@@ -1,12 +1,14 @@
 
 class lilc_cash {
     class functions {
-        file = "\lilc_cash\functions";
+        file = "\x\lilc\addons\cash\functions";
         class add {};
         class get {};
+        class give {};
         class have {};
         class onCharEdit {};
         class openMenu {};
+        class remove {};
         class set {};
         class updateMenu {};
     };

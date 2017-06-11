@@ -1,7 +1,7 @@
 
 class lilc_bikes {
     class functions {
-        file = "\lilc_bikes\functions";
+        file = "\x\lilc\addons\bikes\functions";
         class in {};
         class out {};
     };

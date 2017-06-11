@@ -6,3 +6,7 @@ class CfgPatches {
 class CfgFunctions {
     #include "CfgFunctions.cpp"
 };
+
+class CfgWeapons {
+    #include "CfgWeapons.cpp"
+};

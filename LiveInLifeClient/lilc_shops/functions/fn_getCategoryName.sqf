@@ -3,18 +3,18 @@ private _category = param [0, "", [""]];
 
 try {
     if (isNil "_category") throw "";
-
     //TODO: replace with stringtables.xml string
     switch (_category) do {
-        case "Glasses": { (["Brillen"] call lilc_common_fnc_localize); };
-        case "Headgear": { (["Kopfbedeckungen"] call lilc_common_fnc_localize); };
-        case "Vest": { (["Westen"] call lilc_common_fnc_localize); };
-        case "Uniform": { (["Kleidung"] call lilc_common_fnc_localize); };
-        case "Backpack": { (["Rucksäcke"] call lilc_common_fnc_localize); };
-        case "Weapon": { (["Waffen"] call lilc_common_fnc_localize); };
-        case "WeaponAccessory": { (["Aufsätze"] call lilc_common_fnc_localize); };
-        case "Item": { (["Items"] call lilc_common_fnc_localize); };
-        case "Mine": { (["Minen"] call lilc_common_fnc_localize); };
+        case "Glasses": { throw (["Brillen"] call lilc_common_fnc_localize); };
+        case "Headgear": { throw (["Kopfbedeckungen"] call lilc_common_fnc_localize); };
+        case "Vest": { throw (["Westen"] call lilc_common_fnc_localize); };
+        case "Uniform": { throw (["Kleidung"] call lilc_common_fnc_localize); };
+        case "Backpack": { throw (["Rucksäcke"] call lilc_common_fnc_localize); };
+        case "Weapon": { throw (["Waffen"] call lilc_common_fnc_localize); };
+        case "WeaponAccessory": { throw (["Aufsätze"] call lilc_common_fnc_localize); };
+        case "Item": { throw (["Items"] call lilc_common_fnc_localize); };
+        case "Mine": { throw (["Minen"] call lilc_common_fnc_localize); };
+        case "Magazine": { throw (["Magazine"] call lilc_common_fnc_localize); };
     };
 } catch {
     _exception;

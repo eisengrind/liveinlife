@@ -1,7 +1,7 @@
 
 class lilc_garage {
     class functions {
-        file = "\lilc_garage\functions";
+        file = "\x\lilc\addons\garage\functions";
         class closeMenu {};
         class getGarageConfig {};
         class onVehicleChange {};

@@ -7,9 +7,8 @@ class CfgFunctions {
     #include "CfgFunctions.cpp"
 };
 
-class lilc_RscProgress;
-class lilc_RscText;
+class lilc_RscStructuredText;
 
 class RscTitles {
-    #include "dialogs\hospital.cpp"
+    #include "dialogs\respawn.cpp"
 };

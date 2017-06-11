@@ -1,7 +1,7 @@
 
 class lilc_keys {
     class functions {
-        file = "\lilc_keys\functions";
+        file = "\x\lilc\addons\keys\functions";
         class add {};
         class generateKeys {};
         class have {};

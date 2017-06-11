@@ -1,7 +1,8 @@
 
 params [
     ["_unit", ObjNull, [ObjNull, []]],
-    ["_classname", "", ["", []]]
+    ["_classname", "", ["", []]],
+    ["_ignoreItems", "", ["", []]]
 ];
 
 try {
@@ -14,7 +15,12 @@ try {
         if (_classname == "") throw ObjNull;
         _classname = [_classname];
     };
-    if ((count _classname) <= 0) throw ObjNull;
+    if ((count _classname) <= 0) throw (_unit select 0);
+
+    if (_ignoreItems isEqualType "") then {
+        _ignoreItems = [_ignoreItems];
+    };
+    if ((count _ignoreItems) <= 0) throw (_unit select 0);
 
     private _objects = [];
     {
@@ -44,21 +50,21 @@ try {
                     _maxUniformSpace = getNumber(configFile >> "CfgVehicles" >> (getText(_uniformConfig >> "itemInfo" >> "containerClass")) >> "maximumLoad");
                     {
                         _uniformLoad = _uniformLoad + ([_x] call lilc_inventory_fnc_getItemWeight);
-                    } forEach uniformItems _vehicle;
+                    } forEach ((uniformItems _vehicle) - _ignoreItems);
                 };
 
                 if !(isNull _vestConfig) then {
                     _maxVestSpace = getNumber(configFile >> "CfgVehicles" >> (getText(_vestConfig >> "itemInfo" >> "containerClass")) >> "maximumLoad");
                     {
                         _vestLoad = _vestLoad + ([_x] call lilc_inventory_fnc_getItemWeight);
-                    } forEach vestItems _vehicle;
+                    } forEach ((vestItems _vehicle) - _ignoreItems);
                 };
 
                 if !(isNull _backpackConfig) then {
                     _maxBackpackSpace = getNumber(_backpackConfig >> "maximumLoad");
                     {
                         _backpackLoad = _backpackLoad + ([_x] call lilc_inventory_fnc_getItemWeight);
-                    } forEach backpackItems _vehicle;
+                    } forEach ((backpackItems _vehicle) - _ignoreItems);
                 };
 
                 private _canAdd = false;
@@ -97,13 +103,15 @@ try {
                             };
                         };
                     };
+
                     if !(_canAdd) throw ObjNull;
                 } forEach _classname;
 
                 if (_canAdd) throw _vehicle;
-            } else {systemChat str _vehicle;
+                throw objNull;
+            } else {
                 private _cargo = [];
-                _cargo = _cargo + (itemCargo _vehicle) + (weaponCargo _vehicle) + (backpackCargo _vehicle) + (magazineCargo _vehicle);
+                _cargo = ((_cargo + (itemCargo _vehicle) + (weaponCargo _vehicle) + (backpackCargo _vehicle) + (magazineCargo _vehicle)) - _ignoreItems);
                 private _maximumLoad = 0;
                 _maximumLoad = getNumber (configFile >> "CfgVehicles" >> (typeOf _vehicle) >> "maximumLoad");
                 

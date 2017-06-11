@@ -1,123 +1,199 @@
 
-class lilc_craftingMenu {
-    name = "lilc_craftingMenu";
-    idd = 1310;
-    movingEnable = false;
-    enableSimulation = true;
-    
-    class controlsBackground {
-        class FrameBackground : lilc_RscPicture {
-            idc = -1;
-			text = "\lilc_crafting\ui\crafting_background_default.paa";
-            colorBackground[] = {0, 0, 0, 0};
-            x = 0.0125;
-			y = -0.16;
-			w = 0.975;
-			h = 1.32;
-        };
-    };
-    
-    class controls {
-        class ListBlueprintsList : lilc_RscListbox {
-            idc = 1311;
-            text = "";
-			rowHeight = 0.095;
-			sizeEx = 0.04;
+class lilcm_crafting {
+	name = "lilcm_crafting";
+	idd = 1310;
+	enableSimulation = 1;
+	movingEnable = 0;
+
+	class controlsBackground {
+		class FrameBackground : lilc_RscText
+		{
+			idc = 1000;
+			x = 0.314375 * safezoneW + safezoneX;
+			y = 0.291 * safezoneH + safezoneY;
+			w = 0.37125 * safezoneW;
+			h = 0.44 * safezoneH;
+			colorBackground[] = {0,0,0,0.3};
+		};
+		
+		class TitleTitle : lilc_RscTitle
+		{
+			idc = 1001;
+			text = "Crafting";
+			x = 0.314375 * safezoneW + safezoneX;
+			y = 0.269 * safezoneH + safezoneY;
+			w = 0.37125 * safezoneW;
+			h = 0.022 * safezoneH;
+			colorBackground[] = {0,0,0,0.7};
+		};
+		
+		class TitleRecipes : lilc_RscTitle
+		{
+			idc = 1002;
+			text = "Rezepte";
+			x = 0.319531 * safezoneW + safezoneX;
+			y = 0.302 * safezoneH + safezoneY;
+			w = 0.108281 * safezoneW;
+			h = 0.022 * safezoneH;
+			colorBackground[] = {0,0,0,0.7};
+		};
+		
+		class TitleAmount : lilc_RscTitle
+		{
+			idc = 1004;
+			text = "Anzahl";
+			x = 0.572187 * safezoneW + safezoneX;
+			y = 0.632 * safezoneH + safezoneY;
+			w = 0.108281 * safezoneW;
+			h = 0.022 * safezoneH;
+			colorBackground[] = {0,0,0,0.7};
+		};
+	};
+
+	class controls {
+		class ListRecipes : lilc_RscListbox
+		{
+			idc = 1500;
+            sizeEx = 0.032;
+            onLBSelChanged = "_this call lilc_crafting_fnc_onLBSelChangedRecipes;";
+			x = 0.319531 * safezoneW + safezoneX;
+			y = 0.346 * safezoneH + safezoneY;
+			w = 0.108281 * safezoneW;
+			h = 0.374 * safezoneH;
 			font = "PuristaMedium";
-			onLBSelChanged = "call lilc_crafting_fnc_updateMenu;";
-			colorBackground[] = {0, 0, 0, 0};
-            x = 0.046717;
-			y = 0.19697;
-			w = 0.318434;
-			h = 0.72963;
-        };
-
-        class ListNeededList : lilc_RscListNBox {
-            idc = 1312;
-            text = "";
-			rowHeight = 0.065;
-			sizeEx = 0.034;
-			drawSideArrows = 0;
-			font = "PuristaLight";
-			idcLeft = -1;
-			idcRight = -1;
-            x = 0.382576;
-			y = 0.417508;
-			w = 0.579798;
-			h = 0.416498;
-			colorSelect[] = {1,1,1,1};
-			colorSelect2[] = {1,1,1,1};
-			colorSelectBackground[] = {0,0,0,0};
-			colorSelectBackground2[] = {0,0,0,0};
-        }
+		};
 		
-		class TextCurrentBlueprint : lilc_RscText {
-			idc = 1313;
-			font = "PuristaLight";
-			text = "Kein Bauplan ausgewählt!";
-			shadow = 0;
-			sizeEx = 0.065;
-			x = 0.5405;
-			y = 0.126;
-			w = 0.42323;
-			h = 0.0898992;
+		class ButtonSearch : lilc_RscButtonMenu
+		{
+			idc = 1600;
+			text = "Search";
+            onButtonClick = "[(ctrlText 1400)] spawn lilc_crafting_fnc_updateMenuRecipes;";
+			x = 0.396875 * safezoneW + safezoneX;
+			y = 0.324 * safezoneH + safezoneY;
+			w = 0.0309375 * safezoneW;
+			h = 0.022 * safezoneH;
 		};
 
-        class TextBlueprintDescription : lilc_RscText {
-            idc = 1314;
-			style = 16;
-            text = "-";
-			font = "PuristaLight";
-			sizeEx = 0.032;
-			shadow = 0;
-            x = 0.40275;
-			y = 0.2456;
-			w = 0.560857;
-			h = 0.113468;
-        };
-
-        class ButtonCraft : lilc_RscButtonMenu {
-            idc = 1315;
-            text = "";
-            x = 0.680555;
-			y = 0.855219;
-			w = 0.283081;
-			h = 0.0713805;
-			onButtonClick = "[] spawn lilc_crafting_fnc_craft;";
-			animTextureNormal = "#(argb,8,8,3)color(0,0,0,0)";
-			animTextureDisabled = "#(argb,8,8,3)color(1,1,1,0.5)";
-			animTextureOver = "#(argb,8,8,3)color(0,0,0,0.2)";
-			animTextureFocused = "#(argb,8,8,3)color(0,0,0,0)";
-			animTexturePressed = "#(argb,8,8,3)color(0,0,0,0.4)";
-			animTextureDefault = "#(argb,8,8,3)color(0,0,0,0)";
-        };
-		
-		class EditAmount : lilc_RscEdit {
-			idc = 1316;
+		class EditSearch : lilc_RscEdit
+		{
+			idc = 1400;
 			text = "";
-			font = "PuristaLight";
-			x = 0.472475;
-			y = 0.863165;
-			w = 0.20101;
-			h = 0.0562291;
-			onKeyUp = "_this call lilc_crafting_fnc_onCharEdit;";
-			shadow = 0;
-			colorBackground[] = {(8/255),(61/255),(116/255),0.8};
-			colorText[] = {1,1,1,1};
-			colorSelection[] = {1,1,1,0.25};
+			x = 0.319531 * safezoneW + safezoneX;
+			y = 0.324 * safezoneH + safezoneY;
+			w = 0.0773437 * safezoneW;
+			h = 0.022 * safezoneH;
 		};
 
-        class TextTitleType : lilc_RscTitle {
-            idc = 1317;
-			style = 0x01;
-            text = "Spieler";
-			font = "PuristaSemibold";
-			shadow = 0;
-			sizeEx = 0.04;
-            x = 0.5505;
-			y = 0.0492;
-			w = 0.42702;
-			h = 0.0562288;
-        };
-    };
+		class ListNeeded : lilc_RscListbox
+		{
+			idc = 1501;
+            sizeEx = 0.032;
+            onLBDblClick = "_this call lilc_crafting_fnc_onLBDblClickNeeded;";
+			x = 0.572187 * safezoneW + safezoneX;
+			y = 0.302 * safezoneH + safezoneY;
+			w = 0.108281 * safezoneW;
+			h = 0.319 * safezoneH;
+			font = "PuristaMedium";
+		};
+
+		class TextItemDisplayName : lilc_RscText
+		{
+			idc = 1003;
+            style = 0x02;
+			font = "PuristaMedium";
+			text = "ItemDisplayName";
+			x = 0.443281 * safezoneW + safezoneX;
+			y = 0.302 * safezoneH + safezoneY;
+			w = 0.113437 * safezoneW;
+			h = 0.033 * safezoneH;
+		};
+
+		class PictureRecipeIcon : lilc_RscPicture
+		{
+			idc = 1200;
+			text = "#(argb,8,8,3)color(1,1,1,1)";
+			x = 0.45875 * safezoneW + safezoneX;
+			y = 0.346 * safezoneH + safezoneY;
+			w = 0.0825 * safezoneW;
+			h = 0.143 * safezoneH;
+		};
+
+		class TextDescription : lilc_RscStructuredText
+		{
+			idc = 1100;
+			text = "<t size='0.9'>Beschreibung<br /><t size='0.7'>Dies sollte eigentlich für eine Testbeschreibung genutzt werden.</t></t>";
+			x = 0.438125 * safezoneW + safezoneX;
+			y = 0.511 * safezoneH + safezoneY;
+			w = 0.12375 * safezoneW;
+			h = 0.165 * safezoneH;
+			colorBackground[] = {0,0,0,0};
+		};
+
+		class PicturePositionIcon : lilc_RscPicture
+		{
+			idc = 1201;
+			text = "";
+			x = 0.438125 * safezoneW + safezoneX;
+			y = 0.687 * safezoneH + safezoneY;
+			w = 0.0191145 * safezoneW;
+			h = 0.033 * safezoneH;
+		};
+
+		class TextPositionName : lilc_RscText
+		{
+			idc = 1014;
+			text = "Rezeptposition.";
+			x = 0.457203 * safezoneW + safezoneX;
+			y = 0.687 * safezoneH + safezoneY;
+			w = 0.104687 * safezoneW;
+			h = 0.033 * safezoneH;
+		};
+
+		class PicturePositionNotavailable : lilc_RscPicture
+		{
+			idc = 1202;
+			text = "notAvailable.paa"; //"\x\lilc\addons\crafting\icons\notAvailable.paa"
+			x = 0.438125 * safezoneW + safezoneX;
+			y = 0.687 * safezoneH + safezoneY;
+			w = 0.0201042 * safezoneW;
+			h = 0.033 * safezoneH;
+		};
+
+		class ButtonCraft : lilc_RscButtonMenu
+		{
+			idc = 1601;
+			text = "Craft";
+			onButtonClick = "[] spawn lilc_crafting_fnc_craftRecipe;";
+			x = 0.572188 * safezoneW + safezoneX;
+			y = 0.687 * safezoneH + safezoneY;
+			w = 0.108281 * safezoneW;
+			h = 0.033 * safezoneH;
+		};
+
+		class EditAmount : lilc_RscEdit
+		{
+			idc = 1401;
+			text = "1";
+			onChar = "_this spawn lilc_crafting_fnc_onCharEdit;";
+			x = 0.572187 * safezoneW + safezoneX;
+			y = 0.654 * safezoneH + safezoneY;
+			w = 0.108281 * safezoneW;
+			h = 0.022 * safezoneH;
+		};
+		
+		class ButtonTextClose : RscActiveText
+		{
+			idc = 1201;
+			text = "\A3\Ui_f\data\GUI\Rsc\RscDisplayArcadeMap\icon_exit_cross_ca.paa";
+			onButtonClick = "closeDialog 1310;";
+			style = 48;
+			x = 0.674323 * safezoneW + safezoneX;
+			y = 0.272703 * safezoneH + safezoneY;
+			w = 0.00874995 * safezoneW;
+			h = 0.0155185 * safezoneH;
+			color[] = {1, 1, 1, 0.7};
+            colorText[] = {1, 1, 1, 0.7};
+            colorActive[] = {1, 1, 1, 1};
+		};
+	};
 };

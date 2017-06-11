@@ -6,3 +6,5 @@ class CfgPatches {
 class CfgFunctions {
     #include "CfgFunctions.cpp"
 };
+
+#include "dialogs\RscDisplayMPInterrupt.cpp"

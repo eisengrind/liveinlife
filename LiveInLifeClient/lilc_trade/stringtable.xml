@@ -1,0 +1,13 @@
+
+<?xml version="1.0" encoding="utf-8">
+<Project name="LiveInLife">
+    <Package name="lilc_trade">
+        <Container name="ActionTitle">
+            <Key ID="STR_lilc_trade_ActionTitle_beginTrade">
+                <Original>Trade</Original>
+                <English>Trade</English>
+                <German>Handeln</German>
+            </Key>
+        </Container>
+    </Package>
+</Project>

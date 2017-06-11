@@ -1,38 +1,60 @@
 
 class lilc_inventory {
     class functions {
-        file = "\lilc_inventory\functions";
+        file = "\x\lilc\addons\inventory\functions";
         class add {};
+        class addVehicle {};
         class canAdd {};
         class clearInventory {};
         class clearVehicleCargo {};
+        class findItemByDisplayName {};
+        class findOptionsItemByDisplayName {};
         class forceAdd {};
+        class getBackpackInventory {};
         class getInventory {};
         class getItemInfo {};
-        class getItems {};
+        class getAllUnitItems {};
         class getItemWeight {};
+        class getUniformInventory {};
         class getVehicleCargo {};
+        class getVestInventory {};
         class groundItems {};
+        class haveItem {};
         class haveSlot {};
-        class itemInInventory {};
+        class init {};
+        class inventoryOpen {};
+        class itemCount {};
+        class itemCountContainers {};
+        class onInventoryOpen {};
         class remove {};
+        class removeUniformCategory {};
+        class setBackpackInventory {};
         class setInventory {};
+        class setUniformInventory {};
         class setVehicleCargo {};
+        class setVestInventory {};
+        class updateVirtualInventory {};
+    };
+    
+    class RscDisplayInventory {
+        file = "\x\lilc\addons\inventory\functions\RscDisplayInventory";
+        class disableMenu {};
+        class getCurrentContainer {};
+        class onInventoryOpened {};
+        class onLBSelChanged {};
+        class onMouseButtonDown {};
+        class onMouseMoving {};
     };
 
-    class inventory {
-        file = "\lilc_inventory\functions\inventory";
-        class contextMenuClose {};
-        class contextMenuDisable {};
-        class contextMenuItemInInventory {};
-        class contextMenuOpen {};
-        /*class getContainerInventorySelectedItem {};
+    /*class itemMovement {
+        file = "\x\lilc\addons\inventory\functions\itemMovement";
+        class getContainerInventorySelectedItem {};
         class getPlayerInventorySelectedItem {};
         class getPlayerInventorySelection {};
         class moveContainerItem {};
         class movePlayerItem {};
         class onContainerInventoryChange {};
         class onInventoryOpened {};
-        class onPlayerInventoryChange {};*/
-    };
+        class onPlayerInventoryChange {};
+    };*/
 };

@@ -1,7 +1,8 @@
 
 disableSerialization;
 params [
-    ["_seconds", 1, [0]],
-    ["_layer", 99, [0]]
+    ["_layer", "", ["", 0]],
+    ["_seconds", 1, [0]]
 ];
-_layer cutFadeOut _seconds;
+
+_layer cutText ["", "PLAIN", _seconds];

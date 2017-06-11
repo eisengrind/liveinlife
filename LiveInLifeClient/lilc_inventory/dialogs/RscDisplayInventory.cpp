@@ -8,13 +8,19 @@ class RscDisplayArcadeMap;
 class RscDisplayInventory_DLCTemplate;
 class RscListBox;
 class RscProgress;
+class lilc_RscButton;
 class lilc_RscButtonMenu;
+class lilc_RscEdit;
+class lilc_RscPicture;
+class RscControlsGroup;
 
 class RscDisplayInventory {
 	scriptName = "RscDisplayInventory";
 	scriptPath = IGUI;
-	onMouseButtonDown = "_this call lilc_inventory_fnc_contextMenuClose;";
-	onLoad = "call lilc_inventory_fnc_contextMenuDisable; [""onLoad"",_this,""RscDisplayInventory"",'IGUI'] call (uinamespace getvariable 'BIS_fnc_initDisplay');";
+	onKeyDown = "if ((_this select 1) in [62, 56]) then { true; } else { false; };";
+	onMouseButtonDown = "_this call lilc_inventory_fnc_onMouseButtonDown;";
+	onMouseMoving = "_this call lilc_inventory_fnc_onMouseMoving;";
+	onLoad = "[""onLoad"",_this,""RscDisplayInventory"",'IGUI'] call (uinamespace getvariable 'BIS_fnc_initDisplay'); [] spawn { waitUntil { (!isNull (findDisplay 602)) }; call lilc_inventory_fnc_onInventoryOpened; };";
 	onUnload = "[""onUnload"",_this,""RscDisplayInventory"",'IGUI'] call (uinamespace getvariable 'BIS_fnc_initDisplay')";
 	idd = 602;
 	enableSimulation = 1;
@@ -29,7 +35,17 @@ class RscDisplayInventory {
 		highlight[] = {"(profilenamespace getvariable ['IGUI_TEXT_RGB_R',0])", "(profilenamespace getvariable ['IGUI_TEXT_RGB_G',1])", "(profilenamespace getvariable ['IGUI_TEXT_RGB_B',1])", 0.5};
 	};
 	
-	class controlsBackground {};
+	class controlsBackground {
+		class LiveInLifeIconPlayerBackground : lilc_RscPicture {
+			idc = -1;
+			text = "\x\lilc\addons\ui\images\logo.paa";
+			colorText[] = {1, 1, 1, 0.1};
+			x = 0.448438 * safezoneW + safezoneX;
+			y = 0.379 * safezoneH + safezoneY;
+			w = 0.118594 * safezoneW;
+			h = 0.209 * safezoneH;
+		};
+	};
 	
 	class controls {
 		class Background {};
@@ -39,19 +55,19 @@ class RscDisplayInventory {
 		
 		class CA_ContainerBackground : RscText {
 			idc = 1001;
-			x = "1 * 					(			((safezoneW / safezoneH) min 1.2) / 40) + 		(safezoneX + (safezoneW - 					((safezoneW / safezoneH) min 1.2))/2)";
-			y = "1 * 					(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) + 		(safezoneY + (safezoneH - 					(			((safezoneW / safezoneH) min 1.2) / 1.2))/2)";
-			w = "12 * 					(			((safezoneW / safezoneH) min 1.2) / 40)";
-			h = "23 * 					(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
+			x = 0.264875 * safezoneW + safezoneX;
+			y = 0.247 * safezoneH + safezoneY;
+			w = 0.147969 * safezoneW;
+			h = 0.545481 * safezoneH;
 			colorBackground[] = {0.05, 0.05, 0.05, 0.7};
 		};
 		
 		class CA_PlayerBackground : RscText {
 			idc = 1002;
-			x = "14.6 * 					(			((safezoneW / safezoneH) min 1.2) / 40) + 		(safezoneX + (safezoneW - 					((safezoneW / safezoneH) min 1.2))/2)";
-			y = "2 * 					(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) + 		(safezoneY + (safezoneH - 					(			((safezoneW / safezoneH) min 1.2) / 1.2))/2)";
-			w = "24.4 * 					(			((safezoneW / safezoneH) min 1.2) / 40)";
-			h = "22 * 					(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
+			x = 0.433484 * safezoneW + safezoneX;
+			y = 0.269 * safezoneH + safezoneY;
+			w = 0.301615 * safezoneW;
+			h = 0.523369 * safezoneH;
 			colorBackground[] = {0.05, 0.05, 0.05, 0.7};
 		};
 		
@@ -406,10 +422,10 @@ class RscDisplayInventory {
 			colorBar[] = {0.9, 0.9, 0.9, 0.9};
 			colorExtBar[] = {1, 1, 1, 1};
 			colorFrame[] = {1, 1, 1, 1};
-			x = "1.5 * 					(			((safezoneW / safezoneH) min 1.2) / 40) + 		(safezoneX + (safezoneW - 					((safezoneW / safezoneH) min 1.2))/2)";
-			y = "22.5 * 					(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) + 		(safezoneY + (safezoneH - 					(			((safezoneW / safezoneH) min 1.2) / 1.2))/2)";
-			w = "11 * 					(			((safezoneW / safezoneH) min 1.2) / 40)";
-			h = "1 * 					(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
+			x = 0.271062 * safezoneW + safezoneX;
+			y = 0.76136 * safezoneH + safezoneY;
+			w = 0.136125 * safezoneW;
+			h = 0.022 * safezoneH;
 		};
 		
 		class SlotPrimary : GroundTab {
@@ -701,7 +717,7 @@ class RscDisplayInventory {
 		
 		class UniformContainer : GroundContainer {
 			idc = 633;
-			onLBSelChanged = "_this call lilc_inventory_fnc_contextMenuOpen;";
+			onLBSelChanged = "_this spawn lilc_inventory_fnc_onLBSelChanged;";
 			x = "15.1 * 					(			((safezoneW / safezoneH) min 1.2) / 40) + 		(safezoneX + (safezoneW - 					((safezoneW / safezoneH) min 1.2))/2)";
 			y = "6 * 					(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) + 		(safezoneY + (safezoneH - 					(			((safezoneW / safezoneH) min 1.2) / 1.2))/2)";
 			w = "11 * 					(			((safezoneW / safezoneH) min 1.2) / 40)";
@@ -735,7 +751,6 @@ class RscDisplayInventory {
 		
 		class VestContainer : UniformContainer {
 			idc = 638;
-			onLBSelChanged = "_this call lilc_inventory_fnc_contextMenuOpen;";
 		};
 		
 		class BackpackTab : UniformTab {
@@ -765,215 +780,256 @@ class RscDisplayInventory {
 		
 		class BackpackContainer : UniformContainer {
 			idc = 619;
-			onLBSelChanged = "_this call lilc_inventory_fnc_contextMenuOpen;";
 		};
 		
 		class TotalLoad : GroundLoad {
 			idc = 6308;
-			x = "15.1 * 					(			((safezoneW / safezoneH) min 1.2) / 40) + 		(safezoneX + (safezoneW - 					((safezoneW / safezoneH) min 1.2))/2)";
-			y = "22.5 * 					(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) + 		(safezoneY + (safezoneH - 					(			((safezoneW / safezoneH) min 1.2) / 1.2))/2)";
-			w = "23.4 * 					(			((safezoneW / safezoneH) min 1.2) / 40)";
-			h = "1 * 					(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
+			x = 0.438125 * safezoneW + safezoneX;
+			y = 0.76114 * safezoneH + safezoneY;
+			w = 0.291137 * safezoneW;
+			h = 0.022 * safezoneH;
 		};
 		
 		class ContainerMarker : GroundTab {
 			idc = 6325;
-			x = "0 * 					(			((safezoneW / safezoneH) min 1.2) / 40) + 		(safezoneX + (safezoneW - 					((safezoneW / safezoneH) min 1.2))/2)";
-			y = "24 * 					(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) + 		(safezoneY + (safezoneH - 					(			((safezoneW / safezoneH) min 1.2) / 1.2))/2)";
-			w = "1 * 					(			((safezoneW / safezoneH) min 1.2) / 40)";
-			h = "1 * 					(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
+			x = 0.278797 * safezoneW + safezoneX;
+			y = 0.79414 * safezoneH + safezoneY;
+			w = 0.012375 * safezoneW;
+			h = 0.022 * safezoneH;
 		};
 		
 		class GroundMarker : ContainerMarker {
 			idc = 6385;
-			x = "1.5 * 					(			((safezoneW / safezoneH) min 1.2) / 40) + 		(safezoneX + (safezoneW - 					((safezoneW / safezoneH) min 1.2))/2)";
-			y = "24 * 					(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) + 		(safezoneY + (safezoneH - 					(			((safezoneW / safezoneH) min 1.2) / 1.2))/2)";
-			w = "1 * 					(			((safezoneW / safezoneH) min 1.2) / 40)";
-			h = "1 * 					(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
+			x = 0.292203 * safezoneW + safezoneX;
+			y = 0.79414 * safezoneH + safezoneY;
+			w = 0.012375 * safezoneW;
+			h = 0.022 * safezoneH;
 		};
 		
 		class SoldierMarker : ContainerMarker {
 			idc = 6405;
-			x = "3 * 					(			((safezoneW / safezoneH) min 1.2) / 40) + 		(safezoneX + (safezoneW - 					((safezoneW / safezoneH) min 1.2))/2)";
-			y = "24 * 					(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) + 		(safezoneY + (safezoneH - 					(			((safezoneW / safezoneH) min 1.2) / 1.2))/2)";
-			w = "1 * 					(			((safezoneW / safezoneH) min 1.2) / 40)";
-			h = "1 * 					(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
+			x = 0.264875 * safezoneW + safezoneX;
+			y = 0.79414 * safezoneH + safezoneY;
+			w = 0.012375 * safezoneW;
+			h = 0.022 * safezoneH;
+		};
+
+		class ContainerMoveAmount : lilc_RscEdit {
+			idc = 1396;
+			text = "0";
+			x = 0.371094 * safezoneW + safezoneX;
+			y = 0.714444 * safezoneH + safezoneY;
+			w = 0.0360937 * safezoneW;
+			h = 0.033 * safezoneH;
+		};
+
+		class ContainerMoveButton : lilc_RscButtonMenu {
+			idc = 1397;
+			text = "Move";
+			x = 0.30927 * safezoneW + safezoneX;
+			y = 0.72 * safezoneH + safezoneY;
+			w = 0.061875 * safezoneW;
+			h = 0.022 * safezoneH;
+		};
+
+		class PlayerMoveAmount : lilc_RscEdit {
+			idc = 1398;
+			text = "0";
+			x = 0.439688 * safezoneW + safezoneX;
+			y = 0.71537 * safezoneH + safezoneY;
+			w = 0.0360937 * safezoneW;
+			h = 0.033 * safezoneH;
+		};
+
+		class PlayerMoveButton : lilc_RscButtonMenu {
+			idc = 1399;
+			text = "Move";
+			x = 0.47625 * safezoneW + safezoneX;
+			y = 0.72 * safezoneH + safezoneY;
+			w = 0.061875 * safezoneW;
+			h = 0.022 * safezoneH;
+		};
+
+		class TitleBackgroundVI : TitleBackground {
+			idc = -1;
+			text = "";
+			x = 0.737188 * safezoneW + safezoneX;
+			y = 0.247 * safezoneH + safezoneY;
+			w = 0.108281 * safezoneW;
+			h = 0.022 * safezoneH;
+		};
+
+		class TitleVI : PlayersName {
+			idc = -1;
+			text = "$STR_lilc_inventory_DialogName_TitleVI";
+			x = 0.737188 * safezoneW + safezoneX;
+			y = 0.247 * safezoneH + safezoneY;
+			w = 0.108281 * safezoneW;
+			h = 0.022 * safezoneH;
+		};
+
+		class FrameBackgroundVI : CA_PlayerBackground {
+			idc = -1;
+			text = "";
+			x = 0.737188 * safezoneW + safezoneX;
+			y = 0.269 * safezoneH + safezoneY;
+			w = 0.108281 * safezoneW;
+			h = 0.473 * safezoneH;
+		};
+
+		class ListVI : UniformContainer {
+			idc = 1407;
+			text = "";
+			x = 0.742344 * safezoneW + safezoneX;
+			y = 0.28 * safezoneH + safezoneY;
+			w = 0.0979687 * safezoneW;
+			h = 0.418 * safezoneH;
+		};
+
+		class ButtonDropVI : lilc_RscButtonMenu {
+			idc = -1;
+			text = "$STR_lilc_inventory_DialogName_ButtonDropVI";
+			x = 0.742344 * safezoneW + safezoneX;
+			y = 0.709 * safezoneH + safezoneY;
+			w = 0.0979687 * safezoneW;
+			h = 0.022 * safezoneH;
 		};
 
 		
-		class TextMenuBackground1 : RscText {
+		class DropDownGroup : RscControlsGroup
+		{
 			idc = 1350;
-			text = "";
-			colorBackground[] = {0, 0, 0, 1};
-			x = 0.149375 * safezoneW + safezoneX;
-			y = 0.566 * safezoneH + safezoneY;
-			w = 0.0567187 * safezoneW;
-			h = 0.099 * safezoneH;
-		};
-		
-		class TextMenuBackground2 : RscText {
-			idc = 1355;
-			text = "";
-			colorBackground[] = {0.1, 0.1, 0.1, 1};
-			x = 0.150208 * safezoneW + safezoneX;
-			y = 0.566778 * safezoneH + safezoneY;
-			w = 0.0553125 * safezoneW;
-			h = 0.0966667 * safezoneH;
-		};
-		
-		class ButtonMenuButton1 : RscButton {
-			idc = 1351;
-			text = "";
-			sizeEx = 0.03;
-			font = "RobotoCondensed";
-			colorBackground[] = {0, 0, 0, 0};
-			x = 0.150677 * safezoneW + safezoneX;
-			y = 0.568778 * safezoneH + safezoneY;
-			w = 0.0547917 * safezoneW;
-			h = 0.0207408 * safezoneH;
-		};
-		
-		class ButtonMenuButton2 : RscButton {
-			idc = 1352;
-			text = "";
-			sizeEx = 0.03;
-			font = "RobotoCondensed";
-			colorBackground[] = {0, 0, 0, 0};
-			colorDisabled[] = {0, 0, 0, 0};
-			x = 0.150521 * safezoneW + safezoneX;
-			y = 0.593519 * safezoneH + safezoneY;
-			w = 0.0547917 * safezoneW;
-			h = 0.0207408 * safezoneH;
-		};
-		
-		class ButtonMenuButton3 : RscButton {
-			idc = 1353;
-			text = "";
-			sizeEx = 0.03;
-			font = "RobotoCondensed";
-			colorBackground[] = {0, 0, 0, 0};
-			x = 0.150521 * safezoneW + safezoneX;
-			y = 0.617593 * safezoneH + safezoneY;
-			w = 0.0547917 * safezoneW;
-			h = 0.0207408 * safezoneH;
-		};
-		
-		class ButtonMenuButton4 : RscButton {
-			idc = 1354;
-			text = "";
-			sizeEx = 0.03;
-			font = "RobotoCondensed";
-			colorBackground[] = {0, 0, 0, 0};
-			x = 0.150521 * safezoneW + safezoneX;
-			y = 0.641667 * safezoneH + safezoneY;
-			w = 0.0547917 * safezoneW;
-			h = 0.0207408 * safezoneH;
+			x = 0.29375 * safezoneW + safezoneX;
+			y = 0.225 * safezoneH + safezoneY;
+			w = 0.0928125 * safezoneW;
+			h = 0.11 * safezoneH;
+
+			class VScrollbar {
+				autoScrollSpeed = -1;
+				autoScrollDelay = 5;
+				autoScrollRewind = 0;
+				color[] = {1,1,1,0};
+				width = 0.001;
+			};
+			
+			class HScrollbar {
+				autoScrollSpeed = -1;
+				autoScrollDelay = 5;
+				autoScrollRewind = 0;
+				color[] = {1,1,1,0};
+				height = 0.001;
+			};
+
+			class controls
+			{
+				class ButtonDropwdown1 : lilc_RscButton
+				{
+					idc = 1351;
+					text = "";
+					type = 1;
+					style = 2;
+					sizeEx = 0.02674;
+					colorText[] = {1, 1, 1, 1};
+					colorBackground[] = {0, 0, 0, 0.8};
+					colorBackgroundActive[] = {0.63, 0.02, 0.02, 0.8};
+					colorBackgroundDisabled[] = {1, 1, 1, 0};
+					colorFocused[] = {0, 0, 0, 0.8};
+					colorShadow[] = {1, 1, 1, 0};
+
+					class Attributes
+					{
+						font = "PuristaSemiBold";
+						color = "#E5E5E5";
+						align = "center";
+						shadow = "false";
+					};
+
+					shadow = 0;
+					sizeEx = 0.030;
+					x = 0 * safezoneW;
+					y = 1.63913e-008 * safezoneH;
+					w = 0.0928125 * safezoneW;
+					h = 0.022 * safezoneH;
+				};
+				class ButtonDropwdown2: ButtonDropwdown1
+				{
+					idc = 1352;
+					x = 0 * safezoneW;
+					y = 0.022 * safezoneH;
+					w = 0.0928125 * safezoneW;
+					h = 0.022 * safezoneH;
+				};
+				class ButtonDropwdown3: ButtonDropwdown1
+				{
+					idc = 1353;
+					x = 0 * safezoneW;
+					y = 0.044 * safezoneH;
+					w = 0.0928125 * safezoneW;
+					h = 0.022 * safezoneH;
+				};
+				class ButtonDropwdown4: ButtonDropwdown1
+				{
+					idc = 1354;
+					x = 0 * safezoneW;
+					y = 0.066 * safezoneH;
+					w = 0.0928125 * safezoneW;
+					h = 0.022 * safezoneH;
+				};
+				class ButtonDropwdown5: ButtonDropwdown1
+				{
+					idc = 1355;
+					x = 0 * safezoneW;
+					y = 0.088 * safezoneH;
+					w = 0.0928125 * safezoneW;
+					h = 0.022 * safezoneH;
+				};
+				
+				class ButtonDropwdown6: ButtonDropwdown1
+				{
+					idc = 1356;
+					x = 0 * safezoneW;
+					y = 0.110 * safezoneH;
+					w = 0.0928125 * safezoneW;
+					h = 0.022 * safezoneH;
+				};
+				
+				class ButtonDropwdown7: ButtonDropwdown1
+				{
+					idc = 1357;
+					x = 0 * safezoneW;
+					y = 0.132 * safezoneH;
+					w = 0.0928125 * safezoneW;
+					h = 0.022 * safezoneH;
+				};
+				
+				class ButtonDropwdown8: ButtonDropwdown1
+				{
+					idc = 1358;
+					x = 0 * safezoneW;
+					y = 0.154 * safezoneH;
+					w = 0.0928125 * safezoneW;
+					h = 0.022 * safezoneH;
+				};
+				
+				class ButtonDropwdown9: ButtonDropwdown1
+				{
+					idc = 1359;
+					x = 0 * safezoneW;
+					y = 0.176 * safezoneH;
+					w = 0.0928125 * safezoneW;
+					h = 0.022 * safezoneH;
+				};
+			};
 		};
 
-		/*class ButtonMoveContainerItem : lilc_RscButtonMenu {
-			idc = 1355;
-			text = "Item verschieben";
-			x = 0.330875 * safezoneW + safezoneX;
-			y = 0.75762 * safezoneH + safezoneY;
-			w = 0.0825 * safezoneW;
-			h = 0.022 * safezoneH;
+		class ButtonCrafting : lilc_RscButtonMenu {
+			idc = -1;
+			text = "Crafting";
+			onButtonClick = "[] spawn lilc_crafting_fnc_openMenu;";
+			x = 0.737188 * safezoneW + safezoneX
+			y = 0.75938 * safezoneH + safezoneY;
+			w = 0.108281 * safezoneW;
+			h = 0.033 * safezoneH;
 		};
-
-		class ButtonMovePlayerItem : lilc_RscButtonMenu {
-			idc = 1356;
-			text = "Item verschieben";
-			x = 0.433484 * safezoneW + safezoneX;
-			y = 0.75762 * safezoneH + safezoneY;
-			w = 0.0825 * safezoneW;
-			h = 0.022 * safezoneH;
-		};*/
 	};
 };
-
-
-/*class RscDisplayInventory {
-	onMouseButtonDown = "_this call lilc_inventory_fnc_contextMenuClose;";
-	
-	class controls {
-		class UniformContainer {
-			onLBSelChanged = "_this call lilc_inventory_fnc_contextMenuOpen;";
-		};
-		
-		class BackpackContainer {
-			onLBSelChanged = "_this call lilc_inventory_fnc_contextMenuOpen;";
-		};
-		
-		class VestContainer {
-			onLBSelChanged = "_this call lilc_inventory_fnc_contextMenuOpen;";
-		};
-		
-		class TextMenuBackground1 : RscText {
-			idc = 1350;
-			text = "";
-			colorBackground[] = {0, 0, 0, 1};
-			x = 0.149375 * safezoneW + safezoneX;
-			y = 0.566 * safezoneH + safezoneY;
-			w = 0.0567187 * safezoneW;
-			h = 0.099 * safezoneH;
-		};
-		
-		class TextMenuBackground2 : RscText {
-			idc = 1355;
-			text = "";
-			colorBackground[] = {0.1, 0.1, 0.1, 1};
-			x = 0.150208 * safezoneW + safezoneX;
-			y = 0.566778 * safezoneH + safezoneY;
-			w = 0.0553125 * safezoneW;
-			h = 0.0966667 * safezoneH;
-		};
-		
-		class ButtonMenuButton1 : RscButton {
-			idc = 1351;
-			text = "";
-			sizeEx = 0.03;
-			font = "RobotoCondensed";
-			colorBackground[] = {0, 0, 0, 0};
-			x = 0.150677 * safezoneW + safezoneX;
-			y = 0.568778 * safezoneH + safezoneY;
-			w = 0.0547917 * safezoneW;
-			h = 0.0207408 * safezoneH;
-		};
-		
-		class ButtonMenuButton2 : RscButton {
-			idc = 1352;
-			text = "";
-			sizeEx = 0.03;
-			font = "RobotoCondensed";
-			colorBackground[] = {0, 0, 0, 0};
-			colorDisabled[] = {0, 0, 0, 0};
-			x = 0.150521 * safezoneW + safezoneX;
-			y = 0.593519 * safezoneH + safezoneY;
-			w = 0.0547917 * safezoneW;
-			h = 0.0207408 * safezoneH;
-		};
-		
-		class ButtonMenuButton3 : RscButton {
-			idc = 1353;
-			text = "";
-			sizeEx = 0.03;
-			font = "RobotoCondensed";
-			colorBackground[] = {0, 0, 0, 0};
-			x = 0.150521 * safezoneW + safezoneX;
-			y = 0.617593 * safezoneH + safezoneY;
-			w = 0.0547917 * safezoneW;
-			h = 0.0207408 * safezoneH;
-		};
-		
-		class ButtonMenuButton4 : RscButton {
-			idc = 1354;
-			text = "";
-			sizeEx = 0.03;
-			font = "RobotoCondensed";
-			colorBackground[] = {0, 0, 0, 0};
-			x = 0.150521 * safezoneW + safezoneX;
-			y = 0.641667 * safezoneH + safezoneY;
-			w = 0.0547917 * safezoneW;
-			h = 0.0207408 * safezoneH;
-		};
-	};
-};*/

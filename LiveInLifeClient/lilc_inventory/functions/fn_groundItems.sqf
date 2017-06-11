@@ -19,7 +19,7 @@ try {
     };
     
     {
-        [_groundWeaponHolder, _x] call lilc_inventory_fnc_add;
+        [_groundWeaponHolder, _x] call lilc_inventory_fnc_addVehicle;
     } forEach _items;
 } catch {
     _exception;

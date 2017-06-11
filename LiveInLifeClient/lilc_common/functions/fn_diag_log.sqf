@@ -1,18 +1,26 @@
 
+/*
+    Filename:
+        fn_diag_log.sqf
+    Author:
+        Vincent Heins
+    Description:
+        Logs input message and modname to logfile. Timestamp will be added too (time since the mission itself is started).
+    Param(s):
+        (_this select 0) : message to log : <STRING>
+		(optional)(_this select 1) : modname to log : <STRING>
+		(optional)(_this select 2) : priority type - 0 = normal, 1 = warning, 2 = error : <SCALAR/INT>
+    Result(s):
+        -
+*/
+
 params [
     ["_message", "", [""]],
     ["_modName", "", [""]],
-    ["_type", 0, [0]]
+    ["_type", "NORMAL", [""]]
 ];
 
-_typeMessage = "";
-switch (_type) do {
-    case 1: { _typeMessage = "WARNING"; };
-    case 2: { _typeMessage = "ERROR"; };
-    default { _typeMessage = "NORMAL"; };
-};
-
 if !(_modName == "") then { _modName = format["[%1]", _modName]; };
+private _user = (if (isDedicated && isServer) then { "LiveInLifeServer"; } else { "LiveInLifeClient"; });
 
-[(format["[LiveInLifeClient]%1[%2s][%3]: %4", _modName, missionStart, _typeMessage, _message]), "diag_log"] call lilc_common_fnc_message;
-true;
+[(format["[%1]%2[%3][%4]: %5", _user, _modName, ([(if (isMultiplayer) then { serverTime; } else { time; }), "+HH:MM:SS"] call lilc_common_fnc_secondsToDigital), _type, _message]), "diag_log"] call lilc_common_fnc_message;

@@ -25,7 +25,7 @@ _unit linkItem _binocular;
 if ((count (_inventory select 2)) > 0) then {
     _unit forceAddUniform ((_inventory select 2) select 0);
     _clothingName = ((_inventory select 2) select 1);
-    if (_clothingName != "-1") then { [_clothingName, _unit, 0] call lilc_textures_fnc_setUniformTexture; };
+    if (_clothingName != "-1") then { [_clothingName, _unit, 0] call lilc_textures_fnc_setUniform; };
     
     {
         (uniformContainer _unit) addItemCargo [_x, ((((_inventory select 2) select 2) select 1) select _forEachIndex)];
@@ -59,7 +59,7 @@ if ((count (_inventory select 3)) > 0) then {
 if ((count (_inventory select 4)) > 0) then {
     _unit addBackpack ((_inventory select 4) select 0);
     _backpackColor = ((_inventory select 4) select 1);
-    if (_backpackColor != "-1") then { [_backpackColor, (backpackContainer _unit), 0] call lilc_textures_fnc_setBackpackTexture; };
+    if (_backpackColor != "-1") then { [_backpackColor, (backpackContainer _unit), 0] call lilc_textures_fnc_setBackpack; };
 
     {
         (backpackContainer _unit) addItemCargo [_x, ((((_inventory select 4) select 2) select 1) select _forEachIndex)];

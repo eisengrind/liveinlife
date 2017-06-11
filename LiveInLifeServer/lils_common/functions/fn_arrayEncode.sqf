@@ -4,7 +4,7 @@
 */
 
 private _array = param [0, [], [[]]];
-if ((count _array) <= 0) exitWith { (str _array); };
+if ((count _array) <= 0) exitWith { (str str _array); };
 
 _array = (toArray (str _array));
 for "_i" from 0 to ((count _array) - 1) do {

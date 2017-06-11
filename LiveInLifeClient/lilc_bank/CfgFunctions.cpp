@@ -1,12 +1,24 @@
 
 class lilc_bank {
     class functions {
-        file = "\lilc_bank\functions";
-        class add {};
-        class delete {};
-        class have {};
+        file = "\x\lilc\addons\bank\functions";
+        class addAccount {};
+        class appendByBankName {};
+        class appendByID {};
+        class createAccount {};
+        class getAccountBankNameByID {};
+        class getAccountByBankName {};
+        class getAccountByID {};
+        class getAccountByTransID {};
+        class getAccounts {};
+        class getBankConfig {};
+        class haveAccountByID {};
+        class haveAmountByID {};
+        class haveBankName {};
         class init {};
-        class set {};
-        class setBankAccounts {};
+        class isAccountFormat {};
+        class preInit { preInit = 1; };
+        class removeAmountByID {};
+        class setAccounts {};
     };
 };

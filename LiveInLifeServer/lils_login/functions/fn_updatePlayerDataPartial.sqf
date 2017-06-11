@@ -1,16 +1,171 @@
 
 params [
-    ["_type", -1, [-1]],
+    ["_unit", objNull, [objNull]],
+    ["_type", "", [""]],
     ["_data", nil]
 ];
-if (_type == -1) exitWith {};
-if (isNil "_data") exitWith {};
 
-_query = "";
-switch (_type) do {
-    case 0: {
-        _query = format["UPDATE ACCOUNT_DATA SET NEW = '0' WHERE ID = '%1'", _data];
+try
+{
+    if (isNull _unit) throw false;
+    if !(isPlayer _unit) throw false;
+
+    switch (_type) do
+    {
+        case "deathInfo":
+        {
+            [([
+                "ACCOUNT_DATA",
+                [
+                    ["RESPAWNING", ([(_data select 0)] call lilc_common_fnc_toBool)],
+                    ["DEATHTIMEOUT", (_data select 1)]
+                ],
+                [
+                    ["ACCOUNTID", (_unit getVariable ["lilc_accountID", 0])],
+                    ["STEAM64ID", (getPlayerUID _unit)]
+                ]
+            ] call lils_database_fnc_generateUpdateQuery)] call lils_database_fnc_query;
+        };
+
+        case "statusInfo":
+        {
+            [([
+                "ACCOUNT_DATA",
+                [
+                    ["STATUS", (str (_data select 0))],
+                    ["STATUSIMEOUT", (_data select 1)]
+                ],
+                [
+                    ["ACCOUNTID", (_unit getVariable ["lilc_accountID", 0])],
+                    ["STEAM64ID", (getPlayerUID _unit)]
+                ]
+            ] call lils_database_fnc_generateUpdateQuery)] call lils_database_fnc_query;
+        };
+
+        case "lastPosition":
+        {
+            [([
+                "ACCOUNT_DATA",
+                [
+                    ["LASTPOSITION", ([_data] call lils_common_fnc_arrayEncode)]
+                ],
+                [
+                    ["ACCOUNTID", (_unit getVariable ["lilc_accountID", 0])],
+                    ["STEAM64ID", (getPlayerUID _unit)]
+                ]
+            ] call lils_database_fnc_generateUpdateQuery)] call lils_database_fnc_query;
+        };
+
+        case "gearInfo":
+        {
+            [([
+                "ACCOUNT_DATA",
+                [
+                    ["GEAR", ([_data] call lils_common_fnc_arrayEncode)]
+                ],
+                [
+                    ["ACCOUNTID", (_unit getVariable ["lilc_accountID", 0])],
+                    ["STEAM64ID", (getPlayerUID _unit)]
+                ]
+            ] call lils_database_fnc_generateUpdateQuery)] call lils_database_fnc_query;
+        };
+
+        case "cashInfo":
+        {
+            [([
+                "ACCOUNT_DATA",
+                [
+                    ["CASH", _data]
+                ],
+                [
+                    ["ACCOUNTID", (_unit getVariable ["lilc_accountID", 0])],
+                    ["STEAM64ID", (getPlayerUID _unit)]
+                ]
+            ] call lils_database_fnc_generateUpdateQuery)] call lils_database_fnc_query;
+        };
+
+        case "nutritionInfo":
+        {
+            [([
+                "ACCOUNT_DATA",
+                [
+                    ["THIRST", (_data select 0)],
+                    ["HUNGER", (_data select 1)]
+                ],
+                [
+                    ["ACCOUNTID", (_unit getVariable ["lilc_accountID", 0])],
+                    ["STEAM64ID", (getPlayerUID _unit)]
+                ]
+            ] call lils_database_fnc_generateUpdateQuery)] call lils_database_fnc_query;
+        };
+
+        case "newOff":
+        {
+            [([
+                "ACCOUNT_DATA",
+                [
+                    ["NEW", 0]
+                ],
+                [
+                    ["ACCOUNTID", (_unit getVariable ["lilc_accountID", 0])],
+                    ["STEAM64ID", (getPlayerUID _unit)]
+                ]
+            ] call lils_database_fnc_generateUpdateQuery)] call lils_database_fnc_query;
+        };
+
+        case "permissionInfo":
+        {
+            [([
+                "ACCOUNT_DATA",
+                [
+                    ["PERMISSIONS", ([_data] call lils_common_fnc_arrayEncode)]
+                ],
+                [
+                    ["ACCOUNTID", (_unit getVariable ["lilc_accountID", 0])],
+                    ["STEAM64ID", (getPlayerUID _unit)]
+                ]
+            ] call lils_database_fnc_generateUpdateQuery)] call lils_database_fnc_query;
+        };
+
+        case "virtualInventoryInfo":
+        {
+            [([
+                "ACCOUNT_DATA",
+                [
+                    ["VIRTUALINVENTORY", ([_data] call lils_common_fnc_arrayEncode)]
+                ],
+                [
+                    ["ACCOUNTID", (_unit getVariable ["lilc_accountID", 0])],
+                    ["STEAM64ID", (getPlayerUID _unit)]
+                ]
+            ] call lils_database_fnc_generateUpdateQuery)] call lils_database_fnc_query;
+        };
+
+        case "prison_status":
+        {
+            [([
+                "ACCOUNT_DATA",
+                [
+                    ["prison_currentPunishment", (_data select 0)],
+                    ["prison_waitingTime", (_data select 1)],
+                    ["prison_escapeTime", (_data select 2)]
+                ],
+                [
+                    ["ACCOUNTID", (_unit getVariable ["lilc_accountID", 0])],
+                    ["STEAM64ID", (getPlayerUID _unit)]
+                ]
+            ] call lils_database_fnc_generateUpdateQuery)] call lils_database_fnc_query;
+        };
+
+        default
+        {
+            throw false;
+        };
     };
-};
 
-[_query] spawn lils_database_fnc_query;
+    throw true;
+}
+catch
+{
+    _exception;
+};

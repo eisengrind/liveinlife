@@ -7,12 +7,22 @@ class CfgFunctions {
     #include "CfgFunctions.cpp"
 };
 
-class lilc_RscButtonMenu;
-class lilc_RscCombo;
-class lilc_RscEdit;
-class lilc_RscStructuredText;
+class CfgDebriefing {
+    #include "CfgDebriefing.cpp"
+};
+
+class lilc_RscListbox;
 class lilc_RscText;
-class lilc_RscTitle;
+class lilc_RscPicture;
+class lilc_RscControlsGroup;
+class lilc_RscShortcutButton;
 
 #include "dialogs\login.cpp"
-#include "dialogs\signup.cpp"
+//#include "dialogs\signup.cpp"
+
+class Extended_PreInit_EventHandlers {
+    class lilc_login_preInit {
+        clientInit = "call compile preProcessFileLineNumbers '\x\lilc\addons\login\XEH_preInit.sqf';";
+    };
+};
+

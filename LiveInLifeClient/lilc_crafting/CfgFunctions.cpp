@@ -1,10 +1,18 @@
 
 class lilc_crafting {
     class functions {
-        file = "\lilc_crafting\functions";
-        class craft {};
+        file = "\x\lilc\addons\crafting\functions";
+        class craftRecipe {};
+        class getRecipeConfig {};
+        class getRecipeUsages {};
+        class isItemCraftable {};
+        class isRecipeCraftable {};
+        class isRecipeVisible {};
         class onCharEdit {};
+        class onLBDblClickNeeded {};
+        class onLBSelChangedRecipes {};
         class openMenu {};
-        class updateMenu {};
+        class updateMenuNeeded {};
+        class updateMenuRecipes {};
     };
 };

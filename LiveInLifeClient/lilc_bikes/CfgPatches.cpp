@@ -6,4 +6,5 @@ class lilc_bikes
     fileName = "lilc_bikes.pbo";
     author[] = {"Vincent Heins"};
     lilc_globalVariableDefines = "globalVariableDefines.sqf";
+	units[] = {};
 };

@@ -1,9 +1,11 @@
 
 class lils_bank {
     class functions {
-        file = "\lils_bank\functions";
-        class get {};
+        file = "\x\lils\addons\bank\functions";
+        class createAccount {};
+        class delete {};
+        class getAccounts {};
         class init {};
-        class set {};
+        class setBankAccounts {};
     };
 };

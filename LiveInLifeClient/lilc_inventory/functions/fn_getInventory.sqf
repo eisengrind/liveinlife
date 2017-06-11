@@ -85,12 +85,12 @@ _inventory = [
     //TOOLBAR
     (assignedItems _unit),
     //UNIFORM
-    if ((uniform _unit) == "") then { 
-        []; 
+    if ((uniform _unit) == "") then {
+        [];
     } else {
         [
             (uniform _unit),
-            (_unit getVariable ["clothingColor", "-1"]), 
+            ((uniformContainer _unit) getVariable ["lilc_color", "-1"]), 
             (getItemCargo uniformContainer _unit),
             if (isNil {(magazinesAmmo uniformContainer _unit)}) then { [[]]; } else { (magazinesAmmo uniformContainer _unit); },
             (getWeaponCargo uniformContainer _unit)
@@ -113,7 +113,7 @@ _inventory = [
     } else {
         [
             (backpack _unit),
-            (_unit getVariable ["backpackColor", "-1"]), 
+            ((backpackContainer _unit) getVariable ["lilc_color", "-1"]), 
             (getItemCargo backpackContainer _unit),
             if (isNil {(magazinesAmmo backpackContainer _unit)}) then { [[]]; } else { (magazinesAmmo backpackContainer _unit); },
             (getWeaponCargo backpackContainer _unit)

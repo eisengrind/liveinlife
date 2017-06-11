@@ -6,4 +6,5 @@ class lilc_paycheck
     fileName = "lilc_paycheck.pbo";
     author[]= {"Vincent Heins"};
     lilc_globalVariableDefines = "globalVariableDefines.sqf";
+	units[] = {};
 };

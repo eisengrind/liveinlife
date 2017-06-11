@@ -1,23 +1,21 @@
 
 class lilc_login {
     class functions {
-        file = "\lilc_login\functions";
+        file = "\x\lilc\addons\login\functions";
         class addKnow {};
-        class getAccountData {};
-        class getNameInfo {};
-        class getPlayerData {};
+        class createProfile {};
+        class formatName {};
+        class getJoinData {};
+        class getProfiles {};
         class init {};
-        class openLoginMenu {};
-        class openSignupMenu {};
-        class processLogin {};
-        class processLoginRequest {};
-        class processSignup {};
-        class processSignupRequest {};
-        class savePlayerData {};
-        class savePlayerDataPartial {};
-        class setAccountData {};
-        class setLastPosition {};
-        class setPlayerData {};
+        class logout {};
+        class openMenu {};
+        class selectMenu {};
+        class selectProfile {};
+        class setJoinData {};
+        class setProfiles {};
         class unitIsKnown {};
+        class updatePlayerData {};
+        class updatePlayerDataPartial {};
     };
 };

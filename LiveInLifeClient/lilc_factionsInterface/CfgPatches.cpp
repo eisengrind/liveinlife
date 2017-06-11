@@ -6,4 +6,5 @@ class lilc_factionsInterface
     fileName = "lilc_factionsInterface.pbo";
     author[]= {"Vincent Heins"};
     lilc_globalVariableDefines = "globalVariableDefines.sqf";
+	units[] = {};
 };

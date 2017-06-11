@@ -1,7 +1,7 @@
 
 class lils_cleanup {
     class functions {
-        file = "\lils_cleanup\functions";
+        file = "\x\lils\addons\cleanup\functions";
         class deathBodies {};
         class init {};
     };
