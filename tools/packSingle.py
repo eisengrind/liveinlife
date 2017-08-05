@@ -32,7 +32,8 @@ for fileOrDir in _argument_pathTo:
         os.remove(os.path.join(_argument_pathTo, _argument_directoryName))
 
 _prefix = _argument_directoryName.split("_", 1)
-_result = subprocess.check_output(('%s "%s" "%s" -prefix="x\%s\\addons\%s" -sign="%s" -include="%s" -clear' % (_config_addonBuilder, _argument_directory, _argument_pathTo, _prefix[0], _prefix[1], _signFilePath, _config_includeFile)))
+_result = subprocess.check_output(('%s "%s" "%s" -prefix="x\%s\\addons\%s" -sign="%s" -include="%s" -clear' %
+    (_config_addonBuilder, _argument_directory, _argument_pathTo, _prefix[0], _prefix[1], _signFilePath, _config_includeFile)))
 print(_result.decode(sys.stdout.encoding))
 logFile.write(_result.decode(sys.stdout.encoding))
 logFile.close()
