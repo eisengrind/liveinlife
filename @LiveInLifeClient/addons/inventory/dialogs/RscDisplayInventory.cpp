@@ -826,10 +826,7 @@ class RscDisplayInventory {
 		class ContainerMoveButton : lilc_RscButtonMenu {
 			idc = 1397;
 			text = "Move";
-<<<<<<< HEAD:LiveInLifeClient/lilc_inventory/dialogs/RscDisplayInventory.cpp
-=======
 			onButtonClick = "[] spawn lilc_inventory_fnc_moveContainerItem;";
->>>>>>> 57e476db94a41457d9f7cb5bca8da2e830fd3063:@LiveInLifeClient/addons/inventory/dialogs/RscDisplayInventory.cpp
 			x = 0.30927 * safezoneW + safezoneX;
 			y = 0.72 * safezoneH + safezoneY;
 			w = 0.061875 * safezoneW;
@@ -848,10 +845,7 @@ class RscDisplayInventory {
 		class PlayerMoveButton : lilc_RscButtonMenu {
 			idc = 1399;
 			text = "Move";
-<<<<<<< HEAD:LiveInLifeClient/lilc_inventory/dialogs/RscDisplayInventory.cpp
-=======
 			onButtonClick = "[] spawn lilc_inventory_fnc_movePlayerItem;";
->>>>>>> 57e476db94a41457d9f7cb5bca8da2e830fd3063:@LiveInLifeClient/addons/inventory/dialogs/RscDisplayInventory.cpp
 			x = 0.47625 * safezoneW + safezoneX;
 			y = 0.72 * safezoneH + safezoneY;
 			w = 0.061875 * safezoneW;

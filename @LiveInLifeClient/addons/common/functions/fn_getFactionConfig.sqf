@@ -45,11 +45,7 @@ if (isArray(_faction >> "respawn")) then {
     _respawnNames = [getText(_faction >> "respawn")];
 };
 
-<<<<<<< HEAD:LiveInLifeClient/lilc_common/functions/fn_getFactionConfig.sqf
-_color = getText(_faction >> "color");
-=======
 _color = getArray(_faction >> "color");
->>>>>>> 57e476db94a41457d9f7cb5bca8da2e830fd3063:@LiveInLifeClient/addons/common/functions/fn_getFactionConfig.sqf
 _defaultEquipment = getArray(_faction >> "defaultEquipment");
 _defaultVehicles = getArray(_faction >> "defaultVehicles");
 _initPath = getText(_faction >> "init");

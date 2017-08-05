@@ -1,15 +1,4 @@
 
-<<<<<<< HEAD
-
-class CfgFunctions {
-    class lilc {
-        class recompile { file = "recompile.sqf"; };
-    };
-
-    class lilc_actions {
-        file = "D:\Windows 10 Benutzer\agphe\Documents\GitHub\LiveInLife\LiveInLifeClient\lilc_actions\functions";
-        class hideCorpse {};
-=======
 allowFunctionsRecompile = 1;
 
 #include "config\CfgAirports.cpp"
@@ -41,6 +30,5 @@ allowFunctionsRecompile = 1;
 class CfgRemoteExec {
     class Functions {
         mode = 0;
->>>>>>> 57e476db94a41457d9f7cb5bca8da2e830fd3063
     };
 };

@@ -8,9 +8,3 @@ class lilc_events {
         class onPlayerKilled {};
     };
 };
-
-/*class A3 {
-	class GUI {
-		class initDisplay { file = "\x\lilc\addons\events\functions\replaces\BIS_initDisplay.sqf"; };
-	};
-};*/
