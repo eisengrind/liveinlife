@@ -1,0 +1,18 @@
+
+<?xml version="1.0" encoding="utf-8">
+<Project name="LiveInLife">
+    <Package name="PositionTitles">
+        <Container name="Titles">
+            <Key ID="STR_PositionTitles_test">
+                <Original>Test</Original>
+                <English>Test</English>
+                <German>Test</German>
+            </Key>
+            <Key ID="STR_PositionTitles_testPosition">
+                <Original>Test position</Original>
+                <English>Test Position</English>
+                <German>Test position</German>
+            </Key>
+        </Container>
+    </Package>
+</Project>

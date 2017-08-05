@@ -1,0 +1,33 @@
+
+<?xml version="1.0" encoding="utf-8">
+<Project name="LiveInLife">
+    <Package name="lilc_medical">
+        <Container name="ActionTitle">
+            <Key ID="STR_lilc_medical_ActionTitle_reviveDeadUnit">
+                <Original>Revive</Original>
+                <English>Revive</English>
+                <German>Wiederbeleben</German>
+            </Key>
+            <Key ID="STR_lilc_medical_ActionTitle_stabilizeDeadUnit">
+                <Original>Stabilize</Original>
+                <English>Stabilize</English>
+                <German>Stabilisieren</German>
+            </Key>
+            <Key ID="STR_lilc_medical_ActionTitle_detachDeadUnit">
+                <Original>Detach injured</Original>
+                <English>Detach injured</English>
+                <German>Verletzten ablegen</German>
+            </Key>
+            <Key ID="STR_lilc_medical_ActionTitle_moveDeadUnit">
+                <Original>Move injured</Original>
+                <English>Move injured</English>
+                <German>Verletzten bewegen</German>
+            </Key>
+            <Key ID="STR_lilc_medical_ActionTitle_moveInVehicleDeadUnit">
+                <Original>Move injured to vehicle</Original>
+                <English>Move injured to vehicle</English>
+                <German>Verletzten in Fahrzeug setzen</German>
+            </Key>
+        </Container>
+    </Package>
+</Project>

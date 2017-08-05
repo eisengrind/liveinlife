@@ -1,0 +1,12 @@
+
+!license.txt
+*.zip
+*.ini
+*.log
+*.pbo
+*.bisign
+.vscode/*
+.resources/*
+createMissionFiles.py
+extdb-conf.ini
+extdb3-conf.ini

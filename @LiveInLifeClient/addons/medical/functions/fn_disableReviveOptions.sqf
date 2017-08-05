@@ -1,0 +1,2 @@
+
+closeDialog 1600;

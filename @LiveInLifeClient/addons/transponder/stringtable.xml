@@ -1,0 +1,13 @@
+
+<?xml version="1.0" encoding="utf-8">
+<Project name="LiveInLife">
+    <Package name="lilc_transponder">
+        <Container name="ActionTitle">
+            <Key ID="STR_lilc_transponder_ActionTitle_transponder">
+                <Original>Transponder</Original>
+                <English>Transponder</English>
+                <German>Transponder</German>
+            </Key>
+        </Container>
+    </Package>
+</Project>

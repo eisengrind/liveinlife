@@ -1,4 +1,5 @@
 
+<<<<<<< HEAD
 
 class CfgFunctions {
     class lilc {
@@ -8,5 +9,38 @@ class CfgFunctions {
     class lilc_actions {
         file = "D:\Windows 10 Benutzer\agphe\Documents\GitHub\LiveInLife\LiveInLifeClient\lilc_actions\functions";
         class hideCorpse {};
+=======
+allowFunctionsRecompile = 1;
+
+#include "config\CfgAirports.cpp"
+#include "config\CfgBanks.cpp"
+#include "config\CfgButcher.cpp"
+#include "config\CfgExchange.cpp"
+#include "config\CfgFactions.cpp"
+#include "config\CfgFarmAreas.cpp"
+#include "config\CfgFerrys.cpp"
+#include "config\CfgGarages.cpp"
+#include "config\CfgHints.cpp"
+#include "config\CfgJustice.cpp" //'dont know if its deprecated
+#include "config\CfgMaster.cpp"
+#include "config\CfgPackages.cpp"
+#include "config\CfgPDA.cpp"
+#include "config\CfgPhones.cpp"
+#include "config\CfgPlanePlates.cpp"
+#include "config\CfgPrisons.cpp"
+#include "config\CfgPunishments.cpp"
+#include "config\CfgRecipes.cpp"
+#include "config\CfgSeats.cpp"
+#include "config\CfgShops.cpp"
+#include "config\CfgStaticCameras.cpp" //is it used? i dont think so...
+#include "config\CfgTextures.cpp"
+#include "config\CfgTransponderCodes.cpp"
+#include "config\CfgVehicleShops.cpp"
+#include "config\CfgVirtualItems.cpp"
+
+class CfgRemoteExec {
+    class Functions {
+        mode = 0;
+>>>>>>> 57e476db94a41457d9f7cb5bca8da2e830fd3063
     };
 };

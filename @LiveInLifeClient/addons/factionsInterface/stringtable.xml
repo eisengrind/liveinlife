@@ -1,0 +1,33 @@
+
+<?xml version="1.0" encoding="utf-8">
+<Project name="LiveInLife">
+    <Package name="lilc_permissions">
+        <Container name="Permissions">
+            <Key ID="STR_permission_displayName_factionsInterface.dashboard">
+                <Original>Dashboard oeffnen</Original>
+                <English>Dashboard oeffnen</English>
+                <German>Dashboard oeffnen</German>
+            </Key>
+            <Key ID="STR_permission_displayName_factionsInterface.player.edit">
+                <Original>Spieler editieren</Original>
+                <English>Spieler editieren</English>
+                <German>Spieler editieren</German>
+            </Key>
+            <Key ID="STR_permission_displayName_factionsInterface.rank.edit">
+                <Original>Rang editieren</Original>
+                <English>Rang editieren</English>
+                <German>Rang editieren</German>
+            </Key>
+            <Key ID="STR_permission_displayName_factionsInterface.rank.add">
+                <Original>Rang hinzufuegen</Original>
+                <English>Rang hinzufuegen</English>
+                <German>Rang hinzufuegen</German>
+            </Key>
+            <Key ID="STR_permission_displayName_factionsInterface.rank.remove">
+                <Original>Rang entfernen</Original>
+                <English>Rang entfernen</English>
+                <German>Rang entfernen</German>
+            </Key>
+        </Container>
+    </Package>
+</Project>

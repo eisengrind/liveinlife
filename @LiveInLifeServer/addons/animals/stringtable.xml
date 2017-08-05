@@ -1,0 +1,33 @@
+
+<?xml version="1.0" encoding="utf-8">
+<Project name="LiveInLife">
+    <Package name="lilc_actions">
+        <Container name="ActionTitle">
+            <Key ID="STR_lilc_actions_ActionTitle_flipVehicle">
+                <Original>Turn around</Original>
+                <English>Turn around</English>
+                <German>Fahrzeug umdrehen</German>
+            </Key>
+            <Key ID="STR_lilc_actions_ActionTitle_hideCorpse">
+                <Original>Hide corpse</Original>
+                <English>Hide corpse</English>
+                <German>Leiche verstecken</German>
+            </Key>
+            <Key ID="STR_lilc_actions_ActionTitle_handCuffs">
+                <Original>Apply handcuffs</Original>
+                <English>Apply handcuffs</English>
+                <German>Handschellen anlegen</German>
+            </Key>
+            <Key ID="STR_lilc_actions_ActionTitle_giveMoney">
+                <Original>Give money</Original>
+                <English>Give money</English>
+                <German>Geld geben</German>
+            </Key>
+            <Key ID="STR_lilc_actions_ActionTitle_showPersonalcard">
+                <Original>Show personalcard</Original>
+                <English>Show personalcard</English>
+                <German>Personalausweis zeigen</German>
+            </Key>
+        </Container>
+    </Package>
+</Project>
