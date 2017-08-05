@@ -1,0 +1,18 @@
+
+<?xml version="1.0" encoding="utf-8">
+<Project name="LiveInLife">
+    <Package name="lilc_inventory">
+        <Container name="DialogName">
+            <Key ID="STR_lilc_inventory_DialogName_TitleVI">
+                <Original>Virtual items</Original>
+                <English>Virtual items</English>
+                <German>Virtuelle Gegenstände</German>
+            </Key>
+            <Key ID="STR_lilc_inventory_DialogName_ButtonDropVI">
+                <Original>Drop item</Original>
+                <English>Drop item</English>
+                <German>Wegwerfen</German>
+            </Key>
+        </Container>
+    </Package>
+</Project>

@@ -1,2 +1,0 @@
-
-call lilc_factionsInterface_fnc_getPermissions;

@@ -1,0 +1,184 @@
+/*%FSM<COMPILE "D:\Programs\Bohemia Interactive\Tools\FSM Editor Personal Edition\scriptedFSM.cfg, animalMonitor.fsm">*/
+/*%FSM<HEAD>*/
+/*
+item0[] = {"Init",0,250,-40.348839,-141.279068,49.651161,-91.279068,0.000000,"Init"};
+item1[] = {"true",4,218,-42.994434,-62.670784,47.005566,-12.670784,0.000000,"true"};
+item2[] = {"respawn_needed_a",2,250,-191.322678,37.744034,-101.322708,87.744156,0.000000,"respawn" \n "needed" \n "animals"};
+item3[] = {"are_there_any_animals",4,218,-43.567825,37.667992,46.432198,87.667976,0.000000,"are there any" \n "animals dead," \n "dude?"};
+item4[] = {"dead_animals__huh",2,250,98.570114,37.243141,188.570114,87.243240,0.000000,"dead animals," \n "huh?"};
+item5[] = {"animal_spawns_off",4,218,-43.161446,146.033920,46.838593,196.033920,0.000000,"animal" \n "spawns" \n "off?"};
+item6[] = {"_",1,250,-42.285622,249.371826,47.714409,299.371796,0.000000,""};
+item7[] = {"animal_out_of_ra",4,4314,-319.404633,38.760220,-229.404617,88.760185,0.000000,"animal" \n "out of" \n "range"};
+item8[] = {"respawn_animals",2,250,-320.283020,-63.085709,-230.282623,-13.085693,0.000000,"respawn" \n "animals if out of" \n "area"};
+link0[] = {0,1};
+link1[] = {1,2};
+link2[] = {2,3};
+link3[] = {2,5};
+link4[] = {2,7};
+link5[] = {3,4};
+link6[] = {4,1};
+link7[] = {4,5};
+link8[] = {5,6};
+link9[] = {7,8};
+link10[] = {8,1};
+globals[] = {0.000000,0,0,0,0,640,480,2,35,6316128,1,-372.738708,176.000427,313.985535,-196.122559,625,581,1};
+window[] = {0,-1,-1,-1,-1,909,2102,3242,182,1,643};
+*//*%FSM</HEAD>*/
+class FSM
+{
+  fsmName = "animalMonitor.fsm";
+  class States
+  {
+    /*%FSM<STATE "Init">*/
+    class Init
+    {
+      name = "Init";
+      init = /*%FSM<STATEINIT""">*/"if (isNil ""lils_animals_active"") then { lils_animals_active = true; };" \n
+       "_animalClassname = (_this select 0);" \n
+       "_animalAmount = (_this select 1);" \n
+       "_animalPosition = (_this select 2);" \n
+       "_animalRadius = (_this select 3);" \n
+       "_animalAgents = [];"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "true">*/
+        class true
+        {
+          priority = 0.000000;
+          to="respawn_needed_a";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "respawn_needed_a">*/
+    class respawn_needed_a
+    {
+      name = "respawn_needed_a";
+      init = /*%FSM<STATEINIT""">*/"" \n
+       "_animalsAlive = [];" \n
+       "{ if (alive _x) then { _animalsAlive pushBack _x; }; } forEach _animalAgents;" \n
+       "" \n
+       "if ((count _animalsAlive) < _animalAmount) then {" \n
+       "	for [{ private _i = 0 }, { _i < (_animalAmount - (count _animalsAlive)) }, { _i = _i + 1 }] do {" \n
+       "		_animalsAlive pushBack (createAgent [_animalClassname, _animalPosition, [], _animalRadius, ""CAN_COLLIDE""]);" \n
+       "	};" \n
+       "};" \n
+       "" \n
+       "_animalAgents = _animalsAlive;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "animal_spawns_off">*/
+        class animal_spawns_off
+        {
+          priority = 0.000000;
+          to="_";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"!isNil ""lils_animals_active"" && !lils_animals_active"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "animal_out_of_ra">*/
+        class animal_out_of_ra
+        {
+          priority = 0.000000;
+          to="respawn_animals";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"(({ (_x distance _animalPosition) > (_animalRadius + 10) } count _animalAgents) > 0)"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "are_there_any_animals">*/
+        class are_there_any_animals
+        {
+          priority = 0.000000;
+          to="dead_animals__huh";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"(({ alive _x} count _animalAgents) < _animalAmount)"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "dead_animals__huh">*/
+    class dead_animals__huh
+    {
+      name = "dead_animals__huh";
+      init = /*%FSM<STATEINIT""">*/"/*[(format[""Dead Animals (%1)"", _animalClassname]), ""lils_animals""] call lilc_common_fnc_diag_log;*/"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "animal_spawns_off">*/
+        class animal_spawns_off
+        {
+          priority = 0.000000;
+          to="_";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"!isNil ""lils_animals_active"" && !lils_animals_active"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "true">*/
+        class true
+        {
+          priority = 0.000000;
+          to="respawn_needed_a";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "_">*/
+    class _
+    {
+      name = "_";
+      init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "respawn_animals">*/
+    class respawn_animals
+    {
+      name = "respawn_animals";
+      init = /*%FSM<STATEINIT""">*/"" \n
+       "{" \n
+       "	if (alive _x && (_x distance _animalPosition) > (_animalRadius + 10)) then {" \n
+       "		deleteVehicle _x;" \n
+       "	};" \n
+       "} forEach _animalAgents;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "true">*/
+        class true
+        {
+          priority = 0.000000;
+          to="respawn_needed_a";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+  };
+  initState="Init";
+  finalStates[] =
+  {
+    "_",
+  };
+};
+/*%FSM</COMPILE>*/

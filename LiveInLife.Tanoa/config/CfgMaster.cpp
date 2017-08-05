@@ -1,0 +1,52 @@
+
+class CfgMaster {
+    firstspawnBackpacks[] = {"B_FieldPack_khk", "B_FieldPack_ocamo", "B_FieldPack_oucamo", "B_FieldPack_cbr", "B_FieldPack_blk"};
+    firstspawnVests[] = {};
+    firstspawnUniforms[] = {"rds_uniform_Woodlander4", "rds_uniform_Worker1", "rds_uniform_Worker4", "rds_uniform_Worker3", "U_I_C_Soldier_Bandit_5_F", "U_I_C_Soldier_Bandit_4_F", "rds_uniform_Woodlander3", "rds_uniform_Woodlander2", "rds_uniform_Woodlander1"};
+    firstspawnWeapons[] = {"bv_flashlight"};
+    firstspawnItems[] = {"ItemMap"};
+    firstspawnMagazines[] = {};
+
+    persistentTime = 1;
+    persistentWeather = 1;
+    day[] = {2017, 6, 21, 0, 0}; // just fill out to disable daytime usage of server - eg. [2014,10,30,2,30]
+    nightTime = 1.33; // in minutes 
+    nightStart[] = {19, 0}; // time - eg. 21:30
+    dayTime = 3.67; // in hours
+    dayStart[] = {6, 0}; // time - eg. 8:00
+    restartTimout = (6 * 60); // in minutes
+	hungerTimeout = 36;
+	thirstTimeout = 18;
+	hungerDiscount = 1;
+	thirstDiscount = 1;
+	starvingTimeout = 2;
+	hungerDamage = 0.006;
+	thirstDamage = 0.01;
+    plate_defaultSpecial = "";
+    plate_defaultType = "";
+    plate_defaultRegion = "T";
+	viewDistance_foot_enableSetting = true;
+	viewDistance_foot_default = 1000;
+	viewDistance_foot_min = 100;
+	viewDistance_foot_max = 2000;
+	viewDistance_foot_objects_enableSetting = true;
+	viewDistance_foot_objects_default = 1000;
+	viewDistance_foot_objects_min = 100;
+	viewDistance_foot_objects_max = 2000;
+	viewDistance_wheeled_enableSetting = true;
+	viewDistance_wheeled_default = 1000;
+	viewDistance_wheeled_min = 100;
+	viewDistance_wheeled_max = 2000;
+	viewDistance_wheeled_objects_enableSetting = true;
+	viewDistance_wheeled_objects_default = 1000;
+	viewDistance_wheeled_objects_min = 100;
+	viewDistance_wheeled_objects_max = 2000;
+	viewDistance_air_enableSetting = true;
+	viewDistance_air_default = 1000;
+	viewDistance_air_min = 100;
+	viewDistance_air_max = 2000;
+	viewDistance_air_objects_enableSetting = true;
+	viewDistance_air_objects_default = 1000;
+	viewDistance_air_objects_min = 100;
+	viewDistance_air_objects_max = 2000;
+};

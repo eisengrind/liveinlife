@@ -1,0 +1,30 @@
+/*%FSM<COMPILE "D:\Programs\Bohemia Interactive\Tools\FSM Editor Personal Edition\scriptedFSM.cfg, distanceCounter.fsm">*/
+/*%FSM<HEAD>*/
+/*
+item0[] = {"Init",0,250,-40.348839,-141.279068,49.651161,-91.279068,0.000000,"Init"};
+globals[] = {0.000000,0,0,0,0,640,480,2,35,6316128,1,-513.235229,577.447632,430.956879,-478.778687,1091,910,1};
+window[] = {2,-1,-1,-1,-1,935,208,1348,208,3,1109};
+*//*%FSM</HEAD>*/
+class FSM
+{
+  fsmName = "distanceCounter.fsm";
+  class States
+  {
+    /*%FSM<STATE "Init">*/
+    class Init
+    {
+      name = "Init";
+      init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+      };
+    };
+    /*%FSM</STATE>*/
+  };
+  initState="Init";
+  finalStates[] =
+  {
+  };
+};
+/*%FSM</COMPILE>*/

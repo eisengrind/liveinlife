@@ -1,0 +1,18 @@
+
+<?xml version="1.0" encoding="utf-8">
+<Project name="LiveInLife">
+    <Package name="lilc_sitting">
+        <Container name="ActionTitle">
+            <Key ID="STR_lilc_sitting_ActionTitle_getUp">
+                <Original>Get up</Original>
+                <English>Get up</English>
+                <German>Aufstehen</German>
+            </Key>
+            <Key ID="STR_lilc_sitting_ActionTitle_sitDown">
+                <Original>Sit down</Original>
+                <English>Sit down</English>
+                <German>Hinsetzen</German>
+            </Key>
+        </Container>
+    </Package>
+</Project>

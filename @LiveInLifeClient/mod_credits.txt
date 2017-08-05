@@ -1,4 +1,0 @@
-Thanks to the following people, who created mods, which make LiveInLife possible:
-
-Bohemia Interactive (dbo_bikes)
-Torndeco (extDB2/cancelled build)
