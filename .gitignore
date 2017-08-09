@@ -10,3 +10,4 @@
 createMissionFiles.py
 extdb-conf.ini
 extdb3-conf.ini
+*.tmp
