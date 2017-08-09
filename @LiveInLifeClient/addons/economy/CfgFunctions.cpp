@@ -4,7 +4,7 @@ class lilc_economy {
         file = "\x\lilc\addons\economy\functions";
         class getBuyPrice {};
         class getSellPrice {};
-        class getShopItems {};
+        class getShopHash {};
         class setBuyPrice {};
         class setSellPrice {};
     };
