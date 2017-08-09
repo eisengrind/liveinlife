@@ -48,7 +48,13 @@ private _eData = [];
         ]
     ] call lils_database_fnc_generateFetchQuery)] call lils_database_fnc_fetchObjects);
 
+    private _hash = ([[], []] call CBA_fnc_hashCreate);
+
+    {
+        [_hash, [(_x select 0), (_x select 1)], [(_x select 2), (_x select 3)]] call CBA_fnc_hashSet;
+    } forEach _dbData;
+
     private _pN = (format["lils_economy_tmp_%1", _sName]);
-    missionNamespace setVariable [_pN, _dbData];
+    missionNamespace setVariable [_pN, _hash];
     publicVariable _pN;
 } forEach _s;

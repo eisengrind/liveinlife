@@ -6,7 +6,7 @@ class CfgPatches
 
 class CfgFunctions
 {
-    #include "CfgFunctions.cpp";
+    #include "CfgFunctions.cpp"
 };
 
 class Extended_PreInit_EventHandlers
