@@ -22,13 +22,16 @@ try {
             };
         } forEach lilc_factionsInterface_items;
     } else {
+        private _hash = ([lilc_shops_currentShopname] call lilc_economy_fnc_getShopHash);
         {
+            private _v = ([_hash, _x] call CBA_fnc_hashGet);
+
             if ([(_x select 0)] call lilc_shops_fnc_isOtherItem) then {
-                if !([(_x select 0), (_x select 3), (_x select 2)] in _items) then {
-                    _items pushBack [(_x select 0), (_x select 3), (_x select 2)];
+                if !([(_x select 0), (_x select 1), (_v select 1)] in _items) then {
+                    _items pushBack [(_x select 0), (_x select 1), (_v select 1)];
                 };
             };
-        } forEach ([lilc_shops_currentShopname] call lilc_economy_fnc_getShopItems);
+        } forEach ([_hash] call CBA_fnc_hashkeys);
     };
 
     if ((lbSize _uiComboCategories) <= 0) then {
