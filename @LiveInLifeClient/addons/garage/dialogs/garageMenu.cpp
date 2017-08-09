@@ -90,9 +90,9 @@ class lilcm_garage
         {
             idc = 2400;
             text = "Ausparken"; //--- ToDo: Localize;
-            x = 0.216406 * safezoneW + safezoneX;["0.21125 * safezoneW + safezoneX","0.758445 * safezoneH + safezoneY","0.0773437 * safezoneW","0.022 * safezoneH"]
-            y = 0.753 * safezoneH + safezoneY;
-            w = 0.0721875 * safezoneW;
+            x = 0.21125 * safezoneW + safezoneX;
+            y = 0.758445 * safezoneH + safezoneY;
+            w = 0.0773437 * safezoneW;
             h = 0.022 * safezoneH;
             onButtonClick = "call lilc_garage_fnc_reveal;";
             colorBackground[] = {0, 0, 0, 0.8};
