@@ -1,6 +1,7 @@
 
-import sys, os, subprocess
+import sys, os, subprocess, shutil
 
+TOOLSPATH = os.path.dirname(sys.argv[0])
 ARGUMENTS = sys.argv[1:]
 
 # test.py compile --h
@@ -13,6 +14,7 @@ ARGUMENTS = sys.argv[1:]
 # -A {path to addon builder} = "
 # -S {path to DSUtils} = "
 # -p {prefix (variable {folder} available)} = sets the .pbo prefix; {folder} return .pbo folder basename
+# -N "lilc_{name}" = sets the file prefix
 
 ARGPARAMS = [
     ["-h", 0],
@@ -27,7 +29,8 @@ ARGPARAMS = [
     ["-A", 1],
     ["-S", 1],
     ["-L", 1],
-    ["-p", 1]
+    ["-p", 1],
+    ["-N", 1]
 ]
 ARGSVALUES = []
 
@@ -134,61 +137,109 @@ if len(pVal) >= 1:
     PREFIX = pVal[0]
 del pVal
 
-PATHLOGFILE = os.path.join(os.path.dirname(sys.argv[0]), "compile.log")
+PATHLOGFILE = os.path.join(TOOLSPATH, "compile.log")
 lVal = getArgValue("-L")
 if len(lVal) >= 1:
     PATHLOGFILE = lVal[0]
 del lVal
 
+FILENAMETEMPLATE = "{name}"
+nVal = getArgValue("-N")
+if len(nVal) >= 1:
+    FILENAMETEMPLATE = nVal[0]
+del nVal
+
 lFile = open(PATHLOGFILE, 'w+')
+lFile.seek(0)
 lFile.truncate()
+
+iFilePath = os.path.join(TOOLSPATH, "inc.tmp")
+
+TEMPPATH = os.path.abspath(os.path.join(TOOLSPATH, "tmp"))
+
+if not os.path.isdir(TEMPPATH):
+    os.makedirs(TEMPPATH)
+
+if INCLUDE != "":
+    iFile = open(iFilePath, 'w+')
+    iFile.seek(0)
+    iFile.truncate()
+    iFile.write(INCLUDE)
+    iFile.close()
 
 for path in PATHSFROM:
     fName = os.path.basename(path)
-    fPrefixFile = os.path.join(path, "$PREFIX$")
-    prefix = PREFIX.replace("{folder}", fName)
     path = os.path.abspath(path)
+
+    templateName = FILENAMETEMPLATE
+
+    fNameTemplateFile = os.path.join(path, "$NAMETEMPLATE$")
+    if os.path.isfile(fNameTemplateFile):
+        f = open(fNameTemplateFile)
+        templateName = f.readline()
+        f.close()
+
+    tmpPath = os.path.abspath(os.path.join(TEMPPATH, templateName.replace("{name}", fName)))
+    fPrefixFile = os.path.join(tmpPath, "$PREFIX$")
+    prefix = PREFIX.replace("{folder}", fName)
+
+    if os.path.isdir(tmpPath):
+        shutil.rmtree(tmpPath)
+
+    shutil.copytree(path, tmpPath)
 
     if os.path.isfile(fPrefixFile):
         f = open(fPrefixFile)
         prefix = f.readline()
         f.close()
 
-    print(prefix)
+    print("----\nNew package: %s\n----\n" % prefix)
+    lFile.write("----\nNew package: %s\n----\n" % prefix)
+    params = [
+        ('"%s"' % os.path.abspath(PATHADDONBUILDER)),
+        ('"%s"' % tmpPath),
+        ('"%s"' % os.path.abspath(PATHTO))
+    ]
+
+    if prefix != "":
+        prefix = ('-prefix="%s"' % prefix)
+        params.append(prefix)
 
     sF = ""
     if KEYFILE != "":
-        sF = (' -sign="%s"' % os.path.abspath(KEYFILE))
-    
+        sF = ('-sign="%s"' % os.path.abspath(KEYFILE))
+        params.append(sF)
+
     dSF = ""
     if PATHDSUTILS != "":
-        dSF = (' -dssignfile="%s"' % os.path.abspath(PATHDSUTILS))
+        dSF = ('-dssignfile="%s"' % os.path.abspath(PATHDSUTILS))
+        params.append(dSF)
 
     inc = ""
     if INCLUDE != "":
-        inc = (' -include="%s"' % INCLUDE)
+        inc = ('-include="%s"' % iFilePath)
+        params.append(inc)
 
-    binar = " -packonly"
-    if BINARIZE:
-        binar = ""
-    
-    params = [
-        os.path.abspath(PATHADDONBUILDER),
-        ('%s' % path),
-        ('%s' % os.path.abspath(PATHTO)),
-        ('-prefix="%s"' % prefix),
-        sF,
-        dSF,
-        inc,
-        "-clear",
-        binar
-    ]
+    binar = ""
+    if not BINARIZE:
+        binar = "-packonly"
+        params.append(binar)
 
-    strBuf = subprocess.check_output(params, shell=True)
+    params.append('-clear')
+
+    cmd = " ".join(params)
+    print(cmd)
+
+    strBuf = subprocess.check_output(cmd)
     encStrBuf = strBuf.decode(sys.stdout.encoding)
     print(encStrBuf)
+    
+    if os.path.isdir(tmpPath):
+        shutil.rmtree(tmpPath)
     lFile.write(encStrBuf)
 lFile.close()
+if os.path.isfile(iFilePath):
+    os.remove(iFilePath)
 
 
 # test.py compile --h
