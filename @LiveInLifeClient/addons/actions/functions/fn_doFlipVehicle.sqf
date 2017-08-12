@@ -22,7 +22,7 @@ try {
     lilc_action_active = true;
 	//{ if (alive _x) then { hint "Es dürfen keine Personen im Fahrzeug sein."; throw false; }; } forEach crew _vehicle;
     _vehicle setVariable ["lilc_flipTimestamp", (time + 6)];
-    ["Dein Fahrzeug wird in 5 Sekunden umgedreht.", "WARNING"] call lilc_ui_fnc_hint;
+    ["Dein Fahrzeug wird in 5 Sekunden umgedreht.", "WARNING"] call lilc_ui_fnc_hint; //STR_lilc_actions_ScriptText_flipping
     sleep 5;
 
     _vehicle allowDamage false;
@@ -32,7 +32,7 @@ try {
     _vehicle setVectorUp [0, 0, 1];
     _vehicle setPosASL _vehiclePosition;
 
-    ["Du hast das Fahrzeug erfolgreich umgedreht."] call lilc_ui_fnc_hint;
+    ["Du hast das Fahrzeug erfolgreich umgedreht."] call lilc_ui_fnc_hint; //STR_lilc_actions_ScriptText_flipped
     sleep 1;
     _vehicle allowDamage true;
     lilc_action_active = false;

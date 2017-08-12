@@ -28,7 +28,7 @@ try
 
 	
     [(format [
-        "Du hast von %1 $%2 erhalten.",
+        "Du hast von %1 $%2 erhalten.", //STR_lilc_cash_ScriptText_receivedCashFrom(%1, %2)
         (
 			if ([_unit] call lilc_login_fnc_unitIsKnown) then
 			{
@@ -40,7 +40,7 @@ try
 			}
 			else
 			{
-				"""Unbekannt""";
+				"""Unbekannt"""; //STR_lilc_login_ScriptText_unknown
 			}
 		),
         _amount

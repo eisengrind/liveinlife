@@ -20,7 +20,7 @@ try
 	if (_thirstAmount == 0) throw true;
 
 	[_thirstAmount] call lilc_food_fnc_changeThirst;
-	["Du hast einen Becher Wasser getrunken."] call lilc_ui_fnc_hint;
+	["Du hast einen Becher mit Wasser getrunken."] call lilc_ui_fnc_hint; //STR_lilc_actions_ScriptText_dispenseredWater
 
 	throw true;
 }

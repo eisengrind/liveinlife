@@ -39,5 +39,17 @@
                 <German>Ausrauben</German>
             </Key>
         </Container>
+        <Container name="ScriptTitle">
+            <Key ID="STR_lilc_actions_ScriptTitle_...">
+            </Key>
+        </Container>
+        <Container name="ScriptText">
+            <Key ID="STR_lilc_actions_ScriptText_...">
+            </Key>
+        </Container>
+        <Container name="SettingsTitle">
+            <Key ID="STR_lilc_actions_SettingsTitle_...">
+            </Key>
+        </Container>
     </Package>
 </Project>

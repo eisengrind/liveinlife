@@ -35,7 +35,7 @@ if ((damage _target) > 0.4 && (random 1 < 0.5)) then
 
 [
     (format[
-        "Du hast %1 ausgeraubt.",
+        "Du hast %1 ausgeraubt.", //STR_lilc_actions_ScriptText_robbed
         ([_target] call lilc_login_fnc_formatName)
     ])
 ] call lilc_ui_fnc_hint;

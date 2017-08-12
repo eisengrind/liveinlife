@@ -23,7 +23,7 @@ try
 
     if !([_amount] call lilc_cash_fnc_have) then
     {
-        hint "Du besitzt nicht so viel Bargeld.";
+        hint "Du besitzt nicht so viel Bargeld."; //STR_lilc_cash_ScriptText_notEnoughCash
         //ctrlSetText [1552, ""];
         throw false;
     };
@@ -33,7 +33,7 @@ try
     closeDialog 1550;
 
     [(format [
-        "Du hast %1 $%2 gegeben.",
+        "Du hast %1 $%2 gegeben.", //STR_lilc_cash_ScriptText_sendCashTo
         (
             if ([lilc_actions_target] call lilc_login_fnc_unitIsKnown) then
             {
@@ -45,7 +45,7 @@ try
             }
             else
             {
-                """Unbekannt""";
+                """Unbekannt"""; //STR_lilc_login_ScriptText_unknown
             }),
         _amount
     ])] call lilc_ui_fnc_hint;
