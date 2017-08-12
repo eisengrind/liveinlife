@@ -545,7 +545,7 @@ class lilcm_atcInterface {
 				class TitleCallsign : lilc_RscText
 				{
 					idc = 1000;
-					text = "Flugzeugkennung:"; //--- ToDo: Localize;
+					text = "Flugzeugkennung:"; //STR_lilc_atcInterface_ActionTitle_planeCallsign
 					x = 0.00515597 * safezoneW;
 					y = 0.011 * safezoneH;
 					w = 0.0876563 * safezoneW;
@@ -555,7 +555,7 @@ class lilcm_atcInterface {
 				class TitleType : lilc_RscText
 				{
 					idc = 1001;
-					text = "Flugzeugtyp:"; //--- ToDo: Localize;
+					text = "Flugzeugtyp:"; //STR_lilc_atcInterface_ActionTitle_planeType
 					x = 0.00515597 * safezoneW;
 					y = 0.033 * safezoneH;
 					w = 0.0876563 * safezoneW;
@@ -565,7 +565,7 @@ class lilcm_atcInterface {
 				class TitleHeading : lilc_RscText
 				{
 					idc = 1002;
-					text = "Richtung:"; //--- ToDo: Localize;
+					text = "Richtung:"; //STR_lilc_atcInterface_ActionTitle_heading
 					x = 0.00515597 * safezoneW;
 					y = 0.055 * safezoneH;
 					w = 0.0876563 * safezoneW;
@@ -575,7 +575,7 @@ class lilcm_atcInterface {
 				class TitleTransponder : lilc_RscText
 				{
 					idc = 1003;
-					text = "Transpondercode:"; //--- ToDo: Localize;
+					text = "Transpondercode:"; //STR_lilc_atcInterface_ActionTitle_transponderCode
 					x = 0.00515597 * safezoneW;
 					y = 0.0770001 * safezoneH;
 					w = 0.0876563 * safezoneW;
@@ -585,7 +585,7 @@ class lilcm_atcInterface {
 				class TitleHeightASL : lilc_RscText
 				{
 					idc = 1005;
-					text = "HÃ¶he (ASL/ft):"; //--- ToDo: Localize;
+					text = "HÃ¶he (ASL/ft):"; //STR_lilc_atcInterface_ActionTitle_heightASLft
 					x = 0.00515597 * safezoneW;
 					y = 0.099 * safezoneH;
 					w = 0.0876563 * safezoneW;
@@ -595,7 +595,7 @@ class lilcm_atcInterface {
 				class TitleHeightATL : lilc_RscText
 				{
 					idc = 1004;
-					text = "HÃ¶he (ATL/m):"; //--- ToDo: Localize;
+					text = "HÃ¶he (ATL/m):"; //STR_lilc_atcInterface_ActionTitle_heightATLm
 					x = 0.00515597 * safezoneW;
 					y = 0.121 * safezoneH;
 					w = 0.0876563 * safezoneW;
@@ -605,7 +605,7 @@ class lilcm_atcInterface {
 				class TextCallsign : lilc_RscText
 				{
 					idc = 1006;
-					text = "T-D234HD"; //--- ToDo: Localize;
+					text = "";
 					x = 0.092812 * safezoneW;
 					y = 0.011 * safezoneH;
 					w = 0.154687 * safezoneW;
@@ -615,7 +615,7 @@ class lilcm_atcInterface {
 				class TextType : lilc_RscText
 				{
 					idc = 1007;
-					text = "Antonov 2"; //--- ToDo: Localize;
+					text = "";
 					x = 0.092812 * safezoneW;
 					y = 0.033 * safezoneH;
 					w = 0.154687 * safezoneW;
@@ -625,7 +625,7 @@ class lilcm_atcInterface {
 				class TextHeading : lilc_RscText
 				{
 					idc = 1008;
-					text = "0Â° / N"; //--- ToDo: Localize;
+					text = "";
 					x = 0.092812 * safezoneW;
 					y = 0.055 * safezoneH;
 					w = 0.154687 * safezoneW;
@@ -635,7 +635,7 @@ class lilcm_atcInterface {
 				class TextTransponder : lilc_RscText
 				{
 					idc = 1009;
-					text = "7500 (Kidnapping)"; //--- ToDo: Localize;
+					text = "";
 					x = 0.092812 * safezoneW;
 					y = 0.0770001 * safezoneH;
 					w = 0.154687 * safezoneW;
@@ -645,7 +645,7 @@ class lilcm_atcInterface {
 				class TextHeightASL : lilc_RscText
 				{
 					idc = 1010;
-					text = "100 ft"; //--- ToDo: Localize;
+					text = "";
 					x = 0.092812 * safezoneW;
 					y = 0.099 * safezoneH;
 					w = 0.154687 * safezoneW;
@@ -655,7 +655,7 @@ class lilcm_atcInterface {
 				class TextHeightATL : lilc_RscText
 				{
 					idc = 1011;
-					text = "98 m"; //--- ToDo: Localize;
+					text = "";
 					x = 0.092812 * safezoneW;
 					y = 0.121 * safezoneH;
 					w = 0.154687 * safezoneW;
@@ -665,7 +665,7 @@ class lilcm_atcInterface {
 				class TextFrequency : lilc_RscText
 				{
 					idc = 1012;
-					text = "33 Hz"; //--- ToDo: Localize;
+					text = "";
 					x = 0.0928125 * safezoneW;
 					y = 0.143 * safezoneH;
 					w = 0.154687 * safezoneW;
@@ -675,7 +675,7 @@ class lilcm_atcInterface {
 				class TitleFrequency : lilc_RscText
 				{
 					idc = 1013;
-					text = "Funkfrequenz:"; //--- ToDo: Localize;
+					text = "Funkfrequenz:"; //STR_lilc_atcInterface_ActionTitle_frequency
 					x = 0.00515622 * safezoneW;
 					y = 0.143 * safezoneH;
 					w = 0.0876563 * safezoneW;
@@ -688,7 +688,7 @@ class lilcm_atcInterface {
         class ButtonClose : lilc_RscButtonMenu
         {
             idc = 2400;
-            text = "Escape"; //--- ToDo: Localize;
+            text = "Escape"; //STR_lilc_atcInterface_ActionTitle_closeDialog
             onButtonClick = "closeDialog 1420;";
             x = 0.969687 * safezoneW + safezoneX;
             y = 0.017037 * safezoneH + safezoneY;
