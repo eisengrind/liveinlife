@@ -9,7 +9,9 @@ try {
 
     _sheep setVariable ["lilc_animals_sheepCutted", (time + 60), true];
     for [{private _i = 0}, {_i < (round (random 3))}, {_i = _i + 1}] do { [player, "egci_Cotton_F", 0, false, true] call lilc_inventory_fnc_add; };
-    hint "Du hast die Wolle erfolgreich entfernt.";
+    [
+        "Du hast Wolle erhalten." //STR_lilc_animals_ScriptText_woolGathered
+    ] call lilc_ui_fnc_hint;
 
     throw true;
 } catch {
