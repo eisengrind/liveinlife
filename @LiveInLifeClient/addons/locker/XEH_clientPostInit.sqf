@@ -22,21 +22,29 @@ global objects:
 		[_nV, false] call ace_cargo_fnc_makeLoadable;
 		_nV setVariable ["lilc_lockers_id", _id];
 		_nV setVariable ["lilc_lockers_title", (_x getVariable ["lilc_lockers_title", ""])];
-		_nV setVariable ["lilc_lockers_price", (_x getVariable ["lilc_lockers_price", 0])];		
+		_nV setVariable ["lilc_lockers_price", (_x getVariable ["lilc_lockers_price", 0])];
 
-		_nV addAction [
-			"Schließfach kaufen",
-			{
-				(_this select 0) call lilc_locker_fnc_buyLocker;
-			},
-			0,
-			0,
-			false,
-			false,
-			"",
-			"!((_target getVariable ['lilc_locker_id', '']) in ([lilc_locker_lockers] call CBA_fnc_hashKeys))",
-			5
-		];
+		if ((_x getVariable ["lilc_lockers_price", 0]) == -1) then //"magic"-box
+		{
+			_nV lock false;
+		}
+		else
+		{
+			_nV addAction [
+				"Schließfach kaufen",
+				{
+					(_this select 0) call lilc_locker_fnc_buyLocker;
+				},
+				0,
+				0,
+				false,
+				false,
+				"",
+				"!((_target getVariable ['lilc_locker_id', '']) in ([lilc_locker_lockers] call CBA_fnc_hashKeys))",
+				5
+			];
+			_nV lock true;
+		};
 	};
 } forEach allMissionObjects "All";
 
@@ -54,6 +62,7 @@ player addEventHandler ["InventoryClosed", {
 	private _vC = ([_container] call lilc_inventory_fnc_getVehicleCargo);
 	[lilc_locker_lockers, _id, _vC] call CBA_fnc_hashSet;
 	[[player, _id, _vC], "lils_locker_fnc_save"] call lilc_common_fnc_sendToServer;
+	[_container] call lilc_inventory_fnc_clearVehicleCargo;
 }];
 
 lilc_locker_onInventoryOpenedIndex = (player addEventHandler ["InventoryOpened", {
@@ -61,6 +70,14 @@ lilc_locker_onInventoryOpenedIndex = (player addEventHandler ["InventoryOpened",
 		["_unit", objNull, [objNull]],
 		["_container", objNull, [objNull]]
 	];
+
+	[_container] call lilc_inventory_fnc_clearVehicleCargo;
+	if (!(_container getVariable ['lilc_locker_id', '']) in ([lilc_locker_lockers] call CBA_fnc_hashKeys) && (_container getVariable ["lilc_lockers_price", 0]) == -1) then
+	{
+		private _vC = ([_container] call lilc_inventory_fnc_getVehicleCargo);
+		[lilc_locker_lockers, (_container getVariable ['lilc_locker_id', '']), _vC] call CBA_fnc_hashSet;
+		[[player, (_container getVariable ['lilc_locker_id', '']), _vC], "lils_locker_fnc_save"] call lilc_common_fnc_sendToServer;
+	};
 
 	private _id = (_container getVariable ["lilc_lockers_id", ""]);
 	if (_id == "") exitWith { false; };

@@ -124,6 +124,13 @@ lils_login_set_defPackages = [
 	}
 ] call lils_login_fnc_addPackage;
 
+[
+	"set_lil_respawn_isNew",
+	{
+		_dbCol = ["NEW", true, false];
+	}
+] call lils_login_fnc_addPackage;
+
 /*********
 SET END / UDPATE START
 *********/

@@ -23,4 +23,4 @@ if !([player, _price] call lilc_cash_fnc_remove) exitWith {};
 ["Du hast dieses Schließfach gekauft."] call lilc_ui_fnc_hint;
 [lilc_locker_lockers, _id, [[[],[]],[],[[],[]],[]]] call CBA_fnc_hashSet;
 
-["lockers"] call lilc_login_fnc_updatePlayerDataPartial;
+["update_lilc_locker_lockers"] call lilc_login_fnc_updatePlayerDataPartial;

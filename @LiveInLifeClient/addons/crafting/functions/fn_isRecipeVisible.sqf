@@ -55,7 +55,6 @@ if !(_dC) exitWith { false; };
 private _hD = false;
 private _hM = getNumber(_location >> "hideMissing");
 {
-	systemChat str [_hM, (_x select 3)];
 	if (!([(_x select 0), (_x select 1)] call lilc_inventory_fnc_canRemoveMagCount) && ((_hM == 1) || ((_x select 3) == 1))) then
 	{
 		_hD = true;

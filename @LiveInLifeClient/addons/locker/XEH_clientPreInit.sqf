@@ -14,3 +14,10 @@ lilc_locker_onInventoryOpenedIndex = -1;
 		} forEach _this;
 	}
 ] call lilc_login_fnc_addPackage;
+
+[
+	"update_lilc_locker_lockers",
+	{
+		lilc_locker_lockers;
+	}
+] call lilc_login_fnc_addPackage;
