@@ -25,7 +25,7 @@ try
 
     lbClear 2402;
     {
-        if (!isNull _x && isPlayer _x && ([_x] call lilc_common_fnc_isAlive)) then
+        if !(isNull _x && isPlayer _x && ([_x] call lilc_common_fnc_isAlive)) then
         {
             private _index = (lbAdd [
                 2402,
