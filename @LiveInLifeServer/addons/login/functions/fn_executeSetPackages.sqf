@@ -16,6 +16,7 @@ _dbCol = nil;
 	private _k = _x;
 	private _c = ([lils_login_packages, _k] call CBA_fnc_hashGet);
 
+	diag_log str _k;
 	_dbCol = nil;
 	private _res = nil;
 
