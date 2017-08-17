@@ -4,7 +4,6 @@ import sys, os, subprocess, shutil
 TOOLSPATH = os.path.dirname(sys.argv[0])
 ARGUMENTS = sys.argv[1:]
 
-# test.py compile --h
 # -h, --help, -help, --h {compile|...} = help for action
 # -k {keyfilepath} = the path to the keyfile
 # -b = binarize configs
