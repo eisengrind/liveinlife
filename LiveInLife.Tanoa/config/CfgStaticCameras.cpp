@@ -1,3 +1,20 @@
+
+/***
+
+
+
+I THINK THIS MIGHT BE DEPRECATED - SO DONT USE IT OR USE IT WITH CAUTION!
+
+
+
+***/
+
+
+
+
+
+
+
 class CfgStaticCameras {
     class myAuthorityGarageCamera {
         position[] = {5577.04,11013.3,6.60144}; //No Position ASL; its AGL/ATL
