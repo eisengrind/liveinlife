@@ -49,4 +49,5 @@ class CfgMaster {
 	viewDistance_air_objects_default = 1000;
 	viewDistance_air_objects_min = 100;
 	viewDistance_air_objects_max = 2000;
+	respawn_civilian[] = {"hospital_1"};
 };

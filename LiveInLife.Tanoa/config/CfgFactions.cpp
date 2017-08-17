@@ -1,6 +1,7 @@
 class CfgFactions {
     class authority {
         id = 0;
+        respawn_type = 0; // 0: respawn in remotest base; 1: respawn in nearby base; 2: spawn at last position; 3: spawn at defined base (default it is respawn[0])
         forumGroups[] = {27, 14, 28, 9, 26, 15};
         displayName = "Polizei";
         enableGlobalPhone = 1;
