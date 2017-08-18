@@ -1,0 +1,12 @@
+// Classname
+// Radar Level
+
+
+
+class CfgATC_Interface {
+    class Planes {
+        {"sab_ultralight",150},
+        {"C_Heli_Light_01_civil_F",70},
+        {"B_UAV_01_F",70}        
+    };
+   };
