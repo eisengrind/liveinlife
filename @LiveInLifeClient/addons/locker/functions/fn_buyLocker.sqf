@@ -3,15 +3,15 @@ params [
 	["_object", objNull, [objNull]]
 ];
 
-private _id = (_object getVariable ["lilc_locker_id", ""]);
+private _name = (_object getVariable ["lilc_locker_name", ""]);
 
-if (_id in lilc_locker_lockers) exitWith {};
+if (_name in lilc_locker_lockers) exitWith {};
 
 private _price = (_object getVariable ["lilc_locker_price", 0]);
 
 private _result = nil;
 _result = ([(format["Willst du dieses Schließfach für $%1 kaufen?", _price]), "Schließfach kaufen", "Ja", "Nein"] call BIS_fnc_guiMessage);
-waitUntil { !(isNil _result) };
+waitUntil { !(isNil "_result") };
 
 if !([_price] call lilc_cash_fnc_have) exitWith
 {
@@ -20,7 +20,10 @@ if !([_price] call lilc_cash_fnc_have) exitWith
 
 if !([player, _price] call lilc_cash_fnc_remove) exitWith {};
 
-["Du hast dieses Schließfach gekauft."] call lilc_ui_fnc_hint;
-[lilc_locker_lockers, _id, [[[],[]],[],[[],[]],[]]] call CBA_fnc_hashSet;
+["Du hast das Schließfach gekauft."] call lilc_ui_fnc_hint;
+[lilc_locker_lockers, _name, [[[],[]],[],[[],[]],[]]] call CBA_fnc_hashSet;
 
-["update_lilc_locker_lockers"] call lilc_login_fnc_updatePlayerDataPartial;
+[
+	_name,
+	([lilc_locker_lockers, _name] call CBA_fnc_hashGet)
+] call lilc_locker_fnc_saveLocker;

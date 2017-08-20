@@ -6,17 +6,19 @@
 			["_unit", objNull, [objNull]]
 		];
 		private _result = ([([
-			"LOCKER_DATA",
+			"lockers",
 			[
-				["LOCKER"],
-				["GEAR"]
+				["name"],
+				["gear"]
 			],
 			[
-				["ACCOUNTID", (_unit getVariable ["lilc_accountID", 0])]
+				["account_id", (_unit getVariable ["lilc_accountID", 0])]
 			]
 		] call lils_database_fnc_generateFetchQuery)] call lils_database_fnc_fetchObjects);
 
-		_result set [1, ([(_result select 1)] call lils_common_fnc_arrayEncode)];
+		_result apply {
+			[(_x select 0), ([(_x select 1)] call lils_common_fnc_arrayEncode)];
+		};
 		_result;
 	}
 ] call lils_login_fnc_addPackage;
