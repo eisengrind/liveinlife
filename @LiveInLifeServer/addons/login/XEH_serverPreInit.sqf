@@ -214,7 +214,7 @@ lils_login_update_defPackages = [
 [
 	"update_lil_perms_perms",
 	{
-		["PERMISSIONS", (_this select 1)];
+		["PERMISSIONS", ([(_this select 1)] call lils_common_fnc_arrayEncode)];
 	}
 ] call lils_login_fnc_addPackage;
 
