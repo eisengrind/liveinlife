@@ -64,7 +64,24 @@ try {
         throw false;
     };
 
-    [[player, [(format["%1.%2.%3", (_birthdate select 0), (_birthdate select 1), (_birthdate select 2)]), _zipcode_int, _city, _street, _streetnumber_int]], "lils_pcard_fnc_createPersonalcard"] call lilc_common_fnc_sendToServer;
+    [
+        [
+            player,
+            [
+                (format[
+                    "%1.%2.%3",
+                    (_birthdate select 0),
+                    (_birthdate select 1),
+                    (_birthdate select 2)
+                ]),
+                _zipcode_int,
+                _city,
+                _street,
+                _streetnumber_int
+            ]
+        ],
+        "lils_pcard_fnc_createPersonalcard"
+    ] call lilc_common_fnc_sendToServer;
 
     closeDialog 1573;
     throw true;

@@ -1,5 +1,6 @@
 
 /*[accountid, personalcardid, firstname, lastname, birthdate, authority, city, parish, street, streetnumber]*/
+
 private _pcardData = param [0, [], [[]]];
 
 try {
