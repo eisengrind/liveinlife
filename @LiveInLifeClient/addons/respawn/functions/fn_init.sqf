@@ -30,6 +30,7 @@ try {
         call lilc_ui_fnc_disableHints;
 
         player allowDamage false;
+        player setVariable ["ace_medical_allowDamage", false, true];
         [200, "lilc_respawn", 1, false] call lilc_ui_fnc_fadeInTitles;
 
         private _ui = (uiNamespace getVariable ["lilc_respawn", displayNull]);
@@ -81,6 +82,7 @@ try {
         call lilc_ui_fnc_enableHints;
 
         player allowDamage true;
+        player setVariable ["ace_medical_allowDamage", true, true];
 
         call lilc_ui_fnc_disableLoadingIcon;
         [2] call lilc_ui_fnc_fadeOutBlack;
@@ -124,6 +126,7 @@ try {
 
             [2] call lilc_ui_fnc_fadeOutBlack;
             player allowDamage true;
+            player setVariable ["ace_medical_allowDamage", true, true];
             sleep 2;
 
             lilc_respawn_isRespawn = false;
@@ -161,6 +164,7 @@ try {
             lilc_medical_onDeadUnitGetOutVehicleIndex = player addEventHandler ["GetOutMan", { _this call lilc_medical_fnc_onDeadUnitGetOutVehicle; }];
 
             player allowDamage false;
+            player setVariable ["ace_medical_allowDamage", false, true];
             player hideObjectGlobal true;
             sleep 0.5;
 
@@ -291,6 +295,7 @@ try {
                         [player, ""] call lilc_common_fnc_switchMove;
                         [2] call lilc_ui_fnc_fadeOutBlack;
                         player allowDamage true;
+                        player setVariable ["ace_medical_allowDamage", true, true];
 
                         sleep 2;
                         throw true;
