@@ -1,4 +1,6 @@
 
+lilc_player_isNew = -1;
+
 [
 	"set_lil_login_id",
 	{

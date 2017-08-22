@@ -18,7 +18,7 @@ _dbCol = nil;
 
 	diag_log str _k;
 	_dbCol = nil;
-	private _res = nil;
+	private _res = -1;
 
 	if !(isNil _c) then
 	{

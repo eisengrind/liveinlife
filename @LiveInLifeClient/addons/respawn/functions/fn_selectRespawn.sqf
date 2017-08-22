@@ -10,10 +10,15 @@ if (lilc_player_isRespawning) then
 }
 else
 {
+    if (isNil "lilc_player_isNew") then
+    {
+        lilc_player_isNew = 0;
+    };
+
     private _fID = (player getVariable ["lilc_factionID", -1]);
     if (_fID == -1) then
     {
-        if (lilc_player_isNew == 1) then
+        if (lilc_player_isNew == 1 && !) then
         {
             private _filePath = (["firstspawnInit", "STRING", ""] call lilc_common_fnc_getSetting);
             if (_filePath != "") then

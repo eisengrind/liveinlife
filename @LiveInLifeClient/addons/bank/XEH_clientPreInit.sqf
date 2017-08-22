@@ -1,4 +1,6 @@
 
+lilc_bank_accounts = [];
+
 [
 	"set_lil_bank_accounts",
 	{

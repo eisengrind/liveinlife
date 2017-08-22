@@ -30,7 +30,6 @@ call lilc_locker_fnc_handleInventoryOpened;
 		_vG hideObject false;
 		_vG setVariable ["lilc_locker_name", _name];
 		_vG setVariable ["lilc_locker_price", _price];
-		systemChat str _vG;
 
 		if !([lilc_locker_lockers, _name] call CBA_fnc_hashHasKey) then
 		{

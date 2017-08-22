@@ -1,6 +1,6 @@
 
 [
-	"set_lilc_locker_lockers",
+	"set_lil_locker_lockers",
 	{
 		params [
 			["_unit", objNull, [objNull]]
@@ -16,9 +16,11 @@
 			]
 		] call lils_database_fnc_generateFetchQuery)] call lils_database_fnc_fetchObjects);
 
-		_result apply {
+		_result = (_result apply {
 			[(_x select 0), ([(_x select 1)] call lils_common_fnc_arrayEncode)];
-		};
+		});
+
+		diag_log str _result;
 		_result;
 	}
 ] call lils_login_fnc_addPackage;

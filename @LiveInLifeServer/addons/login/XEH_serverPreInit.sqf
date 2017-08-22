@@ -17,8 +17,9 @@ lils_login_set_defPackages = [
 	"set_lil_virtualInventory_inventory",
 	"set_lil_perms_perms",
 	"set_lil_inventory_inventory",
-	"set_lilc_locker_lockers",
-	"set_lil_factions_faction"
+	"set_lil_locker_lockers",
+	"set_lil_factions_faction",
+	"set_lil_respawn_isNew"
 ];
 
 [

@@ -32,7 +32,8 @@ try {
     } else {
         private _watermode = (if ([_classname, ["Boat", "Ship"]] call lilc_common_fnc_isKindOf) then { 2; } else { 0; });
         
-        if ([_classname, ["Boat", "Ship"]] call lilc_common_fnc_isKindOf) then
+        _vehicle = _classname createVehicle (_position select 0);
+        /*if ([_classname, ["Boat", "Ship"]] call lilc_common_fnc_isKindOf) then
         {
             _vehicle = _classname createVehicle (_position select 0);
         }
@@ -40,7 +41,7 @@ try {
         {
             _vehicle = _classname createVehicle [0, 0, 100];
             _vehicle setVehiclePosition [(ASLToAGL (_position select 0)), [], 100, "NONE"];
-        };
+        };*/
     };
 
     if (isNull _vehicle) throw ObjNull;
