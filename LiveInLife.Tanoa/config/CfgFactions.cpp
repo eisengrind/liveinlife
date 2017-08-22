@@ -10,6 +10,7 @@ class CfgFactions {
         color[] = {0, (56/255), (120/255), 1};
 		init = "factions\authority\init.sqf";
         respawnInit = "factions\authority\respawnInit.sqf";
+        prison_canRelease = 1;
         globalVehicleLock = 1;
         havePDA = 1;
         nameVisible = 1; //0 = no name without "pcard-showed" visible, 1 = firstname without "pcard-showed" visible, 2 = fullname without "pcard-showed" visible
