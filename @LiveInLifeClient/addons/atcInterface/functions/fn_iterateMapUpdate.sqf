@@ -31,10 +31,10 @@ try
 		private _currentVehicles = (allMissionObjects "AllVehicles") select
 		{
 			private _vehicle = _x;
-			(isEngineOn _vehicle) &&
-			!(
-				((getPosATL _vehicle) select 2) < 45 &&
-				!(_vehicle getVariable ["lilc_transponder_status", false]) &&
+			private _Cfg = ["", 50];
+			_Cfg = lilc_atcInterface_vehicleClassnames select _x
+			
+			!(((getPosATL _vehicle) select 2) < (_Cfg select 1) &&
 				(({ (_vehicle inArea _x) } count lilc_atcInterface_airports) <= 0)
 			) &&
 			(_vehicle isKindOf "Air")
