@@ -31,8 +31,7 @@ try
 		private _currentVehicles = (allMissionObjects "AllVehicles") select
 		{
 			private _vehicle = _x;
-			private _Cfg = ["", 50];
-			_Cfg = (lilc_atcInterface_vehicleClassnames select { (_x select 0) == _vehicle });
+			private _Cfg = (lilc_atcInterface_vehicleClassnames select {  _vehicle  isKindOf (_x select 0) });
 			
 			!(((getPosATL _vehicle) select 2) < (_Cfg select 1) &&
 				(({ (_vehicle inArea _x) } count lilc_atcInterface_airports) <= 0)
