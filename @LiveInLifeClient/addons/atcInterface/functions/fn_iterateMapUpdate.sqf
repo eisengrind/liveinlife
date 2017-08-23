@@ -32,7 +32,7 @@ try
 		{
 			private _vehicle = _x;
 			private _Cfg = ["", 50];
-			_Cfg = lilc_atcInterface_vehicleClassnames select _x
+			_Cfg = (lilc_atcInterface_vehicleClassnames select { (_x select 0) == _vehicle });
 			
 			!(((getPosATL _vehicle) select 2) < (_Cfg select 1) &&
 				(({ (_vehicle inArea _x) } count lilc_atcInterface_airports) <= 0)
