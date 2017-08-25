@@ -36,3 +36,13 @@ class lilc_login_noProfiles
     picture = "";
     pictureColor[] = {0, 0, 0, 1};
 };
+
+class lilc_login_error
+{
+    title = "Error";
+    subtitle = "There happened an error while logging in.";
+    description = "There happened an error while logging in.";
+    pictureBackground = "";
+    picture = "";
+    pictureColor[] = {0, 0, 0, 1};
+};
