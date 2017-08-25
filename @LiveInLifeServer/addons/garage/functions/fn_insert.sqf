@@ -35,7 +35,7 @@ try
             3;
         };
         
-        case (_classname isKindOf "Boat"): {
+        case (_classname isKindOf "Ship"): {
             4;
         };
         //case (_classname isKindOf "Car"): {};

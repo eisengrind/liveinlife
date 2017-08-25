@@ -30,7 +30,7 @@ try {
         _vehicle = _classname createVehicle [0, 0, 0];
         [_vehicle, _position] call lilc_common_fnc_setPosition;
     } else {
-        private _watermode = (if ([_classname, ["Boat", "Ship"]] call lilc_common_fnc_isKindOf) then { 2; } else { 0; });
+        private _watermode = (if ([_classname, ["Ship"]] call lilc_common_fnc_isKindOf) then { 2; } else { 0; });
         
         _vehicle = _classname createVehicle (ASLToAGL (_position select 0));
         /*if ([_classname, ["Boat", "Ship"]] call lilc_common_fnc_isKindOf) then
