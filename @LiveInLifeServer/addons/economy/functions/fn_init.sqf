@@ -35,7 +35,8 @@ private _eData = [];
 {
     private _sName = _x;
     private _sData = [];
-    private _dbData = ([([
+    private _dbData = [];
+    _dbData = ([([
         "economy_data",
         [
             ["classname"],
@@ -57,4 +58,6 @@ private _eData = [];
     private _pN = (format["lils_economy_tmp_%1", _sName]);
     missionNamespace setVariable [_pN, _hash];
     publicVariable _pN;
+
+    uiSleep 0.1;
 } forEach _s;
