@@ -32,8 +32,10 @@ try
 		{
 			private _vehicle = _x;
 			private _Cfg = (lilc_atcInterface_vehicleClassnames select {  _vehicle  isKindOf (_x select 0) });
+			private _d = _x distance2D [9947,11787];
+			private _dictance = (((_Cfg select 1)/100)*(((_d/900)^3)-((_d/1200)^2))/10);
 			
-			!(((getPosATL _vehicle) select 2) < (_Cfg select 1) &&
+			!(((getPosATL _vehicle) select 2) < _distance &&
 				(({ (_vehicle inArea _x) } count lilc_atcInterface_airports) <= 0)
 			) &&
 			(_vehicle isKindOf "Air")
