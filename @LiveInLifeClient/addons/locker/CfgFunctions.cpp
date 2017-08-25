@@ -6,6 +6,7 @@ class lilc_locker {
         class saveLocker {};
         class handleInventoryClosed {};
         class handleInventoryOpened {};
+        class setLockers {};
         /*class closeMenu {};
         class create {};
         class getLockerConfig {};

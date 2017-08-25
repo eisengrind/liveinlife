@@ -1,5 +1,5 @@
 
-[
+/*[
 	"set_lil_locker_lockers",
 	{
 		params [
@@ -20,14 +20,13 @@
 		_result = (_result apply {
 			[
 				(_x select 0),
-				([(_x select 1)] call lils_common_fnc_arrayEncode)
+				([(_x select 1)] call lils_common_fnc_arrayDecode)
 			];
 		});
 
-		diag_log str _result;
 		_result;
 	}
-] call lils_login_fnc_addPackage;
+] call lils_login_fnc_addPackage;*/
 
 [
 	"update_lilc_locker_lockers",
