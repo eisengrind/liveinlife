@@ -27,7 +27,7 @@ try
 	{
 		if (isNull _ui) throw false;
 		if !([player] call lilc_common_fnc_isAlive) throw false;
-
+		private _currentVehicles = [];
 		  	{ 
 				   private _vehicle = _x; 
 				   private _Cfg = (lilc_atcInterface_vehicleClassnames select {  _vehicle  isKindOf (_x select 0) }); 
