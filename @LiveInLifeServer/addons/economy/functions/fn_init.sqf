@@ -31,7 +31,6 @@ private _s = ("true" configClasses (missionConfigFile >> "CfgShops"));
 
 _s = (_s apply { (configName _x); });
 
-private _eData = [];
 {
     private _sName = _x;
     private _sData = [];

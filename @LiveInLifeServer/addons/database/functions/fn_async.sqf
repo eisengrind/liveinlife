@@ -58,6 +58,7 @@ try
 
 	[(format["extDB3: query: %1", _query]), "extDB3"] call lilc_common_fnc_debugLog;
 	[(format["extDB3: result: %1", _queryResult]), "extDB3"] call lilc_common_fnc_debugLog;
+	diag_log str _queryResult;
 	_queryResult = (call compile _queryResult);
 
 	if ((_queryResult select 0) isEqualTo 0) then
