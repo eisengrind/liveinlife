@@ -5,6 +5,7 @@
 		params [
 			["_unit", objNull, [objNull]]
 		];
+		
 		private _result = ([([
 			"lockers",
 			[
@@ -17,7 +18,10 @@
 		] call lils_database_fnc_generateFetchQuery)] call lils_database_fnc_fetchObjects);
 
 		_result = (_result apply {
-			[(_x select 0), ([(_x select 1)] call lils_common_fnc_arrayEncode)];
+			[
+				(_x select 0),
+				([(_x select 1)] call lils_common_fnc_arrayEncode)
+			];
 		});
 
 		diag_log str _result;
