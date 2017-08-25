@@ -10,7 +10,7 @@ params [
 ];
 
 try {
-    if (isNull _unit) throw ObjNull;
+    //if (isNull _unit) throw ObjNull;
     if (_classname == "") throw ObjNull;
     if (_position isEqualType ObjNull) then {
         if (isNull _position) throw ObjNull;
