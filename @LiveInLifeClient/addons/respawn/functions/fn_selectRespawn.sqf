@@ -1,9 +1,4 @@
 
-if (isNil "lilc_player_isRespawning") exitWith
-{
-    endMission "End4";
-};
-
 if (lilc_player_isRespawning) then
 {
     [player, objNull] spawn lilc_respawn_fnc_init;
@@ -18,23 +13,10 @@ else
     private _fID = (player getVariable ["lilc_factionID", -1]);
     if (_fID == -1) then
     {
-        if (lilc_player_isNew == 1 && !) then
+        if (lilc_player_isNew == 1) then
         {
-            private _filePath = (["firstspawnInit", "STRING", ""] call lilc_common_fnc_getSetting);
-            if (_filePath != "") then
-            {
-                call compile preprocessFileLineNumbers _filePath;
-            };
-            [""] call lilc_ui_fnc_setLoadingText;
-            private _handle = [] spawn lilc_firstspawn_fnc_init;
-            waitUntil
-            {
-                scriptDone _handle;
-            };
-            [0.1] call lilc_ui_fnc_enableLoadingIcon;
-
-            [player, player] call ACE_medical_fnc_treatmentAdvanced_fullHealLocal;
-            player setDamage 0;
+            ["lilce_respawn_firstspawn", [player]] call CBA_fnc_localEvent;
+            lilc_player_isNew = 0;
         }
         else
         {
