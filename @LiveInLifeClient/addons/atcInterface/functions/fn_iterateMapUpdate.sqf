@@ -35,7 +35,7 @@ try
 			private _d = _x distance2D [9947,11787];
 			private _dictance = ((160+(_Cfg select 1)/100)*(((_d/900)^3)-((_d/1200)^2))/8);
 			
-			!(((getPosATL _vehicle) select 2) < _distance &&
+			!(( ((getPosATL _vehicle) select 2) < _distance OR !(_vehicle getVariable ["lilc_transponder_status", false]) &&
 				(({ (_vehicle inArea _x) } count lilc_atcInterface_airports) <= 0)
 			) &&
 			(_vehicle isKindOf "Air")
