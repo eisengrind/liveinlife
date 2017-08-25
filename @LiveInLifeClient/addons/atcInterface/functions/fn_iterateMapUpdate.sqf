@@ -28,18 +28,16 @@ try
 		if (isNull _ui) throw false;
 		if !([player] call lilc_common_fnc_isAlive) throw false;
 
-		private _currentVehicles = (allMissionObjects "AllVehicles") select
-		{
-			private _vehicle = _x;
-			private _Cfg = (lilc_atcInterface_vehicleClassnames select {  _vehicle  isKindOf (_x select 0) });
-			private _d = _x distance2D [9947,11787];
-			private _dictance = ((160+(_Cfg select 1)/100)*(((_d/900)^3)-((_d/1200)^2))/8);
-			
-			!(( ((getPosATL _vehicle) select 2) < _distance OR !(_vehicle getVariable ["lilc_transponder_status", false]) &&
-				(({ (_vehicle inArea _x) } count lilc_atcInterface_airports) <= 0)
-			) &&
-			(_vehicle isKindOf "Air")
-		};
+		  	{ 
+				   private _vehicle = _x; 
+				   private _Cfg = (lilc_atcInterface_vehicleClassnames select {  _vehicle  isKindOf (_x select 0) }); 
+				   private _d = _x distance2D [9947,11787]; 
+				   private _d = (160+(((_d/900)^3)-((_d/1200)^2))/8); 
+
+				  If((((getPosATL _vehicle) select 2) > _d)    OR  (_vehicle getVariable ["lilc_transponder_status", false])     && (({ (_vehicle inArea _x) } count lilc_atcInterface_airports) > 0) ) && (_vehicle isKindOf "Air")) then {
+					    _currentVehicles pushBack _x;
+				      };
+ 			 }forEach (allMissionObjects "AllVehicles");
 
 		{
 			private _control = _x;
