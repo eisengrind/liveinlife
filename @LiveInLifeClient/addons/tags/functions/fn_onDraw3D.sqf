@@ -29,7 +29,7 @@ else
 
             if ((count _fInfo) > 0) then
             {
-                private _c = (_fID select 4);
+                private _c = (_fInfo select 4);
                 if ((count _c) >= 3) then
                 {
                     _color = [(_c select 0), (_c select 1), (_c select 2), (_color select 3)];
@@ -77,7 +77,7 @@ else
             _name,
             _icon,
             _color,
-            0.11 * (vectorMagnitude (visiblePositionASL _x vectorDiff (positionCameraToWorld [0, 0, 0])))
+            0.11 * (vectorMagnitude (visiblePosition _x vectorDiff (positionCameraToWorld [0, 0, 0])))
         ] call lilc_tags_fnc_drawTag);
     };
     true;
