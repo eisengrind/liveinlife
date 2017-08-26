@@ -21,7 +21,6 @@ params [
 ];
 
 try {
-    player groupChat str _this;
     if (isNull _unit) throw false;
     if !(isPlayer _unit) throw false;
 
@@ -42,9 +41,9 @@ try {
     ];
 //= TRANSID<string>, BANK<string>, AMOUNT<int>, STATUS<bool>, ID<int>
     ([(format["INSERT INTO BANK_ACCOUNT_DATA (ID, NAME, AMOUNT, ACCOUNTID, STATUS, HASH) VALUES (NULL, '""%1""', '%2', '%3', '%4', '%5')", _bankName, _startAmount, _accountID, 1, _hash])] call lils_database_fnc_query);
+    uiSleep 0.1;
     private _bankAccount = ([(format["SELECT HASH, NAME, AMOUNT, STATUS, ID  FROM BANK_ACCOUNT_DATA WHERE ACCOUNTID = '%1' AND AND HASH = '%2'", _accountID, _hash])] call lils_database_fnc_fetchObjects);
     
-    systemChat str (_bankAccount select 0);
     [[(_bankAccount select 0)], "lilc_bank_fnc_addAccount", _unit] call lilc_common_fnc_send;
 } catch {
     _exception;
