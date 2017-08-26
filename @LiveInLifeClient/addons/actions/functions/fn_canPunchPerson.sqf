@@ -16,5 +16,5 @@ if (_target distance player > 2) exitWith { true; };
     !(_target getVariable ["ACE_captives_isSurrendering", false]) &&
     !(_target getVariable ["lilc_actions_isBeaten", false]) &&
     !(_target getVariable ["ACE_captives_isHandcuffed", false]) &&
-    !(surfaceIsWater player)
+    !(surfaceIsWater position player)
 );
