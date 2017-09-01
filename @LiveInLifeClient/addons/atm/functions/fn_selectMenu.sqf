@@ -89,7 +89,7 @@ try {
 
             [1] call lilc_atm_fnc_showButtons;
 
-            _uiButton1 buttonSetAction 'call lilc_atm_fnc_createAccount;';
+            _uiButton1 buttonSetAction '[] spawn lilc_atm_fnc_createAccount;';
             _uiButton1Text ctrlSetStructuredText parseText "<t align='right' shadow='0' color='#176a37' font='PuristaSemibold'>Konto erstellen</t>";
             
             _uiButton1 ctrlEnable true;
