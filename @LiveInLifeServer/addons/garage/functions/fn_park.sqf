@@ -1,6 +1,7 @@
 
 params [
     ["_unit", objNull, [objNull]],
+    ["_vehicle", objNull, [objNull]],
     ["_garageName", "", [""]]
 ];
 
@@ -20,7 +21,7 @@ try
     if (_accountID <= 0) throw false;
     if (_unitUID == "") throw false;
 
-    private _vehicle = objNull;
+    /*private _vehicle = objNull;
     {
         if (
             !(_x isKindOf "Man") &&
@@ -33,7 +34,7 @@ try
         {
             _vehicle = _x;
         };
-    } forEach nearestObjects [(ASLToAGL (([(getText(_garageConfig >> "parkPosition"))] call lilc_common_fnc_getDynamicPosition) select 0)), ["Air", "Ship", "Boat", "Truck", "LandVehicle"], getNumber(_garageConfig >> "parkRadius"), true];
+    } forEach nearestObjects [(ASLToAGL (([(getText(_garageConfig >> "parkPosition"))] call lilc_common_fnc_getDynamicPosition) select 0)), ["Air", "Ship", "Boat", "Truck", "LandVehicle"], getNumber(_garageConfig >> "parkRadius"), true];*/
     if (isNull _vehicle) throw false;
     
     private _classname = (typeOf _vehicle);
@@ -63,13 +64,12 @@ try
 
         [_vehicle] call lils_vehicles_fnc_save;
         [(format[
-            "UPDATE VEHICLES_DATA SET ACTIVE = '0', GEAR = '%1' WHERE ID = '%2' AND ACCOUNTID = '%3' AND STEAM64ID = '%4' AND GARAGE = '""%5""' AND CLASSNAME = '""%6""';",
+            "UPDATE VEHICLES_DATA SET ACTIVE = '0', GEAR = '%1', GARAGE = '%2' WHERE ID = '%3' AND ACCOUNTID = '%4' AND CLASSNAME = '%5';",
             ([([_vehicle] call lilc_inventory_fnc_getVehicleCargo)] call lils_common_fnc_arrayEncode),
+            (str _garageName),
             _vehicleID,
             _accountID,
-            _unitUID,
-            _garageName,
-            _classname
+            (str _classname)
         ])] call lils_database_fnc_query;
         [[(typeOf _vehicle), _vehicleID], "lilc_keys_fnc_remove", _unit] call lilc_common_fnc_send;
         
