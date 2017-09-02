@@ -1,6 +1,6 @@
 
-lilc_tags_maximumRadius = 6;
-lilc_tags_maximumFadeRadius = 5.6;
+lilc_tags_maximumRadius = 10;
+lilc_tags_maximumFadeRadius = 9;
 lilc_tags_unknownHeadgears = [];
 lilc_tags_defaultColor = [1, 1, 1, 0]; //rgba(0) color
 

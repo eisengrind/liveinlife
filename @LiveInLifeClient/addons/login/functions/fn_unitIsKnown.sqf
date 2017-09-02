@@ -1,16 +1,12 @@
 
 private _unit = param [0, ObjNull, [ObjNull]];
 
-try {
-    if (isNull _unit) throw false;
-    if !(isPlayer _unit) throw false;
+params [
+    ["_unit", objNull, [objNull]]
+];
 
-    private _accountID = (_unit getVariable ["lilc_accountID", 0]);
-    if (_accountID <= 0) throw false;
+if (isNull _unit) exitWith { false; };
+if !(isPlayer _unit) exitWith { false; };
 
-    //if (_accountID in lilc_login_knownUnits) throw true;
-    if (({ _x == _accountID } count (profileNamespace getVariable ["lilc_knownUnits", []])) == 1) throw true;
-    throw false;
-} catch {
-    _exception;
-};
+if ((_unit getVariable ["lilc_accountID", 0]) in (profileNamespace getVariable ["lilc_knownUnits", []])) exitWith { true; };
+false;
