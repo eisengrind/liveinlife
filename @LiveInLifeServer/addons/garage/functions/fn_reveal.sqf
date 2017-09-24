@@ -50,7 +50,7 @@ try
         
         if ([(_position select 0), 5, ["Car", "Ship", "Boat", "Tank", "Truck", "Plane", "Air", "Helicopter"]] call lilc_common_fnc_objectsNearby) throw false;
 
-        (_position select 0) set [2, ((_position select 0) select 2) + 0.5];
+        (_position select 0) vectorAdd [0, 0, 0.1];
 
         private _vehicle = ([(_vehicleInfo select 0), _position, _vehicleID, _accountID, _unitUID] call lils_vehicles_fnc_create);
         if (isNull _vehicle) throw false;
@@ -75,6 +75,8 @@ try
         //private _factionVehicles = ([(format["SELECT VEHICLES FROM FACTION_PLAYER_DATA WHERE ACCOUNTID = '%1' AND STEAM64ID = '%2'", _accountID, _unitUID])] call lils_database_fnc_fetchObjects);
 
         if ([(_position select 0), 5, ["Car", "Ship", "Boat", "Tank", "Truck", "Plane", "Air", "Helicopter"]] call lilc_common_fnc_objectsNearby) throw false;
+        
+        (_position select 0) vectorAdd [0, 0, 0.1];
         private _vehicle = ([_classname, _position, -1, _accountID, _unitUID, true, (_unit getVariable ["lilc_factionID", -1])] call lils_vehicles_fnc_create);
         if (isNull _vehicle) throw false;
 
