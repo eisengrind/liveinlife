@@ -17,7 +17,15 @@ call lils_database_fnc_init;
 ] call CBA_fnc_localEvent;
 call lils_database_fnc_lock;
 
-lils_database_defaultProtocolName = (["database_defaultProtocolName", "STRING", "LiveInLifeDatabse", (configFile >> "CfgMasterServer")] call lilc_common_fnc_getSetting);
+systemChat str lils_database_defaultProtocolName;
+systemChat str lils_database_defaultProtocolName;
+systemChat str lils_database_defaultProtocolName;
+systemChat str lils_database_defaultProtocolName;
+
+systemChat str getText(configFile >> "CfgMasterServer" >> "database_defaultProtocolName");
+systemChat str getText(configFile >> "CfgMasterServer" >> "database_defaultProtocolName");
+systemChat str getText(configFile >> "CfgMasterServer" >> "database_defaultProtocolName");
+systemChat str getText(configFile >> "CfgMasterServer" >> "database_defaultProtocolName");
 
 [
 	"lilse_common_afterDatabaseInitialization",

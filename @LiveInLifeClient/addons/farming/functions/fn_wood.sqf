@@ -1,5 +1,8 @@
 
-_wood = param [0, ObjNull, [ObjNull]];
+params [
+    ["_wood", objNull, [objNull]]
+];
+
 if (isNull _wood) exitWith {}; 
 if ((_wood distance2D player) > 5) exitWith {};
 if !(([_wood] call lilc_farming_fnc_isTree)) exitWith {};
@@ -7,7 +10,7 @@ if ((damage _wood) > 0) exitWith { hint "Der Baum ist schon gefällt."; };
 if (lilc_action_active) exitWith {};
 lilc_action_active = true; 
  
-_amount = (round (random [2, 6, 10])); 
+private _amount = (round (random [2, 6, 10])); 
  
 for "_i" from 1 to 3 do { 
     lilc_action_animDone = false; 
@@ -24,9 +27,9 @@ for "_i" from 1 to 3 do {
 
 if ((damage _wood) == 1) exitWith { player switchMove ""; };
  
-_groundWeaponHolder = "GroundWeaponHolder" createVehicle position _wood; 
-_groundWeaponHolder addItemCargoGlobal ["lilci_woodpile_F", _amount]; 
+private _groundWeaponHolder = "GroundWeaponHolder" createVehicle [0, 0, 0];
+_groundWeaponHolder addItemCargoGlobal ["lilci_woodpile_F", _amount];
+_groundWeaponHolder setPos [((getPos _wood) select 0), ((getPos _wood) select 1), 0];
 
 lilc_action_active = false;
-_wood setDamage 1; 
-hint "Du hast diesen Baum gefällt.";
+_wood setDamage 1;
