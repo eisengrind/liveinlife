@@ -13,8 +13,6 @@ try
             if (player inArea _x) throw _config;
         } forEach getArray(_x >> "areas");
     } forEach ("true" configClasses (missionConfigFile >> "CfgFarmAreas"));
-
-    throw configNull;
 }
 catch
 {
@@ -33,42 +31,46 @@ try
     sleep 0.5;
     if (call lilc_inventory_fnc_inventoryOpen) throw false;
 
-    _generatedItems = [];
+    private _coef = 1;
+    if (getNumber(_areaConfig >> "lessChanceByDistance") == 1) then
     {
-        if ((random 1) <= getNumber(_x >> "chance")) then
-        {
-            _generatedItems pushBack (configName _x);
-        };
-    } forEach ("true" configClasses _areaConfig);
-    
-    if ((count _generatedItems) <= 0) then
-    {
-        hint "";
-        throw false;
+        _coef = ((getMarkerSize (configName _areaConfig)) select 0) / (player distance2D (configName _areaConfig));
     };
 
-    private _stringItems = "";
-    {
-        private _classname = (configName _x);
-        if (_classname in _generatedItems) then
-        {
-            private _items = [];
-            for [{_i = 0}, {_i < getNumber(_x >> "amount")}, {_i = _i + 1}] do
-            {
-                [player, _classname, -1, false, true] call lilc_inventory_fnc_add;
-            };
+    private _gI = [];
 
-            private _itemConfig = ([_classname] call lilc_inventory_fnc_getItemInfo);
-            _stringItems = format[
-                "%1<br /><t align='left'> - %2x %3</t>",
-                _stringItems,
-                getNumber(_x >> "amount"),
-                getText(_itemConfig >> "displayName")
-            ];
+    {
+        if (((random 1) * _coef) <= getNumber(_x >> "chance")) then
+        {
+            _gI pushBack (configName _x);
         };
     } forEach ("true" configClasses _areaConfig);
-    
-    hint parseText format["Du hast folgende Items erhalten:<br />%1", _stringItems];
+
+    if (getNumber(_areaConfig >> "hint") == 1) then
+    {
+        private _str = "Du hast folgende Items erhalten:<br>";
+        {
+            private _cN = (configName _x);
+            private _c = ({
+                (_x == _cN);
+            } count _gI);
+
+            if (_c <= 0) then
+            {
+                _str = format["%1%2x %3<br>", _str, _c];
+            };
+        } forEach ("true" configClasses _areaConfig);
+
+        if (_str == "") then
+        {
+            [_str] call lilc_ui_fnc_hint;
+        };
+    };
+
+    {
+        [player, _x, -1, false, true] call lilc_inventory_fnc_add;
+    } forEach _gI;
+
     throw true;
 }
 catch

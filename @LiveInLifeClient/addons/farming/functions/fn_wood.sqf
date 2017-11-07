@@ -23,9 +23,17 @@ for "_i" from 1 to 3 do {
 };
 
 if ((damage _wood) == 1) exitWith { player switchMove ""; };
- 
-_groundWeaponHolder = "GroundWeaponHolder" createVehicle position _wood; 
-_groundWeaponHolder addItemCargoGlobal ["lilci_woodpile_F", _amount]; 
+
+private _items = [];
+for [{private _i = 0}, {_i < _amount}, {_i = _i + 1}] do
+{
+    _items pushBack "lilci_woodpile_F";
+};
+
+[
+    (getPosASL player),
+    _items
+] call lilc_inventory_fnc_groundItems;
 
 lilc_action_active = false;
 _wood setDamage 1; 
