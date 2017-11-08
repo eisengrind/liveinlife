@@ -1,24 +1,28 @@
 
 /*
-    Filename:
-        fn_canGiveMoney.sqf
-    Author:
+    Author(s):
         Vincent Heins
+    
     Description:
         Checks if the given unit can receive money.
-    Params:
+
+    Parameter(s):
         (_this select 0) : _unit : <objNull> : unit to give money to
+
     Result:
         <bool> : is unit a valid target to give money to?
+
+    Example(s):
+        (Example 1)
+        private _canGiveMoney = ([player] call lilc_actinos_fnc_canGiveMoney);
 */
 
-private _unit = param [0, objNull, [objNull]];
+params [
+    ["_unit", objNull, [objNull]]
+];
 
-try {
-    if (isNull _unit) throw false;
-    if !(isPlayer _unit) throw false;
-
-    throw true;
-} catch {
-    _exception;
-};
+if (
+    isNull _unit ||
+    !(isPlayer _unit)
+) exitWith { false; };
+true;

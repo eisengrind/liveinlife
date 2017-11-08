@@ -1,42 +1,50 @@
 
 /*
-    Filename:
-        fn_flipVehicle.sqf
     Author:
         Vincent Heins
+
     Description:
         Flips a target/given vehicle.
-    Params:
+
+    Parameter(s):
         (_this select 0) : _vehicle : <objNull> : vehicle to flip
+
     Result:
         <bool> : whether the vehicle was flipped or not
+    
+    Example(s):
+        (Example 1)
+        private _vehicle = objNull
+        private _vehicleFlipped = ([_vehicle] call lilc_actions_fnc_doFlipVehicle);
 */
 
-private _vehicle = param [0, objNull, [objNull]];
+params [
+    ["_vehicle", objNull, [objNull]]
+];
 
-try {
-    if (isNull _vehicle) throw false;
-    if (isPlayer _vehicle) throw false;
-    if !([_vehicle] call lilc_actions_fnc_canFlipVehicle) throw false;
+if (
+    (isNull _vehicle) ||
+    (isPlayer _vehicle) ||
+    !([_vehicle] call lilc_actions_fnc_canFlipVehicle)
+) exitWith { false; };
 
-    lilc_action_active = true;
-	//{ if (alive _x) then { hint "Es dürfen keine Personen im Fahrzeug sein."; throw false; }; } forEach crew _vehicle;
-    _vehicle setVariable ["lilc_flipTimestamp", (time + 6)];
-    ["Dein Fahrzeug wird in 5 Sekunden umgedreht.", "WARNING"] call lilc_ui_fnc_hint;
-    sleep 5;
+if ({ (alive _x) } count (crew _vehicle)) exitWith { false; };
 
-    _vehicle allowDamage false;
-    private _vehiclePosition = (getPosASL _vehicle);
-    _vehiclePosition set [2, ((_vehiclePosition select 2) + 0.2)];
+lilc_action_active = true;
+_vehicle setVariable ["lilc_flipTimestamp", (time + 6)];
+["Dein Fahrzeug wird in 5 Sekunden umgedreht.", "WARNING"] call lilc_ui_fnc_hint;
+sleep 5;
 
-    _vehicle setVectorUp [0, 0, 1];
-    _vehicle setPosASL _vehiclePosition;
+_vehicle allowDamage false;
+private _vehiclePosition = (getPosASL _vehicle);
+_vehiclePosition set [2, ((_vehiclePosition select 2) + 0.2)];
 
-    ["Du hast das Fahrzeug erfolgreich umgedreht."] call lilc_ui_fnc_hint;
-    sleep 1;
-    _vehicle allowDamage true;
-    lilc_action_active = false;
-	throw true;
-} catch {
-    _exception;
-};
+_vehicle setVectorUp [0, 0, 1];
+_vehicle setPosASL _vehiclePosition;
+
+["Du hast das Fahrzeug erfolgreich umgedreht."] call lilc_ui_fnc_hint;
+sleep 1;
+_vehicle allowDamage true;
+lilc_action_active = false;
+
+true;
