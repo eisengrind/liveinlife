@@ -3,3 +3,5 @@
 *.log
 .vscode/*
 .builds/
+tools/tmp
+tools/inc.tmp
