@@ -1,3 +1,3 @@
 
-database_defaultProtocolName = "LiveInLifeDatabse";
+database_defaultProtocolName = "";
 serverCommandPassword = "";

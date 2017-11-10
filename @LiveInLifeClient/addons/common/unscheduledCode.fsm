@@ -1,0 +1,44 @@
+/*%FSM<COMPILE "D:\Program Files\Steam\steamapps\common\Arma 3 Tools\FSMEditor\scriptedFSM.cfg, unscheduledCode.fsm">*/
+/*%FSM<HEAD>*/
+/*
+item0[] = {"End",0,250,-40.348839,-141.279068,49.651154,-91.279068,0.000000,"End"};
+globals[] = {0.000000,0,0,0,0,640,480,2,35,6316128,1,-504.236572,586.446411,498.936646,-410.801514,1091,884,1};
+window[] = {2,-1,-1,-1,-1,857,130,1270,130,3,1109};
+*//*%FSM</HEAD>*/
+class FSM
+{
+        fsmName = "unscheduledCode.fsm";
+        class States
+        {
+                /*%FSM<STATE "End">*/
+                class End
+                {
+                        name = "End";
+                        itemno = 0;
+                        init = /*%FSM<STATEINIT""">*/"" \n
+                         "params [" \n
+                         "	[""_scriptName"", """", [""""]]," \n
+                         "	[""_code"", nil]," \n
+                         "	[""_arguments"", nil]" \n
+                         "];" \n
+                         "" \n
+                         "scopeName _scriptName;" \n
+                         "" \n
+                         "[(format[""executing FSM code segment: %1"", _scriptName]), ""lilc_common""] call lilc_common_fnc_diag_log;" \n
+                         "" \n
+                         "if (isNil ""_code"") exitWith {};" \n
+                         "_arguments call _code;" \n
+                         ""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                        };
+                };
+                /*%FSM</STATE>*/
+        };
+        initState="End";
+        finalStates[] =
+        {
+        };
+};
+/*%FSM</COMPILE>*/

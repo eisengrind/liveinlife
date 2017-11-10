@@ -28,22 +28,12 @@ if (isMultiplayer) then {
 
 	waitUntil
 	{
-		!(call BIS_fnc_isLoading);
-	};
-
-	waitUntil
-	{
 		!(isNull player);
 	};
 
 	[0.1] call lilc_ui_fnc_enableLoadingIcon;
 	[(format["waiting for server to be ready... (%1)", ([60, "HH:MM:SS"] call BIS_fnc_secondsToString)])] call lilc_ui_fnc_setLoadingText;
 	[(format["waiting for server to be ready... (%1)", ([60, "HH:MM:SS"] call BIS_fnc_secondsToString)]), "lilc_common"] call lilc_common_fnc_diag_log;
-
-	waitUntil
-	{
-		!(call BIS_fnc_isLoading);
-	};
 
 	private _time = (time + 60);
 	while
@@ -62,7 +52,7 @@ if (isMultiplayer) then {
 		endMission "END6";
 	};
 
-	if !(profileNamespace getVariable ["lilc_joinIntroOff", false]) then
+	/*if !(profileNamespace getVariable ["lilc_setting_firstspawn_deactivateIntro", false]) then
 	{
 		private _handle = ([] spawn {
 			scriptName "lilc_common_creditsIntro";
@@ -73,13 +63,18 @@ if (isMultiplayer) then {
 		{
 			(scriptDone _handle);
 		};
-	};
+	};*/
 
 	["executing pre account init eventhandler"] call lilc_ui_fnc_setLoadingText;
 	[
 		"lilce_login_preAccountInit",
 		[player]
 	] call CBA_fnc_localEvent;
+
+	waitUntil
+	{
+		!(call BIS_fnc_isLoading);
+	};
 
 	call lilc_ui_fnc_disableLoadingIcon;
 	call lilc_login_fnc_init;

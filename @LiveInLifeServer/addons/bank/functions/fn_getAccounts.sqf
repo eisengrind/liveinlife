@@ -1,14 +1,29 @@
 
-private _unit = param [0, ObjNull, [ObjNull]];
+params [
+    ["_unit", objNull, [objNull]]
+];
 
-try {
-    if (isNull _unit) throw false;
-    if !(isPlayer _unit) throw false;
-    
-    private _result = [];
-    _result = [(format["SELECT QUOTE(HASH), NAME, AMOUNT, STATUS, ID FROM BANK_ACCOUNT_DATA WHERE ACCOUNTID = '%1' AND STEAM64ID = '%2'", (_unit getVariable ["lilc_accountID", 0]), (getPlayerUID _unit)])] call lils_database_fnc_fetchObjects;
+private _result = ([([
+    "BANK_ACCOUNT_DATA",
+    [
+        ["QUOTE(HASH)", false],
+        ["NAME"],
+        ["AMOUNT"],
+        ["STATUS"],
+        ["ID"]
+    ],
+    [
+        ["ACCOUNTID", (_unit getVariable ["lilc_accountID", 0])]
+    ]
+] call lils_database_fnc_generateFetchQuery)] call lils_database_fnc_fetchObjects);
 
-    [[_result], "lilc_bank_fnc_setAccounts", _unit] call lilc_common_fnc_send;
-} catch {
-    _exception;
+if (_result isEqualType false) then
+{
+    _result = [];
 };
+
+[
+    _result,
+    "lilc_bank_fnc_setAccounts",
+    _unit
+] call lilc_common_fnc_send;

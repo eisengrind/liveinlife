@@ -5,6 +5,6 @@ class lils_locker {
         class create {};
         class getLockers {};
         class load {};
-        class save {};
+        class saveLocker {};
     };
 };

@@ -1,4 +1,6 @@
 
+lilc_player_isNew = -1;
+
 [
 	"set_lil_login_id",
 	{
@@ -85,6 +87,13 @@
 	}
 ] call lilc_login_fnc_addPackage;
 
+[
+	"set_lil_respawn_isNew",
+	{
+		lilc_player_isNew = _this;
+	}
+] call lilc_login_fnc_addPackage;
+
 /**********
 SET END / UPDATE START
 **********/
@@ -105,7 +114,9 @@ lilc_login_update_defPackages = [
 	"update_lil_respawn_currentTimeout",
 	"update_lil_prison_waitingTime",
 	"update_lil_prison_escapeTime",
-	"update_lil_prison_currentPMent"
+	"update_lil_prison_currentPMent",
+	"update_lil_paycheck_active",
+	"update_lil_paycheck_bankID"
 ];
 
 [

@@ -2,6 +2,11 @@
 class lilc_locker {
     class functions {
         file = "\x\lilc\addons\locker\functions";
+        class buyLocker {};
+        class saveLocker {};
+        class handleInventoryClosed {};
+        class handleInventoryOpened {};
+        class setLockers {};
         /*class closeMenu {};
         class create {};
         class getLockerConfig {};

@@ -22,17 +22,6 @@ class CfgBanks {
         maxBusinessMinus = 0;
     };
 
-    /*class lehmannBrothers {
-        displayName = "Lehmann Brothers";
-        picture = "";
-        newAccountAmount = 0;
-        startAmount = 0;
-        isIllegal = 0;
-        transferPercentage = 0.01;
-        disbursePercentage = 0.01;
-        depositPercenatage = 0.01;
-    };*/
-
     class gnBank {
         displayName = "Goliath National Bank";
         picture = "";

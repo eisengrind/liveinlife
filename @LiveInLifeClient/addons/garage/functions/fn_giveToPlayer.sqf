@@ -1,5 +1,5 @@
 
-private _aID = (lbValue [2402, (lbCurSel 2402)]);
+private _aID = (lbValue [2401, (lbCurSel 2401)]);
 if (_aID <= 0) exitWith
 {
 	[
@@ -23,9 +23,13 @@ if ((count _target) <= 0) exitWith
 };
 
 _target = (_target select 0);
+private _d = (lbData [1500, (lbCurSel 1500)]);
+diag_log str _d;
+_d = call compile _d;
+if ((count _d) <= 0) exitWith {};
 
 [
-	[player, (_data select 0), lilc_garage_currentGarage, _target],
+	[player, (_d select 0), lilc_garage_currentGarage, _target],
 	"lils_garage_fnc_giveToPlayer"
 ] call lilc_common_fnc_sendToServer;
 

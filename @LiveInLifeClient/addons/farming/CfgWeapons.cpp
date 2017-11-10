@@ -38,6 +38,7 @@ class lilci_sugarcane_F : lilci_item {
 class lilci_woodpile_F : lilci_item {
     displayName = "Baumstamm"; // TODO: $STR_lilci_wire_F
     picture = "\x\lilc\addons\farming\icons\lilci_woodpile_F.paa";
+    model = "a3\structures_f_epa\civ\camping\woodenlog_f.p3d";
 
     class ItemInfo : lilci_itemInfo {
         mass = 10;

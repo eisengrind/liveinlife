@@ -1,22 +1,28 @@
 
 params [
-    ["_unit", objNull, [objNull]],
-    ["_lockerName", "", [""]]
+    ["_unit", objNull, [objNull]]
 ];
 
-try {
-    if (isNull _unit) throw [];
-    if !(isPlayer _unit) throw [];
+private _result = ([([
+    "lockers",
+    [
+        ["name"],
+        ["gear"]
+    ],
+    [
+        ["account_id", (_unit getVariable ["lilc_accountID", 0])]
+    ]
+] call lils_database_fnc_generateFetchQuery)] call lils_database_fnc_fetchObjects);
 
-    private _lockerConfig = ([_lockerName] call lilc_locker_fnc_getLockerConfig);
-    if (isNull _lockerConfig) throw [];
+_result = (_result apply {
+    [
+        (_x select 0),
+        ([(_x select 1)] call lils_common_fnc_arrayDecode)
+    ];
+});
 
-    if ((getNumber(_lockerConfig >> "isLocal")) <= 0) then {
-        _lockerName = "";
-    };
-
-    private _lockers = ([(format["SELECT ID FROM LOCKER_DATA WHERE ACCOUNTID = '%1' AND STEAM64ID = '%2' AND LOCKER = '""%3""'", (_unit getVariable ["lilc_accountID", 0]), (getPlayerUID _unit), _lockerName])] call lils_database_fnc_fetchObjects);
-    throw _lockers;
-} catch {
-    [[_exception], "lilc_locker_fnc_setLockers", _unit] call lilc_common_fnc_send;
-};
+[
+    _result,
+    "lilc_locker_fnc_setLockers",
+    _unit
+] call lilc_common_fnc_send;

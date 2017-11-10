@@ -1,15 +1,20 @@
 
 /*
-    Filename:
-        fn_doGiveMoney.sqf
-    Author:
+    Author(s):
         Vincent Heins
+
     Description:
         Create the dialog to give money to a given unit. It also checks, if the given unit is valid.
-    Params:
+
+    Parameter(s):
         (_this select 0) : _unit : <objNull> : unit to give money to
+
     Result:
         <bool> : was the money given?
+    
+    Example:
+        (Example 1)
+        private _moneySent = ([player] call lilc_actions_fnc_doGiveMoney);
 */
 
 private _unit = param [0, objNull, [objNull]];

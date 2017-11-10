@@ -1,4 +1,12 @@
 
+/***
+
+
+ALSO A DEPRECATED SYSTEM
+
+
+***/
+
 class CfgTextures {
     /*class U_B_CombatUniform_mcam {
         class marine {

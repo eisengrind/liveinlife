@@ -1,0 +1,52 @@
+
+<?xml version="1.0" encoding="utf-8">
+<Project name="LiveInLife">
+    <Package name="lilc_viewDistance">
+        <Container name="ActionTitle">
+            <Key ID="STR_lilc_viewDistance_ActionTitle_">
+                <Original></Original>
+                <English></English>
+                <German></German>
+            </Key>
+        </Container>
+        <Container name="SettingTitle">
+            <Key ID="STR_lilc_viewDistance_SettingTitle_viewDistance_foot">
+                <Original>View distance (foot)</Original>
+                <English>View distance (foot)</English>
+                <German>Sichtweite (Zu Fuß)</German>
+            </Key>
+            <Key ID="STR_lilc_viewDistance_SettingTitle_viewDistance_foot_objects">
+                <Original>Object view distance (foot)</Original>
+                <English>Object view distance (foot)</English>
+                <German>Objektsichtweite (Zu Fuß)</German>
+            </Key>
+            <Key ID="STR_lilc_viewDistance_SettingTitle_viewDistance_wheeled">
+                <Original>View distance (wheeled)</Original>
+                <English>View distance (wheeled)</English>
+                <German>Sichtweite (Fahrzeug)</German>
+            </Key>
+            <Key ID="STR_lilc_viewDistance_SettingTitle_viewDistance_wheeled_objects">
+                <Original>Object view distance (wheeled)</Original>
+                <English>Object view distance (wheeled)</English>
+                <German>Objektichtweite (Fahrzeug)</German>
+            </Key>
+            <Key ID="STR_lilc_viewDistance_SettingTitle_viewDistance_air">
+                <Original>View distance (air)</Original>
+                <English>View distance (air)</English>
+                <German>Objektichtweite (Luftfahrzeug)</German>
+            </Key>
+            <Key ID="STR_lilc_viewDistance_SettingTitle_viewDistance_air_objects">
+                <Original>Object view distance (air)</Original>
+                <English>Object view distance (air)</English>
+                <German>Objektichtweite (Luftfahrzeug)</German>
+            </Key>
+        </Container>
+        <Container name="StringText">
+            <Key ID="STR_lilc_viewDistance_StringText_">
+                <Original></Original>
+                <English></English>
+                <German></German>
+            </Key>
+        </Container>
+    </Package>
+</Project>

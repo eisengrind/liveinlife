@@ -4,7 +4,7 @@
 ];
 
 {
-	[(str ([_packages, _x] call CBA_fnc_hashGet)), "lilc_login"] call lilc_common_fnc_diag_log;
+	[(format["%1: %2", _x, ([_packages, _x] call CBA_fnc_hashGet)]), "lilc_login"] call lilc_common_fnc_diag_log;
 	([_packages, _x] call CBA_fnc_hashGet) call ([lilc_login_packages, _x] call CBA_fnc_hashGet);
 } forEach ([_packages] call CBA_fnc_hashKeys);
 

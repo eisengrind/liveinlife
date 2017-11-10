@@ -1,6 +1,6 @@
 
-lilc_food_hunger_factor = 0.9999;
-lilc_food_thirst_factor = 0.9996;
+lilc_food_hunger_factor = 0.99995; //needs nearly 7 (real) days to reach 0
+lilc_food_thirst_factor = 0.9998; //needs nearly 3 (real) days to reach 0
 lilc_food_needs_index = -1;
 
 [

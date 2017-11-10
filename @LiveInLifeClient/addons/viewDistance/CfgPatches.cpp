@@ -1,10 +1,10 @@
 
-class cba_events_extended
+class lilc_viewDistance
 {
+    units[] = {};
     weapons[] = {};
     requiredAddons[] = {
         "lilc_common"
     };
-    author[]= {"Vincent Heins"};
-	units[] = {};
+    author[] = {"Vincent Heins"};
 };

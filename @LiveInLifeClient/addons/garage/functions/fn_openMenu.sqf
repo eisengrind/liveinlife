@@ -23,18 +23,18 @@ try
     _uiListVehicles lbAdd "Fahrzeuge werden geladen...";
     [[player, _garageType], "lils_garage_fnc_getVehicles"] call lilc_common_fnc_sendToServer;
 
-    lbClear 2402;
+    lbClear 2401;
     {
-        if !(isNull _x && isPlayer _x && ([_x] call lilc_common_fnc_isAlive)) then
+        if (!isNull _x && isPlayer _x && ([_x] call lilc_common_fnc_isAlive)) then
         {
             private _index = (lbAdd [
-                2402,
+                2401,
                 (if ([_x] call lilc_login_fnc_unitIsKnown) then { ([_x, "<FIRSTNAME> <LASTNAME>"] call lilc_login_fnc_formatName); } else { "Unbekannte Person"; })
             ]);
-            lbSetValue [2402, _index, (_x getVariable ["lilc_accountID", 0])];
+            lbSetValue [2401, _index, (_x getVariable ["lilc_accountID", 0])];
         };
     } forEach ((player nearEntities ["Man", 6]) - [player]);
-    lbSort [2402, "ASC"];
+    lbSort [2401, "ASC"];
 }
 catch
 {

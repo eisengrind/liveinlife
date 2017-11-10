@@ -1,10 +1,12 @@
 
-[
+/*[
 	"set_lil_bank_accounts",
 	{
 		params [
 			["_unit", objNull, [objNull]]
 		];
+
+		diag_log str _unit;
 
 		private _result = ([([
 			"BANK_ACCOUNT_DATA",
@@ -27,4 +29,4 @@
 
 		_result;
 	}
-] call lils_login_fnc_addPackage;
+] call lils_login_fnc_addPackage;*/

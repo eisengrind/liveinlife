@@ -16,38 +16,6 @@ class CfgPlanePlates {
                 "xyz"
             };
         };
-
-        class moreMotor {
-            displayName = "Mehrmotorig";
-            tag = "G";
-            classnames[] = {
-                "xyz"
-            };
-        };
-
-        class jetEngine {
-            displayName = "Strahltriebwerk";
-            tag = "A";
-            classnames[] = {
-                "xyz"
-            };
-        };
-
-        class helicopter {
-            displayName = "Leichte Helikopter";
-            tag = "H";
-            classnames[] = {
-                "xyz"
-            };
-        };
-
-        class helicopterTransport {
-            displayName = "Schwere Helikopter";
-            tag = "I";
-            classnames[] = {
-                "xyz"
-            };
-        };
     };
 
     class regions {

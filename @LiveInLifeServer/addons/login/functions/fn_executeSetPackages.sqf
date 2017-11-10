@@ -1,4 +1,14 @@
 
+/*params [
+	["_unit", objNull, [objNull]],
+	["_aID", 0, [0]],
+	["_packs", lils_login_set_defPackages, [[]]]
+];*/
+
+/*[
+(format["\x\lils\addons\login\connecting\%1", (getPlayerUID _unit)]),
+*/
+
 params [
 	["_unit", objNull, [objNull]],
 	["_aID", 0, [0]],
@@ -16,8 +26,9 @@ _dbCol = nil;
 	private _k = _x;
 	private _c = ([lils_login_packages, _k] call CBA_fnc_hashGet);
 
+	diag_log str _k;
 	_dbCol = nil;
-	private _res = nil;
+	private _res = -1;
 
 	if !(isNil _c) then
 	{
@@ -108,3 +119,7 @@ catch
 };
 
 [_packages, "lilc_login_fnc_executeSetPackages", _unit] call lilc_common_fnc_send;
+
+/*,
+	[_unit, _aID, _packs]
+] execFSM "\x\lilc\addons\common\unscheduledCode.fsm";*/
