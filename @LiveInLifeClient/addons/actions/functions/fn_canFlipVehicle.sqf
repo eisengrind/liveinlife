@@ -27,6 +27,6 @@ if (
     (isNull _vehicle) ||
     (((vectorUp _vehicle) select 2) > 0.1) ||
     ((_vehicle getVariable ["lilc_flipTimestamp", time]) > time) ||
-    (missionNamespace getVariable ["lilc_actions_disableFlipVehicle", false]) ||
+    (missionNamespace getVariable ["lilc_actions_disableFlipVehicle", false])
 ) exitWith { false; };
 true;
