@@ -1,14 +1,25 @@
 
-private _target = param [0, objNull, [objNull]];
+/*
+	Author(s):
+		Vincent Heins
+	
+	Description:
+		Checks whether a player can hide a corpse or not.
 
-try
-{
-	if ([_target] call lilc_common_fnc_isAlive) throw false;
-	if (missionNamespace getVariable ["lilc_actions_disableHideCorpse", false]) throw false;
+	Parameter(s):
+		(_this select 0) : _target : <objNull> : the unit to check
 
-	throw true;
-}
-catch
-{
-	_exception;
-};
+	Result:
+		<bool> : can the unit hide the corpse?
+
+	Example(s):
+		(Example 1)
+		private _canHideCorpse = ([player] call lilc_actions_fnc_canHideCorpse);
+*/
+
+params [
+	["_target", objNull, [objNull]]
+];
+
+if ([_target] call lilc_common_fnc_isAlive || (missionNamespace getVariable ["lilc_Actions_disableHideCorpse", false])) exitWith { false; };
+true;

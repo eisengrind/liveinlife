@@ -1,4 +1,22 @@
 
+/*
+	Author(s):
+		Vincent Heins
+	
+	Description:
+		Checks whether a player can punch a given target.
+
+	Parameter(s):
+		(_this select 0) : _target : <objNull> : the unit to check
+
+	Result:
+		<bool> : can the player punch a designated person?
+
+	Example(s):
+		(Example 1)
+		private _canPunchPerson = ([player] call lilc_actions_fnc_canPunchCorpse);
+*/
+
 params [
     ["_target", objNull , [objNull]]
 ];
