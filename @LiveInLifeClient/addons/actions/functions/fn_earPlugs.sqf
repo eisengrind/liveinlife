@@ -12,7 +12,10 @@
         -
 */
 
-if ((["lilci_earPlugs_F", player] call lilc_inventory_fnc_itemCount) <= 0) exitWith { hint "Du besitzt keine Ohrstöpsel."; };
+if ((["lilci_earPlugs_F", player] call lilc_inventory_fnc_itemCount) <= 0) exitWith
+{
+    ["Du besitzt keine Ohrenstöpsel.", "ERROR"] call lilc_ui_fnc_hint; //STR_lilc_actions_ScriptText_noEarplugs
+};
 
 if (lilc_player_earPlugsStatus) then {
     lilc_player_earPlugsStatus = false;

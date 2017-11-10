@@ -63,7 +63,7 @@ try
 		{
 			private _vehicle = _x;
 			private _vehicleID = (_vehicle getVariable ["lilc_vehicleID", 0]);
-			private _vehicleCallSign = (_vehicle getVariable ["lilc_garage_callsign", "Unbekannte Kennung"]);
+			private _vehicleCallSign = (_vehicle getVariable ["lilc_garage_callsign", "Unbekannte Kennung"]); //STR_lilc_vehicles_ScriptText_unknownCallsign
 			private _vehicleFactionID = (_vehicle getVariable ["lilc_factionID", 0]);
 			private _vehicleAccountID = (_vehicle getVariable ["lilc_accountID", 0]);
 			private _vehicleUniqueID = (_vehicle getVariable ["lilc_uniqueObjectID", (parseNumber (((_vehicle call BIS_fnc_netId) splitString ":") select 1))]);
@@ -113,7 +113,7 @@ try
 
 			private _vehicleConfig = ([(typeOf _vehicle)] call lilc_common_fnc_getClassnameConfig);
 
-			_uiGroupInformationsTextCallsign ctrlSetText (_control getVariable ["lilc_control_callsign", "Unbekannte Kennung"]);
+			_uiGroupInformationsTextCallsign ctrlSetText (_control getVariable ["lilc_control_callsign", "Unbekannte Kennung"]); //STR_lilc_vehicles_ScriptText_unknownCallsign
 			_uiGroupInformationsTextType ctrlSetText format["%1", getText(_vehicleConfig >> "displayName")];
 			_uiGroupInformationsTextHeading ctrlSetText format["%1° / <heading>", (_control getVariable ["lilc_control_direction", 0])];
 			_uiGroupInformationsTextTransponder ctrlSetText format["%1 (%2)", _vehicleTransponderCode, ([_vehicleTransponderCode] call lilc_transponder_fnc_getTransponderCodeName)];

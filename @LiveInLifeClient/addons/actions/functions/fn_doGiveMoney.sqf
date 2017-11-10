@@ -26,7 +26,23 @@ try {
     createDialog "lilcm_actions_giveMoney";
     if (isNull (findDisplay 1550)) throw false;
 
-    ctrlSetText [1551, format["Betrag an %1:", (if ([lilc_actions_target] call lilc_login_fnc_unitIsKnown) then { format["%1 %2", ((lilc_actions_target getVariable ["lilc_identity", []]) select 1), ((lilc_actions_target getVariable ["lilc_identity", []]) select 2)]; } else { """Unbekannt"""; })]];
+    ctrlSetText [
+        1551,
+        format[
+            "Betrag an %1:", //STR_lilc_actions_ScriptText_amountTo
+            (if ([lilc_actions_target] call lilc_login_fnc_unitIsKnown) then {
+                format[
+                    "%1 %2",
+                    ((lilc_actions_target getVariable ["lilc_identity", []]) select 1),
+                    ((lilc_actions_target getVariable ["lilc_identity", []]) select 2)
+                ];
+            }
+            else
+            {
+                """Unbekannt"""; //STR_lilc_login_ScriptText_unknown
+            })
+        ]
+    ];
 	throw true;
 } catch {
     _exception;

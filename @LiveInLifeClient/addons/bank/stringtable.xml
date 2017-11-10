@@ -1,24 +1,24 @@
 
 <?xml version="1.0" encoding="utf-8">
 <Project name="LiveInLife">
-    <Package name="lilc_animals">
+    <Package name="lilc_bank">
         <Container name="ActionTitle">
-            <Key ID="STR_lilc_animals_ActionTitle_cutWool">
+            <Key ID="STR_lilc_bank_ActionTitle_cutWool">
                 <Original>Cut wool</Original>
                 <English>Cut wool</English>
                 <German>Wolle abschneiden</German>
             </Key>
         </Container>
         <Container name="ScriptTitle">
-            <Key ID="STR_lilc_animals_ScriptTitle_...">
+            <Key ID="STR_lilc_bank_ScriptTitle_...">
             </Key>
         </Container>
         <Container name="ScriptText">
-            <Key ID="STR_lilc_animals_ScriptText_...">
+            <Key ID="STR_lilc_bank_ScriptText_...">
             </Key>
         </Container>
         <Container name="SettingsTitle">
-            <Key ID="STR_lilc_animals_SettingsTitle_...">
+            <Key ID="STR_lilc_bank_SettingsTitle_...">
             </Key>
         </Container>
     </Package>
