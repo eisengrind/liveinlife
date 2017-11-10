@@ -237,6 +237,7 @@ for path in PATHSFROM:
         shutil.rmtree(tmpPath)
     lFile.write(encStrBuf)
 lFile.close()
+
 if os.path.isfile(iFilePath):
     os.remove(iFilePath)
 
