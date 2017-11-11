@@ -16,6 +16,7 @@ try
 	private _accountID = (_unit getVariable ["lilc_accountID", 0]);
 	private _factionID = (_unit getVariable ["lilc_factionID", -1]);
 
+    private _plate = "";
     if (_vehicle isKindOf "Air") then
     {
         private _factionID = (_unit getVariable ["lilc_factionID", -1]);

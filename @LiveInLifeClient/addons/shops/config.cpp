@@ -15,6 +15,7 @@ class lilc_RscCheckbox;
 class lilc_RscPicture;
 class lilc_RscStructuredText;
 class lilc_RscListBox;
+class lilc_RscControlsGroup;
 class lilc_RscCombo;
 class lilc_RscTitle_darkBlueText;
 class lilc_RscText_whiteBackground;
@@ -25,6 +26,7 @@ class lilc_RscButtonMenu_darkBlueBackground;
 #include "dialogs\buyUniforms.cpp"
 #include "dialogs\buyItems.cpp"
 #include "dialogs\sell.cpp"
+#include "dialogs\shop_vehicles.cpp"
 //#include "dialogs\sell.cpp"
 //#include "dialogs\vehicle.cpp"
 

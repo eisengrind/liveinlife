@@ -26,4 +26,15 @@ class lilc_shops {
         class updateClothingMenu {};
         class updateSellMenu {};
     };
+
+    class vehicles {
+        file = "\x\lilc\addons\shops\functions\vehicles";
+        class vehicles_buyed {};
+        class vehicles_buyVehicle {};
+        class vehicles_onLBSelChanged {};
+        class vehicles_openMenu {};
+        class vehicles_rented {};
+        class vehicles_rentedSelled {};
+        class vehicles_rentSellVehicle {};
+    };
 };

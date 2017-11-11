@@ -30,7 +30,6 @@ try
     if (_factionID == _vehicleFactionID && _factionID > -1) then
     {
         private _factionConfig = ([_factionID] call lilc_factions_fnc_getFactionConfig);
-        systemChat str 1;
         if ((getNumber(_factionConfig >> "globalVehicleLock")) == 1) then throw true;
     };
 
