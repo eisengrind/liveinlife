@@ -36,7 +36,7 @@ lilc_tags_defaultColor = [1, 1, 1, 0]; //rgba(0) color
 	"lilc_setting_tags_drawSoundwave",
 	"CHECKBOX",
 	"Tag Sprachanzeige", //TODO: localize
-	"LiveInLife",
+	"Live In Life",
 	true,
 	0,
 	{}
@@ -46,7 +46,7 @@ lilc_tags_defaultColor = [1, 1, 1, 0]; //rgba(0) color
 	"lilc_setting_tags_scale",
 	"LIST",
 	"Tag Größe", //TODO: localize
-	"LiveInLife",
+	"Live In Life",
 	[
 		[0.833, 0.666],
 		["Groß", "Klein"],
@@ -60,7 +60,7 @@ lilc_tags_defaultColor = [1, 1, 1, 0]; //rgba(0) color
 	"lilc_setting_tags_defaultAlpha",
 	"LIST",
 	"Tag Größe", //TODO: localize
-	"LiveInLife",
+	"Live In Life",
 	[
 		[0.833, 0.666],
 		["Groß", "Klein"],

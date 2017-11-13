@@ -3,7 +3,7 @@
 	"lilc_setting_firstspawn_deactivateIntro",
 	"CHECKBOX",
 	["Intro deaktivieren", "Einstiegsintro deaktivieren"], //TODO: localize
-	"LiveInLife",
+	"Live In Life",
 	false,
 	0,
 	{}

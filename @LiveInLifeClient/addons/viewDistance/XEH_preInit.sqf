@@ -9,9 +9,9 @@ if (_enableDistance) then
 		"lilc_viewDistance_foot",
 		"SLIDER",
 		(["STR_lilc_viewDistance_SettingTitle_viewDistance_foot"] call lilc_common_fnc_localize),
-		"LiveInLife",
+		"Live In Life",
 		[_minDistance, _maxDistance, _defaultDistance, 0],
-		0,
+		nil,
 		{
 			if (player isEqualTo (vehicle player)) then
 			{
@@ -31,9 +31,9 @@ if (_enableDistance) then
 		"lilc_viewDistance_foot_objects",
 		"SLIDER",
 		(["STR_lilc_viewDistance_SettingTitle_viewDistance_foot_objects"] call lilc_common_fnc_localize),
-		"LiveInLife",
+		"Live In Life",
 		[_minDistance, _maxDistance, _defaultDistance, 0],
-		0,
+		nil,
 		{
 			if (player isEqualTo (vehicle player)) then
 			{
@@ -53,9 +53,9 @@ if (_enableDistance) then
 		"lilc_viewDistance_wheeled",
 		"SLIDER",
 		(["STR_lilc_viewDistance_SettingTitle_viewDistance_wheeled"] call lilc_common_fnc_localize),
-		"LiveInLife",
+		"Live In Life",
 		[_minDistance, _maxDistance, _defaultDistance, 0],
-		0,
+		nil,
 		{
 			if ((vehicle player) isKindOf "LandVehicle") then
 			{
@@ -75,9 +75,9 @@ if (_enableDistance) then
 		"lilc_viewDistance_wheeled_objects",
 		"SLIDER",
 		(["STR_lilc_viewDistance_SettingTitle_viewDistance_wheeled_objects"] call lilc_common_fnc_localize),
-		"LiveInLife",
+		"Live In Life",
 		[_minDistance, _maxDistance, _defaultDistance, 0],
-		0,
+		nil,
 		{
 			if ((vehicle player) isKindOf "LandVehicle") then
 			{
@@ -97,9 +97,9 @@ if (_enableDistance) then
 		"lilc_viewDistance_air",
 		"SLIDER",
 		(["STR_lilc_viewDistance_SettingTitle_viewDistance_air"] call lilc_common_fnc_localize),
-		"LiveInLife",
+		"Live In Life",
 		[_minDistance, _maxDistance, _defaultDistance, 0],
-		0,
+		nil,
 		{
 			if ((vehicle player) isKindOf "Air") then
 			{
@@ -119,9 +119,9 @@ if (_enableDistance) then
 		"lilc_viewDistance_air_objects",
 		"SLIDER",
 		(["STR_lilc_viewDistance_SettingTitle_viewDistance_air_objects"] call lilc_common_fnc_localize),
-		"LiveInLife",
+		"Live In Life",
 		[_minDistance, _maxDistance, _defaultDistance, 0],
-		0,
+		nil,
 		{
 			if ((vehicle player) isKindOf "Air") then
 			{

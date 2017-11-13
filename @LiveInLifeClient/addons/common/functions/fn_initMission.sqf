@@ -76,6 +76,7 @@ if (isMultiplayer) then {
 		!(call BIS_fnc_isLoading);
 	};
 
+
 	call lilc_ui_fnc_disableLoadingIcon;
 	call lilc_login_fnc_init;
 	[0.1] call lilc_ui_fnc_enableLoadingIcon;

@@ -8,7 +8,7 @@ player addEventHandler [
 			["_vehicle", objNull, [objNull]]
 		];
 
-		switch true do
+		switch (true) do
 		{
 			case (_vehicle isKindOf "LandVehicle"):
 			{
@@ -34,7 +34,7 @@ player addEventHandler [
 player addEventHandler [
 	"GetOutMan",
 	{
-				setViewDistance lilc_viewDistance_foot;
-				setObjectViewDistance lilc_viewDistance_foot_objects;
+		setViewDistance lilc_viewDistance_foot;
+		setObjectViewDistance lilc_viewDistance_foot_objects;
 	}
 ];
