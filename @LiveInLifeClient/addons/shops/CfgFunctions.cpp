@@ -1,6 +1,8 @@
 
-class lilc_shops {
-    class functions {
+class lilc_shops
+{
+    class functions
+    {
         file = "\x\lilc\addons\shops\functions";
         class addItem {};
         class buyClothing {};
@@ -27,7 +29,8 @@ class lilc_shops {
         class updateSellMenu {};
     };
 
-    class vehicles {
+    class vehicles
+    {
         file = "\x\lilc\addons\shops\functions\vehicles";
         class vehicles_buyed {};
         class vehicles_buyVehicle {};

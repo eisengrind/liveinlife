@@ -8,7 +8,7 @@ if (_shopName == "") exitWith {};
 private _config = (missionConfigFile >> "CfgVehicleShops" >> _shopName);
 if (isNull _config) exitWith {};
 
-private _fID = (player getVariable ["lilc_factionID", -2]);
+private _fID = (player getVariable ["lilc_factionID", -1]);
 if (((count getArray(_config >> "groups")) > 0 && !(_fID in getArray(_config >> "groups")))) exitWith {};
 
 if !(createDialog "lilcm_shops_vehicles") exitWith {};
