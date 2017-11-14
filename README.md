@@ -1,5 +1,5 @@
 # LiveInLife
-Another Arma 3 Life Modification
+LiveInLife is an adjustable framework for your ArmA 3 roleplay ideas.
 
 ## What is LiveInLife
 **LiveInLife** is a small idea of creating an free-to-use "library" (it isn't really is a library...) for ArmA 3 RPG-Server's. **LiveInLife** was created to support developers of RPG-Server's who want to create "their own" RPG-Modification or so-called mission.
