@@ -13,11 +13,7 @@ class lilc_common {
 
         // D
         class debugLog {};
-        class degreeToHeading {};
         class diag_log {};
-
-        // E
-        class executeFile {};
 
         // F
         class fillString {};
