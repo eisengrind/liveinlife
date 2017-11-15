@@ -1,5 +1,5 @@
 
-scriptName "\x\lils\addons\common\functions\waitUntilRestart";
+scriptName "\x\lils\addons\common\functions\waitUntilStop";
 private _restartTimeout = (["restartTimeout", "NUMBER", 0] call lilc_common_fnc_getSetting);
 if (_restartTimeout <= 0) exitWith {};
 _restartTimeout = (time + _restartTimeout);

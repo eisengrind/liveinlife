@@ -8,9 +8,11 @@
 ] call CBA_fnc_addEventHandler;
 
 [
-	"lilse_common_restartServer_afterGlobalKick",
+	"lils_common_stop_server_postKick",
 	{
-		{ _x enableSimulation false; } forEach allMissionObjects "All";
+		{
+			_x enableSimulation false;
+		} forEach allMissionObjects "All";
 		[] call lils_vehicles_fnc_saveAll;
 	}
 ] call CBA_fnc_addEventHandler;
