@@ -16,7 +16,7 @@ try {
         ["Du hast nicht genügend Geld!", "ERROR"] call lilc_ui_fnc_hint; 
         throw false;
     };
-    if !([player, _sum] call lilc_cash_fnc_remove) throw false;
+    if !([_sum] call lilc_cash_fnc_remove) throw false;
 
     private _itemCount = 0;
     for "_i" from 0 to ((lbSize _uiListShoppingCartItems) - 1) do {

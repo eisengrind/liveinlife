@@ -14,7 +14,7 @@ try {
         hint format["Du hast nicht mehr genug %1!", getText(_itemConfig >> "displayName")];
         throw false;
     };
-    if !([player, _price] call lilc_cash_fnc_add) throw false;
+    if !([_price] call lilc_cash_fnc_add) throw false;
 
     hint format["Du hast %1 verkauft und %2 $ erhalten!", getText(_itemConfig >> "displayName"), _price];
     call lilc_shops_fnc_updateSellMenu;

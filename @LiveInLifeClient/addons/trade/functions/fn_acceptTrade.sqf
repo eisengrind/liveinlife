@@ -48,11 +48,11 @@ try
 				_tradePartnerOfferedItems pushBack (_uiListOfferTradePartner lbData _i);
 			};
 
-			[player, lilc_trade_tradePartner_offeredMoney] call lilc_cash_fnc_add;
-			[player, lilc_trade_offeredMoney] call lilc_cash_fnc_remove;
+			[lilc_trade_tradePartner_offeredMoney] call lilc_cash_fnc_add;
+			[lilc_trade_offeredMoney] call lilc_cash_fnc_remove;
 			
-			[lilc_trade_tradePartner, lilc_trade_offeredMoney] call lilc_cash_fnc_add;
-			[lilc_trade_tradePartner, lilc_trade_tradePartner_offeredMoney] call lilc_cash_fnc_remove;
+			[[lilc_trade_tradePartner, lilc_trade_offeredMoney], "lilc_cash_fnc_add", lilc_trade_tradePartner] call lilc_common_fnc_send;
+			[[lilc_trade_tradePartner, lilc_trade_tradePartner_offeredMoney], "lilc_cash_fnc_remove", lilc_trade_tradePartner] call lilc_common_fnc_send;
 
 			[_myOfferedItems, _tradePartnerOfferedItems] call lilc_trade_fnc_tradeItems;
 			[[_tradePartnerOfferedItems, _myOfferedItems], "lilc_trade_fnc_tradeItems", lilc_trade_tradePartner] call lilc_common_fnc_send;

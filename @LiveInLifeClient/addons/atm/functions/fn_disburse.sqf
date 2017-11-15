@@ -20,7 +20,7 @@ try {
     if !([lilc_atm_currentBankAccount, _amount] call lilc_bank_fnc_haveAmountByID) throw false;
 
     if !([lilc_atm_currentBankAccount, _amount] call lilc_bank_fnc_removeAmountByID) throw false;
-    if !([player, _amount] call lilc_cash_fnc_add) throw false;
+    if !([_amount] call lilc_cash_fnc_add) throw false;
     throw true;
 } catch {
     if (_exception) then {

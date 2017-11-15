@@ -14,7 +14,7 @@ try
             throw false;
         };
 
-        if !([player, _itemValue] call lilc_cash_fnc_remove) then
+        if !([_itemValue] call lilc_cash_fnc_remove) then
         {
             ["Du konntest nicht bezahlen!", "ERROR"] call lilc_ui_fnc_hint;
             throw false;

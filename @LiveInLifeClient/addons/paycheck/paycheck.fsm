@@ -100,7 +100,6 @@ class FSM
                          "if ((missionNamespace getVariable [_bankID, -1]) == 0) then" \n
                          "{" \n
                          "	[" \n
-                         "		player," \n
                          "		(missionNamespace getVariable [_amount, 0])" \n
                          "	] call lilc_cash_fnc_add;" \n
                          "}" \n

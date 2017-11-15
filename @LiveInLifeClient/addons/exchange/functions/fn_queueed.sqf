@@ -30,7 +30,7 @@ try
 
 			private _itemConfig = ([_classname] call lilc_common_fnc_getClassnameConfig);
 
-			if ([player, _price] call lilc_cash_fnc_remove) then
+			if ([_price] call lilc_cash_fnc_remove) then
 			{
 				[(format["Du hast erfolgreich %1 %2 für $%3 von der Börse gekauft.", _amount, getText(_itemConfig >> "displayName"), _price])] call lilc_ui_fnc_hint;
 			}
@@ -131,7 +131,7 @@ try
 				["_balance", 0, [0]]
 			];
 
-			[player, _balance] call lilc_cash_fnc_add;
+			[_balance] call lilc_cash_fnc_add;
 
 			private _uiGroup = (_ui displayCtrl 27);
 			(_uiGroup controlsGroupCtrl 1001) ctrlSetText "$0";

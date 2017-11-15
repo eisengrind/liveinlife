@@ -13,7 +13,7 @@ if !([_p] call lilc_cash_fnc_have) exitWith
 	["Du hast nicht genügend Geld.", "ERROR"] call lilc_ui_fnc_hint;
 };
 
-if !([player, _p] call lilc_cash_fnc_remove) exitWith
+if !([_p] call lilc_cash_fnc_remove) exitWith
 {
 	["Du hast nicht genügend Geld.", "ERROR"] call lilc_ui_fnc_hint;
 };

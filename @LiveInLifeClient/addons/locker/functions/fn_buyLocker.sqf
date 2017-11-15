@@ -18,7 +18,7 @@ if !([_price] call lilc_cash_fnc_have) exitWith
 	["Du hast nicht genügend Geld.", "ERROR"] call lilc_ui_fnc_hint;
 };
 
-if !([player, _price] call lilc_cash_fnc_remove) exitWith {};
+if !([_price] call lilc_cash_fnc_remove) exitWith {};
 
 ["Du hast das Schließfach gekauft."] call lilc_ui_fnc_hint;
 [lilc_locker_lockers, _name, [[[],[]],[],[[],[]],[]]] call CBA_fnc_hashSet;

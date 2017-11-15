@@ -1,0 +1,27 @@
+
+<?xml version="1.0" encoding="utf-8">
+<Project name="LiveInLife">
+    <Package name="lilc_cash">
+        <Container name="ActionTitle">
+            <Key ID="STR_XXX_ActionTitle_">
+                <Original></Original>
+                <English></English>
+                <German></German>
+            </Key>
+        </Container>
+        <Container name="SettingTitle">
+            <Key ID="STR_XXX_SettingTitle_">
+                <Original></Original>
+                <English></English>
+                <German></German>
+            </Key>
+        </Container>
+        <Container name="StringText">
+            <Key ID="STR_lilc_cash_StringText_gave">
+                <Original>You gave %1 %2 &lt;t color='#26EB29'&gt;%3%4&lt;/t&gt;.</Original>
+                <English>You gave %1 %2 &lt;t color='#26EB29'&gt;%3%4&lt;/t&gt;.</English>
+                <German>Du hast %1 %2 &lt;t color='#26EB29'&gt;%3%4&lt;/t&gt; gegeben.</German>
+            </Key>
+        </Container>
+    </Package>
+</Project>

@@ -84,7 +84,7 @@ try
 	{
 		if (_comboTypeValue == 1) then
 		{
-			if !([player, _price * _amount] call lilc_cash_fnc_remove) then
+			if !([_price * _amount] call lilc_cash_fnc_remove) then
 			{
 				["Du hast nicht genügend Bargeld dabei.", "ERROR"] call lilc_ui_fnc_hint;
 				throw false;

@@ -24,7 +24,7 @@ try
 	if !([_unit] call lilc_common_fnc_isAlive) throw false;
 	if !([player] call lilc_common_fnc_isAlive) throw false;
 
-	[player, _amount] call lilc_cash_fnc_add;
+	[_amount] call lilc_cash_fnc_add;
 
 	
     [(format [

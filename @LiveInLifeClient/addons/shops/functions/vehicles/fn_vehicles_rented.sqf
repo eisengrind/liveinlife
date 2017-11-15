@@ -6,7 +6,7 @@ params [
 
 if (_status) then
 {
-	if ([player, _price] call lilc_cash_fnc_remove) then
+	if ([_price] call lilc_cash_fnc_remove) then
 	{
 		["Das Fahrzeug wurde gemietet."] call lilc_ui_fnc_hint;
 	}

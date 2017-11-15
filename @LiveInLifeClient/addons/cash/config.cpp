@@ -7,10 +7,9 @@ class CfgFunctions {
     #include "CfgFunctions.cpp"
 };
 
-class lilc_RscButtonMenu;
-class lilc_RscEdit;
-class lilc_RscText;
-class lilc_RscStructuredText;
-class lilc_RscTitle;
+class Extended_PreInit_EventHandlers {
+    class lilc_cash_preInit {
+        init = "call compile preProcessFileLineNumbers '\x\lilc\addons\cash\XEH_preInit.sqf';";
+    };
+};
 
-#include "dialogs\giveCash.cpp"

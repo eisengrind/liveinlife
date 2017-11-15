@@ -28,7 +28,7 @@ try
         throw false;
     };
 
-    [player, _amount] call lilc_cash_fnc_remove;
+    [_amount] call lilc_cash_fnc_remove;
     [[player, _amount], "lilc_actions_fnc_gaveMoney", lilc_actions_target] call lilc_common_fnc_send;
     closeDialog 1550;
 

@@ -46,7 +46,7 @@ if (isNull _vehCfg) exitWith
 	] call lilc_ui_fnc_hint;
 };
 
-if ([player, getNumber(_vehCfg >> "rentSellPrice")] call lilc_cash_fnc_add) then
+if ([getNumber(_vehCfg >> "rentSellPrice")] call lilc_cash_fnc_add) then
 {
 	deleteVehicle _veh;
 	[
