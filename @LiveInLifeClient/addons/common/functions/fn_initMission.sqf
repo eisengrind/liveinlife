@@ -17,8 +17,8 @@ lilc_finished = false;
 [0.01] call lilc_ui_fnc_fadeInBlack;
 
 if (isMultiplayer) then {
-	["Multiplayer selected", "lilc_common"] call lilc_common_fnc_diag_log;
-	["initializing mission", "lilc_common"] call lilc_common_fnc_diag_log;
+	["Multiplayer selected", "lilc_common"] call lilc_log_fnc_diag_log;
+	["initializing mission", "lilc_common"] call lilc_log_fnc_diag_log;
 	
 	0 fadeSound 0;
 	0 fadeMusic 0;
@@ -33,7 +33,7 @@ if (isMultiplayer) then {
 
 	[0.1] call lilc_ui_fnc_enableLoadingIcon;
 	[(format["waiting for server to be ready... (%1)", ([60, "HH:MM:SS"] call BIS_fnc_secondsToString)])] call lilc_ui_fnc_setLoadingText;
-	[(format["waiting for server to be ready... (%1)", ([60, "HH:MM:SS"] call BIS_fnc_secondsToString)]), "lilc_common"] call lilc_common_fnc_diag_log;
+	[(format["waiting for server to be ready... (%1)", ([60, "HH:MM:SS"] call BIS_fnc_secondsToString)]), "lilc_common"] call lilc_log_fnc_diag_log;
 
 	private _time = (time + 60);
 	while
@@ -120,10 +120,10 @@ if (isMultiplayer) then {
 
 	[2] call lilc_ui_fnc_fadeOutBlack;
 	lilc_finished = true;
-	["mission initialized", "lilc_common"] call lilc_common_fnc_diag_log;
+	["mission initialized", "lilc_common"] call lilc_log_fnc_diag_log;
 } else {
 	call compile preProcessFileLineNumbers "KRON_Strings.sqf";
-	["Singleplayer selected", "lilc_common"] call lilc_common_fnc_diag_log;
+	["Singleplayer selected", "lilc_common"] call lilc_log_fnc_diag_log;
 	//["lilce_common_initPlayer"] call CBA_fnc_localEvent;
 	[2] call lilc_ui_fnc_fadeOutBlack;
 };

@@ -4,7 +4,7 @@ scriptName "lils_firstspawn_flightLoop";
 lils_firstspawn_plane = ObjNull;
 lils_firstspawn_queue = [];
 
-["Mayday, mayday! Falcon flights are starting now", "lils_firstspawn"] call lilc_common_fnc_diag_log;
+["Mayday, mayday! Falcon flights are starting now", "lils_firstspawn"] call lilc_log_fnc_diag_log;
 lils_firstspawn_queueOpen = false;
 publicVariable "lils_firstspawn_queueOpen";
 lils_firstspawn_planeReady = false;

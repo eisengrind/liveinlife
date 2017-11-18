@@ -26,7 +26,7 @@ params [
 try {
     if (isNil "_functionName") throw false;
     private _result = "";
-    [(format["Function '%1' was called", _functionName])] call lilc_common_fnc_diag_log;
+    [(format["Function '%1' was called", _functionName])] call lilc_log_fnc_diag_log;
 
     //if (isMultiplayer) then {
     _result = _parameters remoteExec [_functionName, _target, _jip];

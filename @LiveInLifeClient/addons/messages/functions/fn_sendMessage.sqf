@@ -32,8 +32,14 @@ switch (_t) do
 	case 0:
 	{
 		[
-			[(format["<t size='1.2' align='left'>Absender</t><br /><t align='left'>    %1</t><br /><t size='1.2'>Nachricht:</t><br />%2", ([player] call lilc_login_fnc_formatName), _m]), "hint"],
-			"lilc_common_fnc_message",
+			[
+				(format[
+					"<t size='1.2' align='left'>Absender</t><br /><t align='left'>    %1</t><br /><t size='1.2'>Nachricht:</t><br />%2",
+					([player] call lilc_login_fnc_formatName),
+					_m
+				])
+			],
+			"lilc_ui_fnc_hint",
 			(playableUnits select { ((_x getVariable ["lilc_factionID", -1]) isEqualTo _id); })
 		] call lilc_common_fnc_send;
 	};
@@ -56,10 +62,9 @@ switch (_t) do
 					"<t size='1.2' align='left'>Absender</t><br /><t align='left'>    %1</t><br /><t size='1.2'>Nachricht:</t><br />%2",
 					getText(_fCfg >> "displayName"),
 					_m
-				]),
-				"hint"
+				])
 			],
-			"lilc_common_fnc_message",
+			"lilc_ui_fnc_hint",
 			-2
 		] call lilc_common_fnc_send;
 	};

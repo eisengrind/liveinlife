@@ -21,15 +21,15 @@ params [
 ];
 
 try {
-    if (isNull _unit) throw false;
-    if !(isPlayer _unit) throw false;
+    if (isNull _unit) throw [];
+    if !(isPlayer _unit) throw [];
 
     private _bankConfig = ([_bankName] call lilc_bank_fnc_getBankConfig);
-    if (isNull _bankConfig) throw false;
+    if (isNull _bankConfig) throw [];
 
     private _unitUID = (getPlayerUID _unit);
     private _accountID = (_unit getVariable ["lilc_accountID", 0]);
-    if (_accountID <= 0) throw false;
+    if (_accountID <= 0) throw [];
 
     private _startAmount = getNumber(_bankConfig >> "startAmountPersonal");
     //4, 4, 4, 4
@@ -44,7 +44,7 @@ try {
     uiSleep 0.1;
     private _bankAccount = ([(format["SELECT HASH, NAME, AMOUNT, STATUS, ID  FROM BANK_ACCOUNT_DATA WHERE ACCOUNTID = '%1' AND AND HASH = '%2'", _accountID, _hash])] call lils_database_fnc_fetchObjects);
     
-    [[(_bankAccount select 0)], "lilc_bank_fnc_addAccount", _unit] call lilc_common_fnc_send;
+    throw (_bankAccount select 0);
 } catch {
     _exception;
 };

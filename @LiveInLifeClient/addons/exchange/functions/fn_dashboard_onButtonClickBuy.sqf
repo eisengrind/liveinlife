@@ -33,7 +33,7 @@ try
 	if (_offerID <= 0) throw false;
 	if (_offerAmount <= 0) throw false;
 
-	private _amount = ([(ctrlText (_uiGroup controlsGroupCtrl 1400))] call lilc_common_fnc_textToNumber);
+	private _amount = (parseNumber ctrlText (_uiGroup controlsGroupCtrl 1400));
 	if (_amount > _offerAmount) then
 	{
 		["So viele Gegenstände werden bei diesem Angebot nicht verkauft.", "ERROR"] call lilc_ui_fnc_hint;

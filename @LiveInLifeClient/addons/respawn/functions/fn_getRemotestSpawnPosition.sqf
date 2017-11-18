@@ -12,7 +12,7 @@ try
             {
                 _availableHospitals pushBack _x;
             };
-        } forEach (call lilc_common_fnc_allDynamicPositions);
+        } forEach lilc_common_dynamicPositions;
 
         if ((count _availableHospitals) <= 0) throw [];
 

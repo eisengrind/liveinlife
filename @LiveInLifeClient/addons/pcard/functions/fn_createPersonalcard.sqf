@@ -17,7 +17,7 @@ try {
         throw false;
     };
 
-    private _zipcode_int = ([_zipcode] call lilc_common_fnc_textToNumber);
+    private _zipcode_int = (parseNumber _zipcode);
     if (_zipcode_int <= 0) then {
         ["Du hast keine gültige Hausnummer angegeben.", "ERROR"] call lilc_ui_fnc_hint;
         throw false;
@@ -43,7 +43,7 @@ try {
         throw false;
     };
 
-    private _streetnumber_int = ([_streetnumber] call lilc_common_fnc_textToNumber);
+    private _streetnumber_int = (parseNumber _streetnumber);
     if (_streetnumber_int <= 0) then {
         ["Du hast keine gültige Hausnummer angegeben.", "ERROR"] call lilc_ui_fnc_hint;
         throw false;

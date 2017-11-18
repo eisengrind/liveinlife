@@ -394,7 +394,6 @@ KRON_getArgRev = {
 };
 
 //modified by Vincent Heins:
-
 KRON_StrSplit = {
 	params [
 		["_string", "", [""]],

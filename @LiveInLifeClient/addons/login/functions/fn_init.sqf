@@ -10,9 +10,9 @@ try {
 
     waitUntil { !(call BIS_fnc_isLoading) };
     waitUntil { !dialog };
-    ["requesting profiles", "lilc_login"] call lilc_common_fnc_diag_log;
+    ["requesting profiles", "lilc_login"] call lilc_log_fnc_diag_log;
     if !(call lilc_login_fnc_getProfiles) throw false;
-    ["profiles requested", "lilc_login"] call lilc_common_fnc_diag_log;
+    ["profiles requested", "lilc_login"] call lilc_log_fnc_diag_log;
 
     showCinemaBorder false;
     camUseNVG false;
@@ -33,13 +33,13 @@ try {
 
     private _camera = [(selectRandom ["loginCamera_1", "loginCamera_2", "loginCamera_3", "loginCamera_4"])] call lilc_common_fnc_createStaticCamera;
     [2] call lilc_ui_fnc_fadeOutBlack;
-    ["wait until profile is selected...", "lilc_login"] call lilc_common_fnc_diag_log;
+    ["wait until profile is selected...", "lilc_login"] call lilc_log_fnc_diag_log;
 
     call lilc_login_fnc_openMenu;
 
     lilc_login_loginSuccessful = nil;
     waitUntil { !isNil "lilc_login_loginSuccessful" };
-    [(format["profile selected; result: %1", lilc_login_loginSuccessful]), "lilc_login"] call lilc_common_fnc_diag_log;
+    [(format["profile selected; result: %1", lilc_login_loginSuccessful]), "lilc_login"] call lilc_log_fnc_diag_log;
     if !(lilc_login_loginSuccessful) throw false;
     lilc_login_loginSuccessful = nil;
 

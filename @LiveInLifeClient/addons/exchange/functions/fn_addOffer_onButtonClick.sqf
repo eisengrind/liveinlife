@@ -33,8 +33,8 @@ try
 
 	private _comboCategoryData = (_uiComboCategory lbData (lbCurSel _uiComboCategory));
 	
-	private _amount = ([(ctrlText _uiEditAmount)] call lilc_common_fnc_textToNumber);
-	private _price = ([(ctrlText _uiEditPrice)] call lilc_common_fnc_textToNumber);
+	private _amount = (parseNumber ctrlText _uiEditAmount);
+	private _price = (parseNumber ctrlText _uiEditPrice);
 
 	if ((lbCurSel _uiListInventory) <= -1) then
 	{

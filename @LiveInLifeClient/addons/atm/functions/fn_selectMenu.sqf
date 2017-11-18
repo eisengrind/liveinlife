@@ -89,7 +89,7 @@ try {
 
             [1] call lilc_atm_fnc_showButtons;
 
-            _uiButton1 buttonSetAction '[] spawn lilc_atm_fnc_createAccount;';
+            _uiButton1 buttonSetAction '[] call lilc_atm_fnc_createAccount;';
             _uiButton1Text ctrlSetStructuredText parseText "<t align='right' shadow='0' color='#176a37' font='PuristaSemibold'>Konto erstellen</t>";
             
             _uiButton1 ctrlEnable true;
@@ -176,7 +176,7 @@ try {
             _uiButton3Text ctrlSetStructuredText parseText "<t align='right' shadow='0' color='#176a37' font='PuristaSemibold'>Einzahlen</t>";
             _uiButton4Text ctrlSetStructuredText parseText "<t align='right' shadow='0' color='#176a37' font='PuristaSemibold'>Alles Einzahlen</t>";
             _uiButton8Text ctrlSetStructuredText parseText "<t align='left' shadow='0' color='#176a37' font='PuristaSemibold'>Zurück</t>";
-            _uiButton3 buttonSetAction '[([(ctrlText 1538)] call lilc_common_fnc_textToNumber)] call lilc_atm_fnc_deposit;';
+            _uiButton3 buttonSetAction '[(parseNumber ctrlText 1538)] call lilc_atm_fnc_deposit;';
             _uiButton4 buttonSetAction '[lilc_player_cash] call lilc_atm_fnc_deposit;';
             _uiButton8 buttonSetAction '["main"] call lilc_atm_fnc_selectMenu;';
         };
@@ -236,7 +236,7 @@ try {
 
             _uiButton4Text ctrlSetStructuredText parseText "<t align='right' shadow='0' color='#176a37' font='PuristaSemibold'>Auszahlen</t>";
             _uiButton8Text ctrlSetStructuredText parseText "<t align='left' shadow='0' color='#176a37' font='PuristaSemibold'>Zurück</t>";
-            _uiButton4 buttonSetAction '[([(ctrlText 1538)] call lilc_common_fnc_textToNumber)] call lilc_atm_fnc_disburse;';
+            _uiButton4 buttonSetAction '[(parseNumber ctrlText 1538)] call lilc_atm_fnc_disburse;';
             _uiButton8 buttonSetAction '["disburse"] call lilc_atm_fnc_selectMenu;';
         };
 

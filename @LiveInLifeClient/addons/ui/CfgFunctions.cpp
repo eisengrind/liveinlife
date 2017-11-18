@@ -25,6 +25,7 @@ class lilc_ui {
         class fadeOutBlack {};
         class fadeOutTitles {};
         class hint {};
+        class inUIArea {};
         class init {};
         class loadingLoop {};
         class progressKeyHandler {};

@@ -110,7 +110,7 @@ class FSM
     class dead_animals__huh
     {
       name = "dead_animals__huh";
-      init = /*%FSM<STATEINIT""">*/"/*[(format[""Dead Animals (%1)"", _animalClassname]), ""lils_animals""] call lilc_common_fnc_diag_log;*/"/*%FSM</STATEINIT""">*/;
+      init = /*%FSM<STATEINIT""">*/"/*[(format[""Dead Animals (%1)"", _animalClassname]), ""lils_animals""] call lilc_log_fnc_diag_log;*/"/*%FSM</STATEINIT""">*/;
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links
       {

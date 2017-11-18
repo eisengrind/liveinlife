@@ -1,20 +1,6 @@
 
 scriptName "lils_meteorology_meteorologyLoop";
 (call lils_meteorology_fnc_get) call lils_meteorology_fnc_set;
-/*
-private _nightStart = getArray(missionConfigFile >> "CfgMaster" >> "nightStart");
-private _dayStart = getArray(missionConfigFile >> "CfgMaster" >> "dayStart");
-
-private _dayAmount = 1;
-private _nightAmount = 1;
-
-private _nightTime = (getNumber(missionConfigFile >> "CfgMaster" >> "nightTime"));
-private _dayTime = (getNumber(missionConfigFile >> "CfgMaster" >> "dayTime"));
-
-if ((count _nightStart) == 2 && (count _dayStart) == 2) then {
-    _dayAmount = ([_dayStart, _nightStart] call lilc_common_fnc_gameTimeDiff) / _dayTime;
-    _nightAmount = ([_nightStart, _dayStart] call lilc_common_fnc_gameTimeDiff) / _nightTime;
-};*/
 
 private _dayArray = getArray(missionConfigFile >> "CfgMaster" >> "day");
 
@@ -31,12 +17,6 @@ while {true} do {
             setDate _date;
         };
     };
-
-    /*if ([_dayStart, _nightStart, [(_date select 3), (_date select 4)]] call lilc_common_fnc_inGameTime) then {
-        setTimeMultiplier _dayAmount;
-    } else {
-        setTimeMultiplier _nightAmount;
-    };*/
 
     sleep 60;
 };

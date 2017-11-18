@@ -9,7 +9,7 @@ _keyArray = [101, 46, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57];
 if !(_keyCode in _keyArray) exitWith {};
 sleep 0.001;
 
-private _amount = ([(ctrlText 1401)] call lilc_common_fnc_textToNumber);
+private _amount = (parseNumber ctrlText 1401);
 if (_amount > 100) then
 {
 	ctrlSetText [1401, "100"];

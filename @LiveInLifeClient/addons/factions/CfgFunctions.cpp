@@ -5,6 +5,7 @@ class lilc_factions {
         class add {};
         class getFactionArray {};
         class getFactionConfig {};
+        class inFactionEquipment {};
         class init {};
         class mapMarkers {};
     };

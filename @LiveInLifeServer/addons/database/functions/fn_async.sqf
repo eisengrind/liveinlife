@@ -46,7 +46,7 @@ try
 		{
 			if (_queryResult isEqualTo "[3]") then
 			{
-				[(format["extDB3: uisleep [4]: %1", diag_tickTime]), "extDB3"] call lilc_common_fnc_diag_log;
+				[(format["extDB3: uisleep [4]: %1", diag_tickTime]), "extDB3"] call lilc_log_fnc_diag_log;
 				uiSleep 0.1;
 			}
 			else
@@ -56,13 +56,13 @@ try
 		};
 	};
 
-	[(format["extDB3: query: %1", _query]), "extDB3"] call lilc_common_fnc_debugLog;
-	[(format["extDB3: result: %1", _queryResult]), "extDB3"] call lilc_common_fnc_debugLog;
+	[(format["extDB3: query: %1", _query]), "extDB3"] call lilc_log_fnc_debug_log;
+	[(format["extDB3: result: %1", _queryResult]), "extDB3"] call lilc_log_fnc_debug_log;
 	_queryResult = (call compile _queryResult);
 
 	if ((_queryResult select 0) isEqualTo 0) then
 	{
-		[(format["extDB3: protocol error: %1", _queryResult]), "extDB3", "ERROR"] call lilc_common_fnc_diag_log;
+		[(format["extDB3: protocol error: %1", _queryResult]), "extDB3", "ERROR"] call lilc_log_fnc_diag_log;
 		throw false;
 	};
 

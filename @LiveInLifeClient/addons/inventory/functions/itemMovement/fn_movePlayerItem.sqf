@@ -51,7 +51,7 @@ try
     private _curSel = (lbCurSel _aLIDC);
     if (_curSel <= -1) throw false;
 
-    private _count = ([(ctrlText 1398)] call lilc_common_fnc_textToNumber);
+    private _count = (parseNumber ctrlText 1398);
     private _classname = (lbData [_aLIDC, _curSel]);
     private _displayName = (lbText [_aLIDC, _curSel]);
 

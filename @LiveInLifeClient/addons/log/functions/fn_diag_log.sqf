@@ -23,4 +23,20 @@ params [
 if !(_modName == "") then { _modName = format["[%1]", _modName]; };
 private _user = (if (isDedicated && isServer) then { "LiveInLifeServer"; } else { "LiveInLifeClient"; });
 
-[(format["[%1]%2[%3][%4]: %5", _user, _modName, ([(if (isMultiplayer) then { serverTime; } else { time; })] call BIS_fnc_secondsToString), _type, _message]), "diag_log"] call lilc_common_fnc_message;
+_message = (format[
+    "[%1]%2[%3][%4]: %5",
+    _user,
+    _modName,
+    ([(if (isMultiplayer) then { serverTime; } else { time; })] call BIS_fnc_secondsToString),
+    _type,
+    _message
+]);
+
+if !(isMultiplayer) then
+{
+    player groupChat _message;
+}
+else
+{
+    diag_log _message;
+};

@@ -77,7 +77,7 @@ else
 
             default
             {
-                ["mission ended because of a invalid player spawnpoint", "lilc_common", 1] call lilc_common_fnc_diag_log;
+                ["mission ended because of a invalid player spawnpoint", "lilc_common", 1] call lilc_log_fnc_diag_log;
                 endMission "END6";
             };
         };

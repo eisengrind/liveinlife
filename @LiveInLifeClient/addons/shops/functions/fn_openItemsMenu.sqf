@@ -12,8 +12,7 @@ try {
     
     private _shopInfo = [];
     if (_shopname == "" && _factionID > -1) then {
-        private _factionConfig = ([_factionID] call lilc_common_fnc_getFactionConfig);
-        _shopInfo = [(format["%1 Itemshop", (_factionConfig select 0)]), [_factionID]];
+        _shopInfo = [(format["%1 Itemshop", getText(([_factionID] call lilc_factions_fnc_getFactionConfig) >> "title")]), [_factionID]];
     } else {
         _shopInfo = ([_shopname] call lilc_shops_fnc_getShopConfig);
     };

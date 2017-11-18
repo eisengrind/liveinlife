@@ -23,19 +23,19 @@ do
 		]),
 		"lils_logs",
 		"INFO"
-	] call lilc_common_fnc_diag_log;
+	] call lilc_log_fnc_diag_log;
 
 	[
 		" Current SQF scripts:",
 		"lils_logs",
 		"INFO"
-	] call lilc_common_fnc_diag_log;
+	] call lilc_log_fnc_diag_log;
 
 	[
 		"  <scriptName>, <fileName>, <isRunning>, <currentLine>",
 		"lils_logs",
 		"INFO"
-	] call lilc_common_fnc_diag_log;
+	] call lilc_log_fnc_diag_log;
 
 	{
 		[
@@ -48,20 +48,20 @@ do
 			]),
 			"lils_logs",
 			"INFO"
-		] call lilc_common_fnc_diag_log;
+		] call lilc_log_fnc_diag_log;
 	} forEach _activeSQFScripts;
 
 	[
 		" Current mission FSMs:",
 		"lils_logs",
 		"INFO"
-	] call lilc_common_fnc_diag_log;
+	] call lilc_log_fnc_diag_log;
 
 	[
 		"  <FSMName>, <status>, <timeout>",
 		"lils_logs",
 		"INFO"
-	] call lilc_common_fnc_diag_log;
+	] call lilc_log_fnc_diag_log;
 
 	{
 		[
@@ -73,7 +73,7 @@ do
 			]),
 			"lils_logs",
 			"INFO"
-		] call lilc_common_fnc_diag_log;
+		] call lilc_log_fnc_diag_log;
 	} forEach _activeFSMScripts;
 
 	sleep (60 * 10);

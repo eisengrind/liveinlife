@@ -1,12 +1,12 @@
 
-call compile preProcessFileLineNumbers "\x\lilc\addons\common\KRON_Strings.sqf";
+call compile preProcessFileLineNumbers "\x\lilc\addons\common\scripts\KRON_Strings.sqf";
 
 [
 	"lilce_login_postAccountInit",
 	{
 		call lilc_factions_fnc_init;
 		["initializing faction group"] call lilc_ui_fnc_setLoadingText;
-		["player group set", "lilc_common"] call lilc_common_fnc_diag_log;
+		["player group set", "lilc_common"] call lilc_log_fnc_diag_log;
 	}
 ] call CBA_fnc_addEventHandler;
 

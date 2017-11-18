@@ -119,7 +119,3 @@ catch
 };
 
 [_packages, "lilc_login_fnc_executeSetPackages", _unit] call lilc_common_fnc_send;
-
-/*,
-	[_unit, _aID, _packs]
-] execFSM "\x\lilc\addons\common\unscheduledCode.fsm";*/

@@ -94,7 +94,7 @@ class FSM
                          "" \n
                          "if !((missionNamespace getVariable [_message, """"]) isEqualTo """") then" \n
                          "{" \n
-                         "	[format[(missionNamespace getVariable [_message, """"]), (missionNamespace getVariable [_amount, 0])], ""systemChat""] call lilc_common_fnc_message;" \n
+                         "	systemChat format[(missionNamespace getVariable [_message, """"]), (missionNamespace getVariable [_amount, 0])];" \n
                          "};" \n
                          "" \n
                          "if ((missionNamespace getVariable [_bankID, -1]) == 0) then" \n

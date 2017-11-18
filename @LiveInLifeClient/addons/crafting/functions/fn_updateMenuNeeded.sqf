@@ -24,7 +24,7 @@ private _tools = getArray(_recipe >> "tools");
 private _reqs = getArray(_recipe >> "requirements");
 private _res = getArray(_recipe >> "results");
 
-private _m = (round (([(ctrlText 1401)] call lilc_common_fnc_textToNumber) max 1));
+private _m = (round ((parseNumber ctrlText 1401) max 1));
 
 lbClear nIDC;
 

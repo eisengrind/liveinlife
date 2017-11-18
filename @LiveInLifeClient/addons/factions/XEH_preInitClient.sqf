@@ -30,11 +30,11 @@ lilc_factions_factions = [];
 [
 	"set_lil_factions_faction",
 	{
-		private _fCfg = ([_this] call lilc_common_fnc_getFactionConfig);
+		private _fCfg = ([_this] call lilc_factions_fnc_getFactionConfig);
 		lilc_player_faction = [
 			_this,
-			(_fCfg select 0),
-			(_fCfg select 4)
+			getText(_fCfg >> "title"),
+			getText(_fCfg >> "color")
 		];
 	}
 ] call lilc_login_fnc_addPackage;

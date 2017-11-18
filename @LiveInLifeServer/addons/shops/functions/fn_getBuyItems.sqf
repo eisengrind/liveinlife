@@ -22,22 +22,14 @@ try {
         _equipment = ([((_equipment select 0) select 0)] call lils_common_fnc_arrayDecode);
         
         {
-            private _isIn = ([_factionID, (_x select 0), (_x select 1)] call lilc_common_fnc_inFactionEquipment);
+            private _isIn = ([_factionID, (_x select 0), (_x select 1)] call lilc_factions_fnc_inFactionEquipment);
             systemChat str _isIn;
             systemChat str ([(_x select 0)] call lilc_shops_fnc_isOtherItem);
             if ([(_x select 0)] call lilc_shops_fnc_isOtherItem && (_isIn > -1)) then {
-                //private _itemCost = (((([_factionID] call lilc_common_fnc_getFactionConfig) select 6) select _isIn) select 1);
                 _items pushBack [(_x select 0), -1, /*_itemCost*/0, (_x select 1)];
             };
         } forEach _equipment;
-    };/* else {
-        private _economyItems = ([_shopName] call lils_economy_fnc_getShopItems);
-        {
-            if ([(_x select 0)] call lilc_shops_fnc_isOtherItem) then {
-                _items pushBack [(_x select 0), -1, (_x select 2), (_x select 3)];
-            };
-        } forEach _economyItems;
-    };*/
+    };
     
     [[_items], "lilc_shops_fnc_setBuyItems", _unit] call lilc_common_fnc_send;
 } catch {

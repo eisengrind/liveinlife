@@ -4,6 +4,7 @@ class lilc_atm {
         file = "\x\lilc\addons\atm\functions";
         class accountSelected {};
         class createAccount {};
+        class createAccountCallback {};
         class deposit {};
         class disburse {};
         class openMenu {};

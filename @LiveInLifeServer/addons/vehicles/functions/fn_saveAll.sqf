@@ -14,7 +14,7 @@
 private _enableVehicleSavingMessage = (["vehicles_enableSaveMessage", "BOOL", false] call lilc_common_fnc_getSetting);
 if (_enableVehicleSavingMessage) then
 {
-    [["[Server] Alle Fahrzeuge gespeichert.", "systemChat"], "lilc_common_fnc_message"] call lilc_common_fnc_sendToPlayers;
+    ["[Server] Alle Fahrzeuge gespeichert.", "systemChat"] call lilc_common_fnc_sendToPlayers;
 };
 
-["Alle Fahrzeuge gespeichert", "lils_vehicles"] call lilc_common_fnc_diag_log;
+["Alle Fahrzeuge gespeichert", "lils_vehicles"] call lilc_log_fnc_diag_log;

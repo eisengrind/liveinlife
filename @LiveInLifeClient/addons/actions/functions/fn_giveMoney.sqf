@@ -14,7 +14,7 @@
 
 try
 {
-    private _amount = ([(ctrlText 1552)] call lilc_common_fnc_textToNumber);
+    private _amount = (parseNumber ctrlText 1552);
     if (_amount <= 0) then
     {
         //ctrlSetText [1552, ""];

@@ -17,7 +17,7 @@ try
 	private _tools = getArray(_rCfg >> "tools"); //_requiredTools
 	private _reqs = getArray(_rCfg >> "requirements"); //_requiredItems
 	private _res = getArray(_rCfg >> "results"); //_resultedItems
-	private _recipeAmount = ([(ctrlText 1401)] call lilc_common_fnc_textToNumber);
+	private _recipeAmount = (parseNumber ctrlText 1401);
 	private _recipeTime = getNumber(_rCfg >> "time");
 	private _recipeDisplayName = getText(_rCfg >> "displayName");
 
@@ -121,7 +121,7 @@ try
 						}
 						else
 						{
-							["Vehicle removing is currently disabled!", "lilc_crafting"] call lilc_common_fnc_debugLog;
+							["Vehicle removing is currently disabled!", "lilc_crafting"] call lilc_log_fnc_debug_log;
 						};
 					};
 				};

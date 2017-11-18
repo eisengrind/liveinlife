@@ -37,7 +37,7 @@ try
 
     if (isNull _container) throw false;
 
-    private _count = ([(ctrlText 1396)] call lilc_common_fnc_textToNumber);
+    private _count = (parseNumber ctrlText 1396);
     private _classname = (lbData [_activeListIDC, _curSel]);
     private _displayName = (lbText [_activeListIDC, _curSel]);
 

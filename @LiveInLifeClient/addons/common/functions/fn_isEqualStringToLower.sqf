@@ -18,10 +18,4 @@ params [
     ["_stringB", "", [""]]
 ];
 
-try {
-    if ((toLower _stringA) isEqualTo (toLower _stringB)) throw true;
-    
-    throw false;
-} catch {
-    _exception;
-};
+((toLower _stringA) isEqualTo (toLower _stringB));

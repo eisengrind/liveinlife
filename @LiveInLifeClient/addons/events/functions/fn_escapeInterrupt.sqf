@@ -54,7 +54,7 @@ lilc_events_interruptCounterHandler = ([_ui] spawn {
     {
         _uiAbButN ctrlSetText format[
             "Abbrechen in %1",
-            ([(round (_time - time))] call lilc_common_fnc_formatSeconds)
+            ([(round (_time - time))] call BIS_fnc_secondsToString)
         ];
         sleep 0.05;
     };
