@@ -32,17 +32,16 @@ try {
     if (_accountID <= 0) throw [];
 
     private _startAmount = getNumber(_bankConfig >> "startAmountPersonal");
-    //4, 4, 4, 4
     private _hash = format["%1%2%3%4",
         getText(_bankConfig >> "hashPrefix"),
         ([2, false, false, true] call lilc_common_fnc_randomString),
         ([6, true, false, false] call lilc_common_fnc_randomString),
         ([([(str _accountID), 4] call KRON_StrRight), 4, "0"] call lilc_common_fnc_fillString)
     ];
-//= TRANSID<string>, BANK<string>, AMOUNT<int>, STATUS<bool>, ID<int>
+    
     ([(format["INSERT INTO BANK_ACCOUNT_DATA (ID, NAME, AMOUNT, ACCOUNTID, STATUS, HASH) VALUES (NULL, '""%1""', '%2', '%3', '%4', '%5')", _bankName, _startAmount, _accountID, 1, _hash])] call lils_database_fnc_query);
-    uiSleep 0.1;
-    private _bankAccount = ([(format["SELECT HASH, NAME, AMOUNT, STATUS, ID  FROM BANK_ACCOUNT_DATA WHERE ACCOUNTID = '%1' AND AND HASH = '%2'", _accountID, _hash])] call lils_database_fnc_fetchObjects);
+    uiSleep 0.5;
+    private _bankAccount = ([(format["SELECT QUOTE(HASH), NAME, AMOUNT, STATUS, ID FROM BANK_ACCOUNT_DATA WHERE ACCOUNTID = '%1' AND HASH = '%2'", _accountID, _hash])] call lils_database_fnc_fetchObjects);
     
     throw (_bankAccount select 0);
 } catch {
