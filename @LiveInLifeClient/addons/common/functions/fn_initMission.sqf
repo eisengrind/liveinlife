@@ -122,7 +122,6 @@ if (isMultiplayer) then {
 	lilc_finished = true;
 	["mission initialized", "lilc_common"] call lilc_log_fnc_diag_log;
 } else {
-	call compile preProcessFileLineNumbers "KRON_Strings.sqf";
 	["Singleplayer selected", "lilc_common"] call lilc_log_fnc_diag_log;
 	//["lilce_common_initPlayer"] call CBA_fnc_localEvent;
 	[2] call lilc_ui_fnc_fadeOutBlack;
