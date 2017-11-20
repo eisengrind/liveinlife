@@ -39,5 +39,20 @@
                 <German>Ausrauben</German>
             </Key>
         </Container>
+        <Container name="ScriptText">
+            <Key ID="STR_lilc_actions_ScriptText_flippingVehicle">
+                <Original>Your vehicle will be flipped in 5 seconds.</Original>
+                <English>Your vehicle will be flipped in 5 seconds.</English>
+                <German>Dein Fahrzeug wird in 5 Sekunden umgedreht.</German>
+            </Key>
+            <Key ID="STR_lilc_actions_ScriptText_flippedVehicle">
+                <Original>Your vehicle was flipped.</Original>
+                <English>Your vehicle was flipped.</English>
+                <German>Du hast das Fahrzeug erfolgreich umgedreht.</German>
+            </Key>
+            <Key ID="STR_lilc_actions_ScriptText_">
+                <Original></Original>
+            </Key>
+        </Container>
     </Package>
 </Project>

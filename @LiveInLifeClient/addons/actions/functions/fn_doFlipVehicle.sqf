@@ -32,7 +32,7 @@ if ({ (alive _x) } count (crew _vehicle)) exitWith { false; };
 
 lilc_action_active = true;
 _vehicle setVariable ["lilc_flipTimestamp", (time + 6)];
-["Dein Fahrzeug wird in 5 Sekunden umgedreht.", "WARNING"] call lilc_ui_fnc_hint;
+[(["STR_lilc_actions_ScriptText_flippingVehicle"] call lilc_common_fnc_localize), "WARNING"] call lilc_ui_fnc_hint;
 sleep 5;
 
 _vehicle allowDamage false;
@@ -42,7 +42,7 @@ _vehiclePosition set [2, ((_vehiclePosition select 2) + 0.2)];
 _vehicle setVectorUp [0, 0, 1];
 _vehicle setPosASL _vehiclePosition;
 
-["Du hast das Fahrzeug erfolgreich umgedreht."] call lilc_ui_fnc_hint;
+[(["STR_lilc_actions_ScriptText_flippedVehicle"] call lilc_common_fnc_localize)] call lilc_ui_fnc_hint;
 sleep 1;
 _vehicle allowDamage true;
 lilc_action_active = false;
