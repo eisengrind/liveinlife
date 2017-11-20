@@ -29,8 +29,10 @@ _ui setVariable ["lilc_shopName", _shopName];
 	private _groups = (getArray(_x >> "groups"));
 	if (
 		(((count _groups) <= 0) || (_fID in _groups)) &&
-		(getNumber(_x >> "rentBuyPrice") >= 0) &&
-		(getNumber(_x >> "buyPrice") >= 0)
+		(
+			(getNumber(_x >> "rentBuyPrice") >= 0) ||
+			(getNumber(_x >> "buyPrice") >= 0)
+		)
 	) then
 	{
 		private _vehCfg = ([(configName _x)] call lilc_common_fnc_getClassnameConfig);
