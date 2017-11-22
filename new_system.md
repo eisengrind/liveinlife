@@ -5,7 +5,7 @@ Therefore LiveInLife uses prefixes for indicating if a mod is a client or server
 The client is indicated by `lilc_` while server packages are indicated by `lils_`.
 
 There exists "library" and "module" packages.
-A **library** package is signed with `lilc_lib_` or `lils_lib_`.
+A **library** package is signed with `lilc_lib_` or `lils_lib_`. Its job is to provide usable functions like e.g. adding an virtual item to the players inventory.
 Furthermore a **module** package is signed by either `lilc_` or `lils_`.
 Most of the server sided packages are librarys because they dont perform any "modular action".
 Actually it is possible that a *lilc_lib_&lt;y&gt;* package can also exists as an module *lilc_&lt;y&gt;* - but this is more irritating than other names.
