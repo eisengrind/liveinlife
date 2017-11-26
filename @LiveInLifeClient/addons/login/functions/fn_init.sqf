@@ -11,7 +11,9 @@ try {
     waitUntil { !(call BIS_fnc_isLoading) };
     waitUntil { !dialog };
     ["requesting profiles", "lilc_login"] call lilc_log_fnc_diag_log;
-    if !(call lilc_login_fnc_getProfiles) throw false;
+    call lilc_login_fnc_getProfiles;
+    waitUntil { (!isNil "lilc_login_profiles"); };
+    
     ["profiles requested", "lilc_login"] call lilc_log_fnc_diag_log;
 
     showCinemaBorder false;
@@ -36,6 +38,23 @@ try {
     ["wait until profile is selected...", "lilc_login"] call lilc_log_fnc_diag_log;
 
     call lilc_login_fnc_openMenu;
+
+    if ((count lilc_login_profiles) <= 0) then
+    {
+        if (["login_canCreateProfile", "BOOL", true] call lilc_common_fnc_getSetting) then
+        {
+            ["createProfile"] call lilc_login_fnc_selectMenu;
+        }
+        else
+        {
+            systemChat "You are not whitelisted on this server.";
+            endMission "END6";
+        };
+    }
+    else
+    {
+        ["mainMenu"] call lilc_login_fnc_selectMenu;
+    };
 
     lilc_login_loginSuccessful = nil;
     waitUntil { !isNil "lilc_login_loginSuccessful" };

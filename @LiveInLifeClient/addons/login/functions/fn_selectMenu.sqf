@@ -10,6 +10,7 @@ try
     if (isNull _ui) throw false;
     private _uiGroupMainMenu = (_ui displayCtrl 2300);
     private _uiGroupProfileMenu = (_ui displayCtrl 2301);
+    private _uiGroupCreateProfileMenu = (_ui displayCtrl 2302);
 
     private _config = (configFile >> "lilcm_login" >> "controls");
     private _groupMainMenuPosition = [
@@ -21,6 +22,11 @@ try
         getNumber(_config >> "GroupSelectProfileMenu" >> "x"),
         getNumber(_config >> "GroupSelectProfileMenu" >> "y"),
         getNumber(_config >> "GroupSelectProfileMenu" >> "w")
+    ];
+    private _groupCreateProfileMenuPosition = [
+        getNumber(_config >> "GroupCreateProfile" >> "x"),
+        getNumber(_config >> "GroupCreateProfile" >> "y"),
+        getNumber(_config >> "GroupCreateProfile" >> "w")
     ];
     _config = configNull;
 
@@ -42,22 +48,36 @@ try
     }
     else
     {
-        if (_currentProfileID <= 0) then
+        if ((count lilc_login_profiles) > 0) then
         {
-            _currentProfileID = ((lilc_login_profiles select 0) select 0);
-            profileNamespace setVariable ["lilc_login_lastProfile", _currentProfileID];
-            saveProfileNamespace;
+            if (_currentProfileID <= 0) then
+            {
+                _currentProfileID = ((lilc_login_profiles select 0) select 0);
+                profileNamespace setVariable ["lilc_login_lastProfile", _currentProfileID];
+                saveProfileNamespace;
+            };
         };
     };
 
-    private _currentProfileID = (_ui getVariable ["lilc_ui_data_currentProfile", _currentProfileID]);
-    _ui setVariable ["lilc_ui_data_currentProfile", _currentProfileID];
+    private _cP = (_ui getVariable ["lilc_ui_data_currentProfile", 0]);
 
-    if (_currentProfileID <= 0 || (({ ((_x select 0) == _currentProfileID) } count lilc_login_profiles) == 0)) then
+    if (_cP <= 0 && _currentProfileID > 0) then
+    {
+        _ui setVariable ["lilc_ui_data_currentProfile", _currentProfileID];
+    }
+    else
+    {
+        _currentProfileID = (_ui getVariable ["lilc_ui_data_currentProfile", 0]);
+    };
+
+    systemChat str _currentProfileID;
+    systemChat str lilc_login_profiles;
+
+    /*if (_currentProfileID <= 0 && !((count lilc_login_profiles) <= 0) && (({ ((_x select 0) == _currentProfileID) } count lilc_login_profiles) == 0)) then
     {
         endMission "lilc_login_noProfiles";
         throw false;
-    };
+    };*/
 
     switch (_name) do
     {
@@ -107,6 +127,13 @@ try
             _uiGroupMainMenu ctrlSetFade 0;
             _uiGroupMainMenu ctrlCommit 0.5;
 
+            _uiGroupCreateProfileMenu ctrlSetPosition [
+                (_groupCreateProfileMenuPosition select 0) - (_groupCreateProfileMenuPosition select 2),
+                (_groupCreateProfileMenuPosition select 1)
+            ];
+            _uiGroupCreateProfileMenu ctrlSetFade 1;
+            _uiGroupCreateProfileMenu ctrlCommit 0.5;
+
             _uiGroupProfileMenu ctrlSetPosition [
                 (_groupProfileMenuPosition select 0) - (_groupProfileMenuPosition select 2),
                 (_groupProfileMenuPosition select 1)
@@ -144,12 +171,50 @@ try
             _uiGroupProfileMenu ctrlSetFade 0;
             _uiGroupProfileMenu ctrlCommit 0.5;
 
+            _uiGroupCreateProfileMenu ctrlSetPosition [
+                (_groupCreateProfileMenuPosition select 0) - (_groupCreateProfileMenuPosition select 2),
+                (_groupCreateProfileMenuPosition select 1)
+            ];
+            _uiGroupCreateProfileMenu ctrlSetFade 1;
+            _uiGroupCreateProfileMenu ctrlCommit 0.5;
+
             _uiGroupMainMenu ctrlSetPosition [
                 (_groupMainMenuPosition select 0) - (_groupMainMenuPosition select 2),
                 (_groupMainMenuPosition select 1)
             ];
             _uiGroupMainMenu ctrlSetFade 1;
             _uiGroupMainMenu ctrlCommit 0.5;
+        };
+
+        case "createProfile":
+        {
+            _uiGroupCreateProfileMenu ctrlSetPosition [
+                (_groupCreateProfileMenuPosition select 0),
+                (_groupCreateProfileMenuPosition select 1)
+            ];
+            _uiGroupCreateProfileMenu ctrlSetFade 0;
+            _uiGroupCreateProfileMenu ctrlCommit 0.5;
+
+            _uiGroupMainMenu ctrlSetPosition [
+                (_groupMainMenuPosition select 0) - (_groupMainMenuPosition select 2),
+                (_groupMainMenuPosition select 1)
+            ];
+            _uiGroupMainMenu ctrlSetFade 1;
+            _uiGroupMainMenu ctrlCommit 0.5;
+            
+            _uiGroupProfileMenu ctrlSetPosition [
+                (_groupProfileMenuPosition select 0) - (_groupProfileMenuPosition select 2),
+                (_groupProfileMenuPosition select 1)
+            ];
+            _uiGroupProfileMenu ctrlSetFade 1;
+            _uiGroupProfileMenu ctrlCommit 0.5;
+
+            private _uiComboSex = (_uiGroupCreateProfileMenu controlsGroupCtrl 1500);
+
+            private _i = (_uiComboSex lbAdd "Männlich");
+            _uiComboSex lbSetValue [_i, 0];
+            _i = (_uiComboSex lbAdd "Weiblich");
+            _uiComboSex lbSetValue [_i, 1];
         };
 
         case "selectProfile":

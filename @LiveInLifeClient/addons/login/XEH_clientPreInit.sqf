@@ -230,3 +230,5 @@ lilc_login_update_defPackages = [
 		lilc_prison_currentPunishment;
 	}
 ] call lilc_login_fnc_addPackage;
+
+lilc_login_createprofile = false;

@@ -1,9 +1,11 @@
 
-private ["_result"];
-_result = param [0, [], [[], false]];
+private _result = param [0, [], [[], false]];
 
-diag_log str _result;
 if ((typeName false) == (typeName _result)) exitWith { endMission "END6"; };
-if ((count _result) <= 0) exitWith { lilc_login_profiles = []; };
-
 lilc_login_profiles = _result;
+
+if (lilc_login_createProfile) then
+{
+	["mainMenu"] call lilc_login_fnc_selectMenu;
+	lilc_login_createProfile = false;
+};

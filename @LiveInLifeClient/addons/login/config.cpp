@@ -16,6 +16,7 @@ class lilc_RscText;
 class lilc_RscPicture;
 class lilc_RscControlsGroup;
 class lilc_RscShortcutButton;
+class lilc_RscEdit;
 
 #include "dialogs\login.cpp"
 //#include "dialogs\signup.cpp"
