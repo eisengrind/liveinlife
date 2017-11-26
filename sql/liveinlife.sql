@@ -1,17 +1,3 @@
-/*
-Navicat MySQL Data Transfer
-
-Source Server         : 5.9.96.244
-Source Server Version : 50636
-Source Host           : 5.9.96.244:3306
-Source Database       : eisengrind_reallife
-
-Target Server Type    : MYSQL
-Target Server Version : 50636
-File Encoding         : 65001
-
-Date: 2017-11-23 00:08:56
-*/
 
 SET FOREIGN_KEY_CHECKS=0;
 
