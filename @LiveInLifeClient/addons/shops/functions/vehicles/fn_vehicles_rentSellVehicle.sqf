@@ -13,7 +13,7 @@ private _positions = ((getArray (_config >> "positions")) apply { ([_x] call lil
 private _aID = (player getVariable ["lilc_accountID", 0]);
 if (_aID <= 0) exitWith {};
 
-private _fID = (player getVariable ["lilc_factionID", 0]);
+private _fID = (player getVariable ["lilc_factionID", -1]);
 
 private _veh = objNull;
 {

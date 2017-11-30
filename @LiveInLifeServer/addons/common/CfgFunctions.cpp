@@ -6,7 +6,6 @@ class lils_common {
         class arrayEncode {};
         class getAvailableClassnames {};
         class getAvailableStaticPositions {};
-        class restartServer {};
         class stringDecode {};
         class stringEncode {};
         class waitUntilRestart {};

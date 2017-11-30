@@ -17,6 +17,11 @@ lilc_finished = false;
 [0.01] call lilc_ui_fnc_fadeInBlack;
 
 if (isMultiplayer) then {
+	waitUntil
+	{
+		!(call BIS_fnc_isLoading);
+	};
+
 	["Multiplayer selected", "lilc_common"] call lilc_log_fnc_diag_log;
 	["initializing mission", "lilc_common"] call lilc_log_fnc_diag_log;
 	
@@ -70,12 +75,6 @@ if (isMultiplayer) then {
 		"lilce_login_preAccountInit",
 		[player]
 	] call CBA_fnc_localEvent;
-
-	waitUntil
-	{
-		!(call BIS_fnc_isLoading);
-	};
-
 
 	call lilc_ui_fnc_disableLoadingIcon;
 	call lilc_login_fnc_init;

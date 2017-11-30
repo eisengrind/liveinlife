@@ -36,8 +36,8 @@ class lilc_shops
         class vehicles_buyVehicle {};
         class vehicles_onLBSelChanged {};
         class vehicles_openMenu {};
+        class vehicles_rentBuyVehicle {};
         class vehicles_rented {};
-        class vehicles_rentedSelled {};
         class vehicles_rentSellVehicle {};
     };
 };

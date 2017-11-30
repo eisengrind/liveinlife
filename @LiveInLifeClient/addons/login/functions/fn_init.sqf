@@ -47,7 +47,7 @@ try {
         }
         else
         {
-            systemChat "You are not whitelisted on this server.";
+            diag_log "You are not whitelisted on this server.";
             endMission "END6";
         };
     }
@@ -75,6 +75,7 @@ try {
     throw true;
 } catch {
     if !(_exception) then {
+        diag_log str "Mission ended because of init!";
         endMission "END6";
     };
 };

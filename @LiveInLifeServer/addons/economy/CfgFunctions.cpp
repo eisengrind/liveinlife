@@ -5,8 +5,6 @@ class lils_economy {
         class getDealerData {};
         class getShopItems {};
         class init {};
-        class initializeEconomyData {};
-        class loadEconomyData {};
         class processBuy {};
         class processData {};
         class processSell {};

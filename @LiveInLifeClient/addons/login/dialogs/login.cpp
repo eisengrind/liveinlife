@@ -152,7 +152,7 @@ class lilcm_login {
 							onButtonClick = "[] spawn lilc_login_fnc_selectProfile;";
 							onMouseEnter = "[(_this select 0), (configFile >> 'lilcm_login' >> 'controls' >> 'GroupMainMenu' >> 'controls' >> 'GroupResume' >> 'controls' >> 'TextResumeGame')] call lilc_ui_fnc_buttonMoveRight_onMouseEnter; [(ctrlParentControlsGroup (_this select 0)) controlsGroupCtrl 1004, (configFile >> 'lilcm_login' >> 'controls' >> 'GroupMainMenu' >> 'controls' >> 'GroupResume' >> 'controls' >> 'TextName')] call lilc_ui_fnc_buttonMoveRight_onMouseEnter; [(ctrlParentControlsGroup (_this select 0)) controlsGroupCtrl 1005, (configFile >> 'lilcm_login' >> 'controls' >> 'GroupMainMenu' >> 'controls' >> 'GroupResume' >> 'controls' >> 'TextFaction')] call lilc_ui_fnc_buttonMoveRight_onMouseEnter;";
 							onMouseExit = "[(_this select 0), (configFile >> 'lilcm_login' >> 'controls' >> 'GroupMainMenu' >> 'controls' >> 'GroupResume' >> 'controls' >> 'TextResumeGame')] call lilc_ui_fnc_buttonMoveRight_onMouseExit; [(ctrlParentControlsGroup (_this select 0)) controlsGroupCtrl 1004, (configFile >> 'lilcm_login' >> 'controls' >> 'GroupMainMenu' >> 'controls' >> 'GroupResume' >> 'controls' >> 'TextName')] call lilc_ui_fnc_buttonMoveRight_onMouseExit; [(ctrlParentControlsGroup (_this select 0)) controlsGroupCtrl 1005, (configFile >> 'lilcm_login' >> 'controls' >> 'GroupMainMenu' >> 'controls' >> 'GroupResume' >> 'controls' >> 'TextFaction')] call lilc_ui_fnc_buttonMoveRight_onMouseExit;";
-							text = "$STR_lilc_login_DialogText_continuePlay"; //--- ToDo: Localize;
+							text = "$STR_lilc_login_DialogText_playOn"; //--- ToDo: Localize;
 							x = 0.005156 * safezoneW;
 							y = 0.055 * safezoneH;
 							w = 0.221719 * safezoneW;

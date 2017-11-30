@@ -5,7 +5,6 @@ class lilc_bank {
         class addAccount {};
         class appendByBankName {};
         class appendByID {};
-        class createAccount {};
         class getAccountBankNameByID {};
         class getAccountByBankName {};
         class getAccountByID {};

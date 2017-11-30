@@ -5,6 +5,5 @@ class lilc_events {
         class escapeInterrupt {};
         class onInventoryOpened {};
         class onKeyDown {};
-        class onPlayerKilled {};
     };
 };
