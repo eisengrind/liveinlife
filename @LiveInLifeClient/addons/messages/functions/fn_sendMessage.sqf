@@ -1,7 +1,7 @@
 
 if ((lbCurSel 2100) <= -1) exitWith
 {
-	["Du hast keinen Empfänger ausgewählt.", "ERROR"] call lilc_ui_fnc_hint;
+	[(["STR_lilc_messages_StringText_noReceiverSelected"] call BIS_fnc_localize), "ERROR"] call lilc_ui_fnc_hint;
 };
 
 private _d = (lbData [2100, (lbCurSel 2100)]);
@@ -19,7 +19,7 @@ private _m = (ctrlText 1400);
 if ((count _m) <= 0) exitWith
 {
 	[
-		"Du musst eine Nachricht eingeben.",
+		(["STR_lilc_messages_StringText_noMessageText"] call BIS_fnc_localize),
 		"ERROR"
 	] call lilc_ui_fnc_hint;
 };
@@ -70,6 +70,6 @@ switch (_t) do
 	};
 };
 
-["Nachricht erfolgreich verschickt."] call lilc_ui_fnc_hint; //TODO: localize
+[(["STR_lilc_messages_StringText_messageSent"] call BIS_fnc_localize)] call lilc_ui_fnc_hint; //TODO: localize
 
 closeDialog 1306;

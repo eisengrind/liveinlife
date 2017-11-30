@@ -6,4 +6,4 @@ params [
 ];
 
 lilc_messages_messages pushBack _this;
-["Du hast eine neue Nachricht!"] call lilc_ui_fnc_hint;
+[(["STR_lilc_messages_StringText_messageReceived"] call lilc_common_fnc_localize)] call lilc_ui_fnc_hint;

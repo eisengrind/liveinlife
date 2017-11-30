@@ -29,7 +29,7 @@ class lilcm_garage
         class TitleName : lilc_RscText
         {
             idc = 1001;
-            text = "Garagenname"; //--- ToDo: Localize;
+            text = ""; //--- ToDo: Localize;
             x = 0.102969 * safezoneW + safezoneX;
             y = 0.192 * safezoneH + safezoneY;
             w = 0.190781 * safezoneW;
@@ -55,7 +55,7 @@ class lilcm_garage
         class FrameGive : lilc_RscFrame
         {
             idc = 1203;
-            text = "Fahrzeugübergabe";
+            text = "$STR_lilc_garage_DialogText_vehicleTransmission";
             x = 0.108125 * safezoneW + safezoneX;
             y = 0.753 * safezoneH + safezoneY;
             w = 0.0974479 * safezoneW;

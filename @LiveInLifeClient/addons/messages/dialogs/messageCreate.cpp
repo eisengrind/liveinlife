@@ -21,7 +21,7 @@ class lilcm_messageCreate
         class TitleTitle : lilc_RscText
         {
             idc = 1001;
-            text = "Nachricht verfassen"; //--- ToDo: Localize;
+            text = "$STR_lilc_messages_StringText_writeMessage"; //--- ToDo: Localize;
             x = 0.365937 * safezoneW + safezoneX;
             y = 0.368 * safezoneH + safezoneY;
             w = 0.268125 * safezoneW;
@@ -32,7 +32,7 @@ class lilcm_messageCreate
         class TitleReceivers : lilc_RscText
         {
             idc = 1002;
-            text = "EmpfÃ¤nger:"; //--- ToDo: Localize;
+            text = "$STR_lilc_messages_StringText_receiver"; //--- ToDo: Localize;
             x = 0.371094 * safezoneW + safezoneX;
             y = 0.401 * safezoneH + safezoneY;
             w = 0.257813 * safezoneW;
@@ -43,7 +43,7 @@ class lilcm_messageCreate
         class TitleMessage : lilc_RscText
         {
             idc = 1003;
-            text = "Nachricht:"; //--- ToDo: Localize;
+            text = "$STR_lilc_messages_StringText_message"; //--- ToDo: Localize;
             x = 0.371094 * safezoneW + safezoneX;
             y = 0.456 * safezoneH + safezoneY;
             w = 0.257813 * safezoneW;
@@ -81,7 +81,7 @@ class lilcm_messageCreate
         class ButtonSendMessage : lilc_RscButtonMenu
         {
             idc = 2400;
-            text = "Senden"; //--- ToDo: Localize;
+            text = "$STR_lilc_messages_StringText_send"; //--- ToDo: Localize;
             onButtonClick = "call lilc_messages_fnc_sendMessage;";
             x = 0.45875 * safezoneW + safezoneX;
             y = 0.588 * safezoneH + safezoneY;
@@ -93,7 +93,7 @@ class lilcm_messageCreate
         {
             idc = 2401;
             onButtonClick = "closeDialog 1306;";
-            text = "SchlieÃŸen"; //--- ToDo: Localize;
+            text = "$STR_lilc_messages_StringText_close"; //--- ToDo: Localize;
             x = 0.365937 * safezoneW + safezoneX;
             y = 0.623778 * safezoneH + safezoneY;
             w = 0.0825 * safezoneW;

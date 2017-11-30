@@ -11,7 +11,7 @@ lilc_messages_messages = [];
 [
 	"Live In Life",
 	"lilck_messages_openPhoneMenu",
-	"Telefonmenu öffnen",
+	(["STR_lilc_messages_ActionTitle_openMenu"] call BIS_fnc_localize),
 	{
 		call lilc_messages_fnc_openMenu;
 	},
