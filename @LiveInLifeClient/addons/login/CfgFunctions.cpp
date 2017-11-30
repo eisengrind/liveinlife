@@ -16,7 +16,6 @@ class lilc_login {
         class selectMenu {};
         class selectProfile {};
         class setJoinData {};
-        class setPlayerData {};
         class setProfiles {};
         class unitIsKnown {};
         class updatePlayerData {};
