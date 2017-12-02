@@ -11,13 +11,11 @@ class lilc_ui {
         class disableAircraftInfo {};
         class disableAndEnableControls {};
         class disableHints {};
-        class disableHud {};
         class disableLoadingIcon {};
         class disableUserInput {};
         class enableActions {};
         class enableAircraftInfo {};
         class enableHints {};
-        class enableHud {};
         class enableLoadingIcon {};
         class enableUserInput {};
         class fadeInBlack {};

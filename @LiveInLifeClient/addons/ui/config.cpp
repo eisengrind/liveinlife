@@ -19,7 +19,6 @@ class lilc_RscTitle;
 
 class RscTitles {
     #include "dialogs\logo.cpp"
-    #include "dialogs\hud.cpp"
     #include "dialogs\hint.cpp"
     #include "dialogs\stats.cpp"
     #include "dialogs\loading.cpp"
