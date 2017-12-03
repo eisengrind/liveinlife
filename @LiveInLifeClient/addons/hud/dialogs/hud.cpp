@@ -29,6 +29,7 @@ class lilc_hud
         class TextInformation : lilc_RscStructuredText
         {
             idc = 1100;
+            font = "PuristaMedium";
             text = ""; //--- ToDo: Localize;
             x = 0.87125 * safezoneW + safezoneX;
             y = 0.258 * safezoneH + safezoneY;

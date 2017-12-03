@@ -7,7 +7,7 @@ playMusic ["AmbientTrack02_F_EXP", 58];
 3 fadeMusic 1;
 1 fadeSound 0.5;
 
-call lilc_ui_fnc_disableHud;
+call lilc_hud_fnc_disable;
 sleep 4;
 private _camera = "camera" camCreate [5138.71,10576.51,72.14];
 _camera cameraEffect ["internal","back"];

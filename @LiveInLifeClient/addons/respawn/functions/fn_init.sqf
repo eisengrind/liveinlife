@@ -25,7 +25,7 @@ try {
 
         [0.01] call lilc_ui_fnc_fadeInBlack;
         call lilc_ui_fnc_disableUserInput;
-        call lilc_ui_fnc_disableHud;
+        call lilc_hud_fnc_disable;
         call lilc_tags_fnc_disableTags;
         call lilc_ui_fnc_disableHints;
 
@@ -77,7 +77,7 @@ try {
         [player, ""] call lilc_common_fnc_switchMove;
 
         call lilc_ui_fnc_enableUserInput;
-        call lilc_ui_fnc_enableHud;
+        call lilc_hud_fnc_enable;
         call lilc_tags_fnc_enableTags;
         call lilc_ui_fnc_enableHints;
 
@@ -115,7 +115,7 @@ try {
             };
 
             call lilc_ui_fnc_enableUserInput;
-            call lilc_ui_fnc_enableHud;
+            call lilc_hud_fnc_enable;
 
             private _factionID = (player getVariable ["lilc_factionID", -1]);
             private _respawnInit = "";
@@ -168,7 +168,7 @@ try {
             player hideObjectGlobal true;
             sleep 0.5;
 
-            call lilc_ui_fnc_disableHud;
+            call lilc_hud_fnc_disable;
 
             if (dialog) then
             {
@@ -291,7 +291,7 @@ try {
                         };
 
                         call lilc_ui_fnc_enableUserInput;
-                        call lilc_ui_fnc_enableHud;
+                        call lilc_hud_fnc_enable;
                         [player, ""] call lilc_common_fnc_switchMove;
                         [2] call lilc_ui_fnc_fadeOutBlack;
                         player allowDamage true;
