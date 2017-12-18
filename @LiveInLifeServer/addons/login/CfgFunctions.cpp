@@ -1,6 +1,8 @@
 
-class lils_login {
-    class functions {
+class lils_login
+{
+    class functions
+    {
         file = "\x\lils\addons\login\functions";
         class addPackage {};
         class createProfile {};

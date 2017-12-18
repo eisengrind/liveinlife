@@ -10,13 +10,13 @@ try {
     private _factionConfig = ([_factionID] call lilc_factions_fnc_getFactionConfig);
     if (isNull _factionConfig && _shopname == "") throw false;
     
-    private _shopInfo = [];
-    if (_shopname == "" && _factionID > -1) then {
-        _shopInfo = [(format["%1 Itemshop", getText(([_factionID] call lilc_factions_fnc_getFactionConfig) >> "title")]), [_factionID]];
+    private _shopConfig = [];
+    if (lilc_shops_currentShopname == "" && _factionID > -1) then {
+        _shopConfig = [getText(([_factionID] call lilc_factions_fnc_getFactionConfig) >> "title"), [_factionID]];
     } else {
-        _shopInfo = ([_shopname] call lilc_shops_fnc_getShopConfig);
+        _shopConfig = ([lilc_shops_currentShopname] call lilc_shops_fnc_getShopConfig);
     };
-    if !(_factionID in (_shopInfo select 1)) throw false;
+    if (!(_factionID in (_shopConfig select 1)) && (count (_shopConfig select 1)) != 0) throw false;
 
     lilc_shops_currentShopname = _shopname;
 
@@ -28,7 +28,7 @@ try {
     private _uiTextSumOf = (_ui displayCtrl 1210);
     private _uiButtonRemove = (_ui displayCtrl 1213);
     
-    _uiTitle ctrlSetText (_shopInfo select 0);
+    _uiTitle ctrlSetText (_shopConfig select 0);
     _uiButtonRemove ctrlSetText "<<";
     _uiTextSumOf ctrlSetStructuredText parseText format["<t align='left' font='PuristaMedium'>Summe: 0$</t>"];
 

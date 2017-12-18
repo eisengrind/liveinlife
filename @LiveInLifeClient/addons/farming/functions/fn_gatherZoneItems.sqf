@@ -37,39 +37,50 @@ try
         _coef = ((getMarkerSize (configName _areaConfig)) select 0) / (player distance2D (configName _areaConfig));
     };
 
-    private _gI = [];
-
+    private _gI = [[], []];
     {
-        if (((random 1) * _coef) <= getNumber(_x >> "chance")) then
+        private _c = 0;
+        for "_i" from 1 to getNumber(_x >> "amount") do
         {
-            _gI pushBack (configName _x);
+            private _r = ((random 1) * _coef);
+            systemChat str _r;
+            if (_r <= getNumber(_x >> "chance")) then
+            {
+                _c = _c + 1;
+            };
+        };
+
+        if (_c > 0) then
+        {
+            (_gI select 0) pushBack (configName _x);
+            (_gI select 1) pushBack _c;
         };
     } forEach ("true" configClasses _areaConfig);
 
     if (getNumber(_areaConfig >> "hint") == 1) then
     {
-        private _str = "Du hast folgende Items erhalten:<br>";
+        if ((count (_gI select 0)) > 0) then
         {
-            private _cN = (configName _x);
-            private _c = ({
-                (_x == _cN);
-            } count _gI);
+            private _str = "Du hast folgende Items erhalten:<br />";
 
-            if (_c <= 0) then
             {
-                _str = format["%1%2x %3<br>", _str, _c];
-            };
-        } forEach ("true" configClasses _areaConfig);
-
-        if (_str == "") then
-        {
+                private _c = ((_gI select 1) select _forEachIndex);
+                _str = format["%1%2x %3<br />", _str, _c, getText(([_x] call lilc_common_fnc_getClassnameConfig) >> "displayName")];
+            } forEach (_gI select 0);
             [_str] call lilc_ui_fnc_hint;
+        }
+        else
+        {
+            ["Du hast keine Items erhalten.", "ERROR"] call lilc_ui_fnc_hint;
         };
     };
 
     {
-        [player, _x, -1, false, true] call lilc_inventory_fnc_add;
-    } forEach _gI;
+        for "_i" from 1 to ((_gI select 1) select _forEachIndex) do
+        {
+            [player, _x, -1, false, true] call lilc_inventory_fnc_add;
+        };
+    } forEach (_gI select 0);
 
     throw true;
 }

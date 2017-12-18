@@ -15,6 +15,7 @@ else
     {
         if (lilc_player_isNew == 1) then
         {
+            lilc_player_cash = (["startBalance", "NUMBER"] call lilc_common_fnc_getSetting);
             ["lilce_respawn_firstspawn", [player]] call CBA_fnc_localEvent;
             lilc_player_isNew = 0;
         }

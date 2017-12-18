@@ -2,8 +2,6 @@
 lils_finished = false;
 publicVariable "lils_finished";
 
-call compile preProcessFileLineNumbers "\x\lilc\addons\common\KRON_Strings.sqf";
-
 call lils_database_fnc_init;
 
 [

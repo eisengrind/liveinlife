@@ -22,7 +22,7 @@ private _seatConfig = (call lilc_sitting_fnc_getSeatsConfig);
 
 		private _aceAction = ([
 			(format["lilc_sitting_action_%1_%2", _classname, _positionName]),
-			(["STR_lilc_sitting_ActionTitle_sitDown"] call lilc_common_fnc_localize),
+			(["STR_lilc_sitting_ActionTitle_sitDown"] call BIS_fnc_localize),
 			"",
 			{
 				[_target, (_this select 2)] call lilc_sitting_fnc_doSitDown;

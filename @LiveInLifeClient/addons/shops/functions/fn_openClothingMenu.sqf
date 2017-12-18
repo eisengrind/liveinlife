@@ -14,7 +14,7 @@ try {
     } else {
         _shopConfig = ([lilc_shops_currentShopname] call lilc_shops_fnc_getShopConfig);
     };
-    if !(_factionID in (_shopConfig select 1) && (count (_shopConfig select 1)) != 0) throw false;
+    if (!(_factionID in (_shopConfig select 1)) && (count (_shopConfig select 1)) != 0) throw false;
 
     [0.5] call lilc_ui_fnc_fadeInBlack;
     sleep 0.6;

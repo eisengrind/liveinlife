@@ -34,7 +34,7 @@ switch (_t) do
 		[
 			[
 				(format[
-					"<t size='1.2' align='left'>Absender</t><br /><t align='left'>    %1</t><br /><t size='1.2'>Nachricht:</t><br />%2",
+					(["STR_lilc_messages_StringText_messageFormatFaction"] call BIS_fnc_localize),
 					([player] call lilc_login_fnc_formatName),
 					_m
 				])
@@ -59,7 +59,7 @@ switch (_t) do
 		[
 			[
 				(format[
-					"<t size='1.2' align='left'>Absender</t><br /><t align='left'>    %1</t><br /><t size='1.2'>Nachricht:</t><br />%2",
+					(["STR_lilc_messages_StringText_messageFormatGlobal"] call BIS_fnc_localize),
 					getText(_fCfg >> "displayName"),
 					_m
 				])
@@ -70,6 +70,6 @@ switch (_t) do
 	};
 };
 
-[(["STR_lilc_messages_StringText_messageSent"] call BIS_fnc_localize)] call lilc_ui_fnc_hint; //TODO: localize
+[(["STR_lilc_messages_StringText_messageSent"] call BIS_fnc_localize)] call lilc_ui_fnc_hint;
 
 closeDialog 1306;

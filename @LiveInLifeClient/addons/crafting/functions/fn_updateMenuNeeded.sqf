@@ -30,7 +30,7 @@ lbClear nIDC;
 
 if ((count _tools) > 0) then
 {
-	private _index = (lbAdd [nIDC, (["Benötigte Werkzeuge:"] call lilc_common_fnc_localize)]);
+	private _index = (lbAdd [nIDC, (["Benötigte Werkzeuge:"] call BIS_fnc_localize)]);
 	lbSetColor [nIDC, _index, [1, (162/255), (69/255), 1]];
 
 	{
@@ -56,7 +56,7 @@ if ((lbSize nIDC) > 0) then
 
 if ((count _reqs) > 0) then
 {
-	private _index = (lbAdd [nIDC, (["Benötigte Gegenstände:"] call lilc_common_fnc_localize)]);
+	private _index = (lbAdd [nIDC, (["Benötigte Gegenstände:"] call BIS_fnc_localize)]);
 	lbSetColor [nIDC, _index, [1, (162/255), (69/255), 1]];
 
 	{
@@ -95,7 +95,7 @@ if ((lbSize nIDC) > 0) then
 	lbAdd [nIDC, ""];
 };
 
-private _index = (lbAdd [nIDC, (["Produziert:"] call lilc_common_fnc_localize)]);
+private _index = (lbAdd [nIDC, (["Produziert:"] call BIS_fnc_localize)]);
 lbSetColor [nIDC, _index, [1, (162/255), (69/255), 1]];
 
 if ((count _res) > 0) then

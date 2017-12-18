@@ -57,19 +57,6 @@ if (isMultiplayer) then {
 		endMission "END6";
 	};
 
-	/*if !(profileNamespace getVariable ["lilc_setting_firstspawn_deactivateIntro", false]) then
-	{
-		private _handle = ([] spawn {
-			scriptName "lilc_common_creditsIntro";
-			call lilc_common_fnc_creditsIntro;
-		});
-		
-		waitUntil
-		{
-			(scriptDone _handle);
-		};
-	};*/
-
 	["executing pre account init eventhandler"] call lilc_ui_fnc_setLoadingText;
 	[
 		"lilce_login_preAccountInit",

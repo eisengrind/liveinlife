@@ -4,7 +4,7 @@ if (call lilc_factions_fnc_add) then
     _groupID = (lilc_player_faction select 0);
     _groupName = (lilc_player_faction select 1);
     _groupConfig = ([_groupID] call lilc_factions_fnc_getFactionConfig);
-    lilc_respawn_respawns = (_groupConfig select 3);
+    lilc_respawn_respawns = getArray(_groupConfig >> "respawn");
 
     private _scriptPath = getText(_groupConfig >> "init");
 

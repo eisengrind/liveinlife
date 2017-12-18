@@ -12,7 +12,7 @@ private _ui = (ctrlParent _control);
 private _uiTextMessage = (_ui displayCtrl 1100);
 
 _uiTextMessage ctrlSetStructuredText parseText format[
-	(["STR_lilc_messages_StringText_messageFrom"] call lilc_common_fnc_localize),
+	(["STR_lilc_messages_StringText_messageFrom"] call BIS_fnc_localize),
 	(_m select 1),
 	(_m select 2)
 ];

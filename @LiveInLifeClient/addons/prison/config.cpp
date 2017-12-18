@@ -31,3 +31,11 @@ class Extended_PreInit_EventHandlers {
         clientInit = "call compile preProcessFileLineNumbers '\x\lilc\addons\prison\XEH_clientPreInit.sqf';";
     };
 };
+
+class Extended_PostInit_EventHandlers
+{
+    class lilc_prison
+    {
+        clientInit = "call compile preProcessFileLineNumbers '\x\lilc\addons\prison\XEH_clientPostInit.sqf';";
+    };
+};

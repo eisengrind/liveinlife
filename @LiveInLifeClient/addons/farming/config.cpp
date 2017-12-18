@@ -20,3 +20,11 @@ class Extended_PreInit_EventHandlers
         clientInit = "call compile preProcessFileLineNumbers '\x\lilc\addons\farming\XEH_clientPreInit.sqf';";
     };
 };
+
+class Extended_PostInit_EventHandlers
+{
+    class lilc_farming
+    {
+        clientInit = "call compile preProcessFileLineNumbers '\x\lilc\ddons\arming\XEH_clienPostInit.sqf';";
+    };
+};

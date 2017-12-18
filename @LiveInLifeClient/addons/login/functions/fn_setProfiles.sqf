@@ -1,5 +1,5 @@
 
-private _result = param [0, [], [[], false]];
+private _result = param [0, [], [[], false, 0]];
 
 if ((typeName false) == (typeName _result)) exitWith { diag_log str "Mission ended because of profiles!"; endMission "END6"; };
 lilc_login_profiles = _result;

@@ -42,7 +42,7 @@ try
     if ((locked _vehicle) in [2, 3]) then
     {
         [_vehicle, 0] call lilc_vehicles_fnc_lock;
-        [(["Fahrzeug aufgeschlossen."] call lilc_common_fnc_localize)] call lilc_ui_fnc_hint;
+        [(["Fahrzeug aufgeschlossen."] call BIS_fnc_localize)] call lilc_ui_fnc_hint;
 
         [
             "lilce_keys_use_opened",
@@ -58,7 +58,7 @@ try
         if ((locked _vehicle) in [0, 1]) then
         {
             [_vehicle, 2] call lilc_vehicles_fnc_lock;
-            [(["Fahrzeug abgeschlossen."] call lilc_common_fnc_localize), "ERROR"] call lilc_ui_fnc_hint;
+            [(["Fahrzeug abgeschlossen."] call BIS_fnc_localize), "ERROR"] call lilc_ui_fnc_hint;
 
             [
                 "lilce_keys_use_closed",
