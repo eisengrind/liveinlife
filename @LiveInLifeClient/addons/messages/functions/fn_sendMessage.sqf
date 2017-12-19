@@ -1,7 +1,7 @@
 
 if ((lbCurSel 2100) <= -1) exitWith
 {
-	[(["STR_lilc_messages_StringText_noReceiverSelected"] call BIS_fnc_localize), "ERROR"] call lilc_ui_fnc_hint;
+	[("STR_lilc_messages_StringText_noReceiverSelected" call BIS_fnc_localize), "ERROR"] call lilc_ui_fnc_hint;
 };
 
 private _d = (lbData [2100, (lbCurSel 2100)]);
@@ -19,7 +19,7 @@ private _m = (ctrlText 1400);
 if ((count _m) <= 0) exitWith
 {
 	[
-		(["STR_lilc_messages_StringText_noMessageText"] call BIS_fnc_localize),
+		("STR_lilc_messages_StringText_noMessageText" call BIS_fnc_localize),
 		"ERROR"
 	] call lilc_ui_fnc_hint;
 };
@@ -34,7 +34,7 @@ switch (_t) do
 		[
 			[
 				(format[
-					(["STR_lilc_messages_StringText_messageFormatFaction"] call BIS_fnc_localize),
+					("STR_lilc_messages_StringText_messageFormatFaction" call BIS_fnc_localize),
 					([player] call lilc_login_fnc_formatName),
 					_m
 				])
@@ -59,7 +59,7 @@ switch (_t) do
 		[
 			[
 				(format[
-					(["STR_lilc_messages_StringText_messageFormatGlobal"] call BIS_fnc_localize),
+					("STR_lilc_messages_StringText_messageFormatGlobal" call BIS_fnc_localize),
 					getText(_fCfg >> "displayName"),
 					_m
 				])
@@ -70,6 +70,6 @@ switch (_t) do
 	};
 };
 
-[(["STR_lilc_messages_StringText_messageSent"] call BIS_fnc_localize)] call lilc_ui_fnc_hint;
+[("STR_lilc_messages_StringText_messageSent" call BIS_fnc_localize)] call lilc_ui_fnc_hint;
 
 closeDialog 1306;

@@ -42,7 +42,7 @@ try {
             private _compiledCondition = (call compile (_selectedOption select 1));
             if (_compiledCondition isEqualType false) then {
                 if (_compiledCondition) then {
-                    _button ctrlSetText ([(_selectedOption select 0)] call BIS_fnc_localize);
+                    _button ctrlSetText ((_selectedOption select 0) call BIS_fnc_localize);
                     _button ctrlRemoveAllEventHandlers "ButtonClick";
                     _button ctrlAddEventHandler ["ButtonClick", (_selectedOption select 2)];
                     _button ctrlAddEventHandler ["ButtonClick", "call lilc_inventory_fnc_disableMenu; false;"];

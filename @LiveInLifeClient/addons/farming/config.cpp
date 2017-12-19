@@ -25,6 +25,6 @@ class Extended_PostInit_EventHandlers
 {
     class lilc_farming
     {
-        clientInit = "call compile preProcessFileLineNumbers '\x\lilc\ddons\arming\XEH_clienPostInit.sqf';";
+        clientInit = "call compile preProcessFileLineNumbers '\x\lilc\addons\farming\XEH_clientPostInit.sqf';";
     };
 };

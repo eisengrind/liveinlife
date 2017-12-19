@@ -25,7 +25,7 @@ params [
 if (
     lilc_action_active ||
     (isNull _vehicle) ||
-    (((vectorUp _vehicle) select 2) > 0.1) ||
+    ([_vehicle] call lilc_keys_fnc_have) ||
     ((_vehicle getVariable ["lilc_flipTimestamp", time]) > time) ||
     (missionNamespace getVariable ["lilc_actions_disableFlipVehicle", false])
 ) exitWith { false; };

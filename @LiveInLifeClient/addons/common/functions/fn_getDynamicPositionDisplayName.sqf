@@ -17,7 +17,7 @@ try
 
 	if (isNull _logic) throw _defaultDisplayName;
 
-	throw ([(format["STR_PositionTitles_%1", _positionName])] call BIS_fnc_localize);
+	throw ((format["STR_PositionTitles_%1", _positionName]) call BIS_fnc_localize);
 }
 catch
 {

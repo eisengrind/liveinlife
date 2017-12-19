@@ -17,11 +17,11 @@ private _t = "lilc_disabled_gates_";
             {
                 if (_factionID in _oNV) then
                 {
-                    _o setVariable [_dV, 1];
+                    _o setVariable [_dV, 0];
                 }
                 else
                 {
-                    _o setVariable [_dV, 0];
+                    _o setVariable [_dV, 1];
                 };
             };
         };
