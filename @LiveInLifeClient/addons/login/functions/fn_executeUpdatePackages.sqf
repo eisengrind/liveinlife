@@ -5,7 +5,6 @@ params [
 
 _pAndV = ([[], nil] call CBA_fnc_hashCreate);
 {
-	systemChat str _x;
 	([_pAndV, _x, (call ([lilc_login_packages, _x] call CBA_fnc_hashGet))] call CBA_fnc_hashSet);
 } forEach _packages;
 

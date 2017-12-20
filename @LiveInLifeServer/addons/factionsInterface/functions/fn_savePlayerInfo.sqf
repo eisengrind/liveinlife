@@ -13,7 +13,6 @@ try {
     if !(isPlayer _unit) throw false;
     if (_targetAccountID <= 0) throw false;
     
-    systemChat str _targetAccountID;
     {
         if (isPlayer _x && (_x getVariable ["lilc_accountID", 0]) == _targetAccountID) exitWith {
             _x setVariable ["lilc_factionRankID", _selectedRank, true];

@@ -23,8 +23,6 @@ try {
         
         {
             private _isIn = ([_factionID, (_x select 0), (_x select 1)] call lilc_factions_fnc_inFactionEquipment);
-            systemChat str _isIn;
-            systemChat str ([(_x select 0)] call lilc_shops_fnc_isOtherItem);
             if ([(_x select 0)] call lilc_shops_fnc_isOtherItem && (_isIn > -1)) then {
                 _items pushBack [(_x select 0), -1, /*_itemCost*/0, (_x select 1)];
             };

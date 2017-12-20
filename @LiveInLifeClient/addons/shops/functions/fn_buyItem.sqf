@@ -26,7 +26,6 @@ try {
             [player, (_data select 0), -1, false, true] call lilc_inventory_fnc_add;
             _itemCount = _itemCount + 1;
         };
-        //[[player, lilc_shops_currentShopname], "lils_shops_fnc_buyItem"] call lilc_common_fnc_sendToServer;
     };
     lbClear _uiListShoppingCartItems;
 

@@ -10,6 +10,5 @@ class lilc_vehicles {
         class lock {};
         class removeUpgrade {};
         class setVehicleInformations {};
-        class useCruiseControl {};
     };
 };

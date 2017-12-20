@@ -34,7 +34,6 @@ try
         _position = [0, 0, 0];
     };
 
-    systemChat str _position;
     private _positionAnim = (_object modelToWorld _position);
     [
         player,

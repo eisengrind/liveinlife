@@ -13,7 +13,6 @@ try {
 
     private _itemData = (call compile (_uiListItems lbData _currentItem)); // [<classname>, <color>]
     private _itemValue = (_uiListItems lbValue _currentItem); // <cost>
-    systemChat str _itemData;
     if !([(_itemData select 0)] call lilc_shops_fnc_isUniformItem) throw false;
 
     _uiTextBalance ctrlSetStructuredText parseText format["<t align='left' font='PuristaMedium'>Summe: <t color='#6EE6A2'>%1</t></t>", (if (_itemValue <= -1) then { "-"; } else { format["%1$", _itemValue]; })];

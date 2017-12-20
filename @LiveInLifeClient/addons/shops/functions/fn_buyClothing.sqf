@@ -3,7 +3,6 @@ try
 {
     private _itemData = (call compile (lbData [1202, (lbCurSel 1202)]));
     private _itemValue = (lbValue [1202, (lbCurSel 1202)]);
-    systemChat str _itemValue;
     if ((count _itemData) != 2) throw false;
 
     if (_itemValue > 0) then

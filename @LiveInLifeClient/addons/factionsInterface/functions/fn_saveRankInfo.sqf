@@ -63,7 +63,6 @@ try {
             _vehicles pushBack [_classname, _color];
         };
     };
-    systemChat str [player, lilc_factionsInterface_currentRankID, _tag, _name, _insignia, _paycheck, _permissions, _equipment, _vehicles];
     [[player, lilc_factionsInterface_currentRankID, _tag, _name, _insignia, _paycheck, _permissions, _equipment, _vehicles], "lils_factionsInterface_fnc_saveRankInfo"] call lilc_common_fnc_sendToServer;
     
     ctrlEnable [1401, false];

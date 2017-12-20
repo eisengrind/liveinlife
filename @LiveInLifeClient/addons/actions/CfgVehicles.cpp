@@ -54,8 +54,8 @@ class Land_WaterCooler_01_new_F : Items_Base_F
     };
 };
 
-class AllVehicles;
-class Air : AllVehicles
+class Air;
+class Plane : Air
 {
     class ACE_Actions
     {
@@ -72,7 +72,7 @@ class Air : AllVehicles
     };
 };
 
-class Ship : AllVehicles {
+/*class Ship : AllVehicles {
     class ACE_Actions {
         class ACE_MainActions {
             class lilc_actions_flipVehicle {
@@ -83,9 +83,10 @@ class Ship : AllVehicles {
             };
         };
     };
-};
+};*/
 
-class Land : AllVehicles
+class LandVehicle;
+class Car : LandVehicle
 {
     class ACE_Actions
     {

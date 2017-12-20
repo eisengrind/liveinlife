@@ -16,7 +16,6 @@ private _bankName = param [0, "", [""]];
 
 try {
     private _bankConfig = ([_bankName] call lilc_bank_fnc_getBankConfig);
-    systemChat str _bankConfig;
     if (isNull _bankConfig) throw false;
 
     createDialog "lilc_atm_menu";

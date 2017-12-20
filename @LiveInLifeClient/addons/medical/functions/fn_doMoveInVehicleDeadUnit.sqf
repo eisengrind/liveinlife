@@ -2,12 +2,10 @@
 try
 {
     private _vehicles = nearestObjects [(position player), ["Car", "Air", "Ship"], 10];
-    systemChat str _vehicles;
     if ((count _vehicles) <= 0) throw false;
     
     private _vehicle = (_vehicles select 0);
     if !([_vehicle] call lilc_keys_fnc_have) throw false;
-    systemChat str 1;
 
     if !([_vehicle] call lilc_medical_fnc_canMoveInVehicleDeadUnit) throw false;
 

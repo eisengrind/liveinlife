@@ -34,7 +34,6 @@ private _mACS = [[], []];
 			{
 				if ((_forEachIndex % 2) == 0) then
 				{
-					systemChat str _x;
 					private _c = _x;
 					private _a = (((_mACS select 1) select _i) select (_forEachIndex + 1));
 

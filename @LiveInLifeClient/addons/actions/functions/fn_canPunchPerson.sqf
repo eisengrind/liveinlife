@@ -34,5 +34,7 @@ if (_target distance player > 2) exitWith { true; };
     !(_target getVariable ["ACE_captives_isSurrendering", false]) &&
     !(_target getVariable ["lilc_actions_isBeaten", false]) &&
     !(_target getVariable ["ACE_captives_isHandcuffed", false]) &&
+	!(lineIntersects [(eyePos player), (eyePos _target), player, _target]) &&
+	!((player getVariable ["ace_dragging_carriedObject", objNull]) isEqualTo _target) &&
     !(surfaceIsWater position player)
 );

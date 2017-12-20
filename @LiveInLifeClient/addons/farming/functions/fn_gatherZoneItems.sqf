@@ -43,7 +43,6 @@ try
         for "_i" from 1 to getNumber(_x >> "amount") do
         {
             private _r = ((random 1) * _coef);
-            systemChat str _r;
             if (_r <= getNumber(_x >> "chance")) then
             {
                 _c = _c + 1;

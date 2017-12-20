@@ -14,10 +14,8 @@ try
 	(findDisplay 1300) setVariable ["lilc_butcher_butcherName", _butcherName];
 	ctrlSetText [1001, getText(_butcherConfig >> "displayName")];
 
-	systemChat str getText(_butcherConfig >> "position");
 	if (getText(_butcherConfig >> "position") == "") throw false;
 	private _position = ([getText(_butcherConfig >> "position")] call lilc_common_fnc_getDynamicPosition);
-	systemChat str ((_position select 0) distance player);
 	if (((_position select 0) distance player) > 50) throw false;
 
 	_availableVehicles = ("true" configClasses (_butcherConfig >> "vehicles"));

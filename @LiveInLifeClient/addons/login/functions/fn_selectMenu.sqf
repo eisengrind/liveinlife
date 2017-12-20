@@ -70,9 +70,6 @@ try
         _currentProfileID = (_ui getVariable ["lilc_ui_data_currentProfile", 0]);
     };
 
-    systemChat str _currentProfileID;
-    systemChat str lilc_login_profiles;
-
     /*if (_currentProfileID <= 0 && !((count lilc_login_profiles) <= 0) && (({ ((_x select 0) == _currentProfileID) } count lilc_login_profiles) == 0)) then
     {
         endMission "lilc_login_noProfiles";
