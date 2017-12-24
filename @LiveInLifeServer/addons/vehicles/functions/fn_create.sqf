@@ -32,16 +32,19 @@ try {
     } else {
         private _watermode = (if ([_classname, ["Ship"]] call lilc_common_fnc_isKindOf) then { 2; } else { 0; });
         
-        _vehicle = _classname createVehicle (ASLToAGL (_position select 0));
-        /*if ([_classname, ["Boat", "Ship"]] call lilc_common_fnc_isKindOf) then
+        _vehicle = _classname createVehicle [0, 0, 0];
+ 
+        private _pos = ((_position select 0) findEmptyPosition [5, 80, _classname]);
+        /*while
         {
-            _vehicle = _classname createVehicle (_position select 0);
+            _pos != 3
         }
-        else
+        do
         {
-            _vehicle = _classname createVehicle [0, 0, 100];
-            _vehicle setVehiclePosition [(ASLToAGL (_position select 0)), [], 100, "NONE"];
+            _pos = ((position player) findEmptyPosition [5, 80, (typeOf _c)]);
         };*/
+
+        _vehicle setPos _pos;
     };
 
     if (isNull _vehicle) throw ObjNull;

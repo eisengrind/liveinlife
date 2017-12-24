@@ -181,7 +181,7 @@ class lilci_foodCan_F : lilci_item {
 };
 
 class lilci_crunchinChrisps_F : lilci_item {
-    displayName = "knirschende Kornflakes";
+    displayName = "Knirschende Kornflakes";
     picture = "\x\lilc\addons\food\icons\foodCan.paa";
     model = "\a3\structures_f_epa\items\food\bakedbeans_f.p3d";
     lilc_dropDownOptions[] = {

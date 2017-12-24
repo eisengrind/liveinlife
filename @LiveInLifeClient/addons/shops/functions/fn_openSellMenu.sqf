@@ -6,10 +6,7 @@ try {
     if !(createDialog "lilcm_sell") throw false;
     lilc_shops_currentShopname = _shopName;
 
-    if !(call lilc_shops_fnc_updateSellMenu) then {
-        closeDialog 0;
-        throw false;
-    };
+    call lilc_shops_fnc_updateSellMenu;
 
     throw true;
 } catch {

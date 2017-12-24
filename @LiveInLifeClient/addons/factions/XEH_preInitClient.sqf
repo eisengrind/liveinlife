@@ -8,13 +8,23 @@
 
 lilc_factions_factions = [];
 {
+	private _c = getArray(_x >> "color");
+	for "_i" from 0 to ((count _c) - 1) do
+	{
+		if ((_c select _i) isEqualType "") then
+		{
+			diag_log str (parseNumber (_c select _i));
+			_c set [_i, (parseNumber (_c select _i))];
+		};
+	};
+	diag_log str _c;
 	lilc_factions_factions pushBack [
 		getNumber(_x >> "id"),
 		getText(_x >> "title"),
 		getText(_x >> "description"),
 		getArray(_x >> "respawn"),
-		getArray(_x >> "color"),
-		(getArray(_x >> "color") call BIS_fnc_colorRGBAToHTML),
+		_c,
+		(_c call BIS_fnc_colorRGBAToHTML),
 		(getNumber(_x >> "nameVisible")),
 		getNumber(_x >> "markers"),
 		getText(_x >> "markerColorUnit"),

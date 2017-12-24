@@ -47,6 +47,7 @@ try
             ] call CBA_fnc_localEvent;
         }
     ];
+	[_vehicle] call lilc_inventory_fnc_clearVehicleCargo;
 	_vehicle allowDamage true;
 	[_vehicle, _pos] call lilc_common_fnc_setPosition;
 	throw true;

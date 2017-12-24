@@ -21,7 +21,8 @@ if (_aID <= 0) exitWith {};
 		["STEAM64ID", (getPlayerUID _t)]
 	],
 	[
-		["ACCOUNTID", (_unit getVariable ["lilc_accountID", 0])]
+		["ACCOUNTID", (_unit getVariable ["lilc_accountID", 0])],
+		["ID", _vID]
 	]
 ] call lils_database_fnc_generateUpdateQuery)] call lils_database_fnc_query);
 

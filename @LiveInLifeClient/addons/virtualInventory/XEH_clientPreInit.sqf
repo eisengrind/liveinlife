@@ -12,3 +12,10 @@
 		};
 	}
 ] call lilc_login_fnc_addPackage;
+
+[
+	"update_lil_virtualInventory_inventory",
+	{
+		(player getVariable ["lilc_virtualInventory_inventory", []]);
+	}
+] call lilc_login_fnc_addPackage;
