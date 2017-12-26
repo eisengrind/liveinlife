@@ -1,7 +1,16 @@
 
-private _result = param [0, [], [[], false, 0]];
+private _result = param [0, [], [[], "", false]];
 
-if ((typeName false) == (typeName _result)) exitWith { diag_log str "Mission ended because of profiles!"; endMission "END6"; };
+if (_result isEqualType "") exitWith
+{
+	endMission _result;
+};
+
+if (_result isEqualType false) exitWith
+{
+	endMission "END6";
+};
+
 lilc_login_profiles = _result;
 
 if (lilc_login_createProfile) then
