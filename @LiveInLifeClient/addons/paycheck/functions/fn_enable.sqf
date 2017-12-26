@@ -41,7 +41,7 @@ lilc_paycheck_handle = ([
 
 		if (lilc_paycheck_enableMessage) then
 		{
-			systemChat format[("STR_paycheck_Script_messageFormat" call BIS_fnc_localize), lilc_paycheck_amount];
+			systemChat format[("STR_lilc_paycheck_Script_messageFormat" call BIS_fnc_localize), lilc_paycheck_amount];
 		};
 	},
 	lilc_paycheck_timeout,
