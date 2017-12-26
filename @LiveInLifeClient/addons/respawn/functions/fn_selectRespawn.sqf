@@ -27,7 +27,7 @@ else
     else
     {
         private _fCfg = ([_fID] call lilc_factions_fnc_getFactionConfig);
-        private _fRT = getNumber(_fCfg >> "respawn_type"); //0, 1, 2
+        private _fRT = getNumber(_fCfg >> "respawnType"); //0, 1, 2
         private _pPos = (getPos vehicle player);
 
         switch (_fRT) do
