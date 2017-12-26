@@ -1,0 +1,20 @@
+
+<?xml version="1.0" encoding="utf-8">
+<Project name="LiveInLife">
+    <Package name="lilc_paycheck">
+        <Container name="Config">
+            <Key ID="STR_lilc_paycheck_Config_">
+                <Original></Original>
+                <English></English>
+                <German></German>
+            </Key>
+        </Container>
+        <Container name="Script">
+            <Key ID="STR_paycheck_Script_messageFormat">
+                <Original>You have received $%1.</Original>
+                <English>You have received $%1.</English>
+                <German>Du hast $%1 erhalten.</German>
+            </Key>
+        </Container>
+    </Package>
+</Project>

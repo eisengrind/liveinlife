@@ -1,11 +1,10 @@
 
-/*
 lilc_paycheck_handle = -1;
 lilc_paycheck_timeout = 0;
 lilc_paycheck_amount = 0;
 lilc_paycheck_bankName = "";
-lilc_paycheck_message = "";
-*/
+lilc_paycheck_enableMessage = true;
+lilc_paycheck_waitTime = 0;
 
 [
 	"lilce_common_postFinished",
@@ -37,3 +36,17 @@ lilc_paycheck_message = "";
 		"";
 	}
 ] call lilc_login_fnc_addPackage;
+
+/*
+[
+	"lilc_paycheck_amount",
+	"EDITBOX",
+	"Paycheck amount",
+	"LiveInLife Paycheck",
+	"0",
+	1,
+	{
+		lilc_paycheck_amount = (parseNumber _this);
+	}
+] call CBA_Settings_fnc_init;
+*/

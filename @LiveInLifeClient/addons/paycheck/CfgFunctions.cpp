@@ -2,7 +2,8 @@
 class lilc_paycheck {
     class functions {
         file = "\x\lilc\addons\paycheck\functions";
-        class addPaycheck {};
-        class removePaycheck {};
+        class disable {};
+        class enable {};
+        class have {};
     };
 };
