@@ -2,22 +2,15 @@
 <?xml version="1.0" encoding="utf-8">
 <Project name="LiveInLife">
     <Package name="XXX">
-        <Container name="ActionTitle">
-            <Key ID="STR_XXX_ActionTitle_">
+        <Container name="Config">
+            <Key ID="STR_XXX_Config_">
                 <Original></Original>
                 <English></English>
                 <German></German>
             </Key>
         </Container>
-        <Container name="SettingTitle">
-            <Key ID="STR_XXX_SettingTitle_">
-                <Original></Original>
-                <English></English>
-                <German></German>
-            </Key>
-        </Container>
-        <Container name="StringText">
-            <Key ID="STR_XXX_StringText_">
+        <Container name="Script">
+            <Key ID="STR_XXX_Script_">
                 <Original></Original>
                 <English></English>
                 <German></German>
