@@ -42,7 +42,7 @@ try
         {
             _this call lils_vehicles_fnc_vehicleDeath;
             [
-                "lilse_vehicles_vehicleDeath",
+                "lils_vehicles_vehicleDeath",
                 _this
             ] call CBA_fnc_localEvent;
         }

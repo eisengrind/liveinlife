@@ -48,7 +48,7 @@ try {
     };
 
     if (isNull _vehicle) throw ObjNull;
-    ["lilse_vehicles_created", [_vehicle, _vehicleID, _accountID, _steam64ID, _factionID]] call CBA_fnc_localEvent;
+    ["lils_vehicles_created", [_vehicle, _vehicleID, _accountID, _steam64ID, _factionID]] call CBA_fnc_localEvent;
     [_vehicle] call lilc_inventory_fnc_clearVehicleCargo;
 
     _vehicle allowDamage false;
@@ -62,7 +62,7 @@ try {
         {
             _this call lils_vehicles_fnc_vehicleDeath;
             [
-                "lilse_vehicles_vehicleDeath",
+                "lils_vehicles_vehicleDeath",
                 _this
             ] call CBA_fnc_localEvent;
         }

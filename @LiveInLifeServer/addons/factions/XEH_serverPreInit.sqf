@@ -20,3 +20,25 @@
 		false;
 	}
 ] call lils_login_fnc_addPackage;
+
+[
+	"lils_vehicles_created",
+	{
+		params [
+			["_vehicle", objNull, [objNull]],
+			["_vehicleID", 0, [0]],
+			["_accountID", 0, [0]],
+			["_steam64ID", "", [""]],
+			["_factionID", -1, [0]]
+		];
+
+		if (_factionID > -1) then
+		{
+			private _fCfg = ([_factionID] call lilc_factions_fnc_getFactionConfig);
+
+			{
+				[_vehicle, _x, 0, false] call lilc_inventory_fnc_addVehicle;
+			} forEach (getArray(_fCfg >> "defaultVehicleItems"));
+		};
+	}
+] call CBA_fnc_addEventHandler;
