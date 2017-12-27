@@ -22,7 +22,7 @@ try
 		[
 			["ID", _vehicleID]
 		]
-	] call lils_databse_fnc_generateUpdateQuery)] call lils_database_fnc_query;
+	] call lils_database_fnc_generateUpdateQuery)] call lils_database_fnc_query;
 }
 catch
 {
