@@ -20,21 +20,6 @@ try
 
     if (_accountID <= 0) throw false;
     if (_unitUID == "") throw false;
-
-    /*private _vehicle = objNull;
-    {
-        if (
-            !(_x isKindOf "Man") &&
-            !isPlayer _x &&
-            (_x getVariable ["lilc_accountID", 0]) == _accountID &&
-            (_x getVariable ["lilc_steam64ID", ""]) == _unitUID &&
-            (alive _x) &&
-            !isNull _x
-        ) exitWith
-        {
-            _vehicle = _x;
-        };
-    } forEach nearestObjects [(ASLToAGL (([(getText(_garageConfig >> "parkPosition"))] call lilc_common_fnc_getDynamicPosition) select 0)), ["Air", "Ship", "Boat", "Truck", "LandVehicle"], getNumber(_garageConfig >> "parkRadius"), true];*/
     if (isNull _vehicle) throw false;
     
     private _classname = (typeOf _vehicle);
@@ -61,6 +46,42 @@ try
         {
             _garageName = "";
         };
+
+        private _type = (switch (true) do {
+            case (_classname isKindOf "Car"): {
+                0;
+            };
+            
+            case (_classname isKindOf "Plane"): {
+                1;
+            };
+            
+            case (_classname isKindOf "Helicopter"): {
+                2;
+            };
+
+            case (_classname isKindOf "Truck"): {
+                3;
+            };
+            
+            case (_classname isKindOf "Ship"): {
+                4;
+            };
+            
+            case (_classname isKindOf "Bike"): {
+                6;
+            };
+        });
+
+        private _availableTypes = [];
+        {
+            if ((getNumber(_garageConfig >> _x)) >= 1) then
+            {
+                _availableTypes pushBack _forEachIndex;
+            };
+        } forEach ["haveCars", "havePlanes", "haveHelicopters", "haveTrucks", "haveBoats", "haveSmallCars", "haveBikes"];
+
+        if !(_type in _availableTypes) throw false;
 
         [_vehicle] call lils_vehicles_fnc_save;
         [(format[

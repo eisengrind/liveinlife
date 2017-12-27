@@ -9,7 +9,6 @@ class lils_garage {
         class insert {};
         class park {};
         class push {};
-        class returnVehicles {};
         class reveal {};
     };
 };
