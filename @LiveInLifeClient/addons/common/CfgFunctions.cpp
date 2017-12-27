@@ -51,6 +51,7 @@ class lilc_common {
         class setObjectDamage {};
         class setObjectLocks {}; //TODO: move to single "object" library
         class setPosition {};
+        class stopServerReceived {};
         class switchMove {};
 
         // T
