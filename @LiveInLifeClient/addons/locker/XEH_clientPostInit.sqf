@@ -25,6 +25,7 @@ call lilc_locker_fnc_handleInventoryOpened;
 
 		private _vG = (_c createVehicleLocal [0, 0, 0]);
 		[_vG, _pos] call lilc_common_fnc_setPosition;
+		[_vG] call lilc_inventory_fnc_clearVehicleCargo;
 		_vG enableSimulation false;
 		_vG allowDamage false;
 		_vG hideObject false;
