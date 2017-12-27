@@ -3,7 +3,10 @@ class lils_factions
 {
     units[] = {};
     weapons[] = {};
-    requiredAddons[] = {};
+    requiredAddons[] = {
+        "lils_login",
+        "lils_vehicles"
+    };
     author[] = {
         "Vincent Heins"
     };

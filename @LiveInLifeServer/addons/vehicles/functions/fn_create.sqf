@@ -48,8 +48,8 @@ try {
     };
 
     if (isNull _vehicle) throw ObjNull;
-    ["lils_vehicles_created", [_vehicle, _vehicleID, _accountID, _steam64ID, _factionID]] call CBA_fnc_localEvent;
     [_vehicle] call lilc_inventory_fnc_clearVehicleCargo;
+    ["lils_vehicles_created", [_vehicle, _vehicleID, _accountID, _steam64ID, _factionID]] call CBA_fnc_localEvent;
 
     _vehicle allowDamage false;
     _vehicle setVariable ["lilc_vehicleID", _vehicleID, true];
