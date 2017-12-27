@@ -39,8 +39,11 @@ try
             4;
         };
         
-        case (_classname isKindOf "Bike"): {
+        case (_classname isKindOf "Bicycle"): {
             5;
+        };
+        default {
+            0;
         };
     });
     if (_type <= -1) throw [];

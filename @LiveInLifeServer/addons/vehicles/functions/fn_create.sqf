@@ -35,14 +35,6 @@ try {
         _vehicle = _classname createVehicle [0, 0, 0];
  
         private _pos = ((_position select 0) findEmptyPosition [5, 80, _classname]);
-        /*while
-        {
-            _pos != 3
-        }
-        do
-        {
-            _pos = ((position player) findEmptyPosition [5, 80, (typeOf _c)]);
-        };*/
 
         _vehicle setPos _pos;
     };
