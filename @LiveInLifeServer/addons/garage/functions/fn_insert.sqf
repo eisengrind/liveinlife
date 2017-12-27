@@ -38,10 +38,9 @@ try
         case (_classname isKindOf "Ship"): {
             4;
         };
-        //case (_classname isKindOf "Car"): {};
         
         case (_classname isKindOf "Bike"): {
-            6;
+            5;
         };
     });
     if (_type <= -1) throw [];

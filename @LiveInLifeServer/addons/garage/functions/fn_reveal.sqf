@@ -72,12 +72,10 @@ try
     }
     else
     {
-        //private _factionVehicles = ([(format["SELECT VEHICLES FROM FACTION_PLAYER_DATA WHERE ACCOUNTID = '%1' AND STEAM64ID = '%2'", _accountID, _unitUID])] call lils_database_fnc_fetchObjects);
-
         if ([(_position select 0), 5, ["Car", "Ship", "Boat", "Tank", "Truck", "Plane", "Air", "Helicopter"]] call lilc_common_fnc_objectsNearby) throw false;
         
         (_position select 0) vectorAdd [0, 0, 0.1];
-        private _vehicle = ([_classname, _position, -1, _accountID, _unitUID, true, (_unit getVariable ["lilc_factionID", -1])] call lils_vehicles_fnc_create);
+        private _vehicle = ([_classname, _position, -1, _accountID, _unitUID, true, _factionID] call lils_vehicles_fnc_create);
         if (isNull _vehicle) throw false;
 
         [_vehicle] call lilc_inventory_fnc_clearVehicleCargo;

@@ -16,10 +16,8 @@ try
 
     private _factionID = (_unit getVariable ["lilc_factionID", -1]);
     private _accountID = (_unit getVariable ["lilc_accountID", 0]);
-    private _unitUID = (getPlayerUID _unit);
 
     if (_accountID <= 0) throw false;
-    if (_unitUID == "") throw false;
     if (isNull _vehicle) throw false;
     
     private _classname = (typeOf _vehicle);
@@ -69,7 +67,7 @@ try
             };
             
             case (_classname isKindOf "Bike"): {
-                6;
+                5;
             };
         });
 
