@@ -1,7 +1,8 @@
 
 try {
-    if (missionNamespace getVariable ["lilc_login_firstLogin", true]) then
+    if !(missionNamespace getVariable ["lilc_login_firstLogin", true]) then
     {
+        player hideObjectGlobal true;
         [
             "lilce_login_unload",
             0
