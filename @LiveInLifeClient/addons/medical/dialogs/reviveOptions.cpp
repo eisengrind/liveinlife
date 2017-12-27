@@ -8,7 +8,7 @@ class lilcm_reviveOptions {
     class controls {
         class ButtonDie : RscButton {
             idc = 1601;
-            text = "Ins Licht gehen";
+            text = "$STR_lilc_medical_Config_reviveOptionDie";
             x = 0.335 * safezoneW + safezoneX;
             y = 0.599 * safezoneH + safezoneY;
             w = 0.134062 * safezoneW;
@@ -20,7 +20,7 @@ class lilcm_reviveOptions {
 
         class ButtonLive : RscButton {
             idc = 1602;
-            text = "Weiterleben";
+            text = "$STR_lilc_medical_Config_reviveOptionLive";
             x = 0.530937 * safezoneW + safezoneX;
             y = 0.599 * safezoneH + safezoneY;
             w = 0.134062 * safezoneW;

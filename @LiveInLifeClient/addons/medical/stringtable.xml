@@ -29,5 +29,17 @@
                 <German>Verletzten in Fahrzeug setzen</German>
             </Key>
         </Container>
+        <Container name = "Config">
+            <Key ID="STR_lilc_medical_Config_reviveOptionDie">
+                <Original>Go to heaven</Original>
+                <English>Go to heaven</English>
+                <German>In den Himmel gehen</German>
+            </Key>
+            <Key ID="STR_lilc_medical_Config_reviveOptionLive">
+                <Original>Resume life</Original>
+                <English>Resume life</English>
+                <German>Weiterleben</German>
+            </Key>
+        </Container>
     </Package>
 </Project>
