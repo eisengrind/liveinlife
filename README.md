@@ -1,5 +1,5 @@
 # LiveInLife
-[![Github All Releases](https://img.shields.io/github/downloads/TheMysteriousVincent/LiveInLife/total.svg)]()
+[![Github All Releases](https://img.shields.io/github/downloads/TheMysteriousVincent/LiveInLife/total.svg)](https://github.com/TheMysteriousVincent/LiveInLife/releases)
 
 LiveInLife is an adjustable framework for your ArmA 3 roleplay ideas.
 
