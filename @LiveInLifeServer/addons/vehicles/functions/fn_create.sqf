@@ -19,6 +19,7 @@ try {
     if (_position isEqualType []) then {
         if ((count _position) != 2) throw ObjNull;
         if ((count (_position select 0)) != 3) throw ObjNull;
+        _position set [0, ((_position select 0) vectorAdd [0, 0, 0.2])];
     };
     
     if (_accountID <= 0) throw objNull;
