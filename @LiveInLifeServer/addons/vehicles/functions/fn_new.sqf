@@ -34,6 +34,7 @@ try {
 
     /*_unit addMagazine [(format["lilci_key_%1_F", _classname]), (_vehicleInfo select 0)];*/
     [[_vehicle, _unit], "lilc_keys_fnc_add", _unit] call lilc_common_fnc_send;
+    [_vehicle] call lils_vehicles_fnc_save;
 
     throw true;
 } catch {
