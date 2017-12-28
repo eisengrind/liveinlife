@@ -12,6 +12,8 @@ class lilc_RscButton;
 class lilc_RscButtonMenu;
 class lilc_RscEdit;
 class lilc_RscPicture;
+class lilc_RscCombo;
+class lilc_RscActiveText;
 class RscControlsGroup;
 
 class RscDisplayInventory {
@@ -885,18 +887,51 @@ class RscDisplayInventory {
 			x = 0.742344 * safezoneW + safezoneX;
 			y = 0.28 * safezoneH + safezoneY;
 			w = 0.0979687 * safezoneW;
-			h = 0.418 * safezoneH;
+			h = 0.390555 * safezoneH;
 		};
 
-		class ButtonDropVI : lilc_RscButtonMenu {
+		class ButtonRemoveVI : RscButton {
 			idc = -1;
-			text = "$STR_lilc_inventory_DialogName_ButtonDropVI";
+			onButtonClick = "call lilc_inventory_fnc_vi_removeItem;";
+			text = "$STR_lilc_inventory_DialogName_ButtonRemoveVI";
 			x = 0.742344 * safezoneW + safezoneX;
-			y = 0.709 * safezoneH + safezoneY;
+			y = 0.72637 * safezoneH + safezoneY;
 			w = 0.0979687 * safezoneW;
 			h = 0.022 * safezoneH;
 		};
 
+		class ButtonGiveVI : RscButton
+		{
+			idc = -1;
+			onButtonClick = "call lilc_inventory_fnc_vi_giveItem;";
+			text = "$STR_lilc_inventory_DialogName_ButtonGiveVI";
+			x = 0.742344 * safezoneW + safezoneX;
+			y = 0.699852 * safezoneH + safezoneY;
+			w = 0.0979687 * safezoneW;
+			h = 0.022 * safezoneH;
+		};
+
+		class ComboGiveUnitsVI : lilc_RscCombo
+		{
+			idc = 1408;
+			text = "$STR_lilc_inventory_DialogName_ComboGiveUnitsVI";
+			x = 0.742344 * safezoneW + safezoneX;
+			y = 0.67864 * safezoneH + safezoneY;
+			w = 0.0843229 * safezoneW;
+			h = 0.0174815 * safezoneH;
+		};
+
+		class ButtonRefreshGiveUnitsVI : lilc_RscActiveText
+		{
+			idc = -1;
+			tooltip = "$STR_lilc_inventory_DialogName_ButtonRefreshTooltipVI";
+			onButtonClick = "call lilc_inventory_fnc_vi_updateUnits;";
+			text = "\x\lilc\addons\ui\icons\refresh_x64.paa";
+			x = 0.828556 * safezoneW + safezoneX;
+			y = 0.67952 * safezoneH + safezoneY;
+			w = 0.0094792 * safezoneW;
+			h = 0.017037 * safezoneH;
+		};
 		
 		class DropDownGroup : RscControlsGroup
 		{
@@ -1024,12 +1059,15 @@ class RscDisplayInventory {
 			};
 		};
 
-		class ButtonCrafting : lilc_RscButtonMenu {
+		class ButtonCrafting : RscButton {
 			idc = -1;
+			colorBackground[] = {0, 0, 0, 0.8};
+			colorBackgroundActive[] = {0, 0, 0, 1};
+			colorBackgroundDisabled[] = {0, 0, 0, 0.8};
 			text = "Crafting";
 			onButtonClick = "[] spawn lilc_crafting_fnc_openMenu;";
-			x = 0.737188 * safezoneW + safezoneX
-			y = 0.75938 * safezoneH + safezoneY;
+			x = 0.737188 * safezoneW + safezoneX;
+			y = 0.75938 * safezoneH + safezoneY
 			w = 0.108281 * safezoneW;
 			h = 0.033 * safezoneH;
 		};

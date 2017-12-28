@@ -198,6 +198,7 @@ class RscActiveText;
 class lilc_RscActiveText : RscActiveText {
 	idc = -1;
 	style = 48;
+	text = "";
 	x = 0;
 	y = 0;
 	w = 0;
@@ -205,32 +206,6 @@ class lilc_RscActiveText : RscActiveText {
 	color[] = {1, 1, 1, 0.7};
 	colorText[] = {1, 1, 1, 0.7};
 	colorActive[] = {1, 1, 1, 1};
-    /*idc = -1;
-    type = 11;
-    style = 0;
-    x = 0;
-    y = 0;
-    h = 0.037;
-    w = 0.3;
-    sizeEx = 0.040;
-    font = "RobotoCondensed"; //font = "PuristaLight";
-    color[] = {1, 1, 1, 1};
-    colorActive[] = {1, 0.2, 0.2, 1};
-    colorDisabled[] = {};
-    soundEnter[] = {"\A3\ui_f\data\sound\onover", 0.09, 1};
-    soundPush[] = {"\A3\ui_f\data\sound\new1", 0.0, 0};
-    soundClick[] = {"\A3\ui_f\data\sound\onclick", 0.07, 1};
-    soundEscape[] = {"\A3\ui_f\data\sound\onescape", 0.09, 1};
-    action = "";
-    text = "";
-	tooltipColorText[] = {1,1,1,1};
-	tooltipColorBox[] = {1,1,1,1};
-	tooltipColorShade[] = {0,0,0,0.65};*/
-};
-
-class lilc_RscButtonCloseIcon : lilc_RscActiveText
-{
-	text = "\A3\Ui_f\data\GUI\Rsc\RscDisplayArcadeMap\icon_exit_cross_ca.paa";
 };
 
 class lilc_RscButton 

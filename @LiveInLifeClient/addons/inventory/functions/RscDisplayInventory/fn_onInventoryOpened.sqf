@@ -14,4 +14,5 @@ if (isNil "lilc_inventory_items" || isNil "lilc_inventory_optionsItems") then {
 };
 
 call lilc_inventory_fnc_disableMenu;
-call lilc_inventory_fnc_updateVirtualInventory;
+call lilc_inventory_fnc_vi_updateItems;
+call lilc_inventory_fnc_vi_updateUnits;

@@ -38,7 +38,6 @@ class lilc_inventory
         class setUniformInventory {};
         class setVehicleCargo {};
         class setVestInventory {};
-        class updateVirtualInventory {};
     };
     
     class RscDisplayInventory
@@ -57,5 +56,14 @@ class lilc_inventory
         file = "\x\lilc\addons\inventory\functions\itemMovement";
         class moveContainerItem {};
         class movePlayerItem {};
+    };
+
+    class virtualInventory
+    {
+        file = "\x\lilc\addons\inventory\functions\virtualInventory";
+        class vi_giveItem {};
+        class vi_removeItem {};
+        class vi_updateItems {};
+        class vi_updateUnits {};
     };
 };
