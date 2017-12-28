@@ -2,7 +2,6 @@
 params [
     ["_unit", objNull, [objNull]],
     ["_viClassname", "", [""]],
-    ["_viName", "", [""]],
     ["_viData", nil]
 ];
 
@@ -16,10 +15,6 @@ try {
     {
         if (
             _viClassname isEqualTo (_x select 0) &&
-            (
-                (_viName isEqualTo (_x select 1) && !(_viName isEqualTo "")) ||
-                (_viName isEqualTo getText(_itemConfig >> "displayName"))
-            ) &&
             _viData isEqualTo (_x select 2)
         ) then
         {
