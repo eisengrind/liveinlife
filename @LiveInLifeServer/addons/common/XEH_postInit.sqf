@@ -20,8 +20,6 @@ call lils_database_fnc_lock;
 	[]
 ] call CBA_fnc_localEvent;
 
-//call lils_animals_fnc_init;
-
 lils_finished = true;
 publicVariable "lils_finished";
 (getText(configFile >> "CfgMasterServer" >> "serverCommandPassword")) servercommand "#unlock";

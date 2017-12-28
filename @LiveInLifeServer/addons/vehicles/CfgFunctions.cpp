@@ -6,7 +6,7 @@ class lils_vehicles
         file = "\x\lils\addons\vehicles\functions";
         class create {};
         class delete {};
-        class initSaving {};
+        class getVehicleInformation {};
         class loadVehicles {};
         class new {};
         class save {};

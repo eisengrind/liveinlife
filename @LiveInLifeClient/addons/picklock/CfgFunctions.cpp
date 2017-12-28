@@ -1,6 +1,8 @@
 
-class lilc_picklock {
-    class functions {
+class lilc_picklock
+{
+    class functions
+    {
         file = "\x\lilc\addons\picklock\functions";
         class canAttachSteeringWheelLock {};
         class canDetachSteeringWheelLock {};

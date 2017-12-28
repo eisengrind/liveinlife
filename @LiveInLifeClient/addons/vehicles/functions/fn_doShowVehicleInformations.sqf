@@ -16,5 +16,5 @@ for "_i" from 1002 to 1005 do
 		player,
 		_vehicle
 	],
-	"lils_vehicles_fnc_getVehicleInformations"
+	"lils_vehicles_fnc_getVehicleInformation"
 ] call lilc_common_fnc_sendToServer;
