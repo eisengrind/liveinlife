@@ -82,7 +82,6 @@ try
 		[
 			_target,
 			_licenseName,
-			"",
 			-1
 		] call lilc_virtualInventory_fnc_remove;
 	};

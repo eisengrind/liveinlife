@@ -84,9 +84,10 @@ class lilcm_vehicleInformations
             h = 0.099 * safezoneH;
         };
 
-        class ButtonClose : lilc_RscButtonCloseIcon
+        class ButtonClose : lilc_RscActiveText
         {
             idc = 1200;
+            text = "\A3\Ui_f\data\GUI\Rsc\RscDisplayArcadeMap\icon_exit_cross_ca.paa";
             onButtonClick = "closeDialog 1304;";
             x = 0.560625 * safezoneW + safezoneX;
             y = 0.370371 * safezoneH + safezoneY;

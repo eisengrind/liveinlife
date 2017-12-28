@@ -23,5 +23,5 @@ class Extended_PostInit_EventHandlers {
 
 class lilc_RscText;
 class lilc_RscTitle;
-class lilc_RscButtonCloseIcon;
+class lilc_RscActiveText;
 #include "dialogs\vehicleInformations.cpp"
