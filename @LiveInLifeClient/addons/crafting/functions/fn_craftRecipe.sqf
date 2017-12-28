@@ -14,9 +14,9 @@ try
 
 	if !([_lCfg, _rCfg] call lilc_crafting_fnc_isRecipeCraftable) throw false;
 
-	private _tools = getArray(_rCfg >> "tools"); //_requiredTools
-	private _reqs = getArray(_rCfg >> "requirements"); //_requiredItems
-	private _res = getArray(_rCfg >> "results"); //_resultedItems
+	private _tools = getArray(_rCfg >> "tools");
+	private _reqs = getArray(_rCfg >> "requirements");
+	private _res = getArray(_rCfg >> "results");
 	private _recipeAmount = (parseNumber ctrlText 1401);
 	private _recipeTime = getNumber(_rCfg >> "time");
 	private _recipeDisplayName = getText(_rCfg >> "displayName");
@@ -127,6 +127,20 @@ try
 				};
 			} forEach _reqs;
 
+			private _defaultVehiclePosition = [];
+			systemChat str _defaultVehiclePosition;
+
+			if !(isNull (_lCfg >> "vehiclePosition")) then
+			{
+				_defaultVehiclePosition = ([(getText(_lCfg >> "vehiclePosition"))] call lilc_common_fnc_getDynamicPosition);
+			};
+
+			if !(isNull (_rCfg >> "vehiclePosition")) then
+			{
+				_defaultVehiclePosition = ([(getText(_rCfg >> "vehiclePosition"))] call lilc_common_fnc_getDynamicPosition);
+			};
+			systemChat str _defaultVehiclePosition;
+
 			{
 				private _c = (_x select 0);
 
@@ -158,7 +172,17 @@ try
 						}
 						else
 						{
-							[[player, _c, player, false], "lils_vehicles_fnc_new"] call lilc_common_fnc_sendToServer;
+							systemChat "Fahrzeug";
+							if ((count _defaultVehiclePosition) == 2) then
+							{
+								systemChat str 1;
+								[[player, _c, _defaultVehiclePosition, true], "lils_vehicles_fnc_new"] call lilc_common_fnc_sendToServer;
+							}
+							else
+							{
+								systemChat str 2;
+								[[player, _c, player, false], "lils_vehicles_fnc_new"] call lilc_common_fnc_sendToServer;
+							};
 						};
 					};
 				};

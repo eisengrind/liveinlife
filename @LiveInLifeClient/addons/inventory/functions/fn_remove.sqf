@@ -84,22 +84,6 @@ try {
                             throw true;
                         };
                     } forEach ((_vehicleInventoryCopy select 2) select 0);
-
-                    /*
-                    private _backpacks = (_vehicleInventoryCopy select 3);
-                    {
-                        private _backpack = (_x select 0);
-                        if ((_c))
-                    } forEach _backpacks;
-                    
-                    {
-                        if (_classname == _x) then {
-                            ((_vehicleInventory select 3) select 1) set [_forEachIndex, ((((_vehicleInventory select 3) select 1) select _forEachIndex) - 1)];
-                            [_vehicle, _vehicleInventory] call lilc_inventory_fnc_setVehicleCargo;
-                            throw true;
-                        };
-                    } forEach ((_vehicleInventoryCopy select 3) select 0);
-                    */
                 };
             };
         };
