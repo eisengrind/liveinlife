@@ -16,7 +16,7 @@ class CfgWeapons {
 class lilc_RscListbox;
 class lilc_RscButtonMenu;
 class lilc_RscText;
-class lilc_RscButtonCloseIcon;
+class lilc_RscActiveText;
 class lilc_RscStructuredText;
 
 #include "dialogs\ferryMenu.cpp"

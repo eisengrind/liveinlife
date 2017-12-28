@@ -61,9 +61,10 @@ class lilcm_ferry
             h = 0.022 * safezoneH;
         };
 
-        class ButtonClose : lilc_RscButtonCloseIcon
+        class ButtonClose : lilc_RscActiveText
         {
             idc = 1200;
+            text = "\A3\Ui_f\data\GUI\Rsc\RscDisplayArcadeMap\icon_exit_cross_ca.paa";
             onButtonClick = "closeDialog 1706;";
             x = 0.544375 * safezoneW + safezoneX;
             y = 0.313 * safezoneH + safezoneY;
