@@ -19,32 +19,13 @@ try
 
     private _type = -1;
     _type = (switch (true) do {
-        case (_classname isKindOf "Car"): {
-            0;
-        };
-        
-        case (_classname isKindOf "Plane"): {
-            1;
-        };
-        
-        case (_classname isKindOf "Helicopter"): {
-            2;
-        };
-
-        case (_classname isKindOf "Truck"): {
-            3;
-        };
-        
-        case (_classname isKindOf "Ship"): {
-            4;
-        };
-        
-        case (_classname isKindOf "Bicycle"): {
-            5;
-        };
-        default {
-            0;
-        };
+        case (_classname isKindOf "Car"): { 0; };
+        case (_classname isKindOf "Plane"): { 1; };
+        case (_classname isKindOf "Helicopter"): { 2; };
+        case (_classname isKindOf "Truck"): { 3; };
+        case (_classname isKindOf "Ship"): { 4; };
+        case (_classname isKindOf "Bicycle"): { 5; };
+        default { 0; };
     });
     if (_type <= -1) throw [];
 
