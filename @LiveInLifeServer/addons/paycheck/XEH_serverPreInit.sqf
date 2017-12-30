@@ -14,11 +14,11 @@
 	{
 		["paycheck_active", (_this select 1)];
 	}
-] call lilc_login_fnc_addPackage;
+] call lils_login_fnc_addPackage;
 
 [
 	"update_lil_paycheck_bankName",
 	{
 		["paycheck_bankID", (str (_this select 1))];
 	}
-] call lilc_login_fnc_addPackage;
+] call lils_login_fnc_addPackage;
