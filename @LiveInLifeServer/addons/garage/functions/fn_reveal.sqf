@@ -36,7 +36,7 @@ try
 
     private _factionVehicles = [];
     private _position = ([(getText(_garageConfig >> "revealPosition"))] call lilc_common_fnc_getDynamicPosition);
-    if ([(_position select 0), 5, ["Car", "Ship", "Boat", "Tank", "Truck", "Plane", "Air", "Helicopter"]] call lilc_common_fnc_objectsNearby) throw false;
+    if ([(_position select 0), 5, ["Bicycle", "Car", "Ship", "Boat", "Tank", "Truck", "Plane", "Air", "Helicopter"]] call lilc_common_fnc_objectsNearby) throw false;
 
     if (_factionID <= -1) then
     {
@@ -48,7 +48,7 @@ try
         private _gear = ([(_vehicleInfo select 1)] call lils_common_fnc_arrayDecode);
         private _damage = ([(_vehicleInfo select 2)] call lils_common_fnc_arrayDecode);
         
-        if ([(_position select 0), 5, ["Car", "Ship", "Boat", "Tank", "Truck", "Plane", "Air", "Helicopter"]] call lilc_common_fnc_objectsNearby) throw false;
+        if ([(_position select 0), 5, ["Bicycle", "Car", "Ship", "Boat", "Tank", "Truck", "Plane", "Air", "Helicopter"]] call lilc_common_fnc_objectsNearby) throw false;
 
         (_position select 0) vectorAdd [0, 0, 0.1];
 
@@ -72,7 +72,7 @@ try
     }
     else
     {
-        if ([(_position select 0), 5, ["Car", "Ship", "Boat", "Tank", "Truck", "Plane", "Air", "Helicopter"]] call lilc_common_fnc_objectsNearby) throw false;
+        if ([(_position select 0), 5, ["Bicycle", "Car", "Ship", "Boat", "Tank", "Truck", "Plane", "Air", "Helicopter"]] call lilc_common_fnc_objectsNearby) throw false;
         
         (_position select 0) vectorAdd [0, 0, 0.1];
         private _vehicle = ([_classname, _position, -1, _accountID, _unitUID, true, _factionID] call lils_vehicles_fnc_create);

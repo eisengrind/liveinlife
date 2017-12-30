@@ -67,7 +67,7 @@ try
             };
             
             case (_classname isKindOf "Biycle"): {
-                5;
+                6;
             };
         });
 
