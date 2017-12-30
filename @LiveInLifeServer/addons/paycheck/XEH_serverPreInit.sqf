@@ -12,13 +12,13 @@
 [
 	"update_lil_paycheck_active",
 	{
-		_dbCol = ["paycheck_active", true, false];
+		["paycheck_active", (_this select 1)];
 	}
 ] call lilc_login_fnc_addPackage;
 
 [
-	"update_lil_paycheck_bankID",
+	"update_lil_paycheck_bankName",
 	{
-		_dbCol = ["paycheck_bankID", true, false];
+		["paycheck_bankID", (str (_this select 1))];
 	}
 ] call lilc_login_fnc_addPackage;

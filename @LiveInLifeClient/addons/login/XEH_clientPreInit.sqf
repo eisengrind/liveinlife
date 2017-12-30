@@ -116,7 +116,7 @@ lilc_login_update_defPackages = [
 	"update_lil_prison_escapeTime",
 	"update_lil_prison_currentPMent",
 	"update_lil_paycheck_active",
-	"update_lil_paycheck_bankID",
+	"update_lil_paycheck_bankName",
 	"update_lil_respawn_isNew",
 	"update_lil_virtualInventory_inventory"
 ];

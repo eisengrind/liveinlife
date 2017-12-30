@@ -19,7 +19,8 @@ lils_login_set_defPackages = [
 	"set_lil_inventory_inventory",
 	/*"set_lil_locker_lockers",*/
 	"set_lil_factions_faction",
-	"set_lil_respawn_isNew"
+	"set_lil_respawn_isNew",
+	"set_lil_paycheck"
 ];
 
 [
