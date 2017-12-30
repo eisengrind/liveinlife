@@ -15,7 +15,7 @@ lilc_paycheck_active = 0;
 			lilc_paycheck_active = 0;
 		};
 
-		if (lilc_paycheck_active) then
+		if (lilc_paycheck_active == 1) then
 		{
 			lilc_paycheck_handle = (call lilc_paycheck_fnc_addPaycheck);
 		};
@@ -26,6 +26,7 @@ lilc_paycheck_active = 0;
 	"set_lil_paycheck",
 	{
 		lilc_paycheck_active = (_this select 0);
+		lilc_paycheck_bankName = (_this select 1);
 	}
 ] call lilc_login_fnc_addPackage;
 
@@ -37,7 +38,7 @@ lilc_paycheck_active = 0;
 ] call lilc_login_fnc_addPackage;
 
 [
-	"update_lil_paycheck_bankID",
+	"update_lil_paycheck_bankName",
 	{
 		lilc_paycheck_bankName;
 	}
