@@ -66,7 +66,7 @@ try
                 4;
             };
             
-            case (_classname isKindOf "Bike"): {
+            case (_classname isKindOf "Biycle"): {
                 5;
             };
         });
