@@ -17,7 +17,7 @@ lilc_paycheck_active = 0;
 
 		if (lilc_paycheck_active == 1) then
 		{
-			lilc_paycheck_handle = (call lilc_paycheck_fnc_addPaycheck);
+			(call lilc_paycheck_fnc_enable);
 		};
 	}
 ] call CBA_fnc_addEventHandler;
