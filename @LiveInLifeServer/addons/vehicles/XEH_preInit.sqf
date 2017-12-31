@@ -20,3 +20,10 @@
 		[] call lils_vehicles_fnc_saveAll;
 	}
 ] call CBA_fnc_addEventHandler;
+
+[
+	"lils_vehicles_vehicleDeath",
+	{
+		_this call lils_vehicles_fnc_vehicleDeath;
+	}
+] call CBA_fnc_addEventHandler;

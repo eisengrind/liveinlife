@@ -53,7 +53,6 @@ try {
     _vehicle addEventHandler [
         "Killed",
         {
-            _this call lils_vehicles_fnc_vehicleDeath;
             [
                 "lils_vehicles_vehicleDeath",
                 _this
