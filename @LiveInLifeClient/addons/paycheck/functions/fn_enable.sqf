@@ -1,9 +1,4 @@
 
-if !(call lilc_paycheck_fnc_canEnable) exitWith
-{
-	["Du besitzt bereits einen Paycheck", "ERROR"] call lilc_ui_fnc_hint;
-};
-
 private _bA = ([lilc_paycheck_bankName] call lilc_bank_fnc_getAccountByBankName);
 
 if ((count _bA) != 5 && lilc_paycheck_bankName != "") exitWith
@@ -49,6 +44,3 @@ lilc_paycheck_handle = ([
 		_bID
 	]
 ] call CBA_fnc_addPerFrameHandler);
-lilc_paycheck_active = 1;
-
-["Du hast einen Paycheck beantragt."] call lilc_ui_fnc_hint;

@@ -8,5 +8,7 @@ class lilc_paycheck
         class canEnable {};
         class disable {};
         class enable {};
+        class refuse {};
+        class request {};
     };
 };
