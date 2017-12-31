@@ -28,8 +28,8 @@ try
 
 	for "_i" from 0 to ((count _result) - 1) do
 	{
-		(_result select _i) set [1, ([((_result select _i) select 1)] call lils_common_fnc_stringDecode)];
-		(_result select _i) set [2, ([((_result select _i) select 2)] call lils_common_fnc_stringDecode)];
+		(_result select _i) set [1, ((_result select _i) select 1)];
+		(_result select _i) set [2, ((_result select _i) select 2)];
 	};
 
 	[

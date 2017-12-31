@@ -21,8 +21,8 @@ try
 		[
 			["ID", "NULL", false],
 			["TYPE", (str _categoryName)],
-			["TITLE", (str ([_title] call lils_common_fnc_stringEncode))],
-			["DESCRIPTION", (str ([_description] call lils_common_fnc_stringEncode))],
+			["TITLE", (str _title)],
+			["DESCRIPTION", (str _description)],
 			["TIMESTAMPCREATED", "UNIX_TIMESTAMP(NOW())", false],
 			["ACCOUNTID", (getPlayerUID _unit)],
 			["TARGETACCOUNTID", _targetAccountID]
