@@ -66,7 +66,7 @@ class Plane : Air
                 displayName = "$STR_lilc_actions_ActionTitle_flipVehicle";
                 condition = "[_target] call lilc_actions_fnc_canFlipVehicle";
                 exceptions[] = {};
-                statement = "[_target] call lilc_actions_fnc_doFlipVehicle;";
+                statement = "[_target] spawn lilc_actions_fnc_doFlipVehicle;";
             };
         };
     };
@@ -96,7 +96,7 @@ class Car : LandVehicle
             {
                 displayName = "$STR_lilc_actions_ActionTitle_flipVehicle";
                 condition = "[_target] call lilc_actions_fnc_canFlipVehicle";
-                statement = "[_target] call lilc_actions_fnc_doFlipVehicle;";
+                statement = "[_target] spawn lilc_actions_fnc_doFlipVehicle;";
                 //position = [0, 0, 0];
             };
         };
