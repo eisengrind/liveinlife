@@ -56,9 +56,9 @@ try
         };
     } forEach ("true" configClasses _areaConfig);
 
-    if (getNumber(_areaConfig >> "hint") == 1) then
+    if ((count (_gI select 0)) > 0) then
     {
-        if ((count (_gI select 0)) > 0) then
+        if (getNumber(_areaConfig >> "hint") == 1) then
         {
             private _str = "Du hast folgende Items erhalten:<br />";
 
@@ -67,8 +67,11 @@ try
                 _str = format["%1%2x %3<br />", _str, _c, getText(([_x] call lilc_common_fnc_getClassnameConfig) >> "displayName")];
             } forEach (_gI select 0);
             [_str] call lilc_ui_fnc_hint;
-        }
-        else
+        };
+    }
+    else
+    {
+        if (getNumber(_areaConfig >> "hintFailed") == 1) then
         {
             ["Du hast keine Items erhalten.", "ERROR"] call lilc_ui_fnc_hint;
         };
