@@ -15,7 +15,7 @@ class CAManBase : Man
 
             class lilc_prison_endPunishment
             {
-                displayName = "$STR_lilc_prison_ActionTitle_addPunishment";
+                displayName = "$STR_lilc_prison_ActionTitle_endPunishment";
                 condition = "[_target] call lilc_prison_fnc_canEndPunishment";
                 statement = "[_target] call lilc_prison_fnc_doEndPunishment;";
             };
