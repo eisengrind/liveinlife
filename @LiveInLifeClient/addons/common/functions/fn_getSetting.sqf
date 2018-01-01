@@ -25,6 +25,8 @@ try
     if (isNull _config) throw _default;
 
     private _property = (_config >> _settingName);
+    if (isNull _property) throw _default;
+
     switch (_dataType) do
     {
         case "STRING":
