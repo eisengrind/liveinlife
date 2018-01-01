@@ -7,6 +7,7 @@ try {
     private _garageConfig = ([_garageName] call lilc_garage_fnc_getGarageConfig);
     if (isNull _garageConfig) throw false;
 
+    private _fID = (player getVariable ["lilc_factionID", -1]);
     private _aID = (player getVariable ["lilc_accountID", 0]);
     private _uID = (getPlayerUID player);
     private _vehicle = objNull;
@@ -14,8 +15,10 @@ try {
         if (
             !(_x isKindOf "Man") &&
             !isPlayer _x &&
-            (_x getVariable ["lilc_accountID", 0]) == _aID &&
-            (_x getVariable ["lilc_steam64ID", ""]) == _uID &&
+            (
+                ((_x getVariable ["lilc_accountID", 0]) == _aID && (_x getVariable ["lilc_steam64ID", ""]) == _uID) ||
+                (_fID == (_x getVariable ["lilc_factionID", -1]) && _fID > -1)
+            ) &&
             (alive _x) &&
             !isNull _x
         ) exitWith
