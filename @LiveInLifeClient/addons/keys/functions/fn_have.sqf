@@ -25,7 +25,7 @@ try
     private _factionID = (player getVariable ["lilc_factionID", -1]);
     private _vehicleFactionID = (_vehicle getVariable ["lilc_factionID", -1]);
     private _vehicleID = (_vehicle getVariable ["lilc_vehicleID", 0]);
-    if (_vehicleFactionID <= -1 && _vehicleID <= 0) throw true;
+    if (_vehicleFactionID <= -1 && _vehicleID <= 0) throw false;
     if (_vehicleID != 0 && _vehicleFactionID > -1) throw false;
 
     if (_factionID == _vehicleFactionID && _factionID > -1) then
