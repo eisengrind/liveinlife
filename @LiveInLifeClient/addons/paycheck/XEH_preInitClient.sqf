@@ -2,7 +2,6 @@
 lilc_paycheck_handle = -1;
 lilc_paycheck_timeout = 0;
 lilc_paycheck_amount = 0;
-lilc_paycheck_bankName = "";
 lilc_paycheck_enableMessage = true;
 lilc_paycheck_waitTime = 0;
 lilc_paycheck_active = 0;
@@ -25,8 +24,7 @@ lilc_paycheck_active = 0;
 [
 	"set_lil_paycheck",
 	{
-		lilc_paycheck_active = (_this select 0);
-		lilc_paycheck_bankName = (_this select 1);
+		lilc_paycheck_active = _this;
 	}
 ] call lilc_login_fnc_addPackage;
 
@@ -34,13 +32,6 @@ lilc_paycheck_active = 0;
 	"update_lil_paycheck_active",
 	{
 		lilc_paycheck_active;
-	}
-] call lilc_login_fnc_addPackage;
-
-[
-	"update_lil_paycheck_bankName",
-	{
-		lilc_paycheck_bankName;
 	}
 ] call lilc_login_fnc_addPackage;
 
