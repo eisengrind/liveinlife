@@ -39,7 +39,6 @@ _vehicle allowDamage false;
 private _vehiclePosition = (getPosASL _vehicle);
 _vehiclePosition set [2, ((_vehiclePosition select 2) + 0.2)];
 
-_vehicle setVectorUp [0, 0, 1];
 _vehicle setPosASL _vehiclePosition;
 
 [("STR_lilc_actions_ScriptText_flippedVehicle" call BIS_fnc_localize)] call lilc_ui_fnc_hint;
