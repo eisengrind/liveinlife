@@ -9,6 +9,7 @@ call lils_database_fnc_init;
 	[]
 ] call CBA_fnc_localEvent;
 
+["LiveInLife", "database_1"] call lils_database_fnc_addDatabase;
 [
 	"lilse_common_fnc_initializeDatabases",
 	[]

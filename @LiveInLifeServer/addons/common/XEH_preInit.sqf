@@ -8,4 +8,4 @@
 	}
 ] call CBA_fnc_addEventHandler;
 
-lils_database_defaultProtocolName = (["database_defaultProtocolName", "STRING", "LiveInLifeDatabase", (configFile >> "CfgMasterServer")] call lilc_common_fnc_getSetting);
+lils_database_defaultProtocolName = "database_1";
