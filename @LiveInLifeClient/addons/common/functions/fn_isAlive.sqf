@@ -1,15 +1,10 @@
 
-private _unit = param [0, objNull, [objNull]];
+params [
+	["_unit", objNull, [objNull]]
+];
 
-try
-{
-	if (isNull _unit) throw false;
-	if !(alive _unit) throw false;
-	if (_unit getVariable ["lilc_isDead", false]) throw false;
-
-	throw true;
-}
-catch
-{
-	_exception;
-};
+(
+	!(isNull _unit) &&
+	(alive _unit) &&
+	!(_unit getVariable ["lilc_isDead", false])
+);
