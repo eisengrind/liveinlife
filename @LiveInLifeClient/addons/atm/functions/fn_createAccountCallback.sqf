@@ -7,3 +7,4 @@ if !([_bankAccount] call lilc_bank_fnc_addAccount) exitWith
 };
 
 ["create_complete"] call lilc_atm_fnc_selectMenu;
+lilc_atm_currentBankAccount = (_bankAccount select 4);

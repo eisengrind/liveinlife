@@ -166,19 +166,34 @@ try {
 
         case "deposit": {
             _uiTitle ctrlSetStructuredText parseText format["<t shadow='0' align='left' size='1.2'>Geld einzahlen - %1</t>", (_currentBankAccount select 0)];
-            _uiDescription ctrlSetStructuredText parseText "<t shadow='0' align='center' size='1.1'>Bitte geben Sie ihren gewünschten Betrag ein:</t>";
+            _uiDescription ctrlSetStructuredText parseText "";
             
-            [4, 5, 8] call lilc_atm_fnc_showButtons;
+            [4, 7, 8] call lilc_atm_fnc_showButtons;
+
+            _uiButton4Text ctrlSetStructuredText parseText "<t align='right' shadow='0' color='#176a37' font='PuristaSemibold'>Alles Einzahlen</t>";
+            _uiButton7Text ctrlSetStructuredText parseText "<t align='left' shadow='0' color='#176a37' font='PuristaSemibold'>Anderer Betrag</t>";
+            _uiButton8Text ctrlSetStructuredText parseText "<t align='left' shadow='0' color='#176a37' font='PuristaSemibold'>Zurück</t>";
+            _uiButton7 buttonSetAction '["deposit_other"] call lilc_atm_fnc_selectMenu;';
+            _uiButton4 buttonSetAction '[lilc_player_cash] call lilc_atm_fnc_deposit;';
+            _uiButton8 buttonSetAction '["main"] call lilc_atm_fnc_selectMenu;';
+        };
+
+        case "deposit_other":
+        {
+            _uiTitle ctrlSetStructuredText parseText format["<t shadow='0' align='left' size='1.2'>Geld einzahlen - %1</t>", (_currentBankAccount select 0)];
+            _uiDescription ctrlSetStructuredText parseText "<t shadow='0' align='center' size='1.1'>Bitte geben Sie ihren gewünschten Betrag ein:</t>";
+
+            [4, 8] call lilc_atm_fnc_showButtons;
+
+            _uiButton4Text ctrlSetStructuredText parseText "<t align='right' shadow='0' color='#176a37' font='PuristaSemibold'>Einzahlen</t>";
+            _uiButton8Text ctrlSetStructuredText parseText "<t align='left' shadow='0' color='#176a37' font='PuristaSemibold'>Zurück</t>";
+            
+            _uiButton4 buttonSetAction '[(parseNumber ctrlText 1538)] call lilc_atm_fnc_deposit;';
+            _uiButton8 buttonSetAction '["deposit"] call lilc_atm_fnc_selectMenu;';
+
             _uiEditValue ctrlShow true;
             _uiEditValueBackground ctrlShow true;
             _uiEditValue ctrlSetText "";
-
-            _uiButton3Text ctrlSetStructuredText parseText "<t align='right' shadow='0' color='#176a37' font='PuristaSemibold'>Einzahlen</t>";
-            _uiButton4Text ctrlSetStructuredText parseText "<t align='right' shadow='0' color='#176a37' font='PuristaSemibold'>Alles Einzahlen</t>";
-            _uiButton8Text ctrlSetStructuredText parseText "<t align='left' shadow='0' color='#176a37' font='PuristaSemibold'>Zurück</t>";
-            _uiButton3 buttonSetAction '[(parseNumber ctrlText 1538)] call lilc_atm_fnc_deposit;';
-            _uiButton4 buttonSetAction '[lilc_player_cash] call lilc_atm_fnc_deposit;';
-            _uiButton8 buttonSetAction '["main"] call lilc_atm_fnc_selectMenu;';
         };
 
         case "deposit_completed": {
