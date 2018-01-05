@@ -12,11 +12,13 @@ try {
     private _firstname = ((player getVariable ["lilc_identity", ["", "", ""]]) select 1);
     private _lastname = ((player getVariable ["lilc_identity", ["", "", ""]]) select 2);
 
+    private _cfg = (["lilcvi_personalcard_F"] call lilc_virtualInventory_fnc_getVirtualItemConfig);
+
     ["Personalausweis erfolgreich erstellt."] call lilc_ui_fnc_hint;
     [
         player,
         "lilcvi_personalcard_F",
-        "testss Pcard",
+        (format["%1 (%2 %3)", getText(_cfg >> "displayName"), _firstname, _lastname]),
         [
             _accountID,
             (_pcardData select 0),
