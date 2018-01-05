@@ -1,7 +1,7 @@
 
 ["lils_common_stop_server_preLock"] call CBA_fnc_localEvent;
 
-(getText(configFile >> "CfgMasterServer" >> "serverCommandPassword")) servercommand "#lock";
+(getText(configFile >> "CfgMasterServer" >> "server_commandPassword")) servercommand "#lock";
 sleep 2;
 
 ["lils_common_stop_server_preKick"] call CBA_fnc_localEvent;
@@ -24,9 +24,9 @@ sleep 2;
 		[_x]
 	] call CBA_fnc_localEvent;
 
-	(getText(configFile >> "CfgMasterServer" >> "serverCommandPassword")) servercommand (format["#kick %1", (getPlayerUID _x)]);
+	(getText(configFile >> "CfgMasterServer" >> "server_commandPassword")) servercommand (format["#kick %1", (getPlayerUID _x)]);
 } forEach (allPlayers - entities "HeadlessClient_F");
 
 ["lils_common_stop_server_postKick"] call CBA_fnc_localEvent;
 
-(getText(configFile >> "CfgMasterServer" >> "serverCommandPassword")) servercommand "#shutdown";
+(getText(configFile >> "CfgMasterServer" >> "server_commandPassword")) servercommand "#shutdown";

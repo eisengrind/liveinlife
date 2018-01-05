@@ -9,7 +9,7 @@ call lils_database_fnc_init;
 	[]
 ] call CBA_fnc_localEvent;
 
-["LiveInLife", "database_1"] call lils_database_fnc_addDatabase;
+["LiveInLife", "LiveInLife"] call lils_database_fnc_addDatabase;
 [
 	"lilse_common_fnc_initializeDatabases",
 	[]
@@ -23,4 +23,4 @@ call lils_database_fnc_lock;
 
 lils_finished = true;
 publicVariable "lils_finished";
-(getText(configFile >> "CfgMasterServer" >> "serverCommandPassword")) servercommand "#unlock";
+(getText(configFile >> "CfgMasterServer" >> "server_commandPassword")) servercommand "#unlock";
