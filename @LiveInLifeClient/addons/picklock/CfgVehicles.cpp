@@ -11,7 +11,7 @@ class Plane : Air {
 
             class lilca_picklock {
                 displayName = "$STR_lilc_actions_ActionTitle_picklock";
-                condition = "true;";
+                condition = "([_target, 'lilci_picklock_F'] call lilc_picklock_fnc_canPickLockVehicle) || ([_target, 'lilci_paperclip_F'] call lilc_picklock_fnc_canPickLockVehicle)";
                 statement = "false;";
                 
                 class lilca_picklock_picklock {
@@ -41,7 +41,7 @@ class Helicopter : Air {
 
             class lilca_picklock {
                 displayName = "$STR_lilc_actions_ActionTitle_picklock";
-                condition = "true;";
+                condition = "([_target, 'lilci_picklock_F'] call lilc_picklock_fnc_canPickLockVehicle) || ([_target, 'lilci_paperclip_F'] call lilc_picklock_fnc_canPickLockVehicle)";
                 statement = "false;";
                 
                 class lilca_picklock_picklock {
@@ -90,7 +90,7 @@ class Car : LandVehicle {
 
             class lilca_picklock {
                 displayName = "$STR_lilc_actions_ActionTitle_picklock";
-                condition = "true;";
+                condition = "([_target, 'lilci_picklock_F'] call lilc_picklock_fnc_canPickLockVehicle) || ([_target, 'lilci_paperclip_F'] call lilc_picklock_fnc_canPickLockVehicle)";
                 statement = "false;";
                 
                 class lilca_picklock_picklock {
@@ -121,7 +121,7 @@ class Ship_F : Ship {
 
             class lilca_picklock {
                 displayName = "$STR_lilc_actions_ActionTitle_picklock";
-                condition = "true;";
+                condition = "([_target, 'lilci_picklock_F'] call lilc_picklock_fnc_canPickLockVehicle) || ([_target, 'lilci_paperclip_F'] call lilc_picklock_fnc_canPickLockVehicle)";
                 statement = "false;";
                 
                 class lilca_picklock_picklock {
