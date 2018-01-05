@@ -1,729 +1,432 @@
 
-class lilc_RscButtonMenu;
-class lilc_RscEdit;
-class lilc_RscListbox;
-class lilc_RscButton;
-class lilc_RscCombo;
-class lilc_RscListNBox;
-class lilc_RscText;
-class lilc_RscTitle;
-class lilc_RscControlsGroup;
-class lilc_RscPicture;
+class RscText;
+class RscButton;
+class RscControlsGroup;
+class RscListbox;
+class RscCombo;
+class RscEdit;
+class RscFrame;
 
-class lilc_entry_exchange_MyOffersGroupEntry : lilc_RscControlsGroup
+class lilcm_exchange
 {
-    idc = 2302;
-    x = 0.00515599 * safezoneW;
-    y = 8.19564e-009 * safezoneH;
-    w = 0.2475 * safezoneW;
-    h = 0.044 * safezoneH;
-    
-    class Controls
-    {
-        class TextClassname : lilc_RscText
-        {
-            idc = 1010;
-            text = "Map"; //--- ToDo: Localize;
-            x = 0.00515597 * safezoneW;
-            y = 0.011 * safezoneH;
-            w = 0.0567187 * safezoneW;
-            h = 0.022 * safezoneH;
-        };
-
-        class TextCategory : lilc_RscText
-        {
-            idc = 1011;
-            text = "Kategorie"; //--- ToDo: Localize;
-            x = 0.061875 * safezoneW;
-            y = 0.011 * safezoneH;
-            w = 0.0464062 * safezoneW;
-            h = 0.022 * safezoneH;
-        };
-
-        class TextAmount : lilc_RscText
-        {
-            idc = 1012;
-            text = "23"; //--- ToDo: Localize;
-            x = 0.108281 * safezoneW;
-            y = 0.011 * safezoneH;
-            w = 0.0309375 * safezoneW;
-            h = 0.022 * safezoneH;
-        };
-
-        class TextPrice : lilc_RscText
-        {
-            idc = 1013;
-            text = "23 $"; //--- ToDo: Localize;
-            x = 0.139219 * safezoneW;
-            y = 0.011 * safezoneH;
-            w = 0.04125 * safezoneW;
-            h = 0.022 * safezoneH;
-        };
-
-        class TextDate : lilc_RscText
-        {
-            idc = 1014;
-            text = "10.20.2017"; //--- ToDo: Localize;
-            x = 0.180469 * safezoneW;
-            y = 0.011 * safezoneH;
-            w = 0.0309375 * safezoneW;
-            h = 0.022 * safezoneH;
-        };
-
-        class ButtonDelete : lilc_RscButtonMenu
-        {
-            idc = 1200;
-            text = "Delete"; //#(argb,8,8,3)color(1,1,1,1)
-            x = 0.225312 * safezoneW;
-            y = 0.00914801 * safezoneH;
-            w = 0.0170312 * safezoneW;
-            h = 0.0266296 * safezoneH;
-        };
-    };
-};
-
-class lilcm_exchange {
-    idd = 1630;
-    name = "lilcm_exchange";
+    idd = 2302;
+	name = "lilcm_exchange";
+    movingEnable = 1;
     enableSimulation = 1;
-    movingEnabled = 0;
+	
+	class controls
+	{
+		class TitleExchange : RscText
+		{
+			moving = 1;
+			idc = 1000;
+			text = ""; //--- ToDo: Localize;
+			x = 0.298906 * safezoneW + safezoneX;
+			y = 0.236 * safezoneH + safezoneY;
+			w = 0.402187 * safezoneW;
+			h = 0.022 * safezoneH;
+			colorBackground[] = {"(profileNamespace getVariable ['GUI_BCG_RGB_R',0.77])","(profileNamespace getVariable ['GUI_BCG_RGB_G',0.51])","(profileNamespace getVariable ['GUI_BCG_RGB_B',0.08])","(profileNamespace getVariable ['GUI_BCG_RGB_A',0.8])"};
+		};
 
-    class controlsbackground {
-        class FrameBackground : lilc_RscText
-        {
-            idc = 1000;
-            x = 0.298906 * safezoneW + safezoneX;
-            y = 0.236 * safezoneH + safezoneY;
-            w = 0.402187 * safezoneW;
-            h = 0.528 * safezoneH;
-            colorBackground[] = {0,0,0,0.8};
-        };
+		class FrameWrapperBackground : RscText
+		{
+			idc = 1001;
+			x = 0.298906 * safezoneW + safezoneX;
+			y = 0.258 * safezoneH + safezoneY;
+			w = 0.402187 * safezoneW;
+			h = 0.506 * safezoneH;
+			colorBackground[] = {0,0,0,0.8};
+		};
 
-        class TitleTitle : lilc_RscText
-        {
-            idc = 1001;
-            text = "Börse.bz"; //--- ToDo: Localize;
-            x = 0.298906 * safezoneW + safezoneX;
-            y = 0.236 * safezoneH + safezoneY;
-            w = 0.103125 * safezoneW;
-            h = 0.088 * safezoneH;
-        };
+		class FrameBackground : RscText
+		{
+			idc = 1002;
+			x = 0.304062 * safezoneW + safezoneX;
+			y = 0.302 * safezoneH + safezoneY;
+			w = 0.391875 * safezoneW;
+			h = 0.451 * safezoneH;
+			colorBackground[] = {0,0,0,0.4};
+		};
 
-        class ButtonClose : lilc_RscPicture
-        {
-            idc = 1200;
-            text = "#(argb,8,8,3)color(1,1,1,1)";
-            x = 0.687761 * safezoneW + safezoneX;
-            y = 0.236 * safezoneH + safezoneY;
-            w = 0.0133334 * safezoneW;
-            h = 0.0228148 * safezoneH;
-        };
-    };
+		class ButtonOffers : RscButton
+		{
+			idc = 1600;
+			text = "Angebote"; //--- ToDo: Localize;
+			x = 0.304062 * safezoneW + safezoneX;
+			y = 0.269 * safezoneH + safezoneY;
+			w = 0.195937 * safezoneW;
+			h = 0.033 * safezoneH;
+		};
 
-    class controls {
-        /******************************************
-        ****** Menu *******************************
-        ****** 1600, 1601, 1602, 1603, 1604, 1605 *
-        ******************************************/
-        class ButtonMenu1 : lilc_RscButtonMenu
-        {
-            idc = 1600;
-            text = "AngebotsÃ¼bersicht"; //--- ToDo: Localize;
-            onButtonClick = "['dashboard'] call lilc_exchange_fnc_selectMenu;";
-            x = 0.298906 * safezoneW + safezoneX;
-            y = 0.324 * safezoneH + safezoneY;
-            w = 0.103125 * safezoneW;
-            h = 0.033 * safezoneH;
-        };
+		class ButtonAccount : RscButton
+		{
+			idc = 1601;
+			text = "Mein Konto"; //--- ToDo: Localize;
+			x = 0.5 * safezoneW + safezoneX;
+			y = 0.269 * safezoneH + safezoneY;
+			w = 0.195937 * safezoneW;
+			h = 0.033 * safezoneH;
+		};
 
-        class ButtonMenu2 : lilc_RscButtonMenu
-        {
-            idc = 1601;
-            text = "Angebot erstellen"; //--- ToDo: Localize;
-            onButtonClick = "['addOffer'] call lilc_exchange_fnc_selectMenu;";
-            x = 0.298906 * safezoneW + safezoneX;
-            y = 0.368 * safezoneH + safezoneY;
-            w = 0.103125 * safezoneW;
-            h = 0.033 * safezoneH;
-        };
-        class ButtonMenu3 : lilc_RscButtonMenu
-        {
-            idc = 1602;
-            text = "Meine Angebote"; //--- ToDo: Localize;
-            onButtonClick = "['myOffers'] call lilc_exchange_fnc_selectMenu;";
-            x = 0.298906 * safezoneW + safezoneX;
-            y = 0.412 * safezoneH + safezoneY;
-            w = 0.103125 * safezoneW;
-            h = 0.033 * safezoneH;
-        };
-        class ButtonMenu4 : lilc_RscButtonMenu
-        {
-            idc = 1603;
-            text = "Börsenkasse"; //--- ToDo: Localize;
-            onButtonClick = "['account'] call lilc_exchange_fnc_selectMenu;";
-            x = 0.298906 * safezoneW + safezoneX;
-            y = 0.456 * safezoneH + safezoneY;
-            w = 0.103125 * safezoneW;
-            h = 0.033 * safezoneH;
-        };
-        class ButtonMenu5 : lilc_RscButtonMenu
-        {
-            idc = 1604;
-            text = "Warenlager"; //--- ToDo: Localize;
-            onButtonClick = "['wares'] call lilc_exchange_fnc_selectMenu;";
-            x = 0.298906 * safezoneW + safezoneX;
-            y = 0.5 * safezoneH + safezoneY;
-            w = 0.102604 * safezoneW;
-            h = 0.033 * safezoneH;
-        };
-        /*class ButtonMenu6 : lilc_RscButtonMenu
-        {
-            idc = 1605;
-            text = "Warenlager"; //--- ToDo: Localize;
-            x = 0.298906 * safezoneW + safezoneX;
-            y = 0.544 * safezoneH + safezoneY;
-            w = 0.103125 * safezoneW;
-            h = 0.033 * safezoneH;
-        };*/
-        /***************************************/
+		class GroupOffers: RscControlsGroup
+		{
+			idc = 2300;
+			x = 0.298906 * safezoneW + safezoneX;
+			y = 0.291 * safezoneH + safezoneY;
+			w = 0.402187 * safezoneW;
+			h = 0.473 * safezoneH;
+			colorBackground[] = {0,0,0,0.8};
 
-        class GroupDashboard : lilc_RscControlsGroup
-        {
-            idc = 25;
-            x = 0.402031 * safezoneW + safezoneX;
-            y = 0.225 * safezoneH + safezoneY;
-            w = 0.304219 * safezoneW;
-            h = 0.55 * safezoneH;
-            class Controls
-            {
-                class TitleCategory : lilc_RscText
-                {
-                    idc = 1013;
-                    text = "Kategorie:"; //--- ToDo: Localize;
-                    x = 0.010313 * safezoneW;
-                    y = 0.022 * safezoneH;
-                    w = 0.0876563 * safezoneW;
-                    h = 0.022 * safezoneH;
-                };
-                class TitleItem : lilc_RscText
-                {
-                    idc = 1014;
-                    text = "Item:"; //--- ToDo: Localize;
-                    x = 0.010313 * safezoneW;
-                    y = 0.055 * safezoneH;
-                    w = 0.0876563 * safezoneW;
-                    h = 0.022 * safezoneH;
-                };
-                class ComboCategory : lilc_RscCombo
-                {
-                    idc = 2100;
-                    onLBSelChanged = "_this call lilc_exchange_fnc_onLBSelChanged_dashboard_Category;";
-                    x = 0.097969 * safezoneW;
-                    y = 0.022 * safezoneH;
-                    w = 0.195937 * safezoneW;
-                    h = 0.022 * safezoneH;
-                };
-                class ComboType : lilc_RscCombo
-                {
-                    idc = 2101;
-                    onLBSelChanged = "_this call lilc_exchange_fnc_onLBSelChanged_dashboard_Item;";
-                    x = 0.097969 * safezoneW;
-                    y = 0.055 * safezoneH;
-                    w = 0.195937 * safezoneW;
-                    h = 0.022 * safezoneH;
-                };
-                class TitleBuys : lilc_RscText
-                {
-                    idc = 1015;
-                    text = "Kaufangebote:"; //--- ToDo: Localize;
-                    x = 0.010313 * safezoneW;
-                    y = 0.099 * safezoneH;
-                    w = 0.283594 * safezoneW;
-                    h = 0.022 * safezoneH;
-                    colorBackground[] = {0,0,0,1};
-                };
-                class TitleSells : lilc_RscText
-                {
-                    idc = 1016;
-                    text = "Verkaufsangebote:"; //--- ToDo: Localize;
-                    x = 0.010313 * safezoneW;
-                    y = 0.319 * safezoneH;
-                    w = 0.283594 * safezoneW;
-                    h = 0.022 * safezoneH;
-                    colorBackground[] = {0,0,0,1};
-                };
-                class ListBuys : lilc_RscListNbox
-                {
-                    idc = 1500;
-                    x = 0.010313 * safezoneW;
-                    y = 0.143 * safezoneH;
-                    w = 0.283594 * safezoneW;
-                    h = 0.132 * safezoneH;
-                    rowHeight = 0;
-                    idcLeft = -1;
-                    idcRight = -1;
-                    drawSideArrows = 0;
-                };
-                class ListSells : lilc_RscListNbox
-                {
-                    idc = 1501;
-                    x = 0.010313 * safezoneW;
-                    y = 0.363 * safezoneH;
-                    w = 0.283594 * safezoneW;
-                    h = 0.132 * safezoneH;
-                    rowHeight = 0;
-                    idcLeft = -1;
-                    idcRight = -1;
-                    drawSideArrows = 0;
-                };
-                class EditBuys : lilc_RscEdit
-                {
-                    idc = 1400;
-                    text = "";
-                    x = 0.159844 * safezoneW;
-                    y = 0.286 * safezoneH;
-                    w = 0.0567187 * safezoneW;
-                    h = 0.022 * safezoneH;
-                };
-                class EditSells : lilc_RscEdit
-                {
-                    idc = 1401;
-                    text = "";
-                    x = 0.159844 * safezoneW;
-                    y = 0.506 * safezoneH;
-                    w = 0.0567187 * safezoneW;
-                    h = 0.022 * safezoneH;
-                };
-                class TitleBuysAmountEdit : lilc_RscText
-                {
-                    idc = 1017;
-                    text = "Anzahl:"; //--- ToDo: Localize;
-                    x = 0.118593 * safezoneW;
-                    y = 0.286 * safezoneH;
-                    w = 0.04125 * safezoneW;
-                    h = 0.022 * safezoneH;
-                };
-                class TitleSellsAmountEdit : lilc_RscText
-                {
-                    idc = 1018;
-                    text = "Anzahl:"; //--- ToDo: Localize;
-                    x = 0.118594 * safezoneW;
-                    y = 0.506 * safezoneH;
-                    w = 0.04125 * safezoneW;
-                    h = 0.022 * safezoneH;
-                };
-                class ButtonBuys : lilc_RscButtonMenu
-                {
-                    idc = 2400;
-                    text = "Kaufen"; //--- ToDo: Localize;
-                    onButtonClick = "call lilc_exchange_fnc_dashboard_onButtonClickBuy;";
-                    x = 0.221719 * safezoneW;
-                    y = 0.286 * safezoneH;
-                    w = 0.0721875 * safezoneW;
-                    h = 0.022 * safezoneH;
-                };
-                class ButtonSells : lilc_RscButtonMenu
-                {
-                    idc = 2401;
-                    text = "Verkaufen"; //--- ToDo: Localize;
-                    onButtonClick = "call lilc_exchange_fnc_dashboard_onButtonClickSell;";
-                    x = 0.221719 * safezoneW;
-                    y = 0.506 * safezoneH;
-                    w = 0.0721875 * safezoneW;
-                    h = 0.022 * safezoneH;
-                };
-                class TitleBuysName : lilc_RscText
-                {
-                    idc = 1019;
-                    text = "Name:"; //--- ToDo: Localize;
-                    x = 0.010313 * safezoneW;
-                    y = 0.121 * safezoneH;
-                    w = 0.12375 * safezoneW;
-                    h = 0.022 * safezoneH;
-                };
-                class TitleBuysAmount : lilc_RscText
-                {
-                    idc = 1020;
-                    text = "Anzahl:"; //--- ToDo: Localize;
-                    x = 0.139219 * safezoneW;
-                    y = 0.121 * safezoneH;
-                    w = 0.0515625 * safezoneW;
-                    h = 0.022 * safezoneH;
-                };
-                class TitleBuysPrice : lilc_RscText
-                {
-                    idc = 1021;
-                    text = "Stk/Preis:"; //--- ToDo: Localize;
-                    x = 0.195938 * safezoneW;
-                    y = 0.121 * safezoneH;
-                    w = 0.0979687 * safezoneW;
-                    h = 0.022 * safezoneH;
-                };
-                class TitleSellsName : lilc_RscText
-                {
-                    idc = 1022;
-                    text = "Name:"; //--- ToDo: Localize;
-                    x = 0.010313 * safezoneW;
-                    y = 0.341 * safezoneH;
-                    w = 0.12375 * safezoneW;
-                    h = 0.022 * safezoneH;
-                };
-                class TitleSellsAmount : lilc_RscText
-                {
-                    idc = 1023;
-                    text = "Anzahl:"; //--- ToDo: Localize;
-                    x = 0.139219 * safezoneW;
-                    y = 0.341 * safezoneH;
-                    w = 0.0515625 * safezoneW;
-                    h = 0.022 * safezoneH;
-                };
-                class TitleSellsPrice : lilc_RscText
-                {
-                    idc = 1024;
-                    text = "Stk/Preis:"; //--- ToDo: Localize;
-                    x = 0.194844 * safezoneW;
-                    y = 0.341667 * safezoneH;
-                    w = 0.0979687 * safezoneW;
-                    h = 0.022 * safezoneH;
-                };
-            };
-        };
+			class Controls
+			{
+				class ListSells: RscListbox
+				{
+					idc = 1500;
+					x = 0.0154688 * safezoneW;
+					y = 0.077 * safezoneH;
+					w = 0.309375 * safezoneW;
+					h = 0.154 * safezoneH;
+				};
 
-        class GroupAddOffer : lilc_RscControlsGroup
-        {
-            idc = 26;
-            x = 0.402031 * safezoneW + safezoneX;
-            y = 0.225 * safezoneH + safezoneY;
-            w = 0.304219 * safezoneW;
-            h = 0.55 * safezoneH;
+				class TextSelectItem: RscText
+				{
+					idc = 1003;
+					text = "Item:"; //--- ToDo: Localize;
+					x = 0.0103125 * safezoneW;
+					y = 0.022 * safezoneH;
+					w = 0.0670311 * safezoneW;
+					h = 0.022 * safezoneH;
+					colorBackground[] = {0,0,0,0.8};
+				};
 
-            class controls
-            {
-                class addOffer_TitleType : lilc_RscText
-                {
-                    idc = 1011;
-                    text = "Ich möchte... "; //--- ToDo: Localize;
-                    x = 0.015469 * safezoneW;
-                    y = 0.044 * safezoneH;
-                    w = 0.0825 * safezoneW;
-                    h = 0.022 * safezoneH;
-                    colorBackground[] = {0,0,0,0};
-                };
+				class TextOffers: RscText
+				{
+					idc = 1004;
+					text = "Angebote:"; //--- ToDo: Localize;
+					x = 0.0103125 * safezoneW;
+					y = 0.055 * safezoneH;
+					w = 0.0670311 * safezoneW;
+					h = 0.022 * safezoneH;
+					colorBackground[] = {0,0,0,0.8};
+				};
 
-                class addOffer_ComboType : lilc_RscCombo
-                {
-                    idc = 2100;
-                    x = 0.097969 * safezoneW;
-                    y = 0.044 * safezoneH;
-                    w = 0.113437 * safezoneW;
-                    h = 0.022 * safezoneH;
-                    onLBSelChanged = "_this call lilc_exchange_fnc_onLBSelChanged_addOffer_Type;";
-                };
+				class TextSeller: RscText
+				{
+					idc = 1005;
+					text = "HÃ¤ndler"; //--- ToDo: Localize;
+					x = 0.0154688 * safezoneW;
+					y = 0.231 * safezoneH;
+					w = 0.170156 * safezoneW;
+					h = 0.022 * safezoneH;
+					colorBackground[] = {0,0,0,0.8};
+				};
 
-                class addOffer_TitleAmount : lilc_RscText
-                {
-                    idc = 1012;
-                    text = "Anzahl:"; //--- ToDo: Localize;
-                    x = 0.015469 * safezoneW;
-                    y = 0.121 * safezoneH;
-                    w = 0.0825 * safezoneW;
-                    h = 0.022 * safezoneH;
-                    colorBackground[] = {0,0,0,0};
-                };
-                
-                class addOffer_EditAmount : lilc_RscEdit
-                {
-                    idc = 1400;
-                    text = "";
-                    x = 0.097969 * safezoneW;
-                    y = 0.121 * safezoneH;
-                    w = 0.113437 * safezoneW;
-                    h = 0.022 * safezoneH;
-                };
+				class TextAmount: RscText
+				{
+					idc = 1006;
+					text = "Menge"; //--- ToDo: Localize;
+					x = 0.185625 * safezoneW;
+					y = 0.231 * safezoneH;
+					w = 0.0567187 * safezoneW;
+					h = 0.022 * safezoneH;
+					colorBackground[] = {0,0,0,0.8};
+				};
 
-                class addOffer_TitlePrice : lilc_RscText
-                {
-                    idc = 1013;
-                    text = "Preis pro StÃ¼ck:"; //--- ToDo: Localize;
-                    x = 0.015469 * safezoneW;
-                    y = 0.154 * safezoneH;
-                    w = 0.0825 * safezoneW;
-                    h = 0.022 * safezoneH;
-                    colorBackground[] = {0,0,0,0};
-                };
+				class TextPrice: RscText
+				{
+					idc = 1007;
+					text = "StÃƒÂ¼ckpreis"; //--- ToDo: Localize;
+					x = 0.242344 * safezoneW;
+					y = 0.231 * safezoneH;
+					w = 0.0825 * safezoneW;
+					h = 0.022 * safezoneH;
+					colorBackground[] = {0,0,0,0.8};
+				};
 
-                class addOffer_EditPrice : lilc_RscEdit
-                {
-                    idc = 1401;
-                    text = "";
-                    x = 0.097969 * safezoneW;
-                    y = 0.154 * safezoneH;
-                    w = 0.113437 * safezoneW;
-                    h = 0.022 * safezoneH;
-                };
+				class FrameBuys: RscFrame
+				{
+					idc = 1800;
+					x = 0.33 * safezoneW;
+					y = 0.099 * safezoneH;
+					w = 0.0567187 * safezoneW;
+					h = 0.11 * safezoneH;
+				};
 
-                class addOffer_TitleInventory : lilc_RscText
-                {
-                    idc = 1014;
-                    text = "Inventar:"; //--- ToDo: Localize;
-                    x = 0.015469 * safezoneW;
-                    y = 0.187 * safezoneH;
-                    w = 0.0825 * safezoneW;
-                    h = 0.022 * safezoneH;
-                    colorBackground[] = {0,0,0,0};
-                };
+				class FrameSells: RscFrame
+				{
+					idc = 1801;
+					x = 0.33 * safezoneW;
+					y = 0.275 * safezoneH;
+					w = 0.0567187 * safezoneW;
+					h = 0.11 * safezoneH;
+				};
 
-                class addOffer_TitleCategory : lilc_RscText
-                {
-                    idc = 1015;
-                    text = "Kategorie:"; //--- ToDo: Localize;
-                    x = 0.015469 * safezoneW;
-                    y = 0.088 * safezoneH;
-                    w = 0.0825 * safezoneW;
-                    h = 0.022 * safezoneH;
-                    colorBackground[] = {0,0,0,0};
-                };
+				class ComboSelectItem: RscCombo
+				{
+					idc = 2100;
+					x = 0.0825 * safezoneW;
+					y = 0.022 * safezoneH;
+					w = 0.309375 * safezoneW;
+					h = 0.022 * safezoneH;
+				};
 
-                class addOffer_ComboCategory : lilc_RscCombo
-                {
-                    idc = 2101;
-                    x = 0.097969 * safezoneW;
-                    y = 0.088 * safezoneH;
-                    w = 0.113437 * safezoneW;
-                    h = 0.022 * safezoneH;
-                    onLBSelChanged = "_this call lilc_exchange_fnc_onLBSelChanged_addOffer_Category;";
-                };
+				class ListBuys: RscListbox
+				{
+					idc = 1502;
+					x = 0.0154688 * safezoneW;
+					y = 0.253 * safezoneH;
+					w = 0.309375 * safezoneW;
+					h = 0.154 * safezoneH;
+				};
 
-                class addOffer_ListInventory : lilc_RscListbox
-                {
-                    idc = 1500;
-                    x = 0.097969 * safezoneW;
-                    y = 0.198 * safezoneH;
-                    w = 0.113437 * safezoneW;
-                    h = 0.242 * safezoneH;
-                };
+				class ButtonCreateOffer: RscButton
+				{
+					idc = 1602;
+					text = "Angebot erstellen"; //--- ToDo: Localize;
+					x = 0.0103125 * safezoneW;
+					y = 0.418 * safezoneH;
+					w = 0.134062 * safezoneW;
+					h = 0.033 * safezoneH;
+				};
 
-                class addOffer_ButtonCreate : lilc_RscButtonMenu
-                {
-                    idc = 2400;
-                    text = "Angebot erstellen"; //--- ToDo: Localize;
-                    onButtonClick = "call lilc_exchange_fnc_addOffer_onButtonClick;";
-                    x = 0.097969 * safezoneW;
-                    y = 0.462 * safezoneH;
-                    w = 0.113437 * safezoneW;
-                    h = 0.033 * safezoneH;
-                };
-            };
-        };
+				class TextFrameBuysAmount: RscText
+				{
+					idc = 1008;
+					text = "Anzahl:"; //--- ToDo: Localize;
+					x = 0.335156 * safezoneW;
+					y = 0.11 * safezoneH;
+					w = 0.0464063 * safezoneW;
+					h = 0.022 * safezoneH;
+					colorBackground[] = {0,0,0,0.8};
+				};
 
-        class GroupAccount : lilc_RscControlsGroup
-        {
-            idc = 27;
-            x = 0.402031 * safezoneW + safezoneX;
-            y = 0.225 * safezoneH + safezoneY;
-            w = 0.304219 * safezoneW;
-            h = 0.55 * safezoneH;
+				class TextFrameSellsAmount: RscText
+				{
+					idc = 1009;
+					text = "Anzahl:"; //--- ToDo: Localize;
+					x = 0.335156 * safezoneW;
+					y = 0.286 * safezoneH;
+					w = 0.0464063 * safezoneW;
+					h = 0.022 * safezoneH;
+					colorBackground[] = {0,0,0,0.8};
+				};
 
-            class controls
-            {
-                class account_TitleAccountStatus : lilc_RscText
-                {
-                    idc = 1000;
-                    text = "Börsenkontostand:"; //--- ToDo: Localize;
-                    x = 0.0309377 * safezoneW;
-                    y = 0.077 * safezoneH;
-                    w = 0.0979687 * safezoneW;
-                    h = 0.022 * safezoneH;
-                };
+				class EditFrameBuysAmount: RscEdit
+				{
+					idc = 1400;
+					x = 0.335156 * safezoneW;
+					y = 0.143 * safezoneH;
+					w = 0.0464063 * safezoneW;
+					h = 0.022 * safezoneH;
+				};
 
-                class account_TextAccountStatus : lilc_RscText
-                {
-                    idc = 1001;
-                    text = "$0"; //--- ToDo: Localize;
-                    x = 0.128906 * safezoneW;
-                    y = 0.066 * safezoneH;
-                    w = 0.154687 * safezoneW;
-                    h = 0.044 * safezoneH;
-                };
+				class ButtonFrameBuysBuy: RscButton
+				{
+					idc = 1603;
+					text = "Kaufen"; //--- ToDo: Localize;
+					x = 0.335156 * safezoneW;
+					y = 0.176 * safezoneH;
+					w = 0.0464063 * safezoneW;
+					h = 0.022 * safezoneH;
+				};
 
-                class account_TitleLastTransactions : lilc_RscText
-                {
-                    idc = 1002;
-                    text = "Letzte 20 Transaktionen:"; //--- ToDo: Localize;
-                    x = 0.0309377 * safezoneW;
-                    y = 0.154 * safezoneH;
-                    w = 0.0979687 * safezoneW;
-                    h = 0.022 * safezoneH;
-                };
+				class ButtonFrameSellsSell: RscButton
+				{
+					idc = 1604;
+					text = "Verkaufen"; //--- ToDo: Localize;
+					x = 0.335156 * safezoneW;
+					y = 0.352 * safezoneH;
+					w = 0.0464063 * safezoneW;
+					h = 0.022 * safezoneH;
+				};
 
-                class account_ButtonDrawMoney : lilc_RscButtonMenu
-                {
-                    idc = 2400;
-                    text = "Geld abheben"; //--- ToDo: Localize;
-                    onButtonClick = "call lilc_exchange_fnc_account_onButtonClickDraw;";
-                    x = 0.190781 * safezoneW;
-                    y = 0.121 * safezoneH;
-                    w = 0.0928125 * safezoneW;
-                    h = 0.022 * safezoneH;
-                };
+				class EditFrameSellsAmount: RscEdit
+				{
+					idc = 1401;
+					x = 0.335156 * safezoneW;
+					y = 0.319 * safezoneH;
+					w = 0.0464063 * safezoneW;
+					h = 0.022 * safezoneH;
+				};
+			};
+		};
 
-                class account_ListLastTransactions : lilc_RscListbox
-                {
-                    idc = 1500;
-                    x = 0.036094 * safezoneW;
-                    y = 0.187 * safezoneH;
-                    w = 0.2475 * safezoneW;
-                    h = 0.308 * safezoneH;
-                };
+		class GroupAccount : RscControlsGroup
+		{
+			idc = 2301;
+			x = 0.304062 * safezoneW + safezoneX;
+			y = 0.302 * safezoneH + safezoneY;
+			w = 0.391875 * safezoneW;
+			h = 0.451 * safezoneH;
 
-                class account_ButtonDeleteTransactions : lilc_RscButtonMenu
-                {
-                    idc = 2401;
-                    text = "Verlauf löschen"; //--- ToDo: Localize;
-                    onButtonClick = "call lilc_exchange_fnc_account_onButtonClickDeleteHistory;";
-                    x = 0.185625 * safezoneW;
-                    y = 0.506 * safezoneH;
-                    w = 0.0979687 * safezoneW;
-                    h = 0.022 * safezoneH;
-                };
-            };
-        };
+			class Controls
+			{
+				class ListWares: RscListbox
+				{
+					idc = 1502;
+					x = 0.00515698 * safezoneW;
+					y = 0.033 * safezoneH;
+					w = 0.134062 * safezoneW;
+					h = 0.33 * safezoneH;
+				};
 
-        class GroupWares : lilc_RscControlsGroup
-        {
-            idc = 28;
-            x = 0.402031 * safezoneW + safezoneX;
-            y = 0.225 * safezoneH + safezoneY;
-            w = 0.304219 * safezoneW;
-            h = 0.55 * safezoneH;
+				class TitleWares: RscText
+				{
+					idc = 1010;
+					text = "Warenlager:"; //--- ToDo: Localize;
+					x = 0.00515698 * safezoneW;
+					y = 0.011 * safezoneH;
+					w = 0.134062 * safezoneW;
+					h = 0.022 * safezoneH;
+					colorBackground[] = {0,0,0,1};
+				};
 
-            class controls
-            {
-                class wares_TitleThings : lilc_RscText
-                {
-                    idc = 1010;
-                    text = "Warenlager:"; //--- ToDo: Localize;
-                    x = 0.025781 * safezoneW;
-                    y = 0.055 * safezoneH;
-                    w = 0.0928125 * safezoneW;
-                    h = 0.022 * safezoneH;
-                };
+				class ComboWareContainer: RscCombo
+				{
+					idc = 2101;
+					x = 0.051563 * safezoneW;
+					y = 0.374 * safezoneH;
+					w = 0.0876563 * safezoneW;
+					h = 0.022 * safezoneH;
+				};
 
-                class wares_ListThings : lilc_RscListbox
-                {
-                    idc = 1500;
-                    x = 0.077344 * safezoneW;
-                    y = 0.088 * safezoneH;
-                    w = 0.154687 * safezoneW;
-                    h = 0.396 * safezoneH;
-                };
+				class ButtonGetWare: RscButton
+				{
+					idc = 1605;
+					text = "Ware ausgeben"; //--- ToDo: Localize;
+					x = 0.00515698 * safezoneW;
+					y = 0.407 * safezoneH;
+					w = 0.134062 * safezoneW;
+					h = 0.033 * safezoneH;
+				};
 
-                class wares_DrawThings : lilc_RscButtonMenu
-                {
-                    idc = 2400;
-                    text = "Ware ausgeben"; //--- ToDo: Localize;
-                    onButtonClick = "call lilc_exchange_fnc_storage_onButtonClick;";
-                    x = 0.108281 * safezoneW;
-                    y = 0.506 * safezoneH;
-                    w = 0.0928125 * safezoneW;
-                    h = 0.022 * safezoneH;
-                };
-            };
-        };
+				class TextWareContainer: RscText
+				{
+					idc = 1011;
+					text = "Inventar:"; //--- ToDo: Localize;
+					x = 0.00515597 * safezoneW;
+					y = 0.374 * safezoneH;
+					w = 0.0464063 * safezoneW;
+					h = 0.022 * safezoneH;
+					colorBackground[] = {0,0,0,0};
+				};
 
-        class GroupMyOffers : lilc_RscControlsGroup
-        {
-            idc = 29;
-            x = 0.402031 * safezoneW + safezoneX;
-            y = 0.225 * safezoneH + safezoneY;
-            w = 0.304219 * safezoneW;
-            h = 0.55 * safezoneH;
+				class TitleCredit: RscText
+				{
+					idc = 1012;
+					text = "Guthaben:"; //--- ToDo: Localize;
+					x = 0.144376 * safezoneW;
+					y = 0.011 * safezoneH;
+					w = 0.242344 * safezoneW;
+					h = 0.022 * safezoneH;
+					colorBackground[] = {0,0,0,1};
+				};
 
-            class controls
-            {
-                class myOffers_TitleMyOffers : lilc_RscText
-                {
-                    idc = 1000;
-                    text = "Meine Angebote:"; //--- ToDo: Localize;
-                    x = 0.015469 * safezoneW;
-                    y = 0.044 * safezoneH;
-                    w = 0.0876563 * safezoneW;
-                    h = 0.022 * safezoneH;
-                };
+				class TextCredit: RscText
+				{
+					idc = 1013;
+					text = "100.000.000"; //--- ToDo: Localize;
+					x = 0.144376 * safezoneW;
+					y = 0.044 * safezoneH;
+					w = 0.128906 * safezoneW;
+					h = 0.022 * safezoneH;
+				};
 
-                class myOffers_TitleClassname : lilc_RscText
-                {
-                    idc = 1004;
-                    text = "Item"; //--- ToDo: Localize;
-                    x = 0.036094 * safezoneW;
-                    y = 0.077 * safezoneH;
-                    w = 0.061875 * safezoneW;
-                    h = 0.022 * safezoneH;
-                };
+				class ButtonGetCredits: RscButton
+				{
+					idc = 1606;
+					text = "Guthaben auszahlen"; //--- ToDo: Localize;
+					x = 0.278438 * safezoneW;
+					y = 0.044 * safezoneH;
+					w = 0.108281 * safezoneW;
+					h = 0.022 * safezoneH;
+				};
 
-                class myOffers_TitleCategory : lilc_RscText
-                {
-                    idc = 1005;
-                    text = "Kategorie"; //--- ToDo: Localize;
-                    x = 0.0979691 * safezoneW;
-                    y = 0.077 * safezoneH;
-                    w = 0.0464062 * safezoneW;
-                    h = 0.022 * safezoneH;
-                };
+				class TitleMyOffers: RscText
+				{
+					idc = 1014;
+					text = "Meine Angebote:"; //--- ToDo: Localize;
+					x = 0.144376 * safezoneW;
+					y = 0.088 * safezoneH;
+					w = 0.242344 * safezoneW;
+					h = 0.022 * safezoneH;
+					colorBackground[] = {0,0,0,1};
+				};
 
-                class myOffers_TitleAmount : lilc_RscText
-                {
-                    idc = 1006;
-                    text = "Anzahl"; //--- ToDo: Localize;
-                    x = 0.144375 * safezoneW;
-                    y = 0.077 * safezoneH;
-                    w = 0.0309375 * safezoneW;
-                    h = 0.022 * safezoneH;
-                };
+				class ListMyOffers: RscListbox
+				{
+					idc = 1503;
+					x = 0.144376 * safezoneW;
+					y = 0.132 * safezoneH;
+					w = 0.242344 * safezoneW;
+					h = 0.264 * safezoneH;
+				};
 
-                class myOffers_TitlePrice : lilc_RscText
-                {
-                    idc = 1007;
-                    text = "Stk/Preis"; //--- ToDo: Localize;
-                    x = 0.175313 * safezoneW;
-                    y = 0.077 * safezoneH;
-                    w = 0.04125 * safezoneW;
-                    h = 0.022 * safezoneH;
-                };
+				class DeleteMyOffers: RscButton
+				{
+					idc = 1607;
+					text = "LÃ¶schen"; //--- ToDo: Localize;
+					x = 0.273282 * safezoneW;
+					y = 0.407 * safezoneH;
+					w = 0.113437 * safezoneW;
+					h = 0.033 * safezoneH;
+				};
 
-                class myOffers_TitleDate : lilc_RscText
-                {
-                    idc = 1008;
-                    text = "Datum"; //--- ToDo: Localize;
-                    x = 0.216563 * safezoneW;
-                    y = 0.077 * safezoneH;
-                    w = 0.0309375 * safezoneW;
-                    h = 0.022 * safezoneH;
-                };
+				class TitleMyOffersItem: RscText
+				{
+					idc = 1015;
+					text = "Item:"; //--- ToDo: Localize;
+					x = 0.144376 * safezoneW;
+					y = 0.11 * safezoneH;
+					w = 0.0670312 * safezoneW;
+					h = 0.022 * safezoneH;
+					colorBackground[] = {0,0,0,1};
+				};
 
-                class myOffers_TitleDelete : lilc_RscText
-                {
-                    idc = 1009;
-                    text = "Löschen"; //--- ToDo: Localize;
-                    x = 0.2475 * safezoneW;
-                    y = 0.077 * safezoneH;
-                    w = 0.0360937 * safezoneW;
-                    h = 0.022 * safezoneH;
-                };
-                
-                class myOffers_GroupList : lilc_RscControlsGroup
-                {
-                    idc = 2301;
-                    x = 0.0309377 * safezoneW;
-                    y = 0.099 * safezoneH;
-                    w = 0.257813 * safezoneW;
-                    h = 0.418 * safezoneH;
+				class TitleMyOffersType: RscText
+				{
+					idc = 1016;
+					text = "Typ:"; //--- ToDo: Localize;
+					x = 0.211407 * safezoneW;
+					y = 0.11 * safezoneH;
+					w = 0.0257812 * safezoneW;
+					h = 0.022 * safezoneH;
+					colorBackground[] = {0,0,0,1};
+				};
 
-                    class Controls
-                    {
-                    };
-                };
-            };
-        };
-    };
+				class TitleMyOffersAmount: RscText
+				{
+					idc = 1017;
+					text = "Anzahl:"; //--- ToDo: Localize;
+					x = 0.237188 * safezoneW;
+					y = 0.11 * safezoneH;
+					w = 0.04125 * safezoneW;
+					h = 0.022 * safezoneH;
+					colorBackground[] = {0,0,0,1};
+				};
+
+				class TitleMyOffersPrice: RscText
+				{
+					idc = 1018;
+					text = "Stk./Preis:"; //--- ToDo: Localize;
+					x = 0.278438 * safezoneW;
+					y = 0.11 * safezoneH;
+					w = 0.0515625 * safezoneW;
+					h = 0.022 * safezoneH;
+					colorBackground[] = {0,0,0,1};
+				};
+
+				class TitleMyOffersDate: RscText
+				{
+					idc = 1019;
+					text = "Datum:"; //--- ToDo: Localize;
+					x = 0.33 * safezoneW;
+					y = 0.11 * safezoneH;
+					w = 0.0567187 * safezoneW;
+					h = 0.022 * safezoneH;
+					colorBackground[] = {0,0,0,1};
+				};
+			};
+		};
+	};
 };
