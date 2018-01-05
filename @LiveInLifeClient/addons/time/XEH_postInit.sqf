@@ -7,10 +7,17 @@ if (lilc_time_currentTime isEqualTo [0, 0, 0, 0, 0, 0]) then
 	lilc_time_currentTime = [0, 0, 0, 1, 1, 1970];
 };
 
-[
-	{
-		call lilc_time_fnc_updateTime;
-		call lilc_time_fnc_execEvents;
-	},
-	1
-] call CBA_fnc_addPerFrameHandler;
+if (lilc_time_enable) then
+{
+	lilc_time_PFEHandle = ([
+		{
+			call lilc_time_fnc_updateTime;
+
+			if (lilc_time_events_enable) then
+			{
+				call lilc_time_fnc_execEvents;
+			};
+		},
+		1
+	] call CBA_fnc_addPerFrameHandler);
+};
