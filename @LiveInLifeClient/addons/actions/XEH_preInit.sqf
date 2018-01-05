@@ -9,8 +9,8 @@
 			[cursorTarget] spawn lilc_actions_fnc_doPunchPerson;
 		};
 	},
-	{},
-	[240, [false, false, false]]
+	{}
+	//[240, [false, false, false]]
 ] call CBA_fnc_addKeybind; //on prim. mouse button!
 
 [
@@ -23,8 +23,8 @@
 			[cursorTarget] spawn lilc_actions_fnc_doPunchPerson;
 		};
 	},
-	{},
-	[240, [false, false, false]]
+	{}
+	//[240, [false, false, false]]
 ] call CBA_fnc_addKeybind; //on prim. mouse button!
 
 [
