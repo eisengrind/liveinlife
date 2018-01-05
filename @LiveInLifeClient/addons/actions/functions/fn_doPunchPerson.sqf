@@ -16,10 +16,10 @@ sleep 0.8;
 _target = cursorTarget;
 if (isNull _target || !(alive _target) || !(isPlayer _target) || (_target distance player) > 2) exitWith { lilc_action_active = false; };
 
+[[player], "lilc_actions_fnc_punched", _target] call lilc_common_fnc_send;
 if ((random 1) < 0.38) then
 {
     [_target, true, (random [3, 15, 40])] call ace_medical_fnc_setUnconscious;
-    [[player], "lilc_actions_fnc_punched", _target] call lilc_common_fnc_send;
 };
 
 lilc_action_active = false;
