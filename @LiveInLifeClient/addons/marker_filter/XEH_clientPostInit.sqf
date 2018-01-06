@@ -4,11 +4,11 @@
 		!isNull (findDisplay 12);
 	},
 	{
-		(findDisplay 12) ctrlCreate ["lilc_map_GroupMarkerCategories", 663301];
+		(findDisplay 12) ctrlCreate ["lilc_marker_filter_GroupMarkerCategories", 663301];
 		(((findDisplay 12) displayCtrl 663301) controlsGroupCtrl 1500) ctrlAddEventHandler [
 			"TreeSelChanged",
 			{
-				_this call lilc_map_fnc_handleTreeSelChanged;
+				_this call lilc_marker_filter_fnc_handleTreeSelChanged;
 			}
 		];
 

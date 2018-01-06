@@ -25,10 +25,10 @@ if (_childCount > 0) then
 		private _pCfg = (_cfg >> (_ctrl tvData _p));
 		private _markers = (getArray(_pCfg >> "markers"));
 
-		[_markers, _cV] call lilc_map_fnc_setMarkerStatus;
-		[_ctrl, _p, _cV] call lilc_map_fnc_setTreeStatus;
+		[_markers, _cV] call lilc_marker_filter_fnc_setMarkerStatus;
+		[_ctrl, _p, _cV] call lilc_marker_filter_fnc_setTreeStatus;
 	};
 };
 
-[(getArray(_cfg >> "markers")), _cV] call lilc_map_fnc_setMarkerStatus;
-[_ctrl, _path, _cV] call lilc_map_fnc_setTreeStatus;
+[(getArray(_cfg >> "markers")), _cV] call lilc_marker_filter_fnc_setMarkerStatus;
+[_ctrl, _path, _cV] call lilc_marker_filter_fnc_setTreeStatus;
