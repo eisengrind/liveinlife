@@ -1,12 +1,4 @@
 
-class RscText;
-class RscButton;
-class RscControlsGroup;
-class RscListbox;
-class RscCombo;
-class RscEdit;
-class RscFrame;
-
 class lilcm_exchange
 {
     idd = 2302;
@@ -79,13 +71,18 @@ class lilcm_exchange
 
 			class Controls
 			{
-				class ListSells: RscListbox
+				class ListSells: lilc_RscListNBox
 				{
 					idc = 1500;
 					x = 0.0154688 * safezoneW;
 					y = 0.077 * safezoneH;
 					w = 0.309375 * safezoneW;
 					h = 0.154 * safezoneH;
+					rowHeight = 0.05;
+					drawSideArrows = 0;
+					idcLeft = -1;
+					idcRight = -1;
+					columns[] = {0, 0.54, 0.71};
 				};
 
 				class TextSelectItem: RscText
@@ -170,13 +167,18 @@ class lilcm_exchange
 					h = 0.022 * safezoneH;
 				};
 
-				class ListBuys: RscListbox
+				class ListBuys: lilc_RscListNBox
 				{
 					idc = 1502;
 					x = 0.0154688 * safezoneW;
 					y = 0.253 * safezoneH;
 					w = 0.309375 * safezoneW;
 					h = 0.154 * safezoneH;
+					rowHeight = 0.05;
+					drawSideArrows = 0;
+					idcLeft = -1;
+					idcRight = -1;
+					columns[] = {0, 0.54, 0.71};
 				};
 
 				class ButtonCreateOffer: RscButton

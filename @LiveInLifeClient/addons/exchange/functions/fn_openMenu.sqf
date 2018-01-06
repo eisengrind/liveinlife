@@ -1,18 +1,29 @@
 
 params [
-	["_exchangeName", "", [""]]
+	["_type", "", [""]],
+	["_data", nil]
 ];
 
-try
+disableSerialization;
+private _ui = (findDisplay 2302);
+
+if (isNull _ui) then
 {
-	if (isNull (call lilc_exchange_fnc_getExchangeConfig)) throw false;
-	if !(createDialog "lilcm_exchange") throw false;
+	createDialog "lilcm_exchange";
+};
 
-	lilc_exchange_currentExchange = _exchangeName;
+ctrlShow [2300, false];
+ctrlShow [2301, false];
 
-	["dashboard"] call lilc_exchange_fnc_selectMenu;
-}
-catch
+switch (_type) do
 {
+	case "offers":
+	{
+		ctrlShow [2300, true];
+	};
 
+	case "account":
+	{
+		ctrlShow [2301, true];
+	};
 };
