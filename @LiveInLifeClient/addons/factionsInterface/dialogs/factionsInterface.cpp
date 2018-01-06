@@ -1,6 +1,4 @@
 
-
-
 class lilc_factionsInterfaceMenu {
     name = "lilc_factionsInterfaceMenu";
     idd = 1374;

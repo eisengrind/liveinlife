@@ -124,7 +124,7 @@ else
 
 	if ((_pVC select _i) isEqualTo player) then
 	{
-		private _p = ([ASLToAGL (_posT select 0), 8, 60, 1, 0, 0, 0, [], [ASLToAGL (_posT select 0), ASLToAGL (_posT select 0)]] call BIS_fnc_findSafePos);
+		private _p = ([(ASLToAGL (_posT select 0)), 8, 60, 1, 0, 0, 0, [], [ASLToAGL (_posT select 0), ASLToAGL (_posT select 0)]] call BIS_fnc_findSafePos);
 		_pV setPos _p;
 		_pV engineOn false;
 	};
