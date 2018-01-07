@@ -14,8 +14,8 @@
     
     Example(s):
         (Example 1)
-        private _vehicle = objNull
-        private _vehicleFlipped = ([_vehicle] call lilc_actions_fnc_doFlipVehicle);
+        private _vehicle = objNull;
+        private _isVehicleFlipped = ([_vehicle] call lilc_actions_fnc_doFlipVehicle);
 */
 
 params [
@@ -40,6 +40,7 @@ private _vehiclePosition = (getPosASL _vehicle);
 _vehiclePosition set [2, ((_vehiclePosition select 2) + 0.2)];
 
 _vehicle setPosASL _vehiclePosition;
+_vehicle setVectorUp [0,0,1];
 
 [("STR_lilc_actions_ScriptText_flippedVehicle" call BIS_fnc_localize)] call lilc_ui_fnc_hint;
 sleep 1;
