@@ -13,7 +13,7 @@ player addEventHandler [
 			lilc_vehicles_lastVehicle = _vehicle;
 		};
 		lilc_vehicles_engineEHIndex = _vehicle addEventHandler ["Engine",{
-					If ((_this select 1) isEqualTo true) then {
+					If (_this select 1) then {
 					_vehicle engineOn false} 
 				else {
 					If ([_vehicle] call lilc_keys_fnc_have) then {
