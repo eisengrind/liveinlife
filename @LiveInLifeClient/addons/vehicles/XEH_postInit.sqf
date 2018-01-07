@@ -12,7 +12,7 @@ player addEventHandler [
 		{
 			lilc_vehicles_lastVehicle = _vehicle;
 		};
-		lilc_vehicles_engineEHIndex = = _vehicle addEventHandler ["Engine",{
+		lilc_vehicles_engineEHIndex = _vehicle addEventHandler ["Engine",{
 					If (isEngineOn _vehicle) then {
 					_vehicle engineOn false} 
 				else {
