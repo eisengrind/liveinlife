@@ -15,7 +15,7 @@ try
     if ((count _data) <= 0) throw false;
 
     private _position = ([getText(_garageConfig >> "revealPosition")] call lilc_common_fnc_getDynamicPosition);
-    if ([(_position select 0), 5, ["Car", "Ship", "Boat", "Tank", "Truck", "Plane", "Air", "Helicopter"]] call lilc_common_fnc_objectsNearby) throw false;
+    if ([(_position select 0), getNumber(_garageConfig >> "revealRadius"), ["Car", "Ship", "Boat", "Tank", "Truck", "Plane", "Air", "Helicopter"]] call lilc_common_fnc_objectsNearby) throw false;
 
     if ((_data select 0) <= 0) then
     {
