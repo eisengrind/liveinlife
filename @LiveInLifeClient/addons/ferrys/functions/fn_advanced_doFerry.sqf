@@ -92,8 +92,6 @@ private _posFV = ([getText(_cfgF >> "positionVehicle")] call lilc_common_fnc_get
 private _posT = ([getText(_cfgT >> "position")] call lilc_common_fnc_getDynamicPosition);
 private _posTV = ([getText(_cfgT >> "positionVehicle")] call lilc_common_fnc_getDynamicPosition);
 
-private _distTo = ((_posF select 0) distance (_posT select 0));
-
 _uiTextTimeCounter ctrlSetStructuredText parseText "";
 
 if !([player, "lilci_ferryTicket_F"] call lilc_inventory_fnc_remove) exitWith
