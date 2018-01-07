@@ -13,11 +13,11 @@ player addEventHandler [
 			lilc_vehicles_lastVehicle = _vehicle;
 		};
 		lilc_vehicles_engineEHIndex = _vehicle addEventHandler ["Engine",{
-				params ["_vehicle", "_status"];	
-					If (!([_vehicle] call lilc_keys_fnc_have) && ((_vehicle getVariable ["lilc_picklock_picklocked", 0]) <= 0) && ( _status )) then {
-						_vehicle engineOn false};
-				};
-			];
+			params ["_vehicle", "_status"];	
+			If (!([_vehicle] call lilc_keys_fnc_have) && ((_vehicle getVariable ["lilc_picklock_picklocked", 0]) <= 0) && ( _status )) then {
+				_vehicle engineOn false};
+			};
+		];
 	}
 ];
 
