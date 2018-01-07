@@ -25,7 +25,7 @@ try {
         {
             _vehicle = _x;
         };
-    } forEach nearestObjects [(ASLToAGL (([(getText(_garageConfig >> "parkPosition"))] call lilc_common_fnc_getDynamicPosition) select 0)), ["Bicycle", "Air", "Ship", "Boat", "Truck", "LandVehicle"], getNumber(_garageConfig >> "parkRadius"), true];
+    } forEach nearestObjects [(position player), ["Bicycle", "Air", "Ship", "Boat", "Truck", "LandVehicle"], getNumber(_garageConfig >> "parkRadius"), true];
 
     if (isNull _vehicle) then
     {
