@@ -12,6 +12,21 @@ player addEventHandler [
 		{
 			lilc_vehicles_lastVehicle = _vehicle;
 		};
+		lilc_vehicles_engineEHIndex = = _vehicle addEventHandler ["Engine",{
+					If (isEngineOn _vehicle) then {
+					_vehicle engineOn false} 
+				else {
+					If ([_vehicle] call lilc_keys_fnc_have) then {
+						_vehicle engineOn false} 
+					else {
+						If (_vehicle getVariable lilc_vehicle_islocked) then {
+							_vehicle engineOn true};
+						} else {
+						[("Du hast keinen Schluessel." call BIS_fnc_localize), "ERROR"] call lilc_ui_fnc_hint;
+						};
+					};
+				};
+			];
 	}
 ];
 
@@ -32,5 +47,6 @@ player addEventHandler [
 		{
 			call lilc_ui_fnc_disableAircraftInfo;
 		};
+		_vehicle removeEventHandler ["Engine", lilc_vehicles_engineEHIndex];
 	}
 ];
