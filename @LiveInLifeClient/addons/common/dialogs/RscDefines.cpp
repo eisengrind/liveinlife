@@ -70,8 +70,8 @@ class lilc_RscListNBox
 	style = 16;
 	type = 102;
 	shadow = 0;
-	font = "RobotoCondensed"; //font = "PuristaMedium";
-	sizeEx = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
+	font = "PuristaMedium"; //font = "PuristaMedium";
+	sizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 30) * 1)";
 	color[] = {0.95,0.95,0.95,1};
 	colorText[] = {1,1,1,1.0};
 	colorDisabled[] = {1,1,1,0.25};
@@ -83,7 +83,7 @@ class lilc_RscListNBox
 	soundSelect[] = {"",0.1,1};
 	soundExpand[] = {"",0.1,1};
 	soundCollapse[] = {"",0.1,1};
-	period = 1.2;
+	period = 0;
 	maxHistoryDelay = 0.5;
 	autoScrollSpeed = -1;
 	autoScrollDelay = 5;
@@ -91,7 +91,6 @@ class lilc_RscListNBox
 	class ListScrollBar : lilc_RscScrollBar{};
 	class ScrollBar : lilc_RscScrollBar{};
 };
-
 
 class lilc_RscText {
 	x = 0;
