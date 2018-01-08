@@ -6,9 +6,6 @@ params [
 
 try
 {
-	disableSerialization;
-	private _ui = (findDisplay 1630);
-
 	switch (_type) do
 	{
 		case "buy_customer": //derjenige, welcher kauft
@@ -39,6 +36,9 @@ try
 				[(format["Du hast nicht genügend Geld - revidiere Angebot..."]), "ERROR"] call lilc_ui_fnc_hint;
 				throw false;
 			};
+
+			[(((findDisplay 2302) displayCtrl 2300) controlsGroupCtrl 2100), (lbCurSel 2100)] call lilc_exchange_fnc_offers_handleOnLBSelChanged;
+			ctrlEnable [1603, true];
 		};
 
 		case "buy_seller": //derjenige, welcher items verkauft (angebotersteller)
@@ -104,6 +104,9 @@ try
 			private _itemConfig = ([_classname] call lilc_common_fnc_getClassnameConfig);
 
 			[(format["Du hast %1 %2 erfolgreich für $%3 an der Börse verkauft.", _amount, getText(_itemConfig >> "displayName"), (_amount * _price)])] call lilc_ui_fnc_hint;
+
+			[(((findDisplay 2302) displayCtrl 2300) controlsGroupCtrl 2100), (lbCurSel 2100)] call lilc_exchange_fnc_offers_handleOnLBSelChanged;
+			ctrlEnable [1604, true];
 		};
 
 		case "remove":
@@ -116,33 +119,37 @@ try
 			{
 				["Der Eintrag wurde nicht entfernt.", "ERROR"] call lilc_ui_fnc_hint;
 			};
+			ctrlEnable [1607, true];
+			[nil, "account"] call lilc_exchange_fnc_openMenu;
 		};
 
 		case "account_draw":
 		{
-			/*if (isNil "_data" || ((count _data) != 1)) then
-			{
-				[(format[
-					"Das Geld konnte nicht abgehoben werden."
-				]), "ERROR"] call lilc_ui_fnc_hint;
-			};*/
-
 			_data params [
 				["_balance", 0, [0]]
 			];
 
 			[_balance] call lilc_cash_fnc_add;
 
-			private _uiGroup = (_ui displayCtrl 27);
-			(_uiGroup controlsGroupCtrl 1001) ctrlSetText "$0";
+			ctrlEnable [1606, true];
+			ctrlSetText [1013, "$ 0"];
 			["Du hast das Geld abgehoben."] call lilc_ui_fnc_hint;
 		};
 
 		case "remove_ware":
 		{
-			["wares"] call lilc_exchange_fnc_selectMenu;
-			/*["Ware erfolgreich entfernt."] call lilc_ui_fnc_hint;
-			["wares"] call lilc_exchange_fnc_selectMenu;*/
+			_data params [
+				["_status", false, [false]]
+			];
+
+			if (_status) then {
+				["Du hast dein Item erhalten."] call lilc_ui_fnc_hint;
+			} else {
+				["Das Item konnte nicht ausgegeben werden.", "ERROR"] call lilc_ui_fnc_hint;
+			};
+
+			ctrlEnable [1605, true];
+			[nil, "account"] call lilc_exchange_fnc_openMenu;
 		};
 	};
 }

@@ -8,14 +8,14 @@ class CfgFunctions {
 };
 
 class RscText;
+class RscActiveText;
 class RscButton;
 class RscControlsGroup;
-class RscListbox;
+class lilc_RscListNBox;
+class RscFrame;
 class RscCombo;
 class RscEdit;
-class RscFrame;
-class lilc_RscScrollBar;
-class lilc_RscListNBox;
+class RscListbox;
 
 #include "dialogs\exchange.cpp"
 #include "dialogs\exchange.cpp"

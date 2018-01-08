@@ -338,22 +338,42 @@ do
 					_data params [
 						["_exchangeName", "", [""]],
 						["_classname", "", [""]],
-						["_amount", 0, [0]]
+						["_container", objNull, [objNull]]
 					];
 
 					private _exchangeConfig = ([_exchangeName] call lilc_exchange_fnc_getExchangeConfig);
-					if (isNull _exchangeConfig) throw ["remove_ware", []];
-					if (_amount <= 0) throw ["remove_ware", []];
+					if (isNull _exchangeConfig) throw ["remove_ware", [false]];
 
-					[(format[
-						"UPDATE exchange_storages SET amount = amount - %1 WHERE accountID = '%2' AND exchangeName = '%3' AND classname = '%4' LIMIT 1",
-						_amount,
+					private _amount = ([([
+						"exchange_storages",
+						[
+							["amount"]
+						],
+						[
+							["accountID", _unitAccountID],
+							["exchangeName", (str _exchangeName)],
+							["classname", (str _classname)]
+						]
+					] call lils_database_fnc_generateFetchQuery)] call lils_database_fnc_fetchObjects);
+
+					if (_amount isEqualType false) throw ["remove_ware", [false]];
+					if ((count _amount) <= 0) throw ["remove_ware", [false]];
+					if (((_amount select 0) select 0) <= 0) throw ["remove_ware", [false]];
+
+					([(format[
+						"UPDATE exchange_storages SET amount = amount - 1 WHERE accountID = '%1' AND exchangeName = '%2' AND classname = '%3' LIMIT 1",
 						_unitAccountID,
 						(str _exchangeName),
 						(str _classname)
-					])] call lils_database_fnc_query;
+					])] call lils_database_fnc_query);
 
-					throw ["remove_ware", [true]]
+					if (_container isKindOf "Man") then {
+						[_container, _classname] call lilc_inventory_fnc_add;
+					} else {
+						[_container, _classname] call lilc_inventory_fnc_addVehicle;
+					};
+
+					throw ["remove_ware", [true]];
 				};
 			};
 		}

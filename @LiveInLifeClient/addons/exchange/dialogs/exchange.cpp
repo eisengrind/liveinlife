@@ -5,19 +5,30 @@ class lilcm_exchange
 	name = "lilcm_exchange";
     movingEnable = 1;
     enableSimulation = 1;
-	
-	class controls
+	onUnload = "lilc_exchange_currentExchange = '';";
+
+	class controlsBackground
 	{
-		class TitleExchange : RscText
+		class FrameButtonOffersBackground : RscText
 		{
-			moving = 1;
-			idc = 1000;
-			text = ""; //--- ToDo: Localize;
-			x = 0.298906 * safezoneW + safezoneX;
-			y = 0.236 * safezoneH + safezoneY;
-			w = 0.402187 * safezoneW;
-			h = 0.022 * safezoneH;
-			colorBackground[] = {"(profileNamespace getVariable ['GUI_BCG_RGB_R',0.77])","(profileNamespace getVariable ['GUI_BCG_RGB_G',0.51])","(profileNamespace getVariable ['GUI_BCG_RGB_B',0.08])","(profileNamespace getVariable ['GUI_BCG_RGB_A',0.8])"};
+			idc = 998;
+			text = "";
+			x = 0.304062 * safezoneW + safezoneX;
+			y = 0.269 * safezoneH + safezoneY;
+			w = 0.195937 * safezoneW;
+			h = 0.033 * safezoneH;
+			colorBackground[] = {0, 0, 0, 0.6};
+		};
+
+		class FrameButtonAccountBackground : RscText
+		{
+			idc = 999;
+			text = "";
+			x = 0.5 * safezoneW + safezoneX;
+			y = 0.269 * safezoneH + safezoneY;
+			w = 0.195937 * safezoneW;
+			h = 0.033 * safezoneH;
+			colorBackground[] = {0, 0, 0, 0.2};
 		};
 
 		class FrameWrapperBackground : RscText
@@ -27,7 +38,7 @@ class lilcm_exchange
 			y = 0.258 * safezoneH + safezoneY;
 			w = 0.402187 * safezoneW;
 			h = 0.506 * safezoneH;
-			colorBackground[] = {0,0,0,0.8};
+			colorBackground[] = {0,0,0,0.6};
 		};
 
 		class FrameBackground : RscText
@@ -40,6 +51,35 @@ class lilcm_exchange
 			colorBackground[] = {0,0,0,0.4};
 		};
 
+		class TitleExchange : RscText
+		{
+			moving = 1;
+			idc = 1000;
+			text = ""; //--- ToDo: Localize;
+			x = 0.298906 * safezoneW + safezoneX;
+			y = 0.236 * safezoneH + safezoneY;
+			w = 0.402187 * safezoneW;
+			h = 0.022 * safezoneH;
+			colorBackground[] = {"(profileNamespace getVariable ['GUI_BCG_RGB_R',0.77])","(profileNamespace getVariable ['GUI_BCG_RGB_G',0.51])","(profileNamespace getVariable ['GUI_BCG_RGB_B',0.08])","(profileNamespace getVariable ['GUI_BCG_RGB_A',0.8])"};
+		};
+	};
+	
+	class controls
+	{
+		class ButtonClose: RscActiveText {
+			idc = -1;
+            style = 48;
+            text = "\A3\Ui_f\data\GUI\Rsc\RscDisplayArcadeMap\icon_exit_cross_ca.paa";
+			x = 0.689028 * safezoneW + safezoneX;
+			y = 0.23798 * safezoneH + safezoneY;
+			w = 0.0110417 * safezoneW;
+			h = 0.0188889 * safezoneH;
+			onButtonClick = "closeDialog 2302;";
+			color[] = {1, 1, 1, 0.7};
+            colorText[] = {1, 1, 1, 0.7};
+            colorActive[] = {1, 1, 1, 1};
+		};
+
 		class ButtonOffers : RscButton
 		{
 			idc = 1600;
@@ -48,6 +88,12 @@ class lilcm_exchange
 			y = 0.269 * safezoneH + safezoneY;
 			w = 0.195937 * safezoneW;
 			h = 0.033 * safezoneH;
+			onButtonClick = "[nil, 'offers'] call lilc_exchange_fnc_openMenu;";
+			colorBackground[] = {0, 0, 0, 0};
+			colorBackgroundActive[] = {0, 0, 0, 0};
+			colorBackgroundDisabled[] = {0, 0, 0, 0};
+			colorFocused[] = {0, 0, 0, 0};
+			period = 0;
 		};
 
 		class ButtonAccount : RscButton
@@ -58,6 +104,12 @@ class lilcm_exchange
 			y = 0.269 * safezoneH + safezoneY;
 			w = 0.195937 * safezoneW;
 			h = 0.033 * safezoneH;
+			onButtonClick = "[nil, 'account'] call lilc_exchange_fnc_openMenu;";
+			colorBackground[] = {0, 0, 0, 0};
+			colorBackgroundActive[] = {0, 0, 0, 0};
+			colorBackgroundDisabled[] = {0, 0, 0, 0};
+			colorFocused[] = {0, 0, 0, 0};
+			period = 0;
 		};
 
 		class GroupOffers: RscControlsGroup
@@ -67,10 +119,20 @@ class lilcm_exchange
 			y = 0.291 * safezoneH + safezoneY;
 			w = 0.402187 * safezoneW;
 			h = 0.473 * safezoneH;
-			colorBackground[] = {0,0,0,0.8};
 
 			class Controls
 			{
+				class FrameListSellsBackground : RscText
+				{
+					idc = -1;
+					text = "";
+					colorBackground[] = {0,0,0,0.3};
+					x = 0.0154688 * safezoneW;
+					y = 0.077 * safezoneH;
+					w = 0.309375 * safezoneW;
+					h = 0.154 * safezoneH;
+				};
+				
 				class ListSells: lilc_RscListNBox
 				{
 					idc = 1500;
@@ -93,7 +155,7 @@ class lilcm_exchange
 					y = 0.022 * safezoneH;
 					w = 0.0670311 * safezoneW;
 					h = 0.022 * safezoneH;
-					colorBackground[] = {0,0,0,0.8};
+					colorBackground[] = {"(profileNamespace getVariable ['GUI_BCG_RGB_R',0.77])","(profileNamespace getVariable ['GUI_BCG_RGB_G',0.51])","(profileNamespace getVariable ['GUI_BCG_RGB_B',0.08])", 0.5};
 				};
 
 				class TextOffers: RscText
@@ -104,18 +166,18 @@ class lilcm_exchange
 					y = 0.055 * safezoneH;
 					w = 0.0670311 * safezoneW;
 					h = 0.022 * safezoneH;
-					colorBackground[] = {0,0,0,0.8};
+					colorBackground[] = {"(profileNamespace getVariable ['GUI_BCG_RGB_R',0.77])","(profileNamespace getVariable ['GUI_BCG_RGB_G',0.51])","(profileNamespace getVariable ['GUI_BCG_RGB_B',0.08])", 0.5};
 				};
 
 				class TextSeller: RscText
 				{
 					idc = 1005;
-					text = "HÃ¤ndler"; //--- ToDo: Localize;
+					text = "Anbieter"; //--- ToDo: Localize;
 					x = 0.0154688 * safezoneW;
 					y = 0.231 * safezoneH;
 					w = 0.170156 * safezoneW;
 					h = 0.022 * safezoneH;
-					colorBackground[] = {0,0,0,0.8};
+					colorBackground[] = {"(profileNamespace getVariable ['GUI_BCG_RGB_R',0.77])","(profileNamespace getVariable ['GUI_BCG_RGB_G',0.51])","(profileNamespace getVariable ['GUI_BCG_RGB_B',0.08])", 0.5};
 				};
 
 				class TextAmount: RscText
@@ -126,18 +188,18 @@ class lilcm_exchange
 					y = 0.231 * safezoneH;
 					w = 0.0567187 * safezoneW;
 					h = 0.022 * safezoneH;
-					colorBackground[] = {0,0,0,0.8};
+					colorBackground[] = {"(profileNamespace getVariable ['GUI_BCG_RGB_R',0.77])","(profileNamespace getVariable ['GUI_BCG_RGB_G',0.51])","(profileNamespace getVariable ['GUI_BCG_RGB_B',0.08])", 0.5};
 				};
 
 				class TextPrice: RscText
 				{
 					idc = 1007;
-					text = "StÃƒÂ¼ckpreis"; //--- ToDo: Localize;
+					text = "Stk./Preis"; //--- ToDo: Localize;
 					x = 0.242344 * safezoneW;
 					y = 0.231 * safezoneH;
 					w = 0.0825 * safezoneW;
 					h = 0.022 * safezoneH;
-					colorBackground[] = {0,0,0,0.8};
+					colorBackground[] = {"(profileNamespace getVariable ['GUI_BCG_RGB_R',0.77])","(profileNamespace getVariable ['GUI_BCG_RGB_G',0.51])","(profileNamespace getVariable ['GUI_BCG_RGB_B',0.08])", 0.5};
 				};
 
 				class FrameBuys: RscFrame
@@ -165,11 +227,23 @@ class lilcm_exchange
 					y = 0.022 * safezoneH;
 					w = 0.309375 * safezoneW;
 					h = 0.022 * safezoneH;
+					onLBSelChanged = "_this call lilc_exchange_fnc_offers_handleOnLBSelChanged;";
 				};
 
+				class FrameListBuysBackground : RscText
+				{
+					idc = -1;
+					text = "";
+					colorBackground[] = {0,0,0,0.3};
+					x = 0.0154688 * safezoneW;
+					y = 0.253 * safezoneH;
+					w = 0.309375 * safezoneW;
+					h = 0.154 * safezoneH;
+				};
+				
 				class ListBuys: lilc_RscListNBox
 				{
-					idc = 1502;
+					idc = 1501;
 					x = 0.0154688 * safezoneW;
 					y = 0.253 * safezoneH;
 					w = 0.309375 * safezoneW;
@@ -189,6 +263,8 @@ class lilcm_exchange
 					y = 0.418 * safezoneH;
 					w = 0.134062 * safezoneW;
 					h = 0.033 * safezoneH;
+					onButtonClick = "[] call lilc_exchange_fnc_openMenuCreate;";
+					colorBackground[] = {"(profileNamespace getVariable ['GUI_BCG_RGB_R',0.77])","(profileNamespace getVariable ['GUI_BCG_RGB_G',0.51])","(profileNamespace getVariable ['GUI_BCG_RGB_B',0.08])", 0.3};
 				};
 
 				class TextFrameBuysAmount: RscText
@@ -199,7 +275,7 @@ class lilcm_exchange
 					y = 0.11 * safezoneH;
 					w = 0.0464063 * safezoneW;
 					h = 0.022 * safezoneH;
-					colorBackground[] = {0,0,0,0.8};
+					colorBackground[] = {"(profileNamespace getVariable ['GUI_BCG_RGB_R',0.77])","(profileNamespace getVariable ['GUI_BCG_RGB_G',0.51])","(profileNamespace getVariable ['GUI_BCG_RGB_B',0.08])", 0.5};
 				};
 
 				class TextFrameSellsAmount: RscText
@@ -210,7 +286,7 @@ class lilcm_exchange
 					y = 0.286 * safezoneH;
 					w = 0.0464063 * safezoneW;
 					h = 0.022 * safezoneH;
-					colorBackground[] = {0,0,0,0.8};
+					colorBackground[] = {"(profileNamespace getVariable ['GUI_BCG_RGB_R',0.77])","(profileNamespace getVariable ['GUI_BCG_RGB_G',0.51])","(profileNamespace getVariable ['GUI_BCG_RGB_B',0.08])", 0.5};
 				};
 
 				class EditFrameBuysAmount: RscEdit
@@ -230,6 +306,8 @@ class lilcm_exchange
 					y = 0.176 * safezoneH;
 					w = 0.0464063 * safezoneW;
 					h = 0.022 * safezoneH;
+					onButtonClick = "call lilc_exchange_fnc_offers_buy;";
+					colorBackground[] = {"(profileNamespace getVariable ['GUI_BCG_RGB_R',0.77])","(profileNamespace getVariable ['GUI_BCG_RGB_G',0.51])","(profileNamespace getVariable ['GUI_BCG_RGB_B',0.08])", 0.3};
 				};
 
 				class ButtonFrameSellsSell: RscButton
@@ -240,6 +318,8 @@ class lilcm_exchange
 					y = 0.352 * safezoneH;
 					w = 0.0464063 * safezoneW;
 					h = 0.022 * safezoneH;
+					onButtonClick = "call lilc_exchange_fnc_offers_sell;";
+					colorBackground[] = {"(profileNamespace getVariable ['GUI_BCG_RGB_R',0.77])","(profileNamespace getVariable ['GUI_BCG_RGB_G',0.51])","(profileNamespace getVariable ['GUI_BCG_RGB_B',0.08])", 0.3};
 				};
 
 				class EditFrameSellsAmount: RscEdit
@@ -280,7 +360,7 @@ class lilcm_exchange
 					y = 0.011 * safezoneH;
 					w = 0.134062 * safezoneW;
 					h = 0.022 * safezoneH;
-					colorBackground[] = {0,0,0,1};
+					colorBackground[] = {"(profileNamespace getVariable ['GUI_BCG_RGB_R',0.77])","(profileNamespace getVariable ['GUI_BCG_RGB_G',0.51])","(profileNamespace getVariable ['GUI_BCG_RGB_B',0.08])", 0.5};
 				};
 
 				class ComboWareContainer: RscCombo
@@ -300,6 +380,8 @@ class lilcm_exchange
 					y = 0.407 * safezoneH;
 					w = 0.134062 * safezoneW;
 					h = 0.033 * safezoneH;
+					onButtonClick = "call lilc_exchange_fnc_account_drawItem;";
+					colorBackground[] = {"(profileNamespace getVariable ['GUI_BCG_RGB_R',0.77])","(profileNamespace getVariable ['GUI_BCG_RGB_G',0.51])","(profileNamespace getVariable ['GUI_BCG_RGB_B',0.08])", 0.3};
 				};
 
 				class TextWareContainer: RscText
@@ -310,7 +392,7 @@ class lilcm_exchange
 					y = 0.374 * safezoneH;
 					w = 0.0464063 * safezoneW;
 					h = 0.022 * safezoneH;
-					colorBackground[] = {0,0,0,0};
+					colorBackground[] = {"(profileNamespace getVariable ['GUI_BCG_RGB_R',0.77])","(profileNamespace getVariable ['GUI_BCG_RGB_G',0.51])","(profileNamespace getVariable ['GUI_BCG_RGB_B',0.08])", 0.5};
 				};
 
 				class TitleCredit: RscText
@@ -321,13 +403,13 @@ class lilcm_exchange
 					y = 0.011 * safezoneH;
 					w = 0.242344 * safezoneW;
 					h = 0.022 * safezoneH;
-					colorBackground[] = {0,0,0,1};
+					colorBackground[] = {"(profileNamespace getVariable ['GUI_BCG_RGB_R',0.77])","(profileNamespace getVariable ['GUI_BCG_RGB_G',0.51])","(profileNamespace getVariable ['GUI_BCG_RGB_B',0.08])", 0.5};
 				};
 
 				class TextCredit: RscText
 				{
 					idc = 1013;
-					text = "100.000.000"; //--- ToDo: Localize;
+					text = ""; //--- ToDo: Localize;
 					x = 0.144376 * safezoneW;
 					y = 0.044 * safezoneH;
 					w = 0.128906 * safezoneW;
@@ -342,6 +424,8 @@ class lilcm_exchange
 					y = 0.044 * safezoneH;
 					w = 0.108281 * safezoneW;
 					h = 0.022 * safezoneH;
+					onButtonClick = "call lilc_exchange_fnc_account_drawCash;";
+					colorBackground[] = {"(profileNamespace getVariable ['GUI_BCG_RGB_R',0.77])","(profileNamespace getVariable ['GUI_BCG_RGB_G',0.51])","(profileNamespace getVariable ['GUI_BCG_RGB_B',0.08])", 0.3};
 				};
 
 				class TitleMyOffers: RscText
@@ -352,26 +436,44 @@ class lilcm_exchange
 					y = 0.088 * safezoneH;
 					w = 0.242344 * safezoneW;
 					h = 0.022 * safezoneH;
-					colorBackground[] = {0,0,0,1};
+					colorBackground[] = {"(profileNamespace getVariable ['GUI_BCG_RGB_R',0.77])","(profileNamespace getVariable ['GUI_BCG_RGB_G',0.51])","(profileNamespace getVariable ['GUI_BCG_RGB_B',0.08])", 0.5};
 				};
 
-				class ListMyOffers: RscListbox
+				class FrameListMyOffersBackground : RscText
 				{
-					idc = 1503;
+					idc = -1;
+					text = "";
+					colorBackground[] = {0,0,0,0.3};
 					x = 0.144376 * safezoneW;
 					y = 0.132 * safezoneH;
 					w = 0.242344 * safezoneW;
 					h = 0.264 * safezoneH;
 				};
 
-				class DeleteMyOffers: RscButton
+				class ListMyOffers : lilc_RscListNBox
+				{
+					idc = 1503;
+					x = 0.144376 * safezoneW;
+					y = 0.132 * safezoneH;
+					w = 0.242344 * safezoneW;
+					h = 0.264 * safezoneH;
+					rowHeight = 0.05;
+					drawSideArrows = 0;
+					idcLeft = -1;
+					idcRight = -1;
+					columns[] = {0, 0.265, 0.368, 0.54, 0.75};
+				};
+
+				class ButtonDeleteOffer: RscButton
 				{
 					idc = 1607;
-					text = "LÃ¶schen"; //--- ToDo: Localize;
+					text = "Entfernen"; //--- ToDo: Localize;
 					x = 0.273282 * safezoneW;
 					y = 0.407 * safezoneH;
 					w = 0.113437 * safezoneW;
 					h = 0.033 * safezoneH;
+					onButtonClick = "call lilc_exchange_fnc_account_removeOffer;";
+					colorBackground[] = {"(profileNamespace getVariable ['GUI_BCG_RGB_R',0.77])","(profileNamespace getVariable ['GUI_BCG_RGB_G',0.51])","(profileNamespace getVariable ['GUI_BCG_RGB_B',0.08])", 0.3};
 				};
 
 				class TitleMyOffersItem: RscText

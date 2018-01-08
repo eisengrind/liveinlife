@@ -5,9 +5,8 @@ class lils_exchange {
         class addOffer {};
         class addToQueue {};
         class deleteHistory {};
+        class getAccount {};
         class getItemOffers {};
-        class getMyAccount {};
-        class getMyOffers {};
         class getStorage {};
         class queueIteration {};
     };

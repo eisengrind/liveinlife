@@ -114,7 +114,7 @@ try {
                 _cargo = ((_cargo + (itemCargo _vehicle) + (weaponCargo _vehicle) + (backpackCargo _vehicle) + (magazineCargo _vehicle)) - _ignoreItems);
                 private _maximumLoad = 0;
                 _maximumLoad = getNumber (configFile >> "CfgVehicles" >> (typeOf _vehicle) >> "maximumLoad");
-                
+
                 private _currentLoad = 0;
                 {
                     _currentLoad = _currentLoad + ([_x] call lilc_inventory_fnc_getItemWeight);

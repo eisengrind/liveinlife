@@ -2,8 +2,7 @@
 params [
     ["_unit", objNull, [objNull]],
     ["_exchangeName", "", [""]],
-    ["_type", -1, [0]],
-    ["_category", "", [""]],
+    ["_container", objNull, [objNull]],
     ["_classname", "", [""]],
     ["_amount", 0, [0]],
     ["_price", 0, [0]]
@@ -12,14 +11,16 @@ params [
 try
 {
     if !([_unit] call lilc_common_fnc_isAlive) throw false;
+    systemChat str 1;
 
     private _accountID = (_unit getVariable ["lilc_accountID", 0]);
 
     private _exchangeConfig = ([_exchangeName] call lilc_exchange_fnc_getExchangeConfig);
     if (isNull _exchangeConfig) throw false;
 
+    private _type = (if (isNull _container) then { 1; } else { 0; });
+
     if !(_type in [0, 1]) throw false;
-    if !(isClass (_exchangeConfig >> "categories" >> _category)) throw false;
     
     private _itemConfig = ([_classname] call lilc_common_fnc_getClassnameConfig);
     if (isNull _itemConfig) throw false;
@@ -27,13 +28,21 @@ try
     if (_amount <= 0) throw false;
     if (_price < 0) throw false;
 
+    if !(isNull _container) then
+    {
+        if (([_classname, _container] call lilc_inventory_fnc_itemCount) < _amount) throw false;
+
+        for "_i" from 0 to (_amount - 1) do {
+            [_container, _classname] call lilc_inventory_fnc_remove;
+        };
+    };
+
     private _existingOffer = ([(format[
-        "SELECT id FROM EXCHANGE_OFFERS WHERE accountID = '%1' AND `type` = '%2' AND price = '%3' AND exchangeName = '%4' AND category = '%5' AND classname = '%6'",
+        "SELECT id FROM EXCHANGE_OFFERS WHERE accountID = '%1' AND `type` = '%2' AND price = '%3' AND exchangeName = '%4' AND classname = '%5'",
         _accountID,
         _type,
         _price,
         (str _exchangeName),
-        (str _category),
         (str _classname)
     ])] call lils_database_fnc_fetchObjects);
 
@@ -49,7 +58,6 @@ try
                 ["timestampcreated", "UNIX_TIMESTAMP(NOW())", false],
                 ["accountID", _accountID],
                 ["type", _type],
-                ["category", (str _category)],
                 ["exchangeName", (str _exchangeName)]
             ]
         ] call lils_database_fnc_generateInsertQuery)] call lils_database_fnc_query;

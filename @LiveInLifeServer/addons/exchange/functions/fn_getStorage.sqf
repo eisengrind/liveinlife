@@ -18,17 +18,7 @@ try
 		(str _exchangeName),
 		_accountID
 
-	])/*([
-		"exchange_storages",
-		[
-			["classname"],
-			["amount"]
-		],
-		[
-			["exchangeName", (str _exchangeName)],
-			["accountID", _accountID]
-		]
-	] call lils_database_fnc_generateFetchQuery)*/] call lils_database_fnc_fetchObjects);
+	])] call lils_database_fnc_fetchObjects);
 
 	[["storage", _items], "lilc_exchange_fnc_setSelectMenu", _unit] call lilc_common_fnc_send;
 
