@@ -15,6 +15,6 @@ private _time = lilc_time_currentTime;
 
 	if (_t isEqualTo _time) then
 	{
-		_t call _c;
+		[_t, (_v select 2)] call _c;
 	};
 } forEach _keys;

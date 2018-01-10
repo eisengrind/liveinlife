@@ -11,7 +11,6 @@ params [
 try
 {
     if !([_unit] call lilc_common_fnc_isAlive) throw false;
-    systemChat str 1;
 
     private _accountID = (_unit getVariable ["lilc_accountID", 0]);
 

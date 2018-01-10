@@ -128,7 +128,6 @@ try
 			} forEach _reqs;
 
 			private _defaultVehiclePosition = [];
-			systemChat str _defaultVehiclePosition;
 
 			if !(isNull (_lCfg >> "vehiclePosition")) then
 			{
@@ -139,7 +138,6 @@ try
 			{
 				_defaultVehiclePosition = ([(getText(_rCfg >> "vehiclePosition"))] call lilc_common_fnc_getDynamicPosition);
 			};
-			systemChat str _defaultVehiclePosition;
 
 			{
 				private _c = (_x select 0);
@@ -172,15 +170,12 @@ try
 						}
 						else
 						{
-							systemChat "Fahrzeug";
 							if ((count _defaultVehiclePosition) == 2) then
 							{
-								systemChat str 1;
 								[[player, _c, _defaultVehiclePosition, true], "lils_vehicles_fnc_new"] call lilc_common_fnc_sendToServer;
 							}
 							else
 							{
-								systemChat str 2;
 								[[player, _c, player, false], "lils_vehicles_fnc_new"] call lilc_common_fnc_sendToServer;
 							};
 						};
