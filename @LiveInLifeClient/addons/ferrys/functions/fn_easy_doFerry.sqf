@@ -15,6 +15,8 @@ if !([getNumber(_cfgFrom >> "ticketPrice")] call lilc_cash_fnc_remove) exitWith
 	["Du besitzt nicht genügend Bargeld.", "ERROR"] call lilc_ui_fnc_hint;
 };
 
+["Du hast ein Ticket gekauft."] call lilc_ui_fnc_hint;
+
 [
 	600,
 	"lilc_ferryCounter",
