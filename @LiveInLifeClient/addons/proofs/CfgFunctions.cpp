@@ -5,6 +5,6 @@ class lilc_proofs
     {
         file = "\x\lilc\addons\proofs\functions";
         class addProof {};
-        class deleteProof {};
+        class removeProof {};
     };
 };

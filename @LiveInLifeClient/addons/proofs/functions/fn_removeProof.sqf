@@ -1,17 +1,9 @@
-/*
-Proofs:
-    lilcp_fingerprint
-    lilcp_blood
-    lilcp_hair
-    lilcp_projectile
-    lilcp_scale
-*/
 
 params [
-    ["_object", objNull, [objNull]],
-    ["_proof", "", [""]],
-    ["_aID", 0, [0]],
-    ["_additional", nil]
+	["_object", objNull, [objNull]],
+	["_proof", "", [""]],
+	["_aID", 0, [0]],
+	["_additional", nil]
 ];
 
 if (isNull _object) exitWith {};
@@ -26,12 +18,18 @@ if !([_proofs, _proof] call CBA_fnc_hashHasKey) then {
 
 //get all available proofs
 private _values = ([_proofs, _proof] call CBA_fnc_hashGet);
-if ([_aID, _additional] in _values) exitWith {};
+private _index = (_values find [_aID, _additional]);
+
+if (_index <= -1) exitWith {};
 
 //insert our proof
-_values pushBack [_aID, _additional];
+_values deleteAt _index;
 
-_proofs = ([_proofs, _proof, _values] call CBA_fnc_hashSet);
+_proofs = (if ((count _values) <= 0) then {
+	([_proofs, _proof] call CBA_fnc_hashRem);
+} else {
+	([_proofs, _proof, _values] call CBA_fnc_hashSet);
+});
 
 //proofs are global at any time!
 _object setVariable ["lilc_proofs_proofs", _proofs, true];
