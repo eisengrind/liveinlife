@@ -2,22 +2,17 @@
 class lilc_exchange {
     class functions {
         file = "\x\lilc\addons\exchange\functions";
-        class account_onButtonClickDeleteHistory {};
-        class account_onButtonClickDraw {};
-        class addOffer_onButtonClick {};
-        class addOffer_updateInventory {};
-        class dashboard_onButtonClickBuy {};
-        class dashboard_onButtonClickSell {};
+        class account_drawCash {};
+        class account_drawItem {};
+        class account_removeOffer {};
+        class create_createOffer {};
+        class create_handleContainerOnLBSelChanged {};
         class getExchangeConfig {};
-        class myOffers_onButtonClick {};
-        class onLBSelChanged_addOffer_Category {};
-        class onLBSelChanged_addOffer_Type {};
-        class onLBSelChanged_dashboard_Category {};
-        class onLBSelChanged_dashboard_Item {};
+        class offers_buy {};
+        class offers_handleOnLBSelChanged {};
+        class offers_sell {};
         class openMenu {};
+        class openMenuCreate {};
         class queueed {};
-        class selectMenu {};
-        class setSelectMenu {};
-        class storage_onButtonClick {};
     };
 };
