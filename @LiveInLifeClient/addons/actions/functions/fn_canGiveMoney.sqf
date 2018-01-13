@@ -21,8 +21,4 @@ params [
     ["_unit", objNull, [objNull]]
 ];
 
-if (
-    isNull _unit ||
-    !(isPlayer _unit)
-) exitWith { false; };
-true;
+(!(isNull _unit) && (isPlayer _unit));

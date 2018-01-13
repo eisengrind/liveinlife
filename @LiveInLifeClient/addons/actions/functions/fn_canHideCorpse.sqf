@@ -21,5 +21,4 @@ params [
     ["_target", objNull, [objNull]]
 ];
 
-if ([_target] call lilc_common_fnc_isAlive || (missionNamespace getVariable ["lilc_Actions_disableHideCorpse", false])) exitWith { false; };
-true;
+(!([_target] call lilc_common_fnc_isAlive) && !(missionNamespace getVariable ["lilc_actions_disableHideCorpse", false]));

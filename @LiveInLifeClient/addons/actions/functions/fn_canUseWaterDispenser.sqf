@@ -21,9 +21,8 @@ params [
     ["_object", objNull, [objNull]]
 ];
 
-if (
-    (isNull _object) ||
-    !(simulationEnabled _boject) ||
-    !(["lilc_waterDispenserActive", "BOOL", true] call lilc_common_fnc_getSetting)
-) exitWith { false; };
-true;
+(
+    !(isNull _object) &&
+    (simulationEnabled _object) &&
+    (["lilc_waterDispenserActive", "BOOL", true] call lilc_common_fnc_getSetting)
+);
