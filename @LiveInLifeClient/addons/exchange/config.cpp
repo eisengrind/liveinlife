@@ -17,5 +17,5 @@ class RscCombo;
 class RscEdit;
 class RscListbox;
 
-#include "dialogs\exchange.cpp"
-#include "dialogs\exchange.cpp"
+#include "gui\exchange.cpp"
+#include "gui\exchange_create.cpp"
