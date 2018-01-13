@@ -1,5 +1,5 @@
 
-class lilc_map
+class lilc_marker_filter
 {
     units[] = {};
     weapons[] = {};

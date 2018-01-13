@@ -18,7 +18,6 @@
 			private _i = ((((findDisplay 12) displayCtrl 663301) controlsGroupCtrl 1500) tvAdd [[], getText(_x >> "displayName")]);
 			(((findDisplay 12) displayCtrl 663301) controlsGroupCtrl 1500) tvSetData [[_i], _c];
 			(((findDisplay 12) displayCtrl 663301) controlsGroupCtrl 1500) tvSetValue [[_i], 1];
-
 			
 			if ((count getArray(_x >> "markers")) > 0 || (count ("true" configClasses _x)) > 0) then
 			{
