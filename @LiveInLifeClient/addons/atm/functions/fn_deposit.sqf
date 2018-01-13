@@ -17,7 +17,6 @@ private _amount = param [0, 0, [0]];
 try {
     if !([lilc_atm_currentBankAccount] call lilc_bank_fnc_haveAccountByID) throw false;
     if !([_amount] call lilc_cash_fnc_have) throw false;
-    
     if !([_amount] call lilc_cash_fnc_remove) throw false;
     if !([lilc_atm_currentBankAccount, _amount] call lilc_bank_fnc_appendByID) throw false;
     throw true;
