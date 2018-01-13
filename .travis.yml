@@ -1,8 +1,13 @@
 language: python
 python:
 - '3.5'
+before_script:
+- pip instal sqflint
 script:
-- python3 tools/sqf_validator.py
+- sqflint -d @LiveInLifeClient
+- sqflint -d @LiveInLifeServer
+- sqflint -d LiveInLife.Tanoa
+#- python3 tools/sqf_validator.py
 - python3 tools/config_style_checker.py
 notification:
   email:
