@@ -1,31 +1,31 @@
 
 params [
-	["_message", "", [""]],
-	["_modName", "", [""]]
+    ["_message", "", [""]],
+    ["_modName", "", [""]]
 ];
 
 try
 {
-	if (isNil "lilc_debugMode") then
-	{
-		lilc_debugMode = false;
-	};
+    if (isNil "lilc_debugMode") then
+    {
+        lilc_debugMode = false;
+    };
 
-	if !(lilc_debugMode) throw false;
+    if !(lilc_debugMode) throw false;
 
-	if !(isServer && isDedicated) then //client
-	{
-		[_message, _modName, "DEBUG"] call lilc_log_fnc_diag_log;
-		[_message, _modName, "DEBUG"] call lilc_log_fnc_groupChat;
-	}
-	else //else stuff
-	{
-		[_message, _modName, "DEBUG"] call lilc_log_fnc_diag_log;
-	};
+    if !(isServer && isDedicated) then //client
+    {
+        [_message, _modName, "DEBUG"] call lilc_log_fnc_diag_log;
+        [_message, _modName, "DEBUG"] call lilc_log_fnc_groupChat;
+    }
+    else //else stuff
+    {
+        [_message, _modName, "DEBUG"] call lilc_log_fnc_diag_log;
+    };
 
-	throw true;
+    throw true;
 }
 catch
 {
-	_exception;
+    _exception;
 };

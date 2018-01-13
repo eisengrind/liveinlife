@@ -1,7 +1,7 @@
 
 params [
-	["_unit", objNull, [objNull]],
-	["_damage", [], [[]]]
+    ["_unit", objNull, [objNull]],
+    ["_damage", [], [[]]]
 ];
 
 if (isNull _unit) exitWith {};
@@ -9,10 +9,10 @@ if ((count _damage) <= 0) exitWith {};
 
 private _hitpoints = (_damage select 0);
 {
-	_unit setHitPointDamage [
-		_x,
-		((_hitpoints select 1) select _forEachIndex)
-	];
+    _unit setHitPointDamage [
+        _x,
+        ((_hitpoints select 1) select _forEachIndex)
+    ];
 } forEach (_hitpoints select 0);
 
 (_unit setVariable ["ace_medical_morphine", (_damage select 1)]);

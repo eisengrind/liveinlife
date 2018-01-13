@@ -8,8 +8,8 @@
         This function gets a setting in the CfgMaster config file. It is recommended to use this function to get an specific property of CfgMaster without errors.
     Param(s):
         (_this select 0) : the property name : <STRING>
-		(optional)(_this select 1) : a default value, if the property is not defined : <ANY>
-	Result(s):
+        (optional)(_this select 1) : a default value, if the property is not defined : <ANY>
+    Result(s):
         the given data type : <ARRAY>, <STRING>, <SCALAR/INT/FLOAT>
 */
 

@@ -21,8 +21,8 @@ params [
 ];
 
 try {
-	if (isNil "_functionName") throw false;
+    if (isNil "_functionName") throw false;
     throw ([_parameters, _functionName, 2, false] call lilc_common_fnc_send);
 } catch {
-	_exception;
+    _exception;
 };

@@ -1,8 +1,8 @@
 
 disableSerialization;
 params [
-	["_control", controlNull, [controlNull]],
-	["_index", -1, [0]]
+    ["_control", controlNull, [controlNull]],
+    ["_index", -1, [0]]
 ];
 
 if (isNull _control) exitWith {};
@@ -27,30 +27,30 @@ ctrlSetText [1003, getText(_rCfg >> "displayName")];
 
 private _uiTextDescription = (_ui displayCtrl 1100);
 _uiTextDescription ctrlSetStructuredText parseText format[
-	"<t size='0.9'>Zeit: %1 Sekunde/n</t><br /><t size='0.9'>Beschreibung:<br /><t size='0.7'>%2</t>",
-	getNumber(_rCfg >> "time"),
-	getText(_rCfg >> "description")
+    "<t size='0.9'>Zeit: %1 Sekunde/n</t><br /><t size='0.9'>Beschreibung:<br /><t size='0.7'>%2</t>",
+    getNumber(_rCfg >> "time"),
+    getText(_rCfg >> "description")
 ];
 
 private _picture = getText(_rCfg >> "picture");
 ctrlSetText [1200, (
-	if (_picture == "") then
-	{
-		"\x\lilc\addons\common\icons\lilci_default.paa";
-	}
-	else
-	{
-		_picture;
-	}
+    if (_picture == "") then
+    {
+        "\x\lilc\addons\common\icons\lilci_default.paa";
+    }
+    else
+    {
+        _picture;
+    }
 )];
 
 [(_d select 0), _rCfg] call lilc_crafting_fnc_updateMenuNeeded;
 
 if (_d call lilc_crafting_fnc_isRecipeCraftable) then
 {
-	ctrlEnable [1601, true];
+    ctrlEnable [1601, true];
 }
 else
 {
-	ctrlEnable [1601, false];
+    ctrlEnable [1601, false];
 };

@@ -8,10 +8,10 @@
         Checks if an classname with optional color is in the declarations of the faction items/equipment.
     Param(s):
         (_this select 0) : the ID of the faction : <SCALAR/INT>
-		(_this select 1) : the classname of the item : <STRING>
-		(optional)(_this select 2) : the color of eg. weapons : <STRING>
+        (_this select 1) : the classname of the item : <STRING>
+        (optional)(_this select 2) : the color of eg. weapons : <STRING>
     Result(s):
-		the array index of the faction equipment array : <SCALAR/INT>
+        the array index of the faction equipment array : <SCALAR/INT>
 */
 
 params [

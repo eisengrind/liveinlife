@@ -5,8 +5,8 @@
 class lilc_loadingScreen {
     idd = 1500;
     name = "lilc_loadingScreen";
-	movingEnable = false;
-	enableSimulation = true;
+    movingEnable = false;
+    enableSimulation = true;
 
     class controlsBackground {
 

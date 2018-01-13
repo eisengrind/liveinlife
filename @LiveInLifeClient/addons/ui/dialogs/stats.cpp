@@ -1,14 +1,14 @@
 
 class lilc_stats {
     name = "lilc_stats";
-	idd = 1042;
+    idd = 1042;
     fadein = 0;
-	duration = 999999999999999999999999999;
-	fadeout = 0;
-	movingEnable = false;
-	enableSimulation = true;
+    duration = 999999999999999999999999999;
+    fadeout = 0;
+    movingEnable = false;
+    enableSimulation = true;
     onLoad = "uiNamespace setVariable ['lilc_stats', (_this select 0)];";
-	objects[] = {};
+    objects[] = {};
     
     class controlsBackground {
         class TextBackground : lilc_RscText {
@@ -109,9 +109,9 @@ class lilc_stats {
             idc = 1045;
             text = "";
             x = 0.895794 * safezoneW + safezoneX;
-		    y = 0.8509 * safezoneH + safezoneY;
-		    w = 0.0882291 * safezoneW;
-		    h = 0.0182962 * safezoneH;
+            y = 0.8509 * safezoneH + safezoneY;
+            w = 0.0882291 * safezoneW;
+            h = 0.0182962 * safezoneH;
             colorFrame[] = {0, 0, 0, 1};
             colorBar[] = {(167/255), (179/255), (184/255), 0.9};
         };

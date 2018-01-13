@@ -19,13 +19,13 @@ private _rentPrice = getNumber(_config >> "rentBuyPrice");
 
 if !([_rentPrice] call lilc_cash_fnc_have) exitWith
 {
-	[
-		"Du hast nicht genügend Geld.",
-		"ERROR"
-	] call lilc_ui_fnc_hint;
+    [
+        "Du hast nicht genügend Geld.",
+        "ERROR"
+    ] call lilc_ui_fnc_hint;
 };
 
 [
-	[player, _shopName, _data],
-	"lils_shops_fnc_rentVehicle"
+    [player, _shopName, _data],
+    "lils_shops_fnc_rentVehicle"
 ] call lilc_common_fnc_sendToServer;

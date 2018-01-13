@@ -15,10 +15,10 @@ private _cfgT = (missionConfigFile >> "CfgFerrys" >> _to);
 if (isNull _cfgT) exitWith {};
 
 [
-	600,
-	"lilc_ferryCounter",
-	0.01,
-	false
+    600,
+    "lilc_ferryCounter",
+    0.01,
+    false
 ] call lilc_ui_fnc_fadeInTitles;
 
 disableSerialization;
@@ -33,52 +33,52 @@ private _sDT = daytime;
 _sT = _time;
 if (_time < _sDT) then
 {
-	_time = _time + 24;
+    _time = _time + 24;
 };
 
 while
 {
-	([player] call lilc_common_fnc_isAlive) &&
-	(player getVariable ["lilc_ferry_isWaiting", false]) &&
-	(_posC distance player < 30)
+    ([player] call lilc_common_fnc_isAlive) &&
+    (player getVariable ["lilc_ferry_isWaiting", false]) &&
+    (_posC distance player < 30)
 }
 do
 {
-	if (_sDT > _sT && daytime < _sT) then
-	{
-		_sDT = 0;
-		_time = (_time - 24);
-	};
-	if (daytime > _time) exitWith {};
+    if (_sDT > _sT && daytime < _sT) then
+    {
+        _sDT = 0;
+        _time = (_time - 24);
+    };
+    if (daytime > _time) exitWith {};
 
-	_uiTextTimeCounter ctrlSetStructuredText parseText format[
-		"<t font='PuristaMedium'><t size='1.1' align='center'>Waiting for ferry to %1:</t><br /><t align='center' size='3.2'>%2</t></t>",
-		getText(_cfgT >> "displayName"),
-		([(_time - daytime)] call BIS_fnc_timeToString)
-	];
+    _uiTextTimeCounter ctrlSetStructuredText parseText format[
+        "<t font='PuristaMedium'><t size='1.1' align='center'>Waiting for ferry to %1:</t><br /><t align='center' size='3.2'>%2</t></t>",
+        getText(_cfgT >> "displayName"),
+        ([(_time - daytime)] call BIS_fnc_timeToString)
+    ];
 
-	sleep 0.01;
+    sleep 0.01;
 };
 
 
 
 if ((_posC distance player > 30)) exitWith
 {
-	[600] call lilc_ui_fnc_fadeOutTitles;
-	["Du hast den Wartebereich verlassen.", "ERROR"] call lilc_ui_fnc_hint;
-	player setVariable ["lilc_ferry_isWaiting", false, true];
+    [600] call lilc_ui_fnc_fadeOutTitles;
+    ["Du hast den Wartebereich verlassen.", "ERROR"] call lilc_ui_fnc_hint;
+    player setVariable ["lilc_ferry_isWaiting", false, true];
 };
 
 if !([player] call lilc_common_fnc_isAlive) exitWith
 {
-	[600] call lilc_ui_fnc_fadeOutTitles;
-	player setVariable ["lilc_ferry_isWaiting", false, true];
+    [600] call lilc_ui_fnc_fadeOutTitles;
+    player setVariable ["lilc_ferry_isWaiting", false, true];
 };
 
 if !(player getVariable ["lilc_ferry_isWaiting", false]) exitWith
 {
-	[600] call lilc_ui_fnc_fadeOutTitles;
-	["Du hast das warten abgebrochen.", "ERROR"] call lilc_ui_fnc_hint;
+    [600] call lilc_ui_fnc_fadeOutTitles;
+    ["Du hast das warten abgebrochen.", "ERROR"] call lilc_ui_fnc_hint;
 };
 
 [2] call lilc_ui_fnc_fadeInBlack;
@@ -96,36 +96,36 @@ _uiTextTimeCounter ctrlSetStructuredText parseText "";
 
 if !([player, "lilci_ferryTicket_F"] call lilc_inventory_fnc_remove) exitWith
 {
-	[1] call lilc_ui_fnc_fadeOutBlack;
-	["Du hast keine Fahrkarte.", "ERROR"] call lilc_ui_fnc_hint;
-	[600] call lilc_ui_fnc_fadeOutTitles;
+    [1] call lilc_ui_fnc_fadeOutBlack;
+    ["Du hast keine Fahrkarte.", "ERROR"] call lilc_ui_fnc_hint;
+    [600] call lilc_ui_fnc_fadeOutTitles;
 };
 
 private _pV = (vehicle player);
 
 if (_pV isKindOf "Man") then
 {
-	[_pV, _posT] call lilc_common_fnc_setPosition;
+    [_pV, _posT] call lilc_common_fnc_setPosition;
 }
 else
 {
-	private _pVC = (crew _pV);
-	private _i = -1;
-	{
-		if (_x getVariable ["lilc_ferry_isWaiting", false]) exitWith
-		{
-			_i = _forEachIndex;
-		};
-	} forEach _pVC;
+    private _pVC = (crew _pV);
+    private _i = -1;
+    {
+        if (_x getVariable ["lilc_ferry_isWaiting", false]) exitWith
+        {
+            _i = _forEachIndex;
+        };
+    } forEach _pVC;
 
-	if (_i <= -1) exitWith {};
+    if (_i <= -1) exitWith {};
 
-	if ((_pVC select _i) isEqualTo player) then
-	{
-		private _p = ([(ASLToAGL (_posT select 0)), 8, 60, 1, 0, 0, 0, [], [ASLToAGL (_posT select 0), ASLToAGL (_posT select 0)]] call BIS_fnc_findSafePos);
-		_pV setPos _p;
-		_pV engineOn false;
-	};
+    if ((_pVC select _i) isEqualTo player) then
+    {
+        private _p = ([(ASLToAGL (_posT select 0)), 8, 60, 1, 0, 0, 0, [], [ASLToAGL (_posT select 0), ASLToAGL (_posT select 0)]] call BIS_fnc_findSafePos);
+        _pV setPos _p;
+        _pV engineOn false;
+    };
 };
 
 player setVariable ["lilc_ferry_isWaiting", false, true];

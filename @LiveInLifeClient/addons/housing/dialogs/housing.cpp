@@ -1,9 +1,9 @@
 
 class lilc_housingMenu {
     name = "lilc_housingMenu";
-	idd = 1350;
-	movingEnable = false;
-	enableSimulation = true;
+    idd = 1350;
+    movingEnable = false;
+    enableSimulation = true;
     
     class controlsBackground {
         class FrameTitleBarBackground : lilc_RscText {
@@ -55,9 +55,9 @@ class lilc_housingMenu {
             w = 0.103125 * safezoneW;
             h = 0.022 * safezoneH;
         };
-	};
-	
-	class controls {
+    };
+    
+    class controls {
         class PictureHouse : lilc_RscPicture {
             idc = 1351;
             text = "";

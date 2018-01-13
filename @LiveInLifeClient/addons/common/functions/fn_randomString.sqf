@@ -8,10 +8,10 @@
         Generates a random String with alphabetic and special chars on request.
     Param(s):
         (_this select 0) : lenght of the string : <SCALAR/INT>
-		(_this select 1) : should numbers be generated? : <BOOL>
-		(_this select 2) : should lower-case-letters be generated? : <BOOL>
-		(_this select 3) : should upper-case-letters be generated? : <BOOL>
-		(_this select 4) : should special chars be generated? : <BOOL>
+        (_this select 1) : should numbers be generated? : <BOOL>
+        (_this select 2) : should lower-case-letters be generated? : <BOOL>
+        (_this select 3) : should upper-case-letters be generated? : <BOOL>
+        (_this select 4) : should special chars be generated? : <BOOL>
     Result(s):
         the generated string with specific parameters : <STRING>
 */

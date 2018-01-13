@@ -1,11 +1,11 @@
 
 params [
-	["_position", objNull, [[], objNull]]
+    ["_position", objNull, [[], objNull]]
 ];
 
 if (_position isEqualType objNull) then
 {
-	_position = (getPosASL _position);
+    _position = (getPosASL _position);
 };
 if ((count _position) != 3) exitWith { 0; };
 

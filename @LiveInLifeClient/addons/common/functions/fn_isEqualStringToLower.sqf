@@ -8,7 +8,7 @@
         Checks if the characters of two string are equal under the following rules: toLower xy .
     Param(s):
         (_this select 0) : string A : <STRING>
-		(_this select 1) : string B : <STRING>
+        (_this select 1) : string B : <STRING>
     Result(s):
         true = string A equals characters of string B; false != true : <BOOL>
 */

@@ -176,7 +176,7 @@ class lilc_factionsInterfaceMenu {
             idc = 1399;
             text = "+";
             borderSize = 0;
-			colorShadow[] = {0,0,0,0};
+            colorShadow[] = {0,0,0,0};
             colorBackground[] = {0, 0, 0, 1};
         };
 

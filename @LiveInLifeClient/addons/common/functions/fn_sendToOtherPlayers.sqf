@@ -22,8 +22,8 @@ params [
 ];
 
 try {
-	if (isNil "_functionName") throw false;
+    if (isNil "_functionName") throw false;
     throw ([_parameters, _functionName, [-(clientOwner), -2], _jip] call lilc_common_fnc_send);
 } catch {
-	_exception;
+    _exception;
 };

@@ -3,30 +3,30 @@
 
 class lilc_playerTags {
     name = "lilc_playerTags";
-	idd = 1054;
-	duration = 999999999999999999999999999;
-	movingEnable = false;
+    idd = 1054;
+    duration = 999999999999999999999999999;
+    movingEnable = false;
     fadein = 1;
     fadeout = 1;
-	enableSimulation = true;
+    enableSimulation = true;
     onLoad = "uiNamespace setVariable ['lilc_playerTags', (_this select 0)];";
-	objects[] = {};
+    objects[] = {};
     
     class controls {
         class RscStructuredPlayerTag
-		{
-			idc = -1;
-			type = 13;
-			style = 0;
-			colorText[] = {1,1,1,1};
-			colorBackground[] = {0,0,0,0};
-			font = "RobotoCondensed";
-			text = "";
-			size = 0.04;
-			shadow = 1.5;
-			w = 0; h = 0;
-			x = 0.1; y = 0.1;
-		};
+        {
+            idc = -1;
+            type = 13;
+            style = 0;
+            colorText[] = {1,1,1,1};
+            colorBackground[] = {0,0,0,0};
+            font = "RobotoCondensed";
+            text = "";
+            size = 0.04;
+            shadow = 1.5;
+            w = 0; h = 0;
+            x = 0.1; y = 0.1;
+        };
 
         class rl_slot_1 : RscStructuredPlayerTag { idc = 1055; }; 
         class rl_slot_2 : RscStructuredPlayerTag { idc = 1056; }; 

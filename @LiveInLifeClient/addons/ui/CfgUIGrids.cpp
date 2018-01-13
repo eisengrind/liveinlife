@@ -14,8 +14,8 @@ class IGUI
                         "0.210885 * safezoneW",
                         "0.338333 * safezoneH"
                     },
-	                "(((safezoneW / safezoneH) min 1.2) / 40)",
-	                "((((safezoneW / safezoneH) min 1.2) / 1.2) / 25)"
+                    "(((safezoneW / safezoneH) min 1.2) / 40)",
+                    "((((safezoneW / safezoneH) min 1.2) / 1.2) / 25)"
                 };
             };
         };

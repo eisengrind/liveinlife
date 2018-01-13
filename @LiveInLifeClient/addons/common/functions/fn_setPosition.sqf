@@ -8,7 +8,7 @@
         Sets the position of an object in position format posDir.
     Param(s):
         (_this select 0) : the object for the new position : <OBJECTNULL>
-		(_this select 1) : the position in format posDir : <ARRAY(2)>
+        (_this select 1) : the position in format posDir : <ARRAY(2)>
     Result(s):
         true = success; false != true : <BOOL>
 */
@@ -26,7 +26,7 @@ try {
 
     _object setPosASL (_position select 0);
     _object setDir (_position select 1);
-	throw true;
+    throw true;
 } catch {
     _exception;
 };

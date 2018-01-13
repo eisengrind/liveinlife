@@ -6,10 +6,10 @@
         Vincent Heins
     Description:
         With this function you can do a pseudo check if a given position or area is an given area.
-		This function is mainly intended to be used for UI check; but also can be used for world coordinate/area checks.
+        This function is mainly intended to be used for UI check; but also can be used for world coordinate/area checks.
     Param(s):
         (_this select 0) : the position or the area to search for : <ARRAY(2)>, (optional)<ARRAY(4)>
-		(_this select 1) : the area to search in : <ARRAY(4)>
+        (_this select 1) : the area to search in : <ARRAY(4)>
     Result(s):
         -
 */

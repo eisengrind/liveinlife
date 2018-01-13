@@ -3,8 +3,8 @@ class lilcm_punishment
 {
     name = "lilcm_punishment";
     idd = 1643;
-	movingEnable = 0;
-	enableSimulation = 1;
+    movingEnable = 0;
+    enableSimulation = 1;
 
     class controlsBackground
     {

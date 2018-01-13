@@ -16,15 +16,15 @@ private _thirstAmount = param [0, 0, [0]];
 
 try
 {
-	if !(call lilc_actions_fnc_canUseWaterDispenser) throw false;
-	if (_thirstAmount == 0) throw true;
+    if !(call lilc_actions_fnc_canUseWaterDispenser) throw false;
+    if (_thirstAmount == 0) throw true;
 
-	[_thirstAmount] call lilc_food_fnc_changeThirst;
-	["Du hast einen Becher Wasser getrunken."] call lilc_ui_fnc_hint;
+    [_thirstAmount] call lilc_food_fnc_changeThirst;
+    ["Du hast einen Becher Wasser getrunken."] call lilc_ui_fnc_hint;
 
-	throw true;
+    throw true;
 }
 catch
 {
-	_exception;
+    _exception;
 };

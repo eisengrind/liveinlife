@@ -29,7 +29,7 @@ private _containers = (_gear select 3);
     }
     else
     {//vests/uniforms
-    	_vehicle addItemCargoGlobal [(_x select 0), 1];
+        _vehicle addItemCargoGlobal [(_x select 0), 1];
     };
 
     private _eC = (everyContainer _vehicle);

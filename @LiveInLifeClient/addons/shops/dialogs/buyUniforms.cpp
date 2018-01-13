@@ -2,13 +2,13 @@
 class RscActiveText;
 class lilcm_shops_clothing {
     name = "lilcm_shops_clothing";
-	idd = 1201;
-	movingEnable = false;
-	enableSimulation = true;
+    idd = 1201;
+    movingEnable = false;
+    enableSimulation = true;
     onMouseButtonDown = "_this call lilc_shops_fnc_onMouseButtonDownClothing;";
-	onMouseButtonUp = "_this call lilc_shops_fnc_onMouseButtonUpClothing;";
+    onMouseButtonUp = "_this call lilc_shops_fnc_onMouseButtonUpClothing;";
     onMouseMoving = "_this call lilc_shops_fnc_onMouseMovingClothing;";
-	//onUnload = "(findDisplay 1201) displayRemoveEventHandler [""KeyDown"", lilc_shops_escapeIndex];";
+    //onUnload = "(findDisplay 1201) displayRemoveEventHandler [""KeyDown"", lilc_shops_escapeIndex];";
     
     class controlsBackground {
         class FrameBackgroundBackground : lilc_RscText {
@@ -19,8 +19,8 @@ class lilcm_shops_clothing {
             w = 0.118594 * safezoneW;
             h = 0.363 * safezoneH;
             colorBackground[] = {0,0,0,0.8};
-			onMouseButtonDown = "true;";
-			onMouseButtonUp = "true;";
+            onMouseButtonDown = "true;";
+            onMouseButtonUp = "true;";
         };
 
         class TitleTitle : lilc_RscTitle {
@@ -32,9 +32,9 @@ class lilcm_shops_clothing {
             h = 0.022 * safezoneH;
             colorBackground[] = {0,0,0,0.95};
         };
-	};
-	
-	class controls {
+    };
+    
+    class controls {
         class ListItems : lilc_RscListbox {
             idc = 1202;
             text = "";
@@ -75,19 +75,19 @@ class lilcm_shops_clothing {
             h = 0.022 * safezoneH;
             colorBackground[] = {0,0,0,0.95};
         };
-		
-		class ButtonClose : RscActiveText {
+        
+        class ButtonClose : RscActiveText {
             idc = 1206;
-			style = 48;
+            style = 48;
             text = "\A3\Ui_f\data\GUI\Rsc\RscDisplayArcadeMap\icon_exit_cross_ca.paa";
             x = 0.240989 * safezoneW + safezoneX;
             y = 0.316593 * safezoneH + safezoneY;
             w = 0.00968748 * safezoneW;
             h = 0.0155185 * safezoneH;
-			onButtonClick = "[] spawn lilc_shops_fnc_closeClothingMenu;";
-			color[] = {1, 1, 1, 0.7};
+            onButtonClick = "[] spawn lilc_shops_fnc_closeClothingMenu;";
+            color[] = {1, 1, 1, 0.7};
             colorText[] = {1, 1, 1, 0.7};
             colorActive[] = {1, 1, 1, 1};
         };
-	};
+    };
 };

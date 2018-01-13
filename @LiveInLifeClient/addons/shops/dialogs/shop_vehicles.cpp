@@ -3,7 +3,7 @@ class lilcm_shops_vehicles
 {
     name = "lilcm_shops_vehicles";
     idd = 1700;
-	movingEnable = 0;
+    movingEnable = 0;
     enableSimulation = 1;
     
     class controlsBackground

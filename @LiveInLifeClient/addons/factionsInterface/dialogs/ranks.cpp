@@ -181,7 +181,7 @@ class lilc_factionsInterface_ranks {
             type = 1;
             text = "-";
             borderSize = 0;
-			colorShadow[] = {0,0,0,0};
+            colorShadow[] = {0,0,0,0};
             colorBackground[] = {0, 0, 0, 1};
             onButtonClick = "call lilc_factionsInterface_fnc_onRankEquipmentDown;";
         };

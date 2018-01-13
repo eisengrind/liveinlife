@@ -1,6 +1,6 @@
 
 params [
-	["_name", "", [""]]
+    ["_name", "", [""]]
 ];
 
 if (isNil "_name" || _name == "") exitWith { ""; };

@@ -39,8 +39,8 @@ try {
     } else {
         ["create"] call lilc_atm_fnc_selectMenu;
     };
-	
-	throw true;
+    
+    throw true;
 } catch {
     _exception;
 };

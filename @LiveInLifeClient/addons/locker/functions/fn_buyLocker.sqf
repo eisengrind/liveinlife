@@ -1,6 +1,6 @@
 
 params [
-	["_object", objNull, [objNull]]
+    ["_object", objNull, [objNull]]
 ];
 
 private _name = (_object getVariable ["lilc_locker_name", ""]);
@@ -15,7 +15,7 @@ waitUntil { !(isNil "_result") };
 
 if !([_price] call lilc_cash_fnc_have) exitWith
 {
-	["Du hast nicht genügend Geld.", "ERROR"] call lilc_ui_fnc_hint;
+    ["Du hast nicht genügend Geld.", "ERROR"] call lilc_ui_fnc_hint;
 };
 
 if !([_price] call lilc_cash_fnc_remove) exitWith {};
@@ -24,6 +24,6 @@ if !([_price] call lilc_cash_fnc_remove) exitWith {};
 [lilc_locker_lockers, _name, [[[],[]],[],[[],[]],[]]] call CBA_fnc_hashSet;
 
 [
-	_name,
-	([lilc_locker_lockers, _name] call CBA_fnc_hashGet)
+    _name,
+    ([lilc_locker_lockers, _name] call CBA_fnc_hashGet)
 ] call lilc_locker_fnc_saveLocker;

@@ -1,20 +1,20 @@
 
 params [
-	["_unit", objNull, [objNull]],
-	["_vehicle", "", ["", objNull]]
+    ["_unit", objNull, [objNull]],
+    ["_vehicle", "", ["", objNull]]
 ];
 
 try
 {
-	if (isNull _unit) throw "";
-	if (_vehicle isEqualType objNull) then
-	{
-		_vehicle = (typeOf _vehicle);
-	};
-	if (_vehicle == "") throw "";
+    if (isNull _unit) throw "";
+    if (_vehicle isEqualType objNull) then
+    {
+        _vehicle = (typeOf _vehicle);
+    };
+    if (_vehicle == "") throw "";
 
-	private _accountID = (_unit getVariable ["lilc_accountID", 0]);
-	private _factionID = (_unit getVariable ["lilc_factionID", -1]);
+    private _accountID = (_unit getVariable ["lilc_accountID", 0]);
+    private _factionID = (_unit getVariable ["lilc_factionID", -1]);
 
     private _plate = "";
     if (_vehicle isKindOf "Air") then
@@ -89,9 +89,9 @@ try
         ];
     };
 
-	throw _plate;
+    throw _plate;
 }
 catch
 {
-	_exception;
+    _exception;
 };

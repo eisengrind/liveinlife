@@ -12,12 +12,12 @@ sleep 0.001;
 private _amount = (parseNumber ctrlText 1401);
 if (_amount > 100) then
 {
-	ctrlSetText [1401, "100"];
+    ctrlSetText [1401, "100"];
 };
 
 if (_amount <= 0) then
 {
-	ctrlSetText [1401, "1"];
+    ctrlSetText [1401, "1"];
 };
 
 (call compile (lbData [1500, (lbCurSel 1500)])) call lilc_crafting_fnc_updateMenuNeeded;

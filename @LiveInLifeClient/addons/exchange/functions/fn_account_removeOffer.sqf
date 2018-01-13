@@ -1,7 +1,7 @@
 
 private _cI = (lnbCurSelRow 1503);
 if (_cI <= -1) exitWith {
-	["Du hast kein Angebot ausgwählt.", "ERROR"] call lilc_ui_fnc_hint;
+    ["Du hast kein Angebot ausgwählt.", "ERROR"] call lilc_ui_fnc_hint;
 };
 
 ctrlEnable [1607, false];

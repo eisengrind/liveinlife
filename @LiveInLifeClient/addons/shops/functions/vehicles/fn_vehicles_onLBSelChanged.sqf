@@ -1,8 +1,8 @@
 
 disableSerialization;
 params [
-	["_control", controlNull, [controlNull]],
-	["_index", -1, [-1]]
+    ["_control", controlNull, [controlNull]],
+    ["_index", -1, [-1]]
 ];
 
 if (isNull _control) exitWith {};
@@ -40,30 +40,30 @@ private _text = "";
 
 if (_buyPrice >= 0) then
 {
-	_text = format[
-		"<t color='#FFB917'>Kaufpreis:</t> $%1<br />",
-		_buyPrice
-	];
+    _text = format[
+        "<t color='#FFB917'>Kaufpreis:</t> $%1<br />",
+        _buyPrice
+    ];
 };
 
 if (_rentBuyPrice >= 0) then
 {
-	_text = format[
-		"%1<t color='#FFB917'>Mietpreis:</t> $%2<br /><t color='#FFB917'>Mietverkaufspreis:</t> $%3<br />",
-		_text,
-		_rentBuyPrice,
-		getNumber(_iConfig >> "rentSellPrice")
-	];
+    _text = format[
+        "%1<t color='#FFB917'>Mietpreis:</t> $%2<br /><t color='#FFB917'>Mietverkaufspreis:</t> $%3<br />",
+        _text,
+        _rentBuyPrice,
+        getNumber(_iConfig >> "rentSellPrice")
+    ];
 };
 
 _text = format[
-	"%1<t color='#FFB917'>Beschreibung:</t> %2<br /><t color='#FFB917'>Inventargröße:</t> %3<br /><t color='#FFB917'>Sitzplätze:</t> %4<br /><t color='#FFB917'>Max. Geschw.:</t> %5 km/h<br /><t color='#FFB917'>Tankgröße:</t> %6 l<br />",
-	_text,
-	getText(_vehCfg >> "description"),
-	getNumber(_vehCfg >> "maximumLoad"),
-	([_data, true] call BIS_fnc_crewCount),
-	getNumber(_vehCfg >> "maxSpeed"),
-	getNumber(_vehCfg >> "fuelCapacity")
+    "%1<t color='#FFB917'>Beschreibung:</t> %2<br /><t color='#FFB917'>Inventargröße:</t> %3<br /><t color='#FFB917'>Sitzplätze:</t> %4<br /><t color='#FFB917'>Max. Geschw.:</t> %5 km/h<br /><t color='#FFB917'>Tankgröße:</t> %6 l<br />",
+    _text,
+    getText(_vehCfg >> "description"),
+    getNumber(_vehCfg >> "maximumLoad"),
+    ([_data, true] call BIS_fnc_crewCount),
+    getNumber(_vehCfg >> "maxSpeed"),
+    getNumber(_vehCfg >> "fuelCapacity")
 ];
 _text = format["<t size='0.8'>%1</t>", _text];
 
@@ -71,9 +71,9 @@ _uiInformationText ctrlSetStructuredText parseText _text;
 
 private _pos = (ctrlPosition _uiInformationText);
 _uiInformationText ctrlSetPosition [
-	(_pos select 0),
-	(_pos select 1),
-	(_pos select 2),
-	(ctrlTextHeight _uiInformationText)
+    (_pos select 0),
+    (_pos select 1),
+    (_pos select 2),
+    (ctrlTextHeight _uiInformationText)
 ];
 _uiInformationText ctrlCommit 0;

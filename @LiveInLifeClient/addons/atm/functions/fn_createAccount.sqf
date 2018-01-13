@@ -5,7 +5,7 @@
     Author:
         Vincent Heins
     Description:
-		Simply leads to the creation menu of the atm.
+        Simply leads to the creation menu of the atm.
     Param(s):
         -
     Result(s):

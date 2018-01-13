@@ -1,17 +1,17 @@
 
 params [
-	["_transponderCode", "", [""]]
+    ["_transponderCode", "", [""]]
 ];
 
 try
 {
-	{
-		if ((getText(_x >> "code")) == _transponderCode) throw getText(_x >> "displayName");
-	} forEach ("true" configClasses (missionConfigFile >> "CfgTransponderCodes"));
+    {
+        if ((getText(_x >> "code")) == _transponderCode) throw getText(_x >> "displayName");
+    } forEach ("true" configClasses (missionConfigFile >> "CfgTransponderCodes"));
 
-	throw "Unknown";
+    throw "Unknown";
 }
 catch
 {
-	_exception;
+    _exception;
 };

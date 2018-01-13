@@ -1,6 +1,6 @@
 
 params [
-	["_puncher", objNull, [objNull]]
+    ["_puncher", objNull, [objNull]]
 ];
 
 if (isNull _puncher) exitWith {};

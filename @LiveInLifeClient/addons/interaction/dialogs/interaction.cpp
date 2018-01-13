@@ -1,9 +1,9 @@
 
 class interactionMenu {
     name = "interactionMenu";
-	idd = 1228;
-	movingEnable = 0;
-	enableSimulation = 1;
+    idd = 1228;
+    movingEnable = 0;
+    enableSimulation = 1;
     
     class controlsBackground {
         class FrameTitleBackground : lilc_RscText {
@@ -35,9 +35,9 @@ class interactionMenu {
             w = 0.113437 * safezoneW;
             h = 0.044 * safezoneH;
         };
-	};
-	
-	class controls {
+    };
+    
+    class controls {
         class ButtonAction1 : lilc_RscButtonMenu {
             idc = 1229;
             text = "";
@@ -113,9 +113,9 @@ class interactionMenu {
             text = "";
             colorBackground[] = {0.0667, 0.1137, 0.1647, 1};
             x = 0.448438 * safezoneW + safezoneX;
-	        y = 0.61 * safezoneH + safezoneY;
-	        w = 0.103125 * safezoneW;
-	        h = 0.022 * safezoneH;
+            y = 0.61 * safezoneH + safezoneY;
+            w = 0.103125 * safezoneW;
+            h = 0.022 * safezoneH;
         };
 
         class ButtonClose : lilc_RscButtonMenu {
@@ -137,5 +137,5 @@ class interactionMenu {
             w = 0.107813 * safezoneW;
             h = 0.022 * safezoneH;
         };
-	};
+    };
 };

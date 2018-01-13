@@ -109,8 +109,8 @@ class lilcm_cellphone
         class Button1 : RscActiveText
         {
             idc = 1201;
-			style = 48;
-			color[] = {1, 1, 1, 1};
+            style = 48;
+            color[] = {1, 1, 1, 1};
             colorText[] = {1, 1, 1, 1};
             colorActive[] = {1, 1, 1, 1};
             text = "D:\Users\agphe\Documents\GitHub\private\LiveInLife\LiveInLifeClient\lilc_phones\ui\cellphone\button_left.paa";
@@ -123,8 +123,8 @@ class lilcm_cellphone
         class Button2 : RscActiveText
         {
             idc = 1203;
-			style = 48;
-			color[] = {1, 1, 1, 1};
+            style = 48;
+            color[] = {1, 1, 1, 1};
             colorText[] = {1, 1, 1, 1};
             colorActive[] = {1, 1, 1, 1};
             text = "D:\Users\agphe\Documents\GitHub\private\LiveInLife\LiveInLifeClient\lilc_phones\ui\cellphone\button_center.paa";
@@ -137,8 +137,8 @@ class lilcm_cellphone
         class Button3 : RscActiveText
         {
             idc = 1202;
-			style = 48;
-			color[] = {1, 1, 1, 1};
+            style = 48;
+            color[] = {1, 1, 1, 1};
             colorText[] = {1, 1, 1, 1};
             colorActive[] = {1, 1, 1, 1};
             text = "D:\Users\agphe\Documents\GitHub\private\LiveInLife\LiveInLifeClient\lilc_phones\ui\cellphone\button_right.paa";
@@ -151,8 +151,8 @@ class lilcm_cellphone
         class Button4 : RscActiveText
         {
             idc = 1204;
-			style = 48;
-			color[] = {1, 1, 1, 1};
+            style = 48;
+            color[] = {1, 1, 1, 1};
             colorText[] = {1, 1, 1, 1};
             colorActive[] = {1, 1, 1, 1};
             text = "D:\Users\agphe\Documents\GitHub\private\LiveInLife\LiveInLifeClient\lilc_phones\ui\cellphone\button_left.paa";
@@ -165,8 +165,8 @@ class lilcm_cellphone
         class Button5 : RscActiveText
         {
             idc = 1207;
-			style = 48;
-			color[] = {1, 1, 1, 1};
+            style = 48;
+            color[] = {1, 1, 1, 1};
             colorText[] = {1, 1, 1, 1};
             colorActive[] = {1, 1, 1, 1};
             text = "D:\Users\agphe\Documents\GitHub\private\LiveInLife\LiveInLifeClient\lilc_phones\ui\cellphone\button_center.paa";
@@ -179,8 +179,8 @@ class lilcm_cellphone
         class Button6 : RscActiveText
         {
             idc = 1210;
-			style = 48;
-			color[] = {1, 1, 1, 1};
+            style = 48;
+            color[] = {1, 1, 1, 1};
             colorText[] = {1, 1, 1, 1};
             colorActive[] = {1, 1, 1, 1};
             text = "D:\Users\agphe\Documents\GitHub\private\LiveInLife\LiveInLifeClient\lilc_phones\ui\cellphone\button_right.paa";
@@ -193,8 +193,8 @@ class lilcm_cellphone
         class Button7 : RscActiveText
         {
             idc = 1205;
-			style = 48;
-			color[] = {1, 1, 1, 1};
+            style = 48;
+            color[] = {1, 1, 1, 1};
             colorText[] = {1, 1, 1, 1};
             colorActive[] = {1, 1, 1, 1};
             text = "D:\Users\agphe\Documents\GitHub\private\LiveInLife\LiveInLifeClient\lilc_phones\ui\cellphone\button_left.paa";
@@ -207,8 +207,8 @@ class lilcm_cellphone
         class Button8 : RscActiveText
         {
             idc = 1208;
-			style = 48;
-			color[] = {1, 1, 1, 1};
+            style = 48;
+            color[] = {1, 1, 1, 1};
             colorText[] = {1, 1, 1, 1};
             colorActive[] = {1, 1, 1, 1};
             text = "D:\Users\agphe\Documents\GitHub\private\LiveInLife\LiveInLifeClient\lilc_phones\ui\cellphone\button_center.paa";
@@ -221,8 +221,8 @@ class lilcm_cellphone
         class Button9 : RscActiveText
         {
             idc = 1211;
-			style = 48;
-			color[] = {1, 1, 1, 1};
+            style = 48;
+            color[] = {1, 1, 1, 1};
             colorText[] = {1, 1, 1, 1};
             colorActive[] = {1, 1, 1, 1};
             text = "D:\Users\agphe\Documents\GitHub\private\LiveInLife\LiveInLifeClient\lilc_phones\ui\cellphone\button_right.paa";
@@ -235,8 +235,8 @@ class lilcm_cellphone
         class ButtonStar : RscActiveText
         {
             idc = 1206;
-			style = 48;
-			color[] = {1, 1, 1, 1};
+            style = 48;
+            color[] = {1, 1, 1, 1};
             colorText[] = {1, 1, 1, 1};
             colorActive[] = {1, 1, 1, 1};
             text = "D:\Users\agphe\Documents\GitHub\private\LiveInLife\LiveInLifeClient\lilc_phones\ui\cellphone\button_left.paa";
@@ -249,8 +249,8 @@ class lilcm_cellphone
         class Button0 : RscActiveText
         {
             idc = 1209;
-			style = 48;
-			color[] = {1, 1, 1, 1};
+            style = 48;
+            color[] = {1, 1, 1, 1};
             colorText[] = {1, 1, 1, 1};
             colorActive[] = {1, 1, 1, 1};
             text = "D:\Users\agphe\Documents\GitHub\private\LiveInLife\LiveInLifeClient\lilc_phones\ui\cellphone\button_center.paa";
@@ -263,8 +263,8 @@ class lilcm_cellphone
         class ButtonCross : RscActiveText
         {
             idc = 1212;
-			style = 48;
-			color[] = {1, 1, 1, 1};
+            style = 48;
+            color[] = {1, 1, 1, 1};
             colorText[] = {1, 1, 1, 1};
             colorActive[] = {1, 1, 1, 1};
             text = "D:\Users\agphe\Documents\GitHub\private\LiveInLife\LiveInLifeClient\lilc_phones\ui\cellphone\button_right.paa";
@@ -277,8 +277,8 @@ class lilcm_cellphone
         class ButtonOK : RscActiveText
         {
             idc = 2400;
-			style = 48;
-			color[] = {1, 1, 1, 1};
+            style = 48;
+            color[] = {1, 1, 1, 1};
             colorText[] = {1, 1, 1, 1};
             colorActive[] = {1, 1, 1, 1};
             text = "";
@@ -291,8 +291,8 @@ class lilcm_cellphone
         class ButtonClear : RscActiveText
         {
             idc = 2401;
-			style = 48;
-			color[] = {1, 1, 1, 1};
+            style = 48;
+            color[] = {1, 1, 1, 1};
             colorText[] = {1, 1, 1, 1};
             colorActive[] = {1, 1, 1, 1};
             text = "";
@@ -305,16 +305,16 @@ class lilcm_cellphone
         class ButtonRight : lilc_RscButtonMenu
         {
             idc = 2402;
-			style = 48;
-			color[] = {1, 1, 1, 1};
+            style = 48;
+            color[] = {1, 1, 1, 1};
             colorText[] = {1, 1, 1, 1};
             colorActive[] = {1, 1, 1, 1};
-			animTextureNormal = "#(argb,8,8,3)color(0,0,0,0)";
-			animTextureDisabled = "#(argb,8,8,3)color(0,0,0,0)";
-			animTextureOver = "#(argb,8,8,3)color(0,0,0,0)";
-			animTextureFocused = "#(argb,8,8,3)color(0,0,0,0)";
-			animTexturePressed = "#(argb,8,8,3)color(0,0,0,0)";
-			animTextureDefault = "#(argb,8,8,3)color(0,0,0,0)";
+            animTextureNormal = "#(argb,8,8,3)color(0,0,0,0)";
+            animTextureDisabled = "#(argb,8,8,3)color(0,0,0,0)";
+            animTextureOver = "#(argb,8,8,3)color(0,0,0,0)";
+            animTextureFocused = "#(argb,8,8,3)color(0,0,0,0)";
+            animTexturePressed = "#(argb,8,8,3)color(0,0,0,0)";
+            animTextureDefault = "#(argb,8,8,3)color(0,0,0,0)";
             text = "";
             x = 0.538021 * safezoneW + safezoneX;
             y = 0.494444 * safezoneH + safezoneY;
@@ -325,16 +325,16 @@ class lilcm_cellphone
         class ButtonLeft : lilc_RscButtonMenu
         {
             idc = 2403;
-			style = 48;
-			color[] = {1, 1, 1, 1};
+            style = 48;
+            color[] = {1, 1, 1, 1};
             colorText[] = {1, 1, 1, 1};
             colorActive[] = {1, 1, 1, 1};
-			animTextureNormal = "#(argb,8,8,3)color(0,0,0,0)";
-			animTextureDisabled = "#(argb,8,8,3)color(0,0,0,0)";
-			animTextureOver = "#(argb,8,8,3)color(0,0,0,0)";
-			animTextureFocused = "#(argb,8,8,3)color(0,0,0,0)";
-			animTexturePressed = "#(argb,8,8,3)color(0,0,0,0)";
-			animTextureDefault = "#(argb,8,8,3)color(0,0,0,0)";
+            animTextureNormal = "#(argb,8,8,3)color(0,0,0,0)";
+            animTextureDisabled = "#(argb,8,8,3)color(0,0,0,0)";
+            animTextureOver = "#(argb,8,8,3)color(0,0,0,0)";
+            animTextureFocused = "#(argb,8,8,3)color(0,0,0,0)";
+            animTexturePressed = "#(argb,8,8,3)color(0,0,0,0)";
+            animTextureDefault = "#(argb,8,8,3)color(0,0,0,0)";
             x = 0.519115 * safezoneW + safezoneX;
             y = 0.530222 * safezoneH + safezoneY;
             w = 0.0245833 * safezoneW;

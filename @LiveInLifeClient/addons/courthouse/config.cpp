@@ -1,6 +1,6 @@
 
 class CfgPatches {
-	#include "CfgPatches.cpp"
+    #include "CfgPatches.cpp"
 };
 
 class CfgVehicles {

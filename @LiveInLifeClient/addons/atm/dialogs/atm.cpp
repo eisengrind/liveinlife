@@ -300,7 +300,7 @@ class lilc_atm_menu {
             idc = 1540;
             text = "";
             rowHeight = 0.08;
-			sizeEx = 0.034;
+            sizeEx = 0.034;
             x = 0.366001 * safezoneW + safezoneX;
             y = 0.412019 * safezoneH + safezoneY;
             w = 0.267998 * safezoneW;

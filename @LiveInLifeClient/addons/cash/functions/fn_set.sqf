@@ -1,6 +1,6 @@
 
 params [
-	["_balance", -1, [-1]]
+    ["_balance", -1, [-1]]
 ];
 
 if (_balance <= -1) exitWith {};

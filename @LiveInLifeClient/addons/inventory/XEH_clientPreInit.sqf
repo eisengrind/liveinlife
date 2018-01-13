@@ -12,8 +12,8 @@ lilc_inventory_items = [];
 } forEach (("true" configClasses (configFile >> "CfgWeapons")) + ("true" configClasses (configFile >> "CfgMagazines")) + ("true" configClasses (configFile >> "CfgGlasses")) + ("true" configClasses (configFile >> "CfgVehicles"))); 
 
 [
-	"set_lil_inventory_inventory",
-	{
-		[player, _this] call lilc_inventory_fnc_setInventory;
-	}
+    "set_lil_inventory_inventory",
+    {
+        [player, _this] call lilc_inventory_fnc_setInventory;
+    }
 ] call lilc_login_fnc_addPackage;

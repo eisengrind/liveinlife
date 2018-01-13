@@ -16,6 +16,6 @@ class lilc_atm_01_F : House_Small_F {
 
 class Land_Atm_02_F;
 class lilc_atm_01_F : Land_Atm_02_F {
-	hiddenSelections[] = {"Camo"};
-	hiddenSelectionsTextures[] = {"\x\lilc\addons\atm\atm_01_co_tanBank.paa"};
+    hiddenSelections[] = {"Camo"};
+    hiddenSelectionsTextures[] = {"\x\lilc\addons\atm\atm_01_co_tanBank.paa"};
 };

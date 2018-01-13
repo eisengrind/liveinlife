@@ -1,13 +1,13 @@
 
 #define TF_RADIO_ID(X,Y,Z) class X##_##Z : X \
-	{ \
-		displayName = Y Z; \
-		scope = 1; \
-		scopeCurator = 1; \
-		tf_prototype = 0; \
-		tf_radio = 1; \
-	};	
-	
+    { \
+        displayName = Y Z; \
+        scope = 1; \
+        scopeCurator = 1; \
+        tf_prototype = 0; \
+        tf_radio = 1; \
+    };    
+    
 #define TF_RADIO_IDS(X,Y) \
     TF_RADIO_ID(X,Y,1) \
     TF_RADIO_ID(X,Y,2) \
@@ -1008,4 +1008,4 @@
     TF_RADIO_ID(X,Y,997) \
     TF_RADIO_ID(X,Y,998) \
     TF_RADIO_ID(X,Y,999) \
-	TF_RADIO_ID(X,Y,1000)
+    TF_RADIO_ID(X,Y,1000)

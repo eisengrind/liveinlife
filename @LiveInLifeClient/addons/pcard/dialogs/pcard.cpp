@@ -211,7 +211,7 @@ class lilcm_pcard_personalCardList {
         class ListPersonalcards : lilc_RscListbox {
             idc = 1572;
             text = "";
-			sizeEx = 0.032;
+            sizeEx = 0.032;
             x = 0.453593 * safezoneW + safezoneX;
             y = 0.401 * safezoneH + safezoneY;
             w = 0.0928125 * safezoneW;
@@ -231,179 +231,179 @@ class lilcm_pcard_personalCardList {
 };
 
 class lilcm_pcard_createPersonalcard {
-	idd = 1573;
-	name = "lilcm_pcard_createPersonalcard";
-	enableSimulation = 1;
-	movingEnable = 0;
-	
-	class controlsBackground {
-		class FrameBackgroundBackground : lilc_RscText {
-			idc = -1;
-			text = "";
-			colorBackground[] = {0, 0, 0, 0.7};
-			x = 0.407187 * safezoneW + safezoneX;
-			y = 0.313 * safezoneH + safezoneY;
-			w = 0.185625 * safezoneW;
-			h = 0.385 * safezoneH;
-		};
-		
-		class TitleTitle : lilc_RscTitle {
-			idc = -1;
-			text = "Personalausweis erstellen";
-			colorBackground[] = {0, 0, 0, 1};
-			x = 0.407187 * safezoneW + safezoneX;
-			y = 0.291 * safezoneH + safezoneY;
-			w = 0.185625 * safezoneW;
-			h = 0.022 * safezoneH;
-		};
-		
-		class TextBirthdate : lilc_RscText {
-			idc = -1;
-			text = "Geburtsdatum:";
-			colorBackground[] = {0, 0, 0, 1};
-			x = 0.412344 * safezoneW + safezoneX;
-			y = 0.324 * safezoneH + safezoneY;
-			w = 0.175313 * safezoneW;
-			h = 0.022 * safezoneH;
-		};
-		
-		class TextZipcode : TextBirthdate {
-			idc = -1;
-			text = "Postleitzahl:";
-			x = 0.412344 * safezoneW + safezoneX;
-			y = 0.401 * safezoneH + safezoneY;
-			w = 0.175313 * safezoneW;
-			h = 0.022 * safezoneH;
-		};
-		
-		class TextCity : TextBirthdate {
-			idc = -1;
-			text = "Stadt:";
-			x = 0.412344 * safezoneW + safezoneX;
-			y = 0.467 * safezoneH + safezoneY;
-			w = 0.175313 * safezoneW;
-			h = 0.022 * safezoneH;
-		};
-		
-		class TextStreet : TextBirthdate {
-			idc = -1;
-			text = "Straße:";
-			x = 0.412344 * safezoneW + safezoneX;
-			y = 0.533 * safezoneH + safezoneY;
-			w = 0.175313 * safezoneW;
-			h = 0.022 * safezoneH;
-		};
-		
-		class TextStreetnumber : TextBirthdate {
-			idc = -1;
-			text = "Hausnummer:";
-			x = 0.412344 * safezoneW + safezoneX;
-			y = 0.599 * safezoneH + safezoneY;
-			w = 0.175313 * safezoneW;
-			h = 0.022 * safezoneH;
-		};
-		
-		class TextDay : lilc_RscText {
-			idc = -1;
-			text = "Tag";
-			sizeEx = 0.02;
-			x = 0.412344 * safezoneW + safezoneX;
-			y = 0.383519 * safezoneH + safezoneY;
-			w = 0.0360417 * safezoneW;
-			h = 0.00685183 * safezoneH;
-		};
-		
-		class TextMonth : TextDay {
-			idc = -1;
-			text = "Monat";
-			sizeEx = 0.02;
-			x = 0.450521 * safezoneW + safezoneX;
-			y = 0.383333 * safezoneH + safezoneY;
-			w = 0.0808334 * safezoneW;
-			h = 0.00777775 * safezoneH;
-		};
-		
-		class TextYear : TextDay {
-			idc = -1;
-			text = "Jahr";
-			sizeEx = 0.02;
-			x = 0.533333 * safezoneW + safezoneX;
-			y = 0.383333 * safezoneH + safezoneY;
-			w = 0.0542709 * safezoneW;
-			h = 0.00777775 * safezoneH;
-		};
-	};
-	
-	class controls {
-		class ComboBirthdateDay : lilc_RscCombo {
-			idc = 1574;
-			text = "";
-			x = 0.412344 * safezoneW + safezoneX;
-			y = 0.349704 * safezoneH + safezoneY;
-			w = 0.0360937 * safezoneW;
-			h = 0.033 * safezoneH;
-		};
-		
-		class ComboBirthdateMonth : ComboBirthdateDay {
-			idc = 1575;
-			x = 0.450521 * safezoneW + safezoneX;
-			y = 0.35 * safezoneH + safezoneY;
-			w = 0.0808854 * safezoneW;
-			h = 0.0320741 * safezoneH;
-		};
-		
-		class ComboBirthdateYear : ComboBirthdateDay {
-			idc = 1576;
-			x = 0.533334 * safezoneW + safezoneX;
-			y = 0.35 * safezoneH + safezoneY;
-			w = 0.0543229 * safezoneW;
-			h = 0.0320741 * safezoneH;
-		};
-		
-		class EditZipcode : lilc_RscEdit {
-			idc = 1577;
-			text = "";
-			x = 0.4125 * safezoneW + safezoneX;
-			y = 0.426852 * safezoneH + safezoneY;
-			w = 0.175156 * safezoneW;
-			h = 0.0320741 * safezoneH;
-		};
-		
-		class EditCity : EditZipcode {
-			idc = 1578;
-			text = "";
-			x = 0.412344 * safezoneW + safezoneX;
-			y = 0.492593 * safezoneH + safezoneY;
-			w = 0.175156 * safezoneW;
-			h = 0.0320741 * safezoneH;
-		};
-		
-		class EditStreet : EditCity {
-			idc = 1579;
-			text = "";
-			x = 0.412344 * safezoneW + safezoneX;
-			y = 0.558704 * safezoneH + safezoneY;
-			w = 0.175156 * safezoneW;
-			h = 0.0320741 * safezoneH;
-		};
-		
-		class EditStreetnumber : EditCity {
-			idc = 1580;
-			text = "";
-			x = 0.412344 * safezoneW + safezoneX;
-			y = 0.62474 * safezoneH + safezoneY;
-			w = 0.175156 * safezoneW;
-			h = 0.032074 * safezoneH;
-		};
-		
-		class ButtonComplete : lilc_RscButtonMenu {
-			idc = 1581;
-			text = "Erstellen";
-			onButtonClick = "[] spawn lilc_pcard_fnc_createPersonalcard;";
-			x = 0.427812 * safezoneW + safezoneX;
-			y = 0.665 * safezoneH + safezoneY;
-			w = 0.144375 * safezoneW;
-			h = 0.022 * safezoneH;
-		};
-	};
+    idd = 1573;
+    name = "lilcm_pcard_createPersonalcard";
+    enableSimulation = 1;
+    movingEnable = 0;
+    
+    class controlsBackground {
+        class FrameBackgroundBackground : lilc_RscText {
+            idc = -1;
+            text = "";
+            colorBackground[] = {0, 0, 0, 0.7};
+            x = 0.407187 * safezoneW + safezoneX;
+            y = 0.313 * safezoneH + safezoneY;
+            w = 0.185625 * safezoneW;
+            h = 0.385 * safezoneH;
+        };
+        
+        class TitleTitle : lilc_RscTitle {
+            idc = -1;
+            text = "Personalausweis erstellen";
+            colorBackground[] = {0, 0, 0, 1};
+            x = 0.407187 * safezoneW + safezoneX;
+            y = 0.291 * safezoneH + safezoneY;
+            w = 0.185625 * safezoneW;
+            h = 0.022 * safezoneH;
+        };
+        
+        class TextBirthdate : lilc_RscText {
+            idc = -1;
+            text = "Geburtsdatum:";
+            colorBackground[] = {0, 0, 0, 1};
+            x = 0.412344 * safezoneW + safezoneX;
+            y = 0.324 * safezoneH + safezoneY;
+            w = 0.175313 * safezoneW;
+            h = 0.022 * safezoneH;
+        };
+        
+        class TextZipcode : TextBirthdate {
+            idc = -1;
+            text = "Postleitzahl:";
+            x = 0.412344 * safezoneW + safezoneX;
+            y = 0.401 * safezoneH + safezoneY;
+            w = 0.175313 * safezoneW;
+            h = 0.022 * safezoneH;
+        };
+        
+        class TextCity : TextBirthdate {
+            idc = -1;
+            text = "Stadt:";
+            x = 0.412344 * safezoneW + safezoneX;
+            y = 0.467 * safezoneH + safezoneY;
+            w = 0.175313 * safezoneW;
+            h = 0.022 * safezoneH;
+        };
+        
+        class TextStreet : TextBirthdate {
+            idc = -1;
+            text = "Straße:";
+            x = 0.412344 * safezoneW + safezoneX;
+            y = 0.533 * safezoneH + safezoneY;
+            w = 0.175313 * safezoneW;
+            h = 0.022 * safezoneH;
+        };
+        
+        class TextStreetnumber : TextBirthdate {
+            idc = -1;
+            text = "Hausnummer:";
+            x = 0.412344 * safezoneW + safezoneX;
+            y = 0.599 * safezoneH + safezoneY;
+            w = 0.175313 * safezoneW;
+            h = 0.022 * safezoneH;
+        };
+        
+        class TextDay : lilc_RscText {
+            idc = -1;
+            text = "Tag";
+            sizeEx = 0.02;
+            x = 0.412344 * safezoneW + safezoneX;
+            y = 0.383519 * safezoneH + safezoneY;
+            w = 0.0360417 * safezoneW;
+            h = 0.00685183 * safezoneH;
+        };
+        
+        class TextMonth : TextDay {
+            idc = -1;
+            text = "Monat";
+            sizeEx = 0.02;
+            x = 0.450521 * safezoneW + safezoneX;
+            y = 0.383333 * safezoneH + safezoneY;
+            w = 0.0808334 * safezoneW;
+            h = 0.00777775 * safezoneH;
+        };
+        
+        class TextYear : TextDay {
+            idc = -1;
+            text = "Jahr";
+            sizeEx = 0.02;
+            x = 0.533333 * safezoneW + safezoneX;
+            y = 0.383333 * safezoneH + safezoneY;
+            w = 0.0542709 * safezoneW;
+            h = 0.00777775 * safezoneH;
+        };
+    };
+    
+    class controls {
+        class ComboBirthdateDay : lilc_RscCombo {
+            idc = 1574;
+            text = "";
+            x = 0.412344 * safezoneW + safezoneX;
+            y = 0.349704 * safezoneH + safezoneY;
+            w = 0.0360937 * safezoneW;
+            h = 0.033 * safezoneH;
+        };
+        
+        class ComboBirthdateMonth : ComboBirthdateDay {
+            idc = 1575;
+            x = 0.450521 * safezoneW + safezoneX;
+            y = 0.35 * safezoneH + safezoneY;
+            w = 0.0808854 * safezoneW;
+            h = 0.0320741 * safezoneH;
+        };
+        
+        class ComboBirthdateYear : ComboBirthdateDay {
+            idc = 1576;
+            x = 0.533334 * safezoneW + safezoneX;
+            y = 0.35 * safezoneH + safezoneY;
+            w = 0.0543229 * safezoneW;
+            h = 0.0320741 * safezoneH;
+        };
+        
+        class EditZipcode : lilc_RscEdit {
+            idc = 1577;
+            text = "";
+            x = 0.4125 * safezoneW + safezoneX;
+            y = 0.426852 * safezoneH + safezoneY;
+            w = 0.175156 * safezoneW;
+            h = 0.0320741 * safezoneH;
+        };
+        
+        class EditCity : EditZipcode {
+            idc = 1578;
+            text = "";
+            x = 0.412344 * safezoneW + safezoneX;
+            y = 0.492593 * safezoneH + safezoneY;
+            w = 0.175156 * safezoneW;
+            h = 0.0320741 * safezoneH;
+        };
+        
+        class EditStreet : EditCity {
+            idc = 1579;
+            text = "";
+            x = 0.412344 * safezoneW + safezoneX;
+            y = 0.558704 * safezoneH + safezoneY;
+            w = 0.175156 * safezoneW;
+            h = 0.0320741 * safezoneH;
+        };
+        
+        class EditStreetnumber : EditCity {
+            idc = 1580;
+            text = "";
+            x = 0.412344 * safezoneW + safezoneX;
+            y = 0.62474 * safezoneH + safezoneY;
+            w = 0.175156 * safezoneW;
+            h = 0.032074 * safezoneH;
+        };
+        
+        class ButtonComplete : lilc_RscButtonMenu {
+            idc = 1581;
+            text = "Erstellen";
+            onButtonClick = "[] spawn lilc_pcard_fnc_createPersonalcard;";
+            x = 0.427812 * safezoneW + safezoneX;
+            y = 0.665 * safezoneH + safezoneY;
+            w = 0.144375 * safezoneW;
+            h = 0.022 * safezoneH;
+        };
+    };
 };

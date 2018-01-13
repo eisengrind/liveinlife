@@ -5,8 +5,8 @@ lilc_inventory_movingActive = false;
 lilc_inventory_inventoryAccessWhenOpened = false;
 
 player addEventHandler [
-	"InventoryOpened",
-	{
-		(_this call lilc_inventory_fnc_onInventoryOpen);
-	}
+    "InventoryOpened",
+    {
+        (_this call lilc_inventory_fnc_onInventoryOpen);
+    }
 ];

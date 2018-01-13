@@ -1,8 +1,8 @@
 
 params [
-	["_time", [], [[]]],
-	["_code", {}, [{}]],
-	["_args", nil]
+    ["_time", [], [[]]],
+    ["_code", {}, [{}]],
+    ["_args", nil]
 ];
 
 if ((count _time) == 0) exitWith { -1; };
@@ -14,11 +14,11 @@ private _i = 0;
 
 while
 {
-	(_i in _keys);
+    (_i in _keys);
 }
 do
 {
-	_i = _i + 1;
+    _i = _i + 1;
 };
 
 lilc_time_events = ([lilc_time_events, _i, [_time, _code, _args]] call CBA_fnc_hashSet);

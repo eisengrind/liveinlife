@@ -1,16 +1,16 @@
 
 params [
-	["_exchangeName", "", [""]]
+    ["_exchangeName", "", [""]]
 ];
 
 try
 {
-	private _config = (missionConfigFile >> "CfgExchange" >> _exchangeName);
-	if (isNull _config) throw configNull;
+    private _config = (missionConfigFile >> "CfgExchange" >> _exchangeName);
+    if (isNull _config) throw configNull;
 
-	throw _config;
+    throw _config;
 }
 catch
 {
-	_exception;
+    _exception;
 };

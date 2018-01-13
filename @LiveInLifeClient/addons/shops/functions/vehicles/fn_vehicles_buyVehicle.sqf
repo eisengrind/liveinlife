@@ -19,13 +19,13 @@ private _buyPrice = getNumber(_config >> "buyPrice");
 
 if !([_buyPrice] call lilc_cash_fnc_have) exitWith
 {
-	[
-		"Du hast nicht genügend Geld.",
-		"ERROR"
-	] call lilc_ui_fnc_hint;
+    [
+        "Du hast nicht genügend Geld.",
+        "ERROR"
+    ] call lilc_ui_fnc_hint;
 };
 
 [
-	[player, _shopName, _data],
-	"lils_shops_fnc_buyVehicle"
+    [player, _shopName, _data],
+    "lils_shops_fnc_buyVehicle"
 ] call lilc_common_fnc_sendToServer;

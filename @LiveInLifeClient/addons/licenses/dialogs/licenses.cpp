@@ -92,16 +92,16 @@ class lilcm_licenses
             h = 0.022 * safezoneH;
         };
         
-		class ButtonClose : RscActiveText {
+        class ButtonClose : RscActiveText {
             idc = 1200;
-			style = 48;
+            style = 48;
             text = "\A3\Ui_f\data\GUI\Rsc\RscDisplayArcadeMap\icon_exit_cross_ca.paa";
             x = 0.632344 * safezoneW + safezoneX;
             y = 0.305704 * safezoneH + safezoneY;
             w = 0.01 * safezoneW;
             h = 0.0151852 * safezoneH;
-			onButtonClick = "closeDialog 1301;";
-			color[] = {1, 1, 1, 0.7};
+            onButtonClick = "closeDialog 1301;";
+            color[] = {1, 1, 1, 0.7};
             colorText[] = {1, 1, 1, 0.7};
             colorActive[] = {1, 1, 1, 1};
         };

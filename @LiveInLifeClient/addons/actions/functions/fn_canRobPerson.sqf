@@ -1,20 +1,20 @@
 
 /*
-	Author(s):
-		Vincent Heins
-	
-	Description:
-		Checks whether a player can rob a _target.
+    Author(s):
+        Vincent Heins
+    
+    Description:
+        Checks whether a player can rob a _target.
 
-	Parameter(s):
-		(_this select 0) : _target : <objNull> : the unit to check
+    Parameter(s):
+        (_this select 0) : _target : <objNull> : the unit to check
 
-	Result:
-		<bool> : can the player rob a person?
+    Result:
+        <bool> : can the player rob a person?
 
-	Example(s):
-		(Example 1)
-		private _canRobPerson = ([player] call lilc_actions_fnc_canRobCorpse);
+    Example(s):
+        (Example 1)
+        private _canRobPerson = ([player] call lilc_actions_fnc_canRobCorpse);
 */
 
 params [

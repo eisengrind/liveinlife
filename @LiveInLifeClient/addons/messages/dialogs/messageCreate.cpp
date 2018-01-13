@@ -66,10 +66,10 @@ class lilcm_messageCreate
         class EditMessage : lilc_RscEdit
         {
             idc = 1400;
-			style = 16;
-			htmlControl = true;
-			autocomplete = "";
-			lineSpacing = 1;
+            style = 16;
+            htmlControl = true;
+            autocomplete = "";
+            lineSpacing = 1;
             canModify = true;
             maxChars = 512;
             x = 0.371094 * safezoneW + safezoneX;

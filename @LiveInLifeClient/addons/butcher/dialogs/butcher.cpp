@@ -32,16 +32,16 @@ class lilcm_butcher
 
     class controls
     {
-		class ButtonClose : RscActiveText {
+        class ButtonClose : RscActiveText {
             idc = 1206;
-			style = 48;
+            style = 48;
             text = "\A3\Ui_f\data\GUI\Rsc\RscDisplayArcadeMap\icon_exit_cross_ca.paa";
             x = 0.590937 * safezoneW + safezoneX;
             y = 0.370667 * safezoneH + safezoneY;
             w = 0.0105209 * safezoneW;
             h = 0.016111 * safezoneH;
-			onButtonClick = "[] spawn lilc_shops_fnc_closeClothingMenu;";
-			color[] = {1, 1, 1, 0.7};
+            onButtonClick = "[] spawn lilc_shops_fnc_closeClothingMenu;";
+            color[] = {1, 1, 1, 0.7};
             colorText[] = {1, 1, 1, 0.7};
             colorActive[] = {1, 1, 1, 1};
         };

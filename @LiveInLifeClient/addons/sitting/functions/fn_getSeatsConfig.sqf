@@ -1,12 +1,12 @@
 
 try
 {
-	private _config = (missionConfigFile >> "CfgSeats");
-	if (isNull _config) throw configNull;
+    private _config = (missionConfigFile >> "CfgSeats");
+    if (isNull _config) throw configNull;
 
-	throw _config;
+    throw _config;
 }
 catch
 {
-	_exception;
+    _exception;
 };

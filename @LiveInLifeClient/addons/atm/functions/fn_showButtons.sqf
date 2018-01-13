@@ -44,8 +44,8 @@ try {
             };
         };
     } forEach _availableButtons;
-	
-	throw true;
+    
+    throw true;
 } catch {
     _exception;
 };

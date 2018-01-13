@@ -3,8 +3,8 @@ class lilc_respawn {
     name = "lilc_respawn";
     idd = 1040;
     fadein = 0;
-	duration = 999999999999999999999999999;
-	fadeout = 0;
+    duration = 999999999999999999999999999;
+    fadeout = 0;
     movingEnable = false;
     enableSimulation = true;
     onLoad = "uiNamespace setVariable ['lilc_respawn', (_this select 0)];";

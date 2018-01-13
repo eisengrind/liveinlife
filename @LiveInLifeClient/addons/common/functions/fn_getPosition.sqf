@@ -6,7 +6,7 @@
         Vincent Heins
     Description:
         Returns the position of any object in format: { positionASL, direction }
-		It is the main command to get position of a player because it is an alias, which could be edited.
+        It is the main command to get position of a player because it is an alias, which could be edited.
     Param(s):
         (_this select 0) : the object to gather position from : <OBJECTNULL>
     Result(s):

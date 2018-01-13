@@ -4,5 +4,5 @@ closeDialog 1420;
 lilc_atcInterface_onEachFrameIndex = "";
 
 {
-	_x setMarkerAlphaLocal 1;
+    _x setMarkerAlphaLocal 1;
 } forEach allMapMarkers;

@@ -6,5 +6,5 @@ class lilc_farming
     fileName = "lilc_farming.pbo";
     author[]= {"Vincent Heins"};
     lilc_globalVariableDefines = "globalVariableDefines.sqf";
-	units[] = {};
+    units[] = {};
 };

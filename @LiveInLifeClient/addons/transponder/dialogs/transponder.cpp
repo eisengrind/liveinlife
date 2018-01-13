@@ -71,14 +71,14 @@ class lilcm_transponder_transponder {
             idc = 1585;
             text = "";
             onButtonClick = "[] spawn lilc_transponder_fnc_on;";
-			toolTip = "An/-Auschalten";
-			animTextureNormal = "#(argb,8,8,3)color(0,0,0,0)";
-			animTextureDisabled = "#(argb,8,8,3)color(0,0,0,0)";
-			animTextureOver = "#(argb,8,8,3)color(0,0,0,0)";
-			animTextureFocused = "#(argb,8,8,3)color(0,0,0,0)";
-			animTexturePressed = "#(argb,8,8,3)color(0,0,0,0)";
-			animTextureDefault = "#(argb,8,8,3)color(0,0,0,0)";
-			colorBackground[] = {0, 0, 0, 0};
+            toolTip = "An/-Auschalten";
+            animTextureNormal = "#(argb,8,8,3)color(0,0,0,0)";
+            animTextureDisabled = "#(argb,8,8,3)color(0,0,0,0)";
+            animTextureOver = "#(argb,8,8,3)color(0,0,0,0)";
+            animTextureFocused = "#(argb,8,8,3)color(0,0,0,0)";
+            animTexturePressed = "#(argb,8,8,3)color(0,0,0,0)";
+            animTextureDefault = "#(argb,8,8,3)color(0,0,0,0)";
+            colorBackground[] = {0, 0, 0, 0};
             x = 0.458333 * safezoneW + safezoneX;
             y = 0.381482 * safezoneH + safezoneY;
             w = 0.0209375 * safezoneW;
@@ -88,7 +88,7 @@ class lilcm_transponder_transponder {
         class Button2 : Button1 {
             idc = 1586;
             onButtonClick = "call lilc_transponder_fnc_setVFR;";
-			toolTip = "VFR Einstellung";
+            toolTip = "VFR Einstellung";
             x = 0.490104 * safezoneW + safezoneX;
             y = 0.381482 * safezoneH + safezoneY;
             w = 0.0209375 * safezoneW;
@@ -106,7 +106,7 @@ class lilcm_transponder_transponder {
         class Button4 : Button1 {
             idc = 1588;
             onButtonClick = "call lilc_transponder_fnc_changeMode;";
-			toolTip = "Modus ändern";
+            toolTip = "Modus ändern";
             x = 0.458334 * safezoneW + safezoneX;
             y = 0.587963 * safezoneH + safezoneY;
             w = 0.0209375 * safezoneW;
@@ -124,7 +124,7 @@ class lilcm_transponder_transponder {
         class Button6 : Button1 {
             idc = 1590;
             onButtonClick = "[] spawn lilc_transponder_fnc_apply;";
-			toolTip = "Übernehmen";
+            toolTip = "Übernehmen";
             x = 0.521354 * safezoneW + safezoneX;
             y = 0.587963 * safezoneH + safezoneY;
             w = 0.0209375 * safezoneW;

@@ -34,7 +34,7 @@ try {
     lilc_login_createProfile = true;
     [[player, _firstname, _lastname, _gender], "lils_login_fnc_createProfile"] call lilc_common_fnc_sendToServer;
 } catch {
-	lilc_login_createProfile = false;
+    lilc_login_createProfile = false;
     switch (_exception) do {
         case 0: { systemChat "Du musst einen Vornamen angeben."; };
         case 1: { systemChat "Du musst einen Nachnamen angeben."; };

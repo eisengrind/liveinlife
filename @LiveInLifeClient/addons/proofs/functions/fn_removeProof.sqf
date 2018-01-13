@@ -1,9 +1,9 @@
 
 params [
-	["_object", objNull, [objNull]],
-	["_proof", "", [""]],
-	["_aID", 0, [0]],
-	["_additional", nil]
+    ["_object", objNull, [objNull]],
+    ["_proof", "", [""]],
+    ["_aID", 0, [0]],
+    ["_additional", nil]
 ];
 
 if (isNull _object) exitWith {};
@@ -26,9 +26,9 @@ if (_index <= -1) exitWith {};
 _values deleteAt _index;
 
 _proofs = (if ((count _values) <= 0) then {
-	([_proofs, _proof] call CBA_fnc_hashRem);
+    ([_proofs, _proof] call CBA_fnc_hashRem);
 } else {
-	([_proofs, _proof, _values] call CBA_fnc_hashSet);
+    ([_proofs, _proof, _values] call CBA_fnc_hashSet);
 });
 
 //proofs are global at any time!

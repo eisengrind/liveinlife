@@ -6,11 +6,11 @@
         Vincent Heins
     Description:
         SwitchMove alias for network purposes.
-		If this function is executed by the local player on a server, the animation will be broadcasted over the network.
+        If this function is executed by the local player on a server, the animation will be broadcasted over the network.
     Param(s):
         (_this select 0) : the unit on which to execute the animation : <OBJECTNULL>
-		(_this select 1) : the animation to be played; can be any animation, gesture or playMove : <STRING>
-		(not needed/optional)(_this select 2) : this parameter is needed to check, if this function is "incoming" or "outgoing". Otherwise, if the function is broadcasted over network, it will be iterated unlimited times.
+        (_this select 1) : the animation to be played; can be any animation, gesture or playMove : <STRING>
+        (not needed/optional)(_this select 2) : this parameter is needed to check, if this function is "incoming" or "outgoing". Otherwise, if the function is broadcasted over network, it will be iterated unlimited times.
     Result(s):
         true = success; false != true : <BOOL>
 */

@@ -70,7 +70,7 @@ class lilcm_ferry
             y = 0.313 * safezoneH + safezoneY;
             w = 0.0123438 * safezoneW;
             h = 0.022 * safezoneH;
-			color[] = {1, 1, 1, 0.7};
+            color[] = {1, 1, 1, 0.7};
             colorText[] = {1, 1, 1, 0.7};
             colorActive[] = {1, 1, 1, 1};
         };

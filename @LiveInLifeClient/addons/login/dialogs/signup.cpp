@@ -9,91 +9,91 @@ Accessible IDC's
 
 class signup {
     name = "signup";
-	idd = 1029;
+    idd = 1029;
     fadein = 2;
-	fadeout = 0;
+    fadeout = 0;
     onUnload = "(findDisplay 1029) displayRemoveEventHandler [""KeyDown"", lilc_account_escapeEventHandler];";
-	onDestroy = "(findDisplay 1029) displayRemoveEventHandler [""KeyDown"", lilc_account_escapeEventHandler];";
-	movingEnable = false;
-	enableSimulation = true;
+    onDestroy = "(findDisplay 1029) displayRemoveEventHandler [""KeyDown"", lilc_account_escapeEventHandler];";
+    movingEnable = false;
+    enableSimulation = true;
     
     class controlsBackground {
-		class FrameBackgound : lilc_RscText {
-			idc = -1;
-			text = "";
-			colorBackground[] = {0.0863, 0.1451, 0.2118, 1};
-			x = 0.371094 * safezoneW + safezoneX;
+        class FrameBackgound : lilc_RscText {
+            idc = -1;
+            text = "";
+            colorBackground[] = {0.0863, 0.1451, 0.2118, 1};
+            x = 0.371094 * safezoneW + safezoneX;
             y = 0.346 * safezoneH + safezoneY;
             w = 0.257813 * safezoneW;
             h = 0.286 * safezoneH;
-		};
-		
-		class FrameBackgroundTitle : lilc_RscText {
-			idc = -1;
-			text = "";
-			colorBackground[] = {0.7843, 0.7843, 0.7843, 1};
+        };
+        
+        class FrameBackgroundTitle : lilc_RscText {
+            idc = -1;
+            text = "";
+            colorBackground[] = {0.7843, 0.7843, 0.7843, 1};
             x = 0.371094 * safezoneW + safezoneX;
             y = 0.313 * safezoneH + safezoneY;
             w = 0.257813 * safezoneW;
             h = 0.033 * safezoneH;
-		};
+        };
 
-		class FrameBackgroundFooter : lilc_RscText {
-			idc = -1;
-			text = "";
-			colorBackground[] = {0.7843, 0.7843, 0.7843, 1};
+        class FrameBackgroundFooter : lilc_RscText {
+            idc = -1;
+            text = "";
+            colorBackground[] = {0.7843, 0.7843, 0.7843, 1};
             x = 0.371094 * safezoneW + safezoneX;
             y = 0.632 * safezoneH + safezoneY;
             w = 0.257813 * safezoneW;
             h = 0.044 * safezoneH;
-		};
-		
-		class TitleHeader : lilc_RscTitle {
-			idc = -1;
-			text = "Live in Life - Registrierung";
+        };
+        
+        class TitleHeader : lilc_RscTitle {
+            idc = -1;
+            text = "Live in Life - Registrierung";
             sizeEx = 0.045;
             font = "PuristaMedium";
             colorText[] = {0.0863, 0.1451, 0.2118, 1};
             shadow = 0;
-			x = 0.374219 * safezoneW + safezoneX;
+            x = 0.374219 * safezoneW + safezoneX;
             y = 0.31937 * safezoneH + safezoneY;
             w = 0.251614 * safezoneW;
             h = 0.022 * safezoneH;
-		};
-		
-		class TitleFirstname : lilc_RscTitle {
-			idc = -1;
+        };
+        
+        class TitleFirstname : lilc_RscTitle {
+            idc = -1;
             sizeEx = 0.04;
-			text = "Roleplay-Vorname:";
+            text = "Roleplay-Vorname:";
             font = "PuristaMedium";
-			x = 0.37625 * safezoneW + safezoneX;
+            x = 0.37625 * safezoneW + safezoneX;
             y = 0.357 * safezoneH + safezoneY;
             w = 0.2475 * safezoneW;
             h = 0.022 * safezoneH;
-		};
-		
-		class TitleGender : lilc_RscTitle {
-			idc = -1;
+        };
+        
+        class TitleGender : lilc_RscTitle {
+            idc = -1;
             sizeEx = 0.04;
-			text = "Geschlecht:";
+            text = "Geschlecht:";
             font = "PuristaMedium";
-			x = 0.37625 * safezoneW + safezoneX;
+            x = 0.37625 * safezoneW + safezoneX;
             y = 0.511 * safezoneH + safezoneY;
             w = 0.2475 * safezoneW;
             h = 0.022 * safezoneH;
-		};
-		
-		class TitleLastname : lilc_RscTitle {
-			idc = -1;
+        };
+        
+        class TitleLastname : lilc_RscTitle {
+            idc = -1;
             sizeEx = 0.04;
-			text = "Roleplay-Nachname:";
+            text = "Roleplay-Nachname:";
             font = "PuristaMedium";
-			x = 0.37625 * safezoneW + safezoneX;
+            x = 0.37625 * safezoneW + safezoneX;
             y = 0.434 * safezoneH + safezoneY;
             w = 0.2475 * safezoneW;
             h = 0.022 * safezoneH;
-		};
-	};
+        };
+    };
     
     class controls {
         class EditFirstname : lilc_RscEdit {
@@ -156,14 +156,14 @@ class signup {
         };
         
         class TextError : lilc_RscStructuredText {
-			idc = 1035;
-			text = "";
-			sizeEx = 0.02;
+            idc = 1035;
+            text = "";
+            sizeEx = 0.02;
             font = "PuristaLight";
-			x = 0.37625 * safezoneW + safezoneX;
+            x = 0.37625 * safezoneW + safezoneX;
             y = 0.601667 * safezoneH + safezoneY;
             w = 0.2475 * safezoneW;
             h = 0.022 * safezoneH;
-		};
+        };
     };
 };

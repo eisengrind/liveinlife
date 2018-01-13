@@ -1,12 +1,12 @@
 
 class lilc_ui_loading {
     name = "lilc_ui_loading";
-	idd = 1501;
+    idd = 1501;
     fadein = 0;
-	duration = 999999999999999999999999999;
-	fadeout = 0;
-	movingEnable = false;
-	enableSimulation = true;
+    duration = 999999999999999999999999999;
+    fadeout = 0;
+    movingEnable = false;
+    enableSimulation = true;
     onLoad = "uiNamespace setVariable ['lilc_ui_loading', (_this select 0)];";
     
     class controlsBackground {

@@ -3,21 +3,21 @@ private _string = param [0, "", [""]];
 
 try
 {
-	if (_string == "") throw _string;
+    if (_string == "") throw _string;
 
-	_string = ([_string, """", """"""] call KRON_Replace);
-	_string = ([_string, "'", "''"] call KRON_Replace);
+    _string = ([_string, """", """"""] call KRON_Replace);
+    _string = ([_string, "'", "''"] call KRON_Replace);
 
-	private _stringArray = (toArray _string);
-	private _encodedArray = [];
+    private _stringArray = (toArray _string);
+    private _encodedArray = [];
 
-	{
-		
-	} forEach _stringArray;
+    {
+        
+    } forEach _stringArray;
 
-	throw _string;
+    throw _string;
 }
 catch
 {
-	_exception;
+    _exception;
 };

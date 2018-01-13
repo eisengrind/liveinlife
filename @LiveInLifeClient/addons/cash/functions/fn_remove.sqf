@@ -1,6 +1,6 @@
 
 params [
-	["_balance", 0, [0]]
+    ["_balance", 0, [0]]
 ];
 
 if (_balance < 0) exitWith { false; };

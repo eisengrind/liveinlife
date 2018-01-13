@@ -22,17 +22,17 @@ try {
 
     _priority = 400;
     while {
-		_ppEffectBlur = ppEffectCreate ["DynamicBlur", _priority];
-		_ppEffectBlur < 0
-	} do {
-		_priority = _priority + 1;
-	};
+        _ppEffectBlur = ppEffectCreate ["DynamicBlur", _priority];
+        _ppEffectBlur < 0
+    } do {
+        _priority = _priority + 1;
+    };
 
     _ppEffectBlur = ppEffectCreate ["DynamicBlur", 500];
     _ppEffectBlur ppEffectEnable true;
     _ppEffectBlur ppEffectAdjust [2];
     _ppEffectBlur ppEffectCommit 0;
-	waitUntil { (ppEffectCommitted _ppEffectBlur) };
+    waitUntil { (ppEffectCommitted _ppEffectBlur) };
 
     private _camera = [(selectRandom ["loginCamera_1", "loginCamera_2", "loginCamera_3", "loginCamera_4"])] call lilc_common_fnc_createStaticCamera;
     [2] call lilc_ui_fnc_fadeOutBlack;

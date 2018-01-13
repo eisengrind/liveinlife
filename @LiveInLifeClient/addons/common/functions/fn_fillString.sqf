@@ -8,8 +8,8 @@
         Fills a string up to a given length with custom character/s. Default setting will put the character/s before the initial string.
     Param(s):
         (_this select 0) : string to edit : <STRING>
-		(_this select 1) : length to fill up to (lengths < length of string will return the initial string) : <SCALAR/INT>
-		(optional)(_this select 2) : will the character/s be attached to the string or not : <BOOL>
+        (_this select 1) : length to fill up to (lengths < length of string will return the initial string) : <SCALAR/INT>
+        (optional)(_this select 2) : will the character/s be attached to the string or not : <BOOL>
     Result(s):
         the filled string : <STRING>
 */

@@ -1,7 +1,7 @@
 
 for "_i" from 0 to 8 do
 {
-	ctrlShow [(1351 + _i), false];
+    ctrlShow [(1351 + _i), false];
 };
 
 disableSerialization;

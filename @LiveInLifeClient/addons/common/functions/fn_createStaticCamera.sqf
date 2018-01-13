@@ -8,8 +8,8 @@
         Creates a (static) camera for whatever purpose. The camera is created with a predefined position / predefined coordinates in config CfgStaticCameras
     Param(s):
         (_this select 0) : the name, which is set in config CfgStaticCameras : <STRING>
-		(_this select 1) : amount of time to commit the new position of the camera : <SCALAR/INT>
-		(optional)(_this select 2): a camera object which is used to commit new coordinates. A new camera is not created with this parameter : <OBJNULL>
+        (_this select 1) : amount of time to commit the new position of the camera : <SCALAR/INT>
+        (optional)(_this select 2): a camera object which is used to commit new coordinates. A new camera is not created with this parameter : <OBJNULL>
     Result(s):
         <objNull> : the newly or already used camera object : <OBJNULL>
 */

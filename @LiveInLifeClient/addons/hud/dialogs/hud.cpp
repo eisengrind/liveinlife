@@ -2,14 +2,14 @@
 class lilc_hud
 {
     name = "lilc_hud";
-	idd = 1035;
+    idd = 1035;
     fadein = 0.5;
-	duration = 999999999999999999999999999;
-	fadeout = 0.5;
-	movingEnable = false;
-	enableSimulation = true;
+    duration = 999999999999999999999999999;
+    fadeout = 0.5;
+    movingEnable = false;
+    enableSimulation = true;
     onLoad = "uiNamespace setVariable ['lilc_hud', (_this select 0)];";
-	objects[] = {};
+    objects[] = {};
     
     class controlsBackground
     {

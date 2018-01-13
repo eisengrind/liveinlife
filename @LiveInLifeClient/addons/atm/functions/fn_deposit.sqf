@@ -5,9 +5,9 @@
     Author:
         Vincent Heins
     Description:
-		Deposits cash on a specific bankaccount.
+        Deposits cash on a specific bankaccount.
     Param(s):
-		(_this select 0) : amount to deposit : <SCALAR/INT>
+        (_this select 0) : amount to deposit : <SCALAR/INT>
     Result(s):
         true = success; false != true : <BOOL>
 */

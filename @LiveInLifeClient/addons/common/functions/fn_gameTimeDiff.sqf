@@ -8,7 +8,7 @@
         Calculates the range between two gameTime's. Say i want the difference from 22.00 to 03.00 = 5h
     Param(s):
         (_this select 0) : the gameTime stamp to begin with : <ARRAY>
-		(_this select 1) : the gameTime stamp to calculate to : <ARRAY>
+        (_this select 1) : the gameTime stamp to calculate to : <ARRAY>
     Result(s):
         the difference in decimal number : <SCALAR/INT/FLOAT>
 */

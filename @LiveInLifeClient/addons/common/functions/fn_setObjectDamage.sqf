@@ -8,7 +8,7 @@
         Sets the given BIS standard hitpoints array at given object.
     Param(s):
         (_this select 0) : the object to handle the damage to : <OBJECTNULL>
-		(_this select 1) : the hitpoints array for the object : <ARRAY>
+        (_this select 1) : the hitpoints array for the object : <ARRAY>
     Result(s):
         true = success; false != true : <BOOL>
 */
