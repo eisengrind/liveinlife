@@ -16,6 +16,7 @@ sleep 2;
 	-2,
 	false
 ] call lilc_common_fnc_send;
+sleep 5;
 
 {
 	private _unit = _x;
@@ -24,7 +25,7 @@ sleep 2;
 		[_x]
 	] call CBA_fnc_localEvent;
 
-	(getText(configFile >> "CfgMasterServer" >> "server_commandPassword")) servercommand (format["#kick %1", (getPlayerUID _x)]);
+	(getText(configFile >> "CfgMasterServer" >> "server_commandPassword")) servercommand (format["#kick %1", (name _x)]);
 } forEach (allPlayers - entities "HeadlessClient_F");
 
 ["lils_common_stop_server_postKick"] call CBA_fnc_localEvent;
