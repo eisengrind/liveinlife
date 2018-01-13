@@ -159,7 +159,21 @@ def main():
     if (os.path.exists("addons")):
         rootDir = "addons"
 
-    for root, dirnames, filenames in os.walk(rootDir + '/' + args.module):
+    lilcRootDir = "../@LiveInLifeClient/addons"
+    if (os.path.exists("@LiveInLifeClient/addons")):
+        lilcRootDir = "@LiveInLifeClient/addons"
+    
+    lilsRootDir = "../@LiveInLifeServer/addons"
+    if (os.path.exists("@LiveInLifeServer/addons")):
+        lilsRootDir = "@LiveInLifeServer/addons"
+
+    print("searching for files in @LiveInLifeClient")
+    for root, dirnames, filenames in os.walk(lilcRootDir + '/' + args.module):
+      for filename in fnmatch.filter(filenames, '*.sqf'):
+        sqf_list.append(os.path.join(root, filename))
+    
+    print("searching for files in @LiveInLifeServer")
+    for root, dirnames, filenames in os.walk(lilsRootDir + '/' + args.module):
       for filename in fnmatch.filter(filenames, '*.sqf'):
         sqf_list.append(os.path.join(root, filename))
 
