@@ -125,18 +125,53 @@ class lilc_RscLine : lilc_RscText {
 };
 
 class lilc_RscTree {
-	style = 2;
-	font = "RobotoCondensed"; //font = "PuristaMedium";
-	sizeEx = "(			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.8)";
-	expandedTexture = "A3\ui_f\data\gui\Rsccommon\Rsctree\expandedTexture_ca.paa";
-	hiddenTexture = "A3\ui_f\data\gui\Rsccommon\Rsctree\hiddenTexture_ca.paa";
-	rowHeight = 0.0439091;
-	color[] = {1, 1, 1, 1};
-	colorSelect[] = {0.7, 0.7, 0.7, 1};
-	colorBackground[] = {0, 0, 0, 0};
-	colorSelectBackground[] = {0, 0, 0, 0.5};
+	access = 0;
+	idc = -1;
+	type = 12;
+	style = 0;
+	blinkingPeriod = 0;
+	x = 0;
+	y = 0;
+	w = 0;
+	h = 0;
 	colorBorder[] = {0, 0, 0, 0};
-	borderSize = 0;
+	colorBackground[] = {0.2, 0.2, 0.2, 0.8};
+	colorSelect[] = {1, 0.5, 0, 1};
+	colorMarked[] = {1, 0.5, 0, 0.5};
+	colorMarkedSelected[] = {1, 0.5, 0, 1};
+	colorLines[] = {0, 0, 0, 0};
+	colorPicture[] = {1, 1, 1, 1};
+	colorPictureSelected[] = {1, 1, 1, 1};
+	colorPictureDisabled[] = {1, 1, 1, 1};
+	colorPictureRight[] = {1, 1, 1, 1};
+	colorPictureRightSelected[] = {1, 1, 1, 1};
+	colorPictureRightDisabled[] = {1, 1, 1, 1};
+	sizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 30) * 1)";
+	font = "PuristaMedium";
+	shadow = 1;
+	colorText[] = {1, 1, 1, 1};
+	colorSelectText[] = {1, 1, 1, 1};
+	colorMarkedText[] = {1, 1, 1, 1};
+	multiselectEnabled = 0;
+	expandOnDoubleClick = 1;
+	hiddenTexture = "A3\ui_f\data\gui\rsccommon\rsctree\hiddenTexture_ca.paa";
+	expandedTexture = "A3\ui_f\data\gui\rsccommon\rsctree\expandedTexture_ca.paa";
+	maxHistoryDelay = 1;
+	
+	class ScrollBar
+	{
+		width = 0;
+		height = 0;
+		scrollSpeed = 0.01;
+		arrowEmpty = "\A3\ui_f\data\gui\cfg\scrollbar\arrowEmpty_ca.paa";
+		arrowFull = "\A3\ui_f\data\gui\cfg\scrollbar\arrowFull_ca.paa";
+		border = "\A3\ui_f\data\gui\cfg\scrollbar\border_ca.paa";
+		thumb = "\A3\ui_f\data\gui\cfg\scrollbar\thumb_ca.paa";
+		color[] = {1, 1, 1, 1};
+	};
+	
+	colorDisabled[] = {0, 0, 0, 0};
+	colorArrow[] = {0, 0, 0, 0};
 };
 
 class lilc_RscTitle : lilc_RscText {
@@ -1197,55 +1232,4 @@ class lilc_RscButtonMenu_darkBlueBackground : lilc_RscButtonMenu {
     font = "PuristaSemibold";
 	colorText[] = {1, 1, 1, 1};
 	colorBackground[] = {0.0667, 0.1137, 0.1647, 1};
-};
-
-class lilc_RscTree
-{
-	access = 0;
-	idc = -1;
-	type = 12;
-	style = 0;
-	blinkingPeriod = 0;
-	x = 0;
-	y = 0;
-	w = 0;
-	h = 0;
-	colorBorder[] = {0, 0, 0, 0};
-	colorBackground[] = {0.2, 0.2, 0.2, 0.8};
-	colorSelect[] = {1, 0.5, 0, 1};
-	colorMarked[] = {1, 0.5, 0, 0.5};
-	colorMarkedSelected[] = {1, 0.5, 0, 1};
-	colorLines[] = {0, 0, 0, 0};
-	colorPicture[] = {1, 1, 1, 1};
-	colorPictureSelected[] = {1, 1, 1, 1};
-	colorPictureDisabled[] = {1, 1, 1, 1};
-	colorPictureRight[] = {1, 1, 1, 1};
-	colorPictureRightSelected[] = {1, 1, 1, 1};
-	colorPictureRightDisabled[] = {1, 1, 1, 1};
-	sizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 30) * 1)";
-	font = "PuristaMedium";
-	shadow = 1;
-	colorText[] = {1, 1, 1, 1};
-	colorSelectText[] = {1, 1, 1, 1};
-	colorMarkedText[] = {1, 1, 1, 1};
-	multiselectEnabled = 0;
-	expandOnDoubleClick = 1;
-	hiddenTexture = "A3\ui_f\data\gui\rsccommon\rsctree\hiddenTexture_ca.paa";
-	expandedTexture = "A3\ui_f\data\gui\rsccommon\rsctree\expandedTexture_ca.paa";
-	maxHistoryDelay = 1;
-	
-	class ScrollBar
-	{
-		width = 0;
-		height = 0;
-		scrollSpeed = 0.01;
-		arrowEmpty = "\A3\ui_f\data\gui\cfg\scrollbar\arrowEmpty_ca.paa";
-		arrowFull = "\A3\ui_f\data\gui\cfg\scrollbar\arrowFull_ca.paa";
-		border = "\A3\ui_f\data\gui\cfg\scrollbar\border_ca.paa";
-		thumb = "\A3\ui_f\data\gui\cfg\scrollbar\thumb_ca.paa";
-		color[] = {1, 1, 1, 1};
-	};
-	
-	colorDisabled[] = {0, 0, 0, 0};
-	colorArrow[] = {0, 0, 0, 0};
 };
