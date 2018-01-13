@@ -1,5 +1,6 @@
 # LiveInLife
 [![Github All Releases](https://img.shields.io/github/downloads/TheMysteriousVincent/LiveInLife/total.svg)](https://github.com/TheMysteriousVincent/LiveInLife/releases)
+[![Build Status](https://travis-ci.org/TheMysteriousVincent/LiveInLife.svg?branch=master)](https://travis-ci.org/TheMysteriousVincent/LiveInLife)
 
 LiveInLife is an adjustable framework for your ArmA 3 roleplay ideas.
 
