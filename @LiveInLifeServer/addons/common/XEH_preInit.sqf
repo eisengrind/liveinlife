@@ -20,4 +20,4 @@
     }
 ] call CBA_fnc_addEventHandler;
 
-lils_database_defaultProtocolName = "LiveInLife"
+lils_database_defaultProtocolName = "LiveInLife";
