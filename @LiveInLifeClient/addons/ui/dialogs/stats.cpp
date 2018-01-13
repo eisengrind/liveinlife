@@ -9,7 +9,7 @@ class lilc_stats {
     enableSimulation = true;
     onLoad = "uiNamespace setVariable ['lilc_stats', (_this select 0)];";
     objects[] = {};
-    
+
     class controlsBackground {
         class TextBackground : lilc_RscText {
             idc = -1;
@@ -38,7 +38,7 @@ class lilc_stats {
             y = 0.78072 * safezoneH + safezoneY;
             w = 0.0882291 * safezoneW;
             h = 0.0182962 * safezoneH;
-            colorBackground[] = {(115/255), (113/255)), (118/255), 0.9};
+            colorBackground[] = {(115/255), (113/255), (118/255), 0.9};
         };
 
         class TextBar2Background1 : lilc_RscText {
@@ -48,7 +48,7 @@ class lilc_stats {
             y = 0.81592 * safezoneH + safezoneY;
             w = 0.0882291 * safezoneW;
             h = 0.0182962 * safezoneH;
-            colorBackground[] = {(115/255), (113/255)), (118/255), 0.9};
+            colorBackground[] = {(115/255), (113/255), (118/255), 0.9};
         };
 
         class TextBar3Background1 : lilc_RscText {
@@ -58,7 +58,7 @@ class lilc_stats {
             y = 0.8509 * safezoneH + safezoneY;
             w = 0.0882291 * safezoneW;
             h = 0.0182962 * safezoneH;
-            colorBackground[] = {(115/255), (113/255)), (118/255), 0.9};
+            colorBackground[] = {(115/255), (113/255), (118/255), 0.9};
         };
 
         class TextBar4Background1 : lilc_RscText {
@@ -68,7 +68,7 @@ class lilc_stats {
             y = 0.8872 * safezoneH + safezoneY;
             w = 0.0882291 * safezoneW;
             h = 0.0182962 * safezoneH;
-            colorBackground[] = {(115/255), (113/255)), (118/255), 0.9};
+            colorBackground[] = {(115/255), (113/255), (118/255), 0.9};
         };
 
         class TextBar5Background1 : lilc_RscText {
@@ -78,10 +78,10 @@ class lilc_stats {
             y = 0.9213 * safezoneH + safezoneY;
             w = 0.0882291 * safezoneW;
             h = 0.0182962 * safezoneH;
-            colorBackground[] = {(115/255), (113/255)), (118/255), 0.9};
+            colorBackground[] = {(115/255), (113/255), (118/255), 0.9};
         };
     };
-    
+
     class controls {
         class ProgressBar1 : lilc_RscProgress {
             idc = 1043;
@@ -157,7 +157,7 @@ class lilc_stats {
             w = 0.0877083 * safezoneW;
             h = 0.0294072 * safezoneH;
         };
-        
+
         class TextBar2 : lilc_RscText {
             idc = 1050;
             text = "";
