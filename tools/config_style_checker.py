@@ -134,16 +134,28 @@ def main():
     args = parser.parse_args()
 
     # Allow running from root directory as well as from inside the tools directory
-    rootDir = "../addons"
-    if (os.path.exists("addons")):
-        rootDir = "addons"
+    lilcRootDir = "../@LiveInLifeClient/addons"
+    if (os.path.exists("@LiveInLifeClient/addons")):
+        lilcRootDir = "@LiveInLifeClient/addons"
+    
+    lilsRootDir = "../@LiveInLifeServer/addons"
+    if (os.path.exists("@LiveInLifeServer/addons")):
+        lilsRootDir = "@LiveInLifeServer/addons"
 
-    for root, dirnames, filenames in os.walk(rootDir + '/' + args.module):
+    print("searching for files in @LiveInLifeClient")
+    for root, dirnames, filenames in os.walk(lilcRootDir + '/' + args.module):
       for filename in fnmatch.filter(filenames, '*.cpp'):
         sqf_list.append(os.path.join(root, filename))
       for filename in fnmatch.filter(filenames, '*.hpp'):
         sqf_list.append(os.path.join(root, filename))
-
+    
+    print("searching for files in @LiveInLifeServer")
+    for root, dirnames, filenames in os.walk(lilsRootDir + '/' + args.module):
+      for filename in fnmatch.filter(filenames, '*.cpp'):
+        sqf_list.append(os.path.join(root, filename))
+      for filename in fnmatch.filter(filenames, '*.hpp'):
+        sqf_list.append(os.path.join(root, filename))
+        
     for filename in sqf_list:
         bad_count = bad_count + check_config_style(filename)
 
@@ -156,4 +168,4 @@ def main():
     return bad_count
 
 if __name__ == "__main__":
-    sys.exit(main()
+    sys.exit(main())
