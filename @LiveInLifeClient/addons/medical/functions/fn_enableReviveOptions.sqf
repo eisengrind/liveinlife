@@ -1,2 +1,0 @@
-
-createDialog "lilcm_reviveOptions";
