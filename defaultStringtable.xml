@@ -1,0 +1,20 @@
+
+<?xml version="1.0" encoding="utf-8">
+<Project name="LiveInLife">
+    <Package name="XXX">
+        <Container name="Config">
+            <Key ID="STR_XXX_Config_">
+                <Original></Original>
+                <English></English>
+                <German></German>
+            </Key>
+        </Container>
+        <Container name="Script">
+            <Key ID="STR_XXX_Script_">
+                <Original></Original>
+                <English></English>
+                <German></German>
+            </Key>
+        </Container>
+    </Package>
+</Project>

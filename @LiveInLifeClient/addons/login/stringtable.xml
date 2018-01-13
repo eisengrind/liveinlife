@@ -1,0 +1,63 @@
+
+<?xml version="1.0" encoding="utf-8">
+<Project name="LiveInLife">
+    <Package name="lilc_login">
+        <Container name="DialogText">
+            <Key ID="STR_lilc_login_DialogText_leaveServer">
+                <Original>LEAVE SERVER</Original>
+                <English>LEAVE SERVER</English>
+                <German>SERVER VERLASSEN</German>
+            </Key>
+            <Key ID="STR_lilc_login_DialogText_selectProfile">
+                <Original>SELECT PROFILE</Original>
+                <English>SELECT PROFILE</English>
+                <German>PROFIL AUSWÄHLEN</German>
+            </Key>
+            <Key ID="STR_lilc_login_DialogText_mainMenu">
+                <Original>Main menu</Original>
+                <English>Main menu</English>
+                <German>Hauptmenü</German>
+            </Key>
+            <Key ID="STR_lilc_login_DialogText_playOn">
+                <Original>PLAY ON</Original>
+                <English>PLAY ON</English>
+                <German>WEITERSPIELEN</German>
+            </Key>
+            <Key ID="STR_lilc_login_DialogText_back">
+                <Original>BACK</Original>
+                <English>BACK</English>
+                <German>ZURÜCK</German>
+            </Key>
+            <Key ID="STR_lilc_login_DialogText_save">
+                <Original>SAVE</Original>
+                <English>SAVE</English>
+                <German>SPEICHERN</German>
+            </Key>
+            <Key ID="STR_lilc_login_DialogText_createProfileTitle">
+                <Original>Create profile</Original>
+                <English>Create profile</English>
+                <German>Profil erstellen</German>
+            </Key>
+            <Key ID="STR_lilc_login_DialogText_createProfile">
+                <Original>CREATE PROFILE</Original>
+                <English>CREATE PROFILE</English>
+                <German>PROFIL ERSTELLEN</German>
+            </Key>
+            <Key ID="STR_lilc_login_DialogText_firstnameTitle">
+                <Original>Firstname:</Original>
+                <English>Firstname:</English>
+                <German>Vorname:</German>
+            </Key>
+            <Key ID="STR_lilc_login_DialogText_lastnameTitle">
+                <Original>Lastname:</Original>
+                <English>Lastname:</English>
+                <German>Nachname:</German>
+            </Key>
+            <Key ID="STR_lilc_login_DialogText_sexTitle">
+                <Original>Sex:</Original>
+                <English>Sex:</English>
+                <German>Geschlecht:</German>
+            </Key>
+        </Container>
+    </Package>
+</Project>

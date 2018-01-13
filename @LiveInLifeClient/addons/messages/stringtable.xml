@@ -1,0 +1,94 @@
+
+<?xml version="1.0" encoding="utf-8">
+<Project name="LiveInLife">
+    <Package name="lilc_messages">
+        <Container name="ActionTitle">
+            <Key ID="STR_lilc_messages_ActionTitle_openMenu">
+                <Original>Open Phone</Original>
+                <English>Open Phone</English>
+                <German>Telefon öffnen</German>
+            </Key>
+        </Container>
+        <Container name="SettingTitle">
+            <Key ID="STR_lilc_messages_SettingTitle_">
+                <Original></Original>
+                <English></English>
+                <German></German>
+            </Key>
+        </Container>
+        <Container name="StringText">
+            <Key ID="STR_lilc_messages_StringText_messageFrom">
+                <Original>&lt;t size='1'&gt;Message from %1:&lt;/t&gt;&lt;br /&gt;&lt;t size='0.9'&gt;%2&lt;/t&gt;</Original>
+                <English>&lt;t size='1'&gt;Message from %1:&lt;/t&gt;&lt;br /&gt;&lt;t size='0.9'&gt;%2&lt;/t&gt;</English>
+                <German>&lt;t size='1'&gt;Nachricht von %1:&lt;/t&gt;&lt;br /&gt;&lt;t size='0.9'&gt;%2&lt;/t&gt;</German>
+            </Key>
+            <Key ID="STR_lilc_messages_StringText_messageFormatFaction">
+                <Original>&lt;t align='left' size='1.2'&gt;&lt;t&gt;Sender:&lt;/t&gt;&lt;br /&gt;&lt;t&gt;    %1&lt;/t&gt;&lt;br /&gt;&lt;br /&gt;&lt;t&gt;Message:&lt;/t&gt;&lt;br /&gt;%2&lt;/t&gt;</Original>
+                <English>&lt;t align='left' size='1.2'&gt;&lt;t&gt;Sender:&lt;/t&gt;&lt;br /&gt;&lt;t&gt;    %1&lt;/t&gt;&lt;br /&gt;&lt;br /&gt;&lt;t&gt;Message:&lt;/t&gt;&lt;br /&gt;%2&lt;/t&gt;</English>
+                <German>&lt;t align='left' size='1.2'&gt;&lt;t&gt;Absender:&lt;/t&gt;&lt;br /&gt;&lt;t&gt;    %1&lt;/t&gt;&lt;br /&gt;&lt;br /&gt;&lt;t&gt;Nachricht:&lt;/t&gt;&lt;br /&gt;%2&lt;/t&gt;</German>
+            </Key>
+            <Key ID="STR_lilc_messages_StringText_messageFormatGlobal">
+                <Original>&lt;t align='left' size='1.2'&gt;&lt;t&gt;Sender:&lt;/t&gt;&lt;br /&gt;&lt;t&gt;    %1&lt;/t&gt;&lt;br /&gt;&lt;br /&gt;&lt;t&gt;Message:&lt;/t&gt;&lt;br /&gt;%2&lt;/t&gt;</Original>
+                <English>&lt;t align='left' size='1.2'&gt;&lt;t&gt;Sender:&lt;/t&gt;&lt;br /&gt;&lt;t&gt;    %1&lt;/t&gt;&lt;br /&gt;&lt;br /&gt;&lt;t&gt;Message:&lt;/t&gt;&lt;br /&gt;%2&lt;/t&gt;</English>
+                <German>&lt;t align='left' size='1.2'&gt;&lt;t&gt;Absender:&lt;/t&gt;&lt;br /&gt;&lt;t&gt;    %1&lt;/t&gt;&lt;br /&gt;&lt;br /&gt;&lt;t&gt;Nachricht:&lt;/t&gt;&lt;br /&gt;%2&lt;/t&gt;</German>
+            </Key>
+            <Key ID="STR_lilc_messages_StringText_messageReceived">
+                <Original>You received a new message.</Original>
+                <English>You received a new message.</English>
+                <German>Du hast eine neue Nachricht erhalten.</German>
+            </Key>
+            <Key ID="STR_lilc_messages_StringText_noReceiverSelected">
+                <Original>You have no receiver selected.</Original>
+                <English>You received a new message.</English>
+                <German>Du hast eine neue Nachricht erhalten.</German>
+            </Key>
+            <Key ID="STR_lilc_messages_StringText_noMessageText">
+                <Original>You havent entered a message.</Original>
+                <English>You havent entered a message.</English>
+                <German>Du hast keine Nachricht angegeben.</German>
+            </Key>
+            <Key ID="STR_lilc_messages_StringText_messageSent">
+                <Original>Message sent.</Original>
+                <English>Message sent.</English>
+                <German>Nachricht verschickt.</German>
+            </Key>
+        </Container>
+        <Container name="DialogTitle">
+            <Key ID="STR_lilc_messages_StringText_writeMessage">
+                <Original>Write message:</Original>
+                <English>Write message:</English>
+                <German>Nachricht verfassen:</German>
+            </Key>
+            <Key ID="STR_lilc_messages_StringText_receiver">
+                <Original>Receiver:</Original>
+                <English>Receiver:</English>
+                <German>Empfänger:</German>
+            </Key>
+            <Key ID="STR_lilc_messages_StringText_message">
+                <Original>Message:</Original>
+                <English>Message:</English>
+                <German>Nachricht:</German>
+            </Key>
+            <Key ID="STR_lilc_messages_StringText_messages">
+                <Original>Messages:</Original>
+                <English>Messages:</English>
+                <German>Nachrichten:</German>
+            </Key>
+            <Key ID="STR_lilc_messages_StringText_send">
+                <Original>Send</Original>
+                <English>Send</English>
+                <German>Senden</German>
+            </Key>
+            <Key ID="STR_lilc_messages_StringText_close">
+                <Original>Close</Original>
+                <English>Close</English>
+                <German>Schließen</German>
+            </Key>
+            <Key ID="STR_lilc_messages_StringText_create">
+                <Original>Create</Original>
+                <English>Create</English>
+                <German>Verfassen</German>
+            </Key>
+        </Container>
+    </Package>
+</Project>

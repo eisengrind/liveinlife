@@ -1,0 +1,13 @@
+
+<?xml version="1.0" encoding="utf-8">
+<Project name="LiveInLife">
+    <Package name="lilc_ferrys">
+        <Container name="Items">
+            <Key ID="STR_lilci_ferryTicket_F">
+                <Original>Ferryticket</Original>
+                <English>Ferryticket</English>
+                <German>Fährticket</German>
+            </Key>
+        </Container>
+    </Package>
+</Project>
