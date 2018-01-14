@@ -28,7 +28,7 @@ player addEventHandler ["GetInMan", {
             ((_vehicle getVariable ["lilc_picklock_picklocked", 0]) <= 0) &&
             _status &&
             (player isEqualTo (driver _vehicle)) &&
-            ((player getVariable ["lilc_accountID", -1]) <= -1)
+            ((player getVariable ["lilc_factionID", -1]) <= -1)
         ) then {
             _vehicle engineOn false;
         };
