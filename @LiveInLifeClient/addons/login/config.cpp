@@ -11,6 +11,11 @@ class CfgDebriefing {
     #include "CfgDebriefing.cpp"
 };
 
+class CfgMusic {
+    tracks[] = {};
+    #include "CfgMusic.cpp"
+};
+
 class lilc_RscListbox;
 class lilc_RscText;
 class lilc_RscPicture;

@@ -14,7 +14,7 @@ try {
     ["requesting profiles", "lilc_login"] call lilc_log_fnc_diag_log;
     call lilc_login_fnc_getProfiles;
     waitUntil { (!isNil "lilc_login_profiles"); };
-    
+
     ["profiles requested", "lilc_login"] call lilc_log_fnc_diag_log;
 
     showCinemaBorder false;
@@ -37,6 +37,8 @@ try {
     private _camera = [(selectRandom ["loginCamera_1", "loginCamera_2", "loginCamera_3", "loginCamera_4"])] call lilc_common_fnc_createStaticCamera;
     [2] call lilc_ui_fnc_fadeOutBlack;
     ["wait until profile is selected...", "lilc_login"] call lilc_log_fnc_diag_log;
+
+    playMusic "login_music";
 
     call lilc_login_fnc_openMenu;
 
@@ -65,7 +67,9 @@ try {
 
     closeDialog 1024;
     [1] call lilc_ui_fnc_fadeInBlack;
+    1 fadeMusic 0;
     sleep 1;
+    playMusic "";
 
     _camera cameraEffect ["terminate", "back"];
     camDestroy _camera;
