@@ -10,6 +10,7 @@ class lils_login
         class executeUpdatePackages {};
         class getJoinData {};
         class getProfiles {};
+        class handleDisconnect {};
         class updatePlayerData {};
         class updatePlayerDataPartial {};
     };

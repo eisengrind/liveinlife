@@ -256,3 +256,5 @@ SET END / UDPATE START
         ["prison_currentPunishment", (_this select 1)];
     }
 ] call lils_login_fnc_addPackage;
+
+addMissionEventHandler ["HandleDisconnect", lils_login_fnc_handleDisconnect];
