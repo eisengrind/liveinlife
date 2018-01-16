@@ -42,7 +42,5 @@ lilc_ui_hint_lastControls = [];
     "SLIDER",
     "Notification time",
     "Live In Life",
-    [1, 60, 6, 0],
-    0,
-    {}
+    [1, 60, 6, 0]
 ] call CBA_Settings_fnc_init;

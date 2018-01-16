@@ -1,8 +1,11 @@
 
 lilc_tags_maximumRadius = 10;
 lilc_tags_maximumFadeRadius = 9;
-lilc_tags_unknownHeadgears = [];
 lilc_tags_defaultColor = [1, 1, 1, 0]; //rgba(0) color
+lilc_tags_blacklist_headgear = [];
+lilc_tags_blacklist_goggles = [];
+lilc_tags_blacklist_uniforms = [];
+lilc_tags_blacklist_vests = [];
 
 [
     "lilce_common_postFinished",
@@ -37,9 +40,7 @@ lilc_tags_defaultColor = [1, 1, 1, 0]; //rgba(0) color
     "CHECKBOX",
     "Tag Sprachanzeige", //TODO: localize
     "Live In Life",
-    true,
-    0,
-    {}
+    true
 ] call CBA_Settings_fnc_init;
 
 [
@@ -51,9 +52,7 @@ lilc_tags_defaultColor = [1, 1, 1, 0]; //rgba(0) color
         [0.833, 0.666],
         ["Groß", "Klein"],
         0
-    ],
-    0,
-    {}
+    ]
 ] call CBA_Settings_fnc_init;
 
 [
@@ -65,7 +64,5 @@ lilc_tags_defaultColor = [1, 1, 1, 0]; //rgba(0) color
         [0.833, 0.666],
         ["Groß", "Klein"],
         0
-    ],
-    0,
-    {}
+    ]
 ] call CBA_Settings_fnc_init;

@@ -15,8 +15,10 @@ else
     if (
         !(isNull _unit) &&
         (alive _unit) &&
-        !((headgear _unit) in lilc_tags_unknownHeadgears) &&
-        !((goggles _unit) in lilc_tags_unknownHeadgears) &&
+        !((headgear _unit) in lilc_tags_blacklist_headgear) &&
+        !((goggles _unit) in lilc_tags_blacklist_goggles) &&
+        !((uniform _unit) in lilc_tags_blacklist_uniforms) &&
+        !((vest _unit) in lilc_tags_blacklist_vests) &&
         (({ !(_unit isKindOf "Man"); } count (lineIntersectsObjs [(eyePos player), (getPosASL _unit), player, _unit])) <= 0)
     ) then
     {

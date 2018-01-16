@@ -34,17 +34,3 @@ lilc_paycheck_active = 0;
         lilc_paycheck_active;
     }
 ] call lilc_login_fnc_addPackage;
-
-/*
-[
-    "lilc_paycheck_amount",
-    "EDITBOX",
-    "Paycheck amount",
-    "LiveInLife Paycheck",
-    "0",
-    1,
-    {
-        lilc_paycheck_amount = (parseNumber _this);
-    }
-] call CBA_Settings_fnc_init;
-*/
