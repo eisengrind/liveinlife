@@ -9,14 +9,14 @@ player addEventHandler [
         {
             if ((random 1) < 0.1) then
             {
-                [_vehicle, "lilcp_hair", (player getVariable ["lilc_accountID", 0])] call lilc_proofs_fnc_addProof;
+                [_vehicle, "hair", (player getVariable ["lilc_accountID", 0])] call lilc_proofs_fnc_addProof;
             };
         }
         else
         {
             if ((random 1) < 0.6) then
             {
-                [_vehicle, "lilcp_hair", (player getVariable ["lilc_accountID", 0])] call lilc_proofs_fnc_addProof;
+                [_vehicle, "hair", (player getVariable ["lilc_accountID", 0])] call lilc_proofs_fnc_addProof;
             };
         };
 
@@ -26,14 +26,14 @@ player addEventHandler [
             {
                 ["Deine Handschuhe sind kaputt gegangen.", "WARNING"] call lilc_ui_fnc_hint;
                 [player, "lilci_disposableGloves_F"] call lilc_inventory_fnc_remove;
-                [_vehicle, "lilcp_fingerprint", (player getVariable ["lilc_accountID", 0])] call lilc_proofs_fnc_addProof;
+                [_vehicle, "fingerprint", (player getVariable ["lilc_accountID", 0])] call lilc_proofs_fnc_addProof;
             };
         }
         else
         {
             if ((random 1) < 0.6) then
             {
-                [_vehicle, "lilcp_hair", (player getVariable ["lilc_accountID", 0])] call lilc_proofs_fnc_addProof;
+                [_vehicle, "hair", (player getVariable ["lilc_accountID", 0])] call lilc_proofs_fnc_addProof;
             };
         };
 
