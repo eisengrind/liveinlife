@@ -1,17 +1,17 @@
 /*
 Proofs:
-    lilcp_fingerprint
-    lilcp_blood
-    lilcp_hair
-    lilcp_projectile
-    lilcp_scale
+    fingerprint
+    blood
+    hair
+    projectile
+    scale
 */
 
 params [
     ["_object", objNull, [objNull]],
     ["_proof", "", [""]],
     ["_aID", 0, [0]],
-    ["_additional", nil]
+    ["_additional", false]
 ];
 
 if (isNull _object) exitWith {};
@@ -26,10 +26,8 @@ if !([_proofs, _proof] call CBA_fnc_hashHasKey) then {
 
 //get all available proofs
 private _values = ([_proofs, _proof] call CBA_fnc_hashGet);
-if ([_aID, _additional] in _values) exitWith {};
-
 //insert our proof
-_values pushBack [_aID, _additional];
+_values pushBackUnique [_aID, _additional];
 
 _proofs = ([_proofs, _proof, _values] call CBA_fnc_hashSet);
 

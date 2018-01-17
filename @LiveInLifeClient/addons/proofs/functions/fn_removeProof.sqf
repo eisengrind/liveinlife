@@ -3,7 +3,7 @@ params [
     ["_object", objNull, [objNull]],
     ["_proof", "", [""]],
     ["_aID", 0, [0]],
-    ["_additional", nil]
+    ["_additional", false]
 ];
 
 if (isNull _object) exitWith {};

@@ -5,6 +5,10 @@ class lilc_proofs
     {
         file = "\x\lilc\addons\proofs\functions";
         class addProof {};
+        class canSearchProofs {};
+        class doSearchProofs {};
+        class getProofConfig {};
         class removeProof {};
+        class takeProof {};
     };
 };
