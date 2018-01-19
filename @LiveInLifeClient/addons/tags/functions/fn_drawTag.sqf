@@ -8,7 +8,7 @@ params [
 
 //drawIcon3D [<texture/string>, <color/array>, <positionAGL/array>, <width/float>, <height/float>, <angle/float>, <text/string>, <shadow/int(0, 1, 2)>, <textSize/float>, <textAlign/string(left, center, right)>, <drawSideArrows/bool>];
 
-private _position = ((_unit modelToWorld (_unit selectionPosition "pilot")) vectorAdd [0, 0, _hOff]);
+private _position = ((_unit modelToWorldVisual (_unit selectionPosition "pilot")) vectorAdd [0, 0, _hOff]);
 private _text = _name;
 private _textSize = 0.05;
 
