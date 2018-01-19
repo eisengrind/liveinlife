@@ -23,4 +23,6 @@ private _vInv = (_unit getVariable ["lilc_virtualInventory_inventory", []]);
         ["STEAM64ID", _uid]
     ]
 ] call lils_database_fnc_generateUpdateQuery)] call lils_database_fnc_query;
+
+deleteVehicle _unit;
 false;
