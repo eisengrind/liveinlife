@@ -17,7 +17,7 @@ private _fID = (player getVariable ["lilc_factionID", -1]);
 
 private _veh = objNull;
 {
-    private _nearestObjects = nearestObjects [(ASLToAGL (_x select 0)), ["Car", "Ship", "Boat", "Tank", "Truck", "Plane", "Air", "Helicopter"], 10, true];
+    private _nearestObjects = nearestObjects [(ASLToAGL (_x select 0)), ["Car", "Ship", "Boat", "Tank", "Truck", "Plane", "Air", "Helicopter", "Bicycle"], 10, true];
 
     {
         if ((_x getVariable ["lilc_isRented", false]) && ((_x getVariable ["lilc_accountID", 0]) == _aID) && ((_x getVariable ["lilc_factionID", -1]) == _fID)) exitWith
