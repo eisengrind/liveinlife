@@ -878,16 +878,16 @@ class RscDisplayInventory {
             x = 0.737188 * safezoneW + safezoneX;
             y = 0.269 * safezoneH + safezoneY;
             w = 0.108281 * safezoneW;
-            h = 0.473 * safezoneH;
+            h = 0.485852 * safezoneH;
         };
 
         class ListVI : UniformContainer {
             idc = 1407;
             text = "";
-            x = 0.737188 * safezoneW + safezoneX;
-            y = 0.269 * safezoneH + safezoneY;
-            w = 0.108281 * safezoneW;
-            h = 0.485852 * safezoneH;
+            x = 0.742344 * safezoneW + safezoneX;
+            y = 0.28 * safezoneH + safezoneY;
+            w = 0.0979687 * safezoneW;
+            h = 0.394148 * safezoneH;
         };
 
         class ButtonRemoveVI : RscButton {
