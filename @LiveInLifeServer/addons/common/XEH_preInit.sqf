@@ -15,7 +15,7 @@
             reverse _t;
             private _message = (_x select 1);
 
-            [_t, { [(_this select 1), "hint", -2] call lilc_common_fnc_send; }, _message] call lilc_time_fnc_addEvent;
+            [_t, { [(_this select 1), "systemChat", -2] call lilc_common_fnc_send; }, _message] call lilc_time_fnc_addEvent;
         } forEach getArray(configFile >> "CfgMasterServer" >> "server_messages");
     }
 ] call CBA_fnc_addEventHandler;
