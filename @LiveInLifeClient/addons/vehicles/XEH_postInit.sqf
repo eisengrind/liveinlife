@@ -27,6 +27,7 @@ player addEventHandler ["GetInMan", {
             !([_vehicle] call lilc_keys_fnc_have) &&
             ((_vehicle getVariable ["lilc_picklock_picklocked", 0]) <= 0) &&
             isMultiplayer &&
+            ((_vehicle getVariable ["lilc_vehicleID", 0]) > 0) &&
             _status &&
             (player isEqualTo (driver _vehicle)) &&
             ((player getVariable ["lilc_factionID", -1]) <= -1)
