@@ -5,7 +5,7 @@ class lilc_time
     {
         file = "\x\lilc\addons\time\functions";
         class addEvent {};
-        class execEvent {};
+        class execEvents {};
         class removeEvent {};
         class updateTime {};
     };
