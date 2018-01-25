@@ -18,8 +18,9 @@ lbDelete [1500, _cI];
     player,
     _vI,
     format["%1 (%2)", getText(_vICfg >> "displayName"), (mapGridPosition player)],
-    _data
+    (_data + [(mapGridPosition player), +(lilc_time_currentTime)]) //pName, aID, additional, grid, curTime
 ] call lilc_virtualInventory_fnc_add;
+
 [
     ((findDisplay 2305) getVariable ["lilc_proofs_object", objNull]),
     (_data select 0),

@@ -11,7 +11,7 @@ private _uiProgressBar = (_ui displayCtrl 1321);
 private _uiProgressBarText = (_ui displayCtrl 1322);
 
 private _time = time;
-private _timeout = (random [20, 40, 80]);
+private _timeout = 2;//(random [20, 40, 80]);
 lilc_action_interrupted = false;
 
 while {
@@ -73,7 +73,6 @@ private _proofs = (_object getVariable ["lilc_proofs_proofs", ([[], []] call CBA
     {
         for "_i" from 0 to (_a - 1) do {
             if ((random 1) <= _c) then {
-                systemChat str [_k, (_x select 0), (_x select 1)];
                 _founds pushBack [_k, (_x select 0), (_x select 1)];
             };
         };
@@ -93,6 +92,5 @@ if ((count _founds) <= 0) exitWith {
     private _cfg = ([(_x select 0)] call lilc_proofs_fnc_getProofConfig);
     private _i = (lbAdd [1500, getText(_cfg >> "displayName")]);
     lbSetData [1500, _i, (str _x)];
-    systemChat str _x;
     lbSetPicture [1500, _i, getText(_cfg >> "picture")];
 } forEach _founds;

@@ -33,7 +33,7 @@ class lilcm_proofs_examineEvidence {
             w = 0.0928125 * safezoneW;
             h = 0.271407 * safezoneH;
         };
-        class FrameBackgroundInformation: lilc_RscStructuredText {
+        class FrameBackgroundInformation: RscText {
             idc = 1100;
             x = 0.484531 * safezoneW + safezoneX;
             y = 0.368 * safezoneH + safezoneY;
@@ -50,7 +50,7 @@ class lilcm_proofs_examineEvidence {
             h = 0.022 * safezoneH;
             colorBackground[] = {"(profileNamespace getVariable ['GUI_BCG_RGB_R',0.77])","(profileNamespace getVariable ['GUI_BCG_RGB_G',0.51])","(profileNamespace getVariable ['GUI_BCG_RGB_B',0.08])",0.5};
         };
-        class RscText_1003: RscText {
+        class TitleInventory: RscText {
             idc = 1003;
             text = "Beweise (Inventar):"; //--- ToDo: Localize;
             x = 0.386562 * safezoneW + safezoneX;
@@ -68,7 +68,7 @@ class lilcm_proofs_examineEvidence {
             h = 0.011 * safezoneH;
             colorFrame[] = {0, 0, 0, 0};
         };
-        class TextInformation: RscText {
+        class TextInformation: lilc_RscStructuredText {
             idc = 1004;
             x = 0.489687 * safezoneW + safezoneX;
             y = 0.379 * safezoneH + safezoneY;
@@ -83,6 +83,7 @@ class lilcm_proofs_examineEvidence {
             y = 0.632 * safezoneH + safezoneY;
             w = 0.118594 * safezoneW;
             h = 0.022 * safezoneH;
+            onButtonClick = "call lilc_proofs_fnc_addExamineProofToPDA;";
         };
         class ButtonExamineEvidence: RscButton {
             idc = 1601;
@@ -91,6 +92,7 @@ class lilcm_proofs_examineEvidence {
             y = 0.643 * safezoneH + safezoneY;
             w = 0.0928125 * safezoneW;
             h = 0.022 * safezoneH;
+            onButtonClick = "0 spawn lilc_proofs_fnc_examineProof;";
         };
         class ComboPDACategory: RscCombo {
             idc = 2100;

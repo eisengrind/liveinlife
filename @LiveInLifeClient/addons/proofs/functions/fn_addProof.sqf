@@ -24,6 +24,7 @@ if !([_proofs, _proof] call CBA_fnc_hashHasKey) then {
     _proofs = ([_proofs, _proof, []] call CBA_fnc_hashSet);
 };
 
+//TODO: add functionality for replacing proofs or adding duplicates
 //get all available proofs
 private _values = ([_proofs, _proof] call CBA_fnc_hashGet);
 //insert our proof
