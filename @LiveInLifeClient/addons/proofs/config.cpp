@@ -35,3 +35,4 @@ class lilc_RscStructuredText;
 class lilc_RscProgress;
 
 #include "gui\takeEvidence.cpp"
+#include "gui\examineEvidence.cpp"

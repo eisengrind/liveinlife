@@ -24,7 +24,7 @@ try
             ["TITLE", (str _title)],
             ["DESCRIPTION", (str _description)],
             ["TIMESTAMPCREATED", "UNIX_TIMESTAMP(NOW())", false],
-            ["ACCOUNTID", (getPlayerUID _unit)],
+            ["ACCOUNTID", (_unit getVariable ["lilc_accountID", 0])],
             ["TARGETACCOUNTID", _targetAccountID]
         ]
     ] call lils_database_fnc_generateInsertQuery)] call lils_database_fnc_query;
