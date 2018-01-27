@@ -6,12 +6,8 @@ params [
 ];
 
 if (isNull _vehicle) exitWith {};
-if (local _vehicle) then {
-
+if (_receiving || (local _vehicle)) then {
+    _vehicle lock _status;
 } else {
-    if (_receiving) then {
-        _vehicle lock _status;
-    } else {
-        [[_vehicle, _status], "lilc_vehicles_fnc_lock", 0] call lilc_common_fnc_send;
-    };
+    [[_vehicle, _status], "lilc_vehicles_fnc_lock", 0] call lilc_common_fnc_send;
 };
