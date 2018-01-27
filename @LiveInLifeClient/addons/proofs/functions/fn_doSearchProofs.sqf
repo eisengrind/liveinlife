@@ -11,7 +11,7 @@ private _uiProgressBar = (_ui displayCtrl 1321);
 private _uiProgressBarText = (_ui displayCtrl 1322);
 
 private _time = time;
-private _timeout = 2;//(random [20, 40, 80]);
+private _timeout = (random [20, 40, 80]);
 lilc_action_interrupted = false;
 
 while {

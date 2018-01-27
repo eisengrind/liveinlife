@@ -16,7 +16,7 @@ ctrlEnable [2100, false];
 ctrlEnable [1600, false];
 ctrlEnable [1601, false];
 
-private _timeout = 2;//((random [20, 30, 40]));
+private _timeout = ((random [20, 30, 40]));
 private _time = time;
 
 while {
