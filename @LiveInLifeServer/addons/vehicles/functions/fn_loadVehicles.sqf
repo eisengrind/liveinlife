@@ -52,7 +52,7 @@ private _vehicles = ([([
         true,
         -1
     ] call lils_vehicles_fnc_create);
-    
+
     [
         _vehicle,
         (_vehicleData select 4)
@@ -64,9 +64,9 @@ private _vehicles = ([([
     ] call lilc_common_fnc_setObjectDamage;
 
     _vehicle setVariable ["lilc_vehicleColor", (_vehicleData select 8), true];
-    
+
     [
         _vehicle,
-        (if ((_vehicleData select 7) == 1) then { true; } else { false; })
+        (_vehicleData select 7)
     ] call lilc_vehicles_fnc_lock;
 } forEach _vehicles;
