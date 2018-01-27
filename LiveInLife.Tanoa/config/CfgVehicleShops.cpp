@@ -10,7 +10,7 @@ class CfgVehicleShops {
         };
 
         class vehicles {
-            class <vehicle> {
+            class someVehicleID {
                 groups[] = {-1, 3, 4, 5}; //groups available to buy vehicles
             };
         };
