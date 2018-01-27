@@ -15,9 +15,7 @@ if (isNull _unit) exitWith { false; };
 if (isNull _targetContainer) exitWith { false; };
 
 private _result = false;
-switch (true) do
-{
-
+switch (true) do {
     case (
         (
             ((locked _targetContainer) in [2, 3]) &&
