@@ -17,7 +17,7 @@ if ((vehicle player) isEqualTo player) then {
         !((goggles _unit) in lilc_tags_blacklist_goggles) &&
         !((uniform _unit) in lilc_tags_blacklist_uniforms) &&
         !((vest _unit) in lilc_tags_blacklist_vests) &&
-        (({ !(_x isKindOf "CAManBase"); } count (lineIntersectsObjs [_camPos, (eyePos _unit), player, _unit])) <= 0)
+        ((count (lineIntersectsObjs [_camPos, (eyePos _unit), player, _unit])) <= 0)
     ) then {
         private _color = [(lilc_tags_defaultColor select 0), (lilc_tags_defaultColor select 1), (lilc_tags_defaultColor select 2), (lilc_setting_tags_defaultAlpha min (lilc_tags_maximumFadeRadius - (_unit distance player)) max 0)];
         private _name = (_unit getVariable ["lilc_tags_name", ""]);
@@ -72,4 +72,4 @@ if ((vehicle player) isEqualTo player) then {
         ] call lilc_tags_fnc_drawTag);
     };
     false;
-} count _units;
+} count (_units - [player]);
