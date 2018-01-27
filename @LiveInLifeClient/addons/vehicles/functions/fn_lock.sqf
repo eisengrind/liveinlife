@@ -1,30 +1,17 @@
 
 params [
     ["_vehicle", objNull, [objNull]],
-    ["_status", 0, [0, false]]
+    ["_status", 0, [0, false]],
+    ["_receiving", false, [false]]
 ];
 
-try
-{
-    if (isNull _vehicle) throw false;
+if (isNull _vehicle) exitWith {};
+if (local _vehicle) then {
 
-    if (local _vehicle) then
-    {
+} else {
+    if (_receiving) then {
         _vehicle lock _status;
-    }
-    else
-    {
-        if (isRemoteExecuted) then
-        {
-            _vehicle lock _status;
-        }
-        else
-        {
-            [[_vehicle, _status], "lilc_vehicles_fnc_lock", 0] call lilc_common_fnc_send;
-        };
+    } else {
+        [[_vehicle, _status], "lilc_vehicles_fnc_lock", 0] call lilc_common_fnc_send;
     };
-}
-catch
-{
-    _exception;
 };
