@@ -30,18 +30,15 @@ switch (true) do
             ([_targetContainer, ["LandVehicle", "Air", "Ship"]] call lilc_common_fnc_isKindOf) &&
             lilc_inventory_inventoryAccessWhenOpened
         )
-    ):
-    {
+    ): {
         _result = true;
         ["Dieses Fahrzeug ist abgeschlossen.", "ERROR"] call lilc_ui_fnc_hint;
     };
-    
-    case (!_allowAccessToBackpack && (_targetContainer isKindOf "Bag_Base")):
-    {
+
+    case (!_allowAccessToBackpack && (_targetContainer isKindOf "Bag_Base")): {
         _result = true;
         ["Du kannst nicht auf diesen Rucksack zugreifen", "ERROR"] call lilc_ui_fnc_hint;
     };
 };
-
 
 _result;
