@@ -1,10 +1,11 @@
 
 private _camPos = (AGLToASL (positionCameraToWorld [0, 0, 0]));
 private _units = [];
-if ((vehicle player) isEqualTo player) then {
-    _units = (_camPos nearObjects ["CAManBase", lilc_tags_maximumRadius +5]);
-} else {
+private _inVehicle = !((vehicle player) isEqualTo player)
+if (_inVehicle) then {
     _units = (crew vehicle player);
+} else {
+    _units = (_camPos nearObjects ["CAManBase", lilc_tags_maximumRadius + 5]);
 };
 
 {
@@ -17,7 +18,7 @@ if ((vehicle player) isEqualTo player) then {
         !((goggles _unit) in lilc_tags_blacklist_goggles) &&
         !((uniform _unit) in lilc_tags_blacklist_uniforms) &&
         !((vest _unit) in lilc_tags_blacklist_vests) &&
-        ((count (lineIntersectsObjs [_camPos, (eyePos _unit), player, _unit])) <= 0)
+        (((count (lineIntersectsObjs [_camPos, (eyePos _unit), player, _unit])) <= 0) && !_inVehicle)
     ) then {
         private _color = [(lilc_tags_defaultColor select 0), (lilc_tags_defaultColor select 1), (lilc_tags_defaultColor select 2), (lilc_setting_tags_defaultAlpha min (lilc_tags_maximumFadeRadius - (_unit distance player)) max 0)];
         private _name = (_unit getVariable ["lilc_tags_name", ""]);
