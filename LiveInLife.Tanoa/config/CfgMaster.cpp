@@ -8,9 +8,10 @@ class CfgMaster {
     firstspawnMagazines[] = {};
 
     persistentTime = 1;
+    startBalance = 100;
     persistentWeather = 1;
     day[] = {2017, 6, 21, 0, 0}; // just fill out to disable daytime usage of server - eg. [2014,10,30,2,30]
-    nightTime = 1.33; // in minutes 
+    nightTime = 1.33; // in minutes
     nightStart[] = {19, 0}; // time - eg. 21:30
     dayTime = 3.67; // in hours
     dayStart[] = {6, 0}; // time - eg. 8:00

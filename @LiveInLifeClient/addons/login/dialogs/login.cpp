@@ -64,7 +64,7 @@ class lilcm_login {
     idd = 1024;
     movingEnable = 0;
     enableSimulation = 1;
-    
+
     class controlsBackground {};
 
     class controls {
@@ -241,7 +241,7 @@ class lilcm_login {
             y = -0.05 * safezoneH + safezoneY;
             w = 1.10344 * safezoneW;
             h = 1.1 * safezoneH;
-            
+
             class Controls
             {
                 class TextCreateProfile : lilc_RscText
@@ -276,7 +276,7 @@ class lilcm_login {
                     h = 0.022 * safezoneH;
                     sizeEx = 0.028;
                 };
-                
+
                 class TextSex : lilc_RscText
                 {
                     idc = 1005;
@@ -309,7 +309,7 @@ class lilcm_login {
                     h = 0.055 * safezoneH;
                     colorBackground[] = {1, 1, 1, 0.3};
                 };
-                
+
                 class ComboSex : lilc_RscCombo
                 {
                     idc = 1500;
@@ -323,8 +323,8 @@ class lilcm_login {
                 {
                     idc = 1003;
                     onButtonClick = "[] call lilc_login_fnc_createProfile;";
-                    onMouseEnter = "[(_this select 0), (missionConfigFile >> 'lilcm_login' >> 'controls' >> 'GroupCreateProfile' >> 'controls' >> 'ButtonCreateProfile')] call lilc_ui_fnc_buttonMoveRight_onMouseEnter;";
-                    onMouseExit = "[(_this select 0), (missionConfigFile >> 'lilcm_login' >> 'controls' >> 'GroupCreateProfile' >> 'controls' >> 'ButtonCreateProfile')] call lilc_ui_fnc_buttonMoveRight_onMouseExit;";
+                    onMouseEnter = "[(_this select 0), (configFile >> 'lilcm_login' >> 'controls' >> 'GroupCreateProfile' >> 'controls' >> 'ButtonCreateProfile')] call lilc_ui_fnc_buttonMoveRight_onMouseEnter;";
+                    onMouseExit = "[(_this select 0), (configFile >> 'lilcm_login' >> 'controls' >> 'GroupCreateProfile' >> 'controls' >> 'ButtonCreateProfile')] call lilc_ui_fnc_buttonMoveRight_onMouseExit;";
                     text = "$STR_lilc_login_DialogText_createProfile"; //--- ToDo: Localize;
                     x = ((0.0823437 * safezoneW + safezoneX) - (-0.056875 * safezoneW + safezoneX));
                     y = ((0.764 * safezoneH + safezoneY) - (-0.05 * safezoneH + safezoneY));
@@ -336,8 +336,8 @@ class lilcm_login {
                 {
                     idc = 1004;
                     onButtonClick = "['mainMenu'] call lilc_login_fnc_selectMenu;";
-                    onMouseEnter = "[(_this select 0), (missionConfigFile >> 'lilcm_login' >> 'controls' >> 'GroupCreateProfile' >> 'controls' >> 'ButtonBack')] call lilc_ui_fnc_buttonMoveRight_onMouseEnter;";
-                    onMouseExit = "[(_this select 0), (missionConfigFile >> 'lilcm_login' >> 'controls' >> 'GroupCreateProfile' >> 'controls' >> 'ButtonBack')] call lilc_ui_fnc_buttonMoveRight_onMouseExit;";
+                    onMouseEnter = "[(_this select 0), (configFile >> 'lilcm_login' >> 'controls' >> 'GroupCreateProfile' >> 'controls' >> 'ButtonBack')] call lilc_ui_fnc_buttonMoveRight_onMouseEnter;";
+                    onMouseExit = "[(_this select 0), (configFile >> 'lilcm_login' >> 'controls' >> 'GroupCreateProfile' >> 'controls' >> 'ButtonBack')] call lilc_ui_fnc_buttonMoveRight_onMouseExit;";
                     text = "$STR_lilc_login_DialogText_back"; //--- ToDo: Localize;
                     x = ((0.0823437 * safezoneW + safezoneX) - (-0.056875 * safezoneW + safezoneX));
                     y = ((0.83 * safezoneH + safezoneY) - (-0.05 * safezoneH + safezoneY));

@@ -5,12 +5,17 @@ if (isNull _ui) exitWith {};
 
 private _uiGroupCreateProfile = (_ui displayCtrl 2302);
 
+private _uiEditFirstname = (_uiGroupCreateProfile controlsGroupCtrl 1400);
+private _uiEditLastname = (_uiGroupCreateProfile controlsGroupCtrl 1401);
+private _uiComboSex = (_uiGroupCreateProfile controlsGroupCtrl 1500);
+
 try {
     (_uiGroupCreateProfile controlsGroupCtrl 1003) ctrlEnable false;
     (_uiGroupCreateProfile controlsGroupCtrl 1004) ctrlEnable false;
 
-    private _uiEditFirstname = (_uiGroupCreateProfile controlsGroupCtrl 1400);
-    private _uiEditLastname = (_uiGroupCreateProfile controlsGroupCtrl 1401);
+    _uiEditFirstname ctrlEnable false;
+    _uiEditLastname ctrlEnable false;
+    _uiComboSex ctrlEnable false;
 
     private _firstname = (ctrlText _uiEditFirstname);
     private _lastname = (ctrlText _uiEditLastname);
@@ -21,7 +26,6 @@ try {
     if ((count _firstname) < 2) throw 2;
     if ((count _lastname) < 2) throw 3;
 
-    private _uiComboSex = (_uiGroupCreateProfile controlsGroupCtrl 1500);
     private _index = (lbCurSel _uiComboSex);
     if (_index <= -1) throw 4;
 
@@ -44,6 +48,10 @@ try {
         case 5: { systemChat "Du darfst folgende Zeichen nicht nutzen: ""!""§$%&/()=?}][{^*+~#_.:,;<>|1234567890."; };
         case 6: { systemChat "Es wurden keine Accounts gefunden!"; };
     };
+
+    _uiEditFirstname ctrlEnable true;
+    _uiEditLastname ctrlEnable true;
+    _uiComboSex ctrlEnable true;
 
     (_uiGroupCreateProfile controlsGroupCtrl 1003) ctrlEnable true;
     (_uiGroupCreateProfile controlsGroupCtrl 1004) ctrlEnable true;
