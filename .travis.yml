@@ -2,7 +2,11 @@ language: python
 python:
 - '3.5'
 script:
-- python3 tools/sqf_validator.py
+- mkdir .build/
+- git clone https://github.com/TheMysteriousVincent/sqf.git .build/sqf
+- python3 .build/sqf/sqflint.py -d @LiveInLifeClient
+- python3 .build/sqf/sqflint.py -d @LiveInLifeServer
+- python3 .build/sqf/sqflint.py -d LiveInLife.Tanoa
 - python3 tools/config_style_checker.py
 notification:
   email:

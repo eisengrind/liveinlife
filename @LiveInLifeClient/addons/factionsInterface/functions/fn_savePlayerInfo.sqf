@@ -14,19 +14,20 @@ try {
 
     private _selectedRank = 0;
     _selectedRank = (lbValue [1382, (lbCurSel 1382)]);
-    
+
     private _permissions = [];
-    for [{private _i = 0}, {_i < ((lnbSize _uiListPermissions) select 0)}, {_i = _i + 1}] do {
+
+    for "_i" from 0 to (((lnbSize _uiListPermissions) select 0) - 1) do {
         private _permission = (_uiListPermissions lnbData [_i, 0]);
         private _status = (parseNumber (_uiListPermissions lnbData [_i, 1]));
-        
+
         if (_status == 1) then {
             _permissions pushBack _permission;
         };
     };
 
     private _equipment = [];
-    for [{private _i = 0}, {_i < ((lnbSize _uiListWeapons) select 0)}, {_i = _i + 1}] do {
+    for [{_i = 0}, {_i < ((lnbSize _uiListWeapons) select 0)}, {_i = _i + 1}] do {
         private _classname = (_uiListWeapons lnbData [_i, 0]);
         private _color = (_uiListWeapons lnbData [_i, 1]);
         private _status = (parseNumber (_uiListWeapons lnbData [_i, 2]));
@@ -37,7 +38,7 @@ try {
     };
 
     private _vehicles = [];
-    for [{private _i = 0}, {_i < ((lnbSize _uiListVehicles) select 0)}, {_i = _i + 1}] do {
+    for [{_i = 0}, {_i < ((lnbSize _uiListVehicles) select 0)}, {_i = _i + 1}] do {
         private _classname = (_uiListVehicles lnbData [_i, 0]);
         private _color = (_uiListVehicles lnbData [_i, 1]);
         private _status = (parseNumber (_uiListVehicles lnbData [_i, 2]));
@@ -48,7 +49,7 @@ try {
     };
 
     [[player, lilc_factionsInterface_currentAccountID, _selectedRank, _permissions, _equipment, _vehicles], "lils_factionsInterface_fnc_savePlayerInfo"] call lilc_common_fnc_sendToServer;
-    
+
     ctrlEnable [1389, false];
     ctrlEnable [1390, false];
     sleep 1;
