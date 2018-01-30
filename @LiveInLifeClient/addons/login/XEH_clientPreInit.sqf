@@ -60,7 +60,7 @@ lilc_player_isNew = -1;
 ] call lilc_login_fnc_addPackage;
 
 [
-    "set_lil_login_status",
+    "set_lil_login_status", //this is the status of the unit, like beeing handcuffed, surrendering, etc.
     {
         lilc_player_status = _this;
     }
