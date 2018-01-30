@@ -62,7 +62,18 @@ lilc_player_isNew = -1;
 [
     "set_lil_login_status", //this is the status of the unit, like beeing handcuffed, surrendering, etc.
     {
-        lilc_player_status = _this;
+        private _status = _this;
+        if (_status isEqualType 0) then {
+            switch (_status) do {
+                case 0: {};
+                case 1: {
+                    [player, true] call ace_captives_fnc_setSurrendered;
+                };
+                case 2: {
+                    [player, true] call ace_captives_fnc_setHandcuffed;
+                };
+            };
+        };
     }
 ] call lilc_login_fnc_addPackage;
 
@@ -186,7 +197,11 @@ lilc_login_update_defPackages = [
 [
     "update_lil_login_status",
     {
-        lilc_player_status;
+        (switch (true) do {
+            case (player getVariable ["ace_captives_isSurrendering", false]): { 1; };
+            case (player getVariable ["ace_captives_isHandcuffed", false]): { 2; };
+            default { 0; };
+        });
     }
 ] call lilc_login_fnc_addPackage;
 
