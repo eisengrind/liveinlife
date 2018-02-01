@@ -40,14 +40,14 @@ try
 
     private _jailStartTime = (round time);
     player setVariable ["lilc_prison_currentPunishment", _punishmentName, true];
-    lilc_prison_escapeTime = _punishmentEscapeTimeout;
-    lilc_prison_waitingTime = _punishmentTimeout;
+    player setVariable ["lilc_prison_escapeTime", _punishmentEscapeTimeout, true];
+    player setVariable ["lilc_prison_waitingTime", _punishmentTimeout, true];
 
     _uiTextJailInfo ctrlSetStructuredText parseText format[
         "<t size='0.7'>Verbleibende Zeit:</t><br /><t size='2.5'>%1</t><br /><br /><t size='0.7'>Derzeitiger Status:</t><br /><t size='1.4'>%2</t><br /><br /><t size='0.7'>Gefängnis:</t><br /><t size='1.4'>%3</t>",
-        (if (lilc_prison_waitingTime != -1) then
+        (if ((player getVariable ["lilc_prison_waitingTime", 0]) != -1) then
         {
-            ([lilc_prison_waitingTime, "HH:MM:SS"] call BIS_fnc_secondsToString);
+            ([(player getVariable ["lilc_prison_waitingTime", 0]), "HH:MM:SS"] call BIS_fnc_secondsToString);
         }
         else
         {
@@ -60,42 +60,42 @@ try
     waitUntil
     {
         ([_punishmentName] call lilc_prison_fnc_isInPunishmentPrison) ||
-        ((lilc_prison_escapeTime < _punishmentEscapeTimeUntilFree) && !(lilc_prison_escapeTime <= 0)) ||
-        lilc_prison_waitingTime == -2 ||
+        (((player getVariable ["lilc_prison_escapeTime", 0]) < _punishmentEscapeTimeUntilFree) && !((player getVariable ["lilc_prison_escapeTime", 0]) <= 0)) ||
+        (player getVariable ["lilc_prison_waitingTime", 0]) == -2 ||
         !(player getVariable ["lilc_prison_isJailed", false])
     };
 
     while
     {
-        (lilc_prison_waitingTime > 0) &&
-        (lilc_prison_escapeTime < _punishmentEscapeTimeUntilFree) &&
+        ((player getVariable ["lilc_prison_waitingTime", 0]) > 0) &&
+        ((player getVariable ["lilc_prison_escapeTime", 0]) < _punishmentEscapeTimeUntilFree) &&
         (player getVariable ["lilc_prison_isJailed", false])
     }
     do
     {
         if ([_punishmentName] call lilc_prison_fnc_isInPunishmentPrison) then
         {
-            if (lilc_prison_escapeTime != 0) then
+            if ((player getVariable ["lilc_prison_escapeTime", 0]) != 0) then
             {
-                lilc_prison_escapeTime = 0;
+                player getVariable ["lilc_prison_escapeTime", 0, true];
                 player setVariable ["lilc_prison_escapeLastPosition", [], true];
-                
+
                 _uiTextJailInfo ctrlShow true;
                 _uiPictureBattery ctrlShow false;
                 _uiProgressBattery ctrlShow false;
             };
 
-            if ((_jailStartTime + 1) < time && lilc_prison_waitingTime != -1) then
+            if ((_jailStartTime + 1) < time && (player getVariable ["lilc_prison_waitingTime", 0]) != -1) then
             {
-                lilc_prison_waitingTime = (lilc_prison_waitingTime - 1);
+                player setVariable ["lilc_prison_waitingTime", (player getVariable ["lilc_prison_waitingTime", 0]) - 1, true]; //TODO: find some way using delta time
                 _jailStartTime = time;
             };
 
             _uiTextJailInfo ctrlSetStructuredText parseText format[
                 "<t size='0.7'>Verbleibende Zeit:</t><br /><t size='2.5'>%1</t><br /><br /><t size='0.7'>Derzeitiger Status:</t><br /><t size='1.4'>%2</t><br /><br /><t size='0.7'>Gefängnis:</t><br /><t size='1.4'>%3</t>",
-                (if (lilc_prison_waitingTime != -1) then
+                (if ((player getVariable ["lilc_prison_waitingTime", 0]) != -1) then
                 {
-                    ([lilc_prison_waitingTime, "HH:MM:SS"] call BIS_fnc_secondsToString);
+                    ([(player getVariable ["lilc_prison_waitingTime", 0]), "HH:MM:SS"] call BIS_fnc_secondsToString);
                 }
                 else
                 {
@@ -107,27 +107,27 @@ try
         }
         else
         {
-            if (lilc_prison_escapeTime <= 0) then
+            if ((player getVariable ["lilc_prison_escapeTime", 0]) <= 0) then
             {
-                lilc_prison_escapeTime = 0;
+                player setVariable ["lilc_prison_escapeTime", 0, true];
 
                 _uiTextJailInfo ctrlShow false;
                 _uiPictureBattery ctrlShow true;
                 _uiProgressBattery ctrlShow true;
             };
 
-            if ((lilc_prison_escapeTime % _escapedMapUpdateTimeout) == 0) then
+            if (((player getVariable ["lilc_prison_escapeTime", 0]) % _escapedMapUpdateTimeout) == 0) then
             {
                 player setVariable ["lilc_prison_escapeLastPosition", (getPos player), true];
             };
 
             if ((_jailStartTime + 1) < time) then
             {
-                lilc_prison_escapeTime = (lilc_prison_escapeTime + 1);
+                player setVariable ["lilc_prison_escapeTime", (player getVariable ["lilc_prison_escapeTime", 0]) + 1];
                 _jailStartTime = time;
             };
 
-            _uiProgressBattery progressSetPosition ((_punishmentEscapeTimeUntilFree - lilc_prison_escapeTime) / _punishmentEscapeTimeUntilFree);
+            _uiProgressBattery progressSetPosition ((_punishmentEscapeTimeUntilFree - (player getVariable ["lilc_prison_escapeTime", 0])) / _punishmentEscapeTimeUntilFree);
         };
 
         sleep 0.1;
@@ -138,8 +138,8 @@ try
 
     if ((count _availableReleaseUnits) <= 0) then
     {
-        lilc_prison_waitingTime = 0;
-        lilc_prison_escapeTime = 0;
+        player setVariable ["lilc_prison_waitingTime", 0, true];
+        player setVariable ["lilc_prison_escapeTime", 0, true];
         player setVariable ["lilc_prison_isJailed", false, true];
         ["lilc_prison_status"] call lilc_ui_fnc_fadeOutTitles;
 
@@ -162,8 +162,8 @@ try
             "<t size='0.7'>Derzeitiger Status:</t><br/><t size='1.4'>Warte auf Entlassung</t>"
         ];
 
-        lilc_prison_waitingTime = -2;
-        lilc_prison_escapeTime = 0;
+        player setVariable ["lilc_prison_waitingTime", -2, true];
+        player setVariable ["lilc_prison_escapeTime", 0, true];
     };
 
     player setVariable ["lilc_prison_escapeLastPosition", [], true];

@@ -17,13 +17,20 @@ private _status = (switch (true) do {
     default { 0; };
 });
 
+private _prison_escapeTime = (_unit getVariable ["lilc_prison_escapeTime", 0]);
+private _prison_waitingTime = (_unit getVariable ["lilc_prison_waitingTime", 0]);
+private _prison_punishment = (_unit getVariable ["lilc_prison_currentPunishment", ""]);
+
 [([
     "ACCOUNT_DATA",
     [
         ["GEAR", ([_inv] call lils_common_fnc_arrayEncode)],
         ["LASTPOSITION", ([_pos] call lils_common_fnc_arrayEncode)],
         ["VIRTUALINVENTORY", ([_vInv] call lils_common_fnc_arrayEncode)],
-        ["STATUS", _status]
+        ["STATUS", _status],
+        ["prison_escapeTime", (_unit getVariable ["lilc_prison_escapeTime", 0])],
+        ["prison_waitingTime", (_unit getVariable ["lilc_prison_waitingTime", 0])],
+        ["prison_punishment", (_unit getVariable ["lilc_prison_currentPunishment", ""])]
     ],
     [
         ["ID", _aID],

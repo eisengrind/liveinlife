@@ -123,9 +123,6 @@ lilc_login_update_defPackages = [
     "update_lil_perms_perms",
     "update_lil_respawn_statusTimeout",
     "update_lil_respawn_currentTimeout",
-    "update_lil_prison_waitingTime",
-    "update_lil_prison_escapeTime",
-    "update_lil_prison_currentPMent",
     "update_lil_paycheck_active",
     "update_lil_respawn_isNew",
     "update_lil_virtualInventory_inventory"
@@ -230,27 +227,6 @@ lilc_login_update_defPackages = [
     "update_lil_respawn_currentTimeout",
     {
         lilc_respawn_currentTimeout;
-    }
-] call lilc_login_fnc_addPackage;
-
-[
-    "update_lil_prison_waitingTime",
-    {
-        lilc_prison_waitingTime;
-    }
-] call lilc_login_fnc_addPackage;
-
-[
-    "update_lil_prison_escapeTime",
-    {
-        lilc_prison_escapeTime;
-    }
-] call lilc_login_fnc_addPackage;
-
-[
-    "update_lil_prison_currentPMent",
-    {
-        lilc_prison_currentPunishment;
     }
 ] call lilc_login_fnc_addPackage;
 
