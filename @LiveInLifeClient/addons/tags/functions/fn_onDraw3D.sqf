@@ -1,7 +1,7 @@
 
 private _camPos = (AGLToASL (positionCameraToWorld [0, 0, 0]));
 private _units = [];
-private _inVehicle = !((vehicle player) isEqualTo player)
+private _inVehicle = !((vehicle player) isEqualTo player);
 if (_inVehicle) then {
     _units = (crew vehicle player);
 } else {
