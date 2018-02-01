@@ -30,6 +30,7 @@ try {
             };
         };
 
+        case "Mine";
         case "Magazine": {
             _config = "CfgMagazines";
         };
