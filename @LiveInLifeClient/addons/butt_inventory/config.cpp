@@ -14,6 +14,10 @@ class CfgWeapons {
     #include "CfgWeapons.cpp"
 };
 
+class CfgVehicles {
+    #include "CfgVehicles.cpp"
+};
+
 class RscText;
 class RscListbox;
 class RscButton;

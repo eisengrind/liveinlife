@@ -2,6 +2,7 @@
 class lilcm_butt_inventory {
     idd = 2308;
     name = "lilcm_butt_inventory";
+    onUnload = "[player, ''] call lilc_common_fnc_switchMove;";
     enableSimulation = 1;
     movingEnable = 1;
 
@@ -70,7 +71,7 @@ class lilcm_butt_inventory {
             y = 0.61 * safezoneH + safezoneY;
             w = 0.118594 * safezoneW;
             h = 0.022 * safezoneH;
-            onButtonClick = "call lilc_secret_items_fnc_hideItem;";
+            onButtonClick = "call lilc_butt_inventory_fnc_hideItem;";
         };
 
         class ButtonRemove: RscButton {
@@ -80,7 +81,7 @@ class lilcm_butt_inventory {
             y = 0.61 * safezoneH + safezoneY;
             w = 0.118594 * safezoneW;
             h = 0.022 * safezoneH;
-            onButtonClick = "call lilc_secret_items_fnc_removeItem;";
+            onButtonClick = "call lilc_butt_inventory_fnc_removeItem;";
         };
 
         class TextAmount: RscText {

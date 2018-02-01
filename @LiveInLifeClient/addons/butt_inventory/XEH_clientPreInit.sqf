@@ -3,6 +3,7 @@ lilc_butt_inventory_maximum = 10;
 lilc_butt_inventory_openingTime = 10;
 lilc_butt_inventory_maxMass = 50;
 lilc_butt_inventory_maxMassPain = 0.8;
+lilc_butt_inventory_allowedFactions = [];
 
 [{
     private _mM = player getVariable ["lilc_butt_inventory_maxMass", lilc_butt_inventory_maxMass];
@@ -18,5 +19,9 @@ lilc_butt_inventory_maxMassPain = 0.8;
 
     if (_pain > 0.4) then {
         [player, 0.05 * _pain, "body", "stab"] call ace_medical_fnc_addDamageToUnit;
+    };
+
+    if (_pain > 2) then {
+        [player, true, (random [10, 20, 30])*_pain] call ace_medical_fnc_setUnconscious;
     };
 }, 30] call CBA_fnc_addPerFrameHandler;

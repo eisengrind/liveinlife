@@ -1,6 +1,6 @@
 
 params [
-    ["_unit", objNull, [objNull]]
+    ["_unit", player, [objNull]]
 ];
 
 if !(createDialog "lilc_progressBar") exitWith {};
@@ -13,7 +13,7 @@ private _uiProgressBarText = (_ui displayCtrl 1322);
 private _time = time;
 lilc_action_interrupted = false;
 
-[player, ""] call lilc_common_fnc_switchMove;
+[player, "AinvPknlMstpSnonWnonDnon_G01"] call lilc_common_fnc_switchMove;
 
 while {
     (_time + lilc_butt_inventory_openingTime) > time
@@ -26,10 +26,12 @@ while {
     _uiProgressBarText ctrlSetStructuredText parseText format["Hintern wird geöffnet... (%1%2)", (round (_t * 100)), "%"];
 };
 
-[player, ""] call lilc_common_fnc_switchMove;
 closeDialog 1320;
 
 if (!createDialog "lilcm_butt_inventory") exitWith {};
+
+((findDisplay 2308) displayCtrl 1600) ctrlAddEventhandler ["ButtonClick", lilc_butt_inventory_fnc_hideItem];
+((findDisplay 2308) displayCtrl 1601) ctrlAddEventhandler ["ButtonClick", lilc_butt_inventory_fnc_removeItem];
 
 (findDisplay 2308) setVariable ["lilc_butt_inventory_unit", _unit];
 
