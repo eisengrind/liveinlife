@@ -17,7 +17,8 @@
 
 params [
     ["_unit", ObjNull, [ObjNull]],
-    ["_animation", "", [""]]
+    ["_animation", "", [""]],
+    ["_setAnimation", false , [false]]
 ];
 
 try {
@@ -26,7 +27,7 @@ try {
     if !(alive _unit) throw false;
 
     _unit switchMove _animation;
-    if !(isRemoteExecuted) then
+    if !(_setAnimation) then
     {
         if (_animation != (animationState _unit)) throw false;
         [[_unit, _animation, true], "lilc_common_fnc_switchMove"] call lilc_common_fnc_sendToOtherPlayers;
