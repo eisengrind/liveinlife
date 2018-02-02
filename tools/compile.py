@@ -61,7 +61,7 @@ def logMsg(logfile, msg):
 
 def main():
     parser = argparse.ArgumentParser(description='Build Tool for ArmA 3 packages.')
-    parser.add_argument('-k', '--key', type=str, help='path to a key file\nif the key does not exists, a new one will be created')
+    parser.add_argument('-k', '--key', type=str, help='path to a key file\nif the key does not exists, a new one will be created', default='')
     parser.add_argument('-b', '--binarize', help='enables binarized configs', action='store_true')
     parser.add_argument('-t', '--pathTo', type=str, help='path to .pbo location')
     parser.add_argument('-f', '--pathFrom', type=str, help='path to .pbo folder or folders marked with \'*\'')
@@ -72,8 +72,12 @@ def main():
     args = parser.parse_args()
 
     pathCurrent = os.path.dirname(sys.argv[0])
+    pathTemporaryFolder = os.path.join(pathCurrent, "tmp")
     pathAddonBuilder = getAddonBuilderPath()
     pathDSCreateKey = getDSCreateKeyPath()
+
+    if not os.path.isdir(pathTemporaryFolder):
+        os.mkdir(pathTemporaryFolder)
 
     files = []
 
@@ -82,7 +86,7 @@ def main():
         logfile = open(args.logfile, 'w+')
         logfile.write('-> logfile was created')
 
-    if not os.path.isfile(args.key):
+    if not os.path.isfile(args.key) and args.key != "":
         fName = os.path.splitext(os.path.basename(args.key))[0]
         subprocess.check_call('"%s" "%s"' % (pathDSCreateKey, fName))
 
@@ -99,13 +103,18 @@ def main():
         prefix = prefix.replace('{folder}', fileName)
         packageName = args.name
         packageName = packageName.replace('{folder}', fileName)
+        pathTemporaryPackage = os.path.join(pathTemporaryFolder, os.path.splitext(packageName)[0])
+
+        if os.path.isdir(pathTemporaryPackage):
+            shutil.rmtree(pathTemporaryPackage)
+        shutil.copytree(path, pathTemporaryPackage)
 
         print('-> compiling next package %s' % packageName)
         logMsg(logfile, '-> compiling next package %s' % packageName)
 
         command = [
             '"%s"' % pathAddonBuilder,
-            '"%s"' % path,
+            '"%s"' % pathTemporaryPackage,
             '"%s"' % os.path.abspath(args.pathTo)
         ]
 
@@ -126,7 +135,7 @@ def main():
 
         logBuffer = subprocess.check_output(command)
         logMsg(logfile, logBuffer.decode(sys.stdout.encoding))
-
+        shutil.rmtree(pathTemporaryPackage)
     logfile.close()
     return 0
 
