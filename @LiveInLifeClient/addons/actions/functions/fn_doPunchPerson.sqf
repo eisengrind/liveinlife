@@ -8,17 +8,17 @@ if !([_target] call lilc_actions_fnc_canPunchPerson) exitWith {};
 lilc_action_active = true;
 private _stm = (getStamina player);
 private _stamRem = ([(missionConfigFile >> "CfgMaster" >> "punching_stamina")] call BIS_fnc_getCfgData);
-if !(_stamRem isEqualType 0) exitWith {};
-if (_stamRem < 0) exitWith {};
-if ((_stm - _stamRem) < 0) exitWith {};
+if !(_stamRem isEqualType 0) exitWith { lilc_action_active = false; };
+if (_stamRem < 0) exitWith { lilc_action_active = false; };
+if ((_stm - _stamRem) < 0) exitWith { lilc_action_active = false; };
 
 private _chanceDefault = ([(missionConfigFile >> "CfgMaster" >> "punching_chance")] call BIS_fnc_getCfgData);
 private _chanceHeadgear = ([(missionConfigFile >> "CfgMaster" >> "punching_chanceHeadgear")] call BIS_fnc_getCfgData);
-if !(_chanceDefault isEqualTo []) exitWith {};
-if !(_chanceHeadgear isEqualTo []) exitWith {};
+if !(_chanceDefault isEqualType 0) exitWith { lilc_action_active = false; };
+if !(_chanceHeadgear isEqualType 0) exitWith { lilc_action_active = false; };
 
 private _headgear = ([(missionConfigFile >> "CfgMaster" >> "punching_headgear")] call BIS_fnc_getCfgData);
-if !(_headgear isEqualType []) exitWith {};
+if !(_headgear isEqualType []) exitWith { lilc_action_active = false; };
 
 player setStamina (_stm - _stamRem);
 
