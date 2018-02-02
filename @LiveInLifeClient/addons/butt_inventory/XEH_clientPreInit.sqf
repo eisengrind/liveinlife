@@ -25,3 +25,18 @@ lilc_butt_inventory_allowedFactions = [];
         [player, true, (random [10, 20, 30])*_pain] call ace_medical_fnc_setUnconscious;
     };
 }, 30] call CBA_fnc_addPerFrameHandler;
+
+[
+    "set_lil_butt_inventory",
+    {
+        player setVariable  ["lilc_butt_inventory", _this, true];
+    }
+] call lilc_login_fnc_addPackage;
+
+lilc_login_update_defPackages pushBack "update_lil_butt_inventory"
+[
+    "update_lil_butt_inventory",
+    {
+        (player getVariable ["lilc_butt_inventory", []]);
+    }
+] call lilc_login_fnc_addPackage;

@@ -1,255 +1,134 @@
 
-import sys, os, subprocess, shutil
+import sys, os, subprocess, shutil, argparse, types, winreg
 
-TOOLSPATH = os.path.dirname(sys.argv[0])
-ARGUMENTS = sys.argv[1:]
+def getAddonBuilderPath():
+    reg = winreg.ConnectRegistry(None, winreg.HKEY_LOCAL_MACHINE)
+    path = ""
+    f = ""
 
-# -h, --help, -help, --h {compile|...} = help for action
-# -k {keyfilepath} = the path to the keyfile
-# -b = binarize configs
-# -T {pathTo} = to location
-# -F {pathFrom}, -f {files path from (..\*)} = from location
-# -I {} = wildcards (seperated by comma (,)) to include while compiling
-# -A {path to addon builder} = "
-# -S {path to DSUtils} = "
-# -p {prefix (variable {folder} available)} = sets the .pbo prefix; {folder} return .pbo folder basename
-# -N "lilc_{name}" = sets the file prefix
+    try:
+        key = winreg.OpenKey(reg, r"SOFTWARE\WOW6432Node\bohemia interactive\addonbuilder")
+        path = winreg.QueryValueEx(key, "path")[0]
+        f = winreg.QueryValueEx(key, "exe")[0]
+        winreg.CloseKey(key)
+    except:
+        raise Exception("NoTools", "There was no addon builder found on your computer.")
 
-ARGPARAMS = [
-    ["-h", 0],
-    ["--help", 0],
-    ["-help", 0],
-    ["--h", 0],
-    ["-k", 1],
-    ["-b", 0],
-    ["-T", 1],
-    ["-F", 1],
-    ["-I", 1],
-    ["-A", 1],
-    ["-S", 1],
-    ["-L", 1],
-    ["-p", 1],
-    ["-N", 1]
-]
-ARGSVALUES = []
+    return os.path.join(path, f)
 
-AVARGS = []
-for arg in ARGPARAMS:
-    AVARGS.append(arg[0])
+def getDSCreateKeyPath():
+    reg = winreg.ConnectRegistry(None, winreg.HKEY_CURRENT_USER)
+    path = ""
+    f = ""
 
-def getArgValue(argument):
-    for arg in ARGSVALUES:
-        if arg[0] == argument:
-            return arg[1:]
-    return []
+    try:
+        key = winreg.OpenKey(reg, r"Software\bohemia interactive\dscreatekey")
+        path = winreg.QueryValueEx(key, "path")[0]
+        f = winreg.QueryValueEx(key, "exe")[0]
+    except:
+        raise Exception("NoTools", "There was no dssigncreate found on your computer.")
 
-def argInList(argument):
-    for arg in ARGSVALUES:
-        if arg[0] == argument:
-            return True
-    return False
+    return os.path.join(path, f)
 
-for i in range(0, len(ARGUMENTS)):
-    if ARGUMENTS[i] in AVARGS:
-        args = [
-            ARGUMENTS[i]
-        ]
-        a = ARGPARAMS[AVARGS.index(ARGUMENTS[i])][1]
-
-        if a > 0:
-            for b in range(0, a):
-                if i + 1 + b >= len(ARGUMENTS):
-                    args.append("")
-                else:
-                    args.append(ARGUMENTS[(i + 1)])   
-        ARGSVALUES.append(args)
-
-if argInList("-h") or argInList("--help") or argInList("-help") or argInList("--h"):
-    print("LiveInLife build tools help:")
-    print("\t-h, --h, -help, --help = help for action")
-    print("\t-k {keyfilepath} = the path to the keyfile")
-    print("\t-b = binarize configs")
-    print("\t-T {pathTo} = to location")
-    print("\t-F {pathFrom (use \* at the end to select all folders behind current path)} = from location")
-    print("\t-I {} = wildcards (seperated by comma (,)) to include while compiling")
-    print("\t-A {path to addon builder} = path of your installed addon builder")
-    print("\t-S {path to DSUtils} = path to your installed DSUtils program")
-    print("\t-p {prefix (variable {folder} available)} = sets the .pbo prefix; {folder} return .pbo folder basename")
-    print("\t-L {path to logfile} = path to the logfile")
-
-    sys.exit(1)
-
-KEYFILE = ""
-kVal = getArgValue("-k")
-if len(kVal) >= 1:
-    KEYFILE = kVal[0]
-del kVal
-
-BINARIZE = False
-if argInList("-b"):
-    BINARIZE = True
-
-PATHTO = ""
-pTVal = getArgValue("-T")
-if len(pTVal) >= 1:
-    PATHTO = pTVal[0]
-del pTVal
-
-PATHSFROM = []
-pFVal = getArgValue("-F")
-
-if len(pFVal) >= 1:
-    p = pFVal[0]
-    bN = os.path.basename(p)
+def getPackagePaths(path):
+    bN = os.path.basename(path)
+    files = []
 
     if (bN == "*"):
-        p = os.path.dirname(p)
+        p = os.path.dirname(path)
         for folder in os.listdir(p):
-            absP = os.path.join(p, folder)
+            absP = os.path.abspath(os.path.join(p, folder))
             if os.path.isdir(absP):
-                PATHSFROM.append(absP)
+                files.append(absP)
     else:
-        PATHSFROM.append(p)
-del pFVal
+        files.append(os.path.abspath(path))
 
-INCLUDE = ""
-incVal = getArgValue("-I")
-if len(incVal) >= 1:
-    INCLUDE = incVal[0]
-del incVal
+    return files
 
-PATHADDONBUILDER = ""
-pABVal = getArgValue("-A")
-if len(pABVal) >= 1:
-    PATHADDONBUILDER = pABVal[0]
-del pABVal
-
-PATHDSUTILS = ""
-pDVal = getArgValue("-S")
-if len(pDVal) >= 1:
-    PATHDSUTILS = pDVal[0]
-del pDVal
-
-PREFIX = ""
-pVal = getArgValue("-p")
-if len(pVal) >= 1:
-    PREFIX = pVal[0]
-del pVal
-
-PATHLOGFILE = os.path.join(TOOLSPATH, "compile.log")
-lVal = getArgValue("-L")
-if len(lVal) >= 1:
-    PATHLOGFILE = lVal[0]
-del lVal
-
-FILENAMETEMPLATE = "{name}"
-nVal = getArgValue("-N")
-if len(nVal) >= 1:
-    FILENAMETEMPLATE = nVal[0]
-del nVal
-
-lFile = open(PATHLOGFILE, 'w+')
-lFile.seek(0)
-lFile.truncate()
-
-iFilePath = os.path.join(TOOLSPATH, "inc.tmp")
-
-TEMPPATH = os.path.abspath(os.path.join(TOOLSPATH, "tmp"))
-
-if not os.path.isdir(TEMPPATH):
-    os.makedirs(TEMPPATH)
-
-if INCLUDE != "":
-    iFile = open(iFilePath, 'w+')
-    iFile.seek(0)
-    iFile.truncate()
-    iFile.write(INCLUDE)
-    iFile.close()
-
-for path in PATHSFROM:
-    fName = os.path.basename(path)
-    path = os.path.abspath(path)
-
-    templateName = FILENAMETEMPLATE
-
-    fNameTemplateFile = os.path.join(path, "$NAMETEMPLATE$")
-    if os.path.isfile(fNameTemplateFile):
-        f = open(fNameTemplateFile)
-        templateName = f.readline()
+def getPackagePrefix(path, default):
+    path = os.path.join(path, "$PREFIX$")
+    if os.path.isfile(path):
+        f = open(path)
+        tmp = f.readline()
         f.close()
+        if tmp != "":
+            default = tmp
+    return default
 
-    tmpPath = os.path.abspath(os.path.join(TEMPPATH, templateName.replace("{name}", fName)))
-    fPrefixFile = os.path.join(tmpPath, "$PREFIX$")
-    prefix = PREFIX.replace("{folder}", fName)
+def logMsg(logfile, msg):
+    if logfile != None:
+        logfile.write('%s\n' % msg)
 
-    if os.path.isdir(tmpPath):
-        shutil.rmtree(tmpPath)
+def main():
+    parser = argparse.ArgumentParser(description='Build Tool for ArmA 3 packages.')
+    parser.add_argument('-k', '--key', type=str, help='path to a key file\nif the key does not exists, a new one will be created')
+    parser.add_argument('-b', '--binarize', help='enables binarized configs', action='store_true')
+    parser.add_argument('-t', '--pathTo', type=str, help='path to .pbo location')
+    parser.add_argument('-f', '--pathFrom', type=str, help='path to .pbo folder or folders marked with \'*\'')
+    parser.add_argument('-i', '--include', type=str, help='path to a wildcard exclude file')
+    parser.add_argument('-p', '--prefix', type=str, help='adds an prefix to the .pbo\n\'{folder}\' is a keyword for the current package name')
+    parser.add_argument('-l', '--logfile', type=str, help='path to a log file')
+    parser.add_argument('-n', '--name', type=str, help='file name format\n\'{folder}\' is a keyword containing the package name')
+    args = parser.parse_args()
 
-    shutil.copytree(path, tmpPath)
+    pathCurrent = os.path.dirname(sys.argv[0])
+    pathAddonBuilder = getAddonBuilderPath()
+    pathDSCreateKey = getDSCreateKeyPath()
 
-    if os.path.isfile(fPrefixFile):
-        f = open(fPrefixFile)
-        prefix = f.readline()
-        f.close()
+    files = []
 
-    print("----\nNew package: %s\n----\n" % prefix)
-    lFile.write("----\nNew package: %s\n----\n" % prefix)
-    params = [
-        ('"%s"' % os.path.abspath(PATHADDONBUILDER)),
-        ('"%s"' % tmpPath),
-        ('"%s"' % os.path.abspath(PATHTO))
-    ]
+    logfile = None
+    if args.logfile != "":
+        logfile = open(args.logfile, 'w+')
+        logfile.write('-> logfile was created')
 
-    if prefix != "":
-        prefix = ('-prefix="%s"' % prefix)
-        params.append(prefix)
+    if not os.path.isfile(args.key):
+        fName = os.path.splitext(os.path.basename(args.key))[0]
+        subprocess.check_call('"%s" "%s"' % (pathDSCreateKey, fName))
 
-    sF = ""
-    if KEYFILE != "":
-        sF = ('-sign="%s"' % os.path.abspath(KEYFILE))
-        params.append(sF)
+        if not os.path.exists(os.path.join(os.path.dirname(args.keys), '%s.%s' % (fName, 'bikey'))):
+            shutil.move(os.path.join(pathCurrent, '%s.%s' % (fName, 'bikey')),
+                        os.path.dirname(args.key))
+        if not os.path.exists(args.keys):
+            shutil.move(os.path.join(pathCurrent, '%s.%s' % (fName, 'biprivatekey')),
+                        os.path.dirname(args.key))
 
-    dSF = ""
-    if PATHDSUTILS != "":
-        dSF = ('-dssignfile="%s"' % os.path.abspath(PATHDSUTILS))
-        params.append(dSF)
+    for path in getPackagePaths(args.pathFrom):
+        fileName = os.path.basename(path)
+        prefix = getPackagePrefix(path, args.prefix)
+        prefix = prefix.replace('{folder}', fileName)
+        packageName = args.name
+        packageName = packageName.replace('{folder}', fileName)
 
-    inc = ""
-    if INCLUDE != "":
-        inc = ('-include="%s"' % iFilePath)
-        params.append(inc)
+        print('-> compiling next package %s' % packageName)
+        logMsg(logfile, '-> compiling next package %s' % packageName)
 
-    binar = ""
-    if not BINARIZE:
-        binar = "-packonly"
-        params.append(binar)
+        command = [
+            '"%s"' % pathAddonBuilder,
+            '"%s"' % path,
+            '"%s"' % os.path.abspath(args.pathTo)
+        ]
 
-    params.append('-clear')
+        if prefix != "":
+            command.append('-prefix="%s"' % prefix)
 
-    cmd = " ".join(params)
-    print(cmd)
+        if args.key != "":
+            command.append('-sign="%s"' % args.key)
 
-    strBuf = subprocess.check_output(cmd)
-    encStrBuf = strBuf.decode(sys.stdout.encoding)
-    print(encStrBuf)
-    
-    if os.path.isdir(tmpPath):
-        shutil.rmtree(tmpPath)
-    lFile.write(encStrBuf)
-lFile.close()
+        if args.include != "" and os.path.isfile(args.include):
+            command.append('-include="%s"' % args.include)
 
-if os.path.isfile(iFilePath):
-    os.remove(iFilePath)
+        if not args.binarize:
+            command.append('-packonly')
 
+        command.append('-clear')
+        command = " ".join(command)
 
-# test.py compile --h
-# -h, --help, -help, --h {compile|...} = help for action
-# -k {keyfilepath} = the path to the keyfile
-# -b = binarize configs
-# -T {pathTo} = to location
-# -F {pathFrom} = from location
-# -I {} = wildcards (seperated by comma (,)) to include while compiling
-# -A {path to addon builder} = "
-# -S {path to DSUtils} = "
-# -p {prefix (variable {folder} available)} = sets the .pbo prefix; {folder} return .pbo folder basename
-# -L {path to logfile} = path to the logfile
+        logBuffer = subprocess.check_output(command)
+        logMsg(logfile, logBuffer.decode(sys.stdout.encoding))
+
+    logfile.close()
+    return 0
+
+if __name__ == '__main__':
+    sys.exit(main())
