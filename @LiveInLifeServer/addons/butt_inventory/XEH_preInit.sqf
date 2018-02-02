@@ -4,7 +4,7 @@ lils_login_set_defPackages pushBack "set_lil_butt_inventory";
 [
     "set_lil_butt_inventory",
     {
-        _dbCol = ["CHARISMA", true, false];
+        _dbCol = ["CHARISMA", true, true];
     }
 ] call lils_login_fnc_addPackage;
 

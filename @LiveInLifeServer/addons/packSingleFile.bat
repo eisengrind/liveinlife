@@ -1,3 +1,10 @@
 
-"D:\Users\agphe\Documents\git\LiveInLife\tools\compile.py" "-L" "D:\Users\agphe\Documents\git\LiveInLife\tools\lils.tmp.log" "-N" "lils_{name}" "-k" "D:\Program Files\Steam\steamapps\common\Arma 3 Tools\DSSignFile\lil0.8.7.biprivatekey" "-b" "-T" "D:\Users\agphe\Documents\git\LiveInLife\.builds\@LiveInLifeServer\addons" "-F" %1 "-I" "*.p3d;*.pac;*.paa;*.rtm;*.sqf;*.sqs;*.bikb;*.fsm;*.wss;*.ogg;*.wav;*.fxy;*.csv;*.html;*.lip;*.txt;*.wrp;*.bisurf;*.xml;*.rvmat;*.hpp;*.jpg;*.h" "-A" "D:\Program Files\Steam\steamapps\common\Arma 3 Tools\AddonBuilder\AddonBuilder.exe" "-p" "x\lils\addons\{folder}"
-:: python "D:\Users\agphe\Documents\GitHub\private\LiveInLife\LiveInLifeClient\packSingle.py" %1 "D:\Users\agphe\Documents\GitHub\private\LiveInLife\@LiveInLifeClient\addons"
+"D:\Users\agphe\Documents\git\LiveInLife\tools\compile.py"^
+	"--logfile" "D:\Users\agphe\Documents\git\LiveInLife\tools\lils.tmp.log"^
+	"--name" "lils_{folder}"^
+	"--key" "D:\Program Files\Steam\steamapps\common\Arma 3 Tools\DSSignFile\lil0.8.7.biprivatekey"^
+	"--binarize"^
+	"--pathTo" "D:\Users\agphe\Documents\git\LiveInLife\.builds\@LiveInLifeServer\addons"^
+	"--pathFrom" %1^
+	"--include" "D:\Users\agphe\Documents\git\LiveInLife\tools\include.inc"^
+	"--prefix" "x\lils\addons\{folder}"

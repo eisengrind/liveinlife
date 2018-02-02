@@ -79,8 +79,6 @@ def main():
     if not os.path.isdir(pathTemporaryFolder):
         os.mkdir(pathTemporaryFolder)
 
-    files = []
-
     logfile = None
     if args.logfile != "":
         logfile = open(args.logfile, 'w+')
