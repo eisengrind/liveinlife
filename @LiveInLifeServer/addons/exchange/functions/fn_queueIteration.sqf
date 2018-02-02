@@ -238,7 +238,7 @@ do
                     ])] call lils_database_fnc_query;
 
                     [["sell_seller", [_classname, _amountToBuy, _price]], "lilc_exchange_fnc_queueed", _unit] call lilc_common_fnc_send;
-                    
+
                     private _offerUnit = (playableUnits select { (_accountID == (_x getVariable ["lilc_accountID", 0])) });
                     if ((count _offerUnit) == 1) then
                     {
@@ -260,7 +260,7 @@ do
                     private _offerID = (_data select 1);
 
                     private _offer = ([(format["SELECT classname, amount, price, `type` FROM EXCHANGE_OFFERS WHERE ID = '%1'", _offerID])] call lils_database_fnc_fetchObjects);
-                    
+
                     if ((count _offer) != 1) throw ["remove", []];
                     _offer = (_offer select 0);
 
@@ -274,13 +274,13 @@ do
 
                     private _storageAmount = 0;
                     if (_storageItem isEqualType false) then {
-                        [(format["INSERT INTO exchange_storages (ID, accountID, exchangeName, classname, amount, timestampAdd) VALUES (NULL, '%1', '%2', '%3', '%4', UNIX_TIMESTAMP(NOW()))", _unitAccountID, (str _exchangeName), (str _classname), _amountToBuy])] call lils_database_fnc_query;
+                        [(format["INSERT INTO exchange_storages (ID, accountID, exchangeName, classname, amount, timestampAdd) VALUES (NULL, '%1', '%2', '%3', '%4', UNIX_TIMESTAMP(NOW()))", _unitAccountID, (str _exchangeName), (str _classname), _amount])] call lils_database_fnc_query;
                     }
                     else
                     {
                         if ((count _storageItem) <= 0) then
                         {
-                            [(format["INSERT INTO exchange_storages (ID, accountID, exchangeName, classname, amount, timestampAdd) VALUES (NULL, '%1', '%2', '%3', '%4', UNIX_TIMESTAMP(NOW()))", _unitAccountID, (str _exchangeName), (str _classname), _amountToBuy])] call lils_database_fnc_query;
+                            [(format["INSERT INTO exchange_storages (ID, accountID, exchangeName, classname, amount, timestampAdd) VALUES (NULL, '%1', '%2', '%3', '%4', UNIX_TIMESTAMP(NOW()))", _unitAccountID, (str _exchangeName), (str _classname), _amount])] call lils_database_fnc_query;
                         }
                         else
                         {
@@ -298,7 +298,7 @@ do
                     [(format["INSERT INTO exchange_logs (classname, exchangeName, `type`, timestampadded, active, accountID) VALUES ('%1', '%2', '2', UNIX_TIMESTAMP(NOW()), 1, '%3')", (str _classname), (str _exchangeName), _unitAccountID])] call lils_database_fnc_query;
 
                     if (_type == 1) then
-                    { 
+                    {
                         private _price = ((_amount + _storageAmount) * _price);
                         [(format["INSERT INTO exchange_accounts (ID, accountID, balance, timestampedited) SELECT * FROM (SELECT NULL, '%1', '0', UNIX_TIMESTAMP(NOW())) AS tmp WHERE NOT EXISTS (SELECT ID FROM exchange_accounts WHERE accountID = '%1')", _unitAccountID])] call lils_database_fnc_query;
                         sleep 0.005;
@@ -308,7 +308,7 @@ do
                     [(format["DELETE FROM EXCHANGE_OFFERS WHERE ID = '%1'", _offerID])] call lils_database_fnc_query;
 
                     [["remove", [_offerID]], "lilc_exchange_fnc_queueed", _unit] call lilc_common_fnc_send;
-                    [_unit, _exchangeName] call lils_exchange_fnc_getmyOffers;
+                    [_unit, _exchangeName] call lils_exchange_fnc_getItemOffers;
                 };
 
                 case "account_draw":
