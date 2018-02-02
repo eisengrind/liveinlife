@@ -253,7 +253,7 @@ SET END / UDPATE START
 [
     "update_lil_prison_currentPMent",
     {
-        ["prison_currentPunishment", (_this select 1)];
+        ["prison_currentPunishment", str (_this select 1)];
     }
 ] call lils_login_fnc_addPackage;
 

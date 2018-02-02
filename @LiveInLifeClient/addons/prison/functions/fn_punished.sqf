@@ -77,7 +77,7 @@ try
         {
             if ((player getVariable ["lilc_prison_escapeTime", 0]) != 0) then
             {
-                player getVariable ["lilc_prison_escapeTime", 0, true];
+                player setVariable ["lilc_prison_escapeTime", 0, true];
                 player setVariable ["lilc_prison_escapeLastPosition", [], true];
 
                 _uiTextJailInfo ctrlShow true;

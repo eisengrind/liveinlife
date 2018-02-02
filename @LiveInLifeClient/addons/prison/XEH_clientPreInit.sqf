@@ -11,7 +11,7 @@
                 [
                     (player getVariable ["lilc_prison_currentPunishment", ""]),
                     _wT,
-                    (player setVariable ["lilc_prison_escapeTime", 0, true])
+                    (player getVariable ["lilc_prison_escapeTime", 0])
                 ] call lilc_prison_fnc_punished;
             };
         };
@@ -35,7 +35,7 @@
 [
     "set_lil_prison_cPment",
     {
-        player getVariable ["lilc_prison_currentPunishment", _this, true];
+        player setVariable ["lilc_prison_currentPunishment", _this, true];
     }
 ] call lilc_login_fnc_addPackage;
 
