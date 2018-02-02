@@ -60,8 +60,7 @@ lilc_events_interruptCounterHandler = ([_ui] spawn {
     };
 
     if (isNull _ui) exitWith {};
-
-    call lilc_login_fnc_updatePlayerData;
+    [] call lilc_login_fnc_updatePlayerData;
 
     _uiAbButN ctrlSetText "Abbrechen";
     _uiAbButN ctrlEnable true;
