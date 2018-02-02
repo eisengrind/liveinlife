@@ -29,11 +29,11 @@ lilc_butt_inventory_allowedFactions = [];
 [
     "set_lil_butt_inventory",
     {
-        player setVariable  ["lilc_butt_inventory", _this, true];
+        player setVariable ["lilc_butt_inventory", _this, true];
     }
 ] call lilc_login_fnc_addPackage;
 
-lilc_login_update_defPackages pushBack "update_lil_butt_inventory"
+lilc_login_update_defPackages pushBack "update_lil_butt_inventory";
 [
     "update_lil_butt_inventory",
     {
