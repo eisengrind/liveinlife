@@ -1,5 +1,5 @@
 
-class butt_inventory {
+class lilc_butt_inventory {
     class functions {
         file = "\x\lilc\addons\butt_inventory\functions";
         class canHideItems {};

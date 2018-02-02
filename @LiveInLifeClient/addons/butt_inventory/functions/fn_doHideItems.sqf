@@ -3,6 +3,7 @@ params [
     ["_unit", player, [objNull]]
 ];
 
+if (!(vehicle player) isEqualTo player) exitWith {};
 if !(createDialog "lilc_progressBar") exitWith {};
 
 disableSerialization;
@@ -13,11 +14,14 @@ private _uiProgressBarText = (_ui displayCtrl 1322);
 private _time = time;
 lilc_action_interrupted = false;
 
+private _unitPos = (position _unit);
+
 [player, "AinvPknlMstpSnonWnonDnon_G01"] call lilc_common_fnc_switchMove;
 
 while {
     (_time + lilc_butt_inventory_openingTime) > time
 } do {
+    if ((_unitPos distance _unit) > 1) exitWith {};
     if (lilc_action_interrupted) exitWith {};
     if ((vehicle player) != player) exitWith {};
 
@@ -27,6 +31,10 @@ while {
 };
 
 closeDialog 1320;
+
+if (lilc_action_interrupted) exitWith { lilc_action_interrupted = false; };
+if ((vehicle player) != player) exitWith {};
+if ((_unitPos distance _unit) > 1) exitWith {};
 
 if (!createDialog "lilcm_butt_inventory") exitWith {};
 
