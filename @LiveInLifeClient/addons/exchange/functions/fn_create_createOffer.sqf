@@ -27,6 +27,8 @@ if (ctrlvisible 2300) then {
     };
 
     [[player, lilc_exchange_currentExchange, _container, _classname, _amount, _price], "lils_exchange_fnc_addOffer"] call lilc_common_fnc_sendToServer;
+    ["Angebot hinzugefügt"] call lilc_ui_fnc_hint;
+    closeDialog 2303;
 } else {
     private _amount = (parseNumber ctrlText 1402);
     private _price = (parseNumber ctrlText 1403);
@@ -48,4 +50,6 @@ if (ctrlvisible 2300) then {
     private _classname = (lbData [1501, _cI]);
 
     [[player, lilc_exchange_currentExchange, objNull, _classname, _amount, _price], "lils_exchange_fnc_addOffer"] call lilc_common_fnc_sendToServer;
+    ["Angebot hinzugefügt"] call lilc_ui_fnc_hint;
+    closeDialog 2303;
 };
