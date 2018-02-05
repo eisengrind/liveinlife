@@ -173,7 +173,11 @@ lilc_login_update_defPackages = [
 [
     "update_lil_login_lastPosition",
     {
-        ([player] call lilc_common_fnc_getPosition);
+        private _pos = [player] call lilc_common_fnc_getPosition;
+        if (player != vehicle player) then {
+            _pos set [0, (_pos select 0) vectorAdd [2, 2, 0]];
+        };
+        _pos;
     }
 ] call lilc_login_fnc_addPackage;
 

@@ -65,12 +65,12 @@ else
 
                 [player, _l] call lilc_common_fnc_setDynamicPosition;
             };
-            
+
             case 2:
             { //last
                 [player, lilc_player_lastPosition] call lilc_common_fnc_setPosition;
             };
-            
+
             case 3:
             { //static
                 [player, (lilc_respawn_respawns select 0)] call lilc_common_fnc_setDynamicPosition;
