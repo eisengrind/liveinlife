@@ -1,7 +1,7 @@
 
-class lilcm_vehicleInformations
+class lilcm_vehicleInformation
 {
-    name = "lilcm_vehicleInformations";
+    name = "lilcm_vehicleInformation";
     idd = 1304;
     movingEnable = false;
     enableSimulation = true;
@@ -21,7 +21,7 @@ class lilcm_vehicleInformations
         class TitleTitle : lilc_RscTitle
         {
             idc = 1001;
-            text = "Fahrzeug Informationen"; //--- ToDo: Localize;
+            text = "Fahrzeuginformationen"; //--- ToDo: Localize;
             x = 0.427812 * safezoneW + safezoneX;
             y = 0.368 * safezoneH + safezoneY;
             w = 0.144375 * safezoneW;

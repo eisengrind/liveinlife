@@ -19,5 +19,5 @@ ctrlSetText [
 
 ctrlSetText [
     1005,
-    (_info select 1)
+    (_info select 2)
 ];

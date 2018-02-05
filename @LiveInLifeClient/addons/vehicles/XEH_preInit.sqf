@@ -1,5 +1,6 @@
 
 lilc_vehicles_lastVehicle = objNull;
+lilc_vehicles_informationVehicles = [];
 
 //keybindings
 [

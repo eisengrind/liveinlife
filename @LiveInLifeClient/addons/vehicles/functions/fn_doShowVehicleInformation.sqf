@@ -3,8 +3,8 @@ params [
     ["_vehicle", objNull, [objNull]]
 ];
 
-if !([_vehicle] call lilc_vehicles_fnc_canShowVehicleInformations) exitWith {};
-if !(createDialog "lilcm_vehicleInformations") exitWith {};
+if !([_vehicle] call lilc_vehicles_fnc_canShowVehicleInformation) exitWith {};
+if !(createDialog "lilcm_vehicleInformation") exitWith {};
 
 for "_i" from 1002 to 1005 do
 {
