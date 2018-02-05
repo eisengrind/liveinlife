@@ -6,26 +6,43 @@ try
 
     if (_factionID <= -1) then
     {
-        private _availableHospitals = [];
-        {
-            if ([_x, "hospital_"] call KRON_StrInStr) then
+        if ((player getVariable ["lilc_prison_escapeTime", 0]) > 0) then {
+            private _nearestPrisonCfg = configNull;
+            private _dist = 0;
             {
-                _availableHospitals pushBack _x;
-            };
-        } forEach lilc_common_dynamicPositions;
+                private _nDist = (getMarkerPos getText(_x >> "markerName")) distance player;
+                if (_nDist < _dist) then {
+                    _dist = _nDist;
+                    _nearestPrisonCfg = _x;
+                };
+                true;
+            } count ("true" configClasses (missionConfigFile >> "CfgPrisons"));
 
-        if ((count _availableHospitals) <= 0) throw [];
+            if (isNull _nearestPrisonCfg) throw (["default"] call lilc_common_fnc_getDynamicPosition);
 
-        private _remotestHospital = 0;
-        {
-            if (((([_x] call lilc_common_fnc_getDynamicPosition) select 0) distance (lilc_respawn_corpsePosition select 0)) >
-            ((([_availableHospitals select _remotestHospital] call lilc_common_fnc_getDynamicPosition) select 0) distance (lilc_respawn_corpsePosition select 0))) then
+            throw ([getText(_nearestPrisonCfg >> "respawnPosition")] call lilc_common_fnc_getDynamicPosition);
+        } else {
+            private _availableHospitals = [];
             {
-                _remotestHospital = _forEachIndex;
-            };
-        } forEach _availableHospitals;
+                if ([_x, "hospital_"] call KRON_StrInStr) then
+                {
+                    _availableHospitals pushBack _x;
+                };
+            } forEach lilc_common_dynamicPositions;
 
-        throw ([(_availableHospitals select _remotestHospital)] call lilc_common_fnc_getDynamicPosition);
+            if ((count _availableHospitals) <= 0) throw [];
+
+            private _remotestHospital = 0;
+            {
+                if (((([_x] call lilc_common_fnc_getDynamicPosition) select 0) distance (lilc_respawn_corpsePosition select 0)) >
+                ((([_availableHospitals select _remotestHospital] call lilc_common_fnc_getDynamicPosition) select 0) distance (lilc_respawn_corpsePosition select 0))) then
+                {
+                    _remotestHospital = _forEachIndex;
+                };
+            } forEach _availableHospitals;
+
+            throw ([(_availableHospitals select _remotestHospital)] call lilc_common_fnc_getDynamicPosition);
+        };
     }
     else
     {
@@ -44,9 +61,9 @@ try
                 _respawns = [(getText(_factionConfig >> "respawn"))];
             };
         };
-        
+
         if ((count _respawns) <= 0) throw [];
-        
+
         private _remotestSpawnpoint = ([(_respawns select 0)] call lilc_common_fnc_getDynamicPosition);
         {
             if (((lilc_respawn_corpsePosition select 0) distance (_remotestSpawnpoint select 0)) < ((([_x] call lilc_common_fnc_getDynamicPosition) select 0) distance (lilc_respawn_corpsePosition select 0))) then
