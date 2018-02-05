@@ -10,6 +10,7 @@ call compile preProcessFileLineNumbers "\x\lilc\addons\common\scripts\KRON_Strin
     }
 ] call CBA_fnc_addEventHandler;
 
+lilc_common_disabledWeapons = [];
 lilc_common_defaultPostFinishedIndex = ([
     "lilce_common_postFinished",
     {
