@@ -12,7 +12,7 @@ try {
     if (isNull _unit) throw false;
     if !(isPlayer _unit) throw false;
     if (_targetAccountID <= 0) throw false;
-    
+
     {
         if (isPlayer _x && (_x getVariable ["lilc_accountID", 0]) == _targetAccountID) exitWith {
             _x setVariable ["lilc_factionRankID", _selectedRank, true];
@@ -22,7 +22,7 @@ try {
     private _factionID = (_unit getVariable ["lilc_factionID", -1]);
     if (_factionID <= -1) throw false;
     private _factionConfig = ([_factionID] call lilc_factions_fnc_getFactionConfig);
-    
+
     private _toRemove = [];
     private _toAdd = [];
     {
@@ -34,12 +34,12 @@ try {
     } forEach (["factionsInterface.dashboard", "factionsInterface.player.edit", "factionsInterface.rank.edit", "factionsInterface.rank.add", "factionsInterface.rank.remove"] + getArray(_factionConfig >> "selectablePermissions"));
 
     [_targetAccountID, _toRemove, _toAdd] call lils_permissions_fnc_addAndRemove;
-    
+
     private _availableUnits = (playableUnits select { ((_x getVariable ["lilc_accountID", 0]) == _targetAccountID) });
-    
+
     if ((count _availableUnits) == 1) then
     {
-        [[_vehicles, _equipment], "lilc_factionsInterface_fnc_setAvailables", (_availableUnits select 0)] call lilc_common_fnc_send;
+        [[_equipment, _vehicles], "lilc_factionsInterface_fnc_setAvailables", (_availableUnits select 0)] call lilc_common_fnc_send;
     };
 
     _equipment = ([_equipment] call lils_common_fnc_arrayEncode);

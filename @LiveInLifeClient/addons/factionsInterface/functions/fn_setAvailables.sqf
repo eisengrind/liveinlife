@@ -1,7 +1,7 @@
 
 params [
-    ["_vehicles", [], [[]]],
-    ["_equipment", [], [[]]]
+    ["_equipment", [], [[]]],
+    ["_vehicles", [], [[]]]
 ];
 
 lilc_factionsInterface_vehicles = _vehicles;

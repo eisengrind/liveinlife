@@ -4,6 +4,7 @@ class lils_factionsInterface {
         file = "\x\lils\addons\factionsInterface\functions";
         class addRank {};
         class broadcastRanks {};
+        class getMenuInfo {};
         class getPlayerInfo {};
         class getPlayers {};
         class getRankInfo {};
