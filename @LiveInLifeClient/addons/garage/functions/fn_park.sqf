@@ -36,6 +36,11 @@ try {
         throw false;
     };
 
+    if (count (_vehicle getVariable ["SA_Tow_Ropes", []]) > 0) then {
+        ["Das Schleppseil deines Fahrzeuges ist an einem anderen Fahrzeug angebracht.", "ERROR"] call lilc_ui_fnc_hint;
+        throw false;
+    };
+
     [[player, _vehicle, _garageName], "lils_garage_fnc_park"] call lilc_common_fnc_sendToServer;
 } catch {
     _exception;
