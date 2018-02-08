@@ -3,7 +3,7 @@ params [
     ["_unit", player, [objNull]]
 ];
 
-if (!(vehicle player) isEqualTo player) exitWith {};
+if (!((vehicle _unit) isEqualTo _unit)) exitWith {};
 if !(createDialog "lilc_progressBar") exitWith {};
 
 disableSerialization;
@@ -14,14 +14,14 @@ private _uiProgressBarText = (_ui displayCtrl 1322);
 private _time = time;
 lilc_action_interrupted = false;
 
-private _unitPos = (position _unit);
+private _unitPos = (getPosASL _unit);
 
 [player, "AinvPknlMstpSnonWnonDnon_G01"] call lilc_common_fnc_switchMove;
 
 while {
     (_time + lilc_butt_inventory_openingTime) > time
 } do {
-    if ((_unitPos distance _unit) > 1) exitWith {};
+    if (((ASLToAGL _unitPos) distance _unit) > 1) exitWith {};
     if (lilc_action_interrupted) exitWith {};
     if ((vehicle player) != player) exitWith {};
 
@@ -33,13 +33,10 @@ while {
 closeDialog 1320;
 
 if (lilc_action_interrupted) exitWith { lilc_action_interrupted = false; };
-if ((vehicle player) != player) exitWith {};
-if ((_unitPos distance _unit) > 1) exitWith {};
+if ((vehicle player) != player) exitWith { lilc_action_interrupted = false; };
+if (((ASLToAGL _unitPos) distance _unit) > 1) exitWith { lilc_action_interrupted = false; };
 
-if (!createDialog "lilcm_butt_inventory") exitWith {};
-
-((findDisplay 2308) displayCtrl 1600) ctrlAddEventhandler ["ButtonClick", lilc_butt_inventory_fnc_hideItem];
-((findDisplay 2308) displayCtrl 1601) ctrlAddEventhandler ["ButtonClick", lilc_butt_inventory_fnc_removeItem];
+if (!createDialog "lilcm_butt_inventory") exitWith { lilc_action_interrupted = false; };
 
 (findDisplay 2308) setVariable ["lilc_butt_inventory_unit", _unit];
 
@@ -70,3 +67,5 @@ lbClear 1501;
     lbSetPicture [1501, _i, getText(_cfg >> "picture")];
     true;
 } count _hideout;
+
+lilc_action_interrupted = false;
