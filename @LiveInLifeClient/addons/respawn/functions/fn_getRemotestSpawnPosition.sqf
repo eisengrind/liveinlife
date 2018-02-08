@@ -6,7 +6,7 @@ try
 
     if (_factionID <= -1) then
     {
-        if ((player getVariable ["lilc_prison_escapeTime", 0]) > 0) then {
+        if ((player getVariable ["lilc_prison_escapeTime", 0]) > 0 || (player getVariable ["lilc_prison_waitingTime", 0]) > 0) then {
             private _nearestPrisonCfg = configNull;
             private _dist = 0;
             {
