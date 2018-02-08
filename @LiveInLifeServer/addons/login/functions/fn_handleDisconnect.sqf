@@ -30,7 +30,7 @@ private _prison_punishment = (_unit getVariable ["lilc_prison_currentPunishment"
         ["STATUS", _status],
         ["prison_escapeTime", (_unit getVariable ["lilc_prison_escapeTime", 0])],
         ["prison_waitingTime", (_unit getVariable ["lilc_prison_waitingTime", 0])],
-        ["prison_punishment", (_unit getVariable ["lilc_prison_currentPunishment", ""])]
+        ["prison_currentPunishment", (_unit getVariable ["lilc_prison_currentPunishment", ""])]
     ],
     [
         ["ID", _aID],
