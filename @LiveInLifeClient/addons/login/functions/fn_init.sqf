@@ -7,6 +7,7 @@ try {
             "lilce_login_unload",
             0
         ] call CBA_fnc_localEvent;
+        player setVariable ["lilc_login_inMenu", true, true];
     };
 
     waitUntil { !(call BIS_fnc_isLoading) };
@@ -77,6 +78,7 @@ try {
     ppEffectDestroy _ppEffectBlur;
 
     lilc_login_firstLogin = false;
+    player setVariable ["lilc_login_inMenu", false, true];
     throw true;
 } catch {
     if !(_exception) then {

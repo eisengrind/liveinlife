@@ -6,6 +6,8 @@ params [
     "_name"
 ];
 
+if (_unit getVariable ["lilc_login_inMenu", false]) exitWith {};
+
 private _aID = (_unit getVariable ["lilc_accountID", 0]);
 private _inv = ([_unit] call lilc_inventory_fnc_getInventory);
 private _pos = ([_unit] call lilc_common_fnc_getPosition);
