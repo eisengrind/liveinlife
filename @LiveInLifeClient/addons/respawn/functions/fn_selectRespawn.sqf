@@ -1,7 +1,7 @@
 
-if (lilc_player_isRespawning) then
+if (lilc_player_deathTimeout > 0 && lilc_player_isRespawning) then
 {
-    [player, objNull] spawn lilc_respawn_fnc_init;
+    [player] spawn lilc_respawn_fnc_init;
 }
 else
 {

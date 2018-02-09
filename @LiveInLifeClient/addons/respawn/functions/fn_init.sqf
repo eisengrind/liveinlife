@@ -36,7 +36,7 @@ try {
         private _ui = (uiNamespace getVariable ["lilc_respawn", displayNull]);
         if (isNull _ui) throw 0;
         private _uiTextTimer = (_ui displayCtrl 1041);
-        
+
         private _time = time;
         [0.1] call lilc_ui_fnc_enableLoadingIcon;
         lilc_respawn_currentTimeout = lilc_player_deathTimeout;
@@ -103,7 +103,7 @@ try {
             private _position = (call lilc_respawn_fnc_getRemotestSpawnPosition);
             [player, _position] call lilc_common_fnc_setPosition;
             [player, ""] call lilc_common_fnc_switchMove;
-            
+
             if !(isNil "lilc_medical_onDeadUnitGetInVehicleIndex") then
             {
                 player removeEventHandler ["GetIn", lilc_medical_onDeadUnitGetInVehicleIndex];
@@ -205,7 +205,7 @@ try {
             try
             {
                 [200, "lilc_respawn", 1, false] call lilc_ui_fnc_fadeInTitles;
-                
+
                 if (isNil "lilc_respawn_timeout") then
                 {
                     lilc_respawn_timeout = (10 * 60);
@@ -230,7 +230,7 @@ try {
                     _uiTextTimer ctrlSetStructuredText parseText format["<t font='PuristaMedium' align='center' size='2.5'>%1</t>", ([(lilc_respawn_currentTimeout - (time - _time)), "HH:MM:SS"] call BIS_fnc_secondsToString)];
                     sleep 1;
                 };
-                
+
                 [1] call lilc_ui_fnc_fadeInBlack;
                 [200, 1] call lilc_ui_fnc_fadeOutTitles;
                 sleep 1;
@@ -243,7 +243,7 @@ try {
             catch
             {
                 /* 0 = error, 1 = respawned by suicide, 2 = respawned by timeout, 3 = revived */
-                            
+
                 _ppEffectChromeAberration ppEffectEnable false;
                 _ppEffectColorCorrections ppEffectEnable false;
                 ppEffectDestroy _ppEffectChromeAberration;
@@ -267,7 +267,7 @@ try {
                         {
                             player removeEventHandler ["GetOutMan", lilc_medical_onDeadUnitGetOutVehicleIndex];
                         };
-                        
+
                         throw true;
                     };
 

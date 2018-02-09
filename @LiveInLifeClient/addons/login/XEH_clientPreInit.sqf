@@ -81,6 +81,7 @@ lilc_player_isNew = -1;
     "set_lil_respawn_deathTimeout",
     {
         lilc_player_deathTimeout = _this;
+        lilc_player_isRespawning = true;
     }
 ] call lilc_login_fnc_addPackage;
 
@@ -125,8 +126,16 @@ lilc_login_update_defPackages = [
     "update_lil_respawn_currentTimeout",
     "update_lil_paycheck_active",
     "update_lil_respawn_isNew",
-    "update_lil_virtualInventory_inventory"
+    "update_lil_virtualInventory_inventory",
+    "update_lil_respawn_deathTimeout"
 ];
+
+[
+    "update_lil_respawn_deathTimeout",
+    {
+        lilc_respawn_currentTimeout;
+    }
+] call lilc_login_fnc_addPackage;
 
 [
     "update_lil_respawn_isNew",
