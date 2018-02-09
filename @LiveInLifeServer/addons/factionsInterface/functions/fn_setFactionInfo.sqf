@@ -21,8 +21,8 @@ try {
     private _stuff = [(format["SELECT VEHICLES, EQUIPMENT, PERMISSIONS FROM FACTION_PLAYER_DATA WHERE ACCOUNTID = '%1'", _accountID])] call lils_database_fnc_fetchObjects;
     if ((count _stuff) != 1) throw false;
     _stuff = (_stuff select 0);
-    if ((count _stuff) != 2) throw false;
-    [_accountID, ([(_this select 2)] call lils_common_fnc_arrayDecode)] call lils_permissions_fnc_addAndRemove;
+    if ((count _stuff) != 3) throw false;
+    //[_accountID, ([(_this select 2)] call lils_common_fnc_arrayDecode)] call lils_permissions_fnc_addAndRemove;
     [[([(_stuff select 1)] call lils_common_fnc_arrayDecode), ([(_stuff select 0)] call lils_common_fnc_arrayDecode)], "lilc_factionsInterface_fnc_setAvailables", _unit] call lilc_common_fnc_send;
 
     throw true;
