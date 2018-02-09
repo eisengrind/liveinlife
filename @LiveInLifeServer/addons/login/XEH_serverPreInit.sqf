@@ -12,7 +12,6 @@ lils_login_set_defPackages = [
     "set_lil_respawn_deathTimeout",
     "set_lil_login_statusTimeout",
     "set_lil_login_damage",
-    "set_lil_respawn_respawning",
     /*"set_lil_bank_accounts",*/
     "set_lil_virtualInventory_inventory",
     "set_lil_perms_perms",
@@ -20,7 +19,10 @@ lils_login_set_defPackages = [
     /*"set_lil_locker_lockers",*/
     "set_lil_factions_faction",
     "set_lil_respawn_isNew",
-    "set_lil_paycheck"
+    "set_lil_paycheck",
+    "set_lil_prison_cPment",
+    "set_lil_prison_escapeTime",
+    "set_lil_prison_waitingTime"
 ];
 
 [
@@ -120,18 +122,33 @@ lils_login_set_defPackages = [
 ] call lils_login_fnc_addPackage;
 
 [
-    "set_lil_respawn_respawning",
-    {
-        _dbCol = ["RESPAWNING", true, false];
-    }
-] call lils_login_fnc_addPackage;
-
-[
     "set_lil_respawn_isNew",
     {
         _dbCol = ["NEW", true, false];
     }
 ] call lils_login_fnc_addPackage;
+
+[
+    "set_lil_prison_waitingTime",
+    {
+        _dbCol = ["prison_waitingTime", true, false];
+    }
+] call lilc_login_fnc_addPackage;
+
+[
+    "set_lil_prison_escapeTime",
+    {
+        _dbCol = ["prison_escapeTime", true, false];
+    }
+] call lilc_login_fnc_addPackage;
+
+[
+    "set_lil_prison_cPment",
+    {
+        _dbCol = ["prison_currentPunishment", true, false];
+    }
+] call lilc_login_fnc_addPackage;
+
 
 /*********
 SET END / UDPATE START
