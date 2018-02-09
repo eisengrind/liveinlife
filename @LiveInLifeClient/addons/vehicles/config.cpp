@@ -1,12 +1,14 @@
 
-class CfgPatches
-{
+class CfgPatches {
     #include "CfgPatches.cpp"
 };
 
-class CfgFunctions
-{
+class CfgFunctions {
     #include "CfgFunctions.cpp"
+};
+
+class CfgVehicles {
+    #include "CfgVehicles.cpp"
 };
 
 class lilc_RscText;
