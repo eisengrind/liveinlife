@@ -7,8 +7,11 @@ try
     if (_factionID <= -1) then
     {
         if ((player getVariable ["lilc_prison_escapeTime", 0]) > 0 || (player getVariable ["lilc_prison_waitingTime", 0]) > 0) then {
-            private _nearestPrisonCfg = configNull;
-            private _dist = 0;
+            private _prisons = ("true" configClasses (missionConfigFile >> "CfgPrisons"));
+            private _nearestPrisonCfg = (_prisons select 0);
+            if ((count _prisons) <= 0) throw (["default"] call lilc_common_fnc_getDynamicPosition);
+
+            private _dist = ((getMarkerPos getText(_nearestPrisonCfg >> "markerName")) distance player);
             {
                 private _nDist = (getMarkerPos getText(_x >> "markerName")) distance player;
                 if (_nDist < _dist) then {
@@ -16,7 +19,7 @@ try
                     _nearestPrisonCfg = _x;
                 };
                 true;
-            } count ("true" configClasses (missionConfigFile >> "CfgPrisons"));
+            } count _prisons;
 
             if (isNull _nearestPrisonCfg) throw (["default"] call lilc_common_fnc_getDynamicPosition);
 
