@@ -40,7 +40,7 @@ if (ctrlvisible 2300) then {
         ["Du kannst keinen Preis kleiner als 0 angeben.", "ERROR"] call lilc_ui_fnc_hint;
     };
 
-    if !([(_amount * _price)] call lilc_cash_fnc_have) exitWith {
+    if !([(_amount * _price)] call lilc_cash_fnc_remove) exitWith {
         ["Du besitzt nicht genügend Bargeld.", "ERROR"] call lilc_ui_fnc_hint;
     };
 
