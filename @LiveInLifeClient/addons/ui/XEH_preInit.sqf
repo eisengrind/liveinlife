@@ -14,7 +14,13 @@ lilc_ui_hint_lastControls = [];
     "lilce_common_postFinished",
     {
         call lilc_ui_fnc_enableHints;
-        call lilc_hud_fnc_enable;
+    }
+] call CBA_fnc_addEventHandler;
+
+[
+    "lilce_login_unload",
+    {
+        call lilc_ui_fnc_disableHints;
     }
 ] call CBA_fnc_addEventHandler;
 
