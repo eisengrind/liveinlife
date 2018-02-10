@@ -18,3 +18,17 @@ lilc_hud_infos = ([[], []] call CBA_fnc_hashCreate);
 
 private _cfg = (configFile >> "RscTitles" >> "lilc_hud");
 lilc_hud_borderHeight = ((getNumber(_cfg >> "controls" >> "TextInformation" >> "y")) - (getNumber(_cfg >> "controlsBackground" >> "PictureBackground" >> "y"))) * 2;
+
+[
+    "lilce_common_postFinished",
+    {
+        call lilc_hud_fnc_enable;
+    }
+] call CBA_fnc_addEventHandler;
+
+[
+    "lilce_login_unload",
+    {
+        call lilc_hud_fnc_disable;
+    }
+] call CBA_fnc_addEventHandler;
