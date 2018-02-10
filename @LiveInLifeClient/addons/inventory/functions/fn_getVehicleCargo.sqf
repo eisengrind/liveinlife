@@ -27,6 +27,13 @@ private _items = [[], []];
 
 _gear = [
     _items,
+    /*
+        Magazines:
+            [
+                [classname],
+                [magazineStack, amount]
+            ]
+    */
     ([_vehicle] call lilc_inventory_fnc_magazinesAmmoCargoStacked),
     (getWeaponCargo _vehicle),
     _containers

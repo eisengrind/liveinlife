@@ -30,7 +30,7 @@ inventory {
 
         }
         containerItems {
-            
+
         }
         containerMagazines {
 
@@ -43,7 +43,7 @@ inventory {
 
         }
         containerItems {
-            
+
         }
         containerMagazines {
 
@@ -76,6 +76,43 @@ inventory {
 
 */
 
+/*
+[
+    HEADGEAR([]),
+    TOOLBAR([]),
+    UNIFORM([
+        uniform,
+        color,
+        itemcargo([
+            [classname, ...],
+            [amount, ...]
+        ]),
+        magazines([
+            [classname, magSize],
+            ...
+        ]),
+        weapons([
+            [classname, ...],
+            [amount, ...]
+        ])
+    ]),
+    VEST([
+        vest,
+        itemcargo,
+        magazines,
+        weapons
+    ]),
+    BACKPACK([
+        backpack,
+        color,
+        items,
+        magazines,
+        wepaons
+    ]),
+    EQUIPPEDWEAPONS
+]
+*/
+
 _unit = param [0, ObjNull, [ObjNull]];
 if (isNull _unit) exitWith { []; };
 
@@ -90,15 +127,15 @@ _inventory = [
     } else {
         [
             (uniform _unit),
-            ((uniformContainer _unit) getVariable ["lilc_color", "-1"]), 
+            ((uniformContainer _unit) getVariable ["lilc_color", "-1"]),
             (getItemCargo uniformContainer _unit),
             if (isNil {(magazinesAmmo uniformContainer _unit)}) then { [[]]; } else { (magazinesAmmo uniformContainer _unit); },
             (getWeaponCargo uniformContainer _unit)
         ];
     },
     //VEST
-    if ((vest _unit) == "") then { 
-        []; 
+    if ((vest _unit) == "") then {
+        [];
     } else {
         [
             (vest _unit),
@@ -108,12 +145,12 @@ _inventory = [
         ];
     },
     //BACKPACK
-    if ((backpack _unit) == "") then { 
-        []; 
+    if ((backpack _unit) == "") then {
+        [];
     } else {
         [
             (backpack _unit),
-            ((backpackContainer _unit) getVariable ["lilc_color", "-1"]), 
+            ((backpackContainer _unit) getVariable ["lilc_color", "-1"]),
             (getItemCargo backpackContainer _unit),
             if (isNil {(magazinesAmmo backpackContainer _unit)}) then { [[]]; } else { (magazinesAmmo backpackContainer _unit); },
             (getWeaponCargo backpackContainer _unit)
