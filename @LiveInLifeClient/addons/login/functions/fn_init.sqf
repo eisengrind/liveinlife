@@ -58,6 +58,11 @@ try {
     else
     {
         ["mainMenu"] call lilc_login_fnc_selectMenu;
+
+        if !(missionNamespace getVariable ["lilc_login_firstLogin", true]) then { //TODO: add relogin function
+            ctrlShow [2300, false];
+            ctrlShow [1001, false];
+        };
     };
 
     lilc_login_loginSuccessful = nil;
