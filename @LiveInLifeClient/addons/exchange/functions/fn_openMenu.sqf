@@ -42,7 +42,8 @@ switch (_type) do
             lbSetData [2100, _i, _x];
             lbSetPicture [2100, _i, getText(_itemCfg >> "picture")];
         } count getArray(_cfg >> "items");
-
+        
+        lnbSort [2100, 1, true];
         [((_ui displayCtrl 2300) controlsGroupCtrl 2100), (lbCurSel 2100)] call lilc_exchange_fnc_offers_handleOnLBSelChanged;
     };
 
