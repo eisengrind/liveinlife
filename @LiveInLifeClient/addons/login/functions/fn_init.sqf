@@ -60,7 +60,7 @@ try {
         ["mainMenu"] call lilc_login_fnc_selectMenu;
 
         if !(missionNamespace getVariable ["lilc_login_firstLogin", true]) then { //TODO: add relogin function
-            ctrlShow [2300, false];
+            (((findDisplay 1024) displayCtrl 2300) controlsGroupCtrl 2300) ctrlShow false;
             ctrlShow [1001, false];
         };
     };
