@@ -43,7 +43,7 @@ switch (_type) do
             lbSetPicture [2100, _i, getText(_itemCfg >> "picture")];
         } count getArray(_cfg >> "items");
         
-        lnbSort [2100, 1, true];
+        lbSort [2100, "ASC"];
         [((_ui displayCtrl 2300) controlsGroupCtrl 2100), (lbCurSel 2100)] call lilc_exchange_fnc_offers_handleOnLBSelChanged;
     };
 
