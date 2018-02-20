@@ -221,7 +221,7 @@ class lilcm_login {
 
                 class TextSelect : lilc_RscButtonMainMenu
                 {
-                    idc = 1000;
+                    idc = 1001;
                     onButtonClick = "['selectProfile'] call lilc_login_fnc_selectMenu;";
                     onMouseEnter = "[(_this select 0), (configFile >> 'lilcm_login' >> 'controls' >> 'GroupSelectProfileMenu' >> 'controls' >> 'TextSelect')] call lilc_ui_fnc_buttonMoveRight_onMouseEnter;";
                     onMouseExit = "[(_this select 0), (configFile >> 'lilcm_login' >> 'controls' >> 'GroupSelectProfileMenu' >> 'controls' >> 'TextSelect')] call lilc_ui_fnc_buttonMoveRight_onMouseExit;";
