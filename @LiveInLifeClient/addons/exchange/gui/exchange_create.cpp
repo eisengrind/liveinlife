@@ -97,7 +97,6 @@ class lilcm_exchange_create
         class ButtonSellOffer: RscButton
         {
             idc = 1601;
-
             text = "Verkaufen"; //--- ToDo: Localize;
             x = 0.5 * safezoneW + safezoneX;
             y = 0.269 * safezoneH + safezoneY;
@@ -198,7 +197,7 @@ class lilcm_exchange_create
         {
             idc = 1601;
 
-            text = "Verkaufen"; //--- ToDo: Localize;
+            text = "Erstellen"; //--- ToDo: Localize;
             x = 0.391719 * safezoneW + safezoneX;
             y = 0.709 * safezoneH + safezoneY;
             w = 0.108281 * safezoneW;
