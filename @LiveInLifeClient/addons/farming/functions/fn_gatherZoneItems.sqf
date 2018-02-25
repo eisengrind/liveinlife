@@ -54,6 +54,12 @@ try {
         };
     } forEach ("true" configClasses _areaConfig);
 
+    {
+        for "_i" from 1 to ((_gI select 1) select _forEachIndex) do {
+            if !([player, _x, -1, false, false] call lilc_inventory_fnc_add) throw 2;
+        };
+    } forEach (_gI select 0);
+
     if ((count (_gI select 0)) > 0) then {
         if (getNumber(_areaConfig >> "hint") == 1) then {
             private _str = "Du hast folgende Items erhalten:<br />";
@@ -70,12 +76,6 @@ try {
         };
     };
 
-    {
-        for "_i" from 1 to ((_gI select 1) select _forEachIndex) do {
-            if !([player, _x, -1, false, false] call lilc_inventory_fnc_add) throw 2;
-        };
-    } forEach (_gI select 0);
-
     throw 1;
 } catch {
     lilc_action_active = false;
@@ -86,14 +86,19 @@ try {
 
         case 1: {
             ([{
-                if (lilc_action_active || (_this select 0) < time) then {
+                if (
+                    (((_this select 0) select 1) distance2D player) < 0.5 && (
+                        lilc_action_active ||
+                        ((_this select 0) select 0) < time
+                    )
+                ) then {
                     [(_this select 1)] call CBA_fnc_removePerFrameHandler;
                     if (!lilc_action_active) then {
                         false spawn lilc_farming_fnc_gatherZoneItems;
                     };
                 };
-            }, 0 , time + 5] call CBA_fnc_addPerFrameHandler);
+            }, 0 , [time + 5, position player]] call CBA_fnc_addPerFrameHandler);
         };
-    }
+    };
     (_exception == 1);
 };
