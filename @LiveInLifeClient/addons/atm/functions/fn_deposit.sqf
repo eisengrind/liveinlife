@@ -1,29 +1,15 @@
 
-/*
-    Filename:
-        fn_deposit.sqf
-    Author:
-        Vincent Heins
-    Description:
-        Deposits cash on a specific bankaccount.
-    Param(s):
-        (_this select 0) : amount to deposit : <SCALAR/INT>
-    Result(s):
-        true = success; false != true : <BOOL>
-*/
+params [
+    ["_value", 0, [0]]
+];
 
-private _amount = param [0, 0, [0]];
-
-try {
-    if !([lilc_atm_currentBankAccount] call lilc_bank_fnc_haveAccountByID) throw false;
-    if !([_amount] call lilc_cash_fnc_have) throw false;
-    if !([_amount] call lilc_cash_fnc_remove) throw false;
-    if !([lilc_atm_currentBankAccount, _amount] call lilc_bank_fnc_appendByID) throw false;
-    throw true;
-} catch {
-    if (_exception) then {
-        ["deposit_completed"] call lilc_atm_fnc_selectMenu;
-    } else {
-        ["deposit_failed"] call lilc_atm_fnc_selectMenu;
-    };
+if (_value <= 0) exitWith {
+    ["deposit_failed"] call lilc_atm_fnc_selectMenu;
 };
+
+if !([_value] call lilc_cash_fnc_remove) exitWith {
+    ["Du besitzt nicht genügend Geld", "ERROR"] call lilc_ui_fnc_hint;
+};
+
+["deposit_wait"] call lilc_atm_fnc_selectMenu;
+[[player, lilc_atm_currentBankAccount select 4, _value], "lils_atm_fnc_deposit"] call lilc_common_fnc_sendToServer;

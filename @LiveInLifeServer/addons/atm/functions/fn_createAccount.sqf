@@ -14,5 +14,5 @@ try
 }
 catch
 {
-    [_exception, "lilc_atm_fnc_createAccountCallback", _unit] call lilc_common_fnc_send;
+    [_exception, "lilc_atm_fnc_callback_createAccount", _unit] call lilc_common_fnc_send;
 };

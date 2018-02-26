@@ -76,7 +76,7 @@ private _result = ([([
 try
 {
     if ((count _result) != 1) throw false;
-    
+
     _result = (_result select 0);
     if ((count _result) != (count _dbCs)) throw false;
 

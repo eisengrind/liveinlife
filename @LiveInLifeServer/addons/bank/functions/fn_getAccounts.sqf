@@ -6,11 +6,8 @@ params [
 private _result = ([([
     "BANK_ACCOUNT_DATA",
     [
-        ["QUOTE(HASH)", false],
-        ["NAME"],
-        ["AMOUNT"],
-        ["STATUS"],
-        ["ID"]
+        ["ID"],
+        ["NAME"]
     ],
     [
         ["ACCOUNTID", (_unit getVariable ["lilc_accountID", 0])]

@@ -1,4 +1,6 @@
 
+// lilc_bank_accounts = [[ID, NAME], ...n];
+
 private _bankName = param [0, "", [""]];
 
 try {

@@ -14,7 +14,6 @@ class lilc_bank {
         class haveAccountByID {};
         class haveAmountByID {};
         class haveBankName {};
-        class init {};
         class isAccountFormat {};
         class removeAmountByID {};
         class setAccounts {};

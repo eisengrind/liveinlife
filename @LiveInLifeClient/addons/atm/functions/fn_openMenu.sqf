@@ -19,27 +19,24 @@ try {
     if (isNull _bankConfig) throw false;
 
     createDialog "lilc_atm_menu";
-    
+
     disableSerialization;
     private _ui = (findDisplay 1510);
     if (isNull _ui) throw false;
-    
+
     private _uiBackground = (_ui displayCtrl 1511);
     private _background = getText(_bankConfig >> "background");
     if (_background != "") then { _uiBackground ctrlSetText _background; };
 
     lilc_atm_currentBankName = _bankName;
-    lilc_atm_currentBankAccount = -1;
+    lilc_atm_currentBankAccount = [];
 
     if ([_bankName] call lilc_bank_fnc_haveBankName) then {
-        private _bankAccount = ([_bankName] call lilc_bank_fnc_getAccountByBankName);
-        if ([_bankAccount] call lilc_bank_fnc_isAccountFormat);
-        lilc_atm_currentBankAccount = (_bankAccount select 4);
-        ["main"] call lilc_atm_fnc_selectMenu;
+        call lilc_atm_fnc_getAccount;
     } else {
         ["create"] call lilc_atm_fnc_selectMenu;
     };
-    
+
     throw true;
 } catch {
     _exception;
