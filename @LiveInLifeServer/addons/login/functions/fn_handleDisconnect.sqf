@@ -26,6 +26,7 @@ private _prison_punishment = (_unit getVariable ["lilc_prison_currentPunishment"
 [([
     "ACCOUNT_DATA",
     [
+        ["CASH", (_unit getVariable ["lilc_cash_balance", 0])],
         ["GEAR", ([_inv] call lils_common_fnc_arrayEncode)],
         ["LASTPOSITION", ([_pos] call lils_common_fnc_arrayEncode)],
         ["VIRTUALINVENTORY", ([_vInv] call lils_common_fnc_arrayEncode)],
