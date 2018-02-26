@@ -25,7 +25,7 @@ lilc_player_isNew = -1;
 [
     "set_lil_login_cash",
     {
-        lilc_player_cash = _this;
+        [_this] call lilc_cash_fnc_set;
     }
 ] call lilc_login_fnc_addPackage;
 
@@ -161,7 +161,7 @@ lilc_login_update_defPackages = [
 [
     "update_lil_login_cash",
     {
-        lilc_player_cash;
+        (player getVariable ['lilc_cash_balance', 0]);
     }
 ] call lilc_login_fnc_addPackage;
 

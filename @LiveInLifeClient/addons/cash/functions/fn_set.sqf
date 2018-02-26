@@ -4,5 +4,5 @@ params [
 ];
 
 if (_balance <= -1) exitWith {};
-lilc_player_cash = _balance;
+player setVariable ['lilc_cash_balance', _balance, true];
 call lilc_hud_fnc_update;

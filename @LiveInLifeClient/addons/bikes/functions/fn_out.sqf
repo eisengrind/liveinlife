@@ -13,9 +13,9 @@ try {
     };
 
     private _handle = ["Du bist dabei ein Fahrrad für 10$ zu mieten.<br />Dabei zahlst du 40$ Kaution.<br />Du erhälst die Kaution wieder, sobald du das Fahrrad an dieser oder einer anderen Fahrradvermietung zurückgibst.<br /><br />Willst du das Fahrrad wirklich mieten?", "Fahrradvermietung", "Ja", "Nein"] call BIS_fnc_guiMessage;
-    
+
     if (_handle) then {
-        lilc_player_cash = lilc_player_cash - 50;
+        [50] call lilc_cash_fnc_remove;
         _vehicle = "dbo_CIV_ol_bike" createVehicle _position;
         _vehicle setVariable ["lilc_bikes_isRented", true, true];
         _vehicle setVariable ["lilc_bikes_owner", (getPlayerUID player), true];

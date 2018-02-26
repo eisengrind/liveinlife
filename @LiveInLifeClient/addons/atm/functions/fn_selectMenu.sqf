@@ -50,7 +50,7 @@ try {
     private _uiSubTitle = (_ui displayCtrl 1541);
 
     private _currentBankAccount = ([lilc_atm_currentBankAccount] call lilc_bank_fnc_getAccountByID);
-    
+
     if (isNil "lilc_atm_currentBankAccount") then { lilc_atm_currentBankAccount = -1; };
     if (lilc_atm_currentBankAccount > 0) then {
         _uiSubTitle ctrlSetStructuredText parseText format["<t shadow='0' font='PuristaLight' size='0.95'>$ %1</t>", (_currentBankAccount select 2)];
@@ -60,7 +60,7 @@ try {
     };
 
     { _x ctrlEnable true; } forEach [_uiButton1, _uiButton2, _uiButton3, _uiButton4, _uiButton5, _uiButton6, _uiButton7, _uiButton8];
-    
+
     _uiEditValue ctrlShow false;
     _uiEditValueBackground ctrlShow false;
     _uiListAccounts ctrlShow false;
@@ -69,7 +69,7 @@ try {
         case "main": {
             _uiTitle ctrlSetStructuredText parseText format["<t shadow='0' align='left' size='1.2'>Übersicht - %1</t>", (_currentBankAccount select 0)];
             _uiDescription ctrlSetStructuredText parseText "";
-            
+
             [1, /*2,*/ 5/*, 8*/] call lilc_atm_fnc_showButtons;
 
             _uiButton1Text ctrlSetStructuredText parseText "<t align='right' shadow='0' color='#176a37' font='PuristaSemibold'>Geld einzahlen</t>";
@@ -82,7 +82,7 @@ try {
             //_uiButton8 buttonSetAction '["accounts"] call lilc_atm_fnc_selectMenu;';
         };
 
-        
+
         case "create": {
             _uiTitle ctrlSetStructuredText parseText "<t shadow='0' align='left' size='1.2'>Konto erstellen</t>";
             _uiDescription ctrlSetStructuredText parseText "<t shadow='0' align='center' size='1.1'>Wählen Sie eine der folgendenden Optionen aus:</t>";
@@ -91,7 +91,7 @@ try {
 
             _uiButton1 buttonSetAction '[] call lilc_atm_fnc_createAccount;';
             _uiButton1Text ctrlSetStructuredText parseText "<t align='right' shadow='0' color='#176a37' font='PuristaSemibold'>Konto erstellen</t>";
-            
+
             _uiButton1 ctrlEnable true;
         };
         /*
@@ -121,7 +121,7 @@ try {
         case "create_complete": {
             _uiTitle ctrlSetStructuredText parseText "<t shadow='0' align='left' size='1.2'>Konto erstellen</t>";
             _uiDescription ctrlSetStructuredText parseText "<t shadow='0' align='center' size='1.1'>Ihr Konto wurde erfolgreich erstellt.</t>";
-            
+
             [8] call lilc_atm_fnc_showButtons;
 
             _uiButton8Text ctrlSetStructuredText parseText "<t align='left' shadow='0' color='#176a37' font='PuristaSemibold'>Hauptmenü</t>";
@@ -149,10 +149,10 @@ try {
             _uiButton8Text ctrlSetStructuredText parseText "<t align='left' shadow='0' color='#176a37' font='PuristaSemibold'>Bankkonto erstellen</t>";
             _uiButton8 buttonSetAction 'call lilc_atm_fnc_createAccount;';
             [/*4,*/ 8] call lilc_atm_fnc_showButtons;
-            
+
             //_uiButton4 buttonSetAction 'call lilc_atm_fnc_accountSelected;';
         };
-        
+
         case "account_locked": {
             _uiTitle ctrlSetStructuredText parseText "<t shadow='0' align='left' size='1.2'>Konto gesperrt</t>";
             _uiDescription ctrlSetStructuredText parseText "<t shadow='0' align='center' size='1.1'>Ihr Konto ist gesperrt.</t>";
@@ -167,14 +167,14 @@ try {
         case "deposit": {
             _uiTitle ctrlSetStructuredText parseText format["<t shadow='0' align='left' size='1.2'>Geld einzahlen - %1</t>", (_currentBankAccount select 0)];
             _uiDescription ctrlSetStructuredText parseText "";
-            
+
             [4, 7, 8] call lilc_atm_fnc_showButtons;
 
             _uiButton4Text ctrlSetStructuredText parseText "<t align='right' shadow='0' color='#176a37' font='PuristaSemibold'>Alles Einzahlen</t>";
             _uiButton7Text ctrlSetStructuredText parseText "<t align='left' shadow='0' color='#176a37' font='PuristaSemibold'>Anderer Betrag</t>";
             _uiButton8Text ctrlSetStructuredText parseText "<t align='left' shadow='0' color='#176a37' font='PuristaSemibold'>Zurück</t>";
             _uiButton7 buttonSetAction '["deposit_other"] call lilc_atm_fnc_selectMenu;';
-            _uiButton4 buttonSetAction '[lilc_player_cash] call lilc_atm_fnc_deposit;';
+            _uiButton4 buttonSetAction '[(player getVariable ["lilc_cash_balance", 0])] call lilc_atm_fnc_deposit;';
             _uiButton8 buttonSetAction '["main"] call lilc_atm_fnc_selectMenu;';
         };
 
@@ -187,7 +187,7 @@ try {
 
             _uiButton4Text ctrlSetStructuredText parseText "<t align='right' shadow='0' color='#176a37' font='PuristaSemibold'>Einzahlen</t>";
             _uiButton8Text ctrlSetStructuredText parseText "<t align='left' shadow='0' color='#176a37' font='PuristaSemibold'>Zurück</t>";
-            
+
             _uiButton4 buttonSetAction '[(parseNumber ctrlText 1538)] call lilc_atm_fnc_deposit;';
             _uiButton8 buttonSetAction '["deposit"] call lilc_atm_fnc_selectMenu;';
 
@@ -219,7 +219,7 @@ try {
         case "disburse": {
             _uiTitle ctrlSetStructuredText parseText format["<t shadow='0' align='left' size='1.2'>Geld auszahlen - %1</t>", (_currentBankAccount select 0)];
             _uiDescription ctrlSetStructuredText parseText "";
-            
+
             [1, 2, 3, 4, 5, 7, 8] call lilc_atm_fnc_showButtons;
 
             _uiButton1Text ctrlSetStructuredText parseText "<t align='right' shadow='0' color='#176a37' font='PuristaSemibold'>10 $</t>";
@@ -235,7 +235,7 @@ try {
             _uiButton3 buttonSetAction '[100] call lilc_atm_fnc_disburse;';
             _uiButton4 buttonSetAction '[1000] call lilc_atm_fnc_disburse;';
             _uiButton5 buttonSetAction '[5000] call lilc_atm_fnc_disburse;';
-            
+
             _uiButton7 buttonSetAction '["disburse_other"] call lilc_atm_fnc_selectMenu;';
             _uiButton8 buttonSetAction '["main"] call lilc_atm_fnc_selectMenu;';
         };
@@ -243,7 +243,7 @@ try {
         case "disburse_other": {
             _uiTitle ctrlSetStructuredText parseText format["<t shadow='0' align='left' size='1.2'>Geld auszahlen - %1</t>", (_currentBankAccount select 0)];
             _uiDescription ctrlSetStructuredText parseText "<t shadow='0' align='center' size='1.1'>Bitte geben Sie ihren gewünschten Betrag ein:</t>";
-            
+
             [4, 8] call lilc_atm_fnc_showButtons;
             _uiEditValue ctrlShow true;
             _uiEditValueBackground ctrlShow true;
@@ -274,7 +274,7 @@ try {
             _uiButton8Text ctrlSetStructuredText parseText "<t align='left' shadow='0' color='#176a37' font='PuristaSemibold'>Zurück</t>";
             _uiButton8 buttonSetAction '["disburse"] call lilc_atm_fnc_selectMenu;';
         };
-        
+
         /*case "transactions": {
             _uiTitle ctrlSetStructuredText parseText "<t shadow='0' align='left' size='1.2'>Überweisungen</t>";
             _uiDescription ctrlSetStructuredText parseText "<t shadow='0' align='center' size='1.1'>Alle derzeitigen Überweisungen:</t>";
@@ -295,7 +295,7 @@ try {
         };
 
         //case "select": {};*/
-        
+
         default { throw false; };
     };
 

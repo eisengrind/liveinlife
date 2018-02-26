@@ -13,9 +13,9 @@ try {
         hint "Von dir steht kein Mietfahrrad in der nähe.";
         throw false;
     };
-    
+
     deleteVehicle _bike;
-    lilc_player_cash = lilc_player_cash + 40;
+    [40] call lilc_cash_fnc_add;
     lilc_bikes_bikeRented = false;
     hint "Dein Fahrrad wurde zurückgenommen und du erhälst deine 40$ Kaution zurück.";
 } catch {

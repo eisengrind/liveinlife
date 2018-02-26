@@ -20,7 +20,7 @@ try
         call lilc_trade_fnc_cancelTrade;
         throw false;
     };
-    
+
     (findDisplay 1640) displayAddEventHandler ["KeyDown", {
         if ((_this select 1) == 1) then
         {
@@ -34,7 +34,7 @@ try
 
     lilc_trade_offeredMoney = 0;
     lilc_trade_accepted = false;
-    lilc_trade_availableMoney = lilc_player_cash;
+    lilc_trade_availableMoney = (player getVariable ['lilc_cash_balance', 0]);
     lilc_trade_tradePartner_offeredMoney = 0;
 
     call lilc_trade_fnc_updateMyInventory;
