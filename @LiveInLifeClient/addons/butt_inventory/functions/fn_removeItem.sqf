@@ -1,14 +1,16 @@
 
+ctrlEnable [1600, false];
 private _cI = lbCurSel 1501;
 if (_cI <= -1) exitWith {
     ["Du musst einen Gegenstand auswählen.", "ERROR"] call lilc_ui_fnc_hint;
+    ctrlEnable [1600, true];
 };
 
 private _classname = lbData [1501, _cI];
 private _classnameCfg = [_classname] call lilc_common_fnc_getClassnameConfig;
 
 private _unit = (findDisplay 2308) getVariable ["lilc_butt_inventory_unit", objNull];
-if (isNull _unit) exitWith {};
+if (isNull _unit) exitWith { ctrlEnable [1600, true]; };
 
 [_unit, "lilci_plasticBag_F", -1, false, true] call lilc_inventory_fnc_add;
 [_unit, _classname, -1, false, true] call lilc_inventory_fnc_add;
@@ -38,3 +40,4 @@ lbClear 1500;
 ctrlSetText [1004, format["%1 / %2", (count _hideout), (_unit getVariable ["lilc_butt_inventory_maximum", lilc_butt_inventory_maximum])]];
 
 ["Gegenstand wurde aus dem Hintern genommen."] call lilc_ui_fnc_hint;
+ctrlEnable [1600, true];

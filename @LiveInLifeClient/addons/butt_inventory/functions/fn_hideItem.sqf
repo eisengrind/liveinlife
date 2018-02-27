@@ -6,25 +6,29 @@
 //pain = (maxMassPain/maxMass^2)*mass^2
 //TODO: Disable run if something is in this inventory.
 
+ctrlEnable [1600, false];
 private _cI = lbCurSel 1500;
 if (_cI <= -1) exitWith {
     ["Du musst einen Gegenstand auswählen.", "ERROR"] call lilc_ui_fnc_hint;
+    ctrlEnable [1600, true];
 };
 
 private _classname = lbData [1500, _cI];
 private _classnameCfg = [_classname] call lilc_common_fnc_getClassnameConfig;
 
 private _unit = (findDisplay 2308) getVariable ["lilc_butt_inventory_unit", objNull];
-if (isNull _unit) exitWith {};
+if (isNull _unit) exitWith { ctrlEnable [1600, true]; };
 
 private _hideout = (_unit getVariable ["lilc_butt_inventory", []]);
 private _hideout_max = (_unit getVariable ["lilc_butt_inventory_maximum", lilc_butt_inventory_maximum]);
 
 if ((count _hideout) >= _hideout_max) exitWith {
     ["Du hast nicht genügend Platz in deinem Hintern.", "ERROR"] call lilc_ui_fnc_hint;
+    ctrlEnable [1600, true];
 };
 if (!([_unit, "lilci_plasticBag_F"] call lilc_inventory_fnc_remove)) exitWith {
     ["Du benötigst eine Plastiktüte.", "ERROR"] call lilc_ui_fnc_hint;
+    ctrlEnable [1600, true];
 };
 
 if (_classname != "lilci_plasticBag_F") then {
@@ -55,3 +59,4 @@ lbClear 1501;
 ctrlSetText [1004, format["%1 / %2", (count _hideout), (_unit getVariable ["lilc_butt_inventory_maximum", lilc_butt_inventory_maximum])]];
 
 ["Gegenstand wurde im Hintern versteckt."] call lilc_ui_fnc_hint;
+ctrlEnable [1600, true];
