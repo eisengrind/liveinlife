@@ -211,14 +211,6 @@ SET END / UDPATE START
 ] call lils_login_fnc_addPackage;
 
 [
-    "update_lil_bank_accounts",
-    {
-        _this call lils_bank_fnc_setBankAccounts;
-        false;
-    }
-] call lils_login_fnc_addPackage;
-
-[
     "update_lil_login_status",
     {
         ["STATUS", (_this select 1)];

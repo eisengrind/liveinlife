@@ -7,11 +7,10 @@ params [
 
 try {
     if (isNull _unit) throw false;
-    if !(isPlayer _unit) throw false;
     if (_bankAccountID <= 0) throw false;
     if (_value == 0) throw true;
 
-    if !([_bankAccountID, _value] call lils_bank_fnc_remove) throw false;
+    if !([_bankAccountID, _value] call lils_bank_fnc_removeValue) throw false;
 
     throw true;
 } catch {

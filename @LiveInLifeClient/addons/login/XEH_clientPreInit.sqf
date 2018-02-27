@@ -118,7 +118,6 @@ lilc_login_update_defPackages = [
     "update_lil_inventory_gear",
     "update_lil_login_lastPosition",
     "update_lil_login_charisma",
-    "update_lil_bank_accounts",
     "update_lil_login_status",
     "update_lil_login_statusTimeout",
     "update_lil_perms_perms",
@@ -194,13 +193,6 @@ lilc_login_update_defPackages = [
     "update_lil_login_charisma",
     {
         lilc_player_charisma;
-    }
-] call lilc_login_fnc_addPackage;
-
-[
-    "update_lil_bank_accounts",
-    {
-        lilc_bank_accounts;
     }
 ] call lilc_login_fnc_addPackage;
 

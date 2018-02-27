@@ -4,6 +4,6 @@ params [
 ];
 
 if (_balance < 0) exitWith { false; };
-[_balance] call lilc_cash_fnc_add;
+player setVariable ["lilc_cash_balance", (player getVariable ["lilc_cash_balance", 0]) + _balance, true];
 call lilc_hud_fnc_update;
 true;
