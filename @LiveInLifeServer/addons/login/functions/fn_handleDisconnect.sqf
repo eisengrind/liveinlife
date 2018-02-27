@@ -22,18 +22,20 @@ private _status = (switch (true) do {
 private _prison_escapeTime = (_unit getVariable ["lilc_prison_escapeTime", 0]);
 private _prison_waitingTime = (_unit getVariable ["lilc_prison_waitingTime", 0]);
 private _prison_punishment = (_unit getVariable ["lilc_prison_currentPunishment", ""]);
+private _cash = (_unit getVariable ["lilc_cash_balance", 0]);
+deleteVehicle _unit;
 
 [([
     "ACCOUNT_DATA",
     [
-        ["CASH", (_unit getVariable ["lilc_cash_balance", 0])],
+        ["CASH", _cash],
         ["GEAR", ([_inv] call lils_common_fnc_arrayEncode)],
         ["LASTPOSITION", ([_pos] call lils_common_fnc_arrayEncode)],
         ["VIRTUALINVENTORY", ([_vInv] call lils_common_fnc_arrayEncode)],
         ["STATUS", _status],
-        ["prison_escapeTime", (_unit getVariable ["lilc_prison_escapeTime", 0])],
-        ["prison_waitingTime", (_unit getVariable ["lilc_prison_waitingTime", 0])],
-        ["prison_currentPunishment", (_unit getVariable ["lilc_prison_currentPunishment", ""])]
+        ["prison_escapeTime", _prison_escapeTime],
+        ["prison_waitingTime", _prison_waitingTime],
+        ["prison_currentPunishment", _prison_punishment]
     ],
     [
         ["ID", _aID],
@@ -41,5 +43,4 @@ private _prison_punishment = (_unit getVariable ["lilc_prison_currentPunishment"
     ]
 ] call lils_database_fnc_generateUpdateQuery)] call lils_database_fnc_query;
 
-deleteVehicle _unit;
 false;
