@@ -86,12 +86,10 @@ try {
 
         case 1: {
             ([{
-                if (
-                    (((_this select 0) select 1) distance2D player) < 0.5 && (
-                        lilc_action_active ||
-                        ((_this select 0) select 0) < time
-                    )
-                ) then {
+                if ((((_this select 0) select 1) distance 2D player) < 0.1) exitWith {
+                    [(_this select 1)] call CBA_fnc_removePerFrameHandler;
+                };
+                if (lilc_action_active || ((_this select 0) select 0) < time) then {
                     [(_this select 1)] call CBA_fnc_removePerFrameHandler;
                     if (!lilc_action_active) then {
                         false spawn lilc_farming_fnc_gatherZoneItems;
