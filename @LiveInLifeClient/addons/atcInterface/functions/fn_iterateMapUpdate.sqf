@@ -1,3 +1,23 @@
+/* ----------------------------------------------------------------------------
+Function: lilc_atcInterface_fnc_iterateMapUpdate
+Scope: private
+
+Description:
+    Iterates infinite loops until the atc interface was closed or something with the player happened.
+
+Parameters:
+    -
+
+Returns:
+    - <NIL>
+
+Examples:
+    (begin example)
+    (end)
+
+Author:
+    TheMysteriousVincent
+---------------------------------------------------------------------------- */
 
 try
 {

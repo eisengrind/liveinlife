@@ -1,3 +1,23 @@
+/* ----------------------------------------------------------------------------
+Function: lilc_actions_fnc_doRobPerson
+Scope: public
+
+Description:
+    Robs the person _target. Its just adding the current money of _target to player.
+
+Parameters:
+    _target - The target to be robbed <OBJECT>
+
+Returns:
+    - <NIL>
+
+Examples:
+    (begin example)
+    (end)
+
+Author:
+    TheMysteriousVincent
+---------------------------------------------------------------------------- */
 
 params [
     ["_target", objNull, [objNull]]

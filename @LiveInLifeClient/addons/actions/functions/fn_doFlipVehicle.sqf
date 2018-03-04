@@ -1,3 +1,23 @@
+/* ----------------------------------------------------------------------------
+Function: lilc_actions_fnc_doFlipVehicle
+Scope: public
+
+Description:
+    Flips a target _vehicle after a given timeout.
+
+Parameters:
+    _vehicle - The vehicle to be flipped <OBJECT>
+
+Returns:
+    true or false whether the vehicle was flipped. <BOOL>
+
+Examples:
+    (begin example)
+    (end)
+
+Author:
+    TheMysteriousVincent
+---------------------------------------------------------------------------- */
 
 /*
     Author:

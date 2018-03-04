@@ -1,21 +1,24 @@
+/* ----------------------------------------------------------------------------
+Function: lilc_actions_fnc_canUseWaterDispenser
+Scope: private
 
-/*
-    Author(s):
-        Vincent Heins
+Description:
+    Checks whether player can use a water dispenser or not.
 
-    Description:
-        Checks if the player is able to use a water dispenser (or any object).
+Parameters:
+    _object - The object which is the water dispenser. <OBJECT>
 
-    Parameter(s):
-        (_this select 0) : _object : <objNull> : object to check for water "dispension"
+Returns:
+    true or false whether the player can use given water dispenser. <BOOL>
 
-    Result:
-        <bool> : can the object be used as water dispenser?
-    
-    Example(s):
-        (Example 1)
-        private _canUseWaterDispenser = ([player] call lilc_actions_fnc_canUseWaterDispenser);
-*/
+Examples:
+    (begin example)
+    (end)
+
+Author:
+    TheMysteriousVincent
+---------------------------------------------------------------------------- */
+
 
 params [
     ["_object", objNull, [objNull]]

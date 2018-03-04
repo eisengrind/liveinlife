@@ -1,3 +1,23 @@
+/* ----------------------------------------------------------------------------
+Function: lilc_actions_fnc_doPunchPerson
+Scope: public
+
+Description:
+    This function will punch in the direction of _target.
+
+Parameters:
+    _target - The unit to be punched <OBJECT>
+
+Returns:
+    - <NIL>
+
+Examples:
+    (begin example)
+    (end)
+
+Author:
+    TheMysteriousVincent
+---------------------------------------------------------------------------- */
 
 params [
     ["_target", objNull, [objNull]]

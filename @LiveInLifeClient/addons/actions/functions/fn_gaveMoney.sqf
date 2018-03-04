@@ -1,4 +1,23 @@
+/* ----------------------------------------------------------------------------
+Function: lilc_actions_fnc_gaveMoney
+Scope: private
 
+Description:
+    The function called at the receiving money player.
+
+Parameters:
+    _unit - The unit who gave money. <OBJECT>
+
+Returns:
+    - <NIL>
+
+Examples:
+    (begin example)
+    (end)
+
+Author:
+    TheMysteriousVincent
+---------------------------------------------------------------------------- */
 /*
     Filename:
         fn_gaveMoney.sqf

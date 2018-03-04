@@ -1,3 +1,23 @@
+/* ----------------------------------------------------------------------------
+Function: lilc_actions_fnc_doCutWool
+Scope: public
+
+Description:
+    Cuts off the wool of _sheep.
+
+Parameters:
+    _sheep - The sheep to be sheard. <OBJECT>
+
+Returns:
+    true or false whether _sheep was sheared. <BOOL>
+
+Examples:
+    (begin example)
+    (end)
+
+Author:
+    TheMysteriousVincent
+---------------------------------------------------------------------------- */
 
 private _sheep = param [0, objNull, [objNull]];
 

@@ -1,21 +1,23 @@
+/* ----------------------------------------------------------------------------
+Function: lilc_actions_fnc_canGiveMoney
+Scope: private
 
-/*
-    Author(s):
-        Vincent Heins
-    
-    Description:
-        Checks if the given unit can receive money.
+Description:
+    Checks whether player can interact with _unit to give money.
 
-    Parameter(s):
-        (_this select 0) : _unit : <objNull> : unit to give money to
+Parameters:
+    _unit - The unit to interact with. <OBJECT>
 
-    Result:
-        <bool> : is unit a valid target to give money to?
+Returns:
+    true or false whether player is able to interact with _unit. <BOOL>
 
-    Example(s):
-        (Example 1)
-        private _canGiveMoney = ([player] call lilc_actinos_fnc_canGiveMoney);
-*/
+Examples:
+    (begin example)
+    (end)
+
+Author:
+    TheMysteriousVincent
+---------------------------------------------------------------------------- */
 
 params [
     ["_unit", objNull, [objNull]]

@@ -1,3 +1,23 @@
+/* ----------------------------------------------------------------------------
+Function: lilc_atcInterface_fnc_onEachFrame
+Scope: private
+
+Description:
+    Updates the positions of the planes map control.
+
+Parameters:
+    -
+
+Returns:
+    - <NIL>
+
+Examples:
+    (begin example)
+    (end)
+
+Author:
+    TheMysteriousVincent
+---------------------------------------------------------------------------- */
 
 disableSerialization;
 private _ui = (findDisplay 1420);

@@ -1,4 +1,23 @@
+/* ----------------------------------------------------------------------------
+Function: lilc_actions_fnc_canRobPerson
+Scope: private
 
+Description:
+    Checks whether player can rob _target.
+
+Parameters:
+    _target - The target to be robbed. <OBJECT>
+
+Returns:
+    true or false whether _target can be robbed. <BOOL>
+
+Examples:
+    (begin example)
+    (end)
+
+Author:
+    TheMysteriousVincent
+---------------------------------------------------------------------------- */
 /*
     Author(s):
         Vincent Heins

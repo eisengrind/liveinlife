@@ -1,21 +1,23 @@
+/* ----------------------------------------------------------------------------
+Function: lilc_actions_fnc_canPunchPerson
+Scope: private
 
-/*
-    Author(s):
-        Vincent Heins
-    
-    Description:
-        Checks whether a player can punch a given target.
+Description:
+    Checks whether _target can be punched by player or not.
 
-    Parameter(s):
-        (_this select 0) : _target : <objNull> : the unit to check
+Parameters:
+    _target - The unit to be punched <OBJECT>
 
-    Result:
-        <bool> : can the player punch a designated person?
+Returns:
+    true or false whether _target can be punched. <OBJECT>
 
-    Example(s):
-        (Example 1)
-        private _canPunchPerson = ([player] call lilc_actions_fnc_canPunchCorpse);
-*/
+Examples:
+    (begin example)
+    (end)
+
+Author:
+    TheMysteriousVincent
+---------------------------------------------------------------------------- */
 
 params [
     ["_target", objNull , [objNull]]
