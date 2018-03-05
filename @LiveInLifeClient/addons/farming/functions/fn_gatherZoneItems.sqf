@@ -1,4 +1,6 @@
 
+
+if (lilc_farming_currentGatherTimeout >= time) exitWith {};
 if (call lilc_inventory_fnc_inventoryOpen) exitWith{};
 if ((vehicle player) != player) exitWith {};
 if (lilc_action_active) exitWith {};
@@ -79,6 +81,7 @@ try {
     throw 1;
 } catch {
     lilc_action_active = false;
+    lilc_farming_currentGatherTimeout = time + lilc_farming_gatherTimeout - 0.1;
     switch (_exception) do {
         case 2: {
             ["Dein Inventar ist voll.", "ERROR"] call lilc_ui_fnc_hint;
@@ -95,7 +98,7 @@ try {
                         false spawn lilc_farming_fnc_gatherZoneItems;
                     };
                 };
-            }, 0 , [time + 5, position player]] call CBA_fnc_addPerFrameHandler);
+            }, 0 , [time + lilc_farming_gatherTimeout, position player]] call CBA_fnc_addPerFrameHandler);
         };
     };
     (_exception == 1);

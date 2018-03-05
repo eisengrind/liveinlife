@@ -25,6 +25,6 @@ lilc_common_defaultPostFinishedIndex = ([
     "Hide GPS Hexagons w/out GPS", //TODO: localize
     "Live In Life",
     true,
-    0,
+    1,
     {}
 ] call CBA_Settings_fnc_init;
