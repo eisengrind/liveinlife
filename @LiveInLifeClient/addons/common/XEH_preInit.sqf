@@ -18,3 +18,13 @@ lilc_common_defaultPostFinishedIndex = ([
         2 fadeSound 1;
     }
 ] call CBA_fnc_addEventHandler);
+
+[
+    "lilc_common_hideHexagons",
+    "CHECKBOX",
+    "Hide GPS Hexagons w/out GPS", //TODO: localize
+    "Live In Life",
+    true,
+    0,
+    {}
+] call CBA_Settings_fnc_init;
