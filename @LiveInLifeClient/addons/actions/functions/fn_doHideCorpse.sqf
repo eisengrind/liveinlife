@@ -1,16 +1,23 @@
+/* ----------------------------------------------------------------------------
+Function: lilc_actions_fnc_doHideCorpse
+Scope: public
 
-/*
-    Filename:
-        fn_hideCorpse.sqf
-    Author:
-        Vincent Heins
-    Description:
-        Hides a given corpse with hideCorpse-command.
-    Params:
-        (_this select 0) : _corpse : <objNull> : corpse object
-    Result:
-        <bool> : whether the corpse was removed or not
-*/
+Description:
+    Is literally just an alias to `hideBody` from ArmA 3.
+
+Parameters:
+    _corpse - The corpse which will shall be invisible. <OBJECT>
+
+Returns:
+    true or false whether the corpse was removed. <BOOL>
+
+Examples:
+    (begin example)
+    (end)
+
+Author:
+    TheMysteriousVincent
+---------------------------------------------------------------------------- */
 
 private _corpse = param [0, ObjNull, [ObjNull]];
 

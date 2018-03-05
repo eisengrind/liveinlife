@@ -1,16 +1,23 @@
+/* ----------------------------------------------------------------------------
+Function: lilc_actions_fnc_earPlugs
+Scope: public
 
-/*
-    Filename:
-        fn_earPlugs.sqf
-    Author:
-        Vincent Heins
-    Description:
-        Function to insert or remove earPlugs.
-    Params:
-        -
-    Result:
-        -
-*/
+Description:
+    Switches through the earplug position of player.
+
+Parameters:
+    -
+
+Returns:
+    - <NIL>
+
+Examples:
+    (begin example)
+    (end)
+
+Author:
+    TheMysteriousVincent
+---------------------------------------------------------------------------- */
 
 if ((["lilci_earPlugs_F", player] call lilc_inventory_fnc_itemCount) <= 0) exitWith { hint "Du besitzt keine Ohrstöpsel."; };
 

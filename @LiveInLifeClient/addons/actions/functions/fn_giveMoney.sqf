@@ -1,3 +1,23 @@
+/* ----------------------------------------------------------------------------
+Function: lilc_actions_fnc_giveMoney
+Scope: private
+
+Description:
+    Gives money to a target selected by a predefined dialog
+
+Parameters:
+    -
+
+Returns:
+    true or false whether the money was given to the target unit of a dialog <BOOL>
+
+Examples:
+    (begin example)
+    (end)
+
+Author:
+    TheMysteriousVincent
+---------------------------------------------------------------------------- */
 
 /*
     Filename:

@@ -1,22 +1,23 @@
+/* ----------------------------------------------------------------------------
+Function: lilc_actions_fnc_canFlipVehicle
+Scope: private
 
-/*
-    Author(s):
-        Vincent Heins
-    
-    Description:
-        Checks if the given vehicle object should or can be flipped.
-    
-    Parameter(s):
-        (_this select 0) : _vehicle : <objNull> : Vehicle to flip
-    
-    Result:
-        <bool> : can the vehicle be flipped?
+Description:
+    Checks if _vehicle can be flipped.
 
-    Example(s):
-        (Example 1)
-        private _vehicle = objNull;
-        private _canFlip = ([_vehicle] call lilc_actions_fnc_canFlipVehicle);
-*/
+Parameters:
+    _vehicle - The vehicle to be flipped <OBJECT>
+
+Returns:
+    true or false whether _vehicle can be flipped. <BOOL>
+
+Examples:
+    (begin example)
+    (end)
+
+Author:
+    TheMysteriousVincent
+---------------------------------------------------------------------------- */
 
 params [
     ["_vehicle", objNull, [objNull]]

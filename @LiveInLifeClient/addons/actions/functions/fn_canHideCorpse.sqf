@@ -1,4 +1,23 @@
+/* ----------------------------------------------------------------------------
+Function: lilc_actions_fnc_canHideCorpse
+Scope: private
 
+Description:
+    Checks whether _target corpse can be hided or not.
+
+Parameters:
+    _target - The target corpse to be hided. <OBJECT>
+
+Returns:
+    true or false whether _target can be hided.
+
+Examples:
+    (begin example)
+    (end)
+
+Author:
+    TheMysteriousVincent
+---------------------------------------------------------------------------- */
 /*
     Author(s):
         Vincent Heins

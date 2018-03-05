@@ -1,3 +1,23 @@
+/* ----------------------------------------------------------------------------
+Function: lilc_atcInterface_onMouseButtonDownDisplay
+Scope: private
+
+Description:
+    Releases all current focused controls.
+
+Parameters:
+	-
+
+Returns:
+	- <NIL>
+
+Examples:
+    (begin example)
+    (end)
+
+Author:
+    TheMysteriousVincent
+---------------------------------------------------------------------------- */
 
 disableSerialization;
 private _ui = (findDisplay 1420);

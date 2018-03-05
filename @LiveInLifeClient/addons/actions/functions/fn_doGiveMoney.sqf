@@ -1,21 +1,23 @@
+/* ----------------------------------------------------------------------------
+Function: lilc_actions_fnc_doGiveMoney
+Scope: public
 
-/*
-    Author(s):
-        Vincent Heins
+Description:
+    Sends money to a target _unit.
 
-    Description:
-        Create the dialog to give money to a given unit. It also checks, if the given unit is valid.
+Parameters:
+    _unit - The unit to send money to. <OBJECT>
 
-    Parameter(s):
-        (_this select 0) : _unit : <objNull> : unit to give money to
+Returns:
+    true or false wether the money was given to _unit <BOOL>
 
-    Result:
-        <bool> : was the money given?
-    
-    Example:
-        (Example 1)
-        private _moneySent = ([player] call lilc_actions_fnc_doGiveMoney);
-*/
+Examples:
+    (begin example)
+    (end)
+
+Author:
+    TheMysteriousVincent
+---------------------------------------------------------------------------- */
 
 private _unit = param [0, objNull, [objNull]];
 

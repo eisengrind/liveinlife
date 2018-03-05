@@ -1,4 +1,25 @@
 
+/* ----------------------------------------------------------------------------
+Function: lilc_actions_fnc_holsterWeapon
+Scope: public
+
+Description:
+    Holsters the weapon of player.
+
+Parameters:
+    -
+
+Returns:
+    - <NIL>
+
+Examples:
+    (begin example)
+    (end)
+
+Author:
+    TheMysteriousVincent
+---------------------------------------------------------------------------- */
+
 /*
     Filename:
         fn_holsterWeapon.sqf

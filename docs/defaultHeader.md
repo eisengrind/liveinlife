@@ -14,7 +14,7 @@ Parameters:
     <variable name(optional)> - <description> <datatype>
 
 Returns:
-    <description of the returned result(s) <datatype>
+    <description of the returned result(s)> <datatype>
 
 Examples:
     (begin example)

@@ -1,16 +1,23 @@
+/* ----------------------------------------------------------------------------
+Function: lilc_actions_fnc_doUseWaterDispenser
+Scope: public
 
-/*
-    Filename:
-        fn_doUseWaterDispenser.sqf
-    Author:
-        Vincent Heins
-    Description:
-        Actual Function to use a declared water dispenser.
-    Params:
-        (_this select 0) : _thirstAmount : <objNull> : amount of thirst to remove
-    Result:
-        <bool> : was the thirst removed?
-*/
+Description:
+    Actually it just sets the thirst amount of the called player.
+
+Parameters:
+    _thirstAmount - The value to be added to the calling player <FLOAT>
+
+Returns:
+    true or false whether the nutrition for thirst was changed. <BOOL>
+
+Examples:
+    (begin example)
+    (end)
+
+Author:
+    <username>
+---------------------------------------------------------------------------- */
 
 private _thirstAmount = param [0, 0, [0]];
 
