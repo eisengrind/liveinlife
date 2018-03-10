@@ -5,24 +5,19 @@ params [
     ["_killer", ObjNull, [ObjNull]]
 ];
 
-//lilc_respawn_isRespawning -> lilc_respawn_isRespawning != lilc_respawn_isRespawn...
 lilc_player_corpse = _victim;
-if (isNil "lilc_respawn_isRespawn") then
-{
+if (isNil "lilc_respawn_isRespawn") then {
     lilc_respawn_isRespawn = false;
 };
 
 try {
     if (isNull _victim) throw false;
-    //if !(isPlayer _victim) throw false;
 
-    if (lilc_player_isRespawning) then
-    {
-        waitUntil
-        {
+    if (lilc_player_isRespawning) then {
+        waitUntil {
             lilc_finished
         };
-
+        systemChat str 1;
         [0.01] call lilc_ui_fnc_fadeInBlack;
         call lilc_ui_fnc_disableUserInput;
         call lilc_hud_fnc_disable;
@@ -40,13 +35,11 @@ try {
         private _time = time;
         [0.1] call lilc_ui_fnc_enableLoadingIcon;
         lilc_respawn_currentTimeout = lilc_player_deathTimeout;
+        systemChat str lilc_respawn_currentTimeout;
 
-        while
-        {
+        while {
             lilc_respawn_currentTimeout > 0
-        }
-        do
-        {
+        } do {
             _uiTextTimer ctrlSetStructuredText parseText format [
                 "<t font='PuristaMedium' align='center' size='2.5'>%1</t>",
                 ([lilc_respawn_currentTimeout, "HH:MM:SS"] call BIS_fnc_secondsToString)
@@ -68,8 +61,7 @@ try {
         ["deathInfo"] call lilc_login_fnc_updatePlayerDataPartial;
 
         lilc_respawn_corpsePosition = lilc_player_lastPosition;
-        if ((count lilc_respawn_corpsePosition) != 2) then
-        {
+        if ((count lilc_respawn_corpsePosition) != 2) then {
             lilc_respawn_corpsePosition = ([player] call lilc_common_fnc_getPosition);
         };
 
@@ -86,14 +78,11 @@ try {
 
         call lilc_ui_fnc_disableLoadingIcon;
         [2] call lilc_ui_fnc_fadeOutBlack;
-    }
-    else
-    {
-        if (lilc_respawn_isRespawn) then
-        {
+    } else {
+        if (lilc_respawn_isRespawn) then {
+            systemChat str 2;
             closeDialog 0;
-            waitUntil
-            {
+            waitUntil {
                 alive player
             };
 
@@ -104,13 +93,11 @@ try {
             [player, _position] call lilc_common_fnc_setPosition;
             [player, ""] call lilc_common_fnc_switchMove;
 
-            if !(isNil "lilc_medical_onDeadUnitGetInVehicleIndex") then
-            {
+            if !(isNil "lilc_medical_onDeadUnitGetInVehicleIndex") then {
                 player removeEventHandler ["GetIn", lilc_medical_onDeadUnitGetInVehicleIndex];
             };
 
-            if !(isNil "lilc_medical_onDeadUnitGetOutVehicleIndex") then
-            {
+            if !(isNil "lilc_medical_onDeadUnitGetOutVehicleIndex") then {
                 player removeEventHandler ["GetOut", lilc_medical_onDeadUnitGetOutVehicleIndex];
             };
 
@@ -120,23 +107,18 @@ try {
             private _factionID = (player getVariable ["lilc_factionID", -1]);
             private _respawnInit = "";
 
-            /* Everybody's init */
-            //Trigger Eventhandler
-            //["lilc_respawn_respawned_init"] call lilc_events_fnc_executeEventHandler;
-
             [2] call lilc_ui_fnc_fadeOutBlack;
             player allowDamage true;
             player setVariable ["ace_medical_allowDamage", true, true];
             sleep 2;
 
             lilc_respawn_isRespawn = false;
-        }
-        else
-        {
-            if (!lilc_respawn_isRespawning || isNil "lilc_respawn_isRespawning") then
-            {
+        } else {
+            systemChat str 3;
+            if (!lilc_respawn_isRespawning || isNil "lilc_respawn_isRespawning") then {
                 lilc_respawn_isRespawning = true;
             };
+            systemChat str lilc_respawn_isRespawning;
 
             [0.5] call lilc_ui_fnc_fadeInBlack;
             call lilc_ui_fnc_disableUserInput;
@@ -150,13 +132,11 @@ try {
             player setVariable ["lilc_isDead", true, true];
             player setVariable ["lilc_isStabilized", false, true];
 
-            if !(isNil "lilc_medical_onDeadUnitGetInVehicleIndex") then
-            {
+            if !(isNil "lilc_medical_onDeadUnitGetInVehicleIndex") then {
                 player removeEventHandler ["GetInMan", lilc_medical_onDeadUnitGetInVehicleIndex];
             };
 
-            if !(isNil "lilc_medical_onDeadUnitGetOutVehicleIndex") then
-            {
+            if !(isNil "lilc_medical_onDeadUnitGetOutVehicleIndex") then {
                 player removeEventHandler ["GetOutMan", lilc_medical_onDeadUnitGetOutVehicleIndex];
             };
 
@@ -170,8 +150,7 @@ try {
 
             call lilc_hud_fnc_disable;
 
-            if (dialog) then
-            {
+            if (dialog) then {
                 closeDialog 0;
             };
 
@@ -182,13 +161,11 @@ try {
             player hideObjectGlobal false;
             deleteVehicle lilc_player_corpse;
 
-            /* Sets the Cameraview to grey and chromy :) */
             private _ppEffectChromeAberration = ppEffectCreate ["ChromAberration", 1000];
             _ppEffectChromeAberration ppEffectEnable true;
             _ppEffectChromeAberration ppEffectAdjust [0.02, 0.02, true];
             _ppEffectChromeAberration ppEffectCommit 0;
-            waitUntil
-            {
+            waitUntil {
                 ppEffectCommitted _ppEffectChromeAberration
             };
 
@@ -196,22 +173,19 @@ try {
             _ppEffectColorCorrections ppEffectEnable true;
             _ppEffectColorCorrections ppEffectAdjust [1, 0.4, 0, 0, 0, 0, 0, 1, 1, 1, 0.2, 1, 1, 1, 0];
             _ppEffectColorCorrections ppEffectCommit 0;
-            waitUntil
-            {
+            waitUntil {
                 ppEffectCommitted _ppEffectColorCorrections
             };
-            /* ---------------------------------- */
 
-            try
-            {
+            try {
                 [200, "lilc_respawn", 1, false] call lilc_ui_fnc_fadeInTitles;
 
-                if (isNil "lilc_respawn_timeout") then
-                {
+                if (isNil "lilc_respawn_timeout") then {
                     lilc_respawn_timeout = (10 * 60);
                 };
 
                 lilc_respawn_currentTimeout = lilc_respawn_timeout;
+                systemChat str lilc_respawn_currentTimeout;
 
                 private _ui = (uiNamespace getVariable ["lilc_respawn", displayNull]);
                 if (isNull _ui) throw 0;
@@ -219,14 +193,14 @@ try {
                 private _time = time;
                 [1] call lilc_ui_fnc_fadeOutBlack;
 
-                while
-                {
+                systemChat str (player getVariable ["lilc_isDead", false]);
+                systemChat str ((_time + lilc_respawn_currentTimeout) >= time);
+                systemChat str lilc_respawn_isRespawning;
+                while {
                     ((_time + lilc_respawn_currentTimeout) >= time) &&
                     lilc_respawn_isRespawning &&
                     (player getVariable ["lilc_isDead", false])
-                }
-                do
-                {
+                } do {
                     _uiTextTimer ctrlSetStructuredText parseText format["<t font='PuristaMedium' align='center' size='2.5'>%1</t>", ([(lilc_respawn_currentTimeout - (time - _time)), "HH:MM:SS"] call BIS_fnc_secondsToString)];
                     sleep 1;
                 };
@@ -239,22 +213,16 @@ try {
                 if (!(player getVariable ["lilc_isDead", false]) && !lilc_respawn_isRespawning) throw 1;
                 if (((_time + lilc_respawn_currentTimeout) >= time) && !lilc_respawn_isRespawning) throw 3;
                 throw 0;
-            }
-            catch
-            {
-                /* 0 = error, 1 = respawned by suicide, 2 = respawned by timeout, 3 = revived */
-
+            } catch {
                 _ppEffectChromeAberration ppEffectEnable false;
                 _ppEffectColorCorrections ppEffectEnable false;
                 ppEffectDestroy _ppEffectChromeAberration;
                 ppEffectDestroy _ppEffectColorCorrections;
 
-                switch (_exception) do
-                {
+                switch (_exception) do {
                     case 0;
                     case 1;
-                    case 2:
-                    {
+                    case 2: {
                         lilc_respawn_isRespawn = true;
                         player setDamage 1;
 
@@ -271,8 +239,7 @@ try {
                         throw true;
                     };
 
-                    case 3:
-                    {
+                    case 3: {
                         player setVariable ["lilc_isDead", false, true];
                         lilc_respawn_isRespawning = false;
                         lilc_respawn_isRespawn = false;
@@ -307,8 +274,6 @@ try {
             throw true;
         };
     };
-}
-catch
-{
+} catch {
     _exception;
 };

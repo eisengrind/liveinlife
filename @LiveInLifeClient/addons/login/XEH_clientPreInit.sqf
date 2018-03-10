@@ -81,7 +81,9 @@ lilc_player_isNew = -1;
     "set_lil_respawn_deathTimeout",
     {
         lilc_player_deathTimeout = _this;
-        lilc_player_isRespawning = true;
+        if (lilc_player_deathTimeout > 0) then {
+            lilc_player_isRespawning = true;
+        };
     }
 ] call lilc_login_fnc_addPackage;
 

@@ -133,21 +133,21 @@ lils_login_set_defPackages = [
     {
         _dbCol = ["prison_waitingTime", true, false];
     }
-] call lilc_login_fnc_addPackage;
+] call lils_login_fnc_addPackage;
 
 [
     "set_lil_prison_escapeTime",
     {
         _dbCol = ["prison_escapeTime", true, false];
     }
-] call lilc_login_fnc_addPackage;
+] call lils_login_fnc_addPackage;
 
 [
     "set_lil_prison_cPment",
     {
         _dbCol = ["prison_currentPunishment", true, false];
     }
-] call lilc_login_fnc_addPackage;
+] call lils_login_fnc_addPackage;
 
 
 /*********
