@@ -4,7 +4,7 @@ lilc_job_agent_stage = 0;
 
 lilc_login_update_defPackages append [
     "update_lil_job_agent_activeTasks",
-    ""
+    "update_lil_job_agent_stage"
 ];
 
 [

@@ -16,6 +16,7 @@ class lilc_RscActiveText;
 class RscStructuredText;
 
 #include "gui\job_agent.cpp"
+#include "gui\job_select.cpp"
 
 class Extended_PreInit_EventHandlers {
     class lilc_job_agent {

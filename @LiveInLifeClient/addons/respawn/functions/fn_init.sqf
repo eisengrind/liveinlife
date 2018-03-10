@@ -17,7 +17,6 @@ try {
         waitUntil {
             lilc_finished
         };
-        systemChat str 1;
         [0.01] call lilc_ui_fnc_fadeInBlack;
         call lilc_ui_fnc_disableUserInput;
         call lilc_hud_fnc_disable;
@@ -35,7 +34,6 @@ try {
         private _time = time;
         [0.1] call lilc_ui_fnc_enableLoadingIcon;
         lilc_respawn_currentTimeout = lilc_player_deathTimeout;
-        systemChat str lilc_respawn_currentTimeout;
 
         while {
             lilc_respawn_currentTimeout > 0
@@ -80,7 +78,6 @@ try {
         [2] call lilc_ui_fnc_fadeOutBlack;
     } else {
         if (lilc_respawn_isRespawn) then {
-            systemChat str 2;
             closeDialog 0;
             waitUntil {
                 alive player
@@ -114,11 +111,9 @@ try {
 
             lilc_respawn_isRespawn = false;
         } else {
-            systemChat str 3;
             if (!lilc_respawn_isRespawning || isNil "lilc_respawn_isRespawning") then {
                 lilc_respawn_isRespawning = true;
             };
-            systemChat str lilc_respawn_isRespawning;
 
             [0.5] call lilc_ui_fnc_fadeInBlack;
             call lilc_ui_fnc_disableUserInput;
@@ -185,7 +180,6 @@ try {
                 };
 
                 lilc_respawn_currentTimeout = lilc_respawn_timeout;
-                systemChat str lilc_respawn_currentTimeout;
 
                 private _ui = (uiNamespace getVariable ["lilc_respawn", displayNull]);
                 if (isNull _ui) throw 0;
@@ -193,9 +187,6 @@ try {
                 private _time = time;
                 [1] call lilc_ui_fnc_fadeOutBlack;
 
-                systemChat str (player getVariable ["lilc_isDead", false]);
-                systemChat str ((_time + lilc_respawn_currentTimeout) >= time);
-                systemChat str lilc_respawn_isRespawning;
                 while {
                     ((_time + lilc_respawn_currentTimeout) >= time) &&
                     lilc_respawn_isRespawning &&

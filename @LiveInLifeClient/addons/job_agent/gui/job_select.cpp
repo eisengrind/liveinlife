@@ -17,7 +17,7 @@ class lilc_job_agent_select {
 
         class TitleTitle: RscText {
             idc = 1001;
-            text = "Job auswÃ¤hlen"; //--- ToDo: Localize;
+            text = "Job auswaehlen"; //--- ToDo: Localize;
             x = 0.427812 * safezoneW + safezoneX;
             y = 0.445 * safezoneH + safezoneY;
             w = 0.144375 * safezoneW;
@@ -37,7 +37,8 @@ class lilc_job_agent_select {
 
         class ButtonSelect: RscButton {
             idc = 1600;
-            text = "AuswÃ¤hlen"; //--- ToDo: Localize;
+            text = "Auswaehlen"; //--- ToDo: Localize;
+            onButtonClick = "call lilc_job_agent_fnc_onButtonClick_deliver";
             x = 0.438125 * safezoneW + safezoneX;
             y = 0.522 * safezoneH + safezoneY;
             w = 0.12375 * safezoneW;
@@ -47,7 +48,7 @@ class lilc_job_agent_select {
         class ButtonClose: lilc_RscActiveText {
             idc = 1200;
             text = "\A3\Ui_f\data\GUI\Rsc\RscDisplayArcadeMap\icon_exit_cross_ca.paa";
-            onButtonClick = "closeDialog 2048;";
+            onButtonClick = "closeDialog 2049;";
             x = 0.559376 * safezoneW + safezoneX;
             y = 0.447222 * safezoneH + safezoneY;
             w = 0.0115625 * safezoneW;
