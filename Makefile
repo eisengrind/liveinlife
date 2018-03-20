@@ -55,7 +55,7 @@ client:	lilc_actions \
 	lilc_events \
 	lilc_exchange \
 	lilc_factions \
-	lilc_factionInterface \
+	lilc_factionsInterface \
 	lilc_farming \
 	lilc_ferrys \
 	lilc_food \
