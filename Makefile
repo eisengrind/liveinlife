@@ -256,7 +256,7 @@ lilc_tags: build_armake
 	$(ARMAKE) build --force -e prefix=x\lilc\addons\tags @LiveInLifeClient/addons/tags .build/@LiveInLifeClient/addons/$@.pbo
 
 lilc_tazer: build_armake
-	$(ARMAKE) build --force -e prefix=x\lilc\addons\tazer @LiveInLifeClient/addons/tazer .build/@LiveInLifeClient/addons/$@.pbo
+	$(ARMAKE) build -p --force -e prefix=x\lilc\addons\tazer @LiveInLifeClient/addons/tazer .build/@LiveInLifeClient/addons/$@.pbo
 
 lilc_textures: build_armake
 	$(ARMAKE) build --force -e prefix=x\lilc\addons\textures @LiveInLifeClient/addons/textures .build/@LiveInLifeClient/addons/$@.pbo
