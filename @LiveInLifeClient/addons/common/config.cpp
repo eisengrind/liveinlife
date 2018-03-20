@@ -19,7 +19,6 @@ class CfgWeapons {
 };
 
 #include "dialogs\RscDefines.cpp"
-//#include "dialogs\loadingScreen.cpp"
 
 class Extended_PreInit_EventHandlers {
     class lilc_common {
