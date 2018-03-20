@@ -5,4 +5,4 @@ class lilc_repair {
         class canRepairVehicleEasy {};
         class doRepairVehicleEasy {};
     };
-}
+};
