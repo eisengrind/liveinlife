@@ -326,7 +326,7 @@ lils_atm: build_armake
 	$(ARMAKE) build --force -e prefix=x\lils\addons\atm @LiveInLifeServer/addons/atm .build/@LiveInLifeServer/addons/$@.pbo
 
 lils_bank: build_armake
-	$(ARMAKE) build --force -e prefix=x\lils\addons\bank @LiveInLifeServer/addons/bank .build/@LiveInLifeServer/addons/$@.pbo
+	$(ARMAKE) build -p --force -e prefix=x\lils\addons\bank @LiveInLifeServer/addons/bank .build/@LiveInLifeServer/addons/$@.pbo
 
 lils_butt_inventory: build_armake
 	$(ARMAKE) build --force -e prefix=x\lils\addons\butt_inventory @LiveInLifeServer/addons/butt_inventory .build/@LiveInLifeServer/addons/$@.pbo
@@ -404,7 +404,7 @@ lils_shops: build_armake
 	$(ARMAKE) build --force -e prefix=x\lils\addons\shops @LiveInLifeServer/addons/shops .build/@LiveInLifeServer/addons/$@.pbo
 
 lils_vehicles: build_armake
-	$(ARMAKE) build --force -e prefix=x\lils\addons\vehicles @LiveInLifeServer/addons/vehicles .build/@LiveInLifeServer/addons/$@.pbo
+	$(ARMAKE) build -p --force -e prefix=x\lils\addons\vehicles @LiveInLifeServer/addons/vehicles .build/@LiveInLifeServer/addons/$@.pbo
 
 lils_virtualInventory: build_armake
 	$(ARMAKE) build --force -e prefix=x\lils\addons\virtualInventory @LiveInLifeServer/addons/virtualInventory .build/@LiveInLifeServer/addons/$@.pbo
