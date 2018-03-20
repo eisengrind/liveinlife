@@ -1,7 +1,8 @@
 
 ARMAKE=.build/bin/armake
 
-all: build_armake \
+all: removeAll \
+	build_armake \
 	client \
 	server
 
@@ -159,7 +160,7 @@ lilc_ferrys: build_armake
 	$(ARMAKE) build --force -e prefix=x\lilc\addons\ferrys @LiveInLifeClient/addons/ferrys .build/@LiveInLifeClient/addons/$@.pbo
 
 lilc_food: build_armake
-	$(ARMAKE) build --force -e prefix=x\lilc\addons\food @LiveInLifeClient/addons/food .build/@LiveInLifeClient/addons/$@.pbo
+	$(ARMAKE) build -p --force -e prefix=x\lilc\addons\food @LiveInLifeClient/addons/food .build/@LiveInLifeClient/addons/$@.pbo
 
 lilc_garage: build_armake
 	$(ARMAKE) build --force -e prefix=x\lilc\addons\garage @LiveInLifeClient/addons/garage .build/@LiveInLifeClient/addons/$@.pbo
