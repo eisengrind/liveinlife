@@ -1,13 +1,9 @@
 
 class Air;
-class Plane : Air
-{
-    class ACE_Actions
-    {
-        class ACE_MainActions
-        {
-            class lilc_repair_repairVehicle
-            {
+class Plane : Air {
+    class ACE_Actions {
+        class ACE_MainActions {
+            class lilc_repair_repairVehicle {
                 displayName = "Reparieren"; //TODO: Localize
                 condition = "([_target] call lilc_repair_fnc_canRepairVehicleEasy)";
                 statement = "[_target] spawn lilc_repair_fnc_doRepairVehicleEasy;";
@@ -16,14 +12,10 @@ class Plane : Air
     };
 };
 
-class Helicopter : Air
-{
-    class ACE_Actions
-    {
-        class ACE_MainActions
-        {
-            class lilc_repair_repairVehicle
-            {
+class Helicopter : Air {
+    class ACE_Actions {
+        class ACE_MainActions {
+            class lilc_repair_repairVehicle {
                 displayName = "Reparieren";
                 condition = "([_target] call lilc_repair_fnc_canRepairVehicleEasy)";
                 statement = "[_target] spawn lilc_repair_fnc_doRepairVehicleEasy;";
@@ -33,14 +25,10 @@ class Helicopter : Air
 };
 
 class LandVehicle;
-class Car : LandVehicle
-{
-    class ACE_Actions
-    {
-        class ACE_MainActions
-        {
-            class lilc_repair_repairVehicle
-            {
+class Car : LandVehicle {
+    class ACE_Actions {
+        class ACE_MainActions {
+            class lilc_repair_repairVehicle {
                 displayName = "Reparieren";
                 condition = "([_target] call lilc_repair_fnc_canRepairVehicleEasy)";
                 statement = "[_target] spawn lilc_repair_fnc_doRepairVehicleEasy;";
@@ -50,14 +38,10 @@ class Car : LandVehicle
 };
 
 class Ship;
-class Ship_F : Ship
-{
-    class ACE_Actions
-    {
-        class ACE_MainActions
-        {
-            class lilc_repair_repairVehicle
-            {
+class Ship_F : Ship {
+    class ACE_Actions {
+        class ACE_MainActions {
+            class lilc_repair_repairVehicle {
                 displayName = "Reparieren";
                 condition = "([_target] call lilc_repair_fnc_canRepairVehicleEasy)";
                 statement = "[_target] spawn lilc_repair_fnc_doRepairVehicleEasy;";
