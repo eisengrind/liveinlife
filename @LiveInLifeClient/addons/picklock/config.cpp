@@ -15,11 +15,6 @@ class CfgWeapons {
     #include "CfgWeapons.cpp"
 };
 
-/*class CfgSounds {
-    sounds[] = {};
-    #include "CfgSounds.cpp"
-};*/
-
 class Extended_PreInit_EventHandlers {
     class lilc_picklock_preInit {
         clientInit = "call compile preProcessFileLineNumbers '\x\lilc\addons\picklock\XEH_preInit.sqf'";

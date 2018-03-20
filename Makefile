@@ -226,10 +226,10 @@ lilc_permissions: build_armake
 	$(ARMAKE) build --force -e prefix=x\lilc\addons\permissions @LiveInLifeClient/addons/permissions .build/@LiveInLifeClient/addons/$@.pbo
 
 lilc_phones: build_armake
-	$(ARMAKE) build --force -e prefix=x\lilc\addons\phones @LiveInLifeClient/addons/phones .build/@LiveInLifeClient/addons/$@.pbo
+	$(ARMAKE) build -p --force -e prefix=x\lilc\addons\phones @LiveInLifeClient/addons/phones .build/@LiveInLifeClient/addons/$@.pbo
 
 lilc_picklock: build_armake
-	$(ARMAKE) build --force -e prefix=x\lilc\addons\picklock @LiveInLifeClient/addons/picklock .build/@LiveInLifeClient/addons/$@.pbo
+	$(ARMAKE) build -p --force -e prefix=x\lilc\addons\picklock @LiveInLifeClient/addons/picklock .build/@LiveInLifeClient/addons/$@.pbo
 
 lilc_placement: build_armake
 	$(ARMAKE) build --force -e prefix=x\lilc\addons\placement @LiveInLifeClient/addons/placement .build/@LiveInLifeClient/addons/$@.pbo
