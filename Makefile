@@ -10,10 +10,13 @@ deps:
 	sudo apt-get install -y git bison flex libssl-dev python3
 
 build_armake: prepare
-	git clone https://github.com/jonpas/armake.git .build/armake
-	cd .build/armake && git checkout headerExtensions
-	cd .build/armake && make
-	cp -f .build/armake/bin/armake .build/bin/
+	if [ ! -d .build/armake ]; then git clone https://github.com/jonpas/armake.git .build/armake ; \
+		cd .build/armake \
+		&& git checkout headerExtensions \
+		&& make \
+		&& cd ../../ \
+		&& cp -f .build/armake/bin/armake .build/bin/ ; \
+	fi
 
 prepare:
 	mkdir -p .build/
