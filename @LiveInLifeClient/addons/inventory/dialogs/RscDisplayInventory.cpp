@@ -1067,7 +1067,7 @@ class RscDisplayInventory {
             text = "Crafting";
             onButtonClick = "[] spawn lilc_crafting_fnc_openMenu;";
             x = 0.737188 * safezoneW + safezoneX;
-            y = 0.75938 * safezoneH + safezoneY
+            y = 0.75938 * safezoneH + safezoneY;
             w = 0.108281 * safezoneW;
             h = 0.033 * safezoneH;
         };

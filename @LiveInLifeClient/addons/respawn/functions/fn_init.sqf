@@ -217,13 +217,11 @@ try {
                         lilc_respawn_isRespawn = true;
                         player setDamage 1;
 
-                        if !(isNil "lilc_medical_onDeadUnitGetInVehicleIndex") then
-                        {
+                        if !(isNil "lilc_medical_onDeadUnitGetInVehicleIndex") then {
                             player removeEventHandler ["GetInMan", lilc_medical_onDeadUnitGetInVehicleIndex];
                         };
 
-                        if !(isNil "lilc_medical_onDeadUnitGetOutVehicleIndex") then
-                        {
+                        if !(isNil "lilc_medical_onDeadUnitGetOutVehicleIndex") then {
                             player removeEventHandler ["GetOutMan", lilc_medical_onDeadUnitGetOutVehicleIndex];
                         };
 
@@ -238,13 +236,11 @@ try {
                         lilc_player_hunger = 100;
                         lilc_player_thirst = 100;
 
-                        if !(isNil "lilc_medical_onDeadUnitGetInVehicleIndex") then
-                        {
+                        if !(isNil "lilc_medical_onDeadUnitGetInVehicleIndex") then {
                             player removeEventHandler ["GetInMan", lilc_medical_onDeadUnitGetInVehicleIndex];
                         };
 
-                        if !(isNil "lilc_medical_onDeadUnitGetOutVehicleIndex") then
-                        {
+                        if !(isNil "lilc_medical_onDeadUnitGetOutVehicleIndex") then {
                             player removeEventHandler ["GetOutMan", lilc_medical_onDeadUnitGetOutVehicleIndex];
                         };
 

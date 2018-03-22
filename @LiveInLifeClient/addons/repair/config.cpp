@@ -1,16 +1,13 @@
 
-class CfgPatches
-{
+class CfgPatches {
     #include "CfgPatches.cpp"
 };
 
-class CfgFunctions
-{
+class CfgFunctions {
     #include "CfgFunctions.cpp"
 };
 
-class CfgVehicles
-{
+class CfgVehicles {
     #include "CfgVehicles.cpp"
 };
 

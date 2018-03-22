@@ -1,6 +1,5 @@
 
-class hair
-{
+class hair {
     virtualItem = "lilcvi_hairCollected";
     picture = "";
     displayName = "Haar";
@@ -16,8 +15,7 @@ class hair
     amount = 2;
 };
 
-class fingerprint
-{
+class fingerprint {
     virtualItem = "lilcvi_fingerprintCollected";
     picture = "";
     displayName = "Fingerabdruck";
@@ -25,8 +23,7 @@ class fingerprint
     amount = 1;
 };
 
-class blood
-{
+class blood {
     virtualItem = "lilcvi_bloodCollected";
     picture = "";
     displayName = "Blut";
@@ -34,23 +31,20 @@ class blood
     amount = 2;
 };
 
-class flake
-{
+class flake {
     virtualItem = "lilcvi_flakeCollected";
     picture = "";
     displayName = "Schuppen";
-    chance =
+    chance = 2;
 };
 
-class urine
-{
+class urine {
     virtualItem = "lilcvi_urineCollected";
     picture = "";
     displayName = "Urin";
 };
 
-class spit
-{
+class spit {
     virtualItem = "lilcvi_spitCollected";
     picture = "";
     displayName = "Spucke";

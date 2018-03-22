@@ -1,13 +1,17 @@
 language: python
 python:
 - '3.5'
+before_script:
+- wget http://ftp.gnu.org/gnu/make/make-4.2.1.tar.gz
+- tar -xf make-4.2.1.tar.gz
+- cd make-4.2.1
+- ./configure --prefix=/usr
+- sudo make install
+- cd ..
+- make deps
 script:
-- mkdir .build/
-- git clone https://github.com/TheMysteriousVincent/sqf.git .build/sqf
-- python3 .build/sqf/sqflint.py -d @LiveInLifeClient
-- python3 .build/sqf/sqflint.py -d @LiveInLifeServer
-- python3 .build/sqf/sqflint.py -d LiveInLife.Tanoa
-- python3 tools/config_style_checker.py
+- make test
+- make all
 notification:
   email:
     on_success: never

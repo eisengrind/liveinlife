@@ -5,7 +5,7 @@ class lilc_atm {
         class callback_createAccount {};
         class callback_deposit {};
         class callback_disburse {};
-        class callback_getAccount {}
+        class callback_getAccount {};
         class createAccount {};
         class deposit {};
         class disburse {};
