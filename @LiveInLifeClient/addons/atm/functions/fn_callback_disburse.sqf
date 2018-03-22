@@ -1,3 +1,24 @@
+/* ----------------------------------------------------------------------------
+Function: lilc_atm_fnc_callback_disburse
+Scope: private
+
+Description:
+    Is the callback function of the atm disburse function.
+
+Parameters:
+    _status - The received status of the disburse request. <BOOL>
+    _value - The amount of cash to be set on the player. <NUMBER>
+
+Returns:
+    - <NIL>
+
+Examples:
+    (begin example)
+    (end)
+
+Author:
+    TheMysteriousVincent
+---------------------------------------------------------------------------- */
 
 params [
     ["_status", false, [false]],

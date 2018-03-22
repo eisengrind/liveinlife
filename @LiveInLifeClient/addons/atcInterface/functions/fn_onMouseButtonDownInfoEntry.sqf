@@ -1,3 +1,23 @@
+/* ----------------------------------------------------------------------------
+Function: lilc_atcInterface_onMouseButtonDownInfoEntry
+Scope: private
+
+Description:
+    Is an eventhandler for the event onMouseButtonDown of all aircraft information boxes.
+
+Parameters:
+    _control - The control hovered over with mouse. <CONTROL>
+
+Returns:
+    - <NIL>
+
+Examples:
+    (begin example)
+    (end)
+
+Author:
+    TheMysteriousVincent
+---------------------------------------------------------------------------- */
 
 disableSerialization;
 params [

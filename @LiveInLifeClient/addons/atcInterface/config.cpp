@@ -7,7 +7,7 @@ class CfgFunctions {
     #include "CfgFunctions.cpp"
 };
 
-#include "dialogs\atcInterface.cpp"
+#include "gui\atcInterface.cpp"
 
 class Extended_PreInit_EventHandlers {
     class lilc_atcInterface_preInit {

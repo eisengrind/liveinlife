@@ -1,3 +1,23 @@
+/* ----------------------------------------------------------------------------
+Function: lilc_atm_fnc_deposit
+Scope: private
+
+Description:
+    Deposits given value of cash to the bankaccount.
+
+Parameters:
+    -
+
+Returns:
+    - <NIL>
+
+Examples:
+    (begin example)
+    (end)
+
+Author:
+    TheMysteriousVincent
+---------------------------------------------------------------------------- */
 
 params [
     ["_value", 0, [0]]

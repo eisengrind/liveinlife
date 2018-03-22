@@ -1,3 +1,23 @@
+/* ----------------------------------------------------------------------------
+Function: lilc_atm_fnc_callback_createAccount
+Scope: private
+
+Description:
+    Sets the received atm bank account data.
+
+Parameters:
+    _bankAccount - Is the received bank account data. <ARRAY>
+
+Returns:
+    - <NIL>
+
+Examples:
+    (begin example)
+    (end)
+
+Author:
+    TheMysteriousVincent
+---------------------------------------------------------------------------- */
 
 [_this] params [
     ["_bankAccount", [], [[]]]

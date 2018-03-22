@@ -1,16 +1,23 @@
+/* ----------------------------------------------------------------------------
+Function: lilc_atm_fnc_createAccount
+Scope: private
 
-/*
-    Filename:
-        fn_createAccount.sqf
-    Author:
-        Vincent Heins
-    Description:
-        Simply leads to the creation menu of the atm.
-    Param(s):
-        -
-    Result(s):
-        true = success; false != true : <BOOL>
-*/
+Description:
+    Simply leads to the creation menu of the atm.
+
+Parameters:
+    -
+
+Returns:
+    - <NIL>
+
+Examples:
+    (begin example)
+    (end)
+
+Author:
+    TheMysteriousVincent
+---------------------------------------------------------------------------- */
 
 private _fID = (player getVariable ["lilc_factionID", -1]);
 private _banks = [];

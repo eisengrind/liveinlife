@@ -1,3 +1,23 @@
+/* ----------------------------------------------------------------------------
+Function: lilc_atcInterface_fnc_openMenu
+Scope: public
+
+Description:
+    Opens the atc interface.
+
+Parameters:
+    -
+
+Returns:
+    - <NIL>
+
+Examples:
+    (begin example)
+    (end)
+
+Author:
+    TheMysteriousVincent
+---------------------------------------------------------------------------- */
 
 if !([player] call lilc_common_fnc_isAlive) exitWith { false; };
 if !(createDialog "lilcm_atcInterface") exitWith { false; };

@@ -24,4 +24,4 @@ class lilc_RscEdit;
 class lilc_RscListbox;
 class lilc_RscPicture;
 class lilc_RscStructuredText;
-#include "dialogs\atm.cpp"
+#include "gui\atm.cpp"

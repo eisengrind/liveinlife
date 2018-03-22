@@ -27,7 +27,7 @@ class lilc_RscEdit;
 class lilc_RscText;
 class lilc_RscTitle;
 
-#include "dialogs\giveMoney.cpp"
+#include "gui\giveMoney.cpp"
 
 class CfgVehicles {
     #include "CfgVehicles.cpp"
