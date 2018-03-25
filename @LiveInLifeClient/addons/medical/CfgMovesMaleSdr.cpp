@@ -82,7 +82,7 @@ class States {
     };
 
     class KIA_Truck_Cargo03;
-    class lilcas_KIA_passenger_mantisrear : KIA_Truck_Cargo03 {
+    class lilcas_KIA_Truck_Cargo03 : KIA_Truck_Cargo03 {
         actions = "lilcaa_KIA_passenger_mantisrear";
         head = "headNo";
         aimingBody = "aimingNo";
