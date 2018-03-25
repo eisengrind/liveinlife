@@ -1,5 +1,5 @@
 
-ARMAKE=.build/bin/armake
+ARMAKE=$(abspath .build/bin/armake)
 TAG=$(shell git describe --tag | sed "s/-.*-/-/")
 
 all: removeAll \
@@ -20,7 +20,7 @@ build_armake: prepare
 	fi
 
 prepare:
-	mkdir -p .build/
+	mkdir -p .build/keys
 	mkdir -p .build/bin/
 	mkdir -p .build/@LiveInLifeClient/addons
 	mkdir -p .build/@LiveInLifeServer/addons
