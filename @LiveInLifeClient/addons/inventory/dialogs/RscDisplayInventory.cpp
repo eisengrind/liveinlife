@@ -965,7 +965,6 @@ class RscDisplayInventory {
                     text = "";
                     type = 1;
                     style = 2;
-                    sizeEx = 0.02674;
                     colorText[] = {1, 1, 1, 1};
                     colorBackground[] = {0, 0, 0, 0.8};
                     colorBackgroundActive[] = {0.63, 0.02, 0.02, 0.8};
