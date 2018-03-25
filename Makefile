@@ -329,95 +329,95 @@ server: lils_animals \
 	lils_virtualInventory \
 	cpServerKey
 
-lils_animals: build_armake createKey
-	$(ARMAKE) build -p --force -k $(PRVKEYFILE) -e prefix=x\\lils\\addons\\animals @LiveInLifeServer/addons/animals .build/@LiveInLifeServer/addons/$@.pbo
+lils_animals: build_armake
+	$(ARMAKE) build -p --force -e prefix=x\\lils\\addons\\animals @LiveInLifeServer/addons/animals .build/@LiveInLifeServer/addons/$@.pbo
 
-lils_atm: build_armake createKey
-	$(ARMAKE) build -p --force -k $(PRVKEYFILE) -e prefix=x\\lils\\addons\\atm @LiveInLifeServer/addons/atm .build/@LiveInLifeServer/addons/$@.pbo
+lils_atm: build_armake
+	$(ARMAKE) build -p --force -e prefix=x\\lils\\addons\\atm @LiveInLifeServer/addons/atm .build/@LiveInLifeServer/addons/$@.pbo
 
-lils_bank: build_armake createKey
-	$(ARMAKE) build -p --force -k $(PRVKEYFILE) -e prefix=x\\lils\\addons\\bank @LiveInLifeServer/addons/bank .build/@LiveInLifeServer/addons/$@.pbo
+lils_bank: build_armake
+	$(ARMAKE) build -p --force -e prefix=x\\lils\\addons\\bank @LiveInLifeServer/addons/bank .build/@LiveInLifeServer/addons/$@.pbo
 
-lils_butt_inventory: build_armake createKey
-	$(ARMAKE) build -p --force -k $(PRVKEYFILE) -e prefix=x\\lils\\addons\\butt_inventory @LiveInLifeServer/addons/butt_inventory .build/@LiveInLifeServer/addons/$@.pbo
+lils_butt_inventory: build_armake
+	$(ARMAKE) build -p --force -e prefix=x\\lils\\addons\\butt_inventory @LiveInLifeServer/addons/butt_inventory .build/@LiveInLifeServer/addons/$@.pbo
 
-lils_cleanup: build_armake createKey
-	$(ARMAKE) build -p --force -k $(PRVKEYFILE) -e prefix=x\\lils\\addons\\cleanup @LiveInLifeServer/addons/cleanup .build/@LiveInLifeServer/addons/$@.pbo
+lils_cleanup: build_armake
+	$(ARMAKE) build -p --force -e prefix=x\\lils\\addons\\cleanup @LiveInLifeServer/addons/cleanup .build/@LiveInLifeServer/addons/$@.pbo
 
-lils_common: build_armake createKey
-	$(ARMAKE) build -p --force -k $(PRVKEYFILE) -e prefix=x\\lils\\addons\\common @LiveInLifeServer/addons/common .build/@LiveInLifeServer/addons/$@.pbo
+lils_common: build_armake
+	$(ARMAKE) build -p --force -e prefix=x\\lils\\addons\\common @LiveInLifeServer/addons/common .build/@LiveInLifeServer/addons/$@.pbo
 
-lils_database: build_armake createKey
-	$(ARMAKE) build -p --force -k $(PRVKEYFILE) -e prefix=x\\lils\\addons\\database @LiveInLifeServer/addons/database .build/@LiveInLifeServer/addons/$@.pbo
+lils_database: build_armake
+	$(ARMAKE) build -p --force -e prefix=x\\lils\\addons\\database @LiveInLifeServer/addons/database .build/@LiveInLifeServer/addons/$@.pbo
 
-lils_economy: build_armake createKey
-	$(ARMAKE) build -p --force -k $(PRVKEYFILE) -e prefix=x\\lils\\addons\\economy @LiveInLifeServer/addons/economy .build/@LiveInLifeServer/addons/$@.pbo
+lils_economy: build_armake
+	$(ARMAKE) build -p --force -e prefix=x\\lils\\addons\\economy @LiveInLifeServer/addons/economy .build/@LiveInLifeServer/addons/$@.pbo
 
-lils_events: build_armake createKey
-	$(ARMAKE) build -p --force -k $(PRVKEYFILE) -e prefix=x\\lils\\addons\\events @LiveInLifeServer/addons/events .build/@LiveInLifeServer/addons/$@.pbo
+lils_events: build_armake
+	$(ARMAKE) build -p --force -e prefix=x\\lils\\addons\\events @LiveInLifeServer/addons/events .build/@LiveInLifeServer/addons/$@.pbo
 
-lils_exchange: build_armake createKey
-	$(ARMAKE) build -p --force -k $(PRVKEYFILE) -e prefix=x\\lils\\addons\\exchange @LiveInLifeServer/addons/exchange .build/@LiveInLifeServer/addons/$@.pbo
+lils_exchange: build_armake
+	$(ARMAKE) build -p --force -e prefix=x\\lils\\addons\\exchange @LiveInLifeServer/addons/exchange .build/@LiveInLifeServer/addons/$@.pbo
 
-lils_factions: build_armake createKey
-	$(ARMAKE) build -p --force -k $(PRVKEYFILE) -e prefix=x\\lils\\addons\\factions @LiveInLifeServer/addons/factions .build/@LiveInLifeServer/addons/$@.pbo
+lils_factions: build_armake
+	$(ARMAKE) build -p --force -e prefix=x\\lils\\addons\\factions @LiveInLifeServer/addons/factions .build/@LiveInLifeServer/addons/$@.pbo
 
-lils_factionsInterface: build_armake createKey
-	$(ARMAKE) build -p --force -k $(PRVKEYFILE) -e prefix=x\\lils\\addons\\factionsInterface @LiveInLifeServer/addons/factionsInterface .build/@LiveInLifeServer/addons/$@.pbo
+lils_factionsInterface: build_armake
+	$(ARMAKE) build -p --force -e prefix=x\\lils\\addons\\factionsInterface @LiveInLifeServer/addons/factionsInterface .build/@LiveInLifeServer/addons/$@.pbo
 
-lils_garage: build_armake createKey
-	$(ARMAKE) build -p --force -k $(PRVKEYFILE) -e prefix=x\\lils\\addons\\garage @LiveInLifeServer/addons/garage .build/@LiveInLifeServer/addons/$@.pbo
+lils_garage: build_armake
+	$(ARMAKE) build -p --force -e prefix=x\\lils\\addons\\garage @LiveInLifeServer/addons/garage .build/@LiveInLifeServer/addons/$@.pbo
 
-lils_inventory: build_armake createKey
-	$(ARMAKE) build -p --force -k $(PRVKEYFILE) -e prefix=x\\lils\\addons\\inventory @LiveInLifeServer/addons/inventory .build/@LiveInLifeServer/addons/$@.pbo
+lils_inventory: build_armake
+	$(ARMAKE) build -p --force -e prefix=x\\lils\\addons\\inventory @LiveInLifeServer/addons/inventory .build/@LiveInLifeServer/addons/$@.pbo
 
-lils_job_agent: build_armake createKey
-	$(ARMAKE) build -p --force -k $(PRVKEYFILE) -e prefix=x\\lils\\addons\\job_agent @LiveInLifeServer/addons/job_agent .build/@LiveInLifeServer/addons/$@.pbo
+lils_job_agent: build_armake
+	$(ARMAKE) build -p --force -e prefix=x\\lils\\addons\\job_agent @LiveInLifeServer/addons/job_agent .build/@LiveInLifeServer/addons/$@.pbo
 
-lils_keys: build_armake createKey
-	$(ARMAKE) build -p --force -k $(PRVKEYFILE) -e prefix=x\\lils\\addons\\keys @LiveInLifeServer/addons/keys .build/@LiveInLifeServer/addons/$@.pbo
+lils_keys: build_armake
+	$(ARMAKE) build -p --force -e prefix=x\\lils\\addons\\keys @LiveInLifeServer/addons/keys .build/@LiveInLifeServer/addons/$@.pbo
 
-lils_licenses: build_armake createKey
-	$(ARMAKE) build -p --force -k $(PRVKEYFILE) -e prefix=x\\lils\\addons\\licenses @LiveInLifeServer/addons/licenses .build/@LiveInLifeServer/addons/$@.pbo
+lils_licenses: build_armake
+	$(ARMAKE) build -p --force -e prefix=x\\lils\\addons\\licenses @LiveInLifeServer/addons/licenses .build/@LiveInLifeServer/addons/$@.pbo
 
-lils_locker: build_armake createKey
-	$(ARMAKE) build -p --force -k $(PRVKEYFILE) -e prefix=x\\lils\\addons\\locker @LiveInLifeServer/addons/locker .build/@LiveInLifeServer/addons/$@.pbo
+lils_locker: build_armake
+	$(ARMAKE) build -p --force -e prefix=x\\lils\\addons\\locker @LiveInLifeServer/addons/locker .build/@LiveInLifeServer/addons/$@.pbo
 
-lils_login: build_armake createKey
-	$(ARMAKE) build -p --force -k $(PRVKEYFILE) -e prefix=x\\lils\\addons\\login @LiveInLifeServer/addons/login .build/@LiveInLifeServer/addons/$@.pbo
+lils_login: build_armake
+	$(ARMAKE) build -p --force -e prefix=x\\lils\\addons\\login @LiveInLifeServer/addons/login .build/@LiveInLifeServer/addons/$@.pbo
 
-lils_logs: build_armake createKey
-	$(ARMAKE) build -p --force -k $(PRVKEYFILE) -e prefix=x\\lils\\addons\\logs @LiveInLifeServer/addons/logs .build/@LiveInLifeServer/addons/$@.pbo
+lils_logs: build_armake
+	$(ARMAKE) build -p --force -e prefix=x\\lils\\addons\\logs @LiveInLifeServer/addons/logs .build/@LiveInLifeServer/addons/$@.pbo
 
-lils_meteorology: build_armake createKey
-	$(ARMAKE) build -p --force -k $(PRVKEYFILE) -e prefix=x\\lils\\addons\\meteorology @LiveInLifeServer/addons/meteorology .build/@LiveInLifeServer/addons/$@.pbo
+lils_meteorology: build_armake
+	$(ARMAKE) build -p --force -e prefix=x\\lils\\addons\\meteorology @LiveInLifeServer/addons/meteorology .build/@LiveInLifeServer/addons/$@.pbo
 
-lils_paycheck: build_armake createKey
-	$(ARMAKE) build -p --force -k $(PRVKEYFILE) -e prefix=x\\lils\\addons\\paycheck @LiveInLifeServer/addons/paycheck .build/@LiveInLifeServer/addons/$@.pbo
+lils_paycheck: build_armake
+	$(ARMAKE) build -p --force -e prefix=x\\lils\\addons\\paycheck @LiveInLifeServer/addons/paycheck .build/@LiveInLifeServer/addons/$@.pbo
 
-lils_pcard: build_armake createKey
-	$(ARMAKE) build -p --force -k $(PRVKEYFILE) -e prefix=x\\lils\\addons\\pcard @LiveInLifeServer/addons/pcard .build/@LiveInLifeServer/addons/$@.pbo
+lils_pcard: build_armake
+	$(ARMAKE) build -p --force -e prefix=x\\lils\\addons\\pcard @LiveInLifeServer/addons/pcard .build/@LiveInLifeServer/addons/$@.pbo
 
-lils_pda: build_armake createKey
-	$(ARMAKE) build -p --force -k $(PRVKEYFILE) -e prefix=x\\lils\\addons\\pda @LiveInLifeServer/addons/pda .build/@LiveInLifeServer/addons/$@.pbo
+lils_pda: build_armake
+	$(ARMAKE) build -p --force -e prefix=x\\lils\\addons\\pda @LiveInLifeServer/addons/pda .build/@LiveInLifeServer/addons/$@.pbo
 
-lils_permissions: build_armake createKey
-	$(ARMAKE) build -p --force -k $(PRVKEYFILE) -e prefix=x\\lils\\addons\\permissions @LiveInLifeServer/addons/permissions .build/@LiveInLifeServer/addons/$@.pbo
+lils_permissions: build_armake
+	$(ARMAKE) build -p --force -e prefix=x\\lils\\addons\\permissions @LiveInLifeServer/addons/permissions .build/@LiveInLifeServer/addons/$@.pbo
 
-lils_prison: build_armake createKey
-	$(ARMAKE) build -p --force -k $(PRVKEYFILE) -e prefix=x\\lils\\addons\\prison @LiveInLifeServer/addons/prison .build/@LiveInLifeServer/addons/$@.pbo
+lils_prison: build_armake
+	$(ARMAKE) build -p --force -e prefix=x\\lils\\addons\\prison @LiveInLifeServer/addons/prison .build/@LiveInLifeServer/addons/$@.pbo
 
-lils_proofs: build_armake createKey
-	$(ARMAKE) build -p --force -k $(PRVKEYFILE) -e prefix=x\\lils\\addons\\proofs @LiveInLifeServer/addons/proofs .build/@LiveInLifeServer/addons/$@.pbo
+lils_proofs: build_armake
+	$(ARMAKE) build -p --force -e prefix=x\\lils\\addons\\proofs @LiveInLifeServer/addons/proofs .build/@LiveInLifeServer/addons/$@.pbo
 
-lils_shops: build_armake createKey
-	$(ARMAKE) build -p --force -k $(PRVKEYFILE) -e prefix=x\\lils\\addons\\shops @LiveInLifeServer/addons/shops .build/@LiveInLifeServer/addons/$@.pbo
+lils_shops: build_armake
+	$(ARMAKE) build -p --force -e prefix=x\\lils\\addons\\shops @LiveInLifeServer/addons/shops .build/@LiveInLifeServer/addons/$@.pbo
 
-lils_vehicles: build_armake createKey
-	$(ARMAKE) build -p --force -k $(PRVKEYFILE) -e prefix=x\\lils\\addons\\vehicles @LiveInLifeServer/addons/vehicles .build/@LiveInLifeServer/addons/$@.pbo
+lils_vehicles: build_armake
+	$(ARMAKE) build -p --force -e prefix=x\\lils\\addons\\vehicles @LiveInLifeServer/addons/vehicles .build/@LiveInLifeServer/addons/$@.pbo
 
-lils_virtualInventory: build_armake createKey
-	$(ARMAKE) build -p --force -k $(PRVKEYFILE) -e prefix=x\\lils\\addons\\virtualInventory @LiveInLifeServer/addons/virtualInventory .build/@LiveInLifeServer/addons/$@.pbo
+lils_virtualInventory: build_armake
+	$(ARMAKE) build -p --force -e prefix=x\\lils\\addons\\virtualInventory @LiveInLifeServer/addons/virtualInventory .build/@LiveInLifeServer/addons/$@.pbo
 
 cpServerKey:
 	cp .build/keys/$(KEY).bikey .build/@LiveInLifeServer/keys
