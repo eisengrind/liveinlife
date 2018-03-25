@@ -24,6 +24,7 @@ prepare:
 	mkdir -p .build/bin/
 	mkdir -p .build/@LiveInLifeClient/addons
 	mkdir -p .build/@LiveInLifeServer/addons
+	mkdir -p .build/@LiveInLifeServer/keys
 	mkdir -p .build/LiveInLife.Tanoa
 
 test: prepare
@@ -44,7 +45,7 @@ removeAll:
 createKey:
 ifndef PRVKEYFILE
 	cd .build/keys/ && $(ARMAKE) keygen -f lil_$(TAG)
-	$(eval KEY := eg_$(TAG))
+	$(eval KEY := lil_$(TAG))
 	$(eval PRVKEYFILE := .build/keys/$(KEY).biprivatekey)
 endif
 
@@ -327,7 +328,8 @@ server: lils_animals \
 	lils_proofs \
 	lils_shops \
 	lils_vehicles \
-	lils_virtualInventory
+	lils_virtualInventory \
+	cpServerKey
 
 lils_animals: build_armake createKey
 	$(ARMAKE) build --force -k $(PRVKEYFILE) -e prefix=x\lils\addons\animals @LiveInLifeServer/addons/animals .build/@LiveInLifeServer/addons/$@.pbo
@@ -418,3 +420,6 @@ lils_vehicles: build_armake createKey
 
 lils_virtualInventory: build_armake createKey
 	$(ARMAKE) build --force -k $(PRVKEYFILE) -e prefix=x\lils\addons\virtualInventory @LiveInLifeServer/addons/virtualInventory .build/@LiveInLifeServer/addons/$@.pbo
+
+cpServerKey:
+	cp .build/keys/$(KEY).bikey .build/@LiveInLifeServer/keys
