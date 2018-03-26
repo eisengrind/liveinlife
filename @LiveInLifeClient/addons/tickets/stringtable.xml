@@ -4,14 +4,14 @@
     <Package name="lilc_tickets">
         <Container name="Config">
             <Key ID="STR_lilc_tickets_Config_Amount">
-                <Original>Amount</Original>
-                <English>Amount</English>
-                <German>Betrag</German>
+                <Original>Amount:</Original>
+                <English>Amount:</English>
+                <German>Betrag:</German>
             </Key>
             <Key ID="STR_lilc_tickets_Config_Template">
-                <Original>Template</Original>
-                <English>Template</English>
-                <German>Vorlage</German>
+                <Original>Template:</Original>
+                <English>Template:</English>
+                <German>Vorlage:</German>
             </Key>
             <Key ID="STR_lilc_tickets_Config_Paper">
                 <Original>Paper</Original>

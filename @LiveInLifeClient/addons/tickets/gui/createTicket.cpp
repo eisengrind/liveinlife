@@ -5,7 +5,7 @@ class lilcm_createTicket {
     enableSimulation = 1;
     movingEnable = 1;
 
-    class controls {
+    class controlsBackground {
         class TitleTitle: RscText {
             idc = 1006;
             text = "$STR_lilc_tickets_Script_Ticket"; //--- ToDo: Localize;
@@ -27,7 +27,7 @@ class lilcm_createTicket {
 
         class TitleTemplate: RscText {
             idc = 1003;
-            text = "$STR_lilc_tickets_Config_Template:"; //--- ToDo: Localize;
+            text = "$STR_lilc_tickets_Config_Template"; //--- ToDo: Localize;
             x = 0.443281 * safezoneW + safezoneX;
             y = 0.412 * safezoneH + safezoneY;
             w = 0.113437 * safezoneW;
@@ -37,7 +37,7 @@ class lilcm_createTicket {
 
         class TitleAmount: RscText {
             idc = 1004;
-            text = "$STR_lilc_tickets_Config_Amount:"; //--- ToDo: Localize;
+            text = "$STR_lilc_tickets_Config_Amount"; //--- ToDo: Localize;
             x = 0.443281 * safezoneW + safezoneX;
             y = 0.489 * safezoneH + safezoneY;
             w = 0.113437 * safezoneW;
@@ -45,7 +45,7 @@ class lilcm_createTicket {
             colorBackground[] = {"(profileNamespace getVariable ['GUI_BCG_RGB_R',0.77])","(profileNamespace getVariable ['GUI_BCG_RGB_G',0.51])","(profileNamespace getVariable ['GUI_BCG_RGB_B',0.08])","(profileNamespace getVariable ['GUI_BCG_RGB_A',0.8])"};
         };
     };
-    class controlsBackground {
+    class controls {
         class ComboTemplate: RscCombo {
             idc = 2100;
             onLBSelChanged = "_this call lilc_tickets_fnc_onLBSelChanged_templates;";

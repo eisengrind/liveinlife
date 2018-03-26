@@ -24,11 +24,11 @@ params [
 ];
 
 if (isNull _unit || !([_unit] call lilc_common_fnc_isAlive)) exitWith {};
-if (isNull player || !([_unit] call lilc_common_fnc_isAlive)) exitWith {};
-if ((["lilci_tickets_paper_F"] call lilc_inventory_fnc_itemCount) > 0) exitWith {
+if (isNull player || !([player] call lilc_common_fnc_isAlive)) exitWith {};
+if ((["lilci_tickets_paper_F"] call lilc_inventory_fnc_itemCount) <= 0) exitWith {
     ["STR_lilc_tickets_Script_PaperNeeded" call BIS_fnc_localize, "ERROR"] call lilc_ui_fnc_hint;
 };
-if ((["lilci_tickets_pen_F"] call lilc_inventory_fnc_itemCount) > 0) exitWith {
+if ((["lilci_tickets_pen_F"] call lilc_inventory_fnc_itemCount) <= 0) exitWith {
     ["STR_lilc_tickets_Script_PenNeeded" call BIS_fnc_localize, "ERROR"] call lilc_ui_fnc_hint;
 };
 
