@@ -75,6 +75,7 @@ client:	lilc_actions \
 	lilc_hud \
 	lilc_interaction \
 	lilc_inventory \
+	lilc_invoices \
 	lilc_job_agent \
 	lilc_keys \
 	lilc_licenses \
@@ -102,7 +103,6 @@ client:	lilc_actions \
 	lilc_tags \
 	lilc_tazer \
 	lilc_textures \
-	lilc_tickets \
 	lilc_time \
 	lilc_trade \
 	lilc_transponder \
@@ -187,6 +187,9 @@ lilc_interaction: build_armake createKey
 lilc_inventory: build_armake createKey
 	$(ARMAKE) build -p --force -k $(PRVKEYFILE) -e prefix=x\\lilc\\addons\\inventory @LiveInLifeClient/addons/inventory .build/@LiveInLifeClient/addons/$@.pbo
 
+lilc_invoices: build_armake createKey
+	$(ARMAKE) build -p --force -k $(PRVKEYFILE) -e prefix=x\\lilc\\addons\\invoices @LiveInLifeClient/addons/invoices .build/@LiveInLifeClient/addons/$@.pbo
+
 lilc_job_agent: build_armake createKey
 	$(ARMAKE) build -p --force -k $(PRVKEYFILE) -e prefix=x\\lilc\\addons\\job_agent @LiveInLifeClient/addons/job_agent .build/@LiveInLifeClient/addons/$@.pbo
 
@@ -270,9 +273,6 @@ lilc_tazer: build_armake createKey
 
 lilc_textures: build_armake createKey
 	$(ARMAKE) build -p --force -k $(PRVKEYFILE) -e prefix=x\\lilc\\addons\\textures @LiveInLifeClient/addons/textures .build/@LiveInLifeClient/addons/$@.pbo
-
-lilc_tickets: build_armake createKey
-	$(ARMAKE) build -p --force -k $(PRVKEYFILE) -e prefix=x\\lilc\\addons\\tickets @LiveInLifeClient/addons/tickets .build/@LiveInLifeClient/addons/$@.pbo
 
 lilc_time: build_armake createKey
 	$(ARMAKE) build -p --force -k $(PRVKEYFILE) -e prefix=x\\lilc\\addons\\time @LiveInLifeClient/addons/time .build/@LiveInLifeClient/addons/$@.pbo
