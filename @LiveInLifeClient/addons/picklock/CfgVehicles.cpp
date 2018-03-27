@@ -13,7 +13,7 @@ class Plane : Air {
                 displayName = "$STR_lilc_actions_ActionTitle_picklock";
                 condition = "([_target, 'lilci_picklock_F'] call lilc_picklock_fnc_canPickLockVehicle) || ([_target, 'lilci_paperclip_F'] call lilc_picklock_fnc_canPickLockVehicle)";
                 statement = "false;";
-                
+
                 class lilca_picklock_picklock {
                     displayName = "Picklock";
                     condition = "([_target, 'lilci_picklock_F'] call lilc_picklock_fnc_canPickLockVehicle)";
@@ -43,7 +43,7 @@ class Helicopter : Air {
                 displayName = "$STR_lilc_actions_ActionTitle_picklock";
                 condition = "([_target, 'lilci_picklock_F'] call lilc_picklock_fnc_canPickLockVehicle) || ([_target, 'lilci_paperclip_F'] call lilc_picklock_fnc_canPickLockVehicle)";
                 statement = "false;";
-                
+
                 class lilca_picklock_picklock {
                     displayName = "Picklock";
                     condition = "([_target, 'lilci_picklock_F'] call lilc_picklock_fnc_canPickLockVehicle)";
@@ -64,12 +64,6 @@ class LandVehicle;
 class Car : LandVehicle {
     class ACE_Actions {
         class ACE_MainActions {
-            class lilca_picklock_doPickLockEngineIgnition {
-                displayName = "Picklock Engine";
-                condition = "([_target] call lilc_picklock_fnc_canPickLockEngineIgnition)";
-                statement = "[_target, [3, 10, 15], 0.7] call lilc_picklock_fnc_doPickLockEngineIgnition";
-            };
-
             class lilca_picklock_attachSteeringWheel {
                 displayName = "Attach steering wheel lock";
                 condition = "([_target] call lilc_picklock_fnc_canAttachSteeringWheelLock)";
@@ -92,7 +86,7 @@ class Car : LandVehicle {
                 displayName = "$STR_lilc_actions_ActionTitle_picklock";
                 condition = "([_target, 'lilci_picklock_F'] call lilc_picklock_fnc_canPickLockVehicle) || ([_target, 'lilci_paperclip_F'] call lilc_picklock_fnc_canPickLockVehicle)";
                 statement = "false;";
-                
+
                 class lilca_picklock_picklock {
                     displayName = "Picklock";
                     condition = "([_target, 'lilci_picklock_F'] call lilc_picklock_fnc_canPickLockVehicle)";
@@ -105,6 +99,13 @@ class Car : LandVehicle {
                     statement = "[_target, 'lilci_paperclip_F', [5, 10, 40], 0.02] call lilc_picklock_fnc_doPickLockVehicle;";
                 };
             };
+        };
+    };
+    class ACE_SelfActions {
+        class lilca_picklock_doPickLockEngineIgnition {
+            displayName = "Picklock Engine";
+            condition = "([_target] call lilc_picklock_fnc_canPickLockEngineIgnition)";
+            statement = "[_target, [3, 10, 15], 0.7] call lilc_picklock_fnc_doPickLockEngineIgnition";
         };
     };
 };
@@ -123,7 +124,7 @@ class Ship_F : Ship {
                 displayName = "$STR_lilc_actions_ActionTitle_picklock";
                 condition = "([_target, 'lilci_picklock_F'] call lilc_picklock_fnc_canPickLockVehicle) || ([_target, 'lilci_paperclip_F'] call lilc_picklock_fnc_canPickLockVehicle)";
                 statement = "false;";
-                
+
                 class lilca_picklock_picklock {
                     displayName = "Picklock";
                     condition = "([_target, 'lilci_picklock_F'] call lilc_picklock_fnc_canPickLockVehicle)";
