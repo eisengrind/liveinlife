@@ -19,14 +19,3 @@ if (!isServer && !is3DEN && !is3DENMultiplayer && !isDedicated) then
 player addAction ["", {
     playSound3D ["a3\sounds_f\weapons\Other\dry9.wss", (_this select 0)];
 }, false, 0, false, true, "DefaultAction", "(currentWeapon player) in lilc_common_disabledWeapons && (currentWeapon player) != ''"];
-
-lilc_common_hideHexagons_items = [];
-if (lilc_common_hideHexagons) then {
-    [{
-        if (lilc_common_hideHexagons_items in assignedItems player) then {
-            showHUD true;
-        } else {
-            showHUD false;
-        };
-    }, 1] call CBA_fnc_addPerFrameHandler;
-};
