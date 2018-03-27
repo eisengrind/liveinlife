@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
-Function: lilc_tickets_fnc_onLBSelChanged_templates
+Function: lilc_invoices_fnc_onLBSelChanged_templates
 Scope: private
 
 Description:
@@ -29,3 +29,4 @@ params [
 if (_index <= -1) exitWith {};
 
 ctrlSetText [1400, (_control lbValue _index)];
+ctrlSetText [1401, (_control lbData _index)];

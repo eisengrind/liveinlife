@@ -1,5 +1,5 @@
 
-class lilc_tickets {
+class lilc_invoices {
     units[] = {};
     weapons[] = {};
     requiredAddons[] = {

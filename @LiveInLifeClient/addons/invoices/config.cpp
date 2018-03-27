@@ -23,4 +23,4 @@ class RscCombo;
 class RscEdit;
 class RscButton;
 class RscActiveText;
-#include "gui\createTicket.cpp"
+#include "gui\createInvoice.cpp"

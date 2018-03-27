@@ -1,15 +1,15 @@
 /* ----------------------------------------------------------------------------
-Function: lilc_tickets_fnc_canCreateTicket
+Function: lilc_invoices_fnc_canCreateInvoice
 Scope: public
 
 Description:
-    Checks wheter player can create a ticket or not.
+    Checks wheter player can create an invoice or not.
 
 Parameters:
-    _unit - The target _unit to send a ticket to. <OBJECT>
+    _unit - The target _unit to send an invoice to. <OBJECT>
 
 Returns:
-    Whether player can create a ticket for _unit or not. <BOOL>
+    Whether player can create an invoice for _unit or not. <BOOL>
 
 Examples:
     (begin example)
@@ -27,6 +27,6 @@ params [
     !isNull _unit &&
     alive _unit &&
     _unit != player &&
-    (["lilci_tickets_paper_F"] call lilc_inventory_fnc_itemCount) > 0 &&
-    (["lilci_tickets_pen_F"] call lilc_inventory_fnc_itemCount) > 0
+    (["lilci_paper_F"] call lilc_inventory_fnc_itemCount) > 0 &&
+    (["lilci_pen_F"] call lilc_inventory_fnc_itemCount) > 0
 );

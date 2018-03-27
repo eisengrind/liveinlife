@@ -1,0 +1,100 @@
+
+<?xml version="1.0" encoding="utf-8">
+<Project name="LiveInLife">
+    <Package name="lilc_invoices">
+        <Container name="Config">
+            <Key ID="STR_lilc_invoices_Config_Amount">
+                <Original>Amount:</Original>
+                <English>Amount:</English>
+                <German>Betrag:</German>
+            </Key>
+            <Key ID="STR_lilc_invoices_Config_Template">
+                <Original>Template:</Original>
+                <English>Template:</English>
+                <German>Vorlage:</German>
+            </Key>
+            <Key ID="STR_lilc_invoices_Config_Paper">
+                <Original>Paper</Original>
+                <English>Paper</English>
+                <German>Papier</German>
+            </Key>
+            <Key ID="STR_lilc_invoices_Config_Pen">
+                <Original>Pen</Original>
+                <English>Pen</English>
+                <German>Stift</German>
+            </Key>
+            <Key ID="STR_lilc_invoices_Config_IssueInvoice">
+                <Original>Issue Invoice</Original>
+                <English>Issue Invoice</English>
+                <German>Rechnung ausstellen</German>
+            </Key>
+            <Key ID="STR_lilc_invoices_Config_CreateInvoice">
+                <Original>Create Invoice</Original>
+                <English>Create Invoice</English>
+                <German>Rechnung ausstellen</German>
+            </Key>
+            <Key ID="STR_lilc_invoices_Config_Note">
+                <Original>Note:</Original>
+                <English>Note:</English>
+                <German>Anmerkung:</German>
+            </Key>
+        </Container>
+        <Container name="Script">
+            <Key ID="STR_lilc_invoices_Script_Invoice">
+                <Original>Invoice</Original>
+                <English>Invoice</English>
+                <German>Rechnung</German>
+            </Key>
+            <Key ID="STR_lilc_invoices_Script_PenNeeded">
+                <Original>You need a pen to create an invoice.</Original>
+                <English>You need a pen to create an invoice.</English>
+                <German>Du benötigst einen Stift, um eine Rechnung auszustellen.</German>
+            </Key>
+            <Key ID="STR_lilc_invoices_Script_PaperNeeded">
+                <Original>You need paper to create an invoice.</Original>
+                <English>You need paper to create an invoice.</English>
+                <German>Du benötigst Papier, um eine Rechnung auszustellen.</German>
+            </Key>
+            <Key ID="STR_lilc_invoices_Script_InvoiceSend">
+                <Original>The invoice has been issued.</Original>
+                <English>The invoice has been issued.</English>
+                <German>Die Rechnung wurde ausgestellt.</German>
+            </Key>
+            <Key ID="STR_lilc_invoices_Script_InvoiceHeader">
+                <Original>Invoice</Original>
+                <English>Invoice</English>
+                <German>Rechnung</German>
+            </Key>
+            <Key ID="STR_lilc_invoices_Script_InvoiceMessage">
+                <Original>You received an invoice!&lt;br /&gt;&lt;br /&gt;Amount:&lt;br /&gt;%1%2;br /&gt;&lt;br /&gt;Note:&lt;br /&gt;%3</Original>
+                <English>You received an invoice!&lt;br /&gt;&lt;br /&gt;Amount:&lt;br /&gt;%1%2;br /&gt;&lt;br /&gt;Note:&lt;br /&gt;%3</English>
+                <German>Du hast eine Rechnung erhalten!&lt;br /&gt;&lt;br /&gt;Betrag:&lt;br /&gt;%1%2;br /&gt;&lt;br /&gt;Anmerkung:&lt;br /&gt;%3</German>
+            </Key>
+            <Key ID="STR_lilc_invoices_Script_InvoiceAccept">
+                <Original>Pay</Original>
+                <English>Pay</English>
+                <German>Bezahlen</German>
+            </Key>
+            <Key ID="STR_lilc_invoices_Script_InvoiceRefuse">
+                <Original>Refuse</Original>
+                <English>Refuse</English>
+                <German>Ablehnen</German>
+            </Key>
+            <Key ID="STR_lilc_invoices_Script_InvoiceCouldntPayed">
+                <Original>Your invoice couldnt be payed.</Original>
+                <English>Your invoice couldnt be payed.</English>
+                <German>Deine Rechnung konnte nicht beglichen werden.</German>
+            </Key>
+            <Key ID="STR_lilc_invoices_Script_InvoicePayed">
+                <Original>The invoice was payed.</Original>
+                <English>The invoice was payed.</English>
+                <German>Die Rechnung wurde bezahlt.</German>
+            </Key>
+            <Key ID="STR_lilc_invoices_Script_InvoiceNotPayed">
+                <Original>The invoice was not payed.</Original>
+                <English>The invoice was not payed.</English>
+                <German>Die Rechnung wurde nicht bezahlt.</German>
+            </Key>
+        </Container>
+    </Package>
+</Project>
