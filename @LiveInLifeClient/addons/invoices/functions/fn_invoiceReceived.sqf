@@ -47,7 +47,11 @@ if (_result) then {
     if !([_amount] call lilc_cash_fnc_remove) then {
         _result = false;
         ["STR_lilc_invoices_Script_InvoiceCouldntPayed" call BIS_fnc_localize, "ERROR"] call lilc_ui_fnc_hint;
+    } else {
+        ["STR_lilc_invoices_Script_InvoicePayed" call BIS_fnc_localize] call lilc_ui_fnc_hint;
     };
+} else {
+    ["STR_lilc_invoices_Script_InvoiceCouldntPayed" call BIS_fnc_localize, "ERROR"] call lilc_ui_fnc_hint;
 };
 
 [[player, _result, _amount], "lilc_invoices_fnc_callback_sendInvoice", _issuer] call lilc_common_fnc_send;
