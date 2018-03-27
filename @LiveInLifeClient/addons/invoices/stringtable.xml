@@ -66,9 +66,9 @@
                 <German>Rechnung</German>
             </Key>
             <Key ID="STR_lilc_invoices_Script_InvoiceMessage">
-                <Original>You received an invoice!&lt;br /&gt;&lt;br /&gt;Amount:&lt;br /&gt;%1%2;br /&gt;&lt;br /&gt;Note:&lt;br /&gt;%3</Original>
-                <English>You received an invoice!&lt;br /&gt;&lt;br /&gt;Amount:&lt;br /&gt;%1%2;br /&gt;&lt;br /&gt;Note:&lt;br /&gt;%3</English>
-                <German>Du hast eine Rechnung erhalten!&lt;br /&gt;&lt;br /&gt;Betrag:&lt;br /&gt;%1%2;br /&gt;&lt;br /&gt;Anmerkung:&lt;br /&gt;%3</German>
+                <Original>You received an invoice!&lt;br /&gt;&lt;br /&gt;Amount:&lt;br /&gt;%1%2&lt;br /&gt;&lt;br /&gt;Note:&lt;br /&gt;%3</Original>
+                <English>You received an invoice!&lt;br /&gt;&lt;br /&gt;Amount:&lt;br /&gt;%1%2&lt;br /&gt;&lt;br /&gt;Note:&lt;br /&gt;%3</English>
+                <German>Du hast eine Rechnung erhalten!&lt;br /&gt;&lt;br /&gt;Betrag:&lt;br /&gt;%1%2&lt;br /&gt;&lt;br /&gt;Anmerkung:&lt;br /&gt;%3</German>
             </Key>
             <Key ID="STR_lilc_invoices_Script_InvoiceAccept">
                 <Original>Pay</Original>
