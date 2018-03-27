@@ -23,8 +23,8 @@ prepare:
 	mkdir -p .build/keys
 	mkdir -p .build/bin/
 	mkdir -p .build/@LiveInLifeClient/addons
+	mkdir -p .build/@LiveInLifeClient/keys
 	mkdir -p .build/@LiveInLifeServer/addons
-	mkdir -p .build/@LiveInLifeServer/keys
 	mkdir -p .build/LiveInLife.Tanoa
 
 test: prepare
@@ -109,7 +109,8 @@ client:	lilc_actions \
 	lilc_ui \
 	lilc_vehicles \
 	lilc_viewDistance \
-	lilc_virtualInventory
+	lilc_virtualInventory \
+	cpClientKey
 
 lilc_actions: build_armake createKey
 	$(ARMAKE) build -p --force -k $(PRVKEYFILE) -e prefix=x\\lilc\\addons\\actions @LiveInLifeClient/addons/actions .build/@LiveInLifeClient/addons/$@.pbo
@@ -294,6 +295,8 @@ lilc_viewDistance: build_armake createKey
 lilc_virtualInventory: build_armake createKey
 	$(ARMAKE) build -p --force -k $(PRVKEYFILE) -e prefix=x\\lilc\\addons\\virtualInventory @LiveInLifeClient/addons/virtualInventory .build/@LiveInLifeClient/addons/$@.pbo
 
+cpClientKey:
+	cp .build/keys/$(KEY).bikey .build/@LiveInLifeClient/keys
 
 # LiveInLifeServer
 
@@ -326,8 +329,7 @@ server: lils_animals \
 	lils_proofs \
 	lils_shops \
 	lils_vehicles \
-	lils_virtualInventory \
-	cpServerKey
+	lils_virtualInventory
 
 lils_animals: build_armake
 	$(ARMAKE) build -p --force -e prefix=x\\lils\\addons\\animals @LiveInLifeServer/addons/animals .build/@LiveInLifeServer/addons/$@.pbo
@@ -418,6 +420,3 @@ lils_vehicles: build_armake
 
 lils_virtualInventory: build_armake
 	$(ARMAKE) build -p --force -e prefix=x\\lils\\addons\\virtualInventory @LiveInLifeServer/addons/virtualInventory .build/@LiveInLifeServer/addons/$@.pbo
-
-cpServerKey:
-	cp .build/keys/$(KEY).bikey .build/@LiveInLifeServer/keys
