@@ -2,10 +2,20 @@
 ARMAKE=$(abspath .build/bin/armake)
 TAG=$(shell git describe --tag | sed "s/-.*-/-/")
 
+deploy: all
+	rm -Rf .builds/$(TAG)/
+	mkdir -p .builds/$(TAG)/
+	cp -Rf .build/@LiveInLifeClient/ .builds/$(TAG)/
+	cp -Rf .build/@LiveInLifeServer/ .builds/$(TAG)/
+	cp -Rf .build/keys/ .builds/$(TAG)/
+
 all: removeAll \
 	build_armake \
 	client \
 	server
+
+publish:
+	echo "No function at all currently"
 
 deps:
 	sudo apt-get install -y git bison flex libssl-dev python3
@@ -110,7 +120,13 @@ client:	lilc_actions \
 	lilc_vehicles \
 	lilc_viewDistance \
 	lilc_virtualInventory \
+	dbo_old_bike \
 	cpClientKey
+
+dbo_old_bike: createKey
+	$(ARMAKE) sign -f $(PRVKEYFILE) deps/dbo_old_bike.pbo
+	cp -f deps/dbo_old_bike.pbo .build/@LiveInLifeClient/addons/
+	cp -f deps/dbo_old_bike.pbo.$(KEY).bisign .build/@LiveInLifeClient/addons/
 
 lilc_actions: build_armake createKey
 	$(ARMAKE) build -p --force -k $(PRVKEYFILE) -e prefix=x\\lilc\\addons\\actions @LiveInLifeClient/addons/actions .build/@LiveInLifeClient/addons/$@.pbo
