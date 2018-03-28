@@ -122,11 +122,11 @@ client:	lilc_actions \
 	lilc_virtualInventory \
 	dbo_old_bike \
 	cpClientKey
+	cp -f @LiveInLifeClient/mod.cpp .build/@LiveInLifeClient/
 
 dbo_old_bike: createKey
-	$(ARMAKE) sign -f $(PRVKEYFILE) deps/dbo_old_bike.pbo
 	cp -f deps/dbo_old_bike.pbo .build/@LiveInLifeClient/addons/
-	cp -f deps/dbo_old_bike.pbo.$(KEY).bisign .build/@LiveInLifeClient/addons/
+	$(ARMAKE) sign -f $(PRVKEYFILE) .build/@LiveInLifeClient/addons/dbo_old_bike.pbo
 
 lilc_actions: build_armake createKey
 	$(ARMAKE) build -p --force -k $(PRVKEYFILE) -e prefix=x\\lilc\\addons\\actions @LiveInLifeClient/addons/actions .build/@LiveInLifeClient/addons/$@.pbo
@@ -346,6 +346,11 @@ server: lils_animals \
 	lils_shops \
 	lils_vehicles \
 	lils_virtualInventory
+	cp -f @LiveInLifeServer/mod.cpp .build/@LiveInLifeServer/
+	cp -f @LiveInLifeServer/extDB3.dll .build/@LiveInLifeServer/
+	cp -f @LiveInLifeServer/extDB3.so .build/@LiveInLifeServer/
+	cp -f @LiveInLifeServer/extDB3_x64.dll .build/@LiveInLifeServer/
+	cp -f @LiveInLifeServer/extdb3-conf.ini .build/@LiveInLifeServer/
 
 lils_animals: build_armake
 	$(ARMAKE) build -p --force -e prefix=x\\lils\\addons\\animals @LiveInLifeServer/addons/animals .build/@LiveInLifeServer/addons/$@.pbo
