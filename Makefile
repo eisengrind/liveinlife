@@ -151,7 +151,7 @@ client:	lilc_actions \
 	lilc_vehicles \
 	lilc_viewDistance \
 	lilc_virtualInventory \
-	dbo_old_bike \
+#	dbo_old_bike \
 	cpClientKey
 	cp -f @LiveInLifeClient/mod.cpp .build/@LiveInLifeClient/
 
@@ -381,7 +381,7 @@ server: lils_animals \
 	cp -f @LiveInLifeServer/extDB3.dll .build/@LiveInLifeServer/
 	cp -f @LiveInLifeServer/extDB3.so .build/@LiveInLifeServer/
 	cp -f @LiveInLifeServer/extDB3_x64.dll .build/@LiveInLifeServer/
-	cp -f @LiveInLifeServer/extdb3-conf.ini .build/@LiveInLifeServer/
+	cp -f @LiveInLifeServer/extdb3-conf.example.ini .build/@LiveInLifeServer/
 
 lils_animals: build_armake
 	$(ARMAKE) build -p --force -e prefix=x\\lils\\addons\\animals @LiveInLifeServer/addons/animals .build/@LiveInLifeServer/addons/$@.pbo
