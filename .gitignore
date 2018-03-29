@@ -1,5 +1,4 @@
 
-*.pbo
 *.log
 .vscode/*
 .build/
