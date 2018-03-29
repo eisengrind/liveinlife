@@ -32,8 +32,8 @@ publish_client_test: deploy prepare_publish
 		--contentFolder .builds/$(TAG)/@LiveInLifeClient/ \
 		--descriptionBBCodeFile .steam/LiveInLife\ Test\ \(Client\)/description.bbcode \
 		--previewFile .steam/LiveInLife\ Test\ \(Client\)/preview.jpg \
-		--publishedFileID 1346078494
-		--title "LiveInLife Test (Client)"
+		--publishedFileID 1346078494 \
+		--title "LiveInLife Test (Client)" \
 		--visibility 1
 
 publish_server_test: deploy prepare_publish
@@ -44,8 +44,8 @@ publish_server_test: deploy prepare_publish
 		--contentFolder .builds/$(TAG)/@LiveInLifeServer/ \
 		--descriptionBBCodeFile .steam/LiveInLife\ Test\ \(Server\)/description.bbcode \
 		--previewFile .steam/LiveInLife\ Test\ \(Server\)/preview.jpg \
-		--publishedFileID 1346079654
-		--title "LiveInLife Test (Server)"
+		--publishedFileID 1346079654 \
+		--title "LiveInLife Test (Server)" \
 		--visibility 1
 
 
@@ -59,8 +59,8 @@ publish_client: deploy prepare_publish
 		--contentFolder .builds/$(TAG)/@LiveInLifeClient/ \
 		--descriptionBBCodeFile .steam/LiveInLife\ \(Client\)/description.bbcode \
 		--previewFile .steam/LiveInLife\ \(Client\)/preview.jpg \
-		--publishedFileID 788872094
-		--title "LiveInLife (Client)"
+		--publishedFileID 788872094 \
+		--title "LiveInLife (Client)" \
 		--visibility 0
 
 publish_server: deploy prepare_publish
@@ -71,8 +71,8 @@ publish_server: deploy prepare_publish
 		--contentFolder .builds/$(TAG)/@LiveInLifeServer/ \
 		--descriptionBBCodeFile .steam/LiveInLife\ \(Server\)/description.bbcode \
 		--previewFile .steam/LiveInLife\ \(Server\)/preview.jpg \
-		--publishedFileID 788872454
-		--title "LiveInLife (Server)"
+		--publishedFileID 788872454 \
+		--title "LiveInLife (Server)" \
 		--visibility 0
 
 deps:
