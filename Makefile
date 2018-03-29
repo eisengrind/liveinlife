@@ -1,6 +1,7 @@
 
 ARMAKE=$(abspath .build/bin/armake)
 TAG=$(shell git describe --tag | sed "s/-.*-/-/")
+PUBLISHER=$(abspath .build/bin/go-swp)
 
 deploy: all
 	rm -Rf .builds/$(TAG)/
@@ -12,10 +13,40 @@ deploy: all
 all: removeAll \
 	build_armake \
 	client \
-	server
+	server \
+	removeAll
 
-publish:
-	echo "No function at all currently"
+prepare_publish:
+	mkdir -p .build/swp/
+	wget -P .build/ https://github.com/playnet-public/go-swp/releases/download/v1.0/go-swp-linux-amd64.tar.gz
+	tar -xzf .build/go-swp-linux-amd64.tar.gz -C .build/bin/
+	rm -f .build/go-swp-linux-amd64.tar.gz
+
+publish: publish_client publish_server
+
+publish_client: deploy prepare_publish
+	$(PUBLISHER) --steamuser $(STEAM_USER) \
+		--steampass $(STEAM_PASS) \
+		--appID 107410 \
+		--changenote "" \
+		--contentFolder ../../.builds/$(TAG)/@LiveInLifeClient/ \
+		--descriptionBBCodeFile ../../.steam/LiveInLife\ (Client)/description.bbcode \
+		--previewFile ../../.steam/LiveInLife\ (Client)/preview.jpg \
+		--publishedFileID 788872094
+		--title "LiveInLife (Client)"
+		--visibility 0
+
+publish_server: deploy prepare_publish
+	$(PUBLISHER) --steamuser $(STEAM_USER) \
+		--steampass $(STEAM_PASS) \
+		--appID 107410 \
+		--changenote "" \
+		--contentFolder ../../.builds/$(TAG)/@LiveInLifeServer/ \
+		--descriptionBBCodeFile ../../.steam/LiveInLife\ (Server)/description.bbcode \
+		--previewFile ../../.steam/LiveInLife\ (Server)/preview.jpg \
+		--publishedFileID 788872454
+		--title "LiveInLife (Server)"
+		--visibility 0
 
 deps:
 	sudo apt-get install -y git bison flex libssl-dev python3
