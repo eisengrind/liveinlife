@@ -22,31 +22,31 @@ prepare_publish:
 	tar -xzf .build/go-swp-linux-amd64.tar.gz -C .build/bin/
 	rm -f .build/go-swp-linux-amd64.tar.gz
 
-publish: publish_client publish_server
-
-publish_client: deploy prepare_publish
-	$(PUBLISHER) --steamuser $(STEAM_USER) \
-		--steampass $(STEAM_PASS) \
-		--appID 107410 \
-		--changenote "" \
-		--contentFolder ../../.builds/$(TAG)/@LiveInLifeClient/ \
-		--descriptionBBCodeFile ../../.steam/LiveInLife\ (Client)/description.bbcode \
-		--previewFile ../../.steam/LiveInLife\ (Client)/preview.jpg \
-		--publishedFileID 788872094
-		--title "LiveInLife (Client)"
-		--visibility 0
-
-publish_server: deploy prepare_publish
-	$(PUBLISHER) --steamuser $(STEAM_USER) \
-		--steampass $(STEAM_PASS) \
-		--appID 107410 \
-		--changenote "" \
-		--contentFolder ../../.builds/$(TAG)/@LiveInLifeServer/ \
-		--descriptionBBCodeFile ../../.steam/LiveInLife\ (Server)/description.bbcode \
-		--previewFile ../../.steam/LiveInLife\ (Server)/preview.jpg \
-		--publishedFileID 788872454
-		--title "LiveInLife (Server)"
-		--visibility 0
+#publish: publish_client publish_server
+#
+#publish_client: deploy prepare_publish
+#	$(PUBLISHER) --steamuser $(STEAM_USER) \
+#		--steampass $(STEAM_PASS) \
+#		--appID 107410 \
+#		--changenote "" \
+#		--contentFolder ../../.builds/$(TAG)/@LiveInLifeClient/ \
+#		--descriptionBBCodeFile ../../.steam/LiveInLife\ (Client)/description.bbcode \
+#		--previewFile ../../.steam/LiveInLife\ (Client)/preview.jpg \
+#		--publishedFileID 788872094
+#		--title "LiveInLife (Client)"
+#		--visibility 0
+#
+#publish_server: deploy prepare_publish
+#	$(PUBLISHER) --steamuser $(STEAM_USER) \
+#		--steampass $(STEAM_PASS) \
+#		--appID 107410 \
+#		--changenote "" \
+#		--contentFolder ../../.builds/$(TAG)/@LiveInLifeServer/ \
+#		--descriptionBBCodeFile ../../.steam/LiveInLife\ (Server)/description.bbcode \
+#		--previewFile ../../.steam/LiveInLife\ (Server)/preview.jpg \
+#		--publishedFileID 788872454
+#		--title "LiveInLife (Server)"
+#		--visibility 0
 
 deps:
 	sudo apt-get install -y git bison flex libssl-dev python3
