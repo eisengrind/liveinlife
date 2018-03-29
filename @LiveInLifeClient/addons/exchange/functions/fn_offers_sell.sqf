@@ -15,7 +15,7 @@ if (_buyAmount > _amount) exitWith
 };
 
 private _classname = (lbData [2100, (lbCurSel 2100)]);
-if (([player, _classname] call lilc_inventory_fnc_itemCountContainers) < _amount) exitWith
+if (([player, _classname] call lilc_inventory_fnc_itemCountContainers) < _buyAmount) exitWith
 {
     ["Du besitzt nicht genügend Gegenstände.", "ERROR"] call lilc_ui_fnc_hint;
 };
