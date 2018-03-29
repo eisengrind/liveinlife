@@ -184,7 +184,7 @@ client:	lilc_actions \
 
 dbo_old_bike: createKey
 	cp -f deps/dbo_old_bike.pbo .build/@LiveInLifeClient/addons/
-	$(ARMAKE) sign -f -k $(PRVKEYFILE) .build/@LiveInLifeClient/addons/dbo_old_bike.pbo
+	$(ARMAKE) sign -f $(PRVKEYFILE) .build/@LiveInLifeClient/addons/dbo_old_bike.pbo
 
 lilc_actions: build_armake createKey
 	$(ARMAKE) build -p --force -k $(PRVKEYFILE) -e prefix=x\\lilc\\addons\\actions @LiveInLifeClient/addons/actions .build/@LiveInLifeClient/addons/$@.pbo
