@@ -22,31 +22,58 @@ prepare_publish:
 	tar -xzf .build/go-swp-linux-amd64.tar.gz -C .build/bin/
 	rm -f .build/go-swp-linux-amd64.tar.gz
 
-#publish: publish_client publish_server
-#
-#publish_client: deploy prepare_publish
-#	$(PUBLISHER) --steamuser $(STEAM_USER) \
-#		--steampass $(STEAM_PASS) \
-#		--appID 107410 \
-#		--changenote "" \
-#		--contentFolder ../../.builds/$(TAG)/@LiveInLifeClient/ \
-#		--descriptionBBCodeFile ../../.steam/LiveInLife\ (Client)/description.bbcode \
-#		--previewFile ../../.steam/LiveInLife\ (Client)/preview.jpg \
-#		--publishedFileID 788872094
-#		--title "LiveInLife (Client)"
-#		--visibility 0
-#
-#publish_server: deploy prepare_publish
-#	$(PUBLISHER) --steamuser $(STEAM_USER) \
-#		--steampass $(STEAM_PASS) \
-#		--appID 107410 \
-#		--changenote "" \
-#		--contentFolder ../../.builds/$(TAG)/@LiveInLifeServer/ \
-#		--descriptionBBCodeFile ../../.steam/LiveInLife\ (Server)/description.bbcode \
-#		--previewFile ../../.steam/LiveInLife\ (Server)/preview.jpg \
-#		--publishedFileID 788872454
-#		--title "LiveInLife (Server)"
-#		--visibility 0
+publish_test: publish_client_test publish_server_test
+
+publish_client_test: deploy prepare_publish
+	$(PUBLISHER) --steamuser $(STEAM_USER) \
+		--steampass $(STEAM_PASS) \
+		--appID 107410 \
+		--changenote "" \
+		--contentFolder .builds/$(TAG)/@LiveInLifeClient/ \
+		--descriptionBBCodeFile .steam/LiveInLife\ Test\ \(Client\)/description.bbcode \
+		--previewFile .steam/LiveInLife\ Test\ \(Client\)/preview.jpg \
+		--publishedFileID 1346078494
+		--title "LiveInLife Test (Client)"
+		--visibility 1
+
+publish_server_test: deploy prepare_publish
+	$(PUBLISHER) --steamuser $(STEAM_USER) \
+		--steampass $(STEAM_PASS) \
+		--appID 107410 \
+		--changenote "" \
+		--contentFolder .builds/$(TAG)/@LiveInLifeServer/ \
+		--descriptionBBCodeFile .steam/LiveInLife\ Test\ \(Server\)/description.bbcode \
+		--previewFile .steam/LiveInLife\ Test\ \(Server\)/preview.jpg \
+		--publishedFileID 1346079654
+		--title "LiveInLife Test (Server)"
+		--visibility 1
+
+
+publish: publish_client publish_server
+
+publish_client: deploy prepare_publish
+	$(PUBLISHER) --steamuser $(STEAM_USER) \
+		--steampass $(STEAM_PASS) \
+		--appID 107410 \
+		--changenote "" \
+		--contentFolder .builds/$(TAG)/@LiveInLifeClient/ \
+		--descriptionBBCodeFile .steam/LiveInLife\ \(Client\)/description.bbcode \
+		--previewFile .steam/LiveInLife\ \(Client\)/preview.jpg \
+		--publishedFileID 788872094
+		--title "LiveInLife (Client)"
+		--visibility 0
+
+publish_server: deploy prepare_publish
+	$(PUBLISHER) --steamuser $(STEAM_USER) \
+		--steampass $(STEAM_PASS) \
+		--appID 107410 \
+		--changenote "" \
+		--contentFolder .builds/$(TAG)/@LiveInLifeServer/ \
+		--descriptionBBCodeFile .steam/LiveInLife\ \(Server\)/description.bbcode \
+		--previewFile .steam/LiveInLife\ \(Server\)/preview.jpg \
+		--publishedFileID 788872454
+		--title "LiveInLife (Server)"
+		--visibility 0
 
 deps:
 	sudo apt-get install -y git bison flex libssl-dev python3
@@ -151,7 +178,7 @@ client:	lilc_actions \
 	lilc_vehicles \
 	lilc_viewDistance \
 	lilc_virtualInventory \
-#	dbo_old_bike \
+	dbo_old_bike \
 	cpClientKey
 	cp -f @LiveInLifeClient/mod.cpp .build/@LiveInLifeClient/
 
