@@ -1,6 +1,6 @@
 
 *.log
-.vscode/*
+.vscode/
 .build/
 .builds/
 tools/tmp
