@@ -30,8 +30,8 @@ publish_client_test: deploy prepare_publish
 		--appID 107410 \
 		--changenote "" \
 		--contentFolder .builds/$(TAG)/@LiveInLifeClient/ \
-		--descriptionBBCodeFile ".steam/LiveInLife\\ Test\\ \\(Client\\)/description.bbcode" \
-		--previewFile ".steam/LiveInLife\\ Test\\ \\(Client\\)/preview.jpg" \
+		--descriptionBBCodeFile ".steam/LiveInLifeTestClient/description.bbcode" \
+		--previewFile ".steam/LiveInLifeTestClient/preview.jpg" \
 		--publishedFileID 1346078494 \
 		--title "LiveInLife Test (Client)" \
 		--visibility 1
@@ -42,8 +42,8 @@ publish_server_test: deploy prepare_publish
 		--appID 107410 \
 		--changenote "" \
 		--contentFolder .builds/$(TAG)/@LiveInLifeServer/ \
-		--descriptionBBCodeFile ".steam/LiveInLife\\ Test\\ \\(Server\\)/description.bbcode" \
-		--previewFile ".steam/LiveInLife\\ Test\\ \\(Server\\)/preview.jpg" \
+		--descriptionBBCodeFile ".steam/LiveInLifeTestServer/description.bbcode" \
+		--previewFile ".steam/LiveInLifeTestServer/preview.jpg" \
 		--publishedFileID 1346079654 \
 		--title "LiveInLife Test (Server)" \
 		--visibility 1
@@ -57,8 +57,8 @@ publish_client: deploy prepare_publish
 		--appID 107410 \
 		--changenote "" \
 		--contentFolder .builds/$(TAG)/@LiveInLifeClient/ \
-		--descriptionBBCodeFile ".steam/LiveInLife\\ \\(Client\\)/description.bbcode" \
-		--previewFile ".steam/LiveInLife\\ \\(Client\\)/preview.jpg" \
+		--descriptionBBCodeFile ".steam/LiveInLifeClient/description.bbcode" \
+		--previewFile ".steam/LiveInLifeClient/preview.jpg" \
 		--publishedFileID 788872094 \
 		--title "LiveInLife (Client)" \
 		--visibility 0
@@ -69,8 +69,8 @@ publish_server: deploy prepare_publish
 		--appID 107410 \
 		--changenote "" \
 		--contentFolder .builds/$(TAG)/@LiveInLifeServer/ \
-		--descriptionBBCodeFile ".steam/LiveInLife\\ \\(Server\\)/description.bbcode" \
-		--previewFile ".steam/LiveInLife\\ \\(Server\\)/preview.jpg" \
+		--descriptionBBCodeFile ".steam/LiveInLifeServer/description.bbcode" \
+		--previewFile ".steam/LiveInLifeServer/preview.jpg" \
 		--publishedFileID 788872454 \
 		--title "LiveInLife (Server)" \
 		--visibility 0
