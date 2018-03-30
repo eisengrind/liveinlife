@@ -11,13 +11,15 @@ before_script:
 - make deps
 script:
 - make test
-- make all
+- make deploy
 notification:
   email:
     on_success: never
     on_failure: change
 deploy:
   provider: releases
+  script:
+  - make pack
   api_key:
     secure: QdpXjkNwc7Ur92HHOdlfpjsAWOnYudCqgi+u9NuC18/qfkFwAkGAhW4qDpDRY1GtJISr6wM5EAVu5Hy5W36sVNhg4J1oN/D4qM5dy2dVl78iPoq0RkbHgaKjzE6OQtPuEyxyOvZlNLVFs28WyYdlOeVMPkEqiOjMYVZyasPuAZk8IHlw8lsvkdFtz+MLlfUreDi9Y9uikH4/1ZxHyQoPoyyS4+S4Q8/r6xFVxgRlgRyKDK8m9l5uKzajH7+LghUZPOBmobJy1UoOefpgPB2qByMMPqZmM64/bnB/G1nWiH/j6II4KpgaB1zQA9DRWH0WgpiEnB2/G5rQW3CpFNeZcxHGSGZp7MYiQKu/dWSohdo3B6I/XtxjGiSASWY3RyM72HPx1mCSFl8h/e/OXh6BlhmREYdtadxZiPc4j8u5LCtB7RSehJH+ATc8u1LjtWRITYy8dKk2HV18/YxIZI37IlAQSvkZEs8tZaTRy9bPgQhSpQ6ukZ2Z3fl5V2tLVRKQtMKM9nw/1r+8UXOBsKNJKUYIIgi4EfptKWtKt3FD8i4mflewhs8ZJi1Dy3mDNzP6dkDtFcyT6bnr763xEbFiqOWZxRrdnBtGftmq2Flx2yNLprp8cE+HpG/UhwoSOwBpEw5bDQlIpBQ/5I/quAZBe6xwbSfrngUpBmMYn5VT3iY=
   file:
