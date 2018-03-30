@@ -27,8 +27,6 @@ class lilc_RscButtonMenu_darkBlueBackground;
 #include "dialogs\buyItems.cpp"
 #include "dialogs\sell.cpp"
 #include "dialogs\shop_vehicles.cpp"
-//#include "dialogs\sell.cpp"
-//#include "dialogs\vehicle.cpp"
 
 class Extended_PreInit_EventHandlers
 {
