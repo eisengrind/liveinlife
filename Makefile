@@ -16,6 +16,16 @@ all: removeAll \
 	server \
 	removeAll
 
+pack: pack_client pack_server
+
+pack_client:
+	tar -czf lil-client.tar.gz .builds/$(TAG)/@LiveInLifeClient
+	zip -r lil-client.zip .builds/$(TAG)/@LiveInLifeClient
+
+pack_server:
+	tar -czf lil-server.tar.gz .builds/$(TAG)/@LiveInLifeServer
+	zip -r lil-server.zip .builds/$(TAG)/@LiveInLifeServer
+
 prepare_publish:
 	mkdir -p .build/swp/
 	wget -P .build/ https://github.com/playnet-public/go-swp/releases/download/v1.0/go-swp-linux-amd64.tar.gz
