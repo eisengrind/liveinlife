@@ -8,6 +8,7 @@ if (_shopName == "") exitWith {};
 private _config = (missionConfigFile >> "CfgVehicleShops" >> _shopName);
 if (isNull _config) exitWith {};
 
+private _garages = getArray(_config >> "returnGarages") + [configName _config];
 private _positions = ((getArray (_config >> "positions")) apply { ([_x] call lilc_common_fnc_getDynamicPosition); });
 
 private _aID = (player getVariable ["lilc_accountID", 0]);
@@ -20,8 +21,7 @@ private _veh = objNull;
     private _nearestObjects = nearestObjects [(ASLToAGL (_x select 0)), ["Car", "Ship", "Boat", "Tank", "Truck", "Plane", "Air", "Helicopter", "Bicycle"], 10, true];
 
     {
-        if ((_x getVariable ["lilc_isRented", false]) && ((_x getVariable ["lilc_accountID", 0]) == _aID) && ((_x getVariable ["lilc_factionID", -1]) == _fID)) exitWith
-        {
+        if ((_x getVariable ["lilc_rentShop", ""]) in _garages && (_x getVariable ["lilc_isRented", false]) && ((_x getVariable ["lilc_accountID", 0]) == _aID) && ((_x getVariable ["lilc_factionID", -1]) == _fID)) exitWith {
             _veh = _x;
         };
     } forEach _nearestObjects;

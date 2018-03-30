@@ -17,8 +17,7 @@ if (isNull _config) exitWith {};
 
 private _rentPrice = getNumber(_config >> "rentBuyPrice");
 
-if !([_rentPrice] call lilc_cash_fnc_have) exitWith
-{
+if !([_rentPrice] call lilc_cash_fnc_have) exitWith {
     [
         "Du hast nicht genügend Geld.",
         "ERROR"

@@ -34,6 +34,7 @@ try
     private _vehicle = (_classname createVehicle [0, 0, 0]);
     _vehicle allowDamage false;
     _vehicle setVariable ["lilc_isRented", true, true];
+    _vehicle setVariable ["lilc_rentShop", _shopName, true];
     _vehicle setVariable ["lilc_accountID", (_unit getVariable ["lilc_accountID", 0]), true];
     _vehicle setVariable ["lilc_factionID", (_unit getVariable ["lilc_factionID", -1]), true];
     _vehicle setVariable ["lilc_uniqueObjectID", (parseNumber (((_vehicle call BIS_fnc_netId) splitString ":") select 1)), true];
