@@ -39,7 +39,7 @@ publish_client_test: deploy prepare_publish
 		--steampass $(STEAM_PASS) \
 		--appID 107410 \
 		--changenote "" \
-		--contentFolder .builds/$(TAG)/@LiveInLifeClient/ \
+		--contentFolder ".builds/$(TAG)/@LiveInLifeClient/" \
 		--descriptionBBCodeFile ".steam/LiveInLifeTestClient/description.bbcode" \
 		--previewFile ".steam/LiveInLifeTestClient/preview.jpg" \
 		--publishedFileID 1346078494 \
@@ -51,7 +51,7 @@ publish_server_test: deploy prepare_publish
 		--steampass $(STEAM_PASS) \
 		--appID 107410 \
 		--changenote "" \
-		--contentFolder .builds/$(TAG)/@LiveInLifeServer/ \
+		--contentFolder ".builds/$(TAG)/@LiveInLifeServer/" \
 		--descriptionBBCodeFile ".steam/LiveInLifeTestServer/description.bbcode" \
 		--previewFile ".steam/LiveInLifeTestServer/preview.jpg" \
 		--publishedFileID 1346079654 \
@@ -66,7 +66,7 @@ publish_client: deploy prepare_publish
 		--steampass $(STEAM_PASS) \
 		--appID 107410 \
 		--changenote "" \
-		--contentFolder .builds/$(TAG)/@LiveInLifeClient/ \
+		--contentFolder ".builds/$(TAG)/@LiveInLifeClient/" \
 		--descriptionBBCodeFile ".steam/LiveInLifeClient/description.bbcode" \
 		--previewFile ".steam/LiveInLifeClient/preview.jpg" \
 		--publishedFileID 788872094 \
@@ -78,7 +78,7 @@ publish_server: deploy prepare_publish
 		--steampass $(STEAM_PASS) \
 		--appID 107410 \
 		--changenote "" \
-		--contentFolder .builds/$(TAG)/@LiveInLifeServer/ \
+		--contentFolder ".builds/$(TAG)/@LiveInLifeServer/" \
 		--descriptionBBCodeFile ".steam/LiveInLifeServer/description.bbcode" \
 		--previewFile ".steam/LiveInLifeServer/preview.jpg" \
 		--publishedFileID 788872454 \
