@@ -41,6 +41,7 @@ CREATE TABLE `ACCOUNT_DATA` (
   `health` text NOT NULL,
   `paycheck_active` int(1) NOT NULL DEFAULT '0',
   `paycheck_bankID` int(11) NOT NULL,
+  `butt_inventory` text NOT NULL DEFAULT '""[]""',
   `job_agent_activeTasks` text NOT NULL,
   `job_agent_stage` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`ID`),

@@ -58,7 +58,6 @@ publish_server_test: deploy prepare_publish
 		--title "LiveInLife Test (Server)" \
 		--visibility 1
 
-
 publish: publish_client publish_server
 
 publish_client: deploy prepare_publish
