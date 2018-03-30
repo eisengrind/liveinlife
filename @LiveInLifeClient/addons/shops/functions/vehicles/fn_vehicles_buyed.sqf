@@ -9,6 +9,7 @@ if (_status) then
     if ([_price] call lilc_cash_fnc_remove) then
     {
         ["Das Fahrzeug wurde gekauft."] call lilc_ui_fnc_hint;
+        closeDialog 0;
     }
     else
     {
