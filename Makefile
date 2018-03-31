@@ -190,17 +190,6 @@ client:	lilc_actions \
 	dbo_old_bike \
 	cpClientKey
 	cp -f @LiveInLifeClient/mod.cpp .build/@LiveInLifeClient/
-	# currently unused
-	#cp -f @LiveInLifeClient/A3Log.ini .build/@LiveInLifeClient/
-	#cp -f @LiveInLifeClient/A3Log_x64.dll .build/@LiveInLifeClient/
-	#cp -f @LiveInLifeClient/A3Log_x64.so .build/@LiveInLifeClient/
-	#cp -f @LiveInLifeClient/A3Log.dll .build/@LiveInLifeClient/
-	#cp -f @LiveInLifeClient/A3Log.so .build/@LiveInLifeClient/
-
-# currently unused
-a3log: createKey
-	cp -f deps/$@.pbo .build/@LiveInLifeClient/addons/
-	$(ARMAKE) sign -f $(PRVKEYFILE) .build/@LiveInLifeClient/adddons/$@.pbo
 
 dbo_old_bike: createKey
 	cp -f deps/$@.pbo .build/@LiveInLifeClient/addons/
