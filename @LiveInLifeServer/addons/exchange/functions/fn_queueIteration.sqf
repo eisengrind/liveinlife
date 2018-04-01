@@ -221,7 +221,7 @@ do
 
                     [(format["INSERT INTO exchange_accounts (ID, accountID, balance, timestampedited, exchangeName) SELECT * FROM (SELECT NULL, '%1', '0', UNIX_TIMESTAMP(NOW()), '%2') AS tmp WHERE NOT EXISTS (SELECT ID FROM exchange_accounts WHERE accountID = '%1' AND exchangeName = '%2')", _unitAccountID, (str _exchangeName)])] call lils_database_fnc_query;
                     sleep 0.005;
-                    [(format["UPDATE exchange_accounts SET balance = balance + %2 WHERE accountID = '%1' AND exchangeName = '%3'", _unitAccountID, (_price * _amount), (str _exchangeName)])] call lils_database_fnc_query;
+                    [(format["UPDATE exchange_accounts SET balance = balance + %2 WHERE accountID = '%1' AND exchangeName = '%3'", _unitAccountID, (_price * _amountToBuy), (str _exchangeName)])] call lils_database_fnc_query;
 
                     [(format[
                         "INSERT INTO exchange_logs (classname, exchangeName, `type`, timestampadded, active, accountID) VALUES ('%1', '%2', '1', UNIX_TIMESTAMP(NOW()), 1, '%3')",
