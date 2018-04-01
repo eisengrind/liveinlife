@@ -26,7 +26,15 @@ while {
 
     private _t = ((time - _time) / _timeout);
     _uiProgressBar progressSetPosition _t;
-    _uiProgressBarText ctrlSetStructuredText parseText format["Fahrzeug wird durchsucht (%1%2)", (round (_t * 100)), "%"];
+    _uiProgressBarText ctrlSetStructuredText parseText format[
+        (if (_object isKindOf "Man") then {
+            "STR_lilc_proofs_Config_manSearching" call BIS_fnc_localize;
+        } else {
+            "STR_lilc_proofs_Config_vehicleSearching" call BIS_fnc_localize;
+        }),
+        (round (_t * 100)),
+        "%"
+    ];
 };
 
 if ((_object distance player) > 10) exitWith {

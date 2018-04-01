@@ -1,0 +1,25 @@
+
+<?xml version="1.0" encoding="utf-8">
+<Project name="LiveInLife">
+    <Package name="lilc_proofs">
+        <Container name="Config">
+            <Key ID="STR_lilc_proofs_Config_vehicleSearching">
+                <Original>Vehicle is being searched (%1%2)</Original>
+                <English>Vehicle is being searched (%1%2)</English>
+                <German>Fahrzeug wird durchsucht (%1%2)</German>
+            </Key>
+            <Key ID="STR_lilc_proofs_Config_manSearching">
+                <Original>Person is being searched (%1%2)</Original>
+                <English>Person is being searched (%1%2)</English>
+                <German>Person wird durchsucht (%1%2)</German>
+            </Key>
+        </Container>
+        <Container name="Script">
+            <Key ID="STR_lilc_proofs_Script_">
+                <Original></Original>
+                <English></English>
+                <German></German>
+            </Key>
+        </Container>
+    </Package>
+</Project>
