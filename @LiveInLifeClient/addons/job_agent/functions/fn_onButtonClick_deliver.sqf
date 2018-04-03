@@ -49,6 +49,7 @@ try {
             if (_exception) then {
                 closeDialog 0;
                 [getNumber(_cfg >> "price")] call lilc_cash_fnc_add;
+                lilc_job_agent_stage = lilc_job_agent_stage + 1;
                 lilc_job_agent_activeTasks deleteAt (lilc_job_agent_activeTasks find _job);
                 ["Du hast den Auftrag erledigt."] call lilc_ui_fnc_hint;
             } else {
