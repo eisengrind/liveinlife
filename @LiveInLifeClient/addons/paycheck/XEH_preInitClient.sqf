@@ -21,16 +21,18 @@ lilc_paycheck_active = 0;
     }
 ] call CBA_fnc_addEventHandler;
 
-[
-    "set_lil_paycheck",
-    {
-        lilc_paycheck_active = _this;
-    }
-] call lilc_login_fnc_addPackage;
+["set_lil_paycheck_bankID", {
+    lilc_paycheck_bankID = _this;
+}] call lilc_login_fnc_addPackage;
 
-[
-    "update_lil_paycheck_active",
-    {
-        lilc_paycheck_active;
-    }
-] call lilc_login_fnc_addPackage;
+["set_lil_paycheck", {
+    lilc_paycheck_active = _this;
+}] call lilc_login_fnc_addPackage;
+
+["update_lil_paycheck_active", {
+    lilc_paycheck_active;
+}] call lilc_login_fnc_addPackage;
+
+["update_lil_paycheck_active", {
+    lilc_paycheck_bankID;
+}] call lilc_login_fnc_addPackage;
