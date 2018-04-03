@@ -6,9 +6,6 @@ params [
     "_name"
 ];
 
-//if (_unit getVariable ["lilc_login_inMenu", false]) exitWith {};
-if !(_unit getVariable ["lilc_loggedIn", false]) exitWith {};
-
 private _aID = (_unit getVariable ["lilc_accountID", 0]);
 private _inv = ([_unit] call lilc_inventory_fnc_getInventory);
 private _pos = ([_unit] call lilc_common_fnc_getPosition);
@@ -25,6 +22,7 @@ private _prison_waitingTime = (_unit getVariable ["lilc_prison_waitingTime", 0])
 private _prison_punishment = (_unit getVariable ["lilc_prison_currentPunishment", ""]);
 private _cash = (_unit getVariable ["lilc_cash_balance", 0]);
 deleteVehicle _unit;
+if !(_unit getVariable ["lilc_loggedIn", false]) exitWith {};
 
 [([
     "ACCOUNT_DATA",
