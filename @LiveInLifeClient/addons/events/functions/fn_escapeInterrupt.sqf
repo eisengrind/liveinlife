@@ -12,15 +12,15 @@ if !(isMultiplayer) exitWith {};
 private _uiAbBut = (_ui displayCtrl 104);
 _uiAbBut ctrlShow false;
 
-private _uiAbButN = (_ui ctrlCreate ["RscButtonMenu", 5555]);
-_uiAbButN ctrlSetPosition ctrlPosition _uiAbBut;
-_uiAbButN ctrlCommit 0;
+//private _uiAbButN = (_ui ctrlCreate ["RscButtonMenu", 5555]);
+//_uiAbButN ctrlSetPosition ctrlPosition _uiAbBut;
+//_uiAbButN ctrlCommit 0;
 
 private _uiReBut = (_ui displayCtrl 1010);
 private _uiMaBut = (_ui displayCtrl 122);
 private _uiCoBut = (_ui displayCtrl 2);
 
-_uiAbButN ctrlEnable false;
+//_uiAbButN ctrlEnable false;
 _uiReBut ctrlEnable false;
 _uiMaBut ctrlEnable false;
 _uiCoBut ctrlEnable false;
@@ -41,8 +41,9 @@ lilc_events_interruptCounterHandler = ([_ui] spawn {
         ["_ui", displayNull, [displayNull]]
     ];
 
-    private _uiAbButN = (_ui displayCtrl 5555);
-    _uiAbButN ctrlEnable false;
+    private _uiAbBut = (_ui displayCtrl 104);
+    //private _uiAbButN = (_ui displayCtrl 5555);
+    //_uiAbButN ctrlEnable false;
 
     private _time = (time + 10);
     while
@@ -52,7 +53,11 @@ lilc_events_interruptCounterHandler = ([_ui] spawn {
     }
     do
     {
-        _uiAbButN ctrlSetText format[
+        /*_uiAbButN ctrlSetText format[
+            "Abbrechen in %1",
+            ([(round (_time - time))] call BIS_fnc_secondsToString)
+        ];*/
+        _uiAbBut ctrlSetText format[
             "Abbrechen in %1",
             ([(round (_time - time))] call BIS_fnc_secondsToString)
         ];
@@ -62,7 +67,7 @@ lilc_events_interruptCounterHandler = ([_ui] spawn {
     if (isNull _ui) exitWith {};
     [] call lilc_login_fnc_updatePlayerData;
 
-    _uiAbButN ctrlSetText "Abbrechen";
+    /*_uiAbButN ctrlSetText "Abbrechen";
     _uiAbButN ctrlEnable true;
     _uiAbButN ctrlRemoveAllEventHandlers "ButtonDown";
     _uiAbButN ctrlAddEventHandler [
@@ -71,5 +76,7 @@ lilc_events_interruptCounterHandler = ([_ui] spawn {
             [] spawn lilc_login_fnc_init;
             (findDisplay 49) closeDisplay 1;
         }
-    ];
+    ];*/
+    _uiAbBut ctrlSetText "Abbrechen";
+    _uiAbBut ctrlEnable true;
 });
