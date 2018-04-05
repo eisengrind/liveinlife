@@ -26,9 +26,3 @@ allowFunctionsRecompile = 1;
 #include "config\CfgTransponderCodes.cpp"
 #include "config\CfgVehicleShops.cpp"
 #include "config\CfgVirtualItems.cpp"
-
-class CfgRemoteExec {
-    class Functions {
-        mode = 0;
-    };
-};
