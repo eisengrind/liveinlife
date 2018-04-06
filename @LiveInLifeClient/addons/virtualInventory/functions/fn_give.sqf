@@ -6,7 +6,7 @@ params [
 ];
 
 if (isNull _unit) exitWith {};
-if !(_itemName isEqualTo "") exitWith {};
+if (isNull ([_itemName] call lilc_virtualInventory_fnc_getVirtualItemConfig)) exitWith {};
 
 private _item = ([player, _itemName, _data] call lilc_virtualInventory_fnc_getItem);
 if ((count _item) != 3) exitWith {};
