@@ -1,6 +1,5 @@
 
-if (!call lilc_paycheck_fnc_canEnable) exitWith
-{
+if (!call lilc_paycheck_fnc_canEnable) exitWith {
     ["Du besitzt bereits einen Paycheck", "ERROR"] call lilc_ui_fnc_hint;
 };
 

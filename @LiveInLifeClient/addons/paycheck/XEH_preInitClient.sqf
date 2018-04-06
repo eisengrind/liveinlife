@@ -9,13 +9,11 @@ lilc_paycheck_active = 0;
 [
     "lilce_common_postFinished",
     {
-        if (isNil "lilc_paycheck_active") then
-        {
+        if (isNil "lilc_paycheck_active") then {
             lilc_paycheck_active = 0;
         };
 
-        if (lilc_paycheck_active == 1) then
-        {
+        if (lilc_paycheck_active == 1) then {
             (call lilc_paycheck_fnc_enable);
         };
     }
