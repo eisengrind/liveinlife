@@ -28,21 +28,16 @@ private _mACS = [[], []];
     private _i = -1;
     {
         private _cMag = _x;
-        if (_cMag == (_mag select 0)) exitWith
-        {
-            _i = _forEachIndex;            
+        if (_cMag == (_mag select 0)) exitWith {
+            _i = _forEachIndex;
             {
-                if ((_forEachIndex % 2) == 0) then
-                {
+                if ((_forEachIndex % 2) == 0) then {
                     private _c = _x;
                     private _a = (((_mACS select 1) select _i) select (_forEachIndex + 1));
 
-                    if (_c == (_mag select 1)) then
-                    {
+                    if (_c == (_mag select 1)) then {
                         ((_mACS select 1) select _i) set [(_forEachIndex + 1), (_a + 1)];
-                    }
-                    else
-                    {
+                    } else {
                         ((_mACS select 1) select _i) pushBack (_mag select 1);
                         ((_mACS select 1) select _i) pushBack 1;
                     };
@@ -51,8 +46,7 @@ private _mACS = [[], []];
         };
     } forEach (_mACS select 0);
 
-    if (_i <= -1) then
-    {
+    if (_i <= -1) then {
         (_mACS select 0) pushBack (_mag select 0);
         (_mACS select 1) pushBack [(_mag select 1), 1];
     };

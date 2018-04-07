@@ -15,16 +15,18 @@ try
     ctrlSetText [1001, getText(_butcherConfig >> "displayName")];
 
     if (getText(_butcherConfig >> "position") == "") throw false;
-    private _position = ([getText(_butcherConfig >> "position")] call lilc_common_fnc_getDynamicPosition);
-    if (((_position select 0) distance player) > 50) throw false;
+    private _position = position player;
+    if ((_position distance player) > 50) throw false;
 
     _availableVehicles = ("true" configClasses (_butcherConfig >> "vehicles"));
-    private _nearbyVehicles = nearestObjects [(_position select 0), ["LandVehicle", "Air", "Boat", "Ship"], 50];
+    private _nearbyVehicles = nearestObjects [_position, ["LandVehicle", "Air", "Boat", "Ship"], 50];
 
     lbClear 1501;
     {
         private _vehicle = _x;
-        private _classname = (typeOf _x);
+        private _classname = (typeOf _vehicle);
+        diag_log str _classname;
+        diag_log str (_availableVehicles apply { configName _x; });
         if (({ (_classname == (configName _x)) } count _availableVehicles) == 1) then {
             private _vehicleConfig = ([_classname] call lilc_common_fnc_getClassnameConfig);
             private _index = (lbAdd [1501, getText(_vehicleConfig >> "displayName")]);
