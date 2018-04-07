@@ -3,12 +3,9 @@ params [
     ["_butcherName", "", [""]]
 ];
 
-try
-{
+try {
     private _config = (missionConfigFile >> "CfgButcher" >> _butcherName);
     throw _config;
-}
-catch
-{
+} catch {
     _exception;
 };

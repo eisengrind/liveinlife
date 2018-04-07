@@ -5,8 +5,7 @@ params [
     ["_index", -1, [0]]
 ];
 
-try
-{
+try {
     private _ui = (ctrlParent _control);
     private _uiListItems = (_ui displayCtrl 1500);
 
@@ -19,8 +18,7 @@ try
     _data = (_data call BIS_fnc_objectFromNetId);
 
     if (isNull _data) throw false;
-    if !(alive _data) then
-    {
+    if !(alive _data) then {
         ["Das Fahrzeug ist nicht mehr vorhanden.", "ERROR"] call lilc_ui_fnc_hint;
         throw false;
     };
@@ -41,8 +39,6 @@ try
     } forEach getArray(_butcherConfig >> "vehicles" >> _classname >> "results");
 
     throw true;
-}
-catch
-{
+} catch {
     _exception;
 };

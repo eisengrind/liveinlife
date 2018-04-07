@@ -3,8 +3,7 @@ params [
     ["_butcherName", "", [""]]
 ];
 
-try
-{
+try {
     if !([player] call lilc_common_fnc_isAlive) throw false;
 
     private _butcherConfig = ([_butcherName] call lilc_butcher_fnc_getButcherConfig);
@@ -35,14 +34,11 @@ try
         };
     } forEach _nearbyVehicles;
 
-    if ((lbSize 1501) <= 0) then
-    {
+    if ((lbSize 1501) <= 0) then {
         lbAdd [1501, "Keine Fahrzeuge in der Nähe."];
     };
 
     throw true;
-}
-catch
-{
+} catch {
     _exception;
 };

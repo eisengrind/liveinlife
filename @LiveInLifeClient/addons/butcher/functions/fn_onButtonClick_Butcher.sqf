@@ -1,8 +1,7 @@
 
 disableSerialization;
 
-try
-{
+try {
     private _ui = (findDisplay 1300);
     if (isNull _ui) throw false;
 
@@ -12,8 +11,7 @@ try
 
     _vehicle = (_vehicle call BIS_fnc_objectFromNetId);
     if (isNull _vehicle) throw false;
-    if !(alive _vehicle) then
-    {
+    if !(alive _vehicle) then {
         ["Das Fahrzeug ist nicht mehr vorhanden.", "ERROR"] call lilc_ui_fnc_hint;
         throw false;
     };
@@ -23,8 +21,7 @@ try
 
     private _classname = (typeOf _vehicle);
     private _butcherVehicleConfig = (_butcherConfig >> "vehicles" >> _classname);
-    if (isNull _butcherVehicleConfig) then
-    {
+    if (isNull _butcherVehicleConfig) then {
         ["Dieses Fahrzeug kann hier nicht auseinander genommen werden.", "ERROR"] call lilc_ui_fnc_hint;
         throw false;
     };
@@ -35,27 +32,19 @@ try
     closeDialog 1300;
     lilc_action_interrupted = false;
     if !(createDialog "lilc_progressBar") throw false;
-    
+
     private _ui = (findDisplay 1320);
     private _uiProgressBar = (_ui displayCtrl 1321);
     private _uiProgressBarText = (_ui displayCtrl 1322);
     private _soundTimeout = (time + 5);
     player say3D "lilc_crafting";
 
-    while
-    {
-        
-        (_time + _actionTimeout) >= time
-    }
-    do
-    {
-        if ((animationState player) != "Acts_carFixingWheel" && (vehicle player) == player) then
-        {
+    while { (_time + _actionTimeout) >= time } do {
+        if ((animationState player) != "Acts_carFixingWheel" && (vehicle player) == player) then {
             player playMoveNow "Acts_carFixingWheel";
         };
-        if (_soundTimeout < time) then
-        {
-            _soundTimeout = (time + _recipeTime);
+        if (_soundTimeout < time) then {
+            _soundTimeout = (time + 5);
             player say3D "lilc_crafting";
         };
         if !([player] call lilc_common_fnc_isAlive) throw false;
@@ -66,14 +55,12 @@ try
         sleep 0.1;
     };
 
-    if (lilc_action_interrupted) then
-    {
+    if (lilc_action_interrupted) then {
         ["Die Aktion wurde abgebrochen.", "ERROR"] call lilc_ui_fnc_hint;
         throw false;
     };
 
-    if (isNull _vehicle || !alive _vehicle) then
-    {
+    if (isNull _vehicle || !alive _vehicle) then {
         ["Das Fahrzeug existiert nicht mehr", "ERROR"] call lilc_ui_fnc_hint;
         throw false;
     };
@@ -83,10 +70,8 @@ try
         private _amount = (_x select 1);
         private _chance = (_x select 2);
 
-        for "_i" from 1 to _amount do
-        {
-            if ((random 1) <= _chance) then
-            {
+        for "_i" from 1 to _amount do {
+            if ((random 1) <= _chance) then {
                 [player, _classname, 0, false, true] call lilc_inventory_fnc_add;
             };
         };
@@ -98,9 +83,7 @@ try
     [[player, _vehicle], "lils_vehicles_fnc_delete"] call lilc_common_fnc_sendToServer;
 
     throw true;
-}
-catch
-{
+} catch {
     player say3D "";
     player playMoveNow "AmovPercMstpSnonWnonDnon";
     lilc_action_interrupted = false;
