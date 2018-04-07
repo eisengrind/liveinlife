@@ -24,8 +24,6 @@ try {
     {
         private _vehicle = _x;
         private _classname = (typeOf _vehicle);
-        diag_log str _classname;
-        diag_log str (_availableVehicles apply { configName _x; });
         if (({ (_classname == (configName _x)) } count _availableVehicles) == 1) then {
             private _vehicleConfig = ([_classname] call lilc_common_fnc_getClassnameConfig);
             private _index = (lbAdd [1501, getText(_vehicleConfig >> "displayName")]);

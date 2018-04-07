@@ -8,6 +8,10 @@ try {
     private _uiListVehicles = (_ui displayCtrl 1501);
     private _vehicle = (_uiListVehicles lbData (lbCurSel _uiListVehicles));
     if (_vehicle == "") throw false;
+    if (_vehicle getVariable ["lilc_isRented", false]) then {
+        ["Das Fahrzeug ist zu heiß!", "WARNING"] call lilc_ui_fnc_hint;
+        throw false;
+    };
 
     _vehicle = (_vehicle call BIS_fnc_objectFromNetId);
     if (isNull _vehicle) throw false;

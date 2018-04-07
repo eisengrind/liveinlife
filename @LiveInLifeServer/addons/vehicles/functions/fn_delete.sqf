@@ -11,9 +11,8 @@ try
     if !(alive _vehicle) throw false;
 
     private _vehicleID = (_vehicle getVariable ["lilc_vehicleID", 0]);
-    
-    if (_vehicleID > 0) then
-    {
+
+    if (_vehicleID > 0) then {
         [([
             "VEHICLES_DATA",
             [
