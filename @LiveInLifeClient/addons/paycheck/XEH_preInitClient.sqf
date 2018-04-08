@@ -31,6 +31,6 @@ lilc_paycheck_active = 0;
     lilc_paycheck_active;
 }] call lilc_login_fnc_addPackage;
 
-["update_lil_paycheck_active", {
+["update_lil_paycheck_bankID", {
     lilc_paycheck_bankID;
 }] call lilc_login_fnc_addPackage;
