@@ -129,7 +129,7 @@ _inventory = [
             (uniform _unit),
             ((uniformContainer _unit) getVariable ["lilc_color", "-1"]),
             (getItemCargo uniformContainer _unit),
-            if (isNil {(magazinesAmmo uniformContainer _unit)}) then { [[]]; } else { (magazinesAmmo uniformContainer _unit); },
+            if (isNil {(magazinesAmmo uniformContainer _unit)}) then { []; } else { (magazinesAmmo uniformContainer _unit); },
             (getWeaponCargo uniformContainer _unit)
         ];
     },

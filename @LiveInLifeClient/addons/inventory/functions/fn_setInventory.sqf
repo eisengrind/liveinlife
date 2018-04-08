@@ -26,7 +26,7 @@ if ((count (_inventory select 2)) > 0) then {
     _unit forceAddUniform ((_inventory select 2) select 0);
     _clothingName = ((_inventory select 2) select 1);
     if (_clothingName != "-1") then { [_clothingName, _unit, 0] call lilc_textures_fnc_setUniform; };
-    
+
     {
         (uniformContainer _unit) addItemCargo [_x, ((((_inventory select 2) select 2) select 1) select _forEachIndex)];
     } forEach (((_inventory select 2) select 2) select 0);
@@ -42,7 +42,7 @@ if ((count (_inventory select 2)) > 0) then {
 
 if ((count (_inventory select 3)) > 0) then {
     _unit addVest ((_inventory select 3) select 0);
-    
+
     {
         (vestContainer _unit) addItemCargo [_x, ((((_inventory select 3) select 1) select 1) select _forEachIndex)];
     } forEach (((_inventory select 3) select 1) select 0);
@@ -70,7 +70,7 @@ if ((count (_inventory select 4)) > 0) then {
     } forEach ((_inventory select 4) select 3);
 
     {
-        (backpackContainer _unit) addWeaponCargoGlobal [_x, ((((_inventory select 4) select 3) select 1) select _forEachIndex)];
+        (backpackContainer _unit) addWeaponCargoGlobal [_x, ((((_inventory select 4) select 4) select 1) select _forEachIndex)];
     } forEach (((_inventory select 4) select 4) select 0);
 };
 
@@ -91,7 +91,7 @@ if ((count _primaryWeapon) > 0) then {
 if ((count _secondaryWeapon) > 0) then {
     _unit addWeapon (_secondaryWeapon select 0);
     _unit addMagazine (_secondaryWeapon select 1);
-    
+
     {
         _unit addPrimaryWeaponItem _x;
     } forEach (_secondaryWeapon select 2);
@@ -100,7 +100,7 @@ if ((count _secondaryWeapon) > 0) then {
 if ((count _handgunWeapon) > 0) then {
     _unit addWeapon (_handgunWeapon select 0);
     _unit addMagazine (_handgunWeapon select 1);
-    
+
     {
         _unit addPrimaryWeaponItem _x;
     } forEach (_handgunWeapon select 2);
