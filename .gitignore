@@ -3,5 +3,6 @@
 .vscode/
 .build/
 .builds/
+.publisher/
 tools/tmp
 tools/inc.tmp

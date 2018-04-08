@@ -9,8 +9,8 @@ if !(lilc_finished) exitWith {};
 if !(isMultiplayer) exitWith {};
 
 //unshow default abort button
-private _uiAbBut = (_ui displayCtrl 104);
-_uiAbBut ctrlShow false;
+//private _uiAbBut = (_ui displayCtrl 104);
+//_uiAbBut ctrlShow false;
 
 //private _uiAbButN = (_ui ctrlCreate ["RscButtonMenu", 5555]);
 //_uiAbButN ctrlSetPosition ctrlPosition _uiAbBut;
@@ -25,13 +25,11 @@ _uiReBut ctrlEnable false;
 _uiMaBut ctrlEnable false;
 _uiCoBut ctrlEnable false;
 
-if (isNil "lilc_events_interruptCounterHandler") then
-{
+if (isNil "lilc_events_interruptCounterHandler") then {
     lilc_events_interruptCounterHandler = scriptNull;
 };
 
-if !(isNull lilc_events_interruptCounterHandler) then
-{
+if !(isNull lilc_events_interruptCounterHandler) then {
     terminate lilc_events_interruptCounterHandler;
 };
 
@@ -46,13 +44,10 @@ lilc_events_interruptCounterHandler = ([_ui] spawn {
     //_uiAbButN ctrlEnable false;
 
     private _time = (time + 10);
-    while
-    {
+    while {
         _time >= time &&
         !isNull _ui
-    }
-    do
-    {
+    } do {
         /*_uiAbButN ctrlSetText format[
             "Abbrechen in %1",
             ([(round (_time - time))] call BIS_fnc_secondsToString)
