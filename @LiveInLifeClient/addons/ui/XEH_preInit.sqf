@@ -10,19 +10,13 @@ lilc_action_active = false;
 lilc_action_interrupted = false;
 lilc_ui_hint_lastControls = [];
 
-[
-    "lilce_common_postFinished",
-    {
-        call lilc_ui_fnc_enableHints;
-    }
-] call CBA_fnc_addEventHandler;
+["lilce_common_postFinished", {
+    call lilc_ui_fnc_enableHints;
+}] call CBA_fnc_addEventHandler;
 
-[
-    "lilce_login_unload",
-    {
+["lilce_login_unload", {
         call lilc_ui_fnc_disableHints;
-    }
-] call CBA_fnc_addEventHandler;
+}] call CBA_fnc_addEventHandler;
 
 [
     "lilc_setting_ui_enableHints",
@@ -32,12 +26,9 @@ lilc_ui_hint_lastControls = [];
     true,
     0,
     {
-        if (_this) then
-        {
+        if (_this) then {
             call lilc_ui_fnc_enableHints;
-        }
-        else
-        {
+        } else {
             call lilc_ui_fnc_disableHints;
         };
     }

@@ -1,6 +1,5 @@
 
-class lilc_log
-{
+class lilc_log {
     units[] = {};
     weapons[] = {};
     requiredAddons[] = {};
