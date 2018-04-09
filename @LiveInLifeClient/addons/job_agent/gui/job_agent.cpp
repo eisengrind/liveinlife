@@ -43,7 +43,7 @@ class lilc_job_agent {
             y = 0.379 * safezoneH + safezoneY;
             w = 0.0979687 * safezoneW;
             h = 0.275 * safezoneH;
-            onLBSelChanged = "_this call lilc_job_agent_fnc_onLBSelChanged_jobs;";
+            onLBSelChanged = "_this call lilc_job_agent_fnc_onLBSelChangedJobs;";
         };
 
         class ButtonTake: RscButton {
@@ -53,7 +53,7 @@ class lilc_job_agent {
             y = 0.665 * safezoneH + safezoneY;
             w = 0.309375 * safezoneW;
             h = 0.044 * safezoneH;
-            onButtonClick = "call lilc_job_agent_fnc_onButtonClick_accept;";
+            onButtonClick = "call lilc_job_agent_fnc_onButtonClickAccept;";
         };
 
         class GroupJobDescription: RscControlsGroup {

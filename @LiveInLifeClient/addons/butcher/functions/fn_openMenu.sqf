@@ -13,9 +13,7 @@ try {
     (findDisplay 1300) setVariable ["lilc_butcher_butcherName", _butcherName];
     ctrlSetText [1001, getText(_butcherConfig >> "displayName")];
 
-    if (getText(_butcherConfig >> "position") == "") throw false;
     private _position = position player;
-    if ((_position distance player) > 50) throw false;
 
     _availableVehicles = ("true" configClasses (_butcherConfig >> "vehicles"));
     private _nearbyVehicles = nearestObjects [_position, ["LandVehicle", "Air", "Boat", "Ship"], 50];

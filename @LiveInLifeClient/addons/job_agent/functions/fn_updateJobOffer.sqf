@@ -21,7 +21,6 @@ private _locText = "";
     };
     _locText = format["%1%2", _locText, format["STR_lilc_job_agent_job_%1", _x] call BIS_fnc_localize];
 } forEach getArray(_jobCfg >> "locations");
-systemChat _locText;
 
 private _itemsText = "";
 {
@@ -42,7 +41,6 @@ private _itemsText = "";
         _itemsText = format["%1%2x %3", _itemsText, _amount, getText(_itemCfg >> "displayName")];
     };
 } forEach getArray(_jobCfg >> "items");
-systemChat _itemsText;
 
 private _price = 0;
 if (isArray(_jobCfg >> "price")) then {
