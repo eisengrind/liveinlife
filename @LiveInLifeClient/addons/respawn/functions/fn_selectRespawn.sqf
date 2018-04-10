@@ -1,31 +1,24 @@
 
-if (lilc_player_deathTimeout > 0 && lilc_player_isRespawning) then
-{
+if (lilc_player_deathTimeout > 0 && lilc_player_isRespawning) then {
+    [2] call lilc_ui_fnc_fadeOutBlack;
     [player] spawn lilc_respawn_fnc_init;
-}
-else
-{
-    if (isNil "lilc_player_isNew") then
-    {
+    [1] call lilc_ui_fnc_fadeInBlack;
+} else {
+    if (isNil "lilc_player_isNew") then {
         lilc_player_isNew = 0;
     };
 
     private _fID = (player getVariable ["lilc_factionID", -1]);
-    if (_fID == -1) then
-    {
-        if (lilc_player_isNew == 1) then
-        {
+    if (_fID == -1) then {
+        if (lilc_player_isNew == 1) then {
             [(["startBalance", "NUMBER"] call lilc_common_fnc_getSetting)] call lilc_cash_fnc_set;
             ["lilce_respawn_firstspawn", [player]] call CBA_fnc_localEvent;
             lilc_player_isNew = 0;
-        }
-        else
-        {
+        } else {
             [player, lilc_player_lastPosition] call lilc_common_fnc_setPosition;
         };
-    }
-    else
-    {
+    } else {
+        //TODO: add default firstspawn
         private _fCfg = ([_fID] call lilc_factions_fnc_getFactionConfig);
         private _fRT = getNumber(_fCfg >> "respawnType"); //0, 1, 2
         private _pPos = (getPos vehicle player);
