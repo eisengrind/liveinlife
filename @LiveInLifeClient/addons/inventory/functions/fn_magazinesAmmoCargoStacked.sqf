@@ -17,39 +17,39 @@
 */
 
 params [
-    ["_container", objNull, [objNull]]
+    ["_vehicle", objNull, [objNull]]
 ];
 
-private _mAC = (magazinesAmmoCargo _container);
+//in format [["item", ammoCount], ...n]
+private _magazines = magazinesAmmoCargo _vehicle;
 
-private _mACS = [[], []];
-{
-    private _mag = _x;
-    private _i = -1;
-    {
-        private _cMag = _x;
-        if (_cMag == (_mag select 0)) exitWith {
-            _i = _forEachIndex;
-            {
-                if ((_forEachIndex % 2) == 0) then {
-                    private _c = _x;
-                    private _a = (((_mACS select 1) select _i) select (_forEachIndex + 1));
+private _stackedMagazines = [[], []];
 
-                    if (_c == (_mag select 1)) then {
-                        ((_mACS select 1) select _i) set [(_forEachIndex + 1), (_a + 1)];
-                    } else {
-                        ((_mACS select 1) select _i) pushBack (_mag select 1);
-                        ((_mACS select 1) select _i) pushBack 1;
-                    };
-                };
-            } forEach ((_mACS select 1) select _i);
+for "_mI" from 0 to (count _magazines) - 1 do {
+    private _classname = _magazines select _mI select 0;
+    private _ammoCount = _magazines select _mI select 1;
+
+    private _foundStackIndex = (_stackedMagazines select 0) find _classname;
+    if (_foundStackIndex <= -1) then {
+        _stackedMagazines select 0 pushBack _classname;
+        _stackedMagazines select 1 pushBack [_ammoCount, 1];
+    } else {
+        private _exists = false;
+        for "_sMI" from 0 to (count (_stackedMagazines select 1 select _foundStackIndex)) - 1 step 2 do {
+            private _ammoCountStacked = _stackedMagazines select 1 select _foundStackIndex select _sMI;
+            if (_ammoCountStacked == _ammoCount) then {
+                _stackedMagazines select 1 select _foundStackIndex set[
+                    _sMI + 1,
+                    (_stackedMagazines select 1 select _foundStackIndex select (_sMI + 1)) + 1
+                ];
+                _exists = true;
+            };
         };
-    } forEach (_mACS select 0);
 
-    if (_i <= -1) then {
-        (_mACS select 0) pushBack (_mag select 0);
-        (_mACS select 1) pushBack [(_mag select 1), 1];
+        if !(_exists) then {
+            _stackedMagazines select 1 select _foundStackIndex append [_ammoCount, 1];
+        };
     };
-} forEach _mAC;
+};
 
-_mACS;
+_stackedMagazines;
