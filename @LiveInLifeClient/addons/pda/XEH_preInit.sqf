@@ -2,7 +2,7 @@
 lilc_pda_currentAccountData = [];
 
 [
-    "Live In Life",
+    "LiveInLife",
     "lilck_openPDAMenu",
     "Open PDA (Personal Digital Assistant)",
     {

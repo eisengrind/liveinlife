@@ -22,7 +22,7 @@ lilc_ui_hint_lastControls = [];
     "lilc_setting_ui_enableHints",
     "CHECKBOX",
     "Benachrichtigungen anzeigen", //TODO: localize
-    "Live In Life",
+    "LiveInLife",
     true,
     0,
     {
@@ -38,6 +38,6 @@ lilc_ui_hint_lastControls = [];
     "lilc_setting_ui_hint_displayTime",
     "SLIDER",
     "Notification time",
-    "Live In Life",
+    "LiveInLife",
     [1, 60, 6, 0]
 ] call CBA_Settings_fnc_init;
