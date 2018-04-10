@@ -3,7 +3,7 @@ private _agentIndex = lbCurSel 2100;
 if (_agentIndex <= -1) exitWith {};
 
 private _jobName = lbData [2100, _agentIndex];
-private _jobConfig = missionConfigFile >> "CfgJobAgents" >> ((findDisplay 2049) getVariable ["lilc_job_agent_agent", ""]) >> "jobs" >> _job;
+private _jobConfig = missionConfigFile >> "CfgJobAgents" >> ((findDisplay 2049) getVariable ["lilc_job_agent_agent", ""]) >> "jobs" >> _jobName;
 if (isNull _jobConfig) exitWith {};
 
 private _jobIndex = -1;
@@ -36,7 +36,8 @@ if (_amount <= 0) exitWith {
     lbSetCurSel [2100, _agentIndex];
 };
 
-if (ctrlEnabled 1600) exitWith {};
+if !(ctrlEnabled 1600) exitWith {};
+
 ctrlEnable [1600, false];
 
 if !([player, _classname] call lilc_inventory_fnc_remove) exitWith {
@@ -59,6 +60,9 @@ if (_fin) then {
     [getNumber(_jobConfig >> "price")] call lilc_cash_fnc_add;
     lilc_job_agent_activeTasks deleteAt _jobIndex;
     lilc_job_agent_stage = lilc_job_agent_stage + 1;
+    ["Du hast den Auftrag erledigt."] call lilc_ui_fnc_hint;
+} else {
+    ["Gegenstand erfolgreich geliefert."] call lilc_ui_fnc_hint;
 };
 
 ctrlEnable [1600, true];

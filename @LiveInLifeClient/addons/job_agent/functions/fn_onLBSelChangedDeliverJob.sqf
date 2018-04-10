@@ -18,13 +18,14 @@ if (({
 private _jobConfig = (_jobAgentCfg >> "jobs" >> _jobName);
 if (isNull _jobConfig) exitWith {};
 
+lbClear 1500;
 {
     private _name = _x select 0;
     private _amount = _x select 1;
     private _i = _forEachIndex;
     {
-        if ((_x select 0) == _name) exitWith {
-            if ((count lilc_job_agent_activeTasks select _forEachIndex select 1) > _i) then {
+        if ((_x select 0) == _jobName) exitWith {
+            if ((count (lilc_job_agent_activeTasks select _forEachIndex select 1)) > _i) then {
                 _amount = lilc_job_agent_activeTasks select _forEachIndex select 1 select _i;
             } else {
                 lilc_job_agent_activeTasks select _forEachIndex select 1 pushBack _amount;
