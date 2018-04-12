@@ -57,6 +57,15 @@ class lilc_factions_interface_rank {
             y = 0.555 * safezoneH + safezoneY;
             w = 0.185625 * safezoneW;
             h = 0.154 * safezoneH;
+            columns[] = {0, 0.12, 0.84};
+            drawSideArrows = 0;
+            idcLeft = -1;
+            idcRight = -1;
+            rowHeight = 0.04;
+            colorPicture[] = {1,1,1,1};
+            colorPictureSelected[] = {1,1,1,1};
+            colorPictureDisabled[] = {1,1,1,1};
+            onLBDblClick = "_this call lilc_factions_interface_fnc_onLBDblClickRank;";
         };
 
         class ListVehicles: RscListNBox {
@@ -65,6 +74,15 @@ class lilc_factions_interface_rank {
             y = 0.405518 * safezoneH + safezoneY;
             w = 0.186667 * safezoneW;
             h = 0.303482 * safezoneH;
+            columns[] = {0, 0.12, 0.84};
+            drawSideArrows = 0;
+            idcLeft = -1;
+            idcRight = -1;
+            rowHeight = 0.04;
+            colorPicture[] = {1,1,1,1};
+            colorPictureSelected[] = {1,1,1,1};
+            colorPictureDisabled[] = {1,1,1,1};
+            onLBDblClick = "_this call lilc_factions_interface_fnc_onLBDblClickRank;";
         };
 
         class ListItems: RscListNBox {
@@ -73,6 +91,15 @@ class lilc_factions_interface_rank {
             y = 0.302 * safezoneH + safezoneY;
             w = 0.186146 * safezoneW;
             h = 0.228222 * safezoneH;
+            columns[] = {0, 0.12, 0.84};
+            drawSideArrows = 0;
+            idcLeft = -1;
+            idcRight = -1;
+            rowHeight = 0.04;
+            colorPicture[] = {1,1,1,1};
+            colorPictureSelected[] = {1,1,1,1};
+            colorPictureDisabled[] = {1,1,1,1};
+            onLBDblClick = "_this call lilc_factions_interface_fnc_onLBDblClickRank;";
         };
 
         class TitleItems: RscText {
@@ -174,6 +201,7 @@ class lilc_factions_interface_rank {
             y = 0.72 * safezoneH + safezoneY;
             w = 0.0876563 * safezoneW;
             h = 0.022 * safezoneH;
+            onButtonClick = "[(_this select 0) getVariable ['lilc_rankID', 0]] call lilc_factions_interface_fnc_saveRank;";
         };
 
         class ButtonBack: RscButton {
