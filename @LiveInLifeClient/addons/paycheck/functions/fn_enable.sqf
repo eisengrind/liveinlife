@@ -1,5 +1,5 @@
 
-if (lilc_paycheck_bankName != "") exitWith {};
+if (lilc_paycheck_bankName == "") exitWith {};
 
 private _bA = ([lilc_paycheck_bankName] call lilc_bank_fnc_getAccountByBankName);
 
