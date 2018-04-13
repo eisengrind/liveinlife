@@ -1,5 +1,5 @@
 
-//Rank = [<id>, <name>, <tag>, <paycheck>, <insignia>];
+//rank = [<id>, <name>, <tag>, <paycheck>, <insignia>];
 
 params [
     ["_rankID", 0, [0]],
