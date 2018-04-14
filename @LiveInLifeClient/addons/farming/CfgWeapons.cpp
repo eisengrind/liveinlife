@@ -41,6 +41,6 @@ class lilci_woodpile_F : lilci_item {
     model = "a3\structures_f_epa\civ\camping\woodenlog_f.p3d";
 
     class ItemInfo : lilci_itemInfo {
-        mass = 3;
+        mass = 8;
     };
 };
