@@ -28,7 +28,7 @@ class lilc_factions_interface_player {
 
         class ButtonClose: RscActiveText {
             idc = 1602;
-            onButtonClick = "closeDialog 2050;";
+            onButtonClick = "closeDialog 2050; call lilc_factions_interface_fnc_openOverview;";
             color[] = {1,1,1,0.7};
             text = "\A3\Ui_f\data\GUI\Rsc\RscDisplayArcadeMap\icon_exit_cross_ca.paa";
             x = 0.570748 * safezoneW + safezoneX;
