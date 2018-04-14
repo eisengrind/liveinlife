@@ -144,7 +144,7 @@ client:	lilc_actions \
 	lilc_events \
 	lilc_exchange \
 	lilc_factions \
-	lilc_factionsInterface \
+	lilc_factions_interface \
 	lilc_farming \
 	lilc_ferrys \
 	lilc_food \
@@ -394,7 +394,7 @@ server: lils_animals \
 	lils_events \
 	lils_exchange \
 	lils_factions \
-	lils_factionsInterface \
+	lils_factions_interface \
 	lils_garage \
 	lils_inventory \
 	lils_job_agent \
