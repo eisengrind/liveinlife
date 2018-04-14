@@ -243,8 +243,8 @@ lilc_exchange: build_armake createKey
 lilc_factions: build_armake createKey
 	$(ARMAKE) build -p --force -k $(PRVKEYFILE) -e prefix=x\\lilc\\addons\\factions @LiveInLifeClient/addons/factions .build/@LiveInLifeClient/addons/$@.pbo
 
-lilc_factionsInterface: build_armake createKey
-	$(ARMAKE) build -p --force -k $(PRVKEYFILE) -e prefix=x\\lilc\\addons\\factionsInterface @LiveInLifeClient/addons/factionsInterface .build/@LiveInLifeClient/addons/$@.pbo
+lilc_factions_interface: build_armake createKey
+	$(ARMAKE) build -p --force -k $(PRVKEYFILE) -e prefix=x\\lilc\\addons\\factions_interface @LiveInLifeClient/addons/factions_interface .build/@LiveInLifeClient/addons/$@.pbo
 
 lilc_farming: build_armake createKey
 	$(ARMAKE) build -p --force -k $(PRVKEYFILE) -e prefix=x\\lilc\\addons\\farming @LiveInLifeClient/addons/farming .build/@LiveInLifeClient/addons/$@.pbo
@@ -452,8 +452,8 @@ lils_exchange: build_armake
 lils_factions: build_armake
 	$(ARMAKE) build -p --force -e prefix=x\\lils\\addons\\factions @LiveInLifeServer/addons/factions .build/@LiveInLifeServer/addons/$@.pbo
 
-lils_factionsInterface: build_armake
-	$(ARMAKE) build -p --force -e prefix=x\\lils\\addons\\factionsInterface @LiveInLifeServer/addons/factionsInterface .build/@LiveInLifeServer/addons/$@.pbo
+lils_factions_interface: build_armake
+	$(ARMAKE) build -p --force -e prefix=x\\lils\\addons\\factions_interface @LiveInLifeServer/addons/factions_interface .build/@LiveInLifeServer/addons/$@.pbo
 
 lils_garage: build_armake
 	$(ARMAKE) build -p --force -e prefix=x\\lils\\addons\\garage @LiveInLifeServer/addons/garage .build/@LiveInLifeServer/addons/$@.pbo
