@@ -62,8 +62,5 @@ player addEventHandler["WeaponAssembled", {
         ["_object",objNull,[objNull]]
     ];
 
-    clearItemCargoGlobal _object;
-    clearBackpackCargoGlobal _object;
-    clearMagazineCargoGlobal _object;
-    clearWeaponCargoGlobal _object;
+    [_object] call lilc_inventory_fnc_clearVehicleCargo;
 }];
