@@ -55,3 +55,14 @@ player addEventHandler ["GetOutMan", {
 
     _vehicle removeEventHandler ["Engine", lilc_vehicles_engineEHIndex];
 }];
+
+player addEventHandler["WeaponAssembled", {
+    params [
+["_unit",objNull,[objNull]],
+["_object",objNull,[objNull]]
+    ];
+    clearItemCargoGlobal _object;
+    clearBackpackCargoGlobal _object;
+    clearMagazineCargoGlobal _object;
+    clearWeaponCargoGlobal _object;
+}];
