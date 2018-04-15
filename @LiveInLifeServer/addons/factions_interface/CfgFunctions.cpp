@@ -1,17 +1,14 @@
 
-class lils_factionsInterface {
+class lils_factions_interface {
     class functions {
-        file = "\x\lils\addons\factionsInterface\functions";
-        class addRank {};
-        class broadcastRanks {};
-        class getMenuInfo {};
-        class getPlayerInfo {};
-        class getPlayers {};
-        class getRankInfo {};
-        class init {};
-        class removeRank {};
-        class savePlayerInfo {};
-        class saveRankInfo {};
-        class setFactionInfo {};
+        file = "\x\lils\addons\factions_interface\functions";
+        class overviewGetPlayers {};
+        class overviewGetRanks {};
+        class playerGetRanks {};
+        class rankGetItems {};
+        class rankGetPermissions {};
+        class rankGetVehicles {};
+        class rankRemoveRank {};
+        class setRank {};
     };
 };

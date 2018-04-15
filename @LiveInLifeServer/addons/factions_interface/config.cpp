@@ -8,7 +8,7 @@ class CfgFunctions {
 };
 
 class Extended_PreInit_EventHandlers {
-    class lilc_factionsInterface_preInit {
-        serverInit = "call compile preProcessFileLineNumbers '\x\lils\addons\factionsInterface\XEH_preInit.sqf';";
+    class lilc_factions_interface_preInit {
+        serverInit = "call compile preProcessFileLineNumbers '\x\lils\addons\factions_interface\XEH_preInit.sqf';";
     };
 };

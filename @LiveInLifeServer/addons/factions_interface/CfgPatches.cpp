@@ -1,5 +1,5 @@
 
-class lils_factionsInterface
+class lils_factions_interface
 {
     weapons[] = {};
     units[] = {};
