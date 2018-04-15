@@ -58,9 +58,10 @@ player addEventHandler ["GetOutMan", {
 
 player addEventHandler["WeaponAssembled", {
     params [
-["_unit",objNull,[objNull]],
-["_object",objNull,[objNull]]
+        ["_unit",objNull,[objNull]],
+        ["_object",objNull,[objNull]]
     ];
+
     clearItemCargoGlobal _object;
     clearBackpackCargoGlobal _object;
     clearMagazineCargoGlobal _object;
