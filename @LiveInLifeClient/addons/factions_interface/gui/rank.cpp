@@ -28,7 +28,8 @@ class lilc_factions_interface_rank {
 
         class ButtonClose: RscActiveText {
             idc = 1602;
-            onButtonClick = "closeDialog 2049; call lilc_factions_interface_fnc_openRank;";
+            style = 48;
+            onButtonClick = "closeDialog 2049; call lilc_factions_interface_fnc_openOverview;";
             color[] = {1,1,1,0.7};
             text = "\A3\Ui_f\data\GUI\Rsc\RscDisplayArcadeMap\icon_exit_cross_ca.paa";
             x = 0.683594 * safezoneW + safezoneX;
@@ -57,7 +58,7 @@ class lilc_factions_interface_rank {
             y = 0.555 * safezoneH + safezoneY;
             w = 0.185625 * safezoneW;
             h = 0.154 * safezoneH;
-            columns[] = {0, 0.12, 0.84};
+            columns[] = {0, 0.01, 0.84};
             drawSideArrows = 0;
             idcLeft = -1;
             idcRight = -1;
@@ -201,13 +202,13 @@ class lilc_factions_interface_rank {
             y = 0.72 * safezoneH + safezoneY;
             w = 0.0876563 * safezoneW;
             h = 0.022 * safezoneH;
-            onButtonClick = "[(_this select 0) getVariable ['lilc_rankID', 0]] call lilc_factions_interface_fnc_saveRank;";
+            onButtonClick = "[(findDisplay 2049) getVariable ['lilc_rankID', 0]] call lilc_factions_interface_fnc_rankSave;";
         };
 
         class ButtonBack: RscButton {
             idc = 1601;
             text = "$STR_lilc_factions_interface_Config_back";
-            onButtonClick = "closeDialog 2049;";
+            onButtonClick = "closeDialog 2049; call lilc_factions_interface_fnc_openOverview;";
             x = 0.309219 * safezoneW + safezoneX;
             y = 0.72 * safezoneH + safezoneY;
             w = 0.0876563 * safezoneW;

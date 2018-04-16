@@ -28,6 +28,7 @@ class lilc_factions_interface_player {
 
         class ButtonClose: RscActiveText {
             idc = 1602;
+            style = 48;
             onButtonClick = "closeDialog 2050; call lilc_factions_interface_fnc_openOverview;";
             color[] = {1,1,1,0.7};
             text = "\A3\Ui_f\data\GUI\Rsc\RscDisplayArcadeMap\icon_exit_cross_ca.paa";
@@ -45,7 +46,7 @@ class lilc_factions_interface_player {
         class ButtonBack: RscButton {
             idc = 1600;
             text = "$STR_lilc_factions_interface_Config_back"; //--- ToDo: Localize;
-            onButtonClick = "closeDialog 2050;";
+            onButtonClick = "closeDialog 2050; call lilc_factions_interface_fnc_openOverview;";
             x = 0.422656 * safezoneW + safezoneX;
             y = 0.445 * safezoneH + safezoneY;
             w = 0.0721875 * safezoneW;
@@ -55,6 +56,7 @@ class lilc_factions_interface_player {
         class ButtonSave: RscButton {
             idc = 1601;
             text = "$STR_lilc_factions_interface_Config_save"; //--- ToDo: Localize;
+            onButtonClick = "call lilc_factions_interface_fnc_playerSave;";
             x = 0.505156 * safezoneW + safezoneX;
             y = 0.445 * safezoneH + safezoneY;
             w = 0.0721875 * safezoneW;

@@ -18,6 +18,8 @@ class RscListbox;
 class RscButton;
 class RscActiveText;
 class RscListNBox;
+class lilc_RscTree;
+class RscTitle;
 class RscEdit;
 class RscCombo;
 

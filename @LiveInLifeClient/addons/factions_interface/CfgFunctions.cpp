@@ -10,13 +10,20 @@ class lilc_factions_interface {
         class openRank {};
         class overviewSetPlayers {};
         class overviewSetRanks {};
+        class playerSave {};
+        class playerSaved {};
         class playerSetRanks {};
-        class rankRemoveRank {};
+        class rankRemove {};
+        class rankRemoved {};
+        class rankSave {};
+        class rankSaved {};
         class rankSetItems {};
         class rankSetPermissions {};
         class rankSetVehicles {};
-        class removeRank {};
-        class saveRank {};
-        class setRank {};
+    };
+
+    class patrols {
+        file = "\x\lilc\ddons\factions_interface\functions\patrols";
+        class
     };
 };

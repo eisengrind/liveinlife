@@ -1,6 +1,5 @@
 
 params [
-    ["_unit", objNull, [objNull]],
     ["_rankID", 0, [0]],
     ["_rankName", "", [""]],
     ["_rankTag", "", [""]],
@@ -11,14 +10,9 @@ params [
     ["_rankVehicles", [], [[]]]
 ];
 
-if (isNull _unit) exitWith {};
 if (_rankID <= 0) exitWith {};
 if (_rankPaycheck < 0) exitWith {};
 
-private _factionID = _unit getVariable ["lilc_factionID", -1];
-if (_factionID <= -1) exitWith {};
-
-//faction_ranks = rid, fid, name, tag, description, vehicles, items, permissions, paycheck, insignia
 private _rank = [[
     "faction_ranks",
     [
@@ -27,10 +21,9 @@ private _rank = [[
         ["tag"],
         ["paycheck"],
         ["insignia"],
-        ["description"],
-        ["vehicles"],
+        ["permissions"],
         ["items"],
-        ["permissions"]
+        ["vehicles"]
     ],
     [
         ["rid", _rankID]
@@ -38,13 +31,13 @@ private _rank = [[
 ] call lils_database_fnc_generateFetchQuery] call lils_database_fnc_fetchObjects;
 
 if ((count _rank) <= 0) exitWith {};
+_rank = _rank select 0;
 
+_rank set [5, [_rank select 5] call lils_common_fnc_arrayDecode];
 _rank set [6, [_rank select 6] call lils_common_fnc_arrayDecode];
 _rank set [7, [_rank select 7] call lils_common_fnc_arrayDecode];
-_rank set [8, [_rank select 8] call lils_common_fnc_arrayDecode];
 
-//rank = [<id>, <name>, <tag>, <paycheck>, <insignia>];
-if ((_rank select [0, 5]) isEqualTo [_rankID, _rankName, _rankTag, _rankPaycheck, _rankInsignia]) exitWith {};
+if (_rank isEqualTo [_rankID, _rankName, _rankTag, _rankPaycheck, _rankInsignia, _rankPermissions, _rankItems, _rankVehicles]) exitWith {};
 
 [[
     "faction_ranks",
@@ -55,11 +48,14 @@ if ((_rank select [0, 5]) isEqualTo [_rankID, _rankName, _rankTag, _rankPaycheck
         ["insignia", str _rankInsignia],
         ["vehicles", [_rankVehicles] call lils_common_fnc_arrayEncode],
         ["items", [_rankItems] call lils_common_fnc_arrayEncode],
-        ["permissions", [_rankPermissions] call lils_common_fnc_arrayEncode]
+        ["permissions", [_rankPermissions] call lils_common_fnc_arrayEncode],
+        ["timestamp_update", "UNIX_TIMESTAMP(NOW())", false]
     ],
     [
         ["rid", _rankID]
     ]
 ] call lils_database_fnc_generateUpdateQuery] call lils_database_fnc_query;
 
-[_rankID, _rankName, _rankTag, _rankPaycheck, _rankInsignia] call lilc_factions_interface_fnc_setRank;
+private _rankVariable = format["lilc_factions_interface_ranks_%1", _rankID];
+missionNamespace setVariable [_rankVariable, [_rankID, _rankName, _rankTag, _rankPaycheck, _rankInsignia, _rankPermissions, _rankItems, _rankVehicles]];
+publicVariable _rankVariable;

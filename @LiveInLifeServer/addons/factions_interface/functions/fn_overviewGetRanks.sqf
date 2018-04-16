@@ -13,4 +13,8 @@ private _ranks = [format[
     _factionID
 ]] call lils_database_fnc_fetchObjects;
 
+{
+    _ranks set [_forEachIndex, _x select 0];
+} forEach _ranks;
+
 [_ranks, "lilc_factions_interface_fnc_overviewSetRanks", _unit] call lilc_common_fnc_send;

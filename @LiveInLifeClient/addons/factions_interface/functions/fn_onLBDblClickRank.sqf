@@ -1,8 +1,8 @@
 
 disableSerialization;
 params [
-    ["_control"],
-    ["_index"]
+    "_control",
+    "_index"
 ];
 
 private _active = (_control lnbValue [_index, 2]) == 1;

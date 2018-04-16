@@ -17,12 +17,28 @@ class lilc_factions_interface_overview {
 
         class TitleTitle: RscText {
             idc = 1001;
+            moving = 1;
             text = "$STR_lilc_factions_interface_Config_overview"; //--- ToDo: Localize;
             x = 0.304062 * safezoneW + safezoneX;
             y = 0.247 * safezoneH + safezoneY;
             w = 0.391875 * safezoneW;
             h = 0.022 * safezoneH;
             colorBackground[] = {"(profileNamespace getVariable ['GUI_BCG_RGB_R',0.77])","(profileNamespace getVariable ['GUI_BCG_RGB_G',0.51])","(profileNamespace getVariable ['GUI_BCG_RGB_B',0.08])","(profileNamespace getVariable ['GUI_BCG_RGB_A',0.8])"};
+        };
+
+        class ButtonClose: RscActiveText {
+            idc = 1606;
+            style = 48;
+            onButtonClick = "closeDialog 2048;";
+            color[] = {1,1,1,0.7};
+            text = "\A3\Ui_f\data\GUI\Rsc\RscDisplayArcadeMap\icon_exit_cross_ca.paa";
+            x = 0.684425 * safezoneW + safezoneX;
+            y = 0.250445 * safezoneH + safezoneY;
+            w = 0.0103125 * safezoneW;
+            h = 0.0173704 * safezoneH;
+            colorBackground[] = {0,0,0,0.8};
+            colorText[] = {1,1,1,0.7};
+            colorActive[] = {1,1,1,1};
         };
     };
     class controls {
@@ -69,6 +85,7 @@ class lilc_factions_interface_overview {
             y = 0.668704 * safezoneH + safezoneY;
             w = 0.185625 * safezoneW;
             h = 0.022 * safezoneH;
+            onButtonClick = "private _val = lbValue [1500, (lbCurSel 1500)]; closeDialog 2048; [_val] call lilc_factions_interface_fnc_openPlayer;";
         };
 
         class ButtonRankAdd: RscButton {
@@ -78,7 +95,7 @@ class lilc_factions_interface_overview {
             y = 0.669519 * safezoneH + safezoneY;
             w = 0.185625 * safezoneW;
             h = 0.022 * safezoneH;
-            onButtonClick = "[0] call lilc_factions_interface_fnc_openRank;";
+            onButtonClick = "closeDialog 2048; [0] call lilc_factions_interface_fnc_openRank;";
         };
 
         class ButtonRankEdit: RscButton {
@@ -98,20 +115,7 @@ class lilc_factions_interface_overview {
             y = 0.72 * safezoneH + safezoneY;
             w = 0.185625 * safezoneW;
             h = 0.022 * safezoneH;
-        };
-
-        class ButtonClose: RscActiveText {
-            idc = 1606;
-            onButtonClick = "closeDialog 2048;";
-            color[] = {1,1,1,0.7};
-            text = "\A3\Ui_f\data\GUI\Rsc\RscDisplayArcadeMap\icon_exit_cross_ca.paa";
-            x = 0.684425 * safezoneW + safezoneX;
-            y = 0.250445 * safezoneH + safezoneY;
-            w = 0.0103125 * safezoneW;
-            h = 0.0173704 * safezoneH;
-            colorBackground[] = {0,0,0,0.8};
-            colorText[] = {1,1,1,0.7};
-            colorActive[] = {1,1,1,1};
+            onButtonClick = "[lbValue [1501, lbCurSel 1501]] call lilc_factions_interface_fnc_rankRemove;";
         };
     };
 };
