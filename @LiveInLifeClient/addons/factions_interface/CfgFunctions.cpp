@@ -24,6 +24,13 @@ class lilc_factions_interface {
 
     class patrols {
         file = "\x\lilc\ddons\factions_interface\functions\patrols";
-        class
+        class onTreeSelChangedGroup {};
+        class openPatrols {};
+        class patrolCreate {};
+        class patrolJoin {};
+        class patrolLeave {};
+        class patrolRefresh {};
+        class patrolSave {};
+        class patrolUpdate {};
     };
 };

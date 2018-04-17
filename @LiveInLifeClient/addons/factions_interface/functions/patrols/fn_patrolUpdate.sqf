@@ -6,7 +6,7 @@
 private _factionID = player getVariable ["lilc_factionID", -1];
 if (_factionID <= -1) exitWith {};
 
-tvClear 1002;
+lbClear 1002;
 {
     if (_factionID == (_x getVariable ["lilc_factionID", -1])) then {
         private _i = -1;

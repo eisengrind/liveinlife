@@ -1,0 +1,2 @@
+
+call lilc_factions_interface_fnc_patrolRefresh;

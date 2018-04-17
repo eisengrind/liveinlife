@@ -26,3 +26,4 @@ class RscCombo;
 #include "gui\overview.cpp"
 #include "gui\player.cpp"
 #include "gui\rank.cpp"
+#include "gui\patrols.cpp"

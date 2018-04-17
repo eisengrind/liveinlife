@@ -14,20 +14,20 @@ ctrlShow [1602, false];
 ctrlShow [1603, false];
 
 //hide edits
-ctrlShow [1400 ,false];
-ctrlShow [1401 ,false];
-ctrlShow [1402 ,false];
-ctrlShow [2100 ,false];
+ctrlShow [1400, false];
+ctrlShow [1401, false];
+ctrlShow [1402, false];
+ctrlShow [2100, false];
 
 //hide titles
-ctrlShow [1005 ,false];
-ctrlShow [1006 ,false];
-ctrlShow [1007 ,false];
-ctrlShow [1008 ,false];
+ctrlShow [1005, false];
+ctrlShow [1006, false];
+ctrlShow [1007, false];
+ctrlShow [1008, false];
 
 //hide texts
-ctrlShow [1009 ,false];
-ctrlShow [1010 ,false];
-ctrlShow [1011 ,false];
+ctrlShow [1009, false];
+ctrlShow [1010, false];
+ctrlShow [1011, false];
 
 call lilc_factions_interface_fnc_patrolUpdate;
