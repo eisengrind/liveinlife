@@ -1,5 +1,5 @@
 
-if (lilc_paycheck_bankName != "") exitWith {};
+if (lilc_paycheck_bankName == "") exitWith {};
 
 private _bA = ([lilc_paycheck_bankName] call lilc_bank_fnc_getAccountByBankName);
 
@@ -23,7 +23,7 @@ lilc_paycheck_handle = ([
         if (_bID <= 0) then {
             [lilc_paycheck_amount] call lilc_cash_fnc_add;
         } else {
-            [_bID, lilc_paycheck_amount] call lilc_bank_fnc_appendByID;
+            [[_bID, lilc_paycheck_amount], "lils_bank_fnc_addValue"] call lilc_common_fnc_sendToServer;
         };
 
         if (lilc_paycheck_enableMessage) then {

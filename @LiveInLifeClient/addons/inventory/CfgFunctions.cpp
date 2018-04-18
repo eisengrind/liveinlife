@@ -1,8 +1,6 @@
 
-class lilc_inventory
-{
-    class functions
-    {
+class lilc_inventory {
+    class functions {
         file = "\x\lilc\addons\inventory\functions";
         class add {};
         class addMagazinesAmmoCargoStacked {};
@@ -39,9 +37,8 @@ class lilc_inventory
         class setVehicleCargo {};
         class setVestInventory {};
     };
-    
-    class RscDisplayInventory
-    {
+
+    class RscDisplayInventory {
         file = "\x\lilc\addons\inventory\functions\RscDisplayInventory";
         class disableMenu {};
         class getCurrentContainer {};
@@ -51,15 +48,7 @@ class lilc_inventory
         class onMouseMoving {};
     };
 
-    class itemMovement
-    {
-        file = "\x\lilc\addons\inventory\functions\itemMovement";
-        class moveContainerItem {};
-        class movePlayerItem {};
-    };
-
-    class virtualInventory
-    {
+    class virtualInventory {
         file = "\x\lilc\addons\inventory\functions\virtualInventory";
         class vi_giveItem {};
         class vi_removeItem {};

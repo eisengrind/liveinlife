@@ -17,7 +17,8 @@ try {
         _groundWeaponHolder = "GroundWeaponHolder" createVehicle [0, 0, 0];
         _groundWeaponHolder setPosASL _position;
     };
-    
+    _groundWeaponHolder setVariable ["lils_cleanup_timeout", (time + (2 * 60)), true];
+
     {
         [_groundWeaponHolder, _x] call lilc_inventory_fnc_addVehicle;
     } forEach _items;

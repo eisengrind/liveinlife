@@ -39,7 +39,7 @@ lilc_tags_blacklist_vests = [];
     "lilc_setting_tags_drawSoundwave",
     "CHECKBOX",
     "Tag Sprachanzeige", //TODO: localize
-    "Live In Life",
+    "LiveInLife",
     true
 ] call CBA_Settings_fnc_init;
 
@@ -47,7 +47,7 @@ lilc_tags_blacklist_vests = [];
     "lilc_setting_tags_scale",
     "LIST",
     "Tag Größe", //TODO: localize
-    "Live In Life",
+    "LiveInLife",
     [
         [0.833, 0.666],
         ["Groß", "Klein"],
@@ -59,7 +59,7 @@ lilc_tags_blacklist_vests = [];
     "lilc_setting_tags_defaultAlpha",
     "LIST",
     "Tag Größe", //TODO: localize
-    "Live In Life",
+    "LiveInLife",
     [
         [0.833, 0.666],
         ["Groß", "Klein"],

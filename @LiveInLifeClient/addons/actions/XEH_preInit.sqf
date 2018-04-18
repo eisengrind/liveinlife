@@ -1,6 +1,6 @@
 
 [
-    "Live In Life",
+    "LiveInLife",
     "lilck_punchPersonWW",
     "Punching (w/out weapon)",
     {
@@ -14,7 +14,7 @@
 ] call CBA_fnc_addKeybind; //on prim. mouse button!
 
 [
-    "Live In Life",
+    "LiveInLife",
     "lilck_punchPersonW",
     "Punching (w/ weapon)",
     {
@@ -28,7 +28,7 @@
 ] call CBA_fnc_addKeybind; //on prim. mouse button!
 
 [
-    "Live In Life",
+    "LiveInLife",
     "lilck_holsterKey",
     "Holster Weapon",
     {
@@ -39,7 +39,7 @@
 ] call CBA_fnc_addKeybind;
 
 [
-    "Live In Life",
+    "LiveInLife",
     "lilck_useEarPlugs",
     "Use earplugs",
     {

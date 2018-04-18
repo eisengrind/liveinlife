@@ -9,7 +9,7 @@ lilc_messages_messages = [
 lilc_messages_messages = [];
 
 [
-    "Live In Life",
+    "LiveInLife",
     "lilck_messages_openPhoneMenu",
     ("STR_lilc_messages_ActionTitle_openMenu" call BIS_fnc_localize),
     {

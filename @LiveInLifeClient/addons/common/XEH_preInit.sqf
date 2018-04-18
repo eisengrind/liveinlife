@@ -20,11 +20,9 @@ lilc_common_defaultPostFinishedIndex = ([
 ] call CBA_fnc_addEventHandler);
 
 [
-    "lilc_common_hideHexagons",
+    "lilc_common_enablePreload",
     "CHECKBOX",
-    "Hide GPS Hexagons w/out GPS", //TODO: localize
-    "Live In Life",
-    true,
-    1,
-    {}
+    "Enables preloading after login screen.", //TODO: localize
+    "LiveInLife",
+    true
 ] call CBA_Settings_fnc_init;

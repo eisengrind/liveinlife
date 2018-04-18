@@ -389,7 +389,6 @@ class RscDisplayInventory {
             class DLCTemplate : RscDisplayInventory_DLCTemplate {
                 class Controls;    // External class reference
             };
-            //onLBSelChanged = "_this call lilc_inventory_fnc_onContainerInventoryChange;";
             idc = 632;
             sizeEx = "0.8 *             (            (            ((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
             sizeEx2 = "0.8 *             (            (            ((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
@@ -813,44 +812,6 @@ class RscDisplayInventory {
             x = 0.264875 * safezoneW + safezoneX;
             y = 0.79414 * safezoneH + safezoneY;
             w = 0.012375 * safezoneW;
-            h = 0.022 * safezoneH;
-        };
-
-        class ContainerMoveAmount : lilc_RscEdit {
-            idc = 1396;
-            text = "0";
-            x = 0.371094 * safezoneW + safezoneX;
-            y = 0.714444 * safezoneH + safezoneY;
-            w = 0.0360937 * safezoneW;
-            h = 0.033 * safezoneH;
-        };
-
-        class ContainerMoveButton : lilc_RscButtonMenu {
-            idc = 1397;
-            text = "Move";
-            onButtonClick = "[] spawn lilc_inventory_fnc_moveContainerItem;";
-            x = 0.30927 * safezoneW + safezoneX;
-            y = 0.72 * safezoneH + safezoneY;
-            w = 0.061875 * safezoneW;
-            h = 0.022 * safezoneH;
-        };
-
-        class PlayerMoveAmount : lilc_RscEdit {
-            idc = 1398;
-            text = "0";
-            x = 0.439688 * safezoneW + safezoneX;
-            y = 0.71537 * safezoneH + safezoneY;
-            w = 0.0360937 * safezoneW;
-            h = 0.033 * safezoneH;
-        };
-
-        class PlayerMoveButton : lilc_RscButtonMenu {
-            idc = 1399;
-            text = "Move";
-            onButtonClick = "[] spawn lilc_inventory_fnc_movePlayerItem;";
-            x = 0.47625 * safezoneW + safezoneX;
-            y = 0.72 * safezoneH + safezoneY;
-            w = 0.061875 * safezoneW;
             h = 0.022 * safezoneH;
         };
 

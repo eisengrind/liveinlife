@@ -4,7 +4,7 @@ lilc_vehicles_informationVehicles = [];
 
 //keybindings
 [
-    "Live In Life",
+    "LiveInLife",
     "lilck_useKey",
     "Use vehicle key",
     {

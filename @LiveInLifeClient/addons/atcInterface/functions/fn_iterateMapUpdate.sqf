@@ -52,7 +52,7 @@ try
             private _vehicle = _x; 
             private _Cfg = (lilc_atcInterface_vehicleClassnames select {  _vehicle  isKindOf (_x select 0) }); 
             private _d = _x distance2D [9947,11787]; 
-            private _d = (160+(((_d/900)^3)-((_d/1200)^2))/8);
+            private _d = (30+(((_d/1200)^3)-((_d/800)^2))/8);
             (
                 (((getPosATL _vehicle) select 2) > _d) ||
                 (_vehicle getVariable ["lilc_transponder_status", false]) &&

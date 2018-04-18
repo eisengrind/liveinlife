@@ -7,7 +7,7 @@ class CfgFunctions {
     #include "CfgFunctions.cpp"
 };
 
-#include "dialogs\RscDisplayInventory.cpp"
+#include "gui\RscDisplayInventory.cpp"
 
 class Extended_PostInit_EventHandlers
 {
