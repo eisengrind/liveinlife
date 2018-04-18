@@ -230,11 +230,4 @@ lilc_login_update_defPackages = [
     }
 ] call lilc_login_fnc_addPackage;
 
-[
-    "update_lil_respawn_currentTimeout",
-    {
-        lilc_respawn_currentTimeout;
-    }
-] call lilc_login_fnc_addPackage;
-
 lilc_login_createprofile = false;

@@ -14,7 +14,7 @@
 
                 if (_value <= -1) exitWith {};
                 _unit setVariable ["lilc_factionID", _value, true];
-                [_unit] call lils_factionsInterface_fnc_setFactionInfo;
+                [_unit] call lils_factions_interface_fnc_setFactionInfo;
             }
         ];
         false;

@@ -17,11 +17,19 @@ try
     if !(createDialog "lilcm_garage") throw false;
     _ui = (findDisplay 1265);
     private _uiListVehicles = (_ui displayCtrl 1500);
-    
+
     ctrlSetText [1001, getText(_garageConfig >> "displayName")];
     lbClear _uiListVehicles;
     _uiListVehicles lbAdd "Fahrzeuge werden geladen...";
-    [[player, _garageType], "lils_garage_fnc_getVehicles"] call lilc_common_fnc_sendToServer;
+
+    if ((player getVariable ["lilc_factionID", -1]) > -1) then {
+        private _rank = [player getVariable ["lilc_factionRankID", 0]] call lilc_factions_interface_fnc_getRank;
+        [((_rank select 7) apply {
+            [-1, _x, "", "", 1, ""];
+        })] call lilc_garage_fnc_setVehicles;
+    } else {
+        [[player, _garageType], "lils_garage_fnc_getVehicles"] call lilc_common_fnc_sendToServer;
+    };
 
     lbClear 2401;
     {
