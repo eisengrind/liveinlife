@@ -16,7 +16,7 @@ class signup {
     onDestroy = "(findDisplay 1029) displayRemoveEventHandler [""KeyDown"", lilc_account_escapeEventHandler];";
     movingEnable = false;
     enableSimulation = true;
-    
+
     class controlsBackground {
         class FrameBackgound : lilc_RscText {
             idc = -1;
@@ -27,7 +27,7 @@ class signup {
             w = 0.257813 * safezoneW;
             h = 0.286 * safezoneH;
         };
-        
+
         class FrameBackgroundTitle : lilc_RscText {
             idc = -1;
             text = "";
@@ -47,10 +47,10 @@ class signup {
             w = 0.257813 * safezoneW;
             h = 0.044 * safezoneH;
         };
-        
+
         class TitleHeader : lilc_RscTitle {
             idc = -1;
-            text = "Live in Life - Registrierung";
+            text = "LiveInLife - Registrierung";
             sizeEx = 0.045;
             font = "PuristaMedium";
             colorText[] = {0.0863, 0.1451, 0.2118, 1};
@@ -60,7 +60,7 @@ class signup {
             w = 0.251614 * safezoneW;
             h = 0.022 * safezoneH;
         };
-        
+
         class TitleFirstname : lilc_RscTitle {
             idc = -1;
             sizeEx = 0.04;
@@ -71,7 +71,7 @@ class signup {
             w = 0.2475 * safezoneW;
             h = 0.022 * safezoneH;
         };
-        
+
         class TitleGender : lilc_RscTitle {
             idc = -1;
             sizeEx = 0.04;
@@ -82,7 +82,7 @@ class signup {
             w = 0.2475 * safezoneW;
             h = 0.022 * safezoneH;
         };
-        
+
         class TitleLastname : lilc_RscTitle {
             idc = -1;
             sizeEx = 0.04;
@@ -94,7 +94,7 @@ class signup {
             h = 0.022 * safezoneH;
         };
     };
-    
+
     class controls {
         class EditFirstname : lilc_RscEdit {
             idc = 1030;
@@ -107,7 +107,7 @@ class signup {
             w = 0.2475 * safezoneW;
             h = 0.044 * safezoneH;
         };
-        
+
         class EditLastname : lilc_RscEdit {
             idc = 1031;
             text = "";
@@ -119,7 +119,7 @@ class signup {
             w = 0.2475 * safezoneW;
             h = 0.044 * safezoneH;
         };
-        
+
         class ComboGender : lilc_RscCombo {
             idc = 1032;
             text = "";
@@ -132,7 +132,7 @@ class signup {
             h = 0.044 * safezoneH;
             rowHeight = "0.044 * safezoneH";
         };
-        
+
         class ButtonSignup : lilc_RscButtonMenu {
             idc = 1033;
             text = "Registrieren";
@@ -143,7 +143,7 @@ class signup {
             w = 0.121198 * safezoneW;
             h = 0.022 * safezoneH;
         };
-        
+
         class ButtonBack : lilc_RscButtonMenu {
             idc = 1034;
             text = "Zum Login";
@@ -154,7 +154,7 @@ class signup {
             w = 0.121719 * safezoneW;
             h = 0.022 * safezoneH;
         };
-        
+
         class TextError : lilc_RscStructuredText {
             idc = 1035;
             text = "";
