@@ -18,7 +18,6 @@ class RscListbox;
 class RscButton;
 class RscActiveText;
 class RscListNBox;
-class lilc_RscTree;
 class RscTitle;
 class RscEdit;
 class RscCombo;
@@ -26,4 +25,3 @@ class RscCombo;
 #include "gui\overview.cpp"
 #include "gui\player.cpp"
 #include "gui\rank.cpp"
-#include "gui\patrols.cpp"

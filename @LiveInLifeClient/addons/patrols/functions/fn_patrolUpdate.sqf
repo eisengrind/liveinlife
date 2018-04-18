@@ -6,7 +6,7 @@
 private _factionID = player getVariable ["lilc_factionID", -1];
 if (_factionID <= -1) exitWith {};
 
-lbClear 1002;
+tvClear 1002;
 {
     if (_factionID == (_x getVariable ["lilc_factionID", -1])) then {
         private _i = -1;
@@ -15,15 +15,15 @@ lbClear 1002;
             tvSetData [1002, [_i], ""];
         } else {
             _i = tvAdd [1002, [], groupId _x];
-            tvSetData [1002, [_i], str _x];
-            tvSetPicture [1002, [_i], _x getVariable ["lilc_groupIcon", ""]];
+            tvSetData [1002, [_i], _x call BIS_fnc_netId];
+            tvSetPicture [1002, [_i], [_x getVariable ["lilc_groupIcon", ""]] call lilc_factions_interface_fnc_getInsigniaPath];
             tvSetValue [1002, [_i], 1];
         };
 
         {
             private _rank = [_x getVariable ["lilc_factionRankID", 0]] call lilc_factions_interface_fnc_getRank;
             private _name = [_x] call lilc_login_fnc_formatName;
-            private _j = tvAdd [1002, [], format[
+            private _j = tvAdd [1002, [_i], format[
                 "%1%2",
                 (if (isNil { _rank select 2; }) then {
                     "";
@@ -32,7 +32,7 @@ lbClear 1002;
                 }),
                 _name
             ]];
-            tvSetData [1002, [_i, _j], str _x];
+            tvSetData [1002, [_i, _j], _x call BIS_fnc_netId];
 
             if (isNil { _rank select 4; }) then {
                 tvSetPicture [1002, [_i, _j], _rank select 4];
@@ -40,3 +40,5 @@ lbClear 1002;
         } forEach units _x;
     };
 } forEach allGroups;
+
+tvExpandAll 1002;

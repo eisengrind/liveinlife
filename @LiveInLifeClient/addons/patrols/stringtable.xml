@@ -1,0 +1,122 @@
+
+<?xml version="1.0" encoding="utf-8">
+<Project name="LiveInLife">
+    <Package name="lilc_patrols">
+        <Container name="Config">
+            <Key ID="STR_lilc_patrols_Config_TitlePatrols">
+                <Original>Patrols</Original>
+                <English>Patrols</English>
+                <German>Patroullien</German>
+            </Key>
+            <Key ID="STR_lilc_patrols_Config_TitleGroups">
+                <Original>Groups:</Original>
+                <English>Groups:</English>
+                <German>Gruppen:</German>
+            </Key>
+            <Key ID="STR_lilc_patrols_Config_ButtonJoin">
+                <Original>Join group</Original>
+                <English>Join group</English>
+                <German>Gruppe beitreten</German>
+            </Key>
+            <Key ID="STR_lilc_patrols_Config_ButtonLeave">
+                <Original>Leave group</Original>
+                <English>Leave group</English>
+                <German>Gruppe verlassen</German>
+            </Key>
+            <Key ID="STR_lilc_patrols_Config_ButtonCreate">
+                <Original>Create group</Original>
+                <English>Create group</English>
+                <German>Gruppe erstellen</German>
+            </Key>
+            <Key ID="STR_lilc_patrols_Config_TitleName">
+                <Original>Name:</Original>
+                <English>Name:</English>
+                <German>Name:</German>
+            </Key>
+            <Key ID="STR_lilc_patrols_Config_TitleFrequency">
+                <Original>Radio frequency:</Original>
+                <English>Radio frequency:</English>
+                <German>Funkfrequenz:</German>
+            </Key>
+            <Key ID="STR_lilc_patrols_Config_TitleDescription">
+                <Original>Description:</Original>
+                <English>Description:</English>
+                <German>Beschreibung:</German>
+            </Key>
+            <Key ID="STR_lilc_patrols_Config_ButtonSave">
+                <Original>Save</Original>
+                <English>Save</English>
+                <German>Speichern</German>
+            </Key>
+            <Key ID="STR_lilc_patrols_Config_TitleIcon">
+                <Original>Icon:</Original>
+                <English>Icon:</English>
+                <German>Bild:</German>
+            </Key>
+        </Container>
+        <Container name="Script">
+            <Key ID="STR_lilc_patrols_Script_GroupCreated">
+                <Original>You have created a new patrol.</Original>
+                <English>You have created a new patrol.</English>
+                <German>Du hast eine neue Gruppe erstellt.</German>
+            </Key>
+            <Key ID="STR_lilc_patrols_Script_GroupJoined">
+                <Original>You joined group %1.</Original>
+                <English>You joined group %1.</English>
+                <German>Du bist der Gruppe %1 beigetreten.</German>
+            </Key>
+            <Key ID="STR_lilc_patrols_Script_GroupLeft">
+                <Original>You left the group.</Original>
+                <English>You left the group.</English>
+                <German>Du hast die Gruppe verlassen.</German>
+            </Key>
+            <Key ID="STR_lilc_patrols_Script_">
+                <Original></Original>
+                <English></English>
+                <German></German>
+            </Key>
+            <Key ID="STR_lilc_patrols_Script_">
+                <Original></Original>
+                <English></English>
+                <German></German>
+            </Key>
+            <Key ID="STR_lilc_patrols_Script_">
+                <Original></Original>
+                <English></English>
+                <German></German>
+            </Key>
+            <Key ID="STR_lilc_patrols_Script_">
+                <Original></Original>
+                <English></English>
+                <German></German>
+            </Key>
+            <Key ID="STR_lilc_patrols_Script_">
+                <Original></Original>
+                <English></English>
+                <German></German>
+            </Key>
+            <Key ID="STR_lilc_patrols_Script_">
+                <Original></Original>
+                <English></English>
+                <German></German>
+            </Key>
+        </Container>
+        <Container name="permission">
+            <Key ID="STR_permission_displayName_patrols.edit">
+                <Original>Edit patrol info</Original>
+                <English>Edit patrol info</English>
+                <German>Patroullie bearbeiten</German>
+            </Key>
+            <Key ID="STR_permission_displayName_patrols.create">
+                <Original>Create patrol</Original>
+                <English>Create patrol</English>
+                <German>Patroullie erstellen</German>
+            </Key>
+            <Key ID="STR_permission_displayName_patrols.join">
+                <Original>Join patrol</Original>
+                <English>Join patorl</English>
+                <German>Patroullie beitreten</German>
+            </Key>
+        </Container>
+    </Package>
+</Project>

@@ -1,14 +1,14 @@
 
-class lilc_factions_interface_patrols {
+class lilc_patrols_patrols {
     idd = 2051;
-    name = "lilc_factions_interface_patrols";
+    name = "lilc_patrols_patrols";
     enableSimulation = 1;
     movingEnable = 1;
 
     class controlsBackground {
         class TitleTitle: RscTitle {
             idc = 1000;
-            text = "Patroullien"; //--- ToDo: Localize;
+            text = "$STR_lilc_patrols_Config_TitlePatrols"; //--- ToDo: Localize;
             x = 0.360781 * safezoneW + safezoneX;
             y = 0.313 * safezoneH + safezoneY;
             w = 0.278437 * safezoneW;
@@ -38,6 +38,7 @@ class lilc_factions_interface_patrols {
             colorBackground[] = {0,0,0,0.8};
             colorText[] = {1,1,1,0.7};
             colorActive[] = {1,1,1,1};
+            onButtonClick = "closeDialog 2051;";
         };
     };
 
@@ -49,12 +50,12 @@ class lilc_factions_interface_patrols {
             w = 0.113437 * safezoneW;
             h = 0.231 * safezoneH;
             colorBackground[] = {0,0,0,0.8};
-            onTreeSelChanged = "_this call lilc_factions_interface_fnc_onTreeSelChangedGroup;";
+            onTreeSelChanged = "_this call lilc_patrols_fnc_onTreeSelChangedGroup;";
         };
 
         class TitleGroups: RscTitle {
             idc = 1003;
-            text = "Gruppen:"; //--- ToDo: Localize;
+            text = "$STR_lilc_patrols_Config_TitleGroups"; //--- ToDo: Localize;
             x = 0.365937 * safezoneW + safezoneX;
             y = 0.346 * safezoneH + safezoneY;
             w = 0.113437 * safezoneW;
@@ -74,42 +75,42 @@ class lilc_factions_interface_patrols {
             colorBackground[] = {0,0,0,0.8};
             colorText[] = {1,1,1,0.7};
             colorActive[] = {1,1,1,1};
-            onButtonClick = "call lilc_factions_interface_fnc_patrolRefresh;";
+            onButtonClick = "call lilc_patrols_fnc_patrolRefresh;";
         };
 
         class ButtonJoin: RscButton {
             idc = 1600;
-            text = "Gruppe beitreten"; //--- ToDo: Localize;
+            text = "$STR_lilc_patrols_Config_ButtonJoin"; //--- ToDo: Localize;
             x = 0.365937 * safezoneW + safezoneX;
             y = 0.602704 * safezoneH + safezoneY;
             w = 0.113437 * safezoneW;
             h = 0.022 * safezoneH;
-            onButtonClick = "call lilc_factions_interface_fnc_patrolJoin;";
+            onButtonClick = "call lilc_patrols_fnc_patrolJoin;";
         };
 
         class ButtonLeave: RscButton {
             idc = 1601;
-            text = "Gruppe verlassen"; //--- ToDo: Localize;
+            text = "$STR_lilc_patrols_Config_ButtonLeave"; //--- ToDo: Localize;
             x = 0.365937 * safezoneW + safezoneX;
             y = 0.654 * safezoneH + safezoneY;
             w = 0.113437 * safezoneW;
             h = 0.022 * safezoneH;
-            onButtonClick = "call lilc_factions_interface_fnc_patrolLeave;";
+            onButtonClick = "call lilc_patrols_fnc_patrolLeave;";
         };
 
         class ButtonCreate: RscButton {
             idc = 1602;
-            text = "Gruppe erstellen"; //--- ToDo: Localize;
+            text = "$STR_lilc_patrols_Config_ButtonCreate"; //--- ToDo: Localize;
             x = 0.365937 * safezoneW + safezoneX;
             y = 0.62737 * safezoneH + safezoneY;
             w = 0.113437 * safezoneW;
             h = 0.022 * safezoneH;
-            onButtonClick = "call lilc_factions_interface_fnc_patrolCreate;";
+            onButtonClick = "call lilc_patrols_fnc_patrolCreate;";
         };
 
         class TitleName: RscTitle {
             idc = 1005;
-            text = "Name:"; //--- ToDo: Localize;
+            text = "$STR_lilc_patrols_Config_TitleName"; //--- ToDo: Localize;
             x = 0.484531 * safezoneW + safezoneX;
             y = 0.346 * safezoneH + safezoneY;
             w = 0.149531 * safezoneW;
@@ -119,7 +120,7 @@ class lilc_factions_interface_patrols {
 
         class TitleFrequency: RscTitle {
             idc = 1006;
-            text = "Funkfrequenz:"; //--- ToDo: Localize;
+            text = "$STR_lilc_patrols_Config_TitleFrequency"; //--- ToDo: Localize;
             x = 0.484531 * safezoneW + safezoneX;
             y = 0.401 * safezoneH + safezoneY;
             w = 0.149531 * safezoneW;
@@ -129,7 +130,7 @@ class lilc_factions_interface_patrols {
 
         class TitleDescription: RscTitle {
             idc = 1007;
-            text = "Beschreibung:"; //--- ToDo: Localize;
+            text = "$STR_lilc_patrols_Config_TitleDescription"; //--- ToDo: Localize;
             x = 0.484531 * safezoneW + safezoneX;
             y = 0.511 * safezoneH + safezoneY;
             w = 0.149531 * safezoneW;
@@ -139,6 +140,7 @@ class lilc_factions_interface_patrols {
 
         class EditDescription: RscEdit {
             idc = 1400;
+            style = 16;
             x = 0.484531 * safezoneW + safezoneX;
             y = 0.533 * safezoneH + safezoneY;
             w = 0.149531 * safezoneW;
@@ -147,12 +149,12 @@ class lilc_factions_interface_patrols {
 
         class ButtonSave: RscButton {
             idc = 1603;
-            text = "Save"; //--- ToDo: Localize;
+            text = "$STR_lilc_patrols_Config_ButtonSave"; //--- ToDo: Localize;
             x = 0.556718 * safezoneW + safezoneX;
             y = 0.654 * safezoneH + safezoneY;
             w = 0.0773437 * safezoneW;
             h = 0.022 * safezoneH;
-            onButtonClick = "call lilc_factions_interface_fnc_patrolSave;";
+            onButtonClick = "call lilc_patrols_fnc_patrolSave;";
         };
 
         class EditFrequency: RscEdit {
@@ -173,7 +175,7 @@ class lilc_factions_interface_patrols {
 
         class TitleIcon: RscTitle {
             idc = 1008;
-            text = "Icon:"; //--- ToDo: Localize;
+            text = "$STR_lilc_patrols_Config_TitleIcon"; //--- ToDo: Localize;
             x = 0.484531 * safezoneW + safezoneX;
             y = 0.456 * safezoneH + safezoneY;
             w = 0.149531 * safezoneW;
@@ -189,7 +191,7 @@ class lilc_factions_interface_patrols {
             h = 0.022 * safezoneH;
         };
 
-        class TextDescription: RscText {
+        class TextDescription: RscStructuredText {
             idc = 1009;
             x = 0.484531 * safezoneW + safezoneX;
             y = 0.533 * safezoneH + safezoneY;

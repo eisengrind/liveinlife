@@ -21,16 +21,4 @@ class lilc_factions_interface {
         class rankSetPermissions {};
         class rankSetVehicles {};
     };
-
-    class patrols {
-        file = "\x\lilc\ddons\factions_interface\functions\patrols";
-        class onTreeSelChangedGroup {};
-        class openPatrols {};
-        class patrolCreate {};
-        class patrolJoin {};
-        class patrolLeave {};
-        class patrolRefresh {};
-        class patrolSave {};
-        class patrolUpdate {};
-    };
 };

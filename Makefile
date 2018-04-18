@@ -165,6 +165,7 @@ client:	lilc_actions \
 	lilc_meteorology \
 	lilc_modules \
 	lilc_packages \
+	lilc_patrols \
 	lilc_paycheck \
 	lilc_pcard \
 	lilc_pda \
@@ -308,6 +309,9 @@ lilc_modules: build_armake createKey
 
 lilc_packages: build_armake createKey
 	$(ARMAKE) build -p --force -k $(PRVKEYFILE) -e prefix=x\\lilc\\addons\\packages @LiveInLifeClient/addons/packages .build/@LiveInLifeClient/addons/$@.pbo
+
+lilc_patrols: build_armake createKey
+	$(ARMAKE) build -p --force -k $(PRVKEYFILE) -e prefix=x\\lilc\\addons\\patrols @LiveInLifeClient/addons/patrols .build/@LiveInLifeClient/addons/$@.pbo
 
 lilc_paycheck: build_armake createKey
 	$(ARMAKE) build -p --force -k $(PRVKEYFILE) -e prefix=x\\lilc\\addons\\paycheck @LiveInLifeClient/addons/paycheck .build/@LiveInLifeClient/addons/$@.pbo
