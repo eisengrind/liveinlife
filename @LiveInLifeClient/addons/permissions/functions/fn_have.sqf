@@ -6,7 +6,7 @@ params [
 
 private _rank = [player getVariable ["lilc_factionRankID", 0]] call lilc_factions_interface_fnc_getRank;
 if ((count _rank) > 0) then {
-    _permission append (_rank select 5);
+    _permissions append (_rank select 5);
 };
 
 try
@@ -21,7 +21,7 @@ try
     {
         private _var = (_permissionName splitString ".");
         reverse _var;
-        for "_i" from to 0 to _z - 1 do
+        for "_i" from 0 to _z - 1 do
         {
             _var deleteAt 0;
         };
