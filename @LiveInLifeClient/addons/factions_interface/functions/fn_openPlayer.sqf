@@ -4,6 +4,7 @@ params [
 ];
 
 if (_accountID <= 0) exitWith {};
+if !(["factions_interface.player"] call lilc_permissions_fnc_have) exitWith {};
 
 private _factionID = player getVariable ["lilc_factionID", -1];
 if (_factionID <= -1) exitWith {};
