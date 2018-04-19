@@ -4,14 +4,11 @@ params [
     ["_protocolName", lils_database_defaultProtocolName, [""]]
 ];
 
-try
-{
+try {
     if (isNil "_query") throw false;
     if (_protocolName == "") throw false;
 
     throw ([_query, 2, _protocolName] call lils_database_fnc_async);
-}
-catch
-{
+} catch {
     _exception;
 };

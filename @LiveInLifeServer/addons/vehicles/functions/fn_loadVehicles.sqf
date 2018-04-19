@@ -39,9 +39,10 @@ private _vehicles = ([([
     _vehicleData = (_vehicleData select 0);
     if ((count _vehicleData) != 13) throw false;
 
-    _vehicleData set [3, ([(_vehicleData select 3)] call lils_common_fnc_arrayDecode)];
-    _vehicleData set [4, ([(_vehicleData select 4)] call lils_common_fnc_arrayDecode)];
-    _vehicleData set [11, ([(_vehicleData select 11)] call lils_common_fnc_arrayDecode)];
+    _vehicleData set [3, [_vehicleData select 3] call lils_common_fnc_arrayDecode];
+    _vehicleData set [4, [_vehicleData select 4] call lils_common_fnc_arrayDecode];
+    _vehicleData set [5, [_vehicleData select 5] call lils_common_fnc_arrayDecode];
+    _vehicleData set [11, [_vehicleData select 11] call lils_common_fnc_arrayDecode];
 
     private _vehicle = ([
         (_vehicleData select 2),
