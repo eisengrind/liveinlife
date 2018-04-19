@@ -105,7 +105,7 @@ class lilc_factions_interface_overview {
             y = 0.695222 * safezoneH + safezoneY;
             w = 0.185625 * safezoneW;
             h = 0.022 * safezoneH;
-            onButtonClick = "private _val = lbValue [1501, (lbCurSel 1501)]; closeDialog 2048; [_val] call lilc_factions_interface_fnc_openRank;";
+            onButtonClick = "private _val = parseNumber (lbData [1501, lbCurSel 1501]); closeDialog 2048; [_val] call lilc_factions_interface_fnc_openRank;";
         };
 
         class ButtonRankRemove: RscButton {
@@ -115,7 +115,7 @@ class lilc_factions_interface_overview {
             y = 0.72 * safezoneH + safezoneY;
             w = 0.185625 * safezoneW;
             h = 0.022 * safezoneH;
-            onButtonClick = "[lbValue [1501, lbCurSel 1501]] call lilc_factions_interface_fnc_rankRemove;";
+            onButtonClick = "[parseNumber (lbData [1501, lbCurSel 1501])] call lilc_factions_interface_fnc_rankRemove;";
         };
     };
 };

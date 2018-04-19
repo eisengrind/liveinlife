@@ -9,22 +9,42 @@
                 ["name"],
                 ["tag"],
                 ["paycheck"],
-                ["insignia"],
-                ["permissions"],
-                ["items"],
-                ["vehicles"]
+                ["insignia"]
             ]
         ] call lils_database_fnc_generateFetchQuery] call lils_database_fnc_fetchObjects;
 
-        for "_i" from 0 to (count _ranks) - 1 do {
-            private _rank = _ranks select _i;
-            _rank set [5, [_rank select 5] call lils_common_fnc_arrayDecode];
-            _rank set [6, [_rank select 6] call lils_common_fnc_arrayDecode];
-            _rank set [7, [_rank select 7] call lils_common_fnc_arrayDecode];
+        if (isNil "_ranks") exitWith {};
+        if (_ranks isEqualType false) exitWith {};
 
-            private _rankVariable = format["lilc_factions_interface_ranks_%1", _rank select 0];
-            missionNamespace setVariable [_rankVariable, _rank];
+        {
+            _x params [
+                "_rid",
+                "_name",
+                "_tag",
+                "_paycheck",
+                "_insignia"
+            ];
+            private _rankInfo = [[
+                "faction_ranks",
+                [
+                    ["permissions"],
+                    ["items"],
+                    ["vehicles"]
+                ],
+                [
+                    ["rid", _rid]
+                ]
+            ] call lils_database_fnc_generateFetchQuery] call lils_database_fnc_fetchObjects;
+
+            _rankInfo = _rankInfo select 0;
+
+            _rankInfo set [0, [_rankInfo select 0] call lils_common_fnc_arrayDecode];
+            _rankInfo set [1, [_rankInfo select 1] call lils_common_fnc_arrayDecode];
+            _rankInfo set [2, [_rankInfo select 2] call lils_common_fnc_arrayDecode];
+
+            private _rankVariable = format["lilc_factions_interface_ranks_%1", _rid];
+            missionNamespace setVariable [_rankVariable, [_rid, _name, _tag, _paycheck, _insignia, _rankInfo select 0, _rankInfo select 1, _rankInfo select 2]];
             publicVariable _rankVariable;
-        };
+        } forEach _ranks;
     }
 ] call CBA_fnc_addEventHandler;
