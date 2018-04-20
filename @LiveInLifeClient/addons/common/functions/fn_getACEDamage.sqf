@@ -6,10 +6,6 @@ params [
 if (isNull _unit) exitWith {};
 
 [
-    [
-        ((getAllHitPointsDamage _unit) select 0),
-        ((getAllHitPointsDamage _unit) select 2)
-    ],
     (_unit getVariable ["ace_medical_morphine", 0]),
     (_unit getVariable ["ace_medical_openwounds", []]),
     (_unit getVariable ["ace_medical_bloodpressure", 0]),
