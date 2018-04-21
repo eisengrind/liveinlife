@@ -5,20 +5,22 @@ try {
     private _ui = (findDisplay 1300);
     if (isNull _ui) throw false;
 
+    systemChat str 1;
     private _uiListVehicles = (_ui displayCtrl 1501);
     private _vehicle = (_uiListVehicles lbData (lbCurSel _uiListVehicles));
     if (_vehicle == "") throw false;
+
+    _vehicle = (_vehicle call BIS_fnc_objectFromNetId);
+    if (isNull _vehicle) throw false;
     if (_vehicle getVariable ["lilc_isRented", false]) then {
         ["Das Fahrzeug ist zu heiß!", "WARNING"] call lilc_ui_fnc_hint;
         throw false;
     };
-
-    _vehicle = (_vehicle call BIS_fnc_objectFromNetId);
-    if (isNull _vehicle) throw false;
     if !(alive _vehicle) then {
         ["Das Fahrzeug ist nicht mehr vorhanden.", "ERROR"] call lilc_ui_fnc_hint;
         throw false;
     };
+    systemChat str 5;
 
     private _butcherConfig = ([(_ui getVariable ["lilc_butcher_butcherName", ""])] call lilc_butcher_fnc_getButcherConfig);
     if (isNull _butcherConfig) throw false;
