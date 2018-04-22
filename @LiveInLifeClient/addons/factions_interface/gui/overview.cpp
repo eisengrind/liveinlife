@@ -115,7 +115,7 @@ class lilc_factions_interface_overview {
             y = 0.72 * safezoneH + safezoneY;
             w = 0.185625 * safezoneW;
             h = 0.022 * safezoneH;
-            onButtonClick = "[parseNumber (lbData [1501, lbCurSel 1501])] call lilc_factions_interface_fnc_rankRemove;";
+            onButtonClick = "[] call lilc_factions_interface_fnc_rankRemove;";
         };
     };
 };

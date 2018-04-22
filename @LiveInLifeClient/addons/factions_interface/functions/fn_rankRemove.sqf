@@ -2,7 +2,7 @@
 private _index = lbCurSel 1501;
 if (_index <= -1) exitWith {};
 
-private _rankID = lbValue [1501, _index];
+private _rankID = parseNumber lbData [1501, _index];
 if (_rankID <= 0) exitWith {};
 
 ctrlEnable [1501, false];
