@@ -46,12 +46,14 @@ player playActionNow "ace_gestures_engage";
 sleep 0.8;
 
 _target = cursorTarget;
-if (isNull _target || !(alive _target) || !(isPlayer _target) || (_target distance player) > 2) exitWith { lilc_action_active = false; };
-player say3D [format["punch%1.ogg", round random 2], 30];
+if (isNull _target || !(alive _target) || !(isPlayer _target) || (_target distance player) > 2) exitWith {
+    lilc_action_active = false;
+    player say3D ["lilc_actions_whoosh0.ogg", 10];
+};
+player say3D [format["lilc_actions_punch%1.ogg", round random 2], 30];
 
 [[player], "lilc_actions_fnc_punched", _target] call lilc_common_fnc_send;
-if ((random 1) < _chanceDefault || (((headgear _target) in _headgear) && (random 1) < _chanceHeadgear)) then
-{
+if ((random 1) < _chanceDefault || (((headgear _target) in _headgear) && (random 1) < _chanceHeadgear)) then {
     [_target, true, (random [3, 15, 40])] call ace_medical_fnc_setUnconscious;
 };
 

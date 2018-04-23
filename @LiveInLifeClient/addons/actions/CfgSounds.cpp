@@ -34,3 +34,9 @@ class lilc_actions_moan2 {
     sound[] = {"\x\lilc\addons\actions\sounds\moan2.ogg", 1, 1, 100};
     titles[] = {};
 };
+
+class lilc_actions_whoosh0 {
+    name = "lilc_actions_whoosh0";
+    sound[] = {"\x\lilc\addons\actions\sounds\whoosh0.ogg", 1, 1, 100};
+    titles[] = {};
+};
