@@ -52,7 +52,6 @@ if (lilc_action_interrupted || (vehicle player) != player) exitWith {
 player switchMove "";
 lilc_action_interrupted = false;
 ["Das Fahrzeug wurde erfolgreich durchsucht."] call lilc_ui_fnc_hint;
-_object setDamage 0;
 closeDialog 1320;
 
 private _founds = [];
