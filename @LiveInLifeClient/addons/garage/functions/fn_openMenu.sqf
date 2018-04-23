@@ -29,7 +29,7 @@ try
             (((getNumber(_garageConfig >> "havePlanes")) == 1) && _x isKindOf "Plane") ||
             (((getNumber(_garageConfig >> "haveHelicopters")) == 1) && _x isKindOf "Helicopter") ||
             (((getNumber(_garageConfig >> "haveTrucks")) == 1) && _x isKindOf "Truck") ||
-            (((getNumber(_garageConfig >> "haveBoats")) == 1) && _x isKindOf "Boat") ||
+            (((getNumber(_garageConfig >> "haveBoats")) == 1) && (_x isKindOf "Boat" || _x isKindOf "Ship")) ||
             (((getNumber(_garageConfig >> "haveSmallCars")) == 1) && _x isKindOf "ATV") ||
             (((getNumber(_garageConfig >> "haveBikes")) == 1) && _x isKindOf "Bike")
         }) apply {

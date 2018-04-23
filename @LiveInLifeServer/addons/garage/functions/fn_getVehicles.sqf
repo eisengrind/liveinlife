@@ -49,12 +49,12 @@ try {
 
         {
             if (
-                (((getNumber(_garageConfig >> "haveCars")) == 1) && (_x select 0) isKindOf "Car") || 
-                (((getNumber(_garageConfig >> "havePlanes")) == 1) && (_x select 0) isKindOf "Plane") || 
-                (((getNumber(_garageConfig >> "haveHelicopters")) == 1) && (_x select 0) isKindOf "Helicopter") || 
-                (((getNumber(_garageConfig >> "haveTrucks")) == 1) && (_x select 0) isKindOf "Truck") || 
-                (((getNumber(_garageConfig >> "haveBoats")) == 1) && (_x select 0) isKindOf "Boat") || 
-                (((getNumber(_garageConfig >> "haveSmallCars")) == 1) && (_x select 0) isKindOf "ATV") || 
+                (((getNumber(_garageConfig >> "haveCars")) == 1) && (_x select 0) isKindOf "Car") ||
+                (((getNumber(_garageConfig >> "havePlanes")) == 1) && (_x select 0) isKindOf "Plane") ||
+                (((getNumber(_garageConfig >> "haveHelicopters")) == 1) && (_x select 0) isKindOf "Helicopter") ||
+                (((getNumber(_garageConfig >> "haveTrucks")) == 1) && (_x select 0) isKindOf "Truck") ||
+                (((getNumber(_garageConfig >> "haveBoats")) == 1) &&  ((_x select 0) isKindOf "Boat" || (_x select 0) isKindOf "Ship")) ||
+                (((getNumber(_garageConfig >> "haveSmallCars")) == 1) && (_x select 0) isKindOf "ATV") ||
                 (((getNumber(_garageConfig >> "haveBikes")) == 1) && (_x select 0) isKindOf "Bike")
             ) then {
                 _vehicles pushBack [-1, (_x select 0), (_x select 1), "", 1, ""];
