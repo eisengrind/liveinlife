@@ -12,7 +12,7 @@ try {
 
     _vehicle = (_vehicle call BIS_fnc_objectFromNetId);
     if (isNull _vehicle) throw false;
-    if (_vehicle getVariable ["lilc_isRented", false]) then {
+    if (_vehicle getVariable ["lilc_isRented", false] || (_vehicle getVariable ["lilc_factionID", -1]) > -1) then {
         ["Das Fahrzeug ist zu heiß!", "WARNING"] call lilc_ui_fnc_hint;
         throw false;
     };
