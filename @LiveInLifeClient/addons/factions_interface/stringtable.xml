@@ -100,6 +100,11 @@
                 <English>Create rank</English>
                 <German>Rang erstellen</German>
             </Key>
+            <Key ID="STR_lilc_factions_interface_Script_paycheckMessage">
+                <Original>You received your paycheck of $%1.</Original>
+                <English>You received your paycheck of $%1.</English>
+                <German>Du hast deinen Gehalt in Hoehe von $%1 erhalten.</German>
+            </Key>
         </Container>
     </Package>
     <Package name="lilc_permissions">

@@ -20,5 +20,6 @@ class lilc_factions_interface {
         class rankSetItems {};
         class rankSetPermissions {};
         class rankSetVehicles {};
+        class setPaycheck {};
     };
 };

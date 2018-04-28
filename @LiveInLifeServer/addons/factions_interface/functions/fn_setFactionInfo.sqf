@@ -20,6 +20,7 @@ try {
 
     _unit setVariable ["lilc_factionRankID", ((_result select 0) select 0), true];
 
+    [false, "lilc_factions_interface_fnc_setPaycheck"] call lilc_common_fnc_send;
     throw true;
 } catch {
     _exception;
