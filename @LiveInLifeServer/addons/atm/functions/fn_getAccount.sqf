@@ -7,7 +7,7 @@ params [
 try {
     if (isNull _unit) throw [];
 
-    private _account = [(_unit getVariable ["lilc_accountID", 0]), _bank] call lils_bank_fnc_getAccount;
+    private _account = [getPlayerUID _unit, _bank] call lils_bank_fnc_getAccount;
     if ((count _account) <= 0) throw [];
 
     private _nAccount = [];

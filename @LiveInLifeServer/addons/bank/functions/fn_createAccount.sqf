@@ -36,13 +36,13 @@ try {
         getText(_bankConfig >> "hashPrefix"),
         ([2, false, false, true] call lilc_common_fnc_randomString),
         ([6, true, false, false] call lilc_common_fnc_randomString),
-        ([([(str _accountID), 4] call KRON_StrRight), 4, "0"] call lilc_common_fnc_fillString)
+        ([([(getPlayerUID player), 4] call KRON_StrRight), 4, "0"] call lilc_common_fnc_fillString)
     ];
-    
-    ([(format["INSERT INTO BANK_ACCOUNT_DATA (ID, NAME, AMOUNT, ACCOUNTID, STATUS, HASH) VALUES (NULL, '""%1""', '%2', '%3', '%4', '%5')", _bankName, _startAmount, _accountID, 1, _hash])] call lils_database_fnc_query);
+
+    ([(format["INSERT INTO BANK_ACCOUNT_DATA (ID, NAME, AMOUNT, ACCOUNTID, STATUS, HASH, steamid64) VALUES (NULL, '""%1""', '%2', '%3', '%4', '%5', '%6')", _bankName, _startAmount, _accountID, 1, _hash, _unitUID])] call lils_database_fnc_query);
     uiSleep 0.5;
-    private _bankAccount = ([(format["SELECT QUOTE(HASH), NAME, AMOUNT, STATUS, ID FROM BANK_ACCOUNT_DATA WHERE ACCOUNTID = '%1' AND HASH = '%2'", _accountID, _hash])] call lils_database_fnc_fetchObjects);
-    
+    private _bankAccount = ([(format["SELECT QUOTE(HASH), NAME, AMOUNT, STATUS, ID FROM BANK_ACCOUNT_DATA WHERE steamid64 = '%1' AND HASH = '%2'", _unitUID, _hash])] call lils_database_fnc_fetchObjects);
+
     throw (_bankAccount select 0);
 } catch {
     _exception;

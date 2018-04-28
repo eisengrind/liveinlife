@@ -7,7 +7,6 @@ class lils_bank {
         class delete {};
         class getAccount {};
         class getAccounts {};
-        class init {};
         class removeValue {};
         class setBankAccounts {};
         class setValue {};
