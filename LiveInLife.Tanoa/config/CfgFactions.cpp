@@ -13,6 +13,7 @@ class CfgFactions {
         prison_canRelease = 1;
         globalVehicleLock = 1;
         havePDA = 1;
+        defaultRankID = 2; //rankid
         nameVisible = 1; //0 = no name without "pcard-showed" visible, 1 = firstname without "pcard-showed" visible, 2 = fullname without "pcard-showed" visible
         selectablePermissions[] = {
             /*"pda.open",
@@ -34,7 +35,7 @@ class CfgFactions {
         defaultEquipment[] = {
             {"ItemCompass", ""},
             {"ItemMap", ""}
-  
+
         };
         garages[] = {"myAuthorityGarage"};
         garage_useCivilCars = 0;

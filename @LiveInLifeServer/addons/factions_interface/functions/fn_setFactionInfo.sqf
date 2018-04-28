@@ -10,10 +10,13 @@ try {
     if (_accountID <= 0) throw false;
     _unitUID = (getPlayerUID _unit);
 
+    private _fCfg = [_unit getVariable ["lilc_factionID", -1]] call lilc_factions_fnc_getFactionConfig;
+    if (isNull _fCfg) exitWith {};
+
     private _result = [];
     _result = [(format["SELECT RANKID FROM FACTION_PLAYER_DATA WHERE STEAM64ID = '%1' AND ACCOUNTID = '%2'", _unitUID, _accountID])] call lils_database_fnc_fetchObjects;
     if ((count _result) <= 0) then {
-        _result = [[0]];
+        _result = [[getNumber(_fCfg >> "defaultRankID")]];
         [(format["INSERT INTO FACTION_PLAYER_DATA (ID, STEAM64ID, ACCOUNTID, EQUIPMENT, VEHICLES, PERMISSIONS, RANKID) VALUES (NULL, '%1', '%2', '""[]""', '""[]""', '""[]""', '0')", _unitUID, _accountID])] call lils_database_fnc_query;
     };
     if ((count (_result select 0)) != 1) throw false;
