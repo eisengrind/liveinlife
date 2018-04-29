@@ -1,7 +1,7 @@
 
 params [
     ["_permissionName", "", [""]],
-    ["_permissions", (if (isNil "lilc_permissions_permissions") then { []; } else { lilc_permissions_permissions; }), [[]]]
+    ["_permissions", (if (isNil "lilc_permissions_permissions") then { []; } else { +(lilc_permissions_permissions); }), [[]]]
 ];
 
 private _rank = [player getVariable ["lilc_factionRankID", 0]] call lilc_factions_interface_fnc_getRank;
