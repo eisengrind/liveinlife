@@ -119,7 +119,7 @@ try
         scriptName "\x\lilc\addons\ui\hint_control_fadeOut";
 
         private _currentControl = (_this select 0);
-        _currentControl ctrlCommit (profileNamespace getVariable ["lilc_ui_hintDisplayTime", 6]);
+        _currentControl ctrlCommit lilc_ui_hintDisplayTime;
         waitUntil { (ctrlCommitted _currentControl) };
         lilc_ui_hint_lastControls deleteAt (lilc_ui_hint_lastControls find ctrlIDC _currentControl);
         _currentControlPosition = (ctrlPosition _currentControl);
