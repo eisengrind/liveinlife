@@ -56,7 +56,7 @@ try
         if !(isNull _itemConfig) then
         {
             private _index = (_uiListAvailableLicenses lbAdd getText(_itemConfig >> "displayName"));
-            _uiListAvailableLicenses lbSetData [_index, _x select 0)];
+            _uiListAvailableLicenses lbSetData [_index, _x select 0];
             _uiListAvailableLicenses lbSetPicture [_index, getText(_itemConfig >> "picture")];
             _uiListAvailableLicenses lbSetValue [_index, _x select 2];
         };

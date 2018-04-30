@@ -53,7 +53,7 @@ class lilcm_licenses
         class ButtonAddLicense : lilc_RscButtonMenu
         {
             idc = 2400;
-            onButtonClick = "[(lbData [1500, (lbCurSel 1500)])] call lilc_licenses_fnc_removeLicense;";
+            onButtonClick = "[(lbData [1500, (lbCurSel 1500)])] call lilc_licenses_fnc_addLicense;";
             text = "HinzufÃ¼gen"; //--- ToDo: Localize;
             x = 0.360781 * safezoneW + safezoneX;
             y = 0.643 * safezoneH + safezoneY;
@@ -91,7 +91,7 @@ class lilcm_licenses
             w = 0.134062 * safezoneW;
             h = 0.022 * safezoneH;
         };
-        
+
         class ButtonClose : RscActiveText {
             idc = 1200;
             style = 48;
