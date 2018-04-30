@@ -8,7 +8,7 @@ class lilcm_transponder_transponder {
     class controlsBackground {
         class FrameBackgroundBackground : lilc_RscPicture {
             idc = -1;
-            text = "\x\lilc\addons\transponder\ui\transponder.paa";
+            text = "\x\lilc\addons\transponder\data\ui\transponder.paa";
             x = 0.350469 * safezoneW + safezoneX;
             y = 0.247 * safezoneH + safezoneY;
             w = 0.299062 * safezoneW;
@@ -21,7 +21,7 @@ class lilcm_transponder_transponder {
             idc = 1581;
             text = "0000";
             onKeyDown = "_this call lilc_transponder_fnc_onKeyDown;";
-            font = "tf_font_dots";
+            font = "dvchung_01Digit";
             shadow = 0;
             colorBackground[] = {0, 0, 0, 0};
             colorText[] = {0.847059, 0.839216, 0.121569, 0.95};
@@ -34,7 +34,7 @@ class lilcm_transponder_transponder {
         class TextFlightLevel : lilc_RscText {
             idc = 1582;
             text = "FL 000";
-            font = "tf_font_dots";
+            font = "dvchung_01Digit";
             shadow = 0;
             colorText[] = {0.847059, 0.839216, 0.121569, 0.95};
             x = 0.494322 * safezoneW + safezoneX;
@@ -46,7 +46,7 @@ class lilcm_transponder_transponder {
         class TextMode : lilc_RscText {
             idc = 1583;
             text = "ACS";
-            font = "tf_font_dots";
+            font = "dvchung_01Digit";
             shadow = 0;
             colorText[] = {0.847059, 0.839216, 0.121569, 0.95};
             x = 0.443281 * safezoneW + safezoneX;
@@ -58,7 +58,7 @@ class lilcm_transponder_transponder {
         class TextModeNumber :lilc_RscText {
             idc = 1584;
             text = "1234";
-            font = "tf_font_dots";
+            font = "dvchung_01Digit";
             shadow = 0;
             colorText[] = {0.847059, 0.839216, 0.121569, 0.95};
             x = 0.494271 * safezoneW + safezoneX;
@@ -120,7 +120,7 @@ class lilcm_transponder_transponder {
             w = 0.0209375 * safezoneW;
             h = 0.0355556 * safezoneH;
         };*/
-        
+
         class Button6 : Button1 {
             idc = 1590;
             onButtonClick = "[] spawn lilc_transponder_fnc_apply;";
