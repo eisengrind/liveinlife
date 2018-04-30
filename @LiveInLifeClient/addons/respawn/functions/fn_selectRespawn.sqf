@@ -1,4 +1,8 @@
 
+if (isNil "lilc_respawn_firstspawn") then {
+    lilc_respawn_firstspawn = true;
+};
+
 if (lilc_player_deathTimeout > 0 && lilc_player_isRespawning) then {
     [2] call lilc_ui_fnc_fadeOutBlack;
     [player] spawn lilc_respawn_fnc_init;
@@ -20,6 +24,10 @@ if (lilc_player_deathTimeout > 0 && lilc_player_isRespawning) then {
     } else {
         //TODO: add default firstspawn
         private _fCfg = ([_fID] call lilc_factions_fnc_getFactionConfig);
+        if (lilc_respawn_firstspawn && isText(_fCfg >> "defaultRespawn")) exitWith {
+            [player, [getText(_fCfg >> "defaultRespawn")] call lilc_common_fnc_getDynamicPosition] call lilc_common_fnc_setPosition;
+        };
+
         private _fRT = getNumber(_fCfg >> "respawnType"); //0, 1, 2
         private _pPos = (getPos vehicle player);
 
@@ -77,3 +85,5 @@ if (lilc_player_deathTimeout > 0 && lilc_player_isRespawning) then {
         };
     };
 };
+
+lilc_respawn_firstspawn = false;
