@@ -19,8 +19,8 @@ try
     };
 
     if (({
-        ([(["virtualItem", _x, "add"] call lilc_permissions_fnc_bindPermissionTree)] call lilc_permissions_fnc_have) ||
-        ([(["virtualItem", _x, "remove"] call lilc_permissions_fnc_bindPermissionTree)] call lilc_permissions_fnc_have)
+        ([(["licenses", _x, "add"] call lilc_permissions_fnc_bindPermissionTree)] call lilc_permissions_fnc_have) ||
+        ([(["licenses", _x, "remove"] call lilc_permissions_fnc_bindPermissionTree)] call lilc_permissions_fnc_have)
     } count _applicableLicenses) <= 0) then
     {
         ["Du besitzt zwar Lizenzen, darfst sie aber nicht verteilen."] call lilc_ui_fnc_hint;
@@ -46,11 +46,23 @@ try
             _uiListLicenses lbSetData [_index, _x];
             _uiListLicenses lbSetPicture [_index, getText(_itemConfig >> "picture")];
         };
-    } forEach _applicableLicenses;
+    } forEach _applicableLicenses select {
+        ([(["licenses", _x, "add"] call lilc_permissions_fnc_bindPermissionTree)] call lilc_permissions_fnc_have)
+    };
 
     lbClear _uiListAvailableLicenses;
-    _uiListAvailableLicenses lbAdd "lade Lizenzen...";
-    [[player], "lilc_licenses_fnc_getTargetLicenses", _target] call lilc_common_fnc_send;
+    {
+        private _itemConfig = ([_x select 0] call lilc_virtualInventory_fnc_getVirtualItemConfig);
+        if !(isNull _itemConfig) then
+        {
+            private _index = (_uiListAvailableLicenses lbAdd getText(_itemConfig >> "displayName"));
+            _uiListAvailableLicenses lbSetData [_index, _x select 0)];
+            _uiListAvailableLicenses lbSetPicture [_index, getText(_itemConfig >> "picture")];
+            _uiListAvailableLicenses lbSetValue [_index, _x select 2];
+        };
+    } forEach ((_target getVariable ["lilc_virtualInventory_inventory", []]) select {
+        ([(["licenses", _x select 0, "remove"] call lilc_permissions_fnc_bindPermissionTree)] call lilc_permissions_fnc_have) && (_x select 0) in _applicableLicenses;
+    });
 
     throw true;
 }

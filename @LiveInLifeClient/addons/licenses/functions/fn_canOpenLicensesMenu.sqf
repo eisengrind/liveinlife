@@ -11,6 +11,6 @@ if !(["licenses.open"] call lilc_permissions_fnc_have) exitWith { false };
 
 private _applicableLicenses = getArray(_unitFactionConfig >> "applicableLicenses");
 (({
-    ([(["virtualItem", _x, "add"] call lilc_permissions_fnc_bindPermissionTree)] call lilc_permissions_fnc_have) ||
-    ([(["virtualItem", _x, "remove"] call lilc_permissions_fnc_bindPermissionTree)] call lilc_permissions_fnc_have)
+    ([(["licenses", _x, "add"] call lilc_permissions_fnc_bindPermissionTree)] call lilc_permissions_fnc_have) ||
+    ([(["licenses", _x, "remove"] call lilc_permissions_fnc_bindPermissionTree)] call lilc_permissions_fnc_have)
 } count _applicableLicenses) > 0);
