@@ -154,6 +154,10 @@ lils_login_set_defPackages = [
 SET END / UDPATE START
 *********/
 
+["update_lil_login_damage",{
+    ["health", [_this select 1] call lils_common_fnc_arrayEncode];
+}] call lils_login_fnc_addPackage;
+
 [
     "update_lil_respawn_isNew",
     {

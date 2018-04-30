@@ -14,13 +14,14 @@ try {
 
     private _items = [];
     if (lilc_shops_currentShopname == "" && _factionID > -1) then {
+        private _rank = [player getVariable ["lilc_factionRankID", 0]] call lilc_factions_interface_fnc_getRank;
         {
             if ([(_x select 0)] call lilc_shops_fnc_isOtherItem) then {
                 if !((_x + [0]) in _items) then {
                     _items pushBack (_x + [0]);
                 };
             };
-        } forEach lilc_factionsInterface_items;
+        } forEach ((_rank select 6) apply { [_x, "", 0]; });
     } else {
         private _hash = ([lilc_shops_currentShopname] call lilc_economy_fnc_getShopHash);
         {

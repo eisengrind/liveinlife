@@ -8,3 +8,5 @@ if (!alive _vehicle || isNull _vehicle) then {
     player setDir (player getDir _vehicle);
     hint "Dein Fahrzeug wurde erfolgreich ausgeparkt.";
 };
+
+ctrlEnable [2400, true];

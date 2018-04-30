@@ -1,7 +1,10 @@
 
-try
-{
+if !(ctrlEnabled 2400) exitWith {};
+
+try {
     disableSerialization;
+    ctrlEnable [2400, false];
+
     private _ui = (findDisplay 1265);
     if (isNull _ui) throw false;
 
@@ -17,22 +20,17 @@ try
     private _position = ([getText(_garageConfig >> "revealPosition")] call lilc_common_fnc_getDynamicPosition);
     if ([(_position select 0), getNumber(_garageConfig >> "revealRadius"), ["Car", "Ship", "Boat", "Tank", "Truck", "Plane", "Air", "Helicopter"]] call lilc_common_fnc_objectsNearby) throw false;
 
-    if ((_data select 0) <= 0) then
-    {
+    if ((_data select 0) <= 0) then {
         [[player, [(_data select 1), (_data select 2)], lilc_garage_currentGarage], "lils_garage_fnc_reveal"] call lilc_common_fnc_sendToServer;
-    }
-    else
-    {
+    } else {
         //ID, CLASSNAME, COLOR, NICKNAME, FUEL, QUOTE(PLATE)
         [[player, (_data select 0), lilc_garage_currentGarage], "lils_garage_fnc_reveal"] call lilc_common_fnc_sendToServer;
     };
 
     throw true;
-}
-catch
-{
-    if !(_exception) then
-    {
+} catch {
+    if !(_exception) then {
+        ctrlEnable [2400, true];
         hint "Dein Fahrzeug konnte nicht ausgeparkt werden!";
     };
 };

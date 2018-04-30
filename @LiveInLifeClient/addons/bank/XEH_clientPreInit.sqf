@@ -1,13 +1,6 @@
 
 lilc_bank_accounts = [];
 
-/*[
-    "set_lil_bank_accounts",
-    {
-        lilc_bank_accounts = _this;
-    }
-] call lilc_login_fnc_addPackage;*/
-
 [
     "lilce_login_postAccountInit",
     {

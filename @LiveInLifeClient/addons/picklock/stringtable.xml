@@ -2,6 +2,48 @@
 <?xml version="1.0" encoding="utf-8">
 <Project name="LiveInLife">
     <Package name="lilc_picklock">
+        <Container name="Config">
+            <Key ID="STR_lilc_picklock_Config_PicklockTitle">
+                <Original>Picklock</Original>
+                <English>Picklock</English>
+                <German>Dietrich</German>
+            </Key>
+            <Key ID="STR_lilc_picklock_Config_PaperclipTitle">
+                <Original>Paperclip</Original>
+                <English>Paperclip</English>
+                <German>Bueroklammer</German>
+            </Key>
+            <Key ID="STR_lilc_picklock_Config_GlovesTitle">
+                <Original>Disposable gloves</Original>
+                <English>Disposable gloves</English>
+                <German>Einweghandschuhe</German>
+            </Key>
+            <Key ID="STR_lilc_picklock_Config_ClothTitle">
+                <Original>Cloth</Original>
+                <English>Cloth</English>
+                <German>Tuch</German>
+            </Key>
+            <Key ID="STR_lilc_picklock_Config_SteeringWheelLockTitle">
+                <Original>Steering wheel lock</Original>
+                <English>Steering wheel lock</English>
+                <German>Lenkradsperre</German>
+            </Key>
+            <Key ID="STR_lilc_picklock_Config_DrillTitle">
+                <Original>Drill</Original>
+                <English>Drill</English>
+                <German>Akkuschrauber</German>
+            </Key>
+            <Key ID="STR_lilc_picklock_Config_ScrewdriverTitle">
+                <Original>Screwdriver</Original>
+                <English>Screwdriver</English>
+                <German>Schraubendreher</German>
+            </Key>
+            <Key ID="STR_lilc_picklock_Config_CrowbarTitle">
+                <Original>Crowbar</Original>
+                <English>Crowbar</English>
+                <German>Brechstange</German>
+            </Key>
+        </Container>
         <Container name="ActionTitle">
             <Key ID="STR_lilc_actions_ActionTitle_picklock">
                 <Original>Break into</Original>

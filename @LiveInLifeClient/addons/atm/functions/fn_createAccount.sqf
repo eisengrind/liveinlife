@@ -19,12 +19,8 @@ Author:
     TheMysteriousVincent
 ---------------------------------------------------------------------------- */
 
-private _fID = (player getVariable ["lilc_factionID", -1]);
 private _banks = [];
-if (_fID > 0) then {
-    _banks = getArray(([_fID] call lilc_factions_fnc_getFactionConfig) >> "bank_createable");
-};
-if (!(lilc_atm_currentBankName in _banks) && _fID > 0) exitWith {
+if (!(lilc_atm_currentBankName in _banks)) exitWith {
     ["Du kannst kein Konto erstellen.", "ERROR"] call lilc_ui_fnc_hint;
 };
 

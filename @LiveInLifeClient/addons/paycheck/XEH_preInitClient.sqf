@@ -14,7 +14,9 @@ lilc_paycheck_active = 0;
         };
 
         if (lilc_paycheck_active == 1) then {
-            (call lilc_paycheck_fnc_enable);
+            [{
+                call lilc_paycheck_fnc_enable;
+            }, [], lilc_paycheck_timeout] call CBA_fnc_waitAndExecute;
         };
     }
 ] call CBA_fnc_addEventHandler;

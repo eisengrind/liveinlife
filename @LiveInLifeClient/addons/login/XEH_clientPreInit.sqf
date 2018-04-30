@@ -128,8 +128,13 @@ lilc_login_update_defPackages = [
     "update_lil_paycheck_active",
     "update_lil_respawn_isNew",
     "update_lil_virtualInventory_inventory",
-    "update_lil_respawn_deathTimeout"
+    "update_lil_respawn_deathTimeout",
+    "update_lil_login_damage"
 ];
+
+["update_lil_login_damage", {
+    [player] call lilc_common_fnc_getACEDamage;
+}] call lilc_login_fnc_addPackage;
 
 [
     "update_lil_respawn_deathTimeout",
@@ -227,13 +232,6 @@ lilc_login_update_defPackages = [
     "update_lil_respawn_respawning",
     {
         (parseNumber lilc_respawn_isRespawning);
-    }
-] call lilc_login_fnc_addPackage;
-
-[
-    "update_lil_respawn_currentTimeout",
-    {
-        lilc_respawn_currentTimeout;
     }
 ] call lilc_login_fnc_addPackage;
 

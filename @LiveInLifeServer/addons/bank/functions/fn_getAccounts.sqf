@@ -10,12 +10,11 @@ private _result = ([([
         ["NAME"]
     ],
     [
-        ["ACCOUNTID", (_unit getVariable ["lilc_accountID", 0])]
+        ["steamid64", getPlayerUID _unit]
     ]
 ] call lils_database_fnc_generateFetchQuery)] call lils_database_fnc_fetchObjects);
 
-if (_result isEqualType false) then
-{
+if (_result isEqualType false) then {
     _result = [];
 };
 

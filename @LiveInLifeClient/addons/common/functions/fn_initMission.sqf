@@ -98,6 +98,7 @@ if (isMultiplayer) then {
     ] call CBA_fnc_localEvent;
 
     [2] call lilc_ui_fnc_fadeOutBlack;
+    player setVariable ["lilc_finished", true, true];
     lilc_finished = true;
     ["mission initialized", "lilc_common"] call lilc_log_fnc_diag_log;
 } else {

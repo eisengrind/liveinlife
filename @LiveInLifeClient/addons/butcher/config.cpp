@@ -14,4 +14,4 @@ class lilc_RscListbox;
 class lilc_RscButtonMenu;
 class RscActiveText;
 
-#include "dialogs\butcher.cpp"
+#include "gui\butcher.cpp"

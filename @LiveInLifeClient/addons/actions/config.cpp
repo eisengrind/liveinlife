@@ -22,6 +22,10 @@ class CfgMovesMaleSdr : CfgMovesBasic {
     #include "CfgMovesMaleSdr.cpp"
 };
 
+class CfgSounds {
+    #include "CfgSounds.cpp"
+};
+
 class lilc_RscButtonMenu;
 class lilc_RscEdit;
 class lilc_RscText;

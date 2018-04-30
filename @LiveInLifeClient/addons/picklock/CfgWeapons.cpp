@@ -3,7 +3,7 @@ class lilci_itemInfo;
 class lilci_item;
 
 class lilci_picklock_F : lilci_item {
-    displayName = "Picklock";
+    displayName = "$STR_lilc_picklock_Config_PicklockTitle";
     description = "Ein Dietrich.";
     descriptionShort = "";
     picture = "\x\lilc\addons\picklock\icons\picklock.paa";
@@ -14,7 +14,7 @@ class lilci_picklock_F : lilci_item {
 };
 
 class lilci_paperclip_F : lilci_item {
-    displayName = "Paperclip";
+    displayName = "$STR_lilc_picklock_Config_PaperclipTitle";
     description = "Eine Büroklammer. Was kann man damit wohl machen... ?";
     descriptionShort = "";
     picture = "\x\lilc\addons\picklock\icons\paperclip.paa";
@@ -25,7 +25,7 @@ class lilci_paperclip_F : lilci_item {
 };
 
 class lilci_disposableGloves_F : lilci_item {
-    displayName = "Disposable Gloves";
+    displayName = "$STR_lilc_picklock_Config_GlovesTitle";
     description = "";
     descriptionShort = "";
     picture = "\x\lilc\addons\picklock\icons\disposableGloves.paa";
@@ -36,7 +36,7 @@ class lilci_disposableGloves_F : lilci_item {
 };
 
 class lilci_cloth_F : lilci_item {
-    displayName = "Cloth";
+    displayName = "$STR_lilc_picklock_Config_ClothTitle";
     description = "";
     descriptionShort = "";
     picture = "\x\lilc\addons\picklock\icons\cloth.paa";
@@ -47,7 +47,7 @@ class lilci_cloth_F : lilci_item {
 };
 
 class lilci_steeringWheelLock_F : lilci_item {
-    displayName = "Steering Wheel Lock";
+    displayName = "$STR_lilc_picklock_Config_SteeringWheelLockTitle";
     description = "";
     descriptionShort = "";
     picture = "\x\lilc\addons\picklock\icons\steeringWheelLock.paa";
@@ -58,7 +58,7 @@ class lilci_steeringWheelLock_F : lilci_item {
 };
 
 class lilci_drill_F : lilci_item {
-    displayName = "Drill";
+    displayName = "$STR_lilc_picklock_Config_DrillTitle";
     description = "";
     descriptionShort = "";
     picture = "\x\lilc\addons\picklock\icons\drill.paa";
@@ -69,22 +69,22 @@ class lilci_drill_F : lilci_item {
 };
 
 class lilci_screwdriver_F : lilci_item {
-    displayName = "Screwdriver";
+    displayName = "$STR_lilc_picklock_Config_ScrewdriverTitle";
     description = "";
     descriptionShort = "";
     picture = "\x\lilc\addons\picklock\icons\screwdriver.paa";
-    
+
     class ItemInfo : lilci_itemInfo {
         mass = 3;
     };
 };
 
 class lilci_crowbar_F : lilci_item {
-    displayName = "Brechstange";
+    displayName = "$STR_lilc_picklock_Config_CrowbarTitle";
     description = "";
     descriptionShort = "";
     picture = "\x\lilc\addons\picklock\icons\crowbar.paa";
-    
+
     class ItemInfo : lilci_itemInfo {
         mass = 16;
     };

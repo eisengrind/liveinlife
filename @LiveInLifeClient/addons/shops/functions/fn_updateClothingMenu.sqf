@@ -1,9 +1,9 @@
 
 try {
-    disableSerialization;    
+    disableSerialization;
     private _ui = (findDisplay 1201);
     if (isNull _ui) throw false;
-    
+
     private _uiListItems = (_ui displayCtrl 1202);
     private _uiComboCategories = (_ui displayCtrl 1203);
     private _uiTextBalance = (_ui displayCtrl 1204);
@@ -16,13 +16,14 @@ try {
 
     private _availableItems = [];
     if (_factionID > -1) then {
+        private _rank = [player getVariable ["lilc_factionRankID", 0]] call lilc_factions_interface_fnc_getRank;
         {
             if ([(_x select 0)] call lilc_shops_fnc_isUniformItem) then {
                 if !((_x + [-1]) in _availableItems) then {
                     _availableItems pushBack (_x + [-1]);
                 };
             };
-        } forEach lilc_factionsInterface_items;
+        } forEach ((_rank select 6) apply { [_x, "", 0]; });
     } else {
         private _hash = ([lilc_shops_currentShopname] call lilc_economy_fnc_getShopHash);
         {
@@ -59,7 +60,7 @@ try {
 
     private _currentCategory = (_uiComboCategories lbData (lbCurSel _uiComboCategories));
     lbClear _uiListItems;
-    
+
     private _removeItemData = (switch (_currentCategory) do {
         case "Glasses": { ["no_glasses", "<Remove Glasses>", -1]; };
         case "Headgear": { ["no_headgear", "<Remove Headgear>", -1]; };

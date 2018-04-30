@@ -22,7 +22,7 @@ private _prison_waitingTime = (_unit getVariable ["lilc_prison_waitingTime", 0])
 private _prison_punishment = (_unit getVariable ["lilc_prison_currentPunishment", ""]);
 private _cash = (_unit getVariable ["lilc_cash_balance", 0]);
 deleteVehicle _unit;
-if !(_unit getVariable ["lilc_loggedIn", false]) exitWith {};
+if !(_unit getVariable ["lilc_finished", false]) exitWith {};
 
 [([
     "ACCOUNT_DATA",

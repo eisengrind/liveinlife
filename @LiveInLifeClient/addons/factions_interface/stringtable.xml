@@ -1,0 +1,139 @@
+
+<?xml version="1.0" encoding="utf-8">
+<Project name="LiveInLife">
+    <Package name="lilc_factions_interface">
+        <Container name="Config">
+            <Key ID="STR_lilc_factions_interface_Config_back">
+                <Original>Back</Original>
+                <English>Back</English>
+                <German>Zurueck</German>
+            </Key>
+            <Key ID="STR_lilc_factions_interface_Config_save">
+                <Original>Save</Original>
+                <English>Save</English>
+                <German>Speichern</German>
+            </Key>
+            <Key ID="STR_lilc_factions_interface_Config_rank">
+                <Original>Rank:</Original>
+                <English>Rank:</English>
+                <German>Rang:</German>
+            </Key>
+            <Key ID="STR_lilc_factions_interface_Config_paycheck">
+                <Original>Paycheck:</Original>
+                <English>Paycheck:</English>
+                <German>Gehalt:</German>
+            </Key>
+            <Key ID="STR_lilc_factions_interface_Config_rankInsignia">
+                <Original>Rank insignia:</Original>
+                <English>Rank insignia:</English>
+                <German>Rangabzeichen:</German>
+            </Key>
+            <Key ID="STR_lilc_factions_interface_Config_rankTag">
+                <Original>Rank tag:</Original>
+                <English>Rank tag:</English>
+                <German>Rangkuerzel:</German>
+            </Key>
+            <Key ID="STR_lilc_factions_interface_Config_permissions">
+                <Original>Permissions:</Original>
+                <English>Permissions:</English>
+                <German>Berechtigungen:</German>
+            </Key>
+            <Key ID="STR_lilc_factions_interface_Config_vehicles">
+                <Original>Vehicles:</Original>
+                <English>Vehicles:</English>
+                <German>Fahrzeuge:</German>
+            </Key>
+            <Key ID="STR_lilc_factions_interface_Config_items">
+                <Original>Items:</Original>
+                <English>Items:</English>
+                <German>Gegenstaende:</German>
+            </Key>
+            <Key ID="STR_lilc_factions_interface_Config_rankName">
+                <Original>Rank name:</Original>
+                <English>Rank name:</English>
+                <German>Rangname:</German>
+            </Key>
+            <Key ID="STR_lilc_factions_interface_Config_overview">
+                <Original>Overview</Original>
+                <English>Overview</English>
+                <German>Uebersicht</German>
+            </Key>
+            <Key ID="STR_lilc_factions_interface_Config_players">
+                <Original>Players:</Original>
+                <English>Players:</English>
+                <German>Spieler:</German>
+            </Key>
+            <Key ID="STR_lilc_factions_interface_Config_ranks">
+                <Original>Ranks:</Original>
+                <English>Ranks:</English>
+                <German>Raenge:</German>
+            </Key>
+            <Key ID="STR_lilc_factions_interface_Config_add">
+                <Original>Add</Original>
+                <English>Add</English>
+                <German>Hinzufuegen</German>
+            </Key>
+            <Key ID="STR_lilc_factions_interface_Config_edit">
+                <Original>Edit</Original>
+                <English>Edit</English>
+                <German>Bearbeiten</German>
+            </Key>
+            <Key ID="STR_lilc_factions_interface_Config_remove">
+                <Original>Remove</Original>
+                <English>Remove</English>
+                <German>Entfernen</German>
+            </Key>
+        </Container>
+        <Container name="Script">
+            <Key ID="STR_lilc_factions_interface_Script_editPlayer">
+                <Original>Edit player - %1</Original>
+                <English>Edit player - %1</English>
+                <German>Spieler editieren - %1</German>
+            </Key>
+            <Key ID="STR_lilc_factions_interface_Script_rankExists">
+                <Original>Rank - %1</Original>
+                <English>Rank - %1</English>
+                <German>Rang - %1</German>
+            </Key>
+            <Key ID="STR_lilc_factions_interface_Script_newRank">
+                <Original>Create rank</Original>
+                <English>Create rank</English>
+                <German>Rang erstellen</German>
+            </Key>
+            <Key ID="STR_lilc_factions_interface_Script_paycheckMessage">
+                <Original>You received your paycheck of $%1.</Original>
+                <English>You received your paycheck of $%1.</English>
+                <German>Du hast deinen Gehalt in Hoehe von $%1 erhalten.</German>
+            </Key>
+        </Container>
+    </Package>
+    <Package name="lilc_permissions">
+        <Container name="Permissions">
+            <Key ID="STR_permission_displayName_factions_interface.overview">
+                <Original>Open overview</Original>
+                <English>Open overview</English>
+                <German>Uebersicht oeffnen</German>
+            </Key>
+            <Key ID="STR_permission_displayName_factions_interface.player.edit">
+                <Original>Edit player</Original>
+                <English>Edit player</English>
+                <German>Spieler editieren</German>
+            </Key>
+            <Key ID="STR_permission_displayName_factions_interface.rank.edit">
+                <Original>Edit rank</Original>
+                <English>Edit rank</English>
+                <German>Rang editieren</German>
+            </Key>
+            <Key ID="STR_permission_displayName_factions_interface.rank.add">
+                <Original>Add rank</Original>
+                <English>Add rank</English>
+                <German>Rang hinzufuegen</German>
+            </Key>
+            <Key ID="STR_permission_displayName_factions_interface.rank.remove">
+                <Original>Remove rank</Original>
+                <English>Remove rank</English>
+                <German>Rang entfernen</German>
+            </Key>
+        </Container>
+    </Package>
+</Project>
