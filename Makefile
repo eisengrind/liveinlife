@@ -403,7 +403,6 @@ server: lils_animals \
 	lils_inventory \
 	lils_job_agent \
 	lils_keys \
-	lils_licenses \
 	lils_locker \
 	lils_login \
 	lils_logs \
@@ -470,9 +469,6 @@ lils_job_agent: build_armake
 
 lils_keys: build_armake
 	$(ARMAKE) build -p --force -e prefix=x\\lils\\addons\\keys @LiveInLifeServer/addons/keys .build/@LiveInLifeServer/addons/$@.pbo
-
-lils_licenses: build_armake
-	$(ARMAKE) build -p --force -e prefix=x\\lils\\addons\\licenses @LiveInLifeServer/addons/licenses .build/@LiveInLifeServer/addons/$@.pbo
 
 lils_locker: build_armake
 	$(ARMAKE) build -p --force -e prefix=x\\lils\\addons\\locker @LiveInLifeServer/addons/locker .build/@LiveInLifeServer/addons/$@.pbo
