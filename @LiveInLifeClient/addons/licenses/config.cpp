@@ -18,4 +18,4 @@ class lilc_RscText;
 class lilc_RscListbox;
 class lilc_RscButtonMenu;
 class RscActiveText;
-#include "dialogs\licenses.cpp"
+#include "gui\licenses.cpp"

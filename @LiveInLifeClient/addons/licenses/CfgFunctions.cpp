@@ -1,16 +1,13 @@
 
-class lilc_licenses
-{
-    class functions
-    {
+class lilc_licenses {
+    class functions {
         file = "\x\lilc\addons\licenses\functions";
         class addLicense {};
         class canOpenLicensesMenu {};
         class doOpenLicensesMenu {};
-        class getTargetLicenses {};
+        class licenseAdded {};
+        class licenseRemoved {};
         class openMenu {};
         class removeLicense {};
-        class results {};
-        class setLicenses {};
     };
 };
