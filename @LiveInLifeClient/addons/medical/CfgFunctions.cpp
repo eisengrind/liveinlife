@@ -16,6 +16,7 @@ class lilc_medical {
         class doMoveDeadUnit {};
         class doMoveInVehicleDeadUnit {};
         class doReviveDeadUnit {};
+        class doSelfHeal {};
         class doStabilizeDeadUnit {};
         class enableReviveOptions {};
         class onDeadUnitGetInVehicle {};
