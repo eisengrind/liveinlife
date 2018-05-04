@@ -1,6 +1,4 @@
 
-
-
 [{
     private _bA = ([lilc_paycheck_bankName] call lilc_bank_fnc_getAccountByBankName);
 
@@ -14,7 +12,7 @@
         ] call lilc_ui_fnc_hint;
     };
 
-    lilc_paycheck_handle = [{
+    lilc_factions_interface_paycheckHandle = [{
         (_this select 0) params [
             ["_bID", 0, [0]]
         ];
