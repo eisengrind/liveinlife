@@ -24,5 +24,5 @@ params [
 ];
 
 if (isNull _puncher) exitWith {};
-player say3D [format["lilc_actions_moan%1.ogg", round random 2], 20];
+player say3D [format["lilc_actions_moan%1", round random 2], 20];
 addCamShake [3, 0.5, 7];
