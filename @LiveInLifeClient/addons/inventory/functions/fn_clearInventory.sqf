@@ -8,7 +8,7 @@ removeGoggles _unit;
 _unit removeItem (hmd _unit);
 _unit removeItem (binocular _unit);
 
-removeBackpack _unit;
+removeBackpackGlobal _unit;
 removeVest _unit;
 removeUniform _unit;
 

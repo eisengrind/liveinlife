@@ -45,6 +45,7 @@ lilc_events_interruptCounterHandler = ([_ui] spawn {
         sleep 0.05;
     };
 
+    player setVariable ["lilc_finished", true, true];
     if (isNull _ui) exitWith {};
     [] call lilc_login_fnc_updatePlayerData;
 

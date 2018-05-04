@@ -28,7 +28,7 @@ if ((count (_inventory select 2)) > 0) then {
     if (_clothingName != "-1") then { [_clothingName, _unit, 0] call lilc_textures_fnc_setUniform; };
 
     {
-        (uniformContainer _unit) addItemCargo [_x, ((((_inventory select 2) select 2) select 1) select _forEachIndex)];
+        (uniformContainer _unit) addItemCargoGlobal [_x, ((((_inventory select 2) select 2) select 1) select _forEachIndex)];
     } forEach (((_inventory select 2) select 2) select 0);
 
     {
@@ -44,7 +44,7 @@ if ((count (_inventory select 3)) > 0) then {
     _unit addVest ((_inventory select 3) select 0);
 
     {
-        (vestContainer _unit) addItemCargo [_x, ((((_inventory select 3) select 1) select 1) select _forEachIndex)];
+        (vestContainer _unit) addItemCargoGlobal [_x, ((((_inventory select 3) select 1) select 1) select _forEachIndex)];
     } forEach (((_inventory select 3) select 1) select 0);
 
     {
@@ -57,12 +57,12 @@ if ((count (_inventory select 3)) > 0) then {
 };
 
 if ((count (_inventory select 4)) > 0) then {
-    _unit addBackpack ((_inventory select 4) select 0);
+    _unit addBackpackGlobal ((_inventory select 4) select 0);
     _backpackColor = ((_inventory select 4) select 1);
     if (_backpackColor != "-1") then { [_backpackColor, (backpackContainer _unit), 0] call lilc_textures_fnc_setBackpack; };
 
     {
-        (backpackContainer _unit) addItemCargo [_x, ((((_inventory select 4) select 2) select 1) select _forEachIndex)];
+        (backpackContainer _unit) addItemCargoGlobal [_x, ((((_inventory select 4) select 2) select 1) select _forEachIndex)];
     } forEach (((_inventory select 4) select 2) select 0);
 
     {
