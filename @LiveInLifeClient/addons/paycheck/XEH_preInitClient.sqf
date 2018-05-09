@@ -1,25 +1,22 @@
 
-lilc_paycheck_handle = -1;
+lilc_paycheck_paychecks = [[], []] call CBA_fnc_hashCreate;
 lilc_paycheck_timeout = 0;
-lilc_paycheck_amount = 0;
 lilc_paycheck_enableMessage = true;
-lilc_paycheck_waitTime = 0;
 lilc_paycheck_active = 0;
 
 [
-    "lilce_common_postFinished",
-    {
-        if (isNil "lilc_paycheck_active") then {
-            lilc_paycheck_active = 0;
-        };
+    "lilc_paycheck_enableMessage",
+    "CHECKBOX",
+    "Paycheck-Nachrichten anzeigen", //TODO: localize
+    "LiveInLife Paycheck",
+    true,
+    0,
+    {}
+] call CBA_Settings_fnc_init;
 
-        if (lilc_paycheck_active == 1) then {
-            [{
-                call lilc_paycheck_fnc_enable;
-            }, [], lilc_paycheck_timeout] call CBA_fnc_waitAndExecute;
-        };
-    }
-] call CBA_fnc_addEventHandler;
+["lilce_common_postFinished", {
+    [lilc_paycheck_fnc_executePaychecks, nil, lilc_paycheck_timeout] call CBA_fnc_waitAndExecute;
+}] call CBA_fnc_addEventHandler;
 
 ["set_lil_paycheck_bankID", {
     lilc_paycheck_bankID = _this;
