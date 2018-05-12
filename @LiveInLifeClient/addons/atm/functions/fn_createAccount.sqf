@@ -19,11 +19,6 @@ Author:
     TheMysteriousVincent
 ---------------------------------------------------------------------------- */
 
-private _banks = [];
-if (!(lilc_atm_currentBankName in _banks)) exitWith {
-    ["Du kannst kein Konto erstellen.", "ERROR"] call lilc_ui_fnc_hint;
-};
-
 ctrlEnable [1522, false];
 [
     [
