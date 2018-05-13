@@ -44,12 +44,12 @@ class module_lilc_modules_headlessClientOptions : Module_F {
     scope = 2;
     displayName = "$STR_lilc_modules_Config_moduleHeadlessClientOptions";
     icon = "\x\lilc\addons\modules\icons\modulesHeadlessClientOptions.paa";
-    category = "cateogry_lilc_modules";
+    category = "category_lilc_modules";
     function = "lilc_modules_fnc_modulesHeadlessClientOptions";
     isGlobal = 0;
     isTriggerActivated = 0;
     isDisposable = 1;
-    is3DEN = 1;
+    isSingular = 1;
 
     class Arguments {
         class handleUsersAPI {
