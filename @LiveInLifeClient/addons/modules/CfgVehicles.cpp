@@ -45,7 +45,7 @@ class module_lilc_modules_headlessClientOptions : Module_F {
     displayName = "$STR_lilc_modules_Config_moduleHeadlessClientOptions";
     icon = "\x\lilc\addons\modules\icons\modulesHeadlessClientOptions.paa";
     category = "category_lilc_modules";
-    function = "lilc_modules_fnc_modulesHeadlessClientOptions";
+    function = "lilc_modules_fnc_moduleHeadlessClientOptions";
     isGlobal = 0;
     isTriggerActivated = 0;
     isDisposable = 1;
