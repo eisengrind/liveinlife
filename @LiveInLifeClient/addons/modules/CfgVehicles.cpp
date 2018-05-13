@@ -38,3 +38,76 @@ class module_lilc_modules_position : Module_F {
         description = "Testbeschreibung?";
     };
 };
+
+class module_lilc_modules_headlessClientOptions : Module_F {
+    author = "Vincent Heins";
+    scope = 2;
+    displayName = "$STR_lilc_modules_Config_moduleHeadlessClientOptions";
+    icon = "\x\lilc\addons\modules\icons\modulesHeadlessClientOptions.paa";
+    category = "cateogry_lilc_modules";
+    function = "lilc_modules_fnc_modulesHeadlessClientOptions";
+    isGlobal = 0;
+    isTriggerActivated = 0;
+    isDisposable = 1;
+    is3DEN = 1;
+
+    class Arguments {
+        class handleUsersAPI {
+            displayName = "$STR_lilc_modules_Config_moduleHeadlessClientOptions_argument_handleUsersAPI";
+            description = "$STR_lilc_modules_Config_moduleHeadlessClientOptions_argument_handleUsersAPI_description";
+            typeName = "NUMBER";
+            class values {
+                class disabled {
+                    default = 1;
+                    name = "$STR_lilc_modules_Config_moduleValue_disabled";
+                    value = 0;
+                };
+
+                class enabled {
+                    name = "$STR_lilc_modules_Config_moduleValue_enabled";
+                    value = 1;
+                };
+            };
+        };
+
+        class handleExchangeAPI {
+            displayName = "$STR_lilc_modules_Config_moduleHeadlessClientOptions_argument_handleExchangeAPI";
+            description = "$STR_lilc_modules_Config_moduleHeadlessClientOptions_argument_handleExchangeAPI_description";
+            typeName = "NUMBER";
+            class values {
+                class disabled {
+                    default = 1;
+                    name = "$STR_lilc_modules_Config_moduleValue_disabled";
+                    value = 0;
+                };
+
+                class enabled {
+                    name = "$STR_lilc_modules_Config_moduleValue_enabled";
+                    value = 1;
+                };
+            };
+        };
+
+        class handleBankAPI {
+            displayName = "$STR_lilc_modules_Config_moduleHeadlessClientOptions_argument_handleBankAPI";
+            description = "$STR_lilc_modules_Config_moduleHeadlessClientOptions_argument_handleBankAPI_description";
+            typeName = "NUMBER";
+            class values {
+                class disabled {
+                    default = 1;
+                    name = "$STR_lilc_modules_Config_moduleValue_disabled";
+                    value = 0;
+                };
+
+                class enabled {
+                    name = "$STR_lilc_modules_Config_moduleValue_enabled";
+                    value = 1;
+                };
+            };
+        };
+    };
+
+    class ModulesDescription : ModuleDescription {
+        description = "$STR_lilc_modules_Config_moduleHeadlessClientOptions_description";
+    };
+};

@@ -1,17 +1,37 @@
 
 <?xml version="1.0" encoding="utf-8">
 <Project name="LiveInLife">
-    <Package name="PositionTitles">
-        <Container name="Titles">
-            <Key ID="STR_PositionTitles_test">
-                <Original>Test</Original>
-                <English>Test</English>
-                <German>Test</German>
+    <Package name="lilc_modules">
+        <Container name="Config">
+            <Key ID="STR_lilc_modules_Config_moduleHeadlessClientOptions">
+                <Original>Headless client options</Original>
+                <English>Headless client options</English>
+                <German>Headless-Client Optionen</German>
             </Key>
-            <Key ID="STR_PositionTitles_testPosition">
-                <Original>Test position</Original>
-                <English>Test Position</English>
-                <German>Test position</German>
+            <Key ID="STR_lilc_modules_Config_moduleHeadlessClientOptions_description">
+                <Original>Set LiveInLife options for synced headless client slots.</Original>
+                <English>Set LiveInLife options for synced headless client slots.</English>
+                <German>Setzt Optionen fuer syncronisierte Headless-client Slots.</German>
+            </Key>
+            <Key ID="STR_lilc_modules_Config_moduleHeadlessClientOptions_argument_handleUsersAPI">
+                <Original>User API</Original>
+                <English>User API</English>
+                <German>Benutzer API</German>
+            </Key>
+            <Key ID="STR_lilc_modules_Config_moduleHeadlessClientOptions_argument_handleUsersAPI_description">
+                <Original>Activates or deactivates the support of user api requests.</Original>
+                <English>Activates or deactivates the support of user api requests.</English>
+                <German>De- oder aktiviert die Unterstuetzung von Benutzer API Anfragen.</German>
+            </Key>
+            <Key ID="STR_lilc_modules_Config_moduleValue_enabled">
+                <Original>Enabled</Original>
+                <English>Enabled</English>
+                <German>Aktiviert</German>
+            </Key>
+            <Key ID="STR_lilc_modules_Config_moduleValue_disabled">
+                <Original>Disabled</Original>
+                <English>Disabled</English>
+                <German>Deaktiviert</German>
             </Key>
         </Container>
     </Package>
