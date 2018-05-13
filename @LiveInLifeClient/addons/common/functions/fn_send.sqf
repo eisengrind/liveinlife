@@ -23,24 +23,8 @@ params [
     ["_jip", false, [false, "", ObjNull, GrpNull]]
 ];
 
-try {
-    if (isNil "_functionName") throw false;
-    private _result = "";
-    [(format["Function '%1' was called", _functionName])] call lilc_log_fnc_diag_log;
+if (isNil "_functionName") exitWith { false; };
 
-    //if (isMultiplayer) then {
-    _result = _parameters remoteExec [_functionName, _target, _jip];
-    if ((typeName _result) == "") throw true;
-    /*} else {
-        if (_target isEqualType objNull) then
-        {
-            if !(_target isEqualTo player) throw false;
-        };
-        private _handle = _parameters spawn compile format["_this call %1;", _functionName];
-        throw true;
-    };*/
-    
-    throw false;
-} catch {
-    _exception;
-};
+private _result = "";
+[(format["Function '%1' was called", _functionName])] call lilc_log_fnc_diag_log;
+(_parameters remoteExec [_functionName, _target, _jip]) isEqualType "";

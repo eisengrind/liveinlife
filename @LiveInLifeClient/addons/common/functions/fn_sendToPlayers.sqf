@@ -21,13 +21,5 @@ params [
     ["_jip", false, [false, "", ObjNull, GrpNull]]
 ];
 
-try {
-    if (isNil "_functionName") throw false;
-
-    private _playerList = ((playableUnits select { (!isNull _x && isPlayer _x) }) apply { (owner _x) });
-    if ((count _playerList) <= 0) throw false;
-
-    throw ([_parameters, _functionName, _playerList, _jip] call lilc_common_fnc_send);
-} catch {
-    _exception;
-};
+if (isNil "_functionName") exitWith { false; };
+[_parameters, _functionName, (playableUnits select { !isNull _x && isPlayer _x; }) apply { owner _x; }, _jip] call lilc_common_fnc_send;

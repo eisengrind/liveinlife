@@ -20,9 +20,5 @@ params [
     ["_functionName", "", [""]]
 ];
 
-try {
-    if (isNil "_functionName") throw false;
-    throw ([_parameters, _functionName, 2, false] call lilc_common_fnc_send);
-} catch {
-    _exception;
-};
+if (isNil "_functionName") exitWith { false; };
+[_parameters, _functionName, 2, false] call lilc_common_fnc_send
