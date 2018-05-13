@@ -23,6 +23,36 @@
                 <English>Activates or deactivates the support of user api requests.</English>
                 <German>De- oder aktiviert die Unterstuetzung von Benutzer API Anfragen.</German>
             </Key>
+            <Key ID="STR_lilc_modules_Config_moduleHeadlessClientOptions_argument_handleExchangeAPI">
+                <Original>Exchange API</Original>
+                <English>Exchange API</English>
+                <German>Warenboerse API</German>
+            </Key>
+            <Key ID="STR_lilc_modules_Config_moduleHeadlessClientOptions_argument_handleExchangeAPI_description">
+                <Original>Activates or deactivates the support of exchange api requests.</Original>
+                <English>Activates or deactivates the support of exchange api requests.</English>
+                <German>De- oder aktiviert die Unterstuetzung von Warenboerse API Anfragen.</German>
+            </Key>
+            <Key ID="STR_lilc_modules_Config_moduleHeadlessClientOptions_argument_handleBankAPI">
+                <Original>Bank API</Original>
+                <English>Bank API</English>
+                <German>Bank API</German>
+            </Key>
+            <Key ID="STR_lilc_modules_Config_moduleHeadlessClientOptions_argument_handleBankAPI_description">
+                <Original>Activates or deactivates the support of bank api requests.</Original>
+                <English>Activates or deactivates the support of bank api requests.</English>
+                <German>De- oder aktiviert die Unterstuetzung von Bank API Anfragen.</German>
+            </Key>
+            <Key ID="STR_lilc_modules_Config_moduleHeadlessClientOptions_argument_handleOptionalFilter">
+                <Original>Optional function filters</Original>
+                <English>Optional function filters</English>
+                <German>Optionale Funktions-Filter</German>
+            </Key>
+            <Key ID="STR_lilc_modules_Config_moduleHeadlessClientOptions_argument_handleOptionalFilter_description">
+                <Original>Adds optional functions or function-filters to the whitelist.</Original>
+                <English>Adds optional functions or function-filters to the whitelist.</English>
+                <German>Fuegt optionale Funktionen oder Funktions-Filter zur Funktions-Whitelist</German>
+            </Key>
             <Key ID="STR_lilc_modules_Config_moduleValue_enabled">
                 <Original>Enabled</Original>
                 <English>Enabled</English>

@@ -105,6 +105,13 @@ class module_lilc_modules_headlessClientOptions : Module_F {
                 };
             };
         };
+
+        class handleOptionalFilter {
+            displayName = "$STR_lilc_modules_Config_moduleHeadlessClientOptions_argument_handleOptionalFilter";
+            description = "$STR_lilc_modules_Config_moduleHeadlessClientOptions_argument_handleOptionalFilter_description";
+            typeName = "STRING";
+            defaultValue = "[\"example_prefix\", \"another_example_prefix\"]";
+        };
     };
 
     class ModulesDescription : ModuleDescription {
