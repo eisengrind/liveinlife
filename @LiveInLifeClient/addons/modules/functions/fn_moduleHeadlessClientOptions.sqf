@@ -8,7 +8,7 @@ if (isNull _logic) exitWith {};
 if !(isServer) exitWith {};
 
 _units = _units select {
-    !hasInterface && !isDedicated;
+    _x in (entities "HeadlessClient_F") && !isNull _x;
 };
 
 private _apiBank = _logic getVariable ["handleBankAPI", 0];
