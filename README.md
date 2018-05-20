@@ -10,7 +10,7 @@ There are currently just a few packages available.
 
 Because **LiveInLife** is in development status - problems and other issues are common in this state.
 
-**LiveInLife** do not pretend anything in your mission - it's up to you choose between possibilities!
+**LiveInLife** does not pretend anything in your mission - it's up to you choose between possibilities!
 
 ## Installation
 See: https://github.com/AGPHeaddikilla/LiveInLife/wiki/Installation
