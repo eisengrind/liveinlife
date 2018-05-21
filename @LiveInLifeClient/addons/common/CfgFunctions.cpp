@@ -41,10 +41,10 @@ class lilc_common {
 
         // S
         class send {};
-        class sendToHeadless {};
         class sendToOtherPlayers {};
         class sendToPlayers {};
         class sendToServer {};
+        class sendToServerBalanced {};
         class setACEDamage {};
         class setDir {};
         class setDynamicPosition {};
