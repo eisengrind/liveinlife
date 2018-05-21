@@ -1,0 +1,9 @@
+
+//set-/getVariable - system
+player setVariable ["lilc_virtual_inventory_inventory", [
+    [
+        <itemName/string>,
+        <displayName/string>,
+        <data/any>
+    ]
+], true];

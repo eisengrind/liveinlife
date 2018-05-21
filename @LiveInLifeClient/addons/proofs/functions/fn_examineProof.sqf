@@ -34,7 +34,7 @@ if (isNull _ui) exitWith {};
     player,
     (_data select 0),
     (_data select 2)
-] call lilc_virtualInventory_fnc_remove;
+] call lilc_virtual_inventory_fnc_remove;
 
 _ui setVariable ["lilc_proofs_data_tmp", _data];
 

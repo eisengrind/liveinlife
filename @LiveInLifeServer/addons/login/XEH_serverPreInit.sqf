@@ -13,7 +13,7 @@ lils_login_set_defPackages = [
     "set_lil_login_statusTimeout",
     "set_lil_login_damage",
     /*"set_lil_bank_accounts",*/
-    "set_lil_virtualInventory_inventory",
+    "set_lil_virtual_inventory_inventory",
     "set_lil_perms_perms",
     "set_lil_inventory_inventory",
     /*"set_lil_locker_lockers",*/

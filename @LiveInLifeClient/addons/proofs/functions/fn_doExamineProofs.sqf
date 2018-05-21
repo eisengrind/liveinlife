@@ -21,11 +21,11 @@ _viData ([])
 */
 lbClear 1500;
 {
-    private _cfg = ([(_x select 0)] call lilc_virtualInventory_fnc_getVirtualItemConfig);
+    private _cfg = ([(_x select 0)] call lilc_virtual_inventory_fnc_getVirtualItemConfig);
     private _i = (lbAdd [1500, (_x select 1)]);
     lbSetPicture [1500, _i, getText(_cfg >> "picture")];
     lbSetData [1500, _i, (str _x)];
-} forEach ((player getVariable ["lilc_virtualInventory_inventory", []]) select {
+} forEach ((player getVariable ["lilc_virtual_inventory_inventory", []]) select {
     ((_x select 0) in _availableProofVItems);
 });
 

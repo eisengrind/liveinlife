@@ -19,7 +19,7 @@ try {
         "lilcvi_key_F",
         (format["Key %1", getText(configFile >> "CfgVehicles" >> (typeOf _vehicle) >> "displayName")]),
         _vehicleID
-    ] call lilc_virtualInventory_fnc_add) throw false;
+    ] call lilc_virtual_inventory_fnc_add) throw false;
 
     throw true;
 } catch {

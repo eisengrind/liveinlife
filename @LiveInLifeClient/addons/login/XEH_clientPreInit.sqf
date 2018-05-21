@@ -127,7 +127,7 @@ lilc_login_update_defPackages = [
     "update_lil_respawn_currentTimeout",
     "update_lil_paycheck_active",
     "update_lil_respawn_isNew",
-    "update_lil_virtualInventory_inventory",
+    "update_lil_virtual_inventory_inventory",
     "update_lil_respawn_deathTimeout",
     "update_lil_login_damage"
 ];

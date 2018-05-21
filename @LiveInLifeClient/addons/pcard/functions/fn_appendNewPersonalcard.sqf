@@ -12,7 +12,7 @@ try {
     private _firstname = ((player getVariable ["lilc_identity", ["", "", ""]]) select 1);
     private _lastname = ((player getVariable ["lilc_identity", ["", "", ""]]) select 2);
 
-    private _cfg = (["lilcvi_personalcard_F"] call lilc_virtualInventory_fnc_getVirtualItemConfig);
+    private _cfg = (["lilcvi_personalcard_F"] call lilc_virtual_inventory_fnc_getVirtualItemConfig);
 
     ["Personalausweis erfolgreich erstellt."] call lilc_ui_fnc_hint;
     [
@@ -31,7 +31,7 @@ try {
             (_pcardData select 5),
             (_pcardData select 6)
         ]
-    ] call lilc_virtualInventory_fnc_add;
+    ] call lilc_virtual_inventory_fnc_add;
 
     throw true;
 } catch {

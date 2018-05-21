@@ -27,9 +27,9 @@
                     {
                         _newVirtualInventory pushBack _vItem;
                     }
-                } forEach (player getVariable ["lilc_virtualInventory_inventory", []]);
+                } forEach (player getVariable ["lilc_virtual_inventory_inventory", []]);
 
-                player setVariable ["lilc_virtualInventory_inventory", _newVirtualInventory, true];
+                player setVariable ["lilc_virtual_inventory_inventory", _newVirtualInventory, true];
             };
 
             throw true;

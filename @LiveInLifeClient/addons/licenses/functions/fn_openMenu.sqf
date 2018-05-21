@@ -39,7 +39,7 @@ try
 
     lbClear _uiListLicenses;
     {
-        private _itemConfig = ([_x] call lilc_virtualInventory_fnc_getVirtualItemConfig);
+        private _itemConfig = ([_x] call lilc_virtual_inventory_fnc_getVirtualItemConfig);
         if !(isNull _itemConfig) then
         {
             private _index = (_uiListLicenses lbAdd getText(_itemConfig >> "displayName"));
@@ -52,7 +52,7 @@ try
 
     lbClear _uiListAvailableLicenses;
     {
-        private _itemConfig = ([_x select 0] call lilc_virtualInventory_fnc_getVirtualItemConfig);
+        private _itemConfig = ([_x select 0] call lilc_virtual_inventory_fnc_getVirtualItemConfig);
         if !(isNull _itemConfig) then
         {
             private _index = (_uiListAvailableLicenses lbAdd getText(_itemConfig >> "displayName"));
@@ -60,7 +60,7 @@ try
             _uiListAvailableLicenses lbSetPicture [_index, getText(_itemConfig >> "picture")];
             _uiListAvailableLicenses lbSetValue [_index, _x select 2];
         };
-    } forEach ((_target getVariable ["lilc_virtualInventory_inventory", []]) select {
+    } forEach ((_target getVariable ["lilc_virtual_inventory_inventory", []]) select {
         ([(["licenses", _x select 0, "remove"] call lilc_permissions_fnc_bindPermissionTree)] call lilc_permissions_fnc_have) && (_x select 0) in _applicableLicenses;
     });
 

@@ -37,22 +37,4 @@ class lilc_inventory {
         class setVehicleCargo {};
         class setVestInventory {};
     };
-
-    class RscDisplayInventory {
-        file = "\x\lilc\addons\inventory\functions\RscDisplayInventory";
-        class disableMenu {};
-        class getCurrentContainer {};
-        class onInventoryOpened {};
-        class onLBSelChanged {};
-        class onMouseButtonDown {};
-        class onMouseMoving {};
-    };
-
-    class virtualInventory {
-        file = "\x\lilc\addons\inventory\functions\virtualInventory";
-        class vi_giveItem {};
-        class vi_removeItem {};
-        class vi_updateItems {};
-        class vi_updateUnits {};
-    };
 };

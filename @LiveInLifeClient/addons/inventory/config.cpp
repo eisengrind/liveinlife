@@ -7,8 +7,6 @@ class CfgFunctions {
     #include "CfgFunctions.cpp"
 };
 
-#include "gui\RscDisplayInventory.cpp"
-
 class Extended_PostInit_EventHandlers
 {
     class lilc_inventory_postInit

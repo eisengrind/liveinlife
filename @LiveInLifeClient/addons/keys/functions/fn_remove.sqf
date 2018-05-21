@@ -12,7 +12,7 @@ try {
         player,
         "lilcvi_key_F",
         _vehicleID
-    ] call lilc_virtualInventory_fnc_remove) throw false;
+    ] call lilc_virtual_inventory_fnc_remove) throw false;
 
     throw true;
 } catch {
