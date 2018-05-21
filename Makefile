@@ -151,6 +151,7 @@ client:	lilc_actions \
 	lilc_hud \
 	lilc_interaction \
 	lilc_inventory \
+	lilc_inventory_menu \
 	lilc_invoices \
 	lilc_job_agent \
 	lilc_keys \
@@ -186,7 +187,7 @@ client:	lilc_actions \
 	lilc_ui \
 	lilc_vehicles \
 	lilc_viewDistance \
-	lilc_virtualInventory \
+	lilc_virtual_inventory \
 	dbo_old_bike \
 	cpClientKey
 	cp -f @LiveInLifeClient/mod.cpp .build/@LiveInLifeClient/
@@ -269,6 +270,9 @@ lilc_interaction: build_armake createKey
 
 lilc_inventory: build_armake createKey
 	$(ARMAKE) build -p --force -k $(PRVKEYFILE) -e prefix=x\\lilc\\addons\\inventory @LiveInLifeClient/addons/inventory .build/@LiveInLifeClient/addons/$@.pbo
+
+lilc_inventory_menu: build_armake createKey
+	$(ARMAKE) build -p --force -k $(PRVKEYFILE) -e prefix=x\\lilc\\addons\\inventory_menu @LiveInLifeClient/addons/inventory_menu .build/@LiveInLifeClient/addons/$@.pbo
 
 lilc_invoices: build_armake createKey
 	$(ARMAKE) build -p --force -k $(PRVKEYFILE) -e prefix=x\\lilc\\addons\\invoices @LiveInLifeClient/addons/invoices .build/@LiveInLifeClient/addons/$@.pbo
@@ -378,8 +382,8 @@ lilc_vehicles: build_armake createKey
 lilc_viewDistance: build_armake createKey
 	$(ARMAKE) build -p --force -k $(PRVKEYFILE) -e prefix=x\\lilc\\addons\\viewDistance @LiveInLifeClient/addons/viewDistance .build/@LiveInLifeClient/addons/$@.pbo
 
-lilc_virtualInventory: build_armake createKey
-	$(ARMAKE) build -p --force -k $(PRVKEYFILE) -e prefix=x\\lilc\\addons\\virtualInventory @LiveInLifeClient/addons/virtualInventory .build/@LiveInLifeClient/addons/$@.pbo
+lilc_virtual_inventory: build_armake createKey
+	$(ARMAKE) build -p --force -k $(PRVKEYFILE) -e prefix=x\\lilc\\addons\\virtual_inventory @LiveInLifeClient/addons/virtual_inventory .build/@LiveInLifeClient/addons/$@.pbo
 
 cpClientKey:
 	cp .build/keys/$(KEY).bikey .build/@LiveInLifeClient/keys
@@ -414,7 +418,7 @@ server: lils_animals \
 	lils_proofs \
 	lils_shops \
 	lils_vehicles \
-	lils_virtualInventory
+	lils_virtual_inventory
 	cp -f @LiveInLifeServer/mod.cpp .build/@LiveInLifeServer/
 	cp -f @LiveInLifeServer/extDB3.dll .build/@LiveInLifeServer/
 	cp -f @LiveInLifeServer/extDB3.so .build/@LiveInLifeServer/
@@ -505,5 +509,5 @@ lils_shops: build_armake
 lils_vehicles: build_armake
 	$(ARMAKE) build -p --force -e prefix=x\\lils\\addons\\vehicles @LiveInLifeServer/addons/vehicles .build/@LiveInLifeServer/addons/$@.pbo
 
-lils_virtualInventory: build_armake
-	$(ARMAKE) build -p --force -e prefix=x\\lils\\addons\\virtualInventory @LiveInLifeServer/addons/virtualInventory .build/@LiveInLifeServer/addons/$@.pbo
+lils_virtual_inventory: build_armake
+	$(ARMAKE) build -p --force -e prefix=x\\lils\\addons\\virtual_inventory @LiveInLifeServer/addons/virtual_inventory .build/@LiveInLifeServer/addons/$@.pbo
