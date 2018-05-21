@@ -26,3 +26,6 @@ lilc_common_defaultPostFinishedIndex = ([
     "LiveInLife",
     true
 ] call CBA_Settings_fnc_init;
+
+lilc_common_logicCenter = createCenter sideLogic;
+lilc_common_logicGroup = createGroup [lilc_common_logicCenter, false];
