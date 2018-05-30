@@ -9,8 +9,6 @@ class lilc_inventory {
         class canRemoveMagCount {};
         class clearInventory {};
         class clearVehicleCargo {};
-        class findItemByDisplayName {};
-        class findOptionsItemByDisplayName {};
         class forceAdd {};
         class getBackpackInventory {};
         class getInventory {};

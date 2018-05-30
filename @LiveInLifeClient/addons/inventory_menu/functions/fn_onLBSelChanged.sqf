@@ -14,54 +14,41 @@ private _uiDropDownGroup = (_ui displayCtrl 1350);
 
 try {
     if (_index <= -1) throw false;
+
     private _classname = (_uiCurrentList lbData _index);
-    private _displayName = (_uiCurrentList lbText _index);
-    _time = time;
     if (_classname == "") then {
-        _classname = ([_displayName] call lilc_inventory_fnc_findOptionsItemByDisplayName);
+        _classname = [_uiCurrentList lbText _index] call lilc_inventory_menu_fnc_getClassnameByDisplayName;
     };
     if (_classname == "") throw false;
 
-    private _itemConfig = ([_classname] call lilc_common_fnc_getClassnameConfig);
-    if (isNull _itemConfig) throw false;
-    private _options = getArray(_itemConfig >> "lilc_dropDownOptions");
-    _uiDropDownGroup ctrlShow true;
-
-    for "_i" from 0 to 8 do {
-        private _button = (_ui displayCtrl (1351 + _i));
-        _button ctrlShow false;
-        _button ctrlSetPosition [0, 0];
-        _button ctrlCommit 0;
-    };
-
     private _dropDownHeight = 0;
+    private _itemOptions = [_classname] call lilc_inventory_menu_fnc_getItemOptions;
+    private _itemOptionsKeys = [_itemOptions] call CBA_fnc_hashKeys;
     for "_i" from 0 to 8 do {
-        private _button = (_ui displayCtrl (1351 + _i));
-        if (_i < (count _options)) then {
-            private _selectedOption = (_options select _i);
-            private _compiledCondition = (call compile (_selectedOption select 1));
-            if (_compiledCondition isEqualType false) then {
-                if (_compiledCondition) then {
-                    _button ctrlSetText ((_selectedOption select 0) call BIS_fnc_localize);
-                    _button ctrlRemoveAllEventHandlers "ButtonClick";
-                    _button ctrlAddEventHandler ["ButtonClick", (_selectedOption select 2)];
-                    _button ctrlAddEventHandler ["ButtonClick", "call lilc_inventory_menu_fnc_disableMenu; false;"];
-                    _button ctrlShow true;
-                    _button ctrlSetPosition [0, ((0.022 * safezoneH) * _i)];
-                    _dropDownHeight = _dropDownHeight + ((ctrlPosition _button) select 3);
-                };
-            };
+        private _button = _ui displayCtrl (1351 + _i);
+        if (_i <= ((count _itemOptionsKeys) - 1)) then {
+            private _option = [_itemOptions, _itemOptionsKeys select _i] call CBA_fnc_hashGet;
+            _button ctrlSetText ((_option select 0) call BIS_fnc_localize);
+            _button ctrlRemoveAllEventHandlers "ButtonClick";
+            _button ctrlAddEventHandler ["ButtonClick", _option select 2];
+            _button ctrlAddEventHandler ["ButtonClick", "call lilc_inventory_menu_fnc_disableMenu; false;"];
+            _button ctrlShow true;
+            _button ctrlEnable (call (_option select 1));
+            _button ctrlSetPosition [0, ((0.022 * safezoneH) * _i)];
+            _dropDownHeight = _dropDownHeight + ((ctrlPosition _button) select 3);
         } else {
             _button ctrlShow false;
             _button ctrlSetPosition [0, 0];
-            _button ctrlCommit 0;
         };
+        _button ctrlCommit 0;
     };
 
     private _currentDropDownMenuPosition = (ctrlPosition _uiDropDownGroup);
     _currentDropDownMenuPosition set [3, _dropDownHeight];
     _uiDropDownGroup ctrlSetPosition _currentDropDownMenuPosition;
     _uiDropDownGroup ctrlCommit 0;
+
+    _uiDropDownGroup ctrlShow true;
 
     throw true;
 } catch {

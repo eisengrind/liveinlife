@@ -1,6 +1,7 @@
 
 params [
     ["_classname", "", [""]],
+    ["_displayName", "", [""]],
     ["_condition", {}, [{}]],
     ["_statement", {}, [{}]]
 ];
@@ -19,5 +20,5 @@ while { _i in _keys } do {
     _i = _i + 1;
 };
 
-lilc_inventory_menu_logic_itemOptions setVariable [_classname, [_hash, _i, [_condition, _statement]] call CBA_fnc_hashSet];
+lilc_inventory_menu_logic_itemOptions setVariable [_classname, [_hash, _i, [_displayName, _condition, _statement]] call CBA_fnc_hashSet];
 _i;
