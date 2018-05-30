@@ -6,7 +6,7 @@ params [
 ];
 
 private _classnameCfg = [_classname] call lilc_common_fnc_getClassnameConfig;
-if (isNull _classname) exitWith { -1; };
+if (isNil "_classname") exitWith { -1; };
 if (isNil "_condition") exitWith { -1; };
 
 if (isNull lilc_inventory_menu_logic_itemOptions) exitWith { -1; };

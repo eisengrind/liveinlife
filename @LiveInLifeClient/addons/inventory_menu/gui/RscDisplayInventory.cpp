@@ -10,6 +10,11 @@ class RscDisplayInventory {
     onLoad = "[""onLoad"",_this,""RscDisplayInventory"",'IGUI'] call (uinamespace getvariable 'BIS_fnc_initDisplay'); [] spawn { waitUntil { (!isNull (findDisplay 602)) }; call lilc_inventory_menu_fnc_onInventoryOpened; };";
 
     class controls {
+        class GroundContainer;
+        class UniformContainer : GroundContainer {
+            onLBSelChanged = "_this spawn lilc_inventory_menu_fnc_onLBSelChanged;";
+        };
+
         class DropDownGroup : RscControlsGroup
         {
             idc = 1350;
