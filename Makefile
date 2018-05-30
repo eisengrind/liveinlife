@@ -139,6 +139,7 @@ client:	lilc_actions \
 	lilc_common \
 	lilc_courthouse \
 	lilc_crafting \
+	lilc_drugs \
 	lilc_economy \
 	lilc_events \
 	lilc_exchange \
@@ -231,6 +232,9 @@ lilc_courthouse: build_armake createKey
 
 lilc_crafting: build_armake createKey
 	$(ARMAKE) build -p --force -k $(PRVKEYFILE) -e prefix=x\\lilc\\addons\\crafting @LiveInLifeClient/addons/crafting .build/@LiveInLifeClient/addons/$@.pbo
+
+lilc_drugs: build_armake createKey
+	$(ARMAKE) build -p --force -k $(PRVKEYFILE) -e prefix=x\\lilc\\addons\\drugs @LiveInLifeClient/addons/drugs .build/@LiveInLifeClient/addons/$@.pbo
 
 lilc_economy: build_armake createKey
 	$(ARMAKE) build -p --force -k $(PRVKEYFILE) -e prefix=x\\lilc\\addons\\economy @LiveInLifeClient/addons/economy .build/@LiveInLifeClient/addons/$@.pbo
