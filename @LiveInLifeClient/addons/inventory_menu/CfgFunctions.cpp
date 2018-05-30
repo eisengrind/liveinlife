@@ -4,6 +4,7 @@ class lilc_inventory_menu {
         file = "\x\lilc\addons\inventory_menu\functions";
         class addItemOption {};
         class disableMenu {};
+        class getClassnameByDisplayName {};
         class getCurrentContainer {};
         class getItemOption {};
         class getItemOptions {};
