@@ -7,7 +7,7 @@ if ((damage _wood) > 0) exitWith { hint "Der Baum ist schon gefällt."; };
 if (lilc_action_active) exitWith {};
 lilc_action_active = true; 
  
-_amount = (round (random [2, 6, 10])); 
+_amount = (round (random [1, 3, 5])); 
  
 for "_i" from 1 to 3 do { 
     lilc_action_animDone = false; 
