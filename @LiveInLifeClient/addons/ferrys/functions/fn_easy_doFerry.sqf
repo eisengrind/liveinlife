@@ -62,6 +62,7 @@ private _pV = (vehicle player);
 
 if (count (_pV getVariable ["SA_Tow_Ropes", []]) > 0) exitWith {
     ["Das Schleppseil deines Fahrzeuges ist an einem anderen Fahrzeug angebracht.", "ERROR"] call lilc_ui_fnc_hint;
+    [3] call lilc_ui_fnc_fadeOutBlack;
 };
 
 private _pos =  ([(if (_pV isKindOf "Man") then { getText(_cfgTo >> "position"); } else { getText(_cfgTo >> "positionVehicle"); })] call lilc_common_fnc_getDynamicPosition);
