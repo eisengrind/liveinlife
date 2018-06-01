@@ -71,6 +71,7 @@ sleep random 2;
 
 if ([_pos select 0, 15, ["Car", "Ship", "Boat", "Tank", "Truck", "Plane", "Air", "Helicopter", "Bicycle"]] call lilc_common_fnc_objectsNearby) exitWith {
     ["Die Ankunftsposition wird derzeit blockiert.", "ERROR"] call lilc_ui_fnc_hint;
+    [3] call lilc_ui_fnc_fadeOutBlack;
 };
 
 [_pV, _pos] call lilc_common_fnc_setPosition;
