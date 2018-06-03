@@ -69,7 +69,7 @@ private _pos =  ([(if (_pV isKindOf "Man") then { getText(_cfgTo >> "position");
 
 sleep random 2;
 
-if ([_pos select 0, 15, ["Car", "Ship", "Boat", "Tank", "Truck", "Plane", "Air", "Helicopter", "Bicycle"]] call lilc_common_fnc_objectsNearby) exitWith {
+if ([_pos select 0, 10, ["Car", "Ship", "Boat", "Tank", "Truck", "Plane", "Air", "Helicopter", "Bicycle"]] call lilc_common_fnc_objectsNearby) exitWith {
     ["Die Ankunftsposition wird derzeit blockiert.", "ERROR"] call lilc_ui_fnc_hint;
     [3] call lilc_ui_fnc_fadeOutBlack;
 };
