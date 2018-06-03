@@ -32,7 +32,7 @@ private _dT = (time + getNumber(_cfgFrom >> "rideWait"));
 
 while {
     ([player] call lilc_common_fnc_isAlive) &&
-    (_startPos distance player < 30) &&
+    (_startPos distance player < 35) &&
     (_dT >= time)
 } do {
     _uiTextTimeCounter ctrlSetStructuredText parseText format[
