@@ -32,7 +32,7 @@ private _dT = (time + getNumber(_cfgFrom >> "rideWait"));
 
 while {
     ([player] call lilc_common_fnc_isAlive) &&
-    (_startPos distance player < 30) &&
+    (_startPos distance player < 35) &&
     (_dT >= time)
 } do {
     _uiTextTimeCounter ctrlSetStructuredText parseText format[
@@ -62,14 +62,16 @@ private _pV = (vehicle player);
 
 if (count (_pV getVariable ["SA_Tow_Ropes", []]) > 0) exitWith {
     ["Das Schleppseil deines Fahrzeuges ist an einem anderen Fahrzeug angebracht.", "ERROR"] call lilc_ui_fnc_hint;
+    [3] call lilc_ui_fnc_fadeOutBlack;
 };
 
 private _pos =  ([(if (_pV isKindOf "Man") then { getText(_cfgTo >> "position"); } else { getText(_cfgTo >> "positionVehicle"); })] call lilc_common_fnc_getDynamicPosition);
 
 sleep random 2;
 
-if ([_pos select 0, 15, ["Car", "Ship", "Boat", "Tank", "Truck", "Plane", "Air", "Helicopter", "Bicycle"]] call lilc_common_fnc_objectsNearby) exitWith {
+if ([_pos select 0, 10, ["Car", "Ship", "Boat", "Tank", "Truck", "Plane", "Air", "Helicopter", "Bicycle"]] call lilc_common_fnc_objectsNearby) exitWith {
     ["Die Ankunftsposition wird derzeit blockiert.", "ERROR"] call lilc_ui_fnc_hint;
+    [3] call lilc_ui_fnc_fadeOutBlack;
 };
 
 [_pV, _pos] call lilc_common_fnc_setPosition;
