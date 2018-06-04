@@ -41,15 +41,6 @@ class lilci_bountainMew_F : lilci_item {
     };
 };
 
-class lilci_schiffWasser_F : lilci_item {
-    displayName = "$STR_lilci_schiffWasser_F";
-    picture = "\x\lilc\addons\food\icons\plasticBottle.paa";
-    model = "a3\structures_f\items\food\bottleplastic_v1_f.p3d";
-    class ItemInfo : lilci_itemInfo {
-        mass = 12;
-    };
-};
-
 class lilci_bonsterMenergy_F : lilci_item {
     displayName = "$STR_lilci_bonsterMenergy_F";
     picture = "\x\lilc\addons\food\icons\plasticBottle.paa";
@@ -179,5 +170,14 @@ class lilci_tacticalBacon_F : lilci_item {
     model = "\a3\structures_f\items\food\tacticalbacon_f.p3d";
     class ItemInfo : lilci_itemInfo {
         mass = 6;
+    };
+};
+
+class lilc_schiffWasser : lilci_item {
+    displayName = "$STR_lilc_schiffWasser";
+    picture = "\x\lilc\addons\food\icons\plasticBottle.paa";
+    model = "a3\structures_f\items\food\bottleplastic_v1_f.p3d";
+    class ItemInfo : lilci_itemInfo {
+        mass = 10;
     };
 };

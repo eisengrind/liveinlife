@@ -207,3 +207,15 @@
         ["lilci_tacticalBacon_F", 60, 0] call lilc_food_fnc_consumeItem;
     }
 ] call lilc_inventory_menu_fnc_addItemOption;
+
+[
+    "lilc_schiffWasser",
+    "Trinken",
+    {
+        true;
+    },
+    {
+        ["lilc_schiffWasser", 0, 15] call lilc_food_fnc_consumeItem;
+        [player, 20] call lilc_drugs_fnc_addAlcohol;
+    }
+] call lilc_inventory_menu_fnc_addItemOption;

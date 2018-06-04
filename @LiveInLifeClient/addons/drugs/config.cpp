@@ -3,7 +3,6 @@ class CfgPatches {
     #include "CfgPatches.cpp"
 };
 
-/*
-Drugs:
-Concentration:
-*/
+class CfgWeapons {
+    #include "CfgWeapons.cpp"
+};
