@@ -3,7 +3,7 @@ if (lilc_vehicles_locked_getOut_enable) then {
     player addAction ["Aussteigen", {
         player action ["GetOut", (vehicle player)];
         [(vehicle player), 0] call lilc_vehicles_fnc_lock;
-    }, nil, 0, false, false, "", "((vehicle player) != player) && !([(vehicle player)] call lilc_keys_fnc_have) && (locked (vehicle player)) in [2, 3]"];
+    }, nil, 0, false, false, "", "((vehicle player) != player) && !([(vehicle player)] call lilc_keys_fnc_have) && (locked (vehicle player)) in [2, 3] && !((vehicle player) isKindOf 'Air') && !((vehicle player) isKindOf 'Plane')"];
 };
 
 player addEventHandler ["GetInMan", {
