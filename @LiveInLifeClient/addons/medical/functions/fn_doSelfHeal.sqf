@@ -52,7 +52,7 @@ if ((_curPos distance player) > 10 && lilc_action_interrupted && (vehicle player
 lilc_action_interrupted = false;
 closeDialog 1320;
 
-if !([_args select 1] call lilc_cash_fnc_remove) then {
+if !([_cost] call lilc_cash_fnc_remove) then {
 	["Du besitzt nicht genügend Bargeld.", "ERROR"] call lilc_ui_fnc_hint;
 };
 
