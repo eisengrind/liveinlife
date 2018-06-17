@@ -3,5 +3,7 @@ class lilc_drugs {
     units[] = {};
     weapons[] = {};
     requiredAddons[] = {};
-    author[] = {};
+    author[] = {
+        "Vincent Heins"
+    };
 };
