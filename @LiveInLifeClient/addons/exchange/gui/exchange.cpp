@@ -63,7 +63,7 @@ class lilcm_exchange
             colorBackground[] = {"(profileNamespace getVariable ['GUI_BCG_RGB_R',0.77])","(profileNamespace getVariable ['GUI_BCG_RGB_G',0.51])","(profileNamespace getVariable ['GUI_BCG_RGB_B',0.08])","(profileNamespace getVariable ['GUI_BCG_RGB_A',0.8])"};
         };
     };
-    
+
     class controls
     {
         class ButtonClose: RscActiveText {
@@ -124,7 +124,7 @@ class lilcm_exchange
             {
                 class FrameListSellsBackground : RscText
                 {
-                    idc = -1;
+                    idc = 1996;
                     text = "";
                     colorBackground[] = {0,0,0,0.3};
                     x = 0.0154688 * safezoneW;
@@ -132,7 +132,7 @@ class lilcm_exchange
                     w = 0.309375 * safezoneW;
                     h = 0.154 * safezoneH;
                 };
-                
+
                 class ListSells: lilc_RscListNBox
                 {
                     idc = 1500;
@@ -232,7 +232,7 @@ class lilcm_exchange
 
                 class FrameListBuysBackground : RscText
                 {
-                    idc = -1;
+                    idc = 1997;
                     text = "";
                     colorBackground[] = {0,0,0,0.3};
                     x = 0.0154688 * safezoneW;
@@ -240,7 +240,7 @@ class lilcm_exchange
                     w = 0.309375 * safezoneW;
                     h = 0.154 * safezoneH;
                 };
-                
+
                 class ListBuys: lilc_RscListNBox
                 {
                     idc = 1501;

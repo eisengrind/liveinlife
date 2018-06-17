@@ -13,9 +13,10 @@ disableSerialization;
 private _cfg = ([_name] call lilc_exchange_fnc_getExchangeConfig);
 if (isNull _cfg) exitWith {};
 
+private _exchangeType = getNumber(_cfg >> "type");
+
 private _ui = (findDisplay 2302);
-if (isNull _ui) then
-{
+if (isNull _ui) then {
     createDialog "lilcm_exchange";
 };
 
@@ -24,11 +25,18 @@ ctrlSetText [1000, getText(_cfg >> "displayName")];
 private _uiFrameButtonOffersBackground = (_ui displayCtrl 998);
 private _uiFrameButtonAccountBackground = (_ui displayCtrl 999);
 
-switch (_type) do
-{
+switch (_type) do {
     case "offers": {
         ctrlShow [2300, true];
         ctrlShow [2301, false];
+
+        {
+            ctrlShow [_x, _exchangeType != 2];
+        } forEach [1996, 1500, 1800, 1008, 1400, 1603];
+
+        {
+            ctrlShow [_x, _exchangeType != 1];
+        } foreach [1997, 1501, 1801, 1009, 1401, 1604]; //sells
 
         _uiFrameButtonOffersBackground ctrlSetBackgroundColor [0, 0, 0, 0.6];
         _uiFrameButtonAccountBackground ctrlSetBackgroundColor [0, 0, 0, 0.2];
@@ -42,7 +50,7 @@ switch (_type) do
             lbSetData [2100, _i, _x];
             lbSetPicture [2100, _i, getText(_itemCfg >> "picture")];
         } count getArray(_cfg >> "items");
-        
+
         lbSort [2100, "ASC"];
         [((_ui displayCtrl 2300) controlsGroupCtrl 2100), (lbCurSel 2100)] call lilc_exchange_fnc_offers_handleOnLBSelChanged;
     };
@@ -69,8 +77,7 @@ switch (_type) do
         };
     };
 
-    case "account":
-    {
+    case "account": {
         ctrlShow [2300, false];
         ctrlShow [2301, true];
 
@@ -96,8 +103,7 @@ switch (_type) do
         [[player, _name], "lils_exchange_fnc_getAccount"] call lilc_common_fnc_sendToServer;
     };
 
-    case "account_setAccount":
-    {
+    case "account_setAccount": {
         ctrlSetText [1013, (format["$ %1", (_data select 0)])];
 
         lbClear 1502;

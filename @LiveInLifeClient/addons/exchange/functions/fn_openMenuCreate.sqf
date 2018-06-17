@@ -1,7 +1,7 @@
 
 params [
     ["_name", lilc_exchange_currentExchange, [""]],
-    ["_type", "buy", [""]]
+    ["_type", "", [""]]
 ];
 
 if (_name == "" || isNil "_name") exitWith {};
@@ -11,6 +11,14 @@ disableSerialization;
 
 private _cfg = ([_name] call lilc_exchange_fnc_getExchangeConfig);
 if (isNull _cfg) exitWith {};
+
+private _exchangeType = getNumber(_cfg >> "type");
+
+_type = (switch (_exchangeType) do {
+    case 0;
+    case 1: { "buy"; };
+    case 2: { "sell"; };
+});
 
 private _ui = (findDisplay 2303);
 if (isNull _ui) then {
@@ -22,9 +30,13 @@ ctrlSetText [1000, (format["%1 - Angebot erstellen", getText(_cfg >> "displayNam
 private _uiFrameButtonBuyBackground = (_ui displayCtrl 998);
 private _uiFrameButtonSellBackground = (_ui displayCtrl 999);
 
+ctrlShow [1600, _exchangeType != 2];
+ctrlShow [1601, _exchangeType != 1];
+
 switch (_type) do
 {
     case "buy": {
+        ctrlEnable [1602, _exchangeType != 2];
         ctrlShow [2301, true];
         ctrlShow [2300, false];
 
@@ -43,6 +55,7 @@ switch (_type) do
     };
 
     case "sell": {
+        ctrlEnable [1602, _exchangeType != 1];
         ctrlShow [2301, false];
         ctrlShow [2300, true];
 

@@ -195,7 +195,7 @@ class lilcm_exchange_create
         };
         class ButtonCreateOffer: RscButton
         {
-            idc = 1601;
+            idc = 1602;
 
             text = "Erstellen"; //--- ToDo: Localize;
             x = 0.391719 * safezoneW + safezoneX;

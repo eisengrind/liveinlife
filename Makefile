@@ -1,4 +1,4 @@
-
+ARMAKESRC=https://github.com/TheMysteriousVincent/armake.git
 ARMAKE=$(abspath .build/bin/armake)
 TAG=$(shell git describe --tag | sed "s/-.*-/-/")
 PUBLISHER=$(abspath .build/bin/go-swp)
@@ -88,7 +88,7 @@ deps:
 	sudo apt-get install -y git bison flex libssl-dev python3
 
 build_armake: prepare
-	if [ ! -d .build/armake ]; then git clone https://github.com/KoffeinFlummi/armake .build/armake ; \
+	if [ ! -d .build/armake ]; then git clone $(ARMAKESRC) .build/armake ; \
 		cd .build/armake \
 		&& make \
 		&& cd ../../ \
