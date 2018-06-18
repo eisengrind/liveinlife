@@ -216,6 +216,6 @@
     },
     {
         ["lilc_schiffWasser", 0, 15] call lilc_food_fnc_consumeItem;
-        [player, 20] call lilc_drugs_fnc_addAlcohol;
+        [20] call lilc_drugs_fnc_addAlcoholToQueue;
     }
 ] call lilc_inventory_menu_fnc_addItemOption;
