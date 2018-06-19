@@ -2,19 +2,21 @@
 private _bac = (player getVariable ["lilc_drugs_bac", 0]);
 //insert amounts of alcohol to blood
 
-{
-    private _def = _x select 0;
-    private _time = _x select 1;
+for "_i" from 0 to (count lilc_drugs_alcohol_queue) - 1 do {
+    private _def = (lilc_drugs_alcohol_queue select _i) select 0;
+    private _time = (lilc_drugs_alcohol_queue select _i) select 1;
     if (((ceil time) - _time) > lilc_drugs_alcohol_maximumImpactTime) then {
-        lilc_drugs_alcohol_queue deleteAt _forEachIndex;
+        lilc_drugs_alcohol_queue deleteAt _i;
+        _i = _i - 1;
     } else {
         private _deltaTimeCur = (ceil time) - _time;
         private _deltaTimeLast = ((ceil time) - 1 - _time) max 0;
-        private _cur = -_def*exp(lilc_drugs_alcohol_impactFactor*(_deltaTimeCur-lilc_drugs_alcohol_maximumImpactTime))+_def;
-        private _last = -_def*exp(lilc_drugs_alcohol_impactFactor*(_deltaTimeLast-lilc_drugs_alcohol_maximumImpactTime))+_def;
-        _bac = _bac + ([_last - _cur] call lilc_drugs_fnc_getBAC);
+        _bac = _bac + ([
+            (-_def*exp(lilc_drugs_alcohol_impactFactor*(_deltaTimeLast-lilc_drugs_alcohol_maximumImpactTime))+_def) -
+            (-_def*exp(lilc_drugs_alcohol_impactFactor*(_deltaTimeCur-lilc_drugs_alcohol_maximumImpactTime))+_def)
+        ] call lilc_drugs_fnc_getBAC);
     };
-} forEach +(lilc_drugs_alcohol_queue);
+};
 
 //remove amount of bac per second
 _bac = _bac * 0.99995833333;
