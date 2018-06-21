@@ -1,4 +1,4 @@
 
-lilc_drugs_alcohol_queue = [];
-lilc_drugs_alcohol_maximumImpactTime = 2700;
-lilc_drugs_alcohol_impactFactor = 0.1;
+lilc_drugs_alcohol_cache = [];
+lilc_drugs_alcohol_defaultDelay = 2700;
+lilc_drugs_alcohol_cacheSorted = false;

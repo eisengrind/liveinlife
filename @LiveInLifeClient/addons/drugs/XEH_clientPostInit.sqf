@@ -1,4 +1,6 @@
 
+[lilc_drugs_fnc_drugsLoop, [], 1] call CBA_fnc_waitAndExecute;
+
 //ACE3 ppEffect create function
 private _fnc_createEffect = {
     params ["_type", "_layer", "_default"];
@@ -22,8 +24,6 @@ lilc_drugs_effectAlcoholizedBlindness = [
     33362,
     [1, 1, 0, [0, 0, 0, 0], [1, 1, 1, 0], [0.4, 0.4, 0.4, 0]]
 ] call _fnc_createEffect;
-
-[lilc_drugs_fnc_drugsLoop, [], 1] call CBA_fnc_waitAndExecute;
 
 [{
     private _bac = (player getVariable ["lilc_drugs_bac", 0]) min 5;
