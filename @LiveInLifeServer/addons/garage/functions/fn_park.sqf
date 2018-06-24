@@ -19,7 +19,7 @@ try
 
     if (_accountID <= 0) throw false;
     if (isNull _vehicle) throw false;
-    
+
     private _classname = (typeOf _vehicle);
     private _color = (_vehicle getVariable ["lilc_vehicleColor", ""]);
 
@@ -33,7 +33,8 @@ try
         } forEach getArray(_factionConfig >> "defaultVehicles");
 
         if !(_inVehicles) throw false;
-        deleteVehicle _vehicle;
+
+        [_vehicle] call lilc_vehicles_fnc_deleteVehicle;
     }
     else
     {
@@ -49,11 +50,11 @@ try
             case (_classname isKindOf "Car"): {
                 0;
             };
-            
+
             case (_classname isKindOf "Plane"): {
                 1;
             };
-            
+
             case (_classname isKindOf "Helicopter"): {
                 2;
             };
@@ -61,11 +62,11 @@ try
             case (_classname isKindOf "Truck"): {
                 3;
             };
-            
+
             case (_classname isKindOf "Ship"): {
                 4;
             };
-            
+
             case (_classname isKindOf "Biycle"): {
                 6;
             };
@@ -91,8 +92,8 @@ try
             (str _classname)
         ])] call lils_database_fnc_query;
         [[(typeOf _vehicle), _vehicleID], "lilc_keys_fnc_remove", _unit] call lilc_common_fnc_send;
-        
-        deleteVehicle _vehicle;
+
+        [_vehicle] call lilc_vehicles_fnc_deleteVehicle;
     };
     throw true;
 }

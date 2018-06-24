@@ -25,7 +25,7 @@ try
         ] call lils_database_fnc_generateUpdateQuery)] call lils_database_fnc_query;
     };
 
-    deleteVehicle _vehicle;
+    [_vehicle] call lilc_vehicles_fnc_deleteVehicle;
 }
 catch
 {

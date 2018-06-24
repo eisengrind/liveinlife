@@ -48,7 +48,7 @@ if (isNull _vehCfg) exitWith
 
 if ([getNumber(_vehCfg >> "rentSellPrice")] call lilc_cash_fnc_add) then
 {
-    deleteVehicle _veh;
+    [_vehicle] call lilc_vehicles_fnc_deleteVehicle;
     [
         "Du hast ein gemietetes Fahrzeug zurückgebenen."
     ] call lilc_ui_fnc_hint;
