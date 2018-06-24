@@ -4,6 +4,7 @@ class lilc_vehicles {
         file = "\x\lilc\addons\vehicles\functions";
         class addUpgrade {};
         class canShowVehicleInformation {};
+        class deleteVehicle {};
         class doShowVehicleInformation {};
         class hasUpgrade {};
         class isHiveVehicle {};
