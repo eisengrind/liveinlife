@@ -21,7 +21,7 @@ try {
         if ((count (_position select 0)) != 3) throw ObjNull;
         _position set [0, ((_position select 0) vectorAdd [0, 0, 0.2])];
     };
-    
+
     if (_accountID <= 0) throw objNull;
     if (_steam64ID == "") throw objNull;
     if !(isClass (configFile >> "CfgVehicles" >> _classname)) throw ObjNull;
@@ -32,9 +32,9 @@ try {
         [_vehicle, _position] call lilc_common_fnc_setPosition;
     } else {
         private _watermode = (if ([_classname, ["Ship"]] call lilc_common_fnc_isKindOf) then { 2; } else { 0; });
-        
+
         _vehicle = _classname createVehicle [0, 0, 0];
- 
+
         private _pos = ((_position select 0) findEmptyPosition [5, 80, _classname]);
 
         _vehicle setPos _pos;
@@ -56,7 +56,7 @@ try {
             [
                 "lils_vehicles_vehicleDeath",
                 _this
-            ] call CBA_fnc_localEvent;
+            ] call CBA_fnc_globalEvent;
         }
     ];
     _vehicle allowDamage true;
