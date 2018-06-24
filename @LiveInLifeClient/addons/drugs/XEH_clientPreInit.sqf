@@ -1,4 +1,4 @@
 
-lilc_drugs_alcohol_cache = [];
-lilc_drugs_alcohol_defaultDelay = 2700;
-lilc_drugs_alcohol_cacheSorted = false;
+lilc_drugs_sedatives_cache = [];
+lilc_drugs_sedatives_defaultDelay = 2700;
+lilc_drugs_sedatives_cacheSorted = false;

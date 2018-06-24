@@ -2,9 +2,9 @@
 private _bac = (player getVariable ["lilc_drugs_bac", 0]);
 //insert amounts of alcohol to blood
 
-if (!lilc_drugs_alcohol_cacheSorted) then {
-    lilc_drugs_alcohol_cache sort true;
-    lilc_drugs_alcohol_cacheSorted = true;
+if (!lilc_drugs_sedatives_cacheSorted) then {
+    lilc_drugs_sedatives_cache sort true;
+    lilc_drugs_sedatives_cacheSorted = true;
 };
 
 private _delete = false;
@@ -12,14 +12,14 @@ private ["_t"];
 {
     _t = CBA_missionTime - (_x select 0);
     if (_x select 1 < _t) then {
-        lilc_drugs_alcohol_cache set [_forEachIndex, objNull];
+        lilc_drugs_sedatives_cache set [_forEachIndex, objNull];
         _delete = true;
     };
     if (_t > 0) exitWith {};
     _bac = _bac + ([(_x select 1) / (_x select 2)] call lilc_drugs_fnc_getBAC);
-} forEach lilc_drugs_alcohol_cache;
+} forEach lilc_drugs_sedatives_cache;
 if (_delete) then {
-    lilc_drugs_alcohol_cache = lilc_drugs_alcohol_cache - [objNull];
+    lilc_drugs_sedatives_cache = lilc_drugs_sedatives_cache - [objNull];
 };
 
 //remove amount of bac per second
