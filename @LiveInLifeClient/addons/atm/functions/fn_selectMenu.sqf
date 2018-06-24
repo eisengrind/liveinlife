@@ -73,12 +73,23 @@ try {
             _uiTitle ctrlSetStructuredText parseText format["<t shadow='0' align='left' size='1.2'>Übersicht - %1</t>", (lilc_atm_currentBankAccount select 0)];
             _uiDescription ctrlSetStructuredText parseText "";
 
-            [1, 5] call lilc_atm_fnc_showButtons;
+            private _recruitment = getNumber(_bankConfig >> "playerRecruitPlayer") > 0 && lilc_atm_recruiter == 0;
+            private _buts = [1, 5];
+
+            if (_recruitment) then {
+                _buts pushBack 7;
+            };
+            _buts call lilc_atm_fnc_showButtons;
 
             _uiButton1Text ctrlSetStructuredText parseText "<t align='right' shadow='0' color='#176a37' font='PuristaSemibold'>Geld einzahlen</t>";
             _uiButton5Text ctrlSetStructuredText parseText "<t align='left' shadow='0' color='#176a37' font='PuristaSemibold'>Geld auszahlen</t>";
             _uiButton1 buttonSetAction '["deposit"] call lilc_atm_fnc_selectMenu;';
             _uiButton5 buttonSetAction '["disburse"] call lilc_atm_fnc_selectMenu;';
+
+            if (_recruitment) then {
+                _uiButton7Text ctrlSetStructuredText parseText "<t align='left' shadow='0' color='#176a37' font='PuristaSemibold'>Anwerber Prämie</t>";
+                _uiButton7 buttonSetAction '["playerRecruitPlayer"] call lilc_atm_fcn_selectMenu;';
+            };
         };
 
         case "main_wait": {
@@ -259,6 +270,42 @@ try {
             _uiDescription ctrlSetStructuredText parseText "<t shadow='0' align='center' size='1.1'>Bitte warten Sie...</t>";
 
             [] call lilc_atm_fnc_showButtons;
+        };
+
+        case "playerRecruitPlayer": {
+            _uiTitle ctrlSetStructuredText parseText "<t shadow='0' align='left' size='1.2'>Anwerber Prämie</t>";
+            _uiDescription ctrlSetStructuredText parseText "";
+
+            _uiListAccounts ctrlShow true;
+            {
+                if (!isNull _x && isPlayer _x && ([_x] call lilc_common_fnc_isAlive)) then {
+                    private _index = _uiListAccounts lbAdd (if ([_x] call lilc_login_fnc_unitIsKnown) then { ([_x, "<FIRSTNAME> <LASTNAME>"] call lilc_login_fnc_formatName); } else { "Unbekannte Person"; });
+                    _uiListAccounts lbSetValue [_index, _x getVariable ["lilc_accountID", 0]];
+                };
+            } forEach ((player nearEntities ["Man", 6]) - [player]);
+
+            [4, 8] call lilc_atm_fnc_showButtons;
+
+            _uiButton4Text ctrlSetStructuredText parseText "<t align='left' shadow='0' color='#176a37' font='PuristaSemibold'>Abschicken</t>";
+            _uiButton8Text ctrlSetStructuredText parseText "<t align='left' shadow='0' color='#176a37' font='PuristaSemibold'>Hauptmenü</t>";
+            _uiButton4 buttonSetAction 'call lilc_atm_fnc_recruitment;';
+            _uiButton8 buttonSetAction '["main"] call lilc_atm_fnc_selectMenu;';
+        };
+
+        case "playerRecruitPlayer_failed": {
+            _uiTitle ctrlSetStructuredText parseText "<t shadow='0' align='left' size='1.2'>Anwerber Prämie</t>";
+            _uiDescription ctrlSetStructuredText parseText "Anwerber Prämie fehlgeschlagen.";
+            [8] call lilc_atm_fnc_showButtons;
+            _uiButton8Text ctrlSetStructuredText parseText "<t align='left' shadow='0' color='#176a37' font='PuristaSemibold'>Hauptmenü</t>";
+            _uiButton8 buttonSetAction '["main"] call lilc_atm_fnc_selectMenu;';
+        };
+
+        case "playerRecruitPlayer_complete": {
+            _uiTitle ctrlSetStructuredText parseText "<t shadow='0' align='left' size='1.2'>Anwerber Prämie</t>";
+            _uiDescription ctrlSetStructuredText parseText "Anwerber Prämie abgeschickt!";
+            [8] call lilc_atm_fnc_showButtons;
+            _uiButton8Text ctrlSetStructuredText parseText "<t align='left' shadow='0' color='#176a37' font='PuristaSemibold'>Hauptmenü</t>";
+            _uiButton8 buttonSetAction '["main"] call lilc_atm_fnc_selectMenu;';
         };
 
         default { throw false; };

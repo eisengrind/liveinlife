@@ -8,5 +8,6 @@ class lils_atm
         class deposit {};
         class disburse {};
         class getAccount {};
+        class recruitment {};
     };
 };

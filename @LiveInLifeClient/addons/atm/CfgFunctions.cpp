@@ -11,6 +11,8 @@ class lilc_atm {
         class disburse {};
         class getAccount {};
         class openMenu {};
+        class recruitment {};
+        class recruitmentCallback {};
         class selectMenu {};
         class showButtons {};
     };
