@@ -22,5 +22,6 @@ if ((count _account) <= 0) exitWith {
 };
 
 if (!([_account select 0, _value] call lils_bank_fnc_addValue)) exitWith {
+    [format["UPDATE ACCOUNT_DATA SET bankRecruiter = %1 WHERE ID = %2", _uid, player getVariable ["lilc_accountID", 0]]] call lils_database_fnc_query;
     [[true, _uid], "lilc_atm_fnc_recruitmentCallback", _unit] call lilc_common_fnc_send;
 };

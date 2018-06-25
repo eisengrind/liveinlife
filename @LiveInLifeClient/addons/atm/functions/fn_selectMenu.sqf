@@ -88,7 +88,7 @@ try {
 
             if (_recruitment) then {
                 _uiButton7Text ctrlSetStructuredText parseText "<t align='left' shadow='0' color='#176a37' font='PuristaSemibold'>Anwerber Prämie</t>";
-                _uiButton7 buttonSetAction '["playerRecruitPlayer"] call lilc_atm_fcn_selectMenu;';
+                _uiButton7 buttonSetAction '["playerRecruitPlayer"] call lilc_atm_fnc_selectMenu;';
             };
         };
 
@@ -276,13 +276,14 @@ try {
             _uiTitle ctrlSetStructuredText parseText "<t shadow='0' align='left' size='1.2'>Anwerber Prämie</t>";
             _uiDescription ctrlSetStructuredText parseText "";
 
+            lbClear _uiListAccounts;
             _uiListAccounts ctrlShow true;
             {
                 if (!isNull _x && isPlayer _x && ([_x] call lilc_common_fnc_isAlive)) then {
                     private _index = _uiListAccounts lbAdd (if ([_x] call lilc_login_fnc_unitIsKnown) then { ([_x, "<FIRSTNAME> <LASTNAME>"] call lilc_login_fnc_formatName); } else { "Unbekannte Person"; });
                     _uiListAccounts lbSetValue [_index, _x getVariable ["lilc_accountID", 0]];
                 };
-            } forEach ((player nearEntities ["Man", 6]) - [player]);
+            } forEach /*(*/(player nearEntities ["Man", 6])/* - [player])*/;
 
             [4, 8] call lilc_atm_fnc_showButtons;
 
