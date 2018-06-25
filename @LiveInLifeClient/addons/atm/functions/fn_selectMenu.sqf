@@ -278,12 +278,17 @@ try {
 
             lbClear _uiListAccounts;
             _uiListAccounts ctrlShow true;
-            {
-                if (!isNull _x && isPlayer _x && ([_x] call lilc_common_fnc_isAlive)) then {
-                    private _index = _uiListAccounts lbAdd (if ([_x] call lilc_login_fnc_unitIsKnown) then { ([_x, "<FIRSTNAME> <LASTNAME>"] call lilc_login_fnc_formatName); } else { "Unbekannte Person"; });
-                    _uiListAccounts lbSetValue [_index, _x getVariable ["lilc_accountID", 0]];
-                };
-            } forEach /*(*/(player nearEntities ["Man", 6])/* - [player])*/;
+            private _units = ((player nearEntities ["Man", 6]) - [player]);
+            if (count _units > 0) then {
+                {
+                    if (!isNull _x && isPlayer _x && ([_x] call lilc_common_fnc_isAlive) && (_x getVariable ["lilc_accountID", 0]) > 0) then {
+                        private _index = _uiListAccounts lbAdd (if ([_x] call lilc_login_fnc_unitIsKnown) then { ([_x, "<FIRSTNAME> <LASTNAME>"] call lilc_login_fnc_formatName); } else { "Unbekannte Person"; });
+                        _uiListAccounts lbSetValue [_index, _x getVariable ["lilc_accountID", 0]];
+                    };
+                } forEach _units;
+            } else {
+                _uiListAccounts lbAdd "Keine Spieler in der Nähe.";
+            };
 
             [4, 8] call lilc_atm_fnc_showButtons;
 
