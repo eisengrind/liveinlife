@@ -24,7 +24,7 @@ lilc_common_defaultPostFinishedIndex = ([
     "CHECKBOX",
     "Enables preloading after login screen.", //TODO: localize
     "LiveInLife",
-    true
+    false
 ] call CBA_Settings_fnc_init;
 
 lilc_common_logicCenter = createCenter sideLogic;
