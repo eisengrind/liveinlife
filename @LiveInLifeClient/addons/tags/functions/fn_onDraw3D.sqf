@@ -1,11 +1,12 @@
 
 private _camPos = (AGLToASL (positionCameraToWorld [0, 0, 0]));
 private _units = [];
-private _inVehicle = !((vehicle player) isEqualTo player);
-if (_inVehicle) then {
+if !((vehicle player) isEqualTo player) then {
     _units = (crew vehicle player);
 } else {
-    _units = (_camPos nearObjects ["CAManBase", lilc_tags_maximumRadius + 5]);
+    _units = (_camPos nearEntities ["CAManBase", lilc_tags_maximumRadius + 5]) select {
+        (!(lineIntersects [_camPos, (eyePos _x), player, _x]) && count (worldToScreen position _x) != 0);
+    };
 };
 
 {
@@ -17,8 +18,7 @@ if (_inVehicle) then {
         !((headgear _unit) in lilc_tags_blacklist_headgear) &&
         !((goggles _unit) in lilc_tags_blacklist_goggles) &&
         !((uniform _unit) in lilc_tags_blacklist_uniforms) &&
-        !((vest _unit) in lilc_tags_blacklist_vests) &&
-        (((count (lineIntersectsObjs [_camPos, (eyePos _unit), player, _unit])) <= 0) && !_inVehicle)
+        !((vest _unit) in lilc_tags_blacklist_vests)
     ) then {
         private _color = [(lilc_tags_defaultColor select 0), (lilc_tags_defaultColor select 1), (lilc_tags_defaultColor select 2), (lilc_setting_tags_defaultAlpha min (lilc_tags_maximumFadeRadius - (_unit distance player)) max 0)];
         private _name = (_unit getVariable ["lilc_tags_name", ""]);
@@ -36,19 +36,15 @@ if (_inVehicle) then {
 
                 switch (_fInfo select 6) do {
                     case 0: {
-                        if ([_unit] call lilc_login_fnc_unitIsKnown) then
-                        {
+                        if ([_unit] call lilc_login_fnc_unitIsKnown) then {
                             _name = ([_unit, "<FIRSTNAME> <LASTNAME>"] call lilc_login_fnc_formatName);
                         };
                     };
 
                     case 1: {
-                        if ([_unit] call lilc_login_fnc_unitIsKnown) then
-                        {
+                        if ([_unit] call lilc_login_fnc_unitIsKnown) then {
                             _name = ([_unit, "<FIRSTNAME> <LASTNAME>"] call lilc_login_fnc_formatName);
-                        }
-                        else
-                        {
+                        } else {
                             _name = ([_unit, "<ADDRESS> <LASTNAME>"] call lilc_login_fnc_formatName);
                         };
                     };
