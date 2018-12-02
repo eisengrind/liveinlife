@@ -1,9 +1,9 @@
 #include "..\script_component.hpp"
 
 params [
-    ["_path", "", []],
-    ["_pathParams", [], []],
-    ["_method", "", []],
+    ["_path", "", [""]],
+    ["_pathParams", [], [[]]],
+    ["_method", "", [""]],
     ["_headers", [], [[]]],
     ["_postData", [], [[]]]
 ];
@@ -15,7 +15,7 @@ private _uri = format[
     "%1://%2/%3",
     GVAR(uri_scheme),
     GVAR(uri_authority),
-    format (_path append _pathParams)
+    format ([_path] + _pathParams)
 ];
 
 private _jsonPostData = "";

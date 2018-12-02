@@ -120,6 +120,9 @@ endif
 client:	lilc_actions \
 	lilc_animals \
 	lilc_api \
+	lilc_api_banks \
+	lilc_api_profiles \
+	lilc_api_users \
 	lilc_atcInterface \
 	lilc_atm \
 	lilc_bank \
@@ -197,6 +200,15 @@ lilc_animals: createKey
 
 lilc_api: createKey
 	$(ARMAKE) build -p --force -k $(PRVKEYFILE) -e prefix=x\\lilc\\addons\\api @LiveInLifeClient/addons/api .build/@LiveInLifeClient/addons/$@.pbo
+
+lilc_api_banks: createKey
+	$(ARMAKE) build -p --force -k $(PRVKEYFILE) -e prefix=x\\lilc\\addons\\api_banks @LiveInLifeClient/addons/api_banks .build/@LiveInLifeClient/addons/$@.pbo
+
+lilc_api_profiles: createKey
+	$(ARMAKE) build -p --force -k $(PRVKEYFILE) -e prefix=x\\lilc\\addons\\api_profiles @LiveInLifeClient/addons/api_profiles .build/@LiveInLifeClient/addons/$@.pbo
+
+lilc_api_users: createKey
+	$(ARMAKE) build -p --force -k $(PRVKEYFILE) -e prefix=x\\lilc\\addons\\api_users @LiveInLifeClient/addons/api_users .build/@LiveInLifeClient/addons/$@.pbo
 
 lilc_atcInterface: createKey
 	$(ARMAKE) build -p --force -k $(PRVKEYFILE) -e prefix=x\\lilc\\addons\\atcInterface @LiveInLifeClient/addons/atcInterface .build/@LiveInLifeClient/addons/$@.pbo
@@ -422,10 +434,6 @@ server: lils_animals \
 	lils_vehicles \
 	lils_virtual_inventory
 	cp -f @LiveInLifeServer/mod.cpp .build/@LiveInLifeServer/
-	cp -f @LiveInLifeServer/extDB3.dll .build/@LiveInLifeServer/
-	cp -f @LiveInLifeServer/extDB3.so .build/@LiveInLifeServer/
-	cp -f @LiveInLifeServer/extDB3_x64.dll .build/@LiveInLifeServer/
-	cp -f @LiveInLifeServer/extdb3-conf.example.ini .build/@LiveInLifeServer/
 
 lils_animals:
 	$(ARMAKE) build -p --force -e prefix=x\\lils\\addons\\animals @LiveInLifeServer/addons/animals .build/@LiveInLifeServer/addons/$@.pbo
