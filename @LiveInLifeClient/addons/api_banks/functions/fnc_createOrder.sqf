@@ -29,8 +29,8 @@ if (_repeats == 0 || _repeats < -1) exitWith { []; };
     [],
     "POST",
     [
-        "Authorization", EGVAR(api_users,token),
-        "ProfileAuthorization", EGVAR(api_profiles,token)
+        QUSERS_ACCESS_TOKEN_HEADER, EGVAR(api_users,token),
+        QPROFILE_ACCESS_TOKEN_HEADER, EGVAR(api_profiles,token)
     ],
     [
         "object",

@@ -15,7 +15,7 @@ private _opts = _this select [1, (count _this) - 1];
     ],
     "PATCH",
     [
-        "Authorization", EGVAR(api_users,token)
+        QUSERS_ACCESS_TOKEN_HEADER, EGVAR(api_users,token)
     ],
     [
         "object",

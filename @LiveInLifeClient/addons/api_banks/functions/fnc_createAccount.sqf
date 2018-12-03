@@ -19,7 +19,7 @@ if (_bank == "") exitWith { ""; };
     [],
     "POST",
     [
-        "Authorization", EGVAR(api_users,token)
+        QUSERS_ACCESS_TOKEN_HEADER, EGVAR(api_users,token)
     ],
     [
         "object",

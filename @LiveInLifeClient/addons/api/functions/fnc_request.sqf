@@ -5,7 +5,7 @@ params [
     ["_pathParams", [], [[]]],
     ["_method", "", [""]],
     ["_headers", [], [[]]],
-    ["_postData", [], [[]]]
+    ["_postData", [], [[], ""]]
 ];
 
 if (_path == "") exitWith { []; };
@@ -18,9 +18,13 @@ private _uri = format[
     format ([_path] + _pathParams)
 ];
 
-private _jsonPostData = "";
-if (count _postData == 2) then {
-    _jsonPostData = _postData call FUNC(toJSON);
+private _postDataStr = "";
+if (_postData isEqualType [] && count _postData == 2) then {
+    _postDataStr = _postData call FUNC(toJSON);
+};
+
+if (_postData isEqualType "") then {
+    _postDataStr = _postData;
 };
 
 diag_log format[
@@ -28,10 +32,10 @@ diag_log format[
     _uri,
     _method,
     str _headers,
-    _jsonPostData
+    _postDataStr
 ];
 
-private _resp = ([_uri, _method, _headers, _jsonPostData, true] call a3uf_common_fnc_request);
+private _resp = ([_uri, _method, _headers, _postDataStr, true] call a3uf_common_fnc_request);
 
 [
     parseSimpleArray (_resp select 0),
