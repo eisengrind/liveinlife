@@ -17,7 +17,7 @@ if (_profileID <= 0) exitWith { []; };
     "POST",
     [
         QUSERS_ACCESS_TOKEN_HEADER, EGVAR(api_users,token),
-        QPROFILE_ACCESS_TOKEN_HEADER, EGVAR(api_profiles,token),
+        QPROFILES_ACCESS_TOKEN_HEADER, EGVAR(api_profiles,token),
         QFACTION_PROFILES_ACCESS_TOKEN_HEADER, EGVAR(api_factions,token)
     ],
     []
