@@ -1,20 +1,20 @@
 #include "..\script_component.hpp"
 
 params [
+    ["_offerID", 0, [0]],
     ["_accountID", 0, [0]],
-    ["_price", 0, [0]],
-    ["_classname", "", [""]],
     ["_amount", 0, [0]]
 ];
 
+if (_offerID <= 0) exitWith { []; };
 if (_accountID <= 0) exitWith { []; };
-if (_price <= 0) exitWith { []; };
-if (_classname == "") exitWith { []; };
 if (_amount <= 0) exitWith { []; };
 
 [
-    "exchange/offers/sell",
-    [],
+    "exchange/offers/%1/buy",
+    [
+        _offerID
+    ],
     "POST",
     [
         QUSERS_ACCESS_TOKEN_HEADER, EGVAR(api_users,token),
@@ -24,8 +24,6 @@ if (_amount <= 0) exitWith { []; };
         "object",
         [
             ["exchange_account_id", _accountID],
-            ["price", _price],
-            ["classname", _classname],
             ["amount", _amount]
         ]
     ]
