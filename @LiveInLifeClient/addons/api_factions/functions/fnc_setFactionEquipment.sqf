@@ -1,7 +1,8 @@
 #include "..\script_component.hpp"
 
 params [
-    ["_factionID", 0, [0]]
+    ["_factionID", 0, [0]],
+    ["_classnames", [], [[]]]
 ];
 
 if (_factionID <= 0) exitWith { []; };
@@ -11,9 +12,12 @@ if (_factionID <= 0) exitWith { []; };
     [
         _factionID
     ],
-    "GET",
+    "PATCH",
     [
         QUSERS_ACCESS_TOKEN_HEADER, EGVAR(api_users,token)
     ],
-    []
+    [
+        "array",
+        _classnames
+    ]
 ] call EFUNC(api,request);
