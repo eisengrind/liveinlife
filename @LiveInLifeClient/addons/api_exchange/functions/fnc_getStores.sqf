@@ -9,8 +9,6 @@ params [
 if (_count <= 0) exitWith { []; };
 if (_page <= 0) exitWith { []; };
 
-
-
 private _query = [
     format["count=%1", _count],
     format["page=%1", _page]

@@ -3,6 +3,7 @@
 ADDON = false;
 
 GVAR(token) = "";
+GVAR(refresh_token) = "";
 
 PREP_RECOMPILE_START;
 #include "XEH_PREP.hpp"
