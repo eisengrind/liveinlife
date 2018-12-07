@@ -16,6 +16,7 @@ PREP(getOffer);
 PREP(getOffers);
 PREP(getProfileAccounts);
 PREP(getStore);
+PREP(getStoreByAlias);
 PREP(getStoreClassnames);
 PREP(getStores);
 PREP(removeAccount);
