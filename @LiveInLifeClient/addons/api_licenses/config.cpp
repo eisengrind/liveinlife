@@ -3,11 +3,11 @@
 
 class CfgPatches {
     class ADDON {
-        name = COMPONENT_NAME
+        name = COMPONENT_NAME;
         units[] = {};
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
-        requiredAddons[] = {"lilc_main" "lilc_api", "lilc_api_users", "lilc_api_profiles", "lilc_api_factions"};
+        requiredAddons[] = {"lilc_main", "lilc_api", "lilc_api_users", "lilc_api_profiles", "lilc_api_factions"};
         author = CONTRIBUTORS;
         authors[] = {
             "TheMysteriousVincent"

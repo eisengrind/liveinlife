@@ -3,7 +3,10 @@
 params [
     ["_userID", 0, [0]],
     ["_firstname", "", [""]],
-    ["_lastname", "", [""]]
+    ["_middlename", "", [""]],
+    ["_lastname", "", [""]],
+    ["_birthday", "", [""]],
+    ["_originLocode", "", [""]]
 ];
 
 if (_userID <= 0) exitWith { []; };
@@ -22,7 +25,10 @@ if (_lastname == "") exitWith { []; };
         [
             ["user_id", _userID],
             ["firstname", _firstname],
-            ["lastname", _lastname]
+            ["lastname", _lastname],
+            ["middlename", _middlename],
+            ["birthday", _birthday],
+            ["originLocode", _originLocode]
         ]
     ]
 ] call EFUNC(api,request);

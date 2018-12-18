@@ -16,4 +16,6 @@
 #endif
 
 #include "\x\lilc\addons\main\script_macros.hpp"
+#include "\x\lilc\addons\api\script_macros_common.hpp"
 #include "script_macros_common.hpp"
+#include "script_macros.hpp"

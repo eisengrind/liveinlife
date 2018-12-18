@@ -6,7 +6,7 @@ params [
 ];
 
 if (_accountID <= 0) exitWith { []; };
-if (_balance <= 0) exitWith { []; }
+if (_balance <= 0) exitWith { []; };
 
 [
     "banks/accounts/%1/balance",

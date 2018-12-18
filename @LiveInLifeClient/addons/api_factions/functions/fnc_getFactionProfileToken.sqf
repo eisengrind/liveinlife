@@ -13,7 +13,7 @@ if (_factionProfileID <= 0) exitWith { []; };
     ],
     "POST",
     [
-        QUSERS_ACCESS_TOKEN_HEADER, EGVAR(api_users,token)
+        QUSERS_ACCESS_TOKEN_HEADER, EGVAR(api_users,token),
         QPROFILES_ACCESS_TOKEN_HEADER, EGVAR(api_profiles,token)
     ],
     []

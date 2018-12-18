@@ -1,35 +1,19 @@
 
+#include "script_component.hpp"
+
 class CfgPatches {
-    #include "CfgPatches.cpp"
-};
-
-class CfgFunctions {
-    #include "CfgFunctions.cpp"
-};
-
-class CfgDebriefing {
-    #include "CfgDebriefing.cpp"
-};
-
-class CfgMusic {
-    tracks[] = {};
-    #include "CfgMusic.cpp"
-};
-
-class lilc_RscListbox;
-class lilc_RscText;
-class lilc_RscPicture;
-class lilc_RscControlsGroup;
-class lilc_RscShortcutButton;
-class lilc_RscEdit;
-class lilc_RscCombo;
-
-#include "dialogs\login.cpp"
-//#include "dialogs\signup.cpp"
-
-class Extended_PreInit_EventHandlers {
-    class lilc_login_preInit {
-        clientInit = "call compile preProcessFileLineNumbers '\x\lilc\addons\login\XEH_clientPreInit.sqf';";
+    class ADDON {
+        name = COMPONENT_NAME;
+        units[] = {};
+        weapons[] = {};
+        requiredVersion = REQUIRED_VERSION;
+        requiredAddons[] = {"lilc_main", "lilc_api_profiles", "lilc_api_users"};
+        author = CONTRIBUTORS;
+        authors[] = {
+            "TheMysteriousVincent"
+        };
     };
 };
 
+#include "CfgEventHandlers.hpp"
+#include "ui\RscAttributes.hpp"

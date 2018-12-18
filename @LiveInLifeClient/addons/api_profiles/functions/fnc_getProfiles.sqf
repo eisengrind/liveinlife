@@ -15,8 +15,8 @@ private _query = [
 ];
 for "_i" from 0 to (count _filter) - 1 do {
     private _param = _filter select _i;
-    if (count _page == 2) then {
-        _query pushBack format["%1=%2", _param select 0, _param select 1]
+    if (count _param == 2) then {
+        _query pushBack format["%1=%2", _param select 0, _param select 1];
     };
 };
 
@@ -26,7 +26,7 @@ for "_i" from 0 to (count _filter) - 1 do {
     "GET",
     [
         QUSERS_ACCESS_TOKEN_HEADER, EGVAR(api_users,token),
-        QPROFILES_ACCESS_TOKEN_HEADER, GVAR(api_profiles,token)
+        QPROFILES_ACCESS_TOKEN_HEADER, GVAR(token)
     ],
     []
 ] call EFUNC(api,request);

@@ -1,0 +1,1535 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="lilc">
+    <Package name="countries">
+        <Key ID="STR_lilc_countries_locode_AF">
+            <Original>Afghanistan</Original>
+            <English>Afghanistan</English>
+            <German>Afghanistan</German>
+            <French>Afghanistan</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_AX">
+            <Original>Åland Islands</Original>
+            <English>Åland Islands</English>
+            <German>Ålandinseln</German>
+            <French>Îles Åland</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_AL">
+            <Original>Albania</Original>
+            <English>Albania</English>
+            <German>Albanien</German>
+            <French>Albanie</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_DZ">
+            <Original>Algeria</Original>
+            <English>Algeria</English>
+            <German>Algerien</German>
+            <French>Algérie</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_AS">
+            <Original>American Samoa</Original>
+            <English>American Samoa</English>
+            <German>Amerikanisch-Samoa</German>
+            <French>Samoa américaines</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_AD">
+            <Original>Andorra</Original>
+            <English>Andorra</English>
+            <German>Andorra</German>
+            <French>Andorre</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_AO">
+            <Original>Angola</Original>
+            <English>Angola</English>
+            <German>Angola</German>
+            <French>Angola</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_AI">
+            <Original>Anguilla</Original>
+            <English>Anguilla</English>
+            <German>Anguilla</German>
+            <French>Anguilla</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_AQ">
+            <Original>Antarctica</Original>
+            <English>Antarctica</English>
+            <German>Antarktis</German>
+            <French>Antarctique</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_AG">
+            <Original>Antigua &amp; Barbuda</Original>
+            <English>Antigua &amp; Barbuda</English>
+            <German>Antigua und Barbuda</German>
+            <French>Antigua-et-Barbuda</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_AR">
+            <Original>Argentina</Original>
+            <English>Argentina</English>
+            <German>Argentinien</German>
+            <French>Argentine</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_AM">
+            <Original>Armenia</Original>
+            <English>Armenia</English>
+            <German>Armenien</German>
+            <French>Arménie</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_AW">
+            <Original>Aruba</Original>
+            <English>Aruba</English>
+            <German>Aruba</German>
+            <French>Aruba</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_AC">
+            <Original>Ascension Island</Original>
+            <English>Ascension Island</English>
+            <German>Ascension</German>
+            <French>Île de l’Ascension</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_AU">
+            <Original>Australia</Original>
+            <English>Australia</English>
+            <German>Australien</German>
+            <French>Australie</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_AT">
+            <Original>Austria</Original>
+            <English>Austria</English>
+            <German>Österreich</German>
+            <French>Autriche</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_AZ">
+            <Original>Azerbaijan</Original>
+            <English>Azerbaijan</English>
+            <German>Aserbaidschan</German>
+            <French>Azerbaïdjan</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_BS">
+            <Original>Bahamas</Original>
+            <English>Bahamas</English>
+            <German>Bahamas</German>
+            <French>Bahamas</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_BH">
+            <Original>Bahrain</Original>
+            <English>Bahrain</English>
+            <German>Bahrain</German>
+            <French>Bahreïn</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_BD">
+            <Original>Bangladesh</Original>
+            <English>Bangladesh</English>
+            <German>Bangladesch</German>
+            <French>Bangladesh</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_BB">
+            <Original>Barbados</Original>
+            <English>Barbados</English>
+            <German>Barbados</German>
+            <French>Barbade</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_BY">
+            <Original>Belarus</Original>
+            <English>Belarus</English>
+            <German>Belarus</German>
+            <French>Biélorussie</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_BE">
+            <Original>Belgium</Original>
+            <English>Belgium</English>
+            <German>Belgien</German>
+            <French>Belgique</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_BZ">
+            <Original>Belize</Original>
+            <English>Belize</English>
+            <German>Belize</German>
+            <French>Belize</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_BJ">
+            <Original>Benin</Original>
+            <English>Benin</English>
+            <German>Benin</German>
+            <French>Bénin</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_BM">
+            <Original>Bermuda</Original>
+            <English>Bermuda</English>
+            <German>Bermuda</German>
+            <French>Bermudes</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_BT">
+            <Original>Bhutan</Original>
+            <English>Bhutan</English>
+            <German>Bhutan</German>
+            <French>Bhoutan</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_BO">
+            <Original>Bolivia</Original>
+            <English>Bolivia</English>
+            <German>Bolivien</German>
+            <French>Bolivie</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_BA">
+            <Original>Bosnia &amp; Herzegovina</Original>
+            <English>Bosnia &amp; Herzegovina</English>
+            <German>Bosnien und Herzegowina</German>
+            <French>Bosnie-Herzégovine</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_BW">
+            <Original>Botswana</Original>
+            <English>Botswana</English>
+            <German>Botsuana</German>
+            <French>Botswana</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_BR">
+            <Original>Brazil</Original>
+            <English>Brazil</English>
+            <German>Brasilien</German>
+            <French>Brésil</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_IO">
+            <Original>British Indian Ocean Territory</Original>
+            <English>British Indian Ocean Territory</English>
+            <German>Britisches Territorium im Indischen Ozean</German>
+            <French>Territoire britannique de l’océan Indien</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_VG">
+            <Original>British Virgin Islands</Original>
+            <English>British Virgin Islands</English>
+            <German>Britische Jungferninseln</German>
+            <French>Îles Vierges britanniques</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_BN">
+            <Original>Brunei</Original>
+            <English>Brunei</English>
+            <German>Brunei Darussalam</German>
+            <French>Brunéi Darussalam</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_BG">
+            <Original>Bulgaria</Original>
+            <English>Bulgaria</English>
+            <German>Bulgarien</German>
+            <French>Bulgarie</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_BF">
+            <Original>Burkina Faso</Original>
+            <English>Burkina Faso</English>
+            <German>Burkina Faso</German>
+            <French>Burkina Faso</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_BI">
+            <Original>Burundi</Original>
+            <English>Burundi</English>
+            <German>Burundi</German>
+            <French>Burundi</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_KH">
+            <Original>Cambodia</Original>
+            <English>Cambodia</English>
+            <German>Kambodscha</German>
+            <French>Cambodge</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_CM">
+            <Original>Cameroon</Original>
+            <English>Cameroon</English>
+            <German>Kamerun</German>
+            <French>Cameroun</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_CA">
+            <Original>Canada</Original>
+            <English>Canada</English>
+            <German>Kanada</German>
+            <French>Canada</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_IC">
+            <Original>Canary Islands</Original>
+            <English>Canary Islands</English>
+            <German>Kanarische Inseln</German>
+            <French>Îles Canaries</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_CV">
+            <Original>Cape Verde</Original>
+            <English>Cape Verde</English>
+            <German>Cabo Verde</German>
+            <French>Cap-Vert</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_BQ">
+            <Original>Caribbean Netherlands</Original>
+            <English>Caribbean Netherlands</English>
+            <German>Bonaire, Sint Eustatius und Saba</German>
+            <French>Pays-Bas caribéens</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_KY">
+            <Original>Cayman Islands</Original>
+            <English>Cayman Islands</English>
+            <German>Kaimaninseln</German>
+            <French>Îles Caïmans</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_CF">
+            <Original>Central African Republic</Original>
+            <English>Central African Republic</English>
+            <German>Zentralafrikanische Republik</German>
+            <French>République centrafricaine</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_EA">
+            <Original>Ceuta &amp; Melilla</Original>
+            <English>Ceuta &amp; Melilla</English>
+            <German>Ceuta und Melilla</German>
+            <French>Ceuta et Melilla</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_TD">
+            <Original>Chad</Original>
+            <English>Chad</English>
+            <German>Tschad</German>
+            <French>Tchad</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_CL">
+            <Original>Chile</Original>
+            <English>Chile</English>
+            <German>Chile</German>
+            <French>Chili</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_CN">
+            <Original>China</Original>
+            <English>China</English>
+            <German>China</German>
+            <French>Chine</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_CX">
+            <Original>Christmas Island</Original>
+            <English>Christmas Island</English>
+            <German>Weihnachtsinsel</German>
+            <French>Île Christmas</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_CC">
+            <Original>Cocos (Keeling) Islands</Original>
+            <English>Cocos (Keeling) Islands</English>
+            <German>Kokosinseln</German>
+            <French>Îles Cocos</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_CO">
+            <Original>Colombia</Original>
+            <English>Colombia</English>
+            <German>Kolumbien</German>
+            <French>Colombie</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_KM">
+            <Original>Comoros</Original>
+            <English>Comoros</English>
+            <German>Komoren</German>
+            <French>Comores</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_CG">
+            <Original>Congo - Brazzaville</Original>
+            <English>Congo - Brazzaville</English>
+            <German>Kongo-Brazzaville</German>
+            <French>Congo-Brazzaville</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_CD">
+            <Original>Congo - Kinshasa</Original>
+            <English>Congo - Kinshasa</English>
+            <German>Kongo-Kinshasa</German>
+            <French>Congo-Kinshasa</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_CK">
+            <Original>Cook Islands</Original>
+            <English>Cook Islands</English>
+            <German>Cookinseln</German>
+            <French>Îles Cook</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_CR">
+            <Original>Costa Rica</Original>
+            <English>Costa Rica</English>
+            <German>Costa Rica</German>
+            <French>Costa Rica</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_CI">
+            <Original>Côte d’Ivoire</Original>
+            <English>Côte d’Ivoire</English>
+            <German>Côte d’Ivoire</German>
+            <French>Côte d’Ivoire</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_HR">
+            <Original>Croatia</Original>
+            <English>Croatia</English>
+            <German>Kroatien</German>
+            <French>Croatie</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_CU">
+            <Original>Cuba</Original>
+            <English>Cuba</English>
+            <German>Kuba</German>
+            <French>Cuba</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_CW">
+            <Original>Curaçao</Original>
+            <English>Curaçao</English>
+            <German>Curaçao</German>
+            <French>Curaçao</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_CY">
+            <Original>Cyprus</Original>
+            <English>Cyprus</English>
+            <German>Zypern</German>
+            <French>Chypre</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_CZ">
+            <Original>Czechia</Original>
+            <English>Czechia</English>
+            <German>Tschechien</German>
+            <French>Tchéquie</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_DK">
+            <Original>Denmark</Original>
+            <English>Denmark</English>
+            <German>Dänemark</German>
+            <French>Danemark</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_DG">
+            <Original>Diego Garcia</Original>
+            <English>Diego Garcia</English>
+            <German>Diego Garcia</German>
+            <French>Diego Garcia</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_DJ">
+            <Original>Djibouti</Original>
+            <English>Djibouti</English>
+            <German>Dschibuti</German>
+            <French>Djibouti</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_DM">
+            <Original>Dominica</Original>
+            <English>Dominica</English>
+            <German>Dominica</German>
+            <French>Dominique</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_DO">
+            <Original>Dominican Republic</Original>
+            <English>Dominican Republic</English>
+            <German>Dominikanische Republik</German>
+            <French>République dominicaine</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_EC">
+            <Original>Ecuador</Original>
+            <English>Ecuador</English>
+            <German>Ecuador</German>
+            <French>Équateur</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_EG">
+            <Original>Egypt</Original>
+            <English>Egypt</English>
+            <German>Ägypten</German>
+            <French>Égypte</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_SV">
+            <Original>El Salvador</Original>
+            <English>El Salvador</English>
+            <German>El Salvador</German>
+            <French>El Salvador</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_GQ">
+            <Original>Equatorial Guinea</Original>
+            <English>Equatorial Guinea</English>
+            <German>Äquatorialguinea</German>
+            <French>Guinée équatoriale</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_ER">
+            <Original>Eritrea</Original>
+            <English>Eritrea</English>
+            <German>Eritrea</German>
+            <French>Érythrée</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_EE">
+            <Original>Estonia</Original>
+            <English>Estonia</English>
+            <German>Estland</German>
+            <French>Estonie</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_ET">
+            <Original>Ethiopia</Original>
+            <English>Ethiopia</English>
+            <German>Äthiopien</German>
+            <French>Éthiopie</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_EZ">
+            <Original>Eurozone</Original>
+            <English>Eurozone</English>
+            <German>Eurozone</German>
+            <French>Eurozone</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_FK">
+            <Original>Falkland Islands</Original>
+            <English>Falkland Islands</English>
+            <German>Falklandinseln</German>
+            <French>Îles Malouines</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_FO">
+            <Original>Faroe Islands</Original>
+            <English>Faroe Islands</English>
+            <German>Färöer</German>
+            <French>Îles Féroé</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_FJ">
+            <Original>Fiji</Original>
+            <English>Fiji</English>
+            <German>Fidschi</German>
+            <French>Fidji</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_FI">
+            <Original>Finland</Original>
+            <English>Finland</English>
+            <German>Finnland</German>
+            <French>Finlande</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_FR">
+            <Original>France</Original>
+            <English>France</English>
+            <German>Frankreich</German>
+            <French>France</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_GF">
+            <Original>French Guiana</Original>
+            <English>French Guiana</English>
+            <German>Französisch-Guayana</German>
+            <French>Guyane française</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_PF">
+            <Original>French Polynesia</Original>
+            <English>French Polynesia</English>
+            <German>Französisch-Polynesien</German>
+            <French>Polynésie française</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_TF">
+            <Original>French Southern Territories</Original>
+            <English>French Southern Territories</English>
+            <German>Französische Süd- und Antarktisgebiete</German>
+            <French>Terres australes françaises</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_GA">
+            <Original>Gabon</Original>
+            <English>Gabon</English>
+            <German>Gabun</German>
+            <French>Gabon</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_GM">
+            <Original>Gambia</Original>
+            <English>Gambia</English>
+            <German>Gambia</German>
+            <French>Gambie</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_GE">
+            <Original>Georgia</Original>
+            <English>Georgia</English>
+            <German>Georgien</German>
+            <French>Géorgie</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_DE">
+            <Original>Germany</Original>
+            <English>Germany</English>
+            <German>Deutschland</German>
+            <French>Allemagne</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_GH">
+            <Original>Ghana</Original>
+            <English>Ghana</English>
+            <German>Ghana</German>
+            <French>Ghana</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_GI">
+            <Original>Gibraltar</Original>
+            <English>Gibraltar</English>
+            <German>Gibraltar</German>
+            <French>Gibraltar</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_GR">
+            <Original>Greece</Original>
+            <English>Greece</English>
+            <German>Griechenland</German>
+            <French>Grèce</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_GL">
+            <Original>Greenland</Original>
+            <English>Greenland</English>
+            <German>Grönland</German>
+            <French>Groenland</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_GD">
+            <Original>Grenada</Original>
+            <English>Grenada</English>
+            <German>Grenada</German>
+            <French>Grenade</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_GP">
+            <Original>Guadeloupe</Original>
+            <English>Guadeloupe</English>
+            <German>Guadeloupe</German>
+            <French>Guadeloupe</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_GU">
+            <Original>Guam</Original>
+            <English>Guam</English>
+            <German>Guam</German>
+            <French>Guam</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_GT">
+            <Original>Guatemala</Original>
+            <English>Guatemala</English>
+            <German>Guatemala</German>
+            <French>Guatemala</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_GG">
+            <Original>Guernsey</Original>
+            <English>Guernsey</English>
+            <German>Guernsey</German>
+            <French>Guernesey</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_GN">
+            <Original>Guinea</Original>
+            <English>Guinea</English>
+            <German>Guinea</German>
+            <French>Guinée</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_GW">
+            <Original>Guinea-Bissau</Original>
+            <English>Guinea-Bissau</English>
+            <German>Guinea-Bissau</German>
+            <French>Guinée-Bissau</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_GY">
+            <Original>Guyana</Original>
+            <English>Guyana</English>
+            <German>Guyana</German>
+            <French>Guyana</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_HT">
+            <Original>Haiti</Original>
+            <English>Haiti</English>
+            <German>Haiti</German>
+            <French>Haïti</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_HN">
+            <Original>Honduras</Original>
+            <English>Honduras</English>
+            <German>Honduras</German>
+            <French>Honduras</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_HK">
+            <Original>Hong Kong SAR China</Original>
+            <English>Hong Kong SAR China</English>
+            <German>Sonderverwaltungszone Hongkong</German>
+            <French>R.A.S. chinoise de Hong Kong</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_HU">
+            <Original>Hungary</Original>
+            <English>Hungary</English>
+            <German>Ungarn</German>
+            <French>Hongrie</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_IS">
+            <Original>Iceland</Original>
+            <English>Iceland</English>
+            <German>Island</German>
+            <French>Islande</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_IN">
+            <Original>India</Original>
+            <English>India</English>
+            <German>Indien</German>
+            <French>Inde</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_ID">
+            <Original>Indonesia</Original>
+            <English>Indonesia</English>
+            <German>Indonesien</German>
+            <French>Indonésie</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_IR">
+            <Original>Iran</Original>
+            <English>Iran</English>
+            <German>Iran</German>
+            <French>Iran</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_IQ">
+            <Original>Iraq</Original>
+            <English>Iraq</English>
+            <German>Irak</German>
+            <French>Irak</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_IE">
+            <Original>Ireland</Original>
+            <English>Ireland</English>
+            <German>Irland</German>
+            <French>Irlande</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_IM">
+            <Original>Isle of Man</Original>
+            <English>Isle of Man</English>
+            <German>Isle of Man</German>
+            <French>Île de Man</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_IL">
+            <Original>Israel</Original>
+            <English>Israel</English>
+            <German>Israel</German>
+            <French>Israël</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_IT">
+            <Original>Italy</Original>
+            <English>Italy</English>
+            <German>Italien</German>
+            <French>Italie</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_JM">
+            <Original>Jamaica</Original>
+            <English>Jamaica</English>
+            <German>Jamaika</German>
+            <French>Jamaïque</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_JP">
+            <Original>Japan</Original>
+            <English>Japan</English>
+            <German>Japan</German>
+            <French>Japon</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_JE">
+            <Original>Jersey</Original>
+            <English>Jersey</English>
+            <German>Jersey</German>
+            <French>Jersey</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_JO">
+            <Original>Jordan</Original>
+            <English>Jordan</English>
+            <German>Jordanien</German>
+            <French>Jordanie</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_KZ">
+            <Original>Kazakhstan</Original>
+            <English>Kazakhstan</English>
+            <German>Kasachstan</German>
+            <French>Kazakhstan</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_KE">
+            <Original>Kenya</Original>
+            <English>Kenya</English>
+            <German>Kenia</German>
+            <French>Kenya</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_KI">
+            <Original>Kiribati</Original>
+            <English>Kiribati</English>
+            <German>Kiribati</German>
+            <French>Kiribati</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_XK">
+            <Original>Kosovo</Original>
+            <English>Kosovo</English>
+            <German>Kosovo</German>
+            <French>Kosovo</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_KW">
+            <Original>Kuwait</Original>
+            <English>Kuwait</English>
+            <German>Kuwait</German>
+            <French>Koweït</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_KG">
+            <Original>Kyrgyzstan</Original>
+            <English>Kyrgyzstan</English>
+            <German>Kirgisistan</German>
+            <French>Kirghizistan</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_LA">
+            <Original>Laos</Original>
+            <English>Laos</English>
+            <German>Laos</German>
+            <French>Laos</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_LV">
+            <Original>Latvia</Original>
+            <English>Latvia</English>
+            <German>Lettland</German>
+            <French>Lettonie</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_LB">
+            <Original>Lebanon</Original>
+            <English>Lebanon</English>
+            <German>Libanon</German>
+            <French>Liban</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_LS">
+            <Original>Lesotho</Original>
+            <English>Lesotho</English>
+            <German>Lesotho</German>
+            <French>Lesotho</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_LR">
+            <Original>Liberia</Original>
+            <English>Liberia</English>
+            <German>Liberia</German>
+            <French>Libéria</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_LY">
+            <Original>Libya</Original>
+            <English>Libya</English>
+            <German>Libyen</German>
+            <French>Libye</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_LI">
+            <Original>Liechtenstein</Original>
+            <English>Liechtenstein</English>
+            <German>Liechtenstein</German>
+            <French>Liechtenstein</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_LT">
+            <Original>Lithuania</Original>
+            <English>Lithuania</English>
+            <German>Litauen</German>
+            <French>Lituanie</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_LU">
+            <Original>Luxembourg</Original>
+            <English>Luxembourg</English>
+            <German>Luxemburg</German>
+            <French>Luxembourg</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_MO">
+            <Original>Macau SAR China</Original>
+            <English>Macau SAR China</English>
+            <German>Sonderverwaltungsregion Macau</German>
+            <French>R.A.S. chinoise de Macao</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_MK">
+            <Original>Macedonia</Original>
+            <English>Macedonia</English>
+            <German>Mazedonien</German>
+            <French>Macédoine</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_MG">
+            <Original>Madagascar</Original>
+            <English>Madagascar</English>
+            <German>Madagaskar</German>
+            <French>Madagascar</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_MW">
+            <Original>Malawi</Original>
+            <English>Malawi</English>
+            <German>Malawi</German>
+            <French>Malawi</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_MY">
+            <Original>Malaysia</Original>
+            <English>Malaysia</English>
+            <German>Malaysia</German>
+            <French>Malaisie</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_MV">
+            <Original>Maldives</Original>
+            <English>Maldives</English>
+            <German>Malediven</German>
+            <French>Maldives</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_ML">
+            <Original>Mali</Original>
+            <English>Mali</English>
+            <German>Mali</German>
+            <French>Mali</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_MT">
+            <Original>Malta</Original>
+            <English>Malta</English>
+            <German>Malta</German>
+            <French>Malte</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_MH">
+            <Original>Marshall Islands</Original>
+            <English>Marshall Islands</English>
+            <German>Marshallinseln</German>
+            <French>Îles Marshall</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_MQ">
+            <Original>Martinique</Original>
+            <English>Martinique</English>
+            <German>Martinique</German>
+            <French>Martinique</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_MR">
+            <Original>Mauritania</Original>
+            <English>Mauritania</English>
+            <German>Mauretanien</German>
+            <French>Mauritanie</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_MU">
+            <Original>Mauritius</Original>
+            <English>Mauritius</English>
+            <German>Mauritius</German>
+            <French>Maurice</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_YT">
+            <Original>Mayotte</Original>
+            <English>Mayotte</English>
+            <German>Mayotte</German>
+            <French>Mayotte</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_MX">
+            <Original>Mexico</Original>
+            <English>Mexico</English>
+            <German>Mexiko</German>
+            <French>Mexique</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_FM">
+            <Original>Micronesia</Original>
+            <English>Micronesia</English>
+            <German>Mikronesien</German>
+            <French>États fédérés de Micronésie</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_MD">
+            <Original>Moldova</Original>
+            <English>Moldova</English>
+            <German>Republik Moldau</German>
+            <French>Moldavie</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_MC">
+            <Original>Monaco</Original>
+            <English>Monaco</English>
+            <German>Monaco</German>
+            <French>Monaco</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_MN">
+            <Original>Mongolia</Original>
+            <English>Mongolia</English>
+            <German>Mongolei</German>
+            <French>Mongolie</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_ME">
+            <Original>Montenegro</Original>
+            <English>Montenegro</English>
+            <German>Montenegro</German>
+            <French>Monténégro</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_MS">
+            <Original>Montserrat</Original>
+            <English>Montserrat</English>
+            <German>Montserrat</German>
+            <French>Montserrat</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_MA">
+            <Original>Morocco</Original>
+            <English>Morocco</English>
+            <German>Marokko</German>
+            <French>Maroc</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_MZ">
+            <Original>Mozambique</Original>
+            <English>Mozambique</English>
+            <German>Mosambik</German>
+            <French>Mozambique</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_MM">
+            <Original>Myanmar (Burma)</Original>
+            <English>Myanmar (Burma)</English>
+            <German>Myanmar</German>
+            <French>Myanmar (Birmanie)</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_NA">
+            <Original>Namibia</Original>
+            <English>Namibia</English>
+            <German>Namibia</German>
+            <French>Namibie</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_NR">
+            <Original>Nauru</Original>
+            <English>Nauru</English>
+            <German>Nauru</German>
+            <French>Nauru</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_NP">
+            <Original>Nepal</Original>
+            <English>Nepal</English>
+            <German>Nepal</German>
+            <French>Népal</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_NL">
+            <Original>Netherlands</Original>
+            <English>Netherlands</English>
+            <German>Niederlande</German>
+            <French>Pays-Bas</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_NC">
+            <Original>New Caledonia</Original>
+            <English>New Caledonia</English>
+            <German>Neukaledonien</German>
+            <French>Nouvelle-Calédonie</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_NZ">
+            <Original>New Zealand</Original>
+            <English>New Zealand</English>
+            <German>Neuseeland</German>
+            <French>Nouvelle-Zélande</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_NI">
+            <Original>Nicaragua</Original>
+            <English>Nicaragua</English>
+            <German>Nicaragua</German>
+            <French>Nicaragua</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_NE">
+            <Original>Niger</Original>
+            <English>Niger</English>
+            <German>Niger</German>
+            <French>Niger</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_NG">
+            <Original>Nigeria</Original>
+            <English>Nigeria</English>
+            <German>Nigeria</German>
+            <French>Nigéria</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_NU">
+            <Original>Niue</Original>
+            <English>Niue</English>
+            <German>Niue</German>
+            <French>Niue</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_NF">
+            <Original>Norfolk Island</Original>
+            <English>Norfolk Island</English>
+            <German>Norfolkinsel</German>
+            <French>Île Norfolk</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_KP">
+            <Original>North Korea</Original>
+            <English>North Korea</English>
+            <German>Nordkorea</German>
+            <French>Corée du Nord</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_MP">
+            <Original>Northern Mariana Islands</Original>
+            <English>Northern Mariana Islands</English>
+            <German>Nördliche Marianen</German>
+            <French>Îles Mariannes du Nord</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_NO">
+            <Original>Norway</Original>
+            <English>Norway</English>
+            <German>Norwegen</German>
+            <French>Norvège</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_OM">
+            <Original>Oman</Original>
+            <English>Oman</English>
+            <German>Oman</German>
+            <French>Oman</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_PK">
+            <Original>Pakistan</Original>
+            <English>Pakistan</English>
+            <German>Pakistan</German>
+            <French>Pakistan</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_PW">
+            <Original>Palau</Original>
+            <English>Palau</English>
+            <German>Palau</German>
+            <French>Palaos</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_PS">
+            <Original>Palestinian Territories</Original>
+            <English>Palestinian Territories</English>
+            <German>Palästinensische Autonomiegebiete</German>
+            <French>Territoires palestiniens</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_PA">
+            <Original>Panama</Original>
+            <English>Panama</English>
+            <German>Panama</German>
+            <French>Panama</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_PG">
+            <Original>Papua New Guinea</Original>
+            <English>Papua New Guinea</English>
+            <German>Papua-Neuguinea</German>
+            <French>Papouasie-Nouvelle-Guinée</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_PY">
+            <Original>Paraguay</Original>
+            <English>Paraguay</English>
+            <German>Paraguay</German>
+            <French>Paraguay</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_PE">
+            <Original>Peru</Original>
+            <English>Peru</English>
+            <German>Peru</German>
+            <French>Pérou</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_PH">
+            <Original>Philippines</Original>
+            <English>Philippines</English>
+            <German>Philippinen</German>
+            <French>Philippines</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_PN">
+            <Original>Pitcairn Islands</Original>
+            <English>Pitcairn Islands</English>
+            <German>Pitcairninseln</German>
+            <French>Îles Pitcairn</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_PL">
+            <Original>Poland</Original>
+            <English>Poland</English>
+            <German>Polen</German>
+            <French>Pologne</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_PT">
+            <Original>Portugal</Original>
+            <English>Portugal</English>
+            <German>Portugal</German>
+            <French>Portugal</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_PR">
+            <Original>Puerto Rico</Original>
+            <English>Puerto Rico</English>
+            <German>Puerto Rico</German>
+            <French>Porto Rico</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_QA">
+            <Original>Qatar</Original>
+            <English>Qatar</English>
+            <German>Katar</German>
+            <French>Qatar</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_RE">
+            <Original>Réunion</Original>
+            <English>Réunion</English>
+            <German>Réunion</German>
+            <French>La Réunion</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_RO">
+            <Original>Romania</Original>
+            <English>Romania</English>
+            <German>Rumänien</German>
+            <French>Roumanie</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_RU">
+            <Original>Russia</Original>
+            <English>Russia</English>
+            <German>Russland</German>
+            <French>Russie</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_RW">
+            <Original>Rwanda</Original>
+            <English>Rwanda</English>
+            <German>Ruanda</German>
+            <French>Rwanda</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_WS">
+            <Original>Samoa</Original>
+            <English>Samoa</English>
+            <German>Samoa</German>
+            <French>Samoa</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_SM">
+            <Original>San Marino</Original>
+            <English>San Marino</English>
+            <German>San Marino</German>
+            <French>Saint-Marin</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_ST">
+            <Original>São Tomé &amp; Príncipe</Original>
+            <English>São Tomé &amp; Príncipe</English>
+            <German>São Tomé und Príncipe</German>
+            <French>Sao Tomé-et-Principe</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_SA">
+            <Original>Saudi Arabia</Original>
+            <English>Saudi Arabia</English>
+            <German>Saudi-Arabien</German>
+            <French>Arabie saoudite</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_SN">
+            <Original>Senegal</Original>
+            <English>Senegal</English>
+            <German>Senegal</German>
+            <French>Sénégal</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_RS">
+            <Original>Serbia</Original>
+            <English>Serbia</English>
+            <German>Serbien</German>
+            <French>Serbie</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_SC">
+            <Original>Seychelles</Original>
+            <English>Seychelles</English>
+            <German>Seychellen</German>
+            <French>Seychelles</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_SL">
+            <Original>Sierra Leone</Original>
+            <English>Sierra Leone</English>
+            <German>Sierra Leone</German>
+            <French>Sierra Leone</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_SG">
+            <Original>Singapore</Original>
+            <English>Singapore</English>
+            <German>Singapur</German>
+            <French>Singapour</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_SX">
+            <Original>Sint Maarten</Original>
+            <English>Sint Maarten</English>
+            <German>Sint Maarten</German>
+            <French>Saint-Martin (partie néerlandaise)</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_SK">
+            <Original>Slovakia</Original>
+            <English>Slovakia</English>
+            <German>Slowakei</German>
+            <French>Slovaquie</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_SI">
+            <Original>Slovenia</Original>
+            <English>Slovenia</English>
+            <German>Slowenien</German>
+            <French>Slovénie</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_SB">
+            <Original>Solomon Islands</Original>
+            <English>Solomon Islands</English>
+            <German>Salomonen</German>
+            <French>Îles Salomon</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_SO">
+            <Original>Somalia</Original>
+            <English>Somalia</English>
+            <German>Somalia</German>
+            <French>Somalie</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_ZA">
+            <Original>South Africa</Original>
+            <English>South Africa</English>
+            <German>Südafrika</German>
+            <French>Afrique du Sud</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_GS">
+            <Original>South Georgia &amp; South Sandwich Islands</Original>
+            <English>South Georgia &amp; South Sandwich Islands</English>
+            <German>Südgeorgien und die Südlichen Sandwichinseln</German>
+            <French>Géorgie du Sud et îles Sandwich du Sud</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_KR">
+            <Original>South Korea</Original>
+            <English>South Korea</English>
+            <German>Südkorea</German>
+            <French>Corée du Sud</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_SS">
+            <Original>South Sudan</Original>
+            <English>South Sudan</English>
+            <German>Südsudan</German>
+            <French>Soudan du Sud</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_ES">
+            <Original>Spain</Original>
+            <English>Spain</English>
+            <German>Spanien</German>
+            <French>Espagne</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_LK">
+            <Original>Sri Lanka</Original>
+            <English>Sri Lanka</English>
+            <German>Sri Lanka</German>
+            <French>Sri Lanka</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_BL">
+            <Original>St. Barthélemy</Original>
+            <English>St. Barthélemy</English>
+            <German>St. Barthélemy</German>
+            <French>Saint-Barthélemy</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_SH">
+            <Original>St. Helena</Original>
+            <English>St. Helena</English>
+            <German>St. Helena</German>
+            <French>Sainte-Hélène</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_KN">
+            <Original>St. Kitts &amp; Nevis</Original>
+            <English>St. Kitts &amp; Nevis</English>
+            <German>St. Kitts und Nevis</German>
+            <French>Saint-Christophe-et-Niévès</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_LC">
+            <Original>St. Lucia</Original>
+            <English>St. Lucia</English>
+            <German>St. Lucia</German>
+            <French>Sainte-Lucie</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_MF">
+            <Original>St. Martin</Original>
+            <English>St. Martin</English>
+            <German>St. Martin</German>
+            <French>Saint-Martin</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_PM">
+            <Original>St. Pierre &amp; Miquelon</Original>
+            <English>St. Pierre &amp; Miquelon</English>
+            <German>St. Pierre und Miquelon</German>
+            <French>Saint-Pierre-et-Miquelon</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_VC">
+            <Original>St. Vincent &amp; Grenadines</Original>
+            <English>St. Vincent &amp; Grenadines</English>
+            <German>St. Vincent und die Grenadinen</German>
+            <French>Saint-Vincent-et-les-Grenadines</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_SD">
+            <Original>Sudan</Original>
+            <English>Sudan</English>
+            <German>Sudan</German>
+            <French>Soudan</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_SR">
+            <Original>Suriname</Original>
+            <English>Suriname</English>
+            <German>Suriname</German>
+            <French>Suriname</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_SJ">
+            <Original>Svalbard &amp; Jan Mayen</Original>
+            <English>Svalbard &amp; Jan Mayen</English>
+            <German>Spitzbergen</German>
+            <French>Svalbard et Jan Mayen</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_SZ">
+            <Original>Swaziland</Original>
+            <English>Swaziland</English>
+            <German>Swasiland</German>
+            <French>Swaziland</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_SE">
+            <Original>Sweden</Original>
+            <English>Sweden</English>
+            <German>Schweden</German>
+            <French>Suède</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_CH">
+            <Original>Switzerland</Original>
+            <English>Switzerland</English>
+            <German>Schweiz</German>
+            <French>Suisse</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_SY">
+            <Original>Syria</Original>
+            <English>Syria</English>
+            <German>Syrien</German>
+            <French>Syrie</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_TW">
+            <Original>Taiwan</Original>
+            <English>Taiwan</English>
+            <German>Taiwan</German>
+            <French>Taïwan</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_TJ">
+            <Original>Tajikistan</Original>
+            <English>Tajikistan</English>
+            <German>Tadschikistan</German>
+            <French>Tadjikistan</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_TZ">
+            <Original>Tanzania</Original>
+            <English>Tanzania</English>
+            <German>Tansania</German>
+            <French>Tanzanie</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_TH">
+            <Original>Thailand</Original>
+            <English>Thailand</English>
+            <German>Thailand</German>
+            <French>Thaïlande</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_TL">
+            <Original>Timor-Leste</Original>
+            <English>Timor-Leste</English>
+            <German>Osttimor</German>
+            <French>Timor oriental</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_TG">
+            <Original>Togo</Original>
+            <English>Togo</English>
+            <German>Togo</German>
+            <French>Togo</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_TK">
+            <Original>Tokelau</Original>
+            <English>Tokelau</English>
+            <German>Tokelau</German>
+            <French>Tokélaou</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_TO">
+            <Original>Tonga</Original>
+            <English>Tonga</English>
+            <German>Tonga</German>
+            <French>Tonga</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_TT">
+            <Original>Trinidad &amp; Tobago</Original>
+            <English>Trinidad &amp; Tobago</English>
+            <German>Trinidad und Tobago</German>
+            <French>Trinité-et-Tobago</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_TA">
+            <Original>Tristan da Cunha</Original>
+            <English>Tristan da Cunha</English>
+            <German>Tristan da Cunha</German>
+            <French>Tristan da Cunha</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_TN">
+            <Original>Tunisia</Original>
+            <English>Tunisia</English>
+            <German>Tunesien</German>
+            <French>Tunisie</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_TR">
+            <Original>Turkey</Original>
+            <English>Turkey</English>
+            <German>Türkei</German>
+            <French>Turquie</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_TM">
+            <Original>Turkmenistan</Original>
+            <English>Turkmenistan</English>
+            <German>Turkmenistan</German>
+            <French>Turkménistan</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_TC">
+            <Original>Turks &amp; Caicos Islands</Original>
+            <English>Turks &amp; Caicos Islands</English>
+            <German>Turks- und Caicosinseln</German>
+            <French>Îles Turques-et-Caïques</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_TV">
+            <Original>Tuvalu</Original>
+            <English>Tuvalu</English>
+            <German>Tuvalu</German>
+            <French>Tuvalu</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_UM">
+            <Original>U.S. Outlying Islands</Original>
+            <English>U.S. Outlying Islands</English>
+            <German>Amerikanische Überseeinseln</German>
+            <French>Îles mineures éloignées des États-Unis</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_VI">
+            <Original>U.S. Virgin Islands</Original>
+            <English>U.S. Virgin Islands</English>
+            <German>Amerikanische Jungferninseln</German>
+            <French>Îles Vierges des États-Unis</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_UG">
+            <Original>Uganda</Original>
+            <English>Uganda</English>
+            <German>Uganda</German>
+            <French>Ouganda</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_UA">
+            <Original>Ukraine</Original>
+            <English>Ukraine</English>
+            <German>Ukraine</German>
+            <French>Ukraine</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_AE">
+            <Original>United Arab Emirates</Original>
+            <English>United Arab Emirates</English>
+            <German>Vereinigte Arabische Emirate</German>
+            <French>Émirats arabes unis</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_GB">
+            <Original>United Kingdom</Original>
+            <English>United Kingdom</English>
+            <German>Vereinigtes Königreich</German>
+            <French>Royaume-Uni</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_UN">
+            <Original>United Nations</Original>
+            <English>United Nations</English>
+            <German>Vereinte Nationen</German>
+            <French>Nations Unies</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_US">
+            <Original>United States</Original>
+            <English>United States</English>
+            <German>Vereinigte Staaten</German>
+            <French>États-Unis</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_UY">
+            <Original>Uruguay</Original>
+            <English>Uruguay</English>
+            <German>Uruguay</German>
+            <French>Uruguay</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_UZ">
+            <Original>Uzbekistan</Original>
+            <English>Uzbekistan</English>
+            <German>Usbekistan</German>
+            <French>Ouzbékistan</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_VU">
+            <Original>Vanuatu</Original>
+            <English>Vanuatu</English>
+            <German>Vanuatu</German>
+            <French>Vanuatu</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_VA">
+            <Original>Vatican City</Original>
+            <English>Vatican City</English>
+            <German>Vatikanstadt</German>
+            <French>État de la Cité du Vatican</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_VE">
+            <Original>Venezuela</Original>
+            <English>Venezuela</English>
+            <German>Venezuela</German>
+            <French>Venezuela</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_VN">
+            <Original>Vietnam</Original>
+            <English>Vietnam</English>
+            <German>Vietnam</German>
+            <French>Vietnam</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_WF">
+            <Original>Wallis &amp; Futuna</Original>
+            <English>Wallis &amp; Futuna</English>
+            <German>Wallis und Futuna</German>
+            <French>Wallis-et-Futuna</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_EH">
+            <Original>Western Sahara</Original>
+            <English>Western Sahara</English>
+            <German>Westsahara</German>
+            <French>Sahara occidental</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_YE">
+            <Original>Yemen</Original>
+            <English>Yemen</English>
+            <German>Jemen</German>
+            <French>Yémen</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_ZM">
+            <Original>Zambia</Original>
+            <English>Zambia</English>
+            <German>Sambia</German>
+            <French>Zambie</French>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_ZW">
+            <Original>Zimbabwe</Original>
+            <English>Zimbabwe</English>
+            <German>Simbabwe</German>
+            <French>Zimbabwe</French>
+        </Key>
+    </Package>
+</Project>

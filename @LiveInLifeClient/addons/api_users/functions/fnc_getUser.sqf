@@ -7,7 +7,7 @@ params [
 if (_userID <= 0) exitWith { []; };
 
 [
-    "user/%1",
+    "users/%1",
     [
         _userID
     ],
