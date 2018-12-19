@@ -19,7 +19,7 @@ all: $(patsubst $(BIN_CLIENT)/addons/%, $(BUILD_PATH)/$(BIN_CLIENT)/addons/$(PRE
 test:
 	@mkdir -p .build/sqf
 	@wget -O .build/sqf/sqf.zip https://github.com/LordGolias/sqf/archive/0.3.2.zip
-	@unzip sqf.zip
+	@unzip .build/sqf/sqf.zip -d .build/sqf/
 	@cp -Rf sqf-0.3.2/* ./
 	@rm -R sqf-0.3.2/
 	@echo "    TEST   @LiveInLifeClient/addons/"
