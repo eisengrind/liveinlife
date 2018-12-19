@@ -16,18 +16,15 @@ endif
 all: $(patsubst $(BIN_CLIENT)/addons/%, $(BUILD_PATH)/$(BIN_CLIENT)/addons/$(PREFIX_CLIENT)_%.pbo, $(wildcard $(BIN_CLIENT)/addons/*)) \
 	$(patsubst $(BIN_SERVER)/addons/%, $(BUILD_PATH)/$(BIN_SERVER)/addons/$(PREFIX_SERVER)_%.pbo, $(wildcard $(BIN_SERVER)/addons/*))
 
-test:
-	@mkdir -p .build/sqf
-	@wget -O .build/sqf/sqf.zip https://github.com/LordGolias/sqf/archive/0.3.2.zip
-	@unzip .build/sqf/sqf.zip -d .build/sqf/
-	@cp -Rf .build/sqf/sqf-0.3.2/* .build/sqf/
-	@rm -R .build/sqf/sqf-0.3.2/
+test_scripts:
 	@echo "    TEST   @LiveInLifeClient/addons/"
-	@python3 .build/sqf/sqflint.py -d @LiveInLifeClient/addons
+	@sqflint -d @LiveInLifeClient/addons
 	@echo "    TEST   @LiveInLifeServer/addons/"
-	@python3 .build/sqf/sqflint.py -d @LiveInLifeServer/addons
+	@sqflint -d @LiveInLifeServer/addons
 	@echo "    TEST   LiveInLife.Tanoa/"
-	@python3 .build/sqf/sqflint.py -d LiveInLife.Tanoa
+	@sqflint -d LiveInLife.Tanoa
+
+test_configs:
 	@echo "    TEST   Configs"
 	@python3 tools/config_style_checker.py
 

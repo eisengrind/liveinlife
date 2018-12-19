@@ -1,12 +1,13 @@
 language: python
 python:
-- '3.5'
+- '3.7'
 before_script:
 - sudo apt-get install -y git bison flex libssl-dev python3
+- sudo pip install sqflint
 - chmod -R 770 tools/*
-- make deps
 script:
-- make test
+- make test_configs
+- make test_scripts
 - make release
 notification:
   email:
