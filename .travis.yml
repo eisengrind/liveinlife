@@ -7,7 +7,7 @@ before_script:
 - chmod -R 770 tools/*
 script:
 - make test_configs
-- make test_scripts
+#- make test_scripts
 - make release
 notification:
   email:

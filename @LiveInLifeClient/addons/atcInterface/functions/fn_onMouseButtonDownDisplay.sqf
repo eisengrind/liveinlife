@@ -6,10 +6,10 @@ Description:
     Releases all current focused controls.
 
 Parameters:
-	-
+    -
 
 Returns:
-	- <NIL>
+    - <NIL>
 
 Examples:
     (begin example)

@@ -16,7 +16,7 @@ if (({
 };
 
 if !([_cost] call lilc_cash_fnc_have) exitWith {
-	["Du besitzt nicht genügend Bargeld.", "ERROR"] call lilc_ui_fnc_hint;
+    ["Du besitzt nicht genügend Bargeld.", "ERROR"] call lilc_ui_fnc_hint;
 };
 
 if !(createDialog "lilc_progressBar") exitWith {};
@@ -36,7 +36,7 @@ while {
     if (lilc_action_interrupted) exitWith {};
     if ((vehicle player) != player) exitWith {};
 
-	private _t = (time - _time) / _timeout;
+    private _t = (time - _time) / _timeout;
     _uiProgressBar progressSetPosition _t;
     _uiProgressBarText ctrlSetStructuredText parseText format[
         "Du wirst behandelt (%1%2)",
@@ -46,14 +46,14 @@ while {
 };
 
 if ((_curPos distance player) > 10 && lilc_action_interrupted && (vehicle player) != player) exitWith {
-	["Du hast die Behandlung abgebrochen.", "ERROR"] call lilc_ui_fnc_hint;
+    ["Du hast die Behandlung abgebrochen.", "ERROR"] call lilc_ui_fnc_hint;
 };
 
 lilc_action_interrupted = false;
 closeDialog 1320;
 
 if !([_cost] call lilc_cash_fnc_remove) then {
-	["Du besitzt nicht genügend Bargeld.", "ERROR"] call lilc_ui_fnc_hint;
+    ["Du besitzt nicht genügend Bargeld.", "ERROR"] call lilc_ui_fnc_hint;
 };
 
 [player, player] call ACE_medical_fnc_treatmentAdvanced_fullHealLocal;
