@@ -16,6 +16,13 @@ endif
 all: $(patsubst $(BIN_CLIENT)/addons/%, $(BUILD_PATH)/$(BIN_CLIENT)/addons/$(PREFIX_CLIENT)_%.pbo, $(wildcard $(BIN_CLIENT)/addons/*)) \
 	$(patsubst $(BIN_SERVER)/addons/%, $(BUILD_PATH)/$(BIN_SERVER)/addons/$(PREFIX_SERVER)_%.pbo, $(wildcard $(BIN_SERVER)/addons/*))
 
+test:
+	@mkdir -p .build/sqf
+	@wget -O .build/sqf/sqf.zip https://github.com/LordGolias/sqf/archive/0.3.2.zip
+	@unzip sqf.zip
+	@cp -Rf sqf-0.3.2/* ./
+	@rm -R sqf-0.3.2/
+
 $(BUILD_PATH)/$(BIN_CLIENT)/addons/$(PREFIX_CLIENT)_%.pbo: $(BIN_CLIENT)/addons/%
 	@mkdir -p $(BUILD_PATH)/$(BIN_CLIENT)/addons
 	@echo "    PBO   $@"
