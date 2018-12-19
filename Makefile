@@ -20,8 +20,8 @@ test:
 	@mkdir -p .build/sqf
 	@wget -O .build/sqf/sqf.zip https://github.com/LordGolias/sqf/archive/0.3.2.zip
 	@unzip .build/sqf/sqf.zip -d .build/sqf/
-	@cp -Rf sqf-0.3.2/* ./
-	@rm -R sqf-0.3.2/
+	@cp -Rf .build/sqf/sqf-0.3.2/* .build/sqf/
+	@rm -R .build/sqf/sqf-0.3.2/
 	@echo "    TEST   @LiveInLifeClient/addons/"
 	@python3 .build/sqf/sqflint.py -d @LiveInLifeClient/addons
 	@echo "    TEST   @LiveInLifeServer/addons/"
