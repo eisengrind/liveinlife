@@ -2,8 +2,7 @@ language: python
 python:
 - '3.5'
 before_script:
-- sudo apt-get install -y git bison flex libssl-dev python3 openssl ca-certificates
-- sudo pip install sqflint
+- sudo apt-get install -y software-properties-common git bison flex libssl-dev python3 openssl ca-certificates gcc
 - chmod -R 770 tools/*
 script:
 - make test_configs
