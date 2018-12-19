@@ -22,6 +22,14 @@ test:
 	@unzip sqf.zip
 	@cp -Rf sqf-0.3.2/* ./
 	@rm -R sqf-0.3.2/
+	@echo "    TEST   @LiveInLifeClient/addons/"
+	@python3 .build/sqf/sqflint.py -d @LiveInLifeClient/addons
+	@echo "    TEST   @LiveInLifeServer/addons/"
+	@python3 .build/sqf/sqflint.py -d @LiveInLifeServer/addons
+	@echo "    TEST   LiveInLife.Tanoa/"
+	@python3 .build/sqf/sqflint.py -d LiveInLife.Tanoa
+	@echo "    TEST   Configs"
+	@python3 tools/config_style_checker.py
 
 $(BUILD_PATH)/$(BIN_CLIENT)/addons/$(PREFIX_CLIENT)_%.pbo: $(BIN_CLIENT)/addons/%
 	@mkdir -p $(BUILD_PATH)/$(BIN_CLIENT)/addons
