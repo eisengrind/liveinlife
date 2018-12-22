@@ -7,7 +7,7 @@ class CfgPatches {
         units[] = {};
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
-        requiredAddons[] = {"lilc_main", "lilc_api_profiles", "lilc_api_users"};
+        requiredAddons[] = {"lilc_main", "lilc_api_profiles", "lilc_api_users", "lilc_api"};
         author = CONTRIBUTORS;
         authors[] = {
             "TheMysteriousVincent"

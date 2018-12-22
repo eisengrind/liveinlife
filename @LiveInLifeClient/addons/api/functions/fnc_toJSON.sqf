@@ -60,7 +60,7 @@ switch (_data select 0) do {
                             _res = format["%1%2", _res, _item select 1];
                         };
                         case ((_item select 1) isEqualType []): {
-                            _res = format["%1%2", _res, (_item call FUNC(toJSON))];
+                            _res = format["%1%2", _res, ((_item select 1) call FUNC(toJSON))];
                         };
                         default {
                             _res = format["%1null", _res];

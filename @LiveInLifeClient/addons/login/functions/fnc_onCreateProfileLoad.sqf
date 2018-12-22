@@ -78,7 +78,7 @@ switch (_name) do {
         _displayOrCtrl setVariable [QGVAR(face_background), _background];
 
         private _camera = "camera" camCreate [0, 0, 0];
-        _camera cameraEffect ["Internal", "Back", QGVAR(create_profile_camera)];
+        _camera cameraEffect ["internal", "back", QGVAR(create_profile_camera)];
         _camera camSetPos (_model modelToWorld [0, 20, 1.68]);
         _camera camSetFov 0.01;
         _camera camSetDir [0, -1, 0];

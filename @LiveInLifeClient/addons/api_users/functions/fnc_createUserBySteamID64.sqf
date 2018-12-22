@@ -8,7 +8,6 @@ params [
 
 if (_steamID64 == "") exitWith { []; };
 if (_username == "") exitWith { []; };
-if (_email == "") exitWith { []; };
 if (_password == "") exitWith { []; };
 
 [

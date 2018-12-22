@@ -3,6 +3,8 @@
 #define IDD_loading_screen 2001
 #define IDD_disabled_controls 2002
 
+class RscText;
+class RscStructuredText;
 class RscButton;
 class RscPicture;
 class RscControlsGroup;

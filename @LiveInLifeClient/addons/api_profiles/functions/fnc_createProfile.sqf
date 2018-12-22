@@ -28,7 +28,7 @@ if (_lastname == "") exitWith { []; };
             ["lastname", _lastname],
             ["middlename", _middlename],
             ["birthday", _birthday],
-            ["originLocode", _originLocode]
+            ["origin_locode", _originLocode]
         ]
     ]
 ] call EFUNC(api,request);

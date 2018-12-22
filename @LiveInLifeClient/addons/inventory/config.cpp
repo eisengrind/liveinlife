@@ -1,24 +1,18 @@
 
+#include "script_component.hpp"
+
 class CfgPatches {
-    #include "CfgPatches.cpp"
-};
-
-class CfgFunctions {
-    #include "CfgFunctions.cpp"
-};
-
-class Extended_PostInit_EventHandlers
-{
-    class lilc_inventory_postInit
-    {
-        clientInit = "call compile preProcessFileLineNumbers '\x\lilc\addons\inventory\XEH_clientPostInit.sqf';";
+    class ADDON {
+        name = COMPONENT_NAME;
+        units[] = {};
+        weapons[] = {};
+        requiredVersion = REQUIRED_VERSION;
+        requiredAddons[] = {"lilc_main", "lilc_api"};
+        author = CONTRIBUTORS;
+        authors[] = {
+            "TheMysteriousVincent"
+        };
     };
 };
 
-class Extended_PreInit_EventHandlers
-{
-    class lilc_inventory_preInit
-    {
-        clientInit = "call compile preProcessFileLineNumbers '\x\lilc\addons\inventory\XEH_clientPreInit.sqf';";
-    };
-};
+#include "CfgEventHandlers.hpp"
