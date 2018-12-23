@@ -23,6 +23,7 @@ PREP(haveSlot);
 PREP(inventoryOpen);
 PREP(itemCount);
 PREP(itemCountContainers);
+PREP(JSONToUnitInventory);
 PREP(magazinesAmmoCargoStacked);
 PREP(onInventoryOpen);
 PREP(remove);

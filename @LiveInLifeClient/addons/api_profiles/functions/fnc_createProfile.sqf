@@ -6,12 +6,16 @@ params [
     ["_middlename", "", [""]],
     ["_lastname", "", [""]],
     ["_birthday", "", [""]],
-    ["_originLocode", "", [""]]
+    ["_originLocode", "", [""]],
+    ["_face", "", [""]],
+    ["_sex", 0, [0]]
 ];
 
 if (_userID <= 0) exitWith { []; };
 if (_firstname == "") exitWith { []; };
 if (_lastname == "") exitWith { []; };
+if (_face == "") exitWith { []; };
+if (_sex != 1 && _sex != 0) exitWith { []; };
 
 [
     "profiles",
@@ -28,7 +32,9 @@ if (_lastname == "") exitWith { []; };
             ["lastname", _lastname],
             ["middlename", _middlename],
             ["birthday", _birthday],
-            ["origin_locode", _originLocode]
+            ["origin_locode", _originLocode],
+            ["face", _face],
+            ["sex", _sex]
         ]
     ]
 ] call EFUNC(api,request);

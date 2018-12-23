@@ -77,35 +77,35 @@ _handgunEquippedWeapon params [
         ["items", _uniformItems call FUNC(unitInventoryItemsArray)],
         ["weapons", _uniformWeapons call FUNC(unitInventoryItemsArray)],
         ["magazines", _uniformMagazines call FUNC(unitInventoryMagazinesArray)]
-    ]], nil] select (_uniform == "")],
+    ]], objNull] select (_uniform == "")],
     ["vest", [["object", [
         ["classname", _vest],
         ["items", _vestItems call FUNC(unitInventoryItemsArray)],
         ["weapons", _vestWeapons call FUNC(unitInventoryItemsArray)],
         ["magazines", _vestMagazines call FUNC(unitInventoryMagazinesArray)]
-    ]], nil] select (_vest == "")],
+    ]], objNull] select (_vest == "")],
     ["backpack", [["object", [
         ["classname", _backpack],
         ["items", _backpackItems call FUNC(unitInventoryItemsArray)],
         ["weapons", _backpackWeapons call FUNC(unitInventoryItemsArray)],
         ["magazines", _backpackMagazines call FUNC(unitInventoryMagazinesArray)]
-    ]], nil] select (_backpack == "")],
+    ]], objNull] select (_backpack == "")],
     ["weapons", ["object", [
         ["primary", [["object", [
             ["classname", _primaryWeapon],
             ["magazines", ["array", _primaryWeaponMagazines]],
             ["items", ["array", _primaryWeaponItems]]
-        ]], nil] select (_primaryWeapon == "")],
+        ]], objNull] select (_primaryWeapon == "")],
         ["secondary", [["object", [
-            ["classname", _primaryWeapon],
+            ["classname", _secondaryWeapon],
             ["magazines", ["array", _secondaryWeaponMagazines]],
             ["items", ["array", _secondaryWeaponItems]]
-        ]], nil] select (_primaryWeapon == "")],
+        ]], objNull] select (_secondaryWeapon == "")],
         ["handgun", [["object", [
             ["classname", _handgunWeapon],
             ["magazines", ["array", _handgunWeaponMagazines]],
             ["items", ["array", _handgunWeaponItems]]
-        ]], nil] select (_primaryWeapon == "")]
+        ]], objNull] select (_handgunWeapon == "")]
     ]]],
     ["insignia", _insignia]
 ]] call EFUNC(api,toJSON);

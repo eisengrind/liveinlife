@@ -54,24 +54,31 @@
 
 [QGVAR(profileReceived), {
     params [
-        ["_profileID", 0, [0]]
+        ["_profileID", 0, [0]],
     ];
 
     if (_profileID <= 0) exitWith {};
 
-    GVAR(profileID) = _profileID;
+    private _resp = [_profileID] call EFUNC(api_profiles,getProfileToken);
+    if REQ_IS_OK(_resp) then {
+        private _res = REQ_GET_BODY(_resp);
+        EGVAR(api_profiles,token) = [_res, "access_token"] call a3uf_json_fnc_get;
+        EGVAR(api_profiles,refresh_token) = [_res, "refresh_token"] call a3uf_json_fnc_get;
 
-    [QGVAR(profileInitialized), [_profileID]] call CBA_fnc_localEvent;
+        GVAR(profileID) = _profileID;
 
-    1000 cutText ["", "WHITE OUT", 3];
-    sleep 3.1;
+        [QGVAR(profileInitialized), [_profileID]] call CBA_fnc_localEvent;
 
-    GVAR(camera) cameraEffect ["terminate", "back"];
-    camDestroy GVAR(camera);
-    GVAR(camera) = objNull;
+        1000 cutText ["", "WHITE OUT", 3];
+        sleep 3.1;
 
-    [QGVAR(afterProfileInitialized), [_profileID]] call CBA_fnc_localEvent;
-    1000 cutText ["", "WHITE IN", 3];
+        GVAR(camera) cameraEffect ["terminate", "back"];
+        camDestroy GVAR(camera);
+        GVAR(camera) = objNull;
+
+        [QGVAR(afterProfileInitialized), [_profileID]] call CBA_fnc_localEvent;
+        1000 cutText ["", "WHITE IN", 3];
+    };
 }] call CBA_fnc_addEventHandler;
 
 if (isMultiplayer) then {

@@ -29,7 +29,7 @@ if (_binocular != "") then {
 };
 
 private _uniformObject = [_json, "uniform"] call a3uf_json_fnc_get;
-if !(isNil "_uniformObject") then {
+if !(_uniformObject isEqualType objNull) then {
     _unit forceAddUniform ([_uniformObject, "classname"] call a3uf_json_fnc_get);
     {
         (uniformContainer _unit) addItemCargoGlobal [
@@ -55,24 +55,24 @@ if !(isNil "_uniformObject") then {
 };
 
 private _vestObject = [_json, "vest"] call a3uf_json_fnc_get;
-if !(isNil "_backpackObject") then {
-    _unit forceAddUniform ([_vestObject, "classname"] call a3uf_json_fnc_get);
+if !(_vestObject isEqualType objNull) then {
+    _unit addVest ([_vestObject, "classname"] call a3uf_json_fnc_get);
     {
-        (uniformContainer _unit) addItemCargoGlobal [
+        (vestContainer _unit) addItemCargoGlobal [
             [_x, "classname"] call a3uf_json_fnc_get,
             [_x, "amount"] call a3uf_json_fnc_get
         ];
     } forEach ([_vestObject, "items"] call a3uf_json_fnc_get);
 
     {
-        (uniformContainer _unit) addWeaponCargoGlobal [
+        (vestContainer _unit) addWeaponCargoGlobal [
             [_x, "classname"] call a3uf_json_fnc_get,
             [_x, "amount"] call a3uf_json_fnc_get
         ];
     } forEach ([_vestObject, "weapons"] call a3uf_json_fnc_get);
 
     {
-        (uniformContainer _unit) addMagazineAmmoCargo [
+        (vestContainer _unit) addMagazineAmmoCargo [
             [_x, "classname"] call a3uf_json_fnc_get,
             [_x, "amount"] call a3uf_json_fnc_get,
             [_x, "ammo"] call a3uf_json_fnc_get
@@ -81,27 +81,71 @@ if !(isNil "_backpackObject") then {
 };
 
 private _backpackObject = [_json, "backpack"] call a3uf_json_fnc_get;
-if !(isNil "_backpackObject") then {
-    _unit forceAddUniform ([_backpackObject, "classname"] call a3uf_json_fnc_get);
+if !(_backpackObject isEqualType objNull) then {
+    _unit addBackpackGlobal ([_backpackObject, "classname"] call a3uf_json_fnc_get);
     {
-        (uniformContainer _unit) addItemCargoGlobal [
+        (backpackContainer _unit) addItemCargoGlobal [
             [_x, "classname"] call a3uf_json_fnc_get,
             [_x, "amount"] call a3uf_json_fnc_get
         ];
     } forEach ([_backpackObject, "items"] call a3uf_json_fnc_get);
 
     {
-        (uniformContainer _unit) addWeaponCargoGlobal [
+        (backpackContainer _unit) addWeaponCargoGlobal [
             [_x, "classname"] call a3uf_json_fnc_get,
             [_x, "amount"] call a3uf_json_fnc_get
         ];
     } forEach ([_backpackObject, "weapons"] call a3uf_json_fnc_get);
 
     {
-        (uniformContainer _unit) addMagazineAmmoCargo [
+        (backpackContainer _unit) addMagazineAmmoCargo [
             [_x, "classname"] call a3uf_json_fnc_get,
             [_x, "amount"] call a3uf_json_fnc_get,
             [_x, "ammo"] call a3uf_json_fnc_get
         ];
     } forEach ([_backpackObject, "magazines"] call a3uf_json_fnc_get);
 };
+
+private _primaryWeaponObject = [_json, "weapons.primary"] call a3uf_json_fnc_get;
+if !(_primaryWeaponObject isEqualType objNull) then {
+    _unit addWeapon ([_primaryWeaponObject, "classname"] call a3uf_json_fnc_get);
+
+    {
+        _unit addMagazine _x;
+    } forEach ([_primaryWeaponObject, "magazines"] call a3uf_json_fnc_get);
+
+    {
+        _unit addPrimaryWeaponItem _x;
+    } forEach ([_primaryWeaponObject, "items"] call a3uf_json_fnc_get);
+};
+
+private _secondaryWeaponObject = [_json, "weapons.secondary"] call a3uf_json_fnc_get;
+if !(_secondaryWeaponObject isEqualType objNull) then {
+    _unit addWeapon ([_secondaryWeaponObject, "classname"] call a3uf_json_fnc_get);
+
+    {
+        _unit addMagazine _x;
+    } forEach ([_secondaryWeaponObject, "magazines"] call a3uf_json_fnc_get);
+
+    {
+        _unit addSecondaryWeaponItem _x;
+    } forEach ([_secondaryWeaponObject, "items"] call a3uf_json_fnc_get);
+};
+
+private _handgunWeaponObject = [_json, "weapons.handgun"] call a3uf_json_fnc_get;
+if !(_handgunWeaponObject isEqualType objNull) then {
+    _unit addWeapon ([_handgunWeaponObject, "classname"] call a3uf_json_fnc_get);
+
+    {
+        _unit addMagazine _x;
+    } forEach ([_handgunWeaponObject, "magazines"] call a3uf_json_fnc_get);
+
+    {
+        _unit addHandgunItem _x;
+    } forEach ([_handgunWeaponObject, "items"] call a3uf_json_fnc_get);
+};
+
+[
+    [_json, "insignia"] call a3uf_json_fnc_get,
+    _unit
+] call FUNC(textures,setRankInsignia);

@@ -41,6 +41,7 @@ switch (_name) do {
     };
 
     case "CompleteButton": {
+        private _display = ctrlParent _ctrl;
         private _groupCtrl = ctrlParentControlsGroup _ctrl;
 
         private _firstname = ctrlText (_groupCtrl controlsGroupCtrl 1400);
@@ -76,6 +77,10 @@ switch (_name) do {
             hint "invalid origin locode";
         };
 
+        if (_display getVariable [QGVAR(face_model), ""] == "") exitWith {
+            hint "invalid face model";
+        };
+
         private _birthday = format [
             "%1-%2-%3T00:00:00Z",
             _birthdayYear,
@@ -94,7 +99,9 @@ switch (_name) do {
             _lastname,
             _birthday,
             _originLocode,
-            _entryReason
+            _entryReason,
+            _display getVariable [QGVAR(face_model), ""],
+            _display getVariable [QGVAR(sex), 0]
         ]] call CBA_fnc_serverEvent;
     };
 

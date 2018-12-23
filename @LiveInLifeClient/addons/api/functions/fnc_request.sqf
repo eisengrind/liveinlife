@@ -38,6 +38,6 @@ diag_log format[
 private _resp = ([_uri, _method, _headers, _postDataStr, true] call a3uf_common_fnc_request);
 
 [
-    parseSimpleArray (_resp select 0),
+    [parseSimpleArray (_resp select 0)] call FUNC(arrayReplaceNilWithNull),
     _resp select 1
 ]
