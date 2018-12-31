@@ -148,4 +148,4 @@ if !(_handgunWeaponObject isEqualType objNull) then {
 [
     [_json, "insignia"] call a3uf_json_fnc_get,
     _unit
-] call FUNC(textures,setRankInsignia);
+] call EFUNC(textures,setRankInsignia);

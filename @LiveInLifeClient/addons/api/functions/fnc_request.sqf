@@ -35,9 +35,11 @@ diag_log format[
     _postDataStr
 ];
 
+_headers append ["Content-Type", "application/json; charset=utf-8"];
+
 private _resp = ([_uri, _method, _headers, _postDataStr, true] call a3uf_common_fnc_request);
 
 [
     [parseSimpleArray (_resp select 0)] call FUNC(arrayReplaceNilWithNull),
     _resp select 1
-]
+];

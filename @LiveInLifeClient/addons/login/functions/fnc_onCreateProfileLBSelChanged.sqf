@@ -9,7 +9,7 @@ switch (_name) do {
         private _display = ctrlParent _ctrl;
         private _face = _ctrl lbData _index;
         _display setVariable [QGVAR(face), _face];
-        (_display getVariable [QGVAR(face_model), objNull]) setFace _face;
+        ((ctrlParentControlsGroup _ctrl) controlsGroupCtrl 1203) ctrlSetText FACE_PREVIEW(_face);
     };
 
     case "MonthCombo": {

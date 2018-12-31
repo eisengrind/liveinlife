@@ -2,6 +2,7 @@
 #define IDD_create_profile 2000
 #define IDD_loading_screen 2001
 #define IDD_disabled_controls 2002
+#define IDD_create_user 2003
 
 class RscText;
 class RscStructuredText;
@@ -14,7 +15,7 @@ class RscCombo;
 class GVAR(input) {
     type = 2;
     style = 512;
-    colorText[] = {0,0,0,0.87};
+    colorText[] = {1,1,1,0.87};
     colorDisabled[] = {0,0,0,0.2};
     colorSelection[] = {0,0,0,0.4};
     colorBackground[] = {0,0,0,0};
@@ -54,7 +55,7 @@ class GVAR(input_title) {
     w = 0;
     h = 0.05;
     shadow = 0;
-    size = 0.045;
+    size = 0.041;
     class Attributes {
         font = "PuristaMedium";
         align = "left";

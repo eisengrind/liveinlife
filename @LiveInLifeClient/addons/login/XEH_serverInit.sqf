@@ -7,7 +7,12 @@
 
     if (isNull _unit) exitWith {};
 
-    private _resp = [getPlayerUID _unit] call EFUNC(api_users,getUserBySteamID64);
+    private _steamID64 = "76561198040411592";
+    if (isMultiplayer) then {
+        _steamID64 = getPlayerUID _unit;
+    };
+
+    private _resp = [_steamID64] call EFUNC(api_users,getUserBySteamID64);
 
     if REQ_IS_OK(_resp) then {
         private _res = REQ_GET_BODY(_resp);
@@ -15,7 +20,7 @@
         private _id = [_res, "id"] call a3uf_json_fnc_get;
         if (_id <= 0) exitWith {};
 
-        _resp = [getPlayerUID _unit] call EFUNC(api_users,getUserTokenBySteamID64);
+        _resp = [_steamID64] call EFUNC(api_users,getUserTokenBySteamID64);
 
         if REQ_IS_OK(_resp) then {
             _res = REQ_GET_BODY(_resp);
@@ -42,8 +47,13 @@
     if (_username == "") exitWith {};
     if (_password == "") exitWith {};
 
+    private _steamID64 = "76561198040411592";
+    if (isMultiplayer) then {
+        _steamID64 = getPlayerUID _unit;
+    };
+
     private _resp = [
-        getPlayerUID _unit,
+        _steamID64,
         _username,
         _password
     ] call EFUNC(api_users,createUserBySteamID64);
@@ -56,11 +66,11 @@
 
         if (_accessToken == "" || _refreshToken == "") exitWith {};
 
-        _resp = [getPlayerUID _unit] call EFUNC(api_users,getUserBySteamID64);
+        _resp = [_steamID64] call EFUNC(api_users,getUserBySteamID64);
         if REQ_IS_OK(_resp) then {
             _res = REQ_GET_BODY(_resp);
 
-            private _id = [_res] call a3uf_json_fnc_get;
+            private _id = [_res, "id"] call a3uf_json_fnc_get;
             if (_id <= 0) exitWith {};
 
             [QGVAR(userReceived), [
@@ -77,6 +87,8 @@
         ["_unit", objNull, [objNull]],
         ["_profileID", 0, [0]]
     ];
+
+    [QGVAR(profileReceived), _profileID, _unit] call CBA_fnc_targetEvent;
 }] call CBA_fnc_addEventHandler;
 
 [QGVAR(createProfile), {
@@ -88,7 +100,9 @@
         ["_lastname", "", [""]],
         ["_birthday", "", [""]],
         ["_originLocode", "", [""]],
-        ["_entryReason", "", [""]]
+        ["_entryReason", "", [""]],
+        ["_face", "", [""]],
+        ["_sex", 0, [0]]
     ];
 
     if (isNull _unit) exitWith {};
@@ -98,6 +112,8 @@
     if (_birthday == "") exitWith {};
     if (_originLocode == "") exitWith {};
     if !(_originLocode in EGVAR(countries,locodes)) exitWith {};
+    if (_face == "") exitWith {};
+    if (_sex != 1 && _sex != 0) exitWith {};
 
     private _resp = [
         _userID,
@@ -105,7 +121,9 @@
         _middlename,
         _lastname,
         _birthday,
-        _originLocode
+        _originLocode,
+        _face,
+        _sex
     ] call EFUNC(api_profiles,createProfile);
 
     if REQ_IS_OK(_resp) then {

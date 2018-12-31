@@ -1531,5 +1531,65 @@
             <German>Simbabwe</German>
             <French>Zimbabwe</French>
         </Key>
+        <Key ID="STR_lilc_countries_locode_AB">
+            <Original>Abramia</Original>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_AN">
+            <Original>Taviana Island</Original>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_CE">
+            <Original>Chernarus</Original>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_DI">
+            <Original>Dingor Island</Original>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_EK">
+            <Original>Esseker</Original>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_EL">
+            <Original>Elaine County</Original>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_JC">
+            <Original>Jackson County</Original>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_KA">
+            <Original>Kerama Island</Original>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_KL">
+            <Original>Kellys Island</Original>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_LD">
+            <Original>Lakeside</Original>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_LG">
+            <Original>Lingor Island</Original>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_LO">
+            <Original>Los Santos</Original>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_MI">
+            <Original>Malden</Original>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_NN">
+            <Original>Napf</Original>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_PI">
+            <Original>Panthera Island</Original>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_RA">
+            <Original>Stratis</Original>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_TB">
+            <Original>Tembelan Island</Original>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_TI">
+            <Original>Takistan</Original>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_TS">
+            <Original>Altis</Original>
+        </Key>
+        <Key ID="STR_lilc_countries_locode_UT">
+            <Original>Utes</Original>
+        </Key>
     </Package>
 </Project>

@@ -187,11 +187,11 @@ class GVAR(create_profile) {
             class Controls {
                 class FaceR2S: RscPicture {
                     idc = 1203;
-                    text = "#(argb,512,512,1)r2t(lilc_login_create_profile_camera,1.333))";
+                    text = "";
                     x = 0.0515628 * safezoneW;
                     y = 0.055 * safezoneH;
-                    w = 0.144375 * safezoneW;
-                    h = 0.165 * safezoneH;
+                    w = pixelW * 210;
+                    h = pixelH * 210;
                     colorBackground[] = {0.5,0.5,0.5,1};
                 };
 

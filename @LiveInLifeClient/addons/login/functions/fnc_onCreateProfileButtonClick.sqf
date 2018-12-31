@@ -15,7 +15,7 @@ switch (_name) do {
         {
             private _index = _facesCtrl lbAdd getText(configFile >> "CfgFaces" >> "Man_A3" >> _x >> "displayName");
             _facesCtrl lbSetData [_index, _x];
-        } forEach ([GVAR(male_faces), GVAR(female_faces)] select (_display getVariable [QGVAR(sex), 0]));
+        } forEach (([GVAR(male_faces), GVAR(female_faces)] select (_display getVariable [QGVAR(sex), 0])) call BIS_fnc_arrayShuffle);
 
         _facesCtrl lbSetCurSel 0;
 
@@ -51,34 +51,67 @@ switch (_name) do {
         private _birthdayMonth = (_groupCtrl controlsGroupCtrl 2101) lbValue lbCurSel (_groupCtrl controlsGroupCtrl 2101);
         private _birthdayYear = (_groupCtrl controlsGroupCtrl 2102) lbValue lbCurSel (_groupCtrl controlsGroupCtrl 2102);
         private _originLocode = (_groupCtrl controlsGroupCtrl 2103) lbData lbCurSel (_groupCtrl controlsGroupCtrl 2103);
-        private _entryReason = (_groupCtrl controlsGroupCtrl 1403);
+        private _entryReason = ctrlText (_groupCtrl controlsGroupCtrl 1403);
+
+        private _allowedChars = toArray "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
         if (_firstname == "") exitWith {
-            hint "firstname empty";
+            ["firstname empty", "ERROR"] call EFUNC(ui,hint);
+        };
+
+        if (count _firstname > 64) exitWith {
+            ["firstname is too long", "ERROR"] call EFUNC(ui,hint);
+        };
+
+        private _firstnameUnicodes = toArray _firstname;
+        if (({ (_x in _allowedChars); } count _firstnameUnicodes) != count _firstnameUnicodes) exitWith {
+            ["firstname contains invalid characters", "ERROR"] call EFUNC(ui,hint);
+        };
+
+        if (count _middlename > 64) exitWith {
+            ["middlename is too long", "ERROR"] call EFUNC(ui,hint);
+        };
+
+        private _middlenameUnicodes = toArray _middlename;
+        if (({ (_x in _allowedChars); } count _middlenameUnicodes) != count _middlenameUnicodes) exitWith {
+            ["middlename contains invalid characters", "ERROR"] call EFUNC(ui,hint);
         };
 
         if (_lastname == "") exitWith {
-            hint "lastname empty";
+            ["lastname empty", "ERROR"] call EFUNC(ui,hint);
+        };
+
+        if (count _lastname > 64) exitWith {
+            ["lastname is too long", "ERROR"] call EFUNC(ui,hint);
+        };
+
+        private _lastnameUnicodes = toArray _lastname;
+        if (({ (_x in _allowedChars); } count _lastnameUnicodes) != count _lastnameUnicodes) exitWith {
+            ["lastname contains invalid characters", "ERROR"] call EFUNC(ui,hint);
         };
 
         if (_birthdayDay <= 0) exitWith {
-            hint "invalid day";
+            ["invalid day", "ERROR"] call EFUNC(ui,hint);
         };
 
         if (_birthdayMonth <= 0) exitWith {
-            hint "invalid month";
+            ["invalid month", "ERROR"] call EFUNC(ui,hint);
         };
 
         if (_birthdayYear <= 0) exitWith {
-            hint "invalid year";
+            ["invalid year", "ERROR"] call EFUNC(ui,hint);
         };
 
         if !(_originLocode in EGVAR(countries,locodes)) exitWith {
-            hint "invalid origin locode";
+            ["invalid origin locode", "ERROR"] call EFUNC(ui,hint);
         };
 
-        if (_display getVariable [QGVAR(face_model), ""] == "") exitWith {
-            hint "invalid face model";
+        if ((_display getVariable [QGVAR(face), ""]) isEqualTo "") exitWith {
+            ["invalid face model", "ERROR"] call EFUNC(ui,hint);
+        };
+
+        if (count _entryReason <= 20) exitWith {
+            ["more than 20 characters needed", "ERROR"] call EFUNC(ui,hint);
         };
 
         private _birthday = format [
@@ -89,20 +122,32 @@ switch (_name) do {
         ];
 
         closeDialog 2000;
-        1000 cutRsc [QGVAR(loading_screen), "PLAIN", 0.5];
+        QGVAR(loading_screen) cutRsc [QGVAR(loading_screen), "PLAIN", 1, true];
 
-        [QGVAR(createProfile), [
-            player,
-            GVAR(userID),
+        [{
+            params ["_firstname", "_middlname", "_lastname", "_birthday", "_originLocode", "_entryReason", "_face", "_sex"];
+            [QGVAR(createProfile), [
+                player,
+                GVAR(userID),
+                _firstname,
+                _middlename,
+                _lastname,
+                _birthday,
+                _originLocode,
+                _entryReason,
+                _face,
+                _sex
+            ]] spawn CBA_fnc_serverEvent; //TODO: change again to "call"
+        }, [
             _firstname,
             _middlename,
             _lastname,
             _birthday,
             _originLocode,
             _entryReason,
-            _display getVariable [QGVAR(face_model), ""],
+            _display getVariable [QGVAR(face), ""],
             _display getVariable [QGVAR(sex), 0]
-        ]] call CBA_fnc_serverEvent;
+        ], 1] call CBA_fnc_waitAndExecute;
     };
 
     case "SelectSexButton": {

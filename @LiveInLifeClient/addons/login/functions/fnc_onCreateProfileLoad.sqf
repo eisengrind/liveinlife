@@ -43,9 +43,10 @@ switch (_name) do {
                 _x
             ];
         } forEach EGVAR(countries,locodes);
+        lbSort _countriesCtrl;
 
         //create face view
-        private _model = "C_scientist_F" createVehicleLocal [0, 0, 0];
+        /*private _model = "C_scientist_F" createVehicleLocal [0, 0, 0];
         _model setPosASL [
             random 1000,
             random 1000,
@@ -83,7 +84,7 @@ switch (_name) do {
         _camera camSetFov 0.01;
         _camera camSetDir [0, -1, 0];
         _camera camCommit 0;
-        _displayOrCtrl setVariable [QGVAR(face_camera), _camera];
+        _displayOrCtrl setVariable [QGVAR(face_camera), _camera];*/
     };
 
     case "FirstnameEdit": {

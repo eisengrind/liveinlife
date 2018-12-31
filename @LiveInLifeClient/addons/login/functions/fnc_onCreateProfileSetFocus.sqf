@@ -4,8 +4,6 @@ params ["_name", "_args"];
 
 _args params ["_ctrl"];
 
-systemChat str _this;
-
 switch (_name) do {
     case QGVAR(input_complete): {
         private _ctrlUnderline = (ctrlParentControlsGroup _ctrl) controlsGroupCtrl (_ctrl getVariable [QGVAR(input_line_idc), 0]);

@@ -257,7 +257,28 @@ GVAR(locodes) = [
     "EH",
     "YE",
     "ZM",
-    "ZW"
+    "ZW",
+    //ArmA 3 life roleplay fictive roleplay countries:
+    "AB",
+    "AN",
+    "CE",
+    "DI",
+    "EK",
+    "EL",
+    "JC",
+    "KA",
+    "KL",
+    "LD",
+    "LG",
+    "LO",
+    "MI",
+    "NN",
+    "PI",
+    "RA",
+    "TB",
+    "TI",
+    "TS",
+    "UT"
 ];
 
 PREP_RECOMPILE_START;
