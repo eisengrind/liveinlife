@@ -173,24 +173,24 @@ class GVAR(create_user) {
 
 /* #Cysaku
 $[
-	1.063,
-	["userCreate",[[0,0,1,1],0.025,0.04,"GUI_GRID"],0,0,0],
-	[1000,"Title",[1,"User Creation",["0.298906 * safezoneW + safezoneX","0.192 * safezoneH + safezoneY","0.402187 * safezoneW","0.11 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","4"],[]],
-	[1602,"CompleteButton",[1,"Complete",["0.319531 * safezoneW + safezoneX","0.665 * safezoneH + safezoneY","0.103125 * safezoneW","0.044 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","1.2"],[]],
-	[1100,"RemarkText",[1,"<t size=""0.7"">the username and password given in this formular is used to create a webinterface user for this server. This webinterface is reachable under https://internet.eisengrind.de/</t>",["0.134582 * safezoneW","0.445556 * safezoneH","0.266563 * safezoneW","0.033 * safezoneH"],[-1,-1,-1,-1],[0,0,0,0],[-1,-1,-1,-1],"","-1"],[]],
-	[1400,"SteamID64Edit",[1,"",["0.0670312 * safezoneW","0.121 * safezoneH","0.12875 * safezoneW","0.0383334 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
-	[1001,"SteamID64Title",[1,"SteamID64",["0.0670312 * safezoneW","0.099 * safezoneH","0.128906 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","0.7"],[]],
-	[1002,"SteamID64Line",[1,"",["0.0670312 * safezoneW","0.162222 * safezoneH","0.128906 * safezoneW","0.000925925 * safezoneH"],[-1,-1,-1,-1],[1,1,1,1],[-1,-1,-1,-1],"","-1"],[]],
-	[1003,"UsernameTitle",[1,"Username",["0.0670312 * safezoneW","0.176 * safezoneH","0.128906 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","0.7"],[]],
-	[1401,"UsernameEdit",[1,"",["0.0670312 * safezoneW","0.198 * safezoneH","0.12875 * safezoneW","0.0383334 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
-	[1004,"UsernameLine",[1,"",["0.0677083 * safezoneW","0.239815 * safezoneH","0.128906 * safezoneW","0.000925925 * safezoneH"],[-1,-1,-1,-1],[1,1,1,1],[-1,-1,-1,-1],"","-1"],[]],
-	[1005,"PasswordTitle",[1,"Password",["0.0670312 * safezoneW","0.264 * safezoneH","0.128906 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","0.7"],[]],
-	[1006,"RepeatPasswordTitle",[1,"Repeat Password",["0.0670312 * safezoneW","0.352 * safezoneH","0.128906 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","0.7"],[]],
-	[1402,"PasswordEdit",[1,"",["0.0670312 * safezoneW","0.286 * safezoneH","0.12875 * safezoneW","0.0383334 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
-	[1007,"PasswordLine",[1,"",["0.0677083 * safezoneW","0.326852 * safezoneH","0.128906 * safezoneW","0.000925925 * safezoneH"],[-1,-1,-1,-1],[1,1,1,1],[-1,-1,-1,-1],"","-1"],[]],
-	[1403,"RepeatPasswordEdit",[1,"",["0.0670312 * safezoneW","0.374 * safezoneH","0.12875 * safezoneW","0.0383334 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
-	[1008,"RepeatPasswordLine",[1,"",["0.361458 * safezoneW + safezoneX","0.639815 * safezoneH + safezoneY","0.128906 * safezoneW","0.000925925 * safezoneH"],[-1,-1,-1,-1],[1,1,1,1],[-1,-1,-1,-1],"","-1"],[]],
-	[1101,"NoticeText",[1,"<t size='1.4' shadow='0' font='RobotoCondensed'>Notice:</t><br /><t size='1.1' shadow='0'>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores </t>",["0.211406 * safezoneW","0.10537 * safezoneH","0.185781 * safezoneW","0.31263 * safezoneH"],[-1,-1,-1,-1],[0,0,0,0],[-1,-1,-1,-1],"","-1"],[]]
+    1.063,
+    ["userCreate",[[0,0,1,1],0.025,0.04,"GUI_GRID"],0,0,0],
+    [1000,"Title",[1,"User Creation",["0.298906 * safezoneW + safezoneX","0.192 * safezoneH + safezoneY","0.402187 * safezoneW","0.11 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","4"],[]],
+    [1602,"CompleteButton",[1,"Complete",["0.319531 * safezoneW + safezoneX","0.665 * safezoneH + safezoneY","0.103125 * safezoneW","0.044 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","1.2"],[]],
+    [1100,"RemarkText",[1,"<t size=""0.7"">the username and password given in this formular is used to create a webinterface user for this server. This webinterface is reachable under https://internet.eisengrind.de/</t>",["0.134582 * safezoneW","0.445556 * safezoneH","0.266563 * safezoneW","0.033 * safezoneH"],[-1,-1,-1,-1],[0,0,0,0],[-1,-1,-1,-1],"","-1"],[]],
+    [1400,"SteamID64Edit",[1,"",["0.0670312 * safezoneW","0.121 * safezoneH","0.12875 * safezoneW","0.0383334 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+    [1001,"SteamID64Title",[1,"SteamID64",["0.0670312 * safezoneW","0.099 * safezoneH","0.128906 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","0.7"],[]],
+    [1002,"SteamID64Line",[1,"",["0.0670312 * safezoneW","0.162222 * safezoneH","0.128906 * safezoneW","0.000925925 * safezoneH"],[-1,-1,-1,-1],[1,1,1,1],[-1,-1,-1,-1],"","-1"],[]],
+    [1003,"UsernameTitle",[1,"Username",["0.0670312 * safezoneW","0.176 * safezoneH","0.128906 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","0.7"],[]],
+    [1401,"UsernameEdit",[1,"",["0.0670312 * safezoneW","0.198 * safezoneH","0.12875 * safezoneW","0.0383334 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+    [1004,"UsernameLine",[1,"",["0.0677083 * safezoneW","0.239815 * safezoneH","0.128906 * safezoneW","0.000925925 * safezoneH"],[-1,-1,-1,-1],[1,1,1,1],[-1,-1,-1,-1],"","-1"],[]],
+    [1005,"PasswordTitle",[1,"Password",["0.0670312 * safezoneW","0.264 * safezoneH","0.128906 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","0.7"],[]],
+    [1006,"RepeatPasswordTitle",[1,"Repeat Password",["0.0670312 * safezoneW","0.352 * safezoneH","0.128906 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","0.7"],[]],
+    [1402,"PasswordEdit",[1,"",["0.0670312 * safezoneW","0.286 * safezoneH","0.12875 * safezoneW","0.0383334 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+    [1007,"PasswordLine",[1,"",["0.0677083 * safezoneW","0.326852 * safezoneH","0.128906 * safezoneW","0.000925925 * safezoneH"],[-1,-1,-1,-1],[1,1,1,1],[-1,-1,-1,-1],"","-1"],[]],
+    [1403,"RepeatPasswordEdit",[1,"",["0.0670312 * safezoneW","0.374 * safezoneH","0.12875 * safezoneW","0.0383334 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+    [1008,"RepeatPasswordLine",[1,"",["0.361458 * safezoneW + safezoneX","0.639815 * safezoneH + safezoneY","0.128906 * safezoneW","0.000925925 * safezoneH"],[-1,-1,-1,-1],[1,1,1,1],[-1,-1,-1,-1],"","-1"],[]],
+    [1101,"NoticeText",[1,"<t size='1.4' shadow='0' font='RobotoCondensed'>Notice:</t><br /><t size='1.1' shadow='0'>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores </t>",["0.211406 * safezoneW","0.10537 * safezoneH","0.185781 * safezoneW","0.31263 * safezoneH"],[-1,-1,-1,-1],[0,0,0,0],[-1,-1,-1,-1],"","-1"],[]]
 ]
 */
 

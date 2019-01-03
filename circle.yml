@@ -6,20 +6,20 @@ jobs:
     steps:
       - checkout
       - run: make test_configs
-  linting:
-    docker:
-      - image: acemod/sqflint
-    steps:
-      - checkout
-      - run: sqflint --exit=e -d \@LiveInLifeClient/
-      - run: sqflint --exit=e -d \@LiveInLifeServer/
-      - run: sqflint --exit=e -d LiveInLife.Tanoa/
+#  linting:
+#    docker:
+#      - image: acemod/sqflint
+#    steps:
+#      - checkout
+#      - run: sqflint --exit=e -d \@LiveInLifeClient/
+#      - run: sqflint --exit=e -d \@LiveInLifeServer/
+#      - run: sqflint --exit=e -d LiveInLife.Tanoa/
   build:
     docker:
       - image: acemod/armake
     steps:
       - checkout
-      - run: apt-get update && apt-get install -y -f libssl-dev
+      - run: apt-get update && apt-get install -y -f libssl-dev openssl ca-certificates
       - run: chmod -R 777 tools/
       - run: make release
 workflows:
@@ -27,6 +27,6 @@ workflows:
   build:
     jobs:
       - test_configs
-      - linting
+#      - linting
       - build
 
