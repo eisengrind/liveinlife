@@ -19,7 +19,14 @@ jobs:
       - image: acemod/armake
     steps:
       - checkout
-      - run: apt-get install -y -f libssl-dev
+      - run: apt-get update && apt-get install -y -f libssl-dev
       - run: chmod -R 777 tools/
       - run: make release
+workflows:
+  version: 2
+  build:
+    jobs:
+      - test_configs
+      - linting
+      - build
 
