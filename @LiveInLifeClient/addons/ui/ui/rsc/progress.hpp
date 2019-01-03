@@ -2,14 +2,9 @@
 class lilc_progressBar {
     name = "lilc_progressBar";
     idd = 1320;
-    /*fadein=0;
-    duration = 2147483647;
-    fadeout=0;*/
     movingEnable = false;
     enableSimulation = true;
     onLoad = "(_this select 0) call lilc_ui_fnc_progressKeyHandler;";
-    /*onLoad = "uiNamespace setVariable ['lilc_progressBar', (_this select 0)];";
-    objects[] = {};*/
 
     class controlsBackground {
         class FrameProgressBackground : lilc_RscText {

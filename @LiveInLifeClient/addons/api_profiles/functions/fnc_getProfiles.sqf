@@ -25,8 +25,7 @@ for "_i" from 0 to (count _filter) - 1 do {
     [],
     "GET",
     [
-        QUSERS_ACCESS_TOKEN_HEADER, EGVAR(api_users,token),
-        QPROFILES_ACCESS_TOKEN_HEADER, GVAR(token)
+        QUSERS_ACCESS_TOKEN_HEADER, EGVAR(api_users,token)
     ],
     []
 ] call EFUNC(api,request);

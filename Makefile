@@ -63,7 +63,8 @@ clean:
 	@rm -Rf $(BUILD_PATH)
 	@rm -Rf $(BUILDS_PATH)/$(GIT_HASH)
 
-release: clean $(patsubst $(BIN_SERVER)/addons/%, $(BUILD_PATH)/$(BIN_SERVER)/addons/$(PREFIX_SERVER)_%.pbo, $(wildcard $(BIN_SERVER)/addons/*))
+release: clean
+	@"$(MAKE)" $(MAKEFLAGS) $(patsubst $(BIN_SERVER)/addons/%, $(BUILD_PATH)/$(BIN_SERVER)/addons/$(PREFIX_SERVER)_%.pbo, $(wildcard $(BIN_SERVER)/addons/*))
 	@"$(MAKE)" $(MAKEFLAGS) signatures
 	@mkdir -p $(BUILDS_PATH)/$(GIT_HASH)
 	@echo "    CP   $(BUILD_PATH)/* to $(BUILDS_PATH)/$(GIT_HASH)"

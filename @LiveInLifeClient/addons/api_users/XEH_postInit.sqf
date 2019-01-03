@@ -13,7 +13,7 @@
 [{
     if (GVAR(token) != "" && GVAR(refresh_token) != "") then {
         [] spawn {
-            [QGVAR(updateToken)] spawn CBA_fnc_localEvent;
+            [QGVAR(updateToken)] call CBA_fnc_localEvent;
         };
     };
 }, ACCESS_TOKEN_EXPIRY - 15] call CBA_fnc_addPerFrameHandler;

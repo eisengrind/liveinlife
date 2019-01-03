@@ -15,8 +15,7 @@ if ((count _opts) <= 0) exitWith { []; };
     ],
     "PATCH",
     [
-        QUSERS_ACCESS_TOKEN_HEADER, EGVAR(api_users,token),
-        QPROFILES_ACCESS_TOKEN_HEADER, GVAR(token)
+        QUSERS_ACCESS_TOKEN_HEADER, EGVAR(api_users,token)
     ],
     [
         "object",

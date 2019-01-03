@@ -27,7 +27,7 @@ if (hasInterface) then {
     if (isMultiplayer) then {
         QGVAR(layerColor) cutText ["", "BLACK OUT", 0.01, true];
 
-        [{ !isNull (findDisplay 46) }, {
+        [{ !isNull (findDisplay 46) && !call BIS_fnc_isLoading }, {
             showCinemaBorder false;
             GVAR(camera) = "camera" camCreate [0, 0, 0];
             GVAR(camera) camSetPos [5433.4,7589.82,1.84199];
@@ -44,10 +44,21 @@ if (hasInterface) then {
 
             [{
                 TARGET_ENDPOINT_CBA_EVENT(QGVAR(initializeUser),[player]);
-            }, nil, 1] call CBA_fnc_waitAndExecute;
+            }, nil, 2] call CBA_fnc_waitAndExecute;
         }] call CBA_fnc_waitUntilAndExecute;
     };
 };
+
+[QGVAR(setFace), {
+    params ["_unit", "_face"];
+
+    if (isNull _unit) exitWith {};
+
+    _unit setFace _face;
+}] call CBA_fnc_addEventHandler;
+
+[QGVAR(endMissionUserBanned), { endMission QGVAR(userBanned); }] call CBA_fnc_addEventHandler;
+[QGVAR(endMissionProfileDeactivated), { endMission QGVAR(profileDeactivated); }] call CBA_fnc_addEventHandler;
 
 [QGVAR(userNotExisting), {
     QGVAR(loading_screen) cutFadeOut 0;

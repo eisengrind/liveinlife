@@ -35,7 +35,9 @@ diag_log format[
     _postDataStr
 ];
 
-_headers append ["Content-Type", "application/json; charset=utf-8"];
+if (_headers find "Content-Type" == -1) then {
+    _headers append ["Content-Type", "application/json; charset=utf-8"];
+};
 
 private _resp = ([_uri, _method, _headers, _postDataStr, true] call a3uf_common_fnc_request);
 

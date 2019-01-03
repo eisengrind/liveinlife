@@ -1,42 +1,21 @@
 
+#include "script_component.hpp"
+
 class CfgPatches {
-    #include "CfgPatches.cpp"
-};
-
-class CfgFunctions {
-    #include "CfgFunctions.cpp"
-};
-
-class lilc_RscControlsGroup;
-class lilc_RscPicture;
-class lilc_RscProgress;
-class lilc_RscText;
-class lilc_RscStructuredText;
-class lilc_RscTitle;
-
-#include "dialogs\progress.cpp"
-#include "dialogs\groupHint.cpp"
-
-class RscTitles {
-    #include "dialogs\logo.cpp"
-    #include "dialogs\hint.cpp"
-    #include "dialogs\stats.cpp"
-    #include "dialogs\loading.cpp"
-    #include "dialogs\aircraftInfo.cpp"
-};
-
-class Extended_PreInit_EventHandlers {
-    class lilc_ui_preInit {
-        clientInit = "call compile preProcessFileLineNumbers '\x\lilc\addons\ui\XEH_preInit.sqf';";
+    class ADDON {
+        name = COMPONENT_NAME;
+        units[] = {};
+        weapons[] = {};
+        requiredVersion = REQUIRED_VERSION;
+        requiredAddons[] = {"A3_Functions_F", "A3_Data_F", "A3_Soft_F", "A3_Soft_F_Offroad_01", "A3_Characters_F", "lilc_main", "lilc_common"};
+        author = CONTRIBUTORS;
+        authors[] = {
+            "TheMysteriousVincent"
+        };
     };
 };
 
-class CfgHints
-{
-    #include "CfgHints.cpp"
-};
-
-class CfgUIGrids
-{
-    #include "CfgUIGrids.cpp"
-};
+#include "CfgEventHandlers.hpp"
+#include "CfgHints.hpp"
+#include "CfgUIGrids.hpp"
+#include "ui\RscAttributes.hpp"

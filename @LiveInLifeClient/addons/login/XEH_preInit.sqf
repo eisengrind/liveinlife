@@ -11,5 +11,7 @@ GVAR(female_faces) = [];
 GVAR(unitID) = 0;
 GVAR(profileID) = 0;
 GVAR(camera) = objNull;
+GVAR(finished) = false;
+GVAR(finishedOverwrite) = false;
 
 ADDON = true;

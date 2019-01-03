@@ -108,4 +108,4 @@ _handgunEquippedWeapon params [
         ]], objNull] select (_handgunWeapon == "")]
     ]]],
     ["insignia", _insignia]
-]] call EFUNC(api,toJSON);
+]];

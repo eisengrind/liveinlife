@@ -20,5 +20,6 @@ PREP(onLoadingScreenUnload);
 PREP(onSelectProfileKeyDown);
 PREP(onSelectProfileLBSelChanged);
 PREP(onSelectProfileLoad);
+PREP(profileLogin);
 PREP(profileReceived);
 PREP(userReceived);

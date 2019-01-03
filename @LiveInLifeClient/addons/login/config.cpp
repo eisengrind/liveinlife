@@ -16,4 +16,5 @@ class CfgPatches {
 };
 
 #include "CfgEventHandlers.hpp"
+#include "CfgDebriefing.hpp"
 #include "ui\RscAttributes.hpp"

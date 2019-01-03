@@ -13,8 +13,7 @@ if (_profileID <= 0) exitWith { []; };
     ],
     "GET",
     [
-        QUSERS_ACCESS_TOKEN_HEADER, EGVAR(api_users,token),
-        QPROFILES_ACCESS_TOKEN_HEADER, GVAR(token)
+        QUSERS_ACCESS_TOKEN_HEADER, EGVAR(api_users,token)
     ],
     []
 ] call EFUNC(api,request);

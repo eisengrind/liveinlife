@@ -19,8 +19,7 @@ if (_value <= 0) exitWith { []; };
     ],
     "POST",
     [
-        QUSERS_ACCESS_TOKEN_HEADER, EGVAR(api_users,token),
-        QPROFILES_ACCESS_TOKEN_HEADER, GVAR(token)
+        QUSERS_ACCESS_TOKEN_HEADER, EGVAR(api_users,token)
     ],
     [
         "object",

@@ -19,6 +19,10 @@ if REQ_IS_OK(_resp) then {
     private _id = [_res, "id"] call a3uf_json_fnc_get;
     if (_id <= 0) exitWith {};
 
+    if ([_res, "banned"] call a3uf_json_fnc_get) exitWith {
+        [QGVAR(endMissionUserBanned), nil, [_unit]] call CBA_fnc_targetEvent;
+    };
+
     _resp = [_steamID64] call EFUNC(api_users,getUserTokenBySteamID64);
 
     if REQ_IS_OK(_resp) then {

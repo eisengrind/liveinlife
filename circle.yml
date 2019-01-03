@@ -1,0 +1,23 @@
+version: 2
+jobs:
+  test_configs:
+    docker:
+      - image: acemod/sqflint
+    steps:
+      - checkout
+      - make test_configs
+  linting:
+    docker:
+      - image: acemod/sqflint
+    steps:
+      - checkout
+      - sqflint --exit=e -d \@LiveInLifeClient/
+      - sqflint --exit=e -d \@LiveInLifeServer/
+      - sqflint --exit=e -d LiveInLife.Tanoa/
+  build:
+    docker:
+      - image: acemod/armake
+    steps:
+      - checkout
+      - make release
+
