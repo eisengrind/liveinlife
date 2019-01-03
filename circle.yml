@@ -16,11 +16,9 @@ jobs:
 #      - run: sqflint --exit=e -d LiveInLife.Tanoa/
   build:
     docker:
-      - image: acemod/armake
+      - image: liveinlife/armake
     steps:
       - checkout
-      - run: apt-get update && apt-get install -y -f libssl-dev openssl ca-certificates
-      - run: chmod -R 777 tools/
       - run: make release
 workflows:
   version: 2
