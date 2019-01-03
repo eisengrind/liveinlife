@@ -4,7 +4,7 @@ class lilc_ui_hint
     name = "lilc_ui_hint";
     idd = 1610;
     fadein = 0;
-    duration = 999999999999999999999999999;
+    duration = 2147483647;
     fadeout = 0;
     movingEnable = 0;
     enableSimulation = 1;

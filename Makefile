@@ -33,6 +33,11 @@ $(BUILD_PATH)/$(BIN_CLIENT)/addons/$(PREFIX_CLIENT)_%.pbo: $(BIN_CLIENT)/addons/
 	@echo "    PBO   $@"
 	@${ARMAKE} build $(FLAGS) -p -f -e "version=$(GIT_HASH)" $< $@
 
+$(BUILD_PATH)/$(BIN_CLIENT)/addons/dbo_old_bike.pbo:
+	@mkdir -p $(BUILD_PATH)/$(BIN_CLIENT)/addons
+	@echo "    PBO   $@"
+	@cp -f deps/dbo_old_bike.pbo $(BUILD_PATH)/$(BIN_CLIENT)/addons/
+
 $(BUILD_PATH)/$(BIN_SERVER)/addons/$(PREFIX_SERVER)_%.pbo: $(BIN_SERVER)/addons/%
 	@mkdir -p $(BUILD_PATH)/$(BIN_SERVER)/addons
 	@echo "    PBO   $@"
@@ -47,7 +52,11 @@ $(BUILD_PATH)/$(BIN_CLIENT)/addons/$(PREFIX_CLIENT)_%.pbo.lil_$(GIT_HASH).bisign
 	@echo "    SIG   $@"
 	@${ARMAKE} sign -f -s $@ $(BUILD_PATH)/keys/lil_$(GIT_HASH).biprivatekey $<
 
-signatures: $(patsubst $(BIN_CLIENT)/addons/%, $(BUILD_PATH)/$(BIN_CLIENT)/addons/$(PREFIX_CLIENT)_%.pbo.lil_$(GIT_HASH).bisign, $(wildcard $(BIN_CLIENT)/addons/*))
+$(BUILD_PATH)/$(BIN_CLIENT)/addons/dbo_old_bike.pbo.lil_$(GIT_HASH).bisign: $(BUILD_PATH)/$(BIN_CLIENT)/addons/dbo_old_bike.pbo
+	@echo "    SIG   $@"
+	@${ARMAKE} sign -f -s $@ $(BUILD_PATH)/keys/lil_$(GIT_HASH).biprivatekey $<
+
+signatures: $(patsubst $(BIN_CLIENT)/addons/%, $(BUILD_PATH)/$(BIN_CLIENT)/addons/$(PREFIX_CLIENT)_%.pbo.lil_$(GIT_HASH).bisign, $(wildcard $(BIN_CLIENT)/addons/*)) $(BUILD_PATH)/$(BIN_CLIENT)/addons/dbo_old_bike.pbo.lil_$(GIT_HASH).bisign
 
 clean:
 	@echo "    CLEAN"

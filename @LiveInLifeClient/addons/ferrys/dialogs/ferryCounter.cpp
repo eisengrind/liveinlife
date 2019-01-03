@@ -3,14 +3,14 @@ class lilc_ferryCounter {
     name = "lilc_ferryCounter";
     idd = 1040;
     fadein = 0;
-    duration = 999999999999999999999999999;
+    duration = 2147483647;
     fadeout = 0;
     movingEnable = false;
     enableSimulation = true;
     onLoad = "uiNamespace setVariable ['lilc_ferryCounter', (_this select 0)];";
     objects[] = {};
-    
-    class controlsBackground {};    
+
+    class controlsBackground {};
     class controls {
         class TextTimeCounter : lilc_RscStructuredText
         {

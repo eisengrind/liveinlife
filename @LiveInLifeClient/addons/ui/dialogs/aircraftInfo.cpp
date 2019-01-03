@@ -4,10 +4,10 @@ class lilc_ui_aircraftInfo {
     idd = 1503;
     enableSimulation = 1;
     moveingEnable = 0;
-    duration = 999999999999999999999999999;
+    duration = 2147483647;
     onLoad = "uiNamespace setVariable ['lilc_ui_aircraftInfo', (_this select 0)];";
     onUnload = "";
-    
+
     class controlsBackground {};
 
     class controls {

@@ -4,7 +4,7 @@ class GVAR(loading_screen) {
     movingEnable = 0;
     enableSimulation = 1;
     fadein = 1;
-    duration = 999999999999999999999999999;
+    duration = 2147483647;
     fadeout = 1;
 
     class controlsBackground {

@@ -1,5 +1,8 @@
 
 //insert functions with "PREP();"
+PREP(createProfile);
+PREP(createUser);
+PREP(initializeUser);
 PREP(onCreateProfileButtonClick);
 PREP(onCreateProfileCheckedChanged);
 PREP(onCreateProfileKillFocus);
@@ -17,3 +20,5 @@ PREP(onLoadingScreenUnload);
 PREP(onSelectProfileKeyDown);
 PREP(onSelectProfileLBSelChanged);
 PREP(onSelectProfileLoad);
+PREP(profileReceived);
+PREP(userReceived);

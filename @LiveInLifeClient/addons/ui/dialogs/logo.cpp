@@ -3,13 +3,13 @@ class lilc_ui_logo {
     name = "lilc_ui_logo";
     idd = 1500;
     fadein = 2;
-    duration = 999999999999999999999999999;
+    duration = 2147483647;
     fadeout = 4;
     movingEnable = false;
     enableSimulation = true;
     onLoad = "uiNamespace setVariable ['lilc_ui_logo', (_this select 0)];";
     objects[] = {};
-    
+
     class controlsBackground {
         class PictureLogo : lilc_RscPicture {
             idc = -1;

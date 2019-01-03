@@ -3,12 +3,12 @@ class lilc_ui_loading {
     name = "lilc_ui_loading";
     idd = 1501;
     fadein = 0;
-    duration = 999999999999999999999999999;
+    duration = 2147483647;
     fadeout = 0;
     movingEnable = false;
     enableSimulation = true;
     onLoad = "uiNamespace setVariable ['lilc_ui_loading', (_this select 0)];";
-    
+
     class controlsBackground {
         class PictureBackground : lilc_RscPicture {
             idc = 1501;
@@ -83,7 +83,7 @@ class lilc_ui_loading {
             w = 0.0721354 * safezoneW;
             h = 0.125519 * safezoneH;
         };
-        
+
         class PictureLoading8 : lilc_RscPicture {
             idc = 1509;
             text = "\x\lilc\addons\ui\images\loading\loading_8.paa";

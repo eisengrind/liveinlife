@@ -18,4 +18,5 @@
 #include "\x\lilc\addons\main\script_macros.hpp"
 #include "\x\lilc\addons\api\script_macros_common.hpp"
 #include "\x\lilc\addons\faces\script_macros_common.hpp"
+#include "\x\lilc\addons\headless\script_macros_common.hpp"
 #include "script_macros.hpp"

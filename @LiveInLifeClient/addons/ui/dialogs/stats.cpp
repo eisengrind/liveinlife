@@ -3,7 +3,7 @@ class lilc_stats {
     name = "lilc_stats";
     idd = 1042;
     fadein = 0;
-    duration = 999999999999999999999999999;
+    duration = 2147483647;
     fadeout = 0;
     movingEnable = false;
     enableSimulation = true;

@@ -3,14 +3,14 @@ class lilc_progressBar {
     name = "lilc_progressBar";
     idd = 1320;
     /*fadein=0;
-    duration = 999999999999999999999999999;
+    duration = 2147483647;
     fadeout=0;*/
     movingEnable = false;
     enableSimulation = true;
     onLoad = "(_this select 0) call lilc_ui_fnc_progressKeyHandler;";
     /*onLoad = "uiNamespace setVariable ['lilc_progressBar', (_this select 0)];";
     objects[] = {};*/
-    
+
     class controlsBackground {
         class FrameProgressBackground : lilc_RscText {
             idc = -1;
@@ -22,7 +22,7 @@ class lilc_progressBar {
             colorBackground[] = {0, 0, 0, 0.95};
         };
     };
-    
+
     class controls {
         class ProgressProgressBar : lilc_RscProgress {
             idc = 1321;
@@ -35,7 +35,7 @@ class lilc_progressBar {
             colorBackground[] = {0, (94/255), (190/255), 1};
             colorBar[] = {0, (94/255), (190/255), 1};
         };
-        
+
         class TextProgressText : lilc_RscStructuredText {
             idc = 1322;
             text = "";

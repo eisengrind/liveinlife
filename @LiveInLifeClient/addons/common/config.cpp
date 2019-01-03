@@ -1,33 +1,21 @@
 
+#include "script_component.hpp"
+
 class CfgPatches {
-    #include "CfgPatches.cpp"
+    class ADDON {
+        name = COMPONENT_NAME;
+        units[] = {};
+        weapons[] = {};
+        requiredVersion = REQUIRED_VERSION;
+        requiredAddons[] = {"lilc_main"};
+        author = CONTRIBUTORS;
+        authors[] = {
+            "TheMysteriousVincent"
+        };
+    };
 };
 
-class CfgFunctions {
-    #include "CfgFunctions.cpp"
-};
-
-class CfgMagazines {
-    class Default;
-    #include "CfgMagazines.cpp"
-};
-
-class CfgWeapons {
-    class ItemCore;
-    class InventoryItem_Base_F;
-    #include "CfgWeapons.cpp"
-};
-
+#include "CfgEventHandlers.hpp"
 #include "dialogs\RscDefines.cpp"
-
-class Extended_PreInit_EventHandlers {
-    class lilc_common {
-        clientInit = "call compile preprocessFileLineNumbers '\x\lilc\addons\common\XEH_preInit.sqf'";
-    };
-};
-
-class Extended_PostInit_EventHandlers {
-    class lilc_common {
-        clientInit = "call compile preprocessFileLineNumbers '\x\lilc\addons\common\XEH_postInit.sqf'";
-    };
-};
+#include "CfgMagazines.hpp"
+#include "CfgWeapons.hpp"
