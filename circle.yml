@@ -19,5 +19,6 @@ jobs:
       - image: acemod/armake
     steps:
       - checkout
+      - run: chmod -R 777 tools/
       - run: make release
 
