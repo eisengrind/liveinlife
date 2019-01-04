@@ -19,7 +19,7 @@ jobs:
       - image: liveinlife/armake
     steps:
       - checkout
-      - run: make release
+      - run: make release ARMAKE=armake
 workflows:
   version: 2
   build:
