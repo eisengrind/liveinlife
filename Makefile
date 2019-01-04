@@ -69,3 +69,9 @@ release: clean
 	@mkdir -p $(BUILDS_PATH)/$(GIT_HASH)
 	@echo "    CP   $(BUILD_PATH)/* to $(BUILDS_PATH)/$(GIT_HASH)"
 	@cp -Rf $(BUILD_PATH)/$(BIN_CLIENT) $(BUILD_PATH)/$(BIN_SERVER) $(BUILD_PATH)/keys $(BUILDS_PATH)/$(GIT_HASH)/
+	@mkdir -p $(BUILDS_PATH)/$(GIT_HASH)/$(BIN_CLIENT)/keys/
+	@cp -f $(BUILDS_PATH)/$(GIT_HASH)/keys/a3uf_$(GIT_HASH).bikey $(BUILDS_PATH)/$(GIT_HASH)/$(BIN_CLIENT)/keys/
+	@echo "    MAKING RELEASE ARTIFACTS"
+	@cd $(BUILDS_PATH)/$(GIT_HASH)/ && \
+		tar czf liveinlife-$(GIT_HASH)-mod.tar.gz ./ && \
+		zip -r liveinlife-$(GIT_HASH)-mod.zip ./

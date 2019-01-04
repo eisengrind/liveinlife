@@ -20,6 +20,9 @@ jobs:
     steps:
       - checkout
       - run: make release ARMAKE=armake
+      - run: cp -f .builds/$(git describe --tag | sed "s/-.*-/-/")/*.zip .builds/$(git describe --tag | sed "s/-.*-/-/")/*.tar.gz /tmp/
+      - store_artifacts:
+          path: /tmp/
 workflows:
   version: 2
   build:
