@@ -73,5 +73,5 @@ release: clean
 	@cp -f $(BUILDS_PATH)/$(GIT_HASH)/keys/lil_$(GIT_HASH).bikey $(BUILDS_PATH)/$(GIT_HASH)/$(BIN_CLIENT)/keys/
 	@echo "    MAKING RELEASE ARTIFACTS"
 	@cd $(BUILDS_PATH)/$(GIT_HASH)/ && \
-		tar czf liveinlife-$(GIT_HASH)-mod.tar.gz ./ && \
+		tar czf liveinlife-$(GIT_HASH)-mod.tar.gz \@LiveInLifeClient/ \@LiveInLifeServer/ && \
 		zip -r liveinlife-$(GIT_HASH)-mod.zip ./
