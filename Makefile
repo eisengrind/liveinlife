@@ -74,4 +74,4 @@ release: clean
 	@echo "    MAKING RELEASE ARTIFACTS"
 	@cd $(BUILDS_PATH)/$(GIT_HASH)/ && \
 		tar czf liveinlife-$(GIT_HASH)-mod.tar.gz \@LiveInLifeClient/ \@LiveInLifeServer/ && \
-		zip -r liveinlife-$(GIT_HASH)-mod.zip ./
+		zip -r liveinlife-$(GIT_HASH)-mod.zip \@LiveInLifeClient/ \@LiveInLifeServer/
