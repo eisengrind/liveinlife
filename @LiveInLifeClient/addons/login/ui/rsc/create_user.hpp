@@ -8,7 +8,7 @@ class GVAR(create_user) {
     class controlsBackground {
         class Title: GVAR(title_center) {
             idc = 1000;
-            text = "User Creation"; //--- ToDo: Localize;
+            text = "$STR_login_create_user_title"; //--- ToDo: Localize;
             x = 0.298906 * safezoneW + safezoneX;
             y = 0.192 * safezoneH + safezoneY;
             w = 0.402187 * safezoneW;
@@ -18,7 +18,7 @@ class GVAR(create_user) {
 
         class RemarkText: RscStructuredText {
             idc = 1100;
-            text = "<t size=""0.75"">*the username and password given in this formular is used to create a webinterface user for this server. This webinterface is reachable under https://internet.eisengrind.de/</t>"; //--- ToDo: Localize;
+            text = "$STR_login_create_user_remarkText"; //--- ToDo: Localize;
             x = 0.134582 * safezoneW;
             y = 0.445556 * safezoneH;
             w = 0.266563 * safezoneW;
@@ -40,7 +40,7 @@ class GVAR(create_user) {
     class controls {
         class CompleteButton: GVAR(next_button) {
             idc = 1602;
-            text = "Complete"; //--- ToDo: Localize;
+            text = "STR_login_create_user_completeButton"; //--- ToDo: Localize;
             onButtonClick = QUOTE([ARR_2('CompleteButton',_this)] call FUNC(onCreateUserButtonClick));
             x = 0.319531 * safezoneW + safezoneX;
             y = 0.665 * safezoneH + safezoneY;
@@ -62,7 +62,7 @@ class GVAR(create_user) {
 
         class SteamID64Title: GVAR(input_title) {
             idc = 1001;
-            text = "SteamID64"; //--- ToDo: Localize;
+            text = "$STR_login_create_user_steamID64Title"; //--- ToDo: Localize;
             x = 0.0670312 * safezoneW;
             y = 0.099 * safezoneH;
             w = 0.128906 * safezoneW;
@@ -81,7 +81,7 @@ class GVAR(create_user) {
 
         class UsernameTitle: GVAR(input_title) {
             idc = 1003;
-            text = "Username*"; //--- ToDo: Localize;
+            text = "$STR_login_create_user_usernameTitle"; //--- ToDo: Localize;
             x = 0.0670312 * safezoneW;
             y = 0.176 * safezoneH;
             w = 0.128906 * safezoneW;
@@ -111,7 +111,7 @@ class GVAR(create_user) {
 
         class PasswordTitle: GVAR(input_title) {
             idc = 1005;
-            text = "Password*"; //--- ToDo: Localize;
+            text = "$STR_login_create_user_passwordTitle"; //--- ToDo: Localize;
             x = 0.0670312 * safezoneW;
             y = 0.264 * safezoneH;
             w = 0.128906 * safezoneW;
@@ -121,7 +121,7 @@ class GVAR(create_user) {
 
         class RepeatPasswordTitle: GVAR(input_title) {
             idc = 1006;
-            text = "Repeat Password*"; //--- ToDo: Localize;
+            text = "$STR_login_create_user_repeatPasswordTitle"; //--- ToDo: Localize;
             x = 0.0670312 * safezoneW;
             y = 0.352 * safezoneH;
             w = 0.128906 * safezoneW;

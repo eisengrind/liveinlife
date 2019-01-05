@@ -1,0 +1,154 @@
+
+<?xml version="1.0" encoding="utf-8">
+<Project name="lilc">
+    <Package name="login">
+        <Container name="loading_screen">
+            <Key ID="STR_lilc_login_loading_screen_title">
+                <Original>loading...</Original>
+                <English>loading...</English>
+                <German>lade...</German>
+            </Key>
+        </Container>
+        <Container name="select_profile">
+            <Key ID="STR_lilc_login_select_profile_title">
+                <Original>Select Profile</Original>
+                <English>Select Profile</English>
+                <German>Profil ausw&auml;hlen</German>
+            </Key>
+            <Key ID="STR_lilc_login_select_profile_loginButton">
+                <Original>Select</Original>
+                <English>Select</English>
+                <German>Ausw&auml;hlen</German>
+            </Key>
+            <Key ID="STR_lilc_login_select_profile_profilesTitle">
+                <Original>Profiles</Original>
+                <English>Profiles</English>
+                <German>Charakt&auml;re</German>
+            </Key>
+            <Key ID="STR_lilc_login_select_profile_currentUserDescriptionText">
+                <Original>&lt;t size=&quot;0.7&quot;&gt;&lt;t size=&quot;1&quot;&gt;Current User:&lt;/t&gt;&lt;br /&gt; loading current user info...&lt;/t&gt;</Original>
+                <English>&lt;t size=&quot;0.7&quot;&gt;&lt;t size=&quot;1&quot;&gt;Current User:&lt;/t&gt;&lt;br /&gt; loading current user info...&lt;/t&gt;</English>
+                <German>&lt;t size=&quot;0.7&quot;&gt;&lt;t size=&quot;1&quot;&gt;Benutzerprofil:&lt;/t&gt;&lt;br /&gt; lade Benutzerinformationen...&lt;/t&gt;</German>
+            </Key>
+            <Key ID="STR_lilc_login_select_profile_profileInfoText">
+                <Original>&lt;t size=&quot;0.7&quot;&gt;Profile Info:&lt;br /&gt; No profile selected.&lt;/t&gt;</Original>
+                <English>&lt;t size=&quot;0.7&quot;&gt;Profile Info:&lt;br /&gt; No profile selected.&lt;/t&gt;</English>
+                <German>&lt;t size=&quot;0.7&quot;&gt;Charakterinformationen:&lt;br /&gt; Kein Charakter ist ausgew&auml;hlt.&lt;/t&gt;</German>
+            </Key>
+        </Container>
+        <Container name="create_user">
+            <Key ID="STR_lilc_login_create_user_title">
+                <Original>User Creation</Original>
+                <English>User Creation</English>
+                <German>Benutzererstellung</German>
+            </Key>
+            <Key ID="STR_lilc_login_create_user_remarkText">
+                <Original>&lt;t size=&quot;0.75&quot;&gt;*the username and password given in this formular is used to create a webinterface user for this server. This webinterface is reachable under https://internet.eisengrind.de/&lt;/t&gt;</Original>
+                <English>&lt;t size=&quot;0.75&quot;&gt;*the username and password given in this formular is used to create a webinterface user for this server. This webinterface is reachable under https://internet.eisengrind.de/&lt;/t&gt;</English>
+                <German>&lt;t size=&quot;0.75&quot;&gt;*mit dem angebenen Benutzernamen und Passwort wird ein Webinterface-Konto angelegt. Das Webinterface ist erreichbar unter https://internet.eisengrind.de/&lt;/t&gt;</German>
+            </Key>
+            <Key ID="STR_lilc_login_create_user_noticeText">
+                <Original>&lt;t size='1.4' shadow='0' font='RobotoCondensed'&gt;Notice:&lt;/t&gt;&lt;br /&gt;&lt;t size='1.1' shadow='0'&gt;Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores &lt;/t&gt;</Original>
+                <English>&lt;t size='1.4' shadow='0' font='RobotoCondensed'&gt;Notice:&lt;/t&gt;&lt;br /&gt;&lt;t size='1.1' shadow='0'&gt;Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores &lt;/t&gt;</English>
+                <German>&lt;t size='1.4' shadow='0' font='RobotoCondensed'&gt;Notice:&lt;/t&gt;&lt;br /&gt;&lt;t size='1.1' shadow='0'&gt;Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores &lt;/t&gt;</German>
+            </Key>
+            <Key ID="STR_lilc_login_create_user_completeButton">
+                <Original>Complete</Original>
+                <English>Complete</English>
+                <German>Abschicken</German>
+            </Key>
+            <Key ID="STR_lilc_login_create_user_steamID64Title">
+                <Original>SteamID64</Original>
+                <English>SteamID64</English>
+                <German>SteamID64</German>
+            </Key>
+            <Key ID="STR_lilc_login_create_user_usernameTitle">
+                <Original>Username*</Original>
+                <English>Username*</English>
+                <German>Benutzername*</German>
+            </Key>
+            <Key ID="STR_lilc_login_create_user_passwordTitle">
+                <Original>Password*</Original>
+                <English>Password*</English>
+                <German>Passwort*</German>
+            </Key>
+            <Key ID="STR_lilc_login_create_user_repeatPasswordTitle">
+                <Original>Repeat Password*</Original>
+                <English>Repeat Password*</English>
+                <German>Passwort wiederholen*</German>
+            </Key>
+        </Container>
+        <Container name="create_profile">
+            <Key ID="STR_lilc_login_create_profile_title">
+                <Original>Character Creation</Original>
+                <English>Character Creation</English>
+                <German>Charaktererstellung</German>
+            </Key>
+            <Key ID="STR_lilc_login_create_profile_selectSexTitle">
+                <Original>Select Sex</Original>
+                <English>Select Sex</English>
+                <German>Geschlecht w&auml;hlen</German>
+            </Key>
+            <Key ID="STR_lilc_login_create_profile_selectFaceTitle">
+                <Original>Select Face</Original>
+                <English>Select Face</English>
+                <German>Gesicht w&auml;hlen</German>
+            </Key>
+            <Key ID="STR_lilc_login_create_profile_completeButton">
+                <Original>Complete</Original>
+                <English>Complete</English>
+                <German>Abschlie&szlig;en</German>
+            </Key>
+            <Key ID="STR_lilc_login_create_profile_continueButton">
+                <Original>Continue</Original>
+                <English>Continue</English>
+                <German>Weiter</German>
+            </Key>
+            <Key ID="STR_lilc_login_create_profile_completeTitle">
+                <Original>Complete</Original>
+                <English>Complete</English>
+                <German>Abschlie&szlig;en</German>
+            </Key>
+            <Key ID="STR_lilc_login_create_profile_maleTitle">
+                <Original>Male</Original>
+                <English>Male</English>
+                <German>M&auml;nnlich</German>
+            </Key>
+            <Key ID="STR_lilc_login_create_profile_femaleTitle">
+                <Original>Female</Original>
+                <English>Female</English>
+                <German>Weiblich</German>
+            </Key>
+            <Key ID="STR_lilc_login_create_profile_firstnameTitle">
+                <Original>Firstname</Original>
+                <English>Firstname</English>
+                <German>Vorname</German>
+            </Key>
+            <Key ID="STR_lilc_login_create_profile_middlenameTitle">
+                <Original>Middlename (optional)</Original>
+                <English>Middlename (optional)</English>
+                <German>Zweitname (optional)</German>
+            </Key>
+            <Key ID="STR_lilc_login_create_profile_lastnameTitle">
+                <Original>Lastname</Original>
+                <English>Lastname</English>
+                <German>Nachname</German>
+            </Key>
+            <Key ID="STR_lilc_login_create_profile_birthdayTitle">
+                <Original>Birthday</Original>
+                <English>Birthday</English>
+                <German>Geburtstag</German>
+            </Key>
+            <Key ID="STR_lilc_login_create_profile_originTitle">
+                <Original>Origin Country</Original>
+                <English>Origin Country</English>
+                <German>Herkunftsland</German>
+            </Key>
+            <Key ID="STR_lilc_login_create_profile_entryReasonTitle">
+                <Original>Entry reason</Original>
+                <English>Entry reason</English>
+                <German>Einreisegrund</German>
+            </Key>
+        </Container>
+    </Package>
+</Project>

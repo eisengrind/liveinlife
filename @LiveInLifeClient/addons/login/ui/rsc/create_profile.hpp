@@ -10,7 +10,7 @@ class GVAR(create_profile) {
     class controlsBackground {
         class Title: GVAR(title_center) {
             idc = 1000;
-            text = "Profile Creation"; //--- ToDo: Localize;
+            text = "$STR_lilc_login_create_profile_title"; //--- ToDo: Localize;
             x = 0.298906 * safezoneW + safezoneX;
             y = 0.192 * safezoneH + safezoneY;
             w = 0.402187 * safezoneW;
@@ -47,7 +47,7 @@ class GVAR(create_profile) {
 
         class SelectSexTitle: GVAR(title) {
             idc = 1001;
-            text = "Geschlecht waehlen"; //--- ToDo: Localize;
+            text = "$STR_lilc_login_create_profile_selectSexTitle"; //--- ToDo: Localize;
             x = 0.308177 * safezoneW + safezoneX;
             y = 0.314852 * safezoneH + safezoneY;
             w = 0.0825 * safezoneW;
@@ -57,7 +57,7 @@ class GVAR(create_profile) {
 
         class SelectFaceTitle: GVAR(title) {
             idc = 1002;
-            text = "Gesicht waehlen"; //--- ToDo: Localize;
+            text = "$STR_lilc_login_create_profile_selectFaceTitle"; //--- ToDo: Localize;
             x = 0.482968 * safezoneW + safezoneX;
             y = 0.314852 * safezoneH + safezoneY;
             w = 0.0773437 * safezoneW;
@@ -67,7 +67,7 @@ class GVAR(create_profile) {
 
         class CompleteTitle: GVAR(title) {
             idc = 1003;
-            text = "Abschliessen"; //--- ToDo: Localize;
+            text = "$STR_lilc_login_create_profile_completeTitle"; //--- ToDo: Localize;
             x = 0.647656 * safezoneW + safezoneX;
             y = 0.314852 * safezoneH + safezoneY;
             w = 0.0721875 * safezoneW;
@@ -145,7 +145,7 @@ class GVAR(create_profile) {
 
                 class MaleTitle: GVAR(title_center) {
                     idc = 1006;
-                    text = "Maennlich"; //--- ToDo: Localize;
+                    text = "$STR_lilc_login_create_profile_maleTitle"; //--- ToDo: Localize;
                     x = 0.077344 * safezoneW;
                     y = 0.044 * safezoneH;
                     w = 0.113437 * safezoneW;
@@ -155,7 +155,7 @@ class GVAR(create_profile) {
 
                 class FemaleTitle: GVAR(title_center) {
                     idc = 1007;
-                    text = "Weiblich"; //--- ToDo: Localize;
+                    text = "$STR_lilc_login_create_profile_femaleTitle"; //--- ToDo: Localize;
                     x = 0.211406 * safezoneW;
                     y = 0.044 * safezoneH;
                     w = 0.113437 * safezoneW;
@@ -165,7 +165,7 @@ class GVAR(create_profile) {
 
                 class ContinueButton: GVAR(next_button) {
                     idc = 1602;
-                    text = "Continue"; //--- ToDo: Localize;
+                    text = "$STR_lilc_login_create_profile_continueButton"; //--- ToDo: Localize;
                     x = 0.020625 * safezoneW;
                     y = 0.275 * safezoneH;
                     w = 0.103125 * safezoneW;
@@ -206,7 +206,7 @@ class GVAR(create_profile) {
 
                 class ContinueButton: GVAR(next_button) {
                     idc = 1603;
-                    text = "Continue"; //--- ToDo: Localize;
+                    text = "$STR_lilc_login_create_profile_continueButton"; //--- ToDo: Localize;
                     x = 0.020625 * safezoneW;
                     y = 0.308 * safezoneH;
                     w = 0.103125 * safezoneW;
@@ -227,7 +227,7 @@ class GVAR(create_profile) {
             class Controls {
                 class CompleteButton: GVAR(next_button) {
                     idc = 1603;
-                    text = "Complete"; //--- ToDo: Localize;
+                    text = "$STR_lilc_login_create_profile_completeButton"; //--- ToDo: Localize;
                     x = 0.015471 * safezoneW;
                     y = 0.385 * safezoneH;
                     w = 0.103125 * safezoneW;
@@ -260,7 +260,7 @@ class GVAR(create_profile) {
 
                 class FirstnameTitle: GVAR(input_title) {
                     idc = 1008;
-                    text = "Firstname"; //--- ToDo: Localize;
+                    text = "$STR_lilc_login_create_profile_firstnameTitle"; //--- ToDo: Localize;
                     x = 0.056719 * safezoneW;
                     y = 0.044 * safezoneH;
                     w = 0.128906 * safezoneW;
@@ -270,7 +270,7 @@ class GVAR(create_profile) {
 
                 class MiddleNameTitle: GVAR(input_title) {
                     idc = 1009;
-                    text = "Middle Name (optional)"; //--- ToDo: Localize;
+                    text = "$STR_lilc_login_create_profile_middlenameTitle"; //--- ToDo: Localize;
                     x = 0.216563 * safezoneW;
                     y = 0.044 * safezoneH;
                     w = 0.128906 * safezoneW;
@@ -309,7 +309,7 @@ class GVAR(create_profile) {
 
                 class LastnameTitle: GVAR(input_title) {
                     idc = 1012;
-                    text = "Lastname"; //--- ToDo: Localize;
+                    text = "$STR_lilc_login_create_profile_lastnameTitle"; //--- ToDo: Localize;
                     x = 0.139219 * safezoneW;
                     y = 0.132 * safezoneH;
                     w = 0.12375 * safezoneW;
@@ -328,7 +328,7 @@ class GVAR(create_profile) {
 
                 class BirthdayTitle: GVAR(input_title) {
                     idc = 1014;
-                    text = "Birthday"; //--- ToDo: Localize;
+                    text = "$STR_lilc_login_create_profile_birthdayTitle"; //--- ToDo: Localize;
                     x = 0.138698 * safezoneW;
                     y = 0.216296 * safezoneH;
                     w = 0.12375 * safezoneW;
@@ -400,7 +400,7 @@ class GVAR(create_profile) {
 
                 class OriginCountryTitle: GVAR(input_title) {
                     idc = 1018;
-                    text = "Origin Country"; //--- ToDo: Localize;
+                    text = "$STR_lilc_login_create_profile_originTitle"; //--- ToDo: Localize;
                     x = 0.056719 * safezoneW;
                     y = 0.297 * safezoneH;
                     w = 0.12375 * safezoneW;
@@ -410,7 +410,7 @@ class GVAR(create_profile) {
 
                 class EntryReasonTitle: GVAR(input_title) {
                     idc = 1019;
-                    text = "Reason for entry"; //--- ToDo: Localize;
+                    text = "$STR_lilc_login_create_profile_entryReasonTitle"; //--- ToDo: Localize;
                     x = 0.216563 * safezoneW;
                     y = 0.297 * safezoneH;
                     w = 0.12375 * safezoneW;

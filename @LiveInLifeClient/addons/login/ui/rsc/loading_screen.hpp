@@ -23,7 +23,7 @@ class GVAR(loading_screen) {
     class controls {
         class LoadingTitle: GVAR(title_center) {
             idc = 1000;
-            text = "loading..."; //--- ToDo: Localize;
+            text = "$STR_lilc_login_loading_screen_title"; //--- ToDo: Localize;
             x = 0.45875 * safezoneW + safezoneX;
             y = 0.577 * safezoneH + safezoneY;
             w = 0.0825 * safezoneW;
