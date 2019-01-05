@@ -10,7 +10,7 @@ private _resp = [_profileID] call EFUNC(api_profiles,getProfileToken);
 if REQ_IS_OK(_resp) then {
     private _res = REQ_GET_BODY(_resp);
 
-    [QEGVAR(api_users,userAuthenticated), [
+    [QEGVAR(api_profiles,userAuthenticated), [
         [_res, "access_token"] call a3uf_json_fnc_get,
         [_res, "refresh_token"] call a3uf_json_fnc_get
     ]] call CBA_fnc_localEvent;
