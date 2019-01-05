@@ -5,23 +5,24 @@ addMissionEventHandler ["HandleDisconnect", {
 
     if !(_unit getVariable [QEGVAR(login,finished), false]) exitWith {};
 
-    private _profileID = _unit getVariable [QGVAR(profileID), 0];
-
-    private _pos = getPosASL _unit;
-    private _opts = [
-        ["inventory", ([_unit] call EFUNC(inventory,getInventory)) call EFUNC(inventory,unitInventoryToJSON)],
-        ["position_x", _pos select 0],
-        ["position_y", _pos select 1],
-        ["position_z", _pos select 2],
-        ["hunger", _unit getVariable [QEGVAR(food,hunger), 0]],
-        ["thirst", _unit getVariable [QEGVAR(food,thirst), 0]],
-        ["respawn_timeout", _unit getVariable [QGVAR(respawnTimeout), 0]],
-        ["direction", getDir _unit],
-        ["variables", nil]
-    ];
-
-    TARGET_ENDPOINT_CBA_EVENT(QGVAR(saveProfile),[ARR_2(_profileID,_opts)]);
+    TARGET_ENDPOINT_CBA_EVENT(QGVAR(saveProfile),[_unit]);
 
     deleteVehicle _unit;
     false;
 }];
+
+FUNC(autoSave) = {
+    INFO(QUOTE(autosaving players));
+    private _players = ((allPlayers - (entities "HeadlessClient_F")) select {
+        (!isNull _x) && (_unit getVariable [QEGVAR(login,finished), false]);
+    });
+    {
+        INFO(format[ARR_2(QUOTE(autosaving player UID: %1),getPlayerUID _x)]);
+        TARGET_ENDPOINT_CBA_EVENT(QGVAR(saveProfile),[_x]);
+    } foreach _players;
+    INFO(format[ARR_2(QUOTE(sent %1 saving states to consumers),count _players)]);
+
+    [FUNC(autoSave), nil, GVAR(autoSaveInterval)] call CBA_fnc_waitAndExecute;
+};
+
+[FUNC(autoSave), nil, GVAR(autoSaveInterval)] call CBA_fnc_waitAndExecute;
