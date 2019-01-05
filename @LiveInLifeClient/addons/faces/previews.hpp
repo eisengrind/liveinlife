@@ -1,4 +1,4 @@
-class lilc_faces_previews {
+class GVAR(previews) {
     class Man_A3 {
         AfricanHead_01 = PATHTOF(data\previews\AfricanHead_01.jpg);
         AfricanHead_02 = PATHTOF(data\previews\AfricanHead_02.jpg);
