@@ -16,7 +16,7 @@ _inventory = [
             (uniform _unit),
             ((uniformContainer _unit) getVariable ["lilc_color", "-1"]),
             (getItemCargo uniformContainer _unit),
-            [uniformContainer _unit] call lilc_inventory_fnc_magazinesAmmoCargoStacked,
+            if (isNil {(magazinesAmmo vestContainer _unit)}) then { [[]]; } else { (magazinesAmmo vestContainer _unit); },
             (getWeaponCargo uniformContainer _unit)
         ];
     },
@@ -27,7 +27,7 @@ _inventory = [
         [
             (vest _unit),
             (getItemCargo vestContainer _unit),
-            [vestContainer _unit] call lilc_inventory_fnc_magazinesAmmoCargoStacked,
+            if (isNil {(magazinesAmmo vestContainer _unit)}) then { [[]]; } else { (magazinesAmmo vestContainer _unit); },
             (getWeaponCargo vestContainer _unit)
         ];
     },
@@ -39,7 +39,7 @@ _inventory = [
             (backpack _unit),
             ((backpackContainer _unit) getVariable ["lilc_color", "-1"]),
             (getItemCargo backpackContainer _unit),
-            [backpackContainer _unit] call lilc_inventory_fnc_magazinesAmmoCargoStacked,
+            if (isNil {(magazinesAmmo vestContainer _unit)}) then { [[]]; } else { (magazinesAmmo vestContainer _unit); },
             (getWeaponCargo backpackContainer _unit)
         ];
     },
