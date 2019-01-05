@@ -94,7 +94,7 @@ if ((count _secondaryWeapon) > 0) then {
     _unit addMagazine (_secondaryWeapon select 1);
 
     {
-        _unit addPrimaryWeaponItem _x;
+        _unit addSecondaryWeaponItem _x;
     } forEach (_secondaryWeapon select 2);
 };
 
@@ -103,7 +103,7 @@ if ((count _handgunWeapon) > 0) then {
     _unit addMagazine (_handgunWeapon select 1);
 
     {
-        _unit addPrimaryWeaponItem _x;
+        _unit addHandgunItem _x;
     } forEach (_handgunWeapon select 2);
 };
 
