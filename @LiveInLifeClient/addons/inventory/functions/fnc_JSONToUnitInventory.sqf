@@ -28,6 +28,45 @@ if (_binocular != "") then {
     _unit linkItem _binocular;
 };
 
+private _primaryWeaponObject = [_json, "weapons.primary"] call a3uf_json_fnc_get;
+if !(_primaryWeaponObject isEqualType objNull) then {
+    _unit addWeaponGlobal ([_primaryWeaponObject, "classname"] call a3uf_json_fnc_get);
+
+    {
+        _unit addPrimaryWeaponItem _x;
+    } forEach ([_primaryWeaponObject, "magazines"] call a3uf_json_fnc_get);
+
+    {
+        _unit addPrimaryWeaponItem _x;
+    } forEach ([_primaryWeaponObject, "items"] call a3uf_json_fnc_get);
+};
+
+private _secondaryWeaponObject = [_json, "weapons.secondary"] call a3uf_json_fnc_get;
+if !(_secondaryWeaponObject isEqualType objNull) then {
+    _unit addWeaponGlobal ([_secondaryWeaponObject, "classname"] call a3uf_json_fnc_get);
+
+    {
+        _unit addSecondaryWeaponItem _x;
+    } forEach ([_secondaryWeaponObject, "magazines"] call a3uf_json_fnc_get);
+
+    {
+        _unit addSecondaryWeaponItem _x;
+    } forEach ([_secondaryWeaponObject, "items"] call a3uf_json_fnc_get);
+};
+
+private _handgunWeaponObject = [_json, "weapons.handgun"] call a3uf_json_fnc_get;
+if !(_handgunWeaponObject isEqualType objNull) then {
+    _unit addWeaponGlobal ([_handgunWeaponObject, "classname"] call a3uf_json_fnc_get);
+
+    {
+        _unit addHandgunItem _x;
+    } forEach ([_handgunWeaponObject, "magazines"] call a3uf_json_fnc_get);
+
+    {
+        _unit addHandgunItem _x;
+    } forEach ([_handgunWeaponObject, "items"] call a3uf_json_fnc_get);
+};
+
 private _uniformObject = [_json, "uniform"] call a3uf_json_fnc_get;
 if !(_uniformObject isEqualType objNull) then {
     _unit forceAddUniform ([_uniformObject, "classname"] call a3uf_json_fnc_get);
@@ -104,45 +143,6 @@ if !(_backpackObject isEqualType objNull) then {
             [_x, "ammo"] call a3uf_json_fnc_get
         ];
     } forEach ([_backpackObject, "magazines"] call a3uf_json_fnc_get);
-};
-
-private _primaryWeaponObject = [_json, "weapons.primary"] call a3uf_json_fnc_get;
-if !(_primaryWeaponObject isEqualType objNull) then {
-    _unit addWeaponGlobal ([_primaryWeaponObject, "classname"] call a3uf_json_fnc_get);
-
-    {
-        _unit addPrimaryWeaponItem _x;
-    } forEach ([_primaryWeaponObject, "magazines"] call a3uf_json_fnc_get);
-
-    {
-        _unit addPrimaryWeaponItem _x;
-    } forEach ([_primaryWeaponObject, "items"] call a3uf_json_fnc_get);
-};
-
-private _secondaryWeaponObject = [_json, "weapons.secondary"] call a3uf_json_fnc_get;
-if !(_secondaryWeaponObject isEqualType objNull) then {
-    _unit addWeaponGlobal ([_secondaryWeaponObject, "classname"] call a3uf_json_fnc_get);
-
-    {
-        _unit addSecondaryWeaponItem _x;
-    } forEach ([_secondaryWeaponObject, "magazines"] call a3uf_json_fnc_get);
-
-    {
-        _unit addSecondaryWeaponItem _x;
-    } forEach ([_secondaryWeaponObject, "items"] call a3uf_json_fnc_get);
-};
-
-private _handgunWeaponObject = [_json, "weapons.handgun"] call a3uf_json_fnc_get;
-if !(_handgunWeaponObject isEqualType objNull) then {
-    _unit addWeaponGlobal ([_handgunWeaponObject, "classname"] call a3uf_json_fnc_get);
-
-    {
-        _unit addHandgunItem _x;
-    } forEach ([_handgunWeaponObject, "magazines"] call a3uf_json_fnc_get);
-
-    {
-        _unit addHandgunItem _x;
-    } forEach ([_handgunWeaponObject, "items"] call a3uf_json_fnc_get);
 };
 
 [
