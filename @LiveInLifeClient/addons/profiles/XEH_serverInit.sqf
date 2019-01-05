@@ -8,5 +8,5 @@ addMissionEventHandler ["HandleDisconnect", {
     TARGET_ENDPOINT_CBA_EVENT(QGVAR(saveProfile),[ARR_1(_unit)]);
 
     deleteVehicle _unit;
-    true;
+    false;
 }];
