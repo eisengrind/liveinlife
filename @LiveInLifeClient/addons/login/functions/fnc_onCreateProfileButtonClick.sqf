@@ -56,62 +56,62 @@ switch (_name) do {
         private _allowedChars = toArray "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
         if (_firstname == "") exitWith {
-            ["firstname empty", "ERROR"] call EFUNC(ui,hint);
+            ["STR_lilc_login_create_profile_firstnameEmptyMessage", QEGVAR(ui,error)] call EFUNC(ui,hint);
         };
 
         if (count _firstname > 64) exitWith {
-            ["firstname is too long", "ERROR"] call EFUNC(ui,hint);
+            ["STR_lilc_login_create_profile_firstnameTooLongMessage", QEGVAR(ui,error)] call EFUNC(ui,hint);
         };
 
         private _firstnameUnicodes = toArray _firstname;
         if (({ (_x in _allowedChars); } count _firstnameUnicodes) != count _firstnameUnicodes) exitWith {
-            ["firstname contains invalid characters", "ERROR"] call EFUNC(ui,hint);
+            ["STR_lilc_login_create_profile_firstnameInvalidCharsMessage", QEGVAR(ui,error)] call EFUNC(ui,hint);
         };
 
         if (count _middlename > 64) exitWith {
-            ["middlename is too long", "ERROR"] call EFUNC(ui,hint);
+            ["STR_lilc_login_create_profile_middlenameTooLongMessage", QEGVAR(ui,error)] call EFUNC(ui,hint);
         };
 
         private _middlenameUnicodes = toArray _middlename;
         if (({ (_x in _allowedChars); } count _middlenameUnicodes) != count _middlenameUnicodes) exitWith {
-            ["middlename contains invalid characters", "ERROR"] call EFUNC(ui,hint);
+            ["STR_lilc_login_create_profile_middlenameInvalidCharsMessage", QEGVAR(ui,error)] call EFUNC(ui,hint);
         };
 
         if (_lastname == "") exitWith {
-            ["lastname empty", "ERROR"] call EFUNC(ui,hint);
+            ["STR_lilc_login_create_profile_lastnameEmptyMessage", QEGVAR(ui,error)] call EFUNC(ui,hint);
         };
 
         if (count _lastname > 64) exitWith {
-            ["lastname is too long", "ERROR"] call EFUNC(ui,hint);
+            ["STR_lilc_login_create_profile_lastnameTooLongMessage", QEGVAR(ui,error)] call EFUNC(ui,hint);
         };
 
         private _lastnameUnicodes = toArray _lastname;
         if (({ (_x in _allowedChars); } count _lastnameUnicodes) != count _lastnameUnicodes) exitWith {
-            ["lastname contains invalid characters", "ERROR"] call EFUNC(ui,hint);
+            ["STR_lilc_login_create_profile_lastnameInvalidCharsMessage", QEGVAR(ui,error)] call EFUNC(ui,hint);
         };
 
         if (_birthdayDay <= 0) exitWith {
-            ["invalid day", "ERROR"] call EFUNC(ui,hint);
+            ["STR_lilc_login_create_profile_invalidDayMessage", QEGVAR(ui,error)] call EFUNC(ui,hint);
         };
 
         if (_birthdayMonth <= 0) exitWith {
-            ["invalid month", "ERROR"] call EFUNC(ui,hint);
+            ["STR_lilc_login_create_profile_invalidMonthMessage", QEGVAR(ui,error)] call EFUNC(ui,hint);
         };
 
         if (_birthdayYear <= 0) exitWith {
-            ["invalid year", "ERROR"] call EFUNC(ui,hint);
+            ["STR_lilc_login_create_profile_invalidYearMessage", QEGVAR(ui,error)] call EFUNC(ui,hint);
         };
 
         if !(_originLocode in EGVAR(countries,locodes)) exitWith {
-            ["invalid origin locode", "ERROR"] call EFUNC(ui,hint);
+            ["STR_lilc_login_create_profile_invalidLocodeMessage", QEGVAR(ui,error)] call EFUNC(ui,hint);
         };
 
         if ((_display getVariable [QGVAR(face), ""]) isEqualTo "") exitWith {
-            ["invalid face model", "ERROR"] call EFUNC(ui,hint);
+            ["STR_lilc_login_create_profile_invalidFaceMessage", QEGVAR(ui,error)] call EFUNC(ui,hint);
         };
 
-        if (count _entryReason <= 20) exitWith {
-            ["more than 20 characters needed", "ERROR"] call EFUNC(ui,hint);
+        if (count _entryReason <= 3) exitWith {
+            ["STR_lilc_login_create_profile_entryReasonTooShortMessage", QEGVAR(ui,error)] call EFUNC(ui,hint);
         };
 
         private _birthday = format [

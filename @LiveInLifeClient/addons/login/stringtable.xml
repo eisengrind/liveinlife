@@ -77,6 +77,31 @@
                 <English>Repeat Password*</English>
                 <German>Passwort wiederholen*</German>
             </Key>
+            <Key ID="STR_lilc_login_create_user_usernameEmptyMessage">
+                <Original>The username is empty.</Original>
+                <English>The username is empty.</English>
+                <German>Der Benutzername darf nicht leer sein.</German>
+            </Key>
+            <Key ID="STR_lilc_login_create_user_usernameTooShortMessage">
+                <Original>The username is too short.</Original>
+                <English>The username is too short.</English>
+                <German>Der Benutzername ist zu kurz.</German>
+            </Key>
+            <Key ID="STR_lilc_login_create_user_usernameInvalidCharsMessage">
+                <Original>The username contains invalid characters.</Original>
+                <English>The username contains invalid characters.</English>
+                <German>Der Benutzername beinhaltet nicht erlaubte Zeichen.</German>
+            </Key>
+            <Key ID="STR_lilc_login_create_user_passwordTooShortMessage">
+                <Original>The password is too short.</Original>
+                <English>The password is too short.</English>
+                <German>Das Passwort ist zu kurz.</German>
+            </Key>
+            <Key ID="STR_lilc_login_create_user_repeatedPasswordInvalidMessage">
+                <Original>The repeated password does not match the password.</Original>
+                <English>The repeated password does not match the password.</English>
+                <German>Die Passw&ouml;rter stimmen nicht &uuml;berein.</German>
+            </Key>
         </Container>
         <Container name="create_profile">
             <Key ID="STR_lilc_login_create_profile_title">
@@ -148,6 +173,76 @@
                 <Original>Entry reason</Original>
                 <English>Entry reason</English>
                 <German>Einreisegrund</German>
+            </Key>
+            <Key ID="STR_lilc_login_create_profile_firstnameEmptyMessage">
+                <Original>The firstname is empty.</Original>
+                <English>The firstname is empty.</English>
+                <German>Der Vorname darf nicht leer sein.</German>
+            </Key>
+            <Key ID="STR_lilc_login_create_profile_firstnameTooLongMessage">
+                <Original>The firstname is too long.</Original>
+                <English>The firstname is too long.</English>
+                <German>Der Vorname ist zu lang.</German>
+            </Key>
+            <Key ID="STR_lilc_login_create_profile_firstnameInvalidCharsMessage">
+                <Original>The firstname contains invalid characters.</Original>
+                <English>The firstname contains invalid characters.</English>
+                <German>Der Vorname beinhaltet nicht erlaubte Zeichen.</German>
+            </Key>
+            <Key ID="STR_lilc_login_create_profile_middlenameTooLongMessage">
+                <Original>The middlename is too long.</Original>
+                <English>The middlename is too long.</English>
+                <German>Der Zweitname ist zu lang.</German>
+            </Key>
+            <Key ID="STR_lilc_login_create_profile_middlenameInvalidCharsMessage">
+                <Original>The middlename contains invalid characters.</Original>
+                <English>The middlename contains invalid characters.</English>
+                <German>Der Zweitname beinhaltet nicht erlaubte Zeichen.</German>
+            </Key>
+            <Key ID="STR_lilc_login_create_profile_lastnameEmptyMessage">
+                <Original>The lastname is empty.</Original>
+                <English>The lastname is empty.</English>
+                <German>Der Nachname darf nicht leer sein.</German>
+            </Key>
+            <Key ID="STR_lilc_login_create_profile_lastnameTooLongMessage">
+                <Original>The lastname is too long.</Original>
+                <English>The lastname is too long.</English>
+                <German>Der Nachname ist zu lang.</German>
+            </Key>
+            <Key ID="STR_lilc_login_create_profile_lastnameInvalidCharsMessage">
+                <Original>The lastname contains invalid characters.</Original>
+                <English>The lastname contains invalid characters.</English>
+                <German>Der Nachname beinhaltet nicht erlaubte Zeichen.</German>
+            </Key>
+            <Key ID="STR_lilc_login_create_profile_invalidDayMessage">
+                <Original>The day is invalid.</Original>
+                <English>The day is invalid.</English>
+                <German>Der Tag existiert nicht.</German>
+            </Key>
+            <Key ID="STR_lilc_login_create_profile_invalidMonthMessage">
+                <Original>The month is invalid.</Original>
+                <English>The month is invalid.</English>
+                <German>Der Monat existiert nicht.</German>
+            </Key>
+            <Key ID="STR_lilc_login_create_profile_invalidYearMessage">
+                <Original>The year is invalid.</Original>
+                <English>The year is invalid.</English>
+                <German>Das Jahr existiert nicht.</German>
+            </Key>
+            <Key ID="STR_lilc_login_create_profile_invalidLocodeMessage">
+                <Original>The locode does not exist.</Original>
+                <English>The locode does not exist.</English>
+                <German>Der Locode existiert nicht.</German>
+            </Key>
+            <Key ID="STR_lilc_login_create_profile_invalidFaceMessage">
+                <Original>This face does not exist.</Original>
+                <English>This face does not exist.</English>
+                <German>Das Gesicht existiert nicht.</German>
+            </Key>
+            <Key ID="STR_lilc_login_create_profile_entryReasonTooShortMessage">
+                <Original>The entry reason is too short.</Original>
+                <English>The entry reason is too short.</English>
+                <German>Der Einreisegrund ist zu kurz.</German>
             </Key>
         </Container>
     </Package>

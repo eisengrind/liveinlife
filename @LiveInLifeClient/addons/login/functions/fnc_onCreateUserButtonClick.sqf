@@ -16,26 +16,26 @@ switch (_name) do {
         private _repaeatedPassword = ctrlText (_display displayCtrl 1403);
 
         if (_username == "") exitWith {
-            ["username is empty", "ERROR"] call EFUNC(ui,hint);
+            ["STR_lilc_login_create_user_usernameEmptyMessage", QEGVAR(ui,error)] call EFUNC(ui,hint);
         };
 
         if (count _username < 3) exitWith {
-            ["username is too short", "ERROR"] call EFUNC(ui,hint);
+            ["STR_lilc_login_create_user_usernameTooShortMessage", QEGVAR(ui,error)] call EFUNC(ui,hint);
         };
 
         private _allowedChars = toArray "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-_0123456789";
         private _usernameUnicodes = toArray _username;
 
         if (({ (_x in _allowedChars); } count _usernameUnicodes) != count _usernameUnicodes) exitWith {
-            ["username contains invalid characters", "ERROR"] call EFUNC(ui,hint);
+            ["STR_lilc_login_create_user_usernameInvalidCharsMessage", QEGVAR(ui,error)] call EFUNC(ui,hint);
         };
 
         if (count _password < 6) exitWith {
-            ["password is too short", "ERROR"] call EFUNC(ui,hint);
+            ["STR_lilc_login_create_user_passwordTooShortMessage", QEGVAR(ui,error)] call EFUNC(ui,hint);
         };
 
         if (_repaeatedPassword != _password) exitWith {
-            ["invalid repeated password", "ERROR"] call EFUNC(ui,hint);
+            ["STR_lilc_login_create_user_repeatedPasswordInvalidMessage", QEGVAR(ui,error)] call EFUNC(ui,hint);
         };
 
         closeDialog 2003;

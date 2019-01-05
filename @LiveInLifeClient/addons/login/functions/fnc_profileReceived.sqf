@@ -34,7 +34,7 @@ if REQ_IS_OK(_resp) then {
         TARGET_ENDPOINT_CBA_EVENT(QGVAR(afterProfileInitialized),[ARR_1(_profileID)]);
         QGVAR(layerColor) cutText ["", "WHITE IN", 3];
         if !(GVAR(finishedOverwrite)) then {
-            GVAR(finished) = true;
+            player setVariable [QGVAR(finished), true, true];
         };
     }, _profileID, 3] call CBA_fnc_waitAndExecute;
 };

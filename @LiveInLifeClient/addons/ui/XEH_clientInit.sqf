@@ -7,3 +7,5 @@
 ["lilce_login_unload", {
         call lilc_ui_fnc_disableHints;
 }] call CBA_fnc_addEventHandler;
+
+call FUNC(enableHints);

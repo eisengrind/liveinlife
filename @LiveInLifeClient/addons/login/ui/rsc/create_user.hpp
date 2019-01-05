@@ -8,7 +8,7 @@ class GVAR(create_user) {
     class controlsBackground {
         class Title: GVAR(title_center) {
             idc = 1000;
-            text = "$STR_login_create_user_title"; //--- ToDo: Localize;
+            text = "$STR_lilc_login_create_user_title"; //--- ToDo: Localize;
             x = 0.298906 * safezoneW + safezoneX;
             y = 0.192 * safezoneH + safezoneY;
             w = 0.402187 * safezoneW;
@@ -18,7 +18,7 @@ class GVAR(create_user) {
 
         class RemarkText: RscStructuredText {
             idc = 1100;
-            text = "$STR_login_create_user_remarkText"; //--- ToDo: Localize;
+            text = "$STR_lilc_login_create_user_remarkText"; //--- ToDo: Localize;
             x = 0.134582 * safezoneW;
             y = 0.445556 * safezoneH;
             w = 0.266563 * safezoneW;
@@ -62,7 +62,7 @@ class GVAR(create_user) {
 
         class SteamID64Title: GVAR(input_title) {
             idc = 1001;
-            text = "$STR_login_create_user_steamID64Title"; //--- ToDo: Localize;
+            text = "$STR_lilc_login_create_user_steamID64Title"; //--- ToDo: Localize;
             x = 0.0670312 * safezoneW;
             y = 0.099 * safezoneH;
             w = 0.128906 * safezoneW;
@@ -81,7 +81,7 @@ class GVAR(create_user) {
 
         class UsernameTitle: GVAR(input_title) {
             idc = 1003;
-            text = "$STR_login_create_user_usernameTitle"; //--- ToDo: Localize;
+            text = "$STR_lilc_login_create_user_usernameTitle"; //--- ToDo: Localize;
             x = 0.0670312 * safezoneW;
             y = 0.176 * safezoneH;
             w = 0.128906 * safezoneW;
@@ -111,7 +111,7 @@ class GVAR(create_user) {
 
         class PasswordTitle: GVAR(input_title) {
             idc = 1005;
-            text = "$STR_login_create_user_passwordTitle"; //--- ToDo: Localize;
+            text = "$STR_lilc_login_create_user_passwordTitle"; //--- ToDo: Localize;
             x = 0.0670312 * safezoneW;
             y = 0.264 * safezoneH;
             w = 0.128906 * safezoneW;
@@ -121,7 +121,7 @@ class GVAR(create_user) {
 
         class RepeatPasswordTitle: GVAR(input_title) {
             idc = 1006;
-            text = "$STR_login_create_user_repeatPasswordTitle"; //--- ToDo: Localize;
+            text = "$STR_lilc_login_create_user_repeatPasswordTitle"; //--- ToDo: Localize;
             x = 0.0670312 * safezoneW;
             y = 0.352 * safezoneH;
             w = 0.128906 * safezoneW;

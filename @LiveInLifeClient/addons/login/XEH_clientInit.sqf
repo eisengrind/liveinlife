@@ -26,9 +26,9 @@ if (hasInterface) then {
 
     if (isMultiplayer) then {
         QGVAR(layerColor) cutText ["", "BLACK OUT", 0.01, true];
+        showCinemaBorder false;
 
-        [{ !isNull (findDisplay 46) && !call BIS_fnc_isLoading }, {
-            showCinemaBorder false;
+        ["CBA_loadingScreenDone", {
             GVAR(camera) = "camera" camCreate [0, 0, 0];
             GVAR(camera) camSetPos [5433.4,7589.82,1.84199];
             GVAR(camera) camSetDir [sin 232, cos 232, 0];
@@ -45,7 +45,7 @@ if (hasInterface) then {
             [{
                 TARGET_ENDPOINT_CBA_EVENT(QGVAR(initializeUser),[player]);
             }, nil, 2] call CBA_fnc_waitAndExecute;
-        }] call CBA_fnc_waitUntilAndExecute;
+        }] call CBA_fnc_addEventHandler;
     };
 };
 
