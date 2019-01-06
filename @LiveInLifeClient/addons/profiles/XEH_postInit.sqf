@@ -23,7 +23,7 @@ if (isServer || isDedicated || !(hasInterface || isDedicated)) then {
     }] call CBA_fnc_addEventHandler;
 
     [QEGVAR(login,beforeProfileLoggedIn), {
-        params ["_unit", "_profileID" "_res"];
+        params ["_unit", "_profileID", "_res"];
 
         _unit setVariable [QGVAR(profileID), _profileID, true];
         _unit setVariable [QGVAR(new), [_res, "new"] call a3uf_json_fnc_get, true];
