@@ -25,7 +25,6 @@ GVAR(interruptHandle) = [{
     ];
 
     if (time >= GVAR(abortTime)) exitWith {
-        ((findDisplay 40))
         [QGVAR(abortTimeDone), nil] call CBA_fnc_localEvent;
         [GVAR(interruptHandle)] call CBA_fnc_removePerFrameHandler;
         GVAR(interruptHandle) = nil;
