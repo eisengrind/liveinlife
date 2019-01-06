@@ -32,7 +32,7 @@ if (_binocular != "") then {
 
 {
     _unit linkItem _x;
-} forEach ([_json, "assignedItems"] call a3uf_json_fnc_get);
+} forEach ([_json, "assigned_items"] call a3uf_json_fnc_get);
 
 private _primaryWeaponObject = [_json, "weapons.primary"] call a3uf_json_fnc_get;
 if !(_primaryWeaponObject isEqualType objNull) then {
