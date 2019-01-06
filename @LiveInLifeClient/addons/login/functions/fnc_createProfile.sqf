@@ -39,5 +39,6 @@ if REQ_IS_OK(_resp) then {
 
     private _id = [_res, "id"] call a3uf_json_fnc_get;
 
-    [QGVAR(profileReceived), [_id, [_res, "inventory"] call a3uf_json_fnc_get], _unit] call CBA_fnc_targetEvent;
+    [QGVAR(profileCreated), [_id]] call CBA_fnc_localEvent;
+    [QGVAR(profileLogin), [_unit, _id]] call CBA_fnc_targetEvent;
 };
