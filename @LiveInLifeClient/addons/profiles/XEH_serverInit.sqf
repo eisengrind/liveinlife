@@ -12,9 +12,9 @@ addMissionEventHandler ["HandleDisconnect", {
 }];
 
 FUNC(autoSave) = {
-    INFO(QUOTE(autosaving players));
+    INFO(QUOTE(autosaving online players));
     private _players = ((allPlayers - (entities "HeadlessClient_F")) select {
-        (!isNull _x) && (_unit getVariable [QEGVAR(login,finished), false]);
+        (!isNull _x) && (_x getVariable [QEGVAR(login,finished), false]);
     });
     {
         INFO(format[ARR_2(QUOTE(autosaving player UID: %1),getPlayerUID _x)]);
