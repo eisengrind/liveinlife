@@ -57,9 +57,6 @@ if REQ_IS_OK(_resp) then {
         [QGVAR(setFace), [_unit, _face]] call CBA_fnc_globalEventJIP;
     };
 
-    [_unit, [_res, "inventory"] call a3uf_json_fnc_get] call EFUNC(inventory,JSONToUnitInventory);
-
     [QGVAR(beforeProfileLoggedIn), [_unit, _profileID, _res]] call CBA_fnc_localEvent;
-
-    [QGVAR(profileReceived), _profileID, _unit] call CBA_fnc_targetEvent;
+    [QGVAR(profileReceived), [_profileID, [_res, "inventory"] call a3uf_json_fnc_get], _unit] call CBA_fnc_targetEvent;
 };

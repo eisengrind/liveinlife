@@ -1,5 +1,7 @@
 #include "..\script_component.hpp"
 
+//TODO: add magazines ammo of equipped weapons
+
 params [
     ["_unit", objNull, [objNull]],
     ["_json", [], [[]]]
@@ -27,6 +29,10 @@ private _binocular = [_headObject, "binocular"] call a3uf_json_fnc_get;
 if (_binocular != "") then {
     _unit linkItem _binocular;
 };
+
+{
+    _unit linkItem _x;
+} forEach ([_json, "assignedItems"] call a3uf_json_fnc_get);
 
 private _primaryWeaponObject = [_json, "weapons.primary"] call a3uf_json_fnc_get;
 if !(_primaryWeaponObject isEqualType objNull) then {

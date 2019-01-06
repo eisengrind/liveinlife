@@ -1,7 +1,8 @@
 #include "..\script_component.hpp"
 
 params [
-    ["_profileID", 0, [0]]
+    ["_profileID", 0, [0]],
+    ["_JSONInventory", [], [[]]]
 ];
 
 if (_profileID <= 0) exitWith {};
@@ -16,6 +17,8 @@ if REQ_IS_OK(_resp) then {
     ]] call CBA_fnc_localEvent;
 
     GVAR(profileID) = _profileID;
+
+    [player, _JSONInventory] call EFUNC(inventory,setJSONInventory);
 
     //[QGVAR(profileInitialized), [_profileID]] call CBA_fnc_localEvent;
 
