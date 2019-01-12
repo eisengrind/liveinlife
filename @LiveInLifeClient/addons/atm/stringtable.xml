@@ -1,0 +1,16 @@
+
+<?xml version="1.0" encoding="utf-8">
+<Project name="lilc">
+    <Package name="<moduleName>">
+        <Key ID="STR_lilc_<moduleName>_<keyName>">
+            <Original></Original>
+            <English></English>
+            <German></German>
+        </Key>
+        <Key ID="STR_lilc_<moduleName>_<keyName>">
+            <Original></Original>
+            <English></English>
+            <German></German>
+        </Key>
+    </Package>
+</Project>
