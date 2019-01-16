@@ -19,7 +19,7 @@ jobs:
       - image: liveinlife/armake
     steps:
       - checkout
-      - run: make release ARMAKE=armake
+      - run: make artifacts ARMAKE=armake
       - run: mkdir -p /artifacts/ && cp -f .builds/$(git describe --tag | sed "s/-.*-/-/")/*.zip .builds/$(git describe --tag | sed "s/-.*-/-/")/*.tar.gz /artifacts/
       - store_artifacts:
           path: /artifacts/

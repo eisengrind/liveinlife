@@ -71,7 +71,10 @@ release: clean
 	@cp -Rf $(BUILD_PATH)/$(BIN_CLIENT) $(BUILD_PATH)/$(BIN_SERVER) $(BUILD_PATH)/keys $(BUILDS_PATH)/$(GIT_HASH)/
 	@mkdir -p $(BUILDS_PATH)/$(GIT_HASH)/$(BIN_CLIENT)/keys/
 	@cp -f $(BUILDS_PATH)/$(GIT_HASH)/keys/lil_$(GIT_HASH).bikey $(BUILDS_PATH)/$(GIT_HASH)/$(BIN_CLIENT)/keys/
+
+artifacts: release
 	@echo "    MAKING RELEASE ARTIFACTS"
 	@cd $(BUILDS_PATH)/$(GIT_HASH)/ && \
-		tar czf liveinlife-$(GIT_HASH)-mod.tar.gz \@LiveInLifeClient/ \@LiveInLifeServer/ && \
-		zip -r liveinlife-$(GIT_HASH)-mod.zip \@LiveInLifeClient/ \@LiveInLifeServer/
+		tar czf liveinlife-$(GIT_HASH)-mod.tar.gz @LiveInLifeClient/ @LiveInLifeServer/ && \
+		zip -r liveinlife-$(GIT_HASH)-mod.zip @LiveInLifeClient/ @LiveInLifeServer/
+

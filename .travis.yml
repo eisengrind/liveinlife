@@ -8,13 +8,13 @@ before_script:
 script:
 - make test_configs
 #- make test_scripts
-- make release
+- make artifacts
 notification:
   email:
     on_success: never
     on_failure: change
 before_deploy:
-- make release
+- make artifacts
 #deploy:
 #  provider: releases
 #  api_key:
