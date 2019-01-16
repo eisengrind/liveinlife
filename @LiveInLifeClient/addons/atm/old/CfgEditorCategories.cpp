@@ -1,4 +1,0 @@
-
-class lilco {
-    displayName = "LiveInLife";
-};

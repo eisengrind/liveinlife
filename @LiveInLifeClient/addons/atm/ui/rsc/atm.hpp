@@ -306,5 +306,16 @@ class GVAR(atm) {
             w = 0.267998 * safezoneW;
             h = 0.197958 * safezoneH;
         };
+
+        class ListBankAccountsUsers : lilc_RscListbox {
+            idc = 1542;
+            text = "";
+            rowHeight = 0.08;
+            sizeEx = 0.034;
+            x = 0.366001 * safezoneW + safezoneX;
+            y = 0.412019 * safezoneH + safezoneY;
+            w = 0.267998 * safezoneW;
+            h = 0.197958 * safezoneH;
+        };
     };
 };

@@ -1,29 +1,24 @@
-/* ----------------------------------------------------------------------------
-Function: lilc_atm_fnc_createAccount
-Scope: private
+#include "..\script_component.hpp"
 
-Description:
-    Simply leads to the creation menu of the atm.
+params ["_unit", "_bank"];
 
-Parameters:
-    -
+private _profileID = _unit getVariable [QEGVAR(profiles,profileID), 0];
 
-Returns:
-    - <NIL>
+INFO(format[QUOTE(creating bank account for profile %1), _profileID]);
 
-Examples:
-    (begin example)
-    (end)
+private _req = [
+    _profileID,
+    10000,
+    1000,
+    _bank
+] call EFUNC(api_banks,createAccount);
 
-Author:
-    TheMysteriousVincent
----------------------------------------------------------------------------- */
+if REQ_IS_OK(_req) then {
+    private _body = REQ_GET_BODY(_req);
 
-ctrlEnable [1522, false];
-[
-    [
-        player,
-        lilc_atm_currentBankName
-    ],
-    "lils_atm_fnc_createAccount"
-] call lilc_common_fnc_sendToServer;
+    [QGVAR(selectCreateAccountCompletedPage), [[_body, "id"] call a3uf_json_fnc_get]] call CBA_fnc_targetEvent;
+} else {
+    [QGVAR(selectCreateAccountFailedPage)] call CBA_fnc_targetEvent;
+};
+
+DIALOG_ATM_ACTIVE_BUTTONS([]);
