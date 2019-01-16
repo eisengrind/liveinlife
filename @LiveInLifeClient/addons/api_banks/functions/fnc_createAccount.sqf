@@ -2,14 +2,12 @@
 
 params [
     ["_profileID", 0, [0]],
-    ["_type", 0, [0]],
     ["_balance", 0, [0]],
     ["_balanceCredit", 0, [0]],
     ["_bank", "", [""]]
 ];
 
 if (_profileID <= 0) exitWith { []; };
-if (_type != 0) exitWith { []; };
 if (_balance <= 0) exitWith { []; };
 if (_balanceCredit <= 0) exitWith { []; };
 if (_bank == "") exitWith { ""; };
@@ -25,7 +23,6 @@ if (_bank == "") exitWith { ""; };
         "object",
         [
             ["profile_id", _profileID],
-            ["type", _type],
             ["balance", _balance],
             ["balance_credit", _balanceCredit],
             ["bank", _bank]
