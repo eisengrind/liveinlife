@@ -3,7 +3,7 @@ python:
 - '3.5'
 before_script:
 - sudo apt-get install -y -f software-properties-common git libssl-dev openssl ca-certificates
-- sudo apt-get upgrade -y -f
+- sudo apt-get upgrade -y -f --allow-unauthenticated
 - chmod -R 770 tools/*
 script:
 - make test_configs
