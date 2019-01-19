@@ -13,7 +13,6 @@ class GVAR(atm) {
     idd = 1510;
     movingEnable = 0;
     enableSimulation = 1;
-    onLoad = QUOTE([ARR_2(QQGVAR(atm),_this)] call FUNC(onATMLoad));
 
     class controlsBackground {
         class FrameBackgroundBackground : lilc_RscPicture {
@@ -301,6 +300,7 @@ class GVAR(atm) {
             text = "";
             rowHeight = 0.08;
             sizeEx = 0.034;
+            onLBSelChanged = QUOTE([ARR_2('ListBankAccounts',_this)] call FUNC(onATMLBSelChanged));
             x = 0.366001 * safezoneW + safezoneX;
             y = 0.412019 * safezoneH + safezoneY;
             w = 0.267998 * safezoneW;

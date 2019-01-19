@@ -3,6 +3,7 @@
 PREP(addAccountAccess);
 PREP(addAccountBalance);
 PREP(createAccount);
+PREP(createAccountWithBonus);
 PREP(createOrder);
 PREP(createTransaction);
 PREP(depositBalance);
