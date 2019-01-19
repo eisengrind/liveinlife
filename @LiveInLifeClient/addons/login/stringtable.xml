@@ -1,62 +1,248 @@
 
 <?xml version="1.0" encoding="utf-8">
-<Project name="LiveInLife">
-    <Package name="lilc_login">
-        <Container name="DialogText">
-            <Key ID="STR_lilc_login_DialogText_leaveServer">
-                <Original>LEAVE SERVER</Original>
-                <English>LEAVE SERVER</English>
-                <German>SERVER VERLASSEN</German>
+<Project name="lilc">
+    <Package name="login">
+        <Container name="loading_screen">
+            <Key ID="STR_lilc_login_loading_screen_title">
+                <Original>loading...</Original>
+                <English>loading...</English>
+                <German>lade...</German>
             </Key>
-            <Key ID="STR_lilc_login_DialogText_selectProfile">
-                <Original>SELECT PROFILE</Original>
-                <English>SELECT PROFILE</English>
-                <German>PROFIL AUSWÄHLEN</German>
+        </Container>
+        <Container name="select_profile">
+            <Key ID="STR_lilc_login_select_profile_title">
+                <Original>Select Profile</Original>
+                <English>Select Profile</English>
+                <German>Profil ausw&auml;hlen</German>
             </Key>
-            <Key ID="STR_lilc_login_DialogText_mainMenu">
-                <Original>Main menu</Original>
-                <English>Main menu</English>
-                <German>Hauptmenü</German>
+            <Key ID="STR_lilc_login_select_profile_loginButton">
+                <Original>Select</Original>
+                <English>Select</English>
+                <German>Ausw&auml;hlen</German>
             </Key>
-            <Key ID="STR_lilc_login_DialogText_playOn">
-                <Original>PLAY ON</Original>
-                <English>PLAY ON</English>
-                <German>WEITERSPIELEN</German>
+            <Key ID="STR_lilc_login_select_profile_profilesTitle">
+                <Original>Profiles</Original>
+                <English>Profiles</English>
+                <German>Charakt&auml;re</German>
             </Key>
-            <Key ID="STR_lilc_login_DialogText_back">
-                <Original>BACK</Original>
-                <English>BACK</English>
-                <German>ZURÜCK</German>
+            <Key ID="STR_lilc_login_select_profile_currentUserDescriptionText">
+                <Original>&lt;t size=&quot;0.7&quot;&gt;&lt;t size=&quot;1&quot;&gt;Current User:&lt;/t&gt;&lt;br /&gt; loading current user info...&lt;/t&gt;</Original>
+                <English>&lt;t size=&quot;0.7&quot;&gt;&lt;t size=&quot;1&quot;&gt;Current User:&lt;/t&gt;&lt;br /&gt; loading current user info...&lt;/t&gt;</English>
+                <German>&lt;t size=&quot;0.7&quot;&gt;&lt;t size=&quot;1&quot;&gt;Benutzerprofil:&lt;/t&gt;&lt;br /&gt; lade Benutzerinformationen...&lt;/t&gt;</German>
             </Key>
-            <Key ID="STR_lilc_login_DialogText_save">
-                <Original>SAVE</Original>
-                <English>SAVE</English>
-                <German>SPEICHERN</German>
+            <Key ID="STR_lilc_login_select_profile_profileInfoText">
+                <Original>&lt;t size=&quot;0.7&quot;&gt;Profile Info:&lt;br /&gt; No profile selected.&lt;/t&gt;</Original>
+                <English>&lt;t size=&quot;0.7&quot;&gt;Profile Info:&lt;br /&gt; No profile selected.&lt;/t&gt;</English>
+                <German>&lt;t size=&quot;0.7&quot;&gt;Charakterinformationen:&lt;br /&gt; Kein Charakter ist ausgew&auml;hlt.&lt;/t&gt;</German>
             </Key>
-            <Key ID="STR_lilc_login_DialogText_createProfileTitle">
-                <Original>Create profile</Original>
-                <English>Create profile</English>
-                <German>Profil erstellen</German>
+        </Container>
+        <Container name="create_user">
+            <Key ID="STR_lilc_login_create_user_title">
+                <Original>User Creation</Original>
+                <English>User Creation</English>
+                <German>Benutzererstellung</German>
             </Key>
-            <Key ID="STR_lilc_login_DialogText_createProfile">
-                <Original>CREATE PROFILE</Original>
-                <English>CREATE PROFILE</English>
-                <German>PROFIL ERSTELLEN</German>
+            <Key ID="STR_lilc_login_create_user_remarkText">
+                <Original>&lt;t size=&quot;0.75&quot;&gt;*the username and password given in this formular is used to create a webinterface user for this server. This webinterface is reachable under https://internet.eisengrind.de/&lt;/t&gt;</Original>
+                <English>&lt;t size=&quot;0.75&quot;&gt;*the username and password given in this formular is used to create a webinterface user for this server. This webinterface is reachable under https://internet.eisengrind.de/&lt;/t&gt;</English>
+                <German>&lt;t size=&quot;0.75&quot;&gt;*mit dem angebenen Benutzernamen und Passwort wird ein Webinterface-Konto angelegt. Das Webinterface ist erreichbar unter https://internet.eisengrind.de/&lt;/t&gt;</German>
             </Key>
-            <Key ID="STR_lilc_login_DialogText_firstnameTitle">
-                <Original>Firstname:</Original>
-                <English>Firstname:</English>
-                <German>Vorname:</German>
+            <Key ID="STR_lilc_login_create_user_noticeText">
+                <Original>&lt;t size='1.4' shadow='0' font='RobotoCondensed'&gt;Notice:&lt;/t&gt;&lt;br /&gt;&lt;t size='1.1' shadow='0'&gt;Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores &lt;/t&gt;</Original>
+                <English>&lt;t size='1.4' shadow='0' font='RobotoCondensed'&gt;Notice:&lt;/t&gt;&lt;br /&gt;&lt;t size='1.1' shadow='0'&gt;Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores &lt;/t&gt;</English>
+                <German>&lt;t size='1.4' shadow='0' font='RobotoCondensed'&gt;Notice:&lt;/t&gt;&lt;br /&gt;&lt;t size='1.1' shadow='0'&gt;Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores &lt;/t&gt;</German>
             </Key>
-            <Key ID="STR_lilc_login_DialogText_lastnameTitle">
-                <Original>Lastname:</Original>
-                <English>Lastname:</English>
-                <German>Nachname:</German>
+            <Key ID="STR_lilc_login_create_user_completeButton">
+                <Original>Complete</Original>
+                <English>Complete</English>
+                <German>Abschicken</German>
             </Key>
-            <Key ID="STR_lilc_login_DialogText_sexTitle">
-                <Original>Sex:</Original>
-                <English>Sex:</English>
-                <German>Geschlecht:</German>
+            <Key ID="STR_lilc_login_create_user_steamID64Title">
+                <Original>SteamID64</Original>
+                <English>SteamID64</English>
+                <German>SteamID64</German>
+            </Key>
+            <Key ID="STR_lilc_login_create_user_usernameTitle">
+                <Original>Username*</Original>
+                <English>Username*</English>
+                <German>Benutzername*</German>
+            </Key>
+            <Key ID="STR_lilc_login_create_user_passwordTitle">
+                <Original>Password*</Original>
+                <English>Password*</English>
+                <German>Passwort*</German>
+            </Key>
+            <Key ID="STR_lilc_login_create_user_repeatPasswordTitle">
+                <Original>Repeat Password*</Original>
+                <English>Repeat Password*</English>
+                <German>Passwort wiederholen*</German>
+            </Key>
+            <Key ID="STR_lilc_login_create_user_usernameEmptyMessage">
+                <Original>The username is empty.</Original>
+                <English>The username is empty.</English>
+                <German>Der Benutzername darf nicht leer sein.</German>
+            </Key>
+            <Key ID="STR_lilc_login_create_user_usernameTooShortMessage">
+                <Original>The username is too short.</Original>
+                <English>The username is too short.</English>
+                <German>Der Benutzername ist zu kurz.</German>
+            </Key>
+            <Key ID="STR_lilc_login_create_user_usernameInvalidCharsMessage">
+                <Original>The username contains invalid characters.</Original>
+                <English>The username contains invalid characters.</English>
+                <German>Der Benutzername beinhaltet nicht erlaubte Zeichen.</German>
+            </Key>
+            <Key ID="STR_lilc_login_create_user_passwordTooShortMessage">
+                <Original>The password is too short.</Original>
+                <English>The password is too short.</English>
+                <German>Das Passwort ist zu kurz.</German>
+            </Key>
+            <Key ID="STR_lilc_login_create_user_repeatedPasswordInvalidMessage">
+                <Original>The repeated password does not match the password.</Original>
+                <English>The repeated password does not match the password.</English>
+                <German>Die Passw&ouml;rter stimmen nicht &uuml;berein.</German>
+            </Key>
+        </Container>
+        <Container name="create_profile">
+            <Key ID="STR_lilc_login_create_profile_title">
+                <Original>Character Creation</Original>
+                <English>Character Creation</English>
+                <German>Charaktererstellung</German>
+            </Key>
+            <Key ID="STR_lilc_login_create_profile_selectSexTitle">
+                <Original>Select Sex</Original>
+                <English>Select Sex</English>
+                <German>Geschlecht w&auml;hlen</German>
+            </Key>
+            <Key ID="STR_lilc_login_create_profile_selectFaceTitle">
+                <Original>Select Face</Original>
+                <English>Select Face</English>
+                <German>Gesicht w&auml;hlen</German>
+            </Key>
+            <Key ID="STR_lilc_login_create_profile_completeButton">
+                <Original>Complete</Original>
+                <English>Complete</English>
+                <German>Abschlie&szlig;en</German>
+            </Key>
+            <Key ID="STR_lilc_login_create_profile_continueButton">
+                <Original>Continue</Original>
+                <English>Continue</English>
+                <German>Weiter</German>
+            </Key>
+            <Key ID="STR_lilc_login_create_profile_completeTitle">
+                <Original>Complete</Original>
+                <English>Complete</English>
+                <German>Abschlie&szlig;en</German>
+            </Key>
+            <Key ID="STR_lilc_login_create_profile_maleTitle">
+                <Original>Male</Original>
+                <English>Male</English>
+                <German>M&auml;nnlich</German>
+            </Key>
+            <Key ID="STR_lilc_login_create_profile_femaleTitle">
+                <Original>Female</Original>
+                <English>Female</English>
+                <German>Weiblich</German>
+            </Key>
+            <Key ID="STR_lilc_login_create_profile_firstnameTitle">
+                <Original>Firstname</Original>
+                <English>Firstname</English>
+                <German>Vorname</German>
+            </Key>
+            <Key ID="STR_lilc_login_create_profile_middlenameTitle">
+                <Original>Middlename (optional)</Original>
+                <English>Middlename (optional)</English>
+                <German>Zweitname (optional)</German>
+            </Key>
+            <Key ID="STR_lilc_login_create_profile_lastnameTitle">
+                <Original>Lastname</Original>
+                <English>Lastname</English>
+                <German>Nachname</German>
+            </Key>
+            <Key ID="STR_lilc_login_create_profile_birthdayTitle">
+                <Original>Birthday</Original>
+                <English>Birthday</English>
+                <German>Geburtstag</German>
+            </Key>
+            <Key ID="STR_lilc_login_create_profile_originTitle">
+                <Original>Origin Country</Original>
+                <English>Origin Country</English>
+                <German>Herkunftsland</German>
+            </Key>
+            <Key ID="STR_lilc_login_create_profile_entryReasonTitle">
+                <Original>Entry reason</Original>
+                <English>Entry reason</English>
+                <German>Einreisegrund</German>
+            </Key>
+            <Key ID="STR_lilc_login_create_profile_firstnameEmptyMessage">
+                <Original>The firstname is empty.</Original>
+                <English>The firstname is empty.</English>
+                <German>Der Vorname darf nicht leer sein.</German>
+            </Key>
+            <Key ID="STR_lilc_login_create_profile_firstnameTooLongMessage">
+                <Original>The firstname is too long.</Original>
+                <English>The firstname is too long.</English>
+                <German>Der Vorname ist zu lang.</German>
+            </Key>
+            <Key ID="STR_lilc_login_create_profile_firstnameInvalidCharsMessage">
+                <Original>The firstname contains invalid characters.</Original>
+                <English>The firstname contains invalid characters.</English>
+                <German>Der Vorname beinhaltet nicht erlaubte Zeichen.</German>
+            </Key>
+            <Key ID="STR_lilc_login_create_profile_middlenameTooLongMessage">
+                <Original>The middlename is too long.</Original>
+                <English>The middlename is too long.</English>
+                <German>Der Zweitname ist zu lang.</German>
+            </Key>
+            <Key ID="STR_lilc_login_create_profile_middlenameInvalidCharsMessage">
+                <Original>The middlename contains invalid characters.</Original>
+                <English>The middlename contains invalid characters.</English>
+                <German>Der Zweitname beinhaltet nicht erlaubte Zeichen.</German>
+            </Key>
+            <Key ID="STR_lilc_login_create_profile_lastnameEmptyMessage">
+                <Original>The lastname is empty.</Original>
+                <English>The lastname is empty.</English>
+                <German>Der Nachname darf nicht leer sein.</German>
+            </Key>
+            <Key ID="STR_lilc_login_create_profile_lastnameTooLongMessage">
+                <Original>The lastname is too long.</Original>
+                <English>The lastname is too long.</English>
+                <German>Der Nachname ist zu lang.</German>
+            </Key>
+            <Key ID="STR_lilc_login_create_profile_lastnameInvalidCharsMessage">
+                <Original>The lastname contains invalid characters.</Original>
+                <English>The lastname contains invalid characters.</English>
+                <German>Der Nachname beinhaltet nicht erlaubte Zeichen.</German>
+            </Key>
+            <Key ID="STR_lilc_login_create_profile_invalidDayMessage">
+                <Original>The day is invalid.</Original>
+                <English>The day is invalid.</English>
+                <German>Der Tag existiert nicht.</German>
+            </Key>
+            <Key ID="STR_lilc_login_create_profile_invalidMonthMessage">
+                <Original>The month is invalid.</Original>
+                <English>The month is invalid.</English>
+                <German>Der Monat existiert nicht.</German>
+            </Key>
+            <Key ID="STR_lilc_login_create_profile_invalidYearMessage">
+                <Original>The year is invalid.</Original>
+                <English>The year is invalid.</English>
+                <German>Das Jahr existiert nicht.</German>
+            </Key>
+            <Key ID="STR_lilc_login_create_profile_invalidLocodeMessage">
+                <Original>The locode does not exist.</Original>
+                <English>The locode does not exist.</English>
+                <German>Der Locode existiert nicht.</German>
+            </Key>
+            <Key ID="STR_lilc_login_create_profile_invalidFaceMessage">
+                <Original>This face does not exist.</Original>
+                <English>This face does not exist.</English>
+                <German>Das Gesicht existiert nicht.</German>
+            </Key>
+            <Key ID="STR_lilc_login_create_profile_entryReasonTooShortMessage">
+                <Original>The entry reason is too short.</Original>
+                <English>The entry reason is too short.</English>
+                <German>Der Einreisegrund ist zu kurz.</German>
             </Key>
         </Container>
     </Package>

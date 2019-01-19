@@ -1,5 +1,12 @@
+#include "script_component.hpp"
 
-call compile preProcessFileLineNumbers "\x\lilc\addons\common\scripts\KRON_Strings.sqf";
+ADDON = false;
+
+PREP_RECOMPILE_START;
+#include "XEH_PREP.hpp"
+PREP_RECOMPILE_END;
+
+call compile preProcessFileLineNumbers QPATHTOF(scripts\KRON_Strings.sqf);
 
 [
     "lilce_login_postAccountInit",
@@ -29,3 +36,5 @@ lilc_common_defaultPostFinishedIndex = ([
 
 lilc_common_logicCenter = createCenter sideLogic;
 lilc_common_logicGroup = createGroup [lilc_common_logicCenter, false];
+
+ADDON = true;

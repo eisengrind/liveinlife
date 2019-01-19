@@ -3,12 +3,12 @@ class lilc_prison_status {
     name = "lilc_prison_status";
     idd = 1520;
     fadein = 1;
-    duration = 999999999999999999999999999;
+    duration = 2147483647;
     fadeout = 1;
     movingEnable = false;
     enableSimulation = true;
     onLoad = "uiNamespace setVariable ['lilc_prison_status', (_this select 0)];";
-    
+
     class controlsBackground {
         class PictureBattery : lilc_RscPicture
         {

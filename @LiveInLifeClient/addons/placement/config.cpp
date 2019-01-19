@@ -8,5 +8,7 @@ class CfgFunctions {
 };
 
 class CfgWeapons {
+    class lilci_item;
+
     #include "CfgWeapons.cpp"
 };

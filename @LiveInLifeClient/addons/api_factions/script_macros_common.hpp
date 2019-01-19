@@ -1,0 +1,2 @@
+
+#define QFACTION_PROFILES_ACCESS_TOKEN_HEADER "FactionProfileAuthorization"

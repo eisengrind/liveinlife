@@ -1,33 +1,19 @@
 
+#include "script_component.hpp"
+
 class CfgPatches {
-    #include "CfgPatches.cpp"
-};
-
-class CfgFunctions {
-    #include "CfgFunctions.cpp"
-};
-
-class CfgEditorCategories {
-    #include "CfgEditorCategories.cpp"
-};
-
-class CfgEditorSubcategories {
-    #include "CfgEditorSubcategories.cpp"
-};
-
-class CfgVehicles {
-    #include "CfgVehicles.cpp"
-};
-
-class lilc_RscButtonMenu;
-class lilc_RscEdit;
-class lilc_RscListbox;
-class lilc_RscPicture;
-class lilc_RscStructuredText;
-#include "gui\atm.cpp"
-
-class Extended_PreInit_EventHandlers {
-    class lilc_atm {
-        clientInit = "call compile preprocessFileLineNumbers '\x\lilc\addons\atm\XEH_clientPreInit.sqf';";
+    class ADDON {
+        name = COMPONENT_NAME;
+        units[] = {};
+        weapons[] = {};
+        requiredVersion = REQUIRED_VERSION;
+        requiredAddons[] = {"lilc_main", "lilc_api", "lilc_headless"};
+        author = CONTRIBUTORS;
+        authors[] = {
+            "TheMysteriousVincent"
+        };
     };
 };
+
+#include "CfgEventHandlers.hpp"
+#include "ui\RscAttributes.hpp"

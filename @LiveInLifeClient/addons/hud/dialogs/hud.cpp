@@ -4,13 +4,13 @@ class lilc_hud
     name = "lilc_hud";
     idd = 1035;
     fadein = 0.5;
-    duration = 999999999999999999999999999;
+    duration = 2147483647;
     fadeout = 0.5;
     movingEnable = false;
     enableSimulation = true;
     onLoad = "uiNamespace setVariable ['lilc_hud', (_this select 0)];";
     objects[] = {};
-    
+
     class controlsBackground
     {
         class PictureBackground : lilc_RscPicture
@@ -23,7 +23,7 @@ class lilc_hud
             h = 0.126444 * safezoneH;
         };
     };
-    
+
     class controls
     {
         class TextInformation : lilc_RscStructuredText

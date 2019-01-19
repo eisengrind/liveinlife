@@ -1,18 +1,18 @@
 
-class CfgPatches
-{
-    #include "CfgPatches.cpp"
-};
+#include "script_component.hpp"
 
-class CfgFunctions
-{
-    #include "CfgFunctions.cpp"
-};
-
-class Extended_PreInit_EventHandlers
-{
-    class lils_login_preInit
-    {
-        serverInit = "call compile preProcessFileLineNumbers '\x\lils\addons\login\XEH_serverPreInit.sqf';";
+class CfgPatches {
+    class ADDON {
+        name = COMPONENT_NAME;
+        units[] = {};
+        weapons[] = {};
+        requiredVersion = REQUIRED_VERSION;
+        requiredAddons[] = {"lils_main"};
+        author = CONTRIBUTORS;
+        authors[] = {
+            "TheMysteriousVincent"
+        };
     };
 };
+
+#include "CfgEventHandlers.hpp"

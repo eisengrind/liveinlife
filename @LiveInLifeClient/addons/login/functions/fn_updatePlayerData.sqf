@@ -1,2 +1,0 @@
-
-call lilc_login_fnc_executeUpdatePackages;

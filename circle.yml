@@ -1,0 +1,35 @@
+version: 2
+jobs:
+  test_configs:
+    docker:
+      - image: acemod/sqflint
+    steps:
+      - checkout
+      - run: make test_configs
+#  linting:
+#    docker:
+#      - image: acemod/sqflint
+#    steps:
+#      - checkout
+#      - run: sqflint --exit=e -d \@LiveInLifeClient/
+#      - run: sqflint --exit=e -d \@LiveInLifeServer/
+#      - run: sqflint --exit=e -d LiveInLife.Tanoa/
+  build:
+    docker:
+      - image: liveinlife/armake
+    steps:
+      - checkout
+      - run: make artifacts ARMAKE=armake
+      - run: mkdir -p /artifacts/ && cp -f .builds/$(git describe --tag | sed "s/-.*-/-/")/*.zip .builds/$(git describe --tag | sed "s/-.*-/-/")/*.tar.gz /artifacts/
+      - store_artifacts:
+          path: /artifacts/
+workflows:
+  version: 2
+  build:
+    jobs:
+      - test_configs
+#      - linting
+      - build:
+          requires:
+            - test_configs
+
