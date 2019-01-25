@@ -1,5 +1,5 @@
-![kalife](https://img.picload.org/image/dciiwair/kalife-icon.png)
-# LiveInLife
+<img src="https://img.picload.org/image/dciiwair/kalife-icon.png" data-canonical-src="https://img.picload.org/image/dciiwair/kalife-icon.png" width="128" height="128" />
+
 [![Github All Releases](https://img.shields.io/github/downloads/TheMysteriousVincent/LiveInLife/total.svg)](https://github.com/TheMysteriousVincent/LiveInLife/releases)
 [![Build Status](https://travis-ci.org/TheMysteriousVincent/LiveInLife.svg?branch=master)](https://travis-ci.org/TheMysteriousVincent/LiveInLife)
 
