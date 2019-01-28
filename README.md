@@ -21,4 +21,4 @@ You want to contribute things? - create a pull request!
 In the future, **LiveInLife** will use an API server to handle any database or ArmA-3-Server-To-Database connections.
 Thus, knowledge about API-server-concepts is required such as hosting this kind of server(s).
 
-You want to contribute to the API-server? Go ahead: https://github.com/TheMysteriousVincent/liveinlife-restapi
+You want to contribute to the API-server? Go ahead: https://github.com/eisengrind/orbis
