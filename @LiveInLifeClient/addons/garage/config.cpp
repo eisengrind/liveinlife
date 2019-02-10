@@ -1,18 +1,19 @@
 
+#include "script_component.hpp"
+
 class CfgPatches {
-    #include "CfgPatches.cpp"
-};
-
-class CfgFunctions {
-    #include "CfgFunctions.cpp"
-};//Test
-
-#include "dialogs\garageMenu.cpp"
-
-class Extended_PreInit_EventHandlers
-{
-    class lilc_garage_preInit
-    {
-        clientInit = "call compile preProcessFileLineNumbers '\x\lilc\addons\garage\XEH_preInitClient.sqf';";
+    class ADDON {
+        name = COMPONENT_NAME;
+        units[] = {};
+        weapons[] = {};
+        requiredVersion = REQUIRED_VERSION;
+        requiredAddons[] = {"lilc_main", "lilc_api_vehicles", "lilc_headless", "lilc_api"};
+        author = CONTRIBUTORS;
+        authors[] = {
+            "TheMysteriousVincent"
+        };
     };
 };
+
+#include "CfgEventHandlers.hpp"
+#include "ui\RscAttributes.hpp"

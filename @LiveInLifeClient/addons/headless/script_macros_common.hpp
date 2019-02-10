@@ -12,3 +12,5 @@
     } else { \
         [(var1),(var2),(selectRandom EGVAR(headless,headlessClients))] call CBA_fnc_targetEvent; \
     })
+
+#define IS_HEADLESS (isServer || isDedicated || !(hasInterface || isDedicated))

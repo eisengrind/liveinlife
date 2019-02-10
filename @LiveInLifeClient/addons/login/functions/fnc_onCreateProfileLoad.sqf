@@ -44,47 +44,6 @@ switch (_name) do {
             ];
         } forEach EGVAR(countries,locodes);
         lbSort _countriesCtrl;
-
-        //create face view
-        /*private _model = "C_scientist_F" createVehicleLocal [0, 0, 0];
-        _model setPosASL [
-            random 1000,
-            random 1000,
-            random [3000, 4000, 5000]
-        ];
-        _model allowDamage false;
-        _model enableSimulation false;
-        removeUniform _model;
-        removeVest _model;
-        removeBackpack _model;
-        removeGoggles _model;
-        _model switchMove "AmovPercMstpSnonWnonDnon";
-        _displayOrCtrl setVariable [QGVAR(face_model), _model];
-
-        private _light = "#lightpoint" createVehicleLocal [0, 0, 0];
-        _light setLightBrightness 0.5;
-        _light setLightAmbient [1, 1, 1];
-        _light setLightColor [1, 1, 1];
-        _light lightAttachObject [_model, [0, 1, 4]];
-        _displayOrCtrl setVariable [QGVAR(face_light), _light];
-
-        private _background = "UserTexture10m_F" createVehicleLocal [0, 0, 0];
-        _background setObjectTexture [0, "#(rgb,8,8,3)color(0.5,0.5,0.5,1)"];
-        _background attachTo [_model, [0, -1, 0]];
-        _background setVectorDir [
-            sin 180,
-            cos 180,
-            0
-        ];
-        _displayOrCtrl setVariable [QGVAR(face_background), _background];
-
-        private _camera = "camera" camCreate [0, 0, 0];
-        _camera cameraEffect ["internal", "back", QGVAR(create_profile_camera)];
-        _camera camSetPos (_model modelToWorld [0, 20, 1.68]);
-        _camera camSetFov 0.01;
-        _camera camSetDir [0, -1, 0];
-        _camera camCommit 0;
-        _displayOrCtrl setVariable [QGVAR(face_camera), _camera];*/
     };
 
     case "FirstnameEdit": {

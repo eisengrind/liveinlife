@@ -1,39 +1,53 @@
 
 <?xml version="1.0" encoding="utf-8">
-<Project name="LiveInLife">
-    <Package name="lilc_garage">
-        <Container name="ActionTitle">
-            <Key ID="STR_XXX_ActionTitle_">
-                <Original></Original>
-                <English></English>
-                <German></German>
+<Project name="lilc">
+    <Package name="garages">
+        <Container name="garage">
+            <Key ID="STR_lilc_garages_garage_transferVehicle">
+                <Original>Transfer</Original>
+                <English>Transfer</English>
+                <German>Uebergeben</German>
             </Key>
-        </Container>
-        <Container name="SettingTitle">
-            <Key ID="STR_XXX_SettingTitle_">
-                <Original></Original>
-                <English></English>
-                <German></German>
-            </Key>
-        </Container>
-        <Container name="StringText">
-            <Key ID="STR_XXX_StringText_">
-                <Original></Original>
-                <English></English>
-                <German></German>
-            </Key>
-        </Container>
-        <Container name="DialogText">
-            <Key ID="STR_lilc_garage_DialogText_vehicleTransmission">
-                <Original>Vehicle transmission</Original>
-                <English>Vehicle transmission</English>
-                <German>Fahrzeugübergabe</German>
-            </Key>
-            <Key ID="STR_lilc_garage_DialogText_reveal">
+            <Key ID="STR_lilc_garages_garage_revealVehicle">
                 <Original>Reveal</Original>
-                <English>Vehiclession</English>
-                <German>Fahrzeugübergabe</German>
+                <English>Reveal</English>
+                <German>Ausparken</German>
+            </Key>
+            <Key ID="STR_lilc_garages_garage_vehicleTransfer">
+                <Original>Vehicle transfer</Original>
+                <English>Vehicle transfer</English>
+                <German>Fahrzeuguebergabe</German>
+            </Key>
+            <Key ID="STR_lilc_garages_garage_loadingVehicles">
+                <Original>loading vehicles...</Original>
+                <English>loading vehicles...</English>
+                <German>lade Fahrzeuge...</German>
             </Key>
         </Container>
+        <Key ID="STR_lilc_garages_transferred">
+            <Original>Vehicle was transferred</Original>
+            <English>Vehicle was transferred</English>
+            <German>Fahrzeug wurde uebertragen</German>
+        </Key>
+        <Key ID="STR_lilc_garages_transferReceived">
+            <Original>A vehicle was transferred to you</Original>
+            <English>A vehicle was transferred to you</English>
+            <German>Ein Fahrzeug wurde auf dich uebertragen</German>
+        </Key>
+        <Key ID="STR_lilc_garages_revealed">
+            <Original>Vehicle revealed</Original>
+            <English>Vehicle revealed</English>
+            <German>Fahrzeug wurde ausgeparkt</German>
+        </Key>
+        <Key ID="STR_lilc_garages_transferFailed">
+            <Original>Vehicle could not be transferred</Original>
+            <English>Vehicle could not be transferred</English>
+            <German>Fahrzeug konnte nicht uebertragen werden</German>
+        </Key>
+        <Key ID="STR_lilc_garages_revealFailed">
+            <Original>Vehicle could not be revealed</Original>
+            <English>Vehicle could not be revealed</English>
+            <German>Fahrzeug konnte nicht ausgeparkt werden</German>
+        </Key>
     </Package>
 </Project>
